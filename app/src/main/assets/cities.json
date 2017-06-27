@@ -1,0 +1,839 @@
+{
+  "cities": [
+    {
+      "city": "abu_dhabi",
+      "country": "united_arab_emirates",
+      "url": "http://i.imgur.com/JT36kUI.jpg"
+    },
+    {
+      "city": "albuquerque",
+      "country": "united_states",
+      "url": "http://i.imgur.com/5wIK9hd.jpg"
+    },
+    {
+      "city": "amsterdam",
+      "country": "netherlands",
+      "url": "http://i.imgur.com/TpHX7bY.jpg"
+    },
+    {
+      "city": "anchorage",
+      "country": "united_states",
+      "url": "http://i.imgur.com/E3r08Tm.jpg"
+    },
+    {
+      "city": "ankara",
+      "country": "turkey",
+      "url": "http://i.imgur.com/Eo6ALue.jpg"
+    },
+    {
+      "city": "astana",
+      "country": "kazakhstan",
+      "url": "http://i.imgur.com/vFy4fp5.jpg"
+    },
+    {
+      "city": "asuncion",
+      "country": "paraguay",
+      "url": "http://i.imgur.com/pt0YCFP.jpg"
+    },
+    {
+      "city": "athens",
+      "country": "greece",
+      "url": "http://i.imgur.com/w2gDIu0.jpg"
+    },
+    {
+      "city": "atlanta",
+      "country": "united_states",
+      "url": "http://i.imgur.com/autMh4H.jpg"
+    },
+    {
+      "city": "auckland",
+      "country": "new_zealand",
+      "url": "http://i.imgur.com/OvSVM0M.jpg"
+    },
+    {
+      "city": "baku",
+      "country": "azerbaijan",
+      "url": "http://i.imgur.com/IvIEzvf.jpg"
+    },
+    {
+      "city": "baltimore",
+      "country": "united_states",
+      "url": "http://i.imgur.com/ygVSVde.jpg"
+    },
+    {
+      "city": "bangkok",
+      "country": "thailand",
+      "url": "http://i.imgur.com/tfGsA9p.jpg"
+    },
+    {
+      "city": "barcelona",
+      "country": "spain",
+      "url": "http://i.imgur.com/D3zAcjJ.jpg"
+    },
+    {
+      "city": "beijing",
+      "country": "china",
+      "url": "http://i.imgur.com/28xAm3V.jpg"
+    },
+    {
+      "city": "beirut",
+      "country": "lebanon",
+      "url": "http://i.imgur.com/E6Bqd0H.jpg"
+    },
+    {
+      "city": "belfast",
+      "country": "northern_ireland",
+      "url": "http://i.imgur.com/2HJtP5z.jpg"
+    },
+    {
+      "city": "belo_horizonte",
+      "country": "brazil",
+      "url": "http://i.imgur.com/v1szI7L.jpg"
+    },
+    {
+      "city": "berlin",
+      "country": "germany",
+      "url": "http://i.imgur.com/RJy0hTq.jpg"
+    },
+    {
+      "city": "birmingham",
+      "country": "england",
+      "url": "http://i.imgur.com/xy1nrAr.jpg"
+    },
+    {
+      "city": "bogota",
+      "country": "colombia",
+      "url": "http://i.imgur.com/XqY8qwa.jpg"
+    },
+    {
+      "city": "boston",
+      "country": "united_states",
+      "url": "http://i.imgur.com/gAY9U50.jpg"
+    },
+    {
+      "city": "brussels",
+      "country": "belgium",
+      "url": "http://i.imgur.com/xKqgLMm.jpg"
+    },
+    {
+      "city": "bucharest",
+      "country": "romania",
+      "url": "http://i.imgur.com/69azYPL.jpg"
+    },
+    {
+      "city": "budapest",
+      "country": "hungary",
+      "url": "http://i.imgur.com/C7LMwlF.jpg"
+    },
+    {
+      "city": "buenos_aires",
+      "country": "argentina",
+      "url": "http://i.imgur.com/JTk9Jov.jpg"
+    },
+    {
+      "city": "busan",
+      "country": "south_korea",
+      "url": "http://i.imgur.com/zmohKXu.jpg"
+    },
+    {
+      "city": "cairo",
+      "country": "egypt",
+      "url": "http://i.imgur.com/3ItR8kD.jpg"
+    },
+    {
+      "city": "cali",
+      "country": "colombia",
+      "url": "http://i.imgur.com/kSR4mQN.jpg"
+    },
+    {
+      "city": "cancun",
+      "country": "mexico",
+      "url": "http://i.imgur.com/78lb0L8.jpg"
+    },
+    {
+      "city": "cape_town",
+      "country": "south_africa",
+      "url": "http://i.imgur.com/ldwyEiI.jpg"
+    },
+    {
+      "city": "caracas",
+      "country": "venezuela",
+      "url": "http://i.imgur.com/5ViOp4L.jpg"
+    },
+    {
+      "city": "casablanca",
+      "country": "morocco",
+      "url": "http://i.imgur.com/S2NKLCM.jpg"
+    },
+    {
+      "city": "charlotte",
+      "country": "united_states",
+      "url": "http://i.imgur.com/UUZGOb1.jpg"
+    },
+    {
+      "city": "chicago",
+      "country": "united_states",
+      "url": "http://i.imgur.com/nJxGxGR.jpg"
+    },
+    {
+      "city": "chongqing",
+      "country": "china",
+      "url": "http://i.imgur.com/EGBdXiu.jpg"
+    },
+    {
+      "city": "cincinnati",
+      "country": "united_states",
+      "url": "http://i.imgur.com/TbXzidw.jpg"
+    },
+    {
+      "city": "cleveland",
+      "country": "united_states",
+      "url": "http://i.imgur.com/XPMLjV3.jpg"
+    },
+    {
+      "city": "cologne",
+      "country": "germany",
+      "url": "http://i.imgur.com/KfA8OBz.jpg"
+    },
+    {
+      "city": "copenhagen",
+      "country": "denmark",
+      "url": "http://i.imgur.com/3qRsC86.jpg"
+    },
+    {
+      "city": "dallas",
+      "country": "united_states",
+      "url": "http://i.imgur.com/oRv8JVm.jpg"
+    },
+    {
+      "city": "denver",
+      "country": "united_states",
+      "url": "http://i.imgur.com/upwZ7HN.jpg"
+    },
+    {
+      "city": "detroit",
+      "country": "united_states",
+      "url": "http://i.imgur.com/M0K1x45.jpg"
+    },
+    {
+      "city": "doha",
+      "country": "qatar",
+      "url": "http://i.imgur.com/RUVClTH.jpg"
+    },
+    {
+      "city": "dortmund",
+      "country": "germany",
+      "url": "http://i.imgur.com/UIOFtAd.jpg"
+    },
+    {
+      "city": "dubai",
+      "country": "united_arab_emirates",
+      "url": "http://i.imgur.com/0Cdo8y0.jpg"
+    },
+    {
+      "city": "dublin",
+      "country": "ireland",
+      "url": "http://i.imgur.com/ghzcKF8.jpg"
+    },
+    {
+      "city": "edinburgh",
+      "country": "scotland",
+      "url": "http://i.imgur.com/ZZMKAsc.jpg"
+    },
+    {
+      "city": "florence",
+      "country": "italy",
+      "url": "http://i.imgur.com/6K6ZK8x.jpg"
+    },
+    {
+      "city": "fortaleza",
+      "country": "brazil",
+      "url": "http://i.imgur.com/VL9DBJD.jpg"
+    },
+    {
+      "city": "frankfurt",
+      "country": "germany",
+      "url": "http://i.imgur.com/bONv2J4.jpg"
+    },
+    {
+      "city": "glasgow",
+      "country": "scotland",
+      "url": "http://i.imgur.com/k1h0cER.jpg"
+    },
+    {
+      "city": "guadalajara",
+      "country": "mexico",
+      "url": "http://i.imgur.com/nhFJgmf.jpg"
+    },
+    {
+      "city": "guangzhou",
+      "country": "china",
+      "url": "http://i.imgur.com/EVhKVGC.jpg"
+    },
+    {
+      "city": "hamburg",
+      "country": "germany",
+      "url": "http://i.imgur.com/Gllgc5w.jpg"
+    },
+    {
+      "city": "hanoi",
+      "country": "vietnam",
+      "url": "http://i.imgur.com/kEyRyKv.jpg"
+    },
+    {
+      "city": "helsinki",
+      "country": "finland",
+      "url": "http://i.imgur.com/iZQl3Qq.jpg"
+    },
+    {
+      "city": "ho_chi_minh_city",
+      "country": "vietnam",
+      "url": "http://i.imgur.com/R14V35z.jpg"
+    },
+    {
+      "city": "hong_kong",
+      "country": "hong_kong",
+      "url": "http://i.imgur.com/CkQIQoq.jpg"
+    },
+    {
+      "city": "honolulu",
+      "country": "united_states",
+      "url": "http://i.imgur.com/1G20EgS.jpg"
+    },
+    {
+      "city": "houston",
+      "country": "united_states",
+      "url": "http://i.imgur.com/V0XtvXT.jpg"
+    },
+    {
+      "city": "incheon",
+      "country": "south_korea",
+      "url": "http://i.imgur.com/QGCs8YU.jpg"
+    },
+    {
+      "city": "indianapolis",
+      "country": "united_states",
+      "url": "http://i.imgur.com/XKaqy0x.jpg"
+    },
+    {
+      "city": "istanbul",
+      "country": "turkey",
+      "url": "http://i.imgur.com/zwiCg71.jpg"
+    },
+    {
+      "city": "jakarta",
+      "country": "indonesia",
+      "url": "http://i.imgur.com/aIZgf0t.jpg"
+    },
+    {
+      "city": "jerusalem",
+      "country": "israel",
+      "url": "http://i.imgur.com/H4t01BT.jpg"
+    },
+    {
+      "city": "johannesburg",
+      "country": "south_africa",
+      "url": "http://i.imgur.com/K1fdvRd.jpg"
+    },
+    {
+      "city": "kansas_city",
+      "country": "united_states",
+      "url": "http://i.imgur.com/RfEJVg4.jpg"
+    },
+    {
+      "city": "kaohsiung_city",
+      "country": "taiwan",
+      "url": "http://i.imgur.com/tEmjzFc.jpg"
+    },
+    {
+      "city": "karachi",
+      "country": "pakistan",
+      "url": "http://i.imgur.com/V4pIwoa.jpg"
+    },
+    {
+      "city": "kiev",
+      "country": "ukraine",
+      "url": "http://i.imgur.com/J12RJiS.jpg"
+    },
+    {
+      "city": "kuala_lumpur",
+      "country": "malaysia",
+      "url": "http://i.imgur.com/P4nA9Sp.jpg"
+    },
+    {
+      "city": "kuwait_city",
+      "country": "kuwait",
+      "url": "http://i.imgur.com/C7ThgrV.jpg"
+    },
+    {
+      "city": "la_paz",
+      "country": "bolivia",
+      "url": "http://i.imgur.com/4v5b6T8.jpg"
+    },
+    {
+      "city": "las_vegas",
+      "country": "united_states",
+      "url": "http://i.imgur.com/Zqj1E2y.jpg"
+    },
+    {
+      "city": "lima",
+      "country": "peru",
+      "url": "http://i.imgur.com/4br0NMg.jpg"
+    },
+    {
+      "city": "lisbon",
+      "country": "portugal",
+      "url": "http://i.imgur.com/TiJVKrS.jpg"
+    },
+    {
+      "city": "liverpool",
+      "country": "england",
+      "url": "http://i.imgur.com/tGjdZe1.jpg"
+    },
+    {
+      "city": "london",
+      "country": "england",
+      "url": "http://i.imgur.com/cT82qCy.jpg"
+    },
+    {
+      "city": "los_angeles",
+      "country": "united_states",
+      "url": "http://i.imgur.com/hN1Sfvw.jpg"
+    },
+    {
+      "city": "louisville",
+      "country": "united_states",
+      "url": "http://i.imgur.com/9Izu877.jpg"
+    },
+    {
+      "city": "lyon",
+      "country": "france",
+      "url": "http://i.imgur.com/xHE0pl4.jpg"
+    },
+    {
+      "city": "macau",
+      "country": "macau",
+      "url": "http://i.imgur.com/xeyn49T.jpg"
+    },
+    {
+      "city": "madrid",
+      "country": "spain",
+      "url": "http://i.imgur.com/iXYUilD.jpg"
+    },
+    {
+      "city": "malmo",
+      "country": "sweden",
+      "url": "http://i.imgur.com/1BWna9z.jpg"
+    },
+    {
+      "city": "manama",
+      "country": "bahrain",
+      "url": "http://i.imgur.com/tUNZudO.jpg"
+    },
+    {
+      "city": "manchester",
+      "country": "england",
+      "url": "http://i.imgur.com/USE3r9O.jpg"
+    },
+    {
+      "city": "manila",
+      "country": "philippines",
+      "url": "http://i.imgur.com/6sxUZxp.jpg"
+    },
+    {
+      "city": "mecca",
+      "country": "saudi_arabia",
+      "url": "http://i.imgur.com/SoUlOlt.jpg"
+    },
+    {
+      "city": "medellin",
+      "country": "colombia",
+      "url": "http://i.imgur.com/usfC444.jpg"
+    },
+    {
+      "city": "melbourne",
+      "country": "australia",
+      "url": "http://i.imgur.com/3J5866W.jpg"
+    },
+    {
+      "city": "memphis",
+      "country": "united_states",
+      "url": "http://i.imgur.com/uGsEzn5.jpg"
+    },
+    {
+      "city": "mexico_city",
+      "country": "mexico",
+      "url": "http://i.imgur.com/Dnf1ZZq.jpg"
+    },
+    {
+      "city": "miami",
+      "country": "united_states",
+      "url": "http://i.imgur.com/Nw0xdda.jpg"
+    },
+    {
+      "city": "milan",
+      "country": "italy",
+      "url": "http://i.imgur.com/2JToThO.jpg"
+    },
+    {
+      "city": "milwaukee",
+      "country": "united_states",
+      "url": "http://i.imgur.com/p2WMsrA.jpg"
+    },
+    {
+      "city": "minneapolis",
+      "country": "united_states",
+      "url": "http://i.imgur.com/5ecvSvt.jpg"
+    },
+    {
+      "city": "mobile",
+      "country": "united_states",
+      "url": "http://i.imgur.com/4HxN8Dk.jpg"
+    },
+    {
+      "city": "monaco",
+      "country": "monaco",
+      "url": "http://i.imgur.com/UCA3l0j.jpg"
+    },
+    {
+      "city": "monterrey",
+      "country": "mexico",
+      "url": "http://i.imgur.com/lc4T2U3.jpg"
+    },
+    {
+      "city": "montevideo",
+      "country": "uruguay",
+      "url": "http://i.imgur.com/LxB0T60.jpg"
+    },
+    {
+      "city": "montreal",
+      "country": "canada",
+      "url": "http://i.imgur.com/mNjgtac.jpg"
+    },
+    {
+      "city": "moscow",
+      "country": "russia",
+      "url": "http://i.imgur.com/mGtpE2L.jpg"
+    },
+    {
+      "city": "mumbai",
+      "country": "india",
+      "url": "http://i.imgur.com/flbkIL7.jpg"
+    },
+    {
+      "city": "munich",
+      "country": "germany",
+      "url": "http://i.imgur.com/DGzvZNt.jpg"
+    },
+    {
+      "city": "nagoya",
+      "country": "japan",
+      "url": "http://i.imgur.com/YIeF79D.jpg"
+    },
+    {
+      "city": "naples",
+      "country": "italy",
+      "url": "http://i.imgur.com/xs4EHgh.jpg"
+    },
+    {
+      "city": "nashville",
+      "country": "united_states",
+      "url": "http://i.imgur.com/GnEBJvn.jpg"
+    },
+    {
+      "city": "new_orleans",
+      "country": "united_states",
+      "url": "http://i.imgur.com/CakkIua.jpg"
+    },
+    {
+      "city": "new_york_city",
+      "country": "united_states",
+      "url": "http://i.imgur.com/pfE4xRI.jpg"
+    },
+    {
+      "city": "oklahoma_city",
+      "country": "united_states",
+      "url": "http://i.imgur.com/kqVYLHl.jpg"
+    },
+    {
+      "city": "orlando",
+      "country": "united_states",
+      "url": "http://i.imgur.com/YmCz5CB.jpg"
+    },
+    {
+      "city": "osaka",
+      "country": "japan",
+      "url": "http://i.imgur.com/sv15LBv.jpg"
+    },
+    {
+      "city": "oslo",
+      "country": "norway",
+      "url": "http://i.imgur.com/EngwUgZ.jpg"
+    },
+    {
+      "city": "panama_city",
+      "country": "panama",
+      "url": "http://i.imgur.com/h2zWAmg.jpg"
+    },
+    {
+      "city": "paris",
+      "country": "france",
+      "url": "http://i.imgur.com/43mRz9Q.jpg"
+    },
+    {
+      "city": "pattaya",
+      "country": "thailand",
+      "url": "http://i.imgur.com/eMwgrMo.jpg"
+    },
+    {
+      "city": "perth",
+      "country": "australia",
+      "url": "http://i.imgur.com/MGebli2.jpg"
+    },
+    {
+      "city": "philadelphia",
+      "country": "united_states",
+      "url": "http://i.imgur.com/0vqvMm8.jpg"
+    },
+    {
+      "city": "phnom_penh",
+      "country": "cambodia",
+      "url": "http://i.imgur.com/AiCVhTy.jpg"
+    },
+    {
+      "city": "phoenix",
+      "country": "united_states",
+      "url": "http://i.imgur.com/yEtdl97.jpg"
+    },
+    {
+      "city": "pittsburgh",
+      "country": "united_states",
+      "url": "http://i.imgur.com/pdBDR6M.jpg"
+    },
+    {
+      "city": "portland",
+      "country": "united_states",
+      "url": "http://i.imgur.com/P5kzrnU.jpg"
+    },
+    {
+      "city": "porto",
+      "country": "portugal",
+      "url": "http://i.imgur.com/WBdbAEn.jpg"
+    },
+    {
+      "city": "prague",
+      "country": "czech_republic",
+      "url": "http://i.imgur.com/NR5yyoW.jpg"
+    },
+    {
+      "city": "pyongyang",
+      "country": "north_korea",
+      "url": "http://i.imgur.com/xYZ7aWT.jpg"
+    },
+    {
+      "city": "recife",
+      "country": "brazil",
+      "url": "http://i.imgur.com/9WA7hCJ.jpg"
+    },
+    {
+      "city": "reykjavik",
+      "country": "iceland",
+      "url": "http://i.imgur.com/CAflnJQ.jpg"
+    },
+    {
+      "city": "rio_de_janeiro",
+      "country": "brazil",
+      "url": "http://i.imgur.com/yglVG2r.jpg"
+    },
+    {
+      "city": "riyadh",
+      "country": "saudi_arabia",
+      "url": "http://i.imgur.com/Jdzu2ip.jpg"
+    },
+    {
+      "city": "rome",
+      "country": "italy",
+      "url": "http://i.imgur.com/pjpURRZ.jpg"
+    },
+    {
+      "city": "rosario",
+      "country": "argentina",
+      "url": "http://i.imgur.com/mLIJE0L.jpg"
+    },
+    {
+      "city": "rotterdam",
+      "country": "netherlands",
+      "url": "http://i.imgur.com/eTjbFey.jpg"
+    },
+    {
+      "city": "salt_lake_city",
+      "country": "united_states",
+      "url": "http://i.imgur.com/3oJqK0h.jpg"
+    },
+    {
+      "city": "salvador",
+      "country": "brazil",
+      "url": "http://i.imgur.com/rlLmNz4.jpg"
+    },
+    {
+      "city": "san_antonio",
+      "country": "united_states",
+      "url": "http://i.imgur.com/YpQOnfh.jpg"
+    },
+    {
+      "city": "san_diego",
+      "country": "united_states",
+      "url": "http://i.imgur.com/aQ3cRI9.jpg"
+    },
+    {
+      "city": "san_francisco",
+      "country": "united_states",
+      "url": "http://i.imgur.com/OzDTYoL.jpg"
+    },
+    {
+      "city": "san_juan",
+      "country": "puerto_rico",
+      "url": "http://i.imgur.com/LmXKlTK.jpg"
+    },
+    {
+      "city": "santiago",
+      "country": "chile",
+      "url": "http://i.imgur.com/zb5XWYp.jpg"
+    },
+    {
+      "city": "santo_domingo",
+      "country": "dominican_republic",
+      "url": "http://i.imgur.com/AIqxjKY.jpg"
+    },
+    {
+      "city": "sao_paulo",
+      "country": "brazil",
+      "url": "http://i.imgur.com/TXxbYi5.jpg"
+    },
+    {
+      "city": "seattle",
+      "country": "united_states",
+      "url": "http://i.imgur.com/4ggZ8sD.jpg"
+    },
+    {
+      "city": "seoul",
+      "country": "south_korea",
+      "url": "http://i.imgur.com/JKOXjmI.jpg"
+    },
+    {
+      "city": "shanghai",
+      "country": "china",
+      "url": "http://i.imgur.com/LqFIpJN.jpg"
+    },
+    {
+      "city": "shenzhen",
+      "country": "china",
+      "url": "http://i.imgur.com/CQ0uggM.jpg"
+    },
+    {
+      "city": "singapore",
+      "country": "singapore",
+      "url": "http://i.imgur.com/gZmlfHn.jpg"
+    },
+    {
+      "city": "st_louis",
+      "country": "united_states",
+      "url": "http://i.imgur.com/iayQEzX.jpg"
+    },
+    {
+      "city": "st_petersburg",
+      "country": "russia",
+      "url": "http://i.imgur.com/99jxgnu.png"
+    },
+    {
+      "city": "sydney",
+      "country": "australia",
+      "url": "http://i.imgur.com/T6Crvqj.jpg"
+    },
+    {
+      "city": "taichung",
+      "country": "taiwan",
+      "url": "http://i.imgur.com/g5eyHII.jpg"
+    },
+    {
+      "city": "taipei",
+      "country": "taiwan",
+      "url": "http://i.imgur.com/UFRPL38.jpg"
+    },
+    {
+      "city": "tampa",
+      "country": "united_states",
+      "url": "http://i.imgur.com/wMEso5M.jpg"
+    },
+    {
+      "city": "tehran",
+      "country": "iran",
+      "url": "http://i.imgur.com/kyFw5oe.jpg"
+    },
+    {
+      "city": "tel_aviv",
+      "country": "israel",
+      "url": "http://i.imgur.com/Sk675EZ.jpg"
+    },
+    {
+      "city": "the_hauge",
+      "country": "netherlands",
+      "url": "http://i.imgur.com/Rh4Ea2S.jpg"
+    },
+    {
+      "city": "tokyo",
+      "country": "japan",
+      "url": "http://i.imgur.com/cJ2MpJz.jpg"
+    },
+    {
+      "city": "toronto",
+      "country": "canada",
+      "url": "http://i.imgur.com/aC47eSi.jpg"
+    },
+    {
+      "city": "vancouver",
+      "country": "canada",
+      "url": "http://i.imgur.com/Ec69vQr.jpg"
+    },
+    {
+      "city": "venice",
+      "country": "italy",
+      "url": "http://i.imgur.com/z521PwB.jpg"
+    },
+    {
+      "city": "vienna",
+      "country": "austria",
+      "url": "http://i.imgur.com/cd7wqYk.jpg"
+    },
+    {
+      "city": "warsaw",
+      "country": "poland",
+      "url": "http://i.imgur.com/pyCuuzl.jpg"
+    },
+    {
+      "city": "washington_dc",
+      "country": "united_states",
+      "url": "http://i.imgur.com/UqzYObX.jpg"
+    },
+    {
+      "city": "wellington",
+      "country": "new_zealand",
+      "url": "http://i.imgur.com/WIXZkgP.jpg"
+    },
+    {
+      "city": "wuhan",
+      "country": "china",
+      "url": "http://i.imgur.com/bh24Rv7.jpg"
+    },
+    {
+      "city": "zagreb",
+      "country": "croatia",
+      "url": "http://i.imgur.com/KC3Khss.jpg"
+    },
+    {
+      "city": "zurich",
+      "country": "switzerland",
+      "url": "http://i.imgur.com/gwtuiqR.jpg"
+    }
+  ]
+}
