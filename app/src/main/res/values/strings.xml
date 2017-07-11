@@ -4,6 +4,7 @@
     <string name="app_name">City Skyline Quiz</string>
     <string name="start_game_button">Start Game</string>
     <string name="city_list">City List</string>
+    <string name="settings">Settings</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>
