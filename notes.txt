@@ -1,6 +1,10 @@
 City Skyline Quiz App
 
 
+JSON file on the cloud:
+https://api.myjson.com/bins/oajlr
+
+
 // TODO
 
 -Internationalise all city and country names in string.xml
@@ -15,3 +19,7 @@ City Skyline Quiz App
 -Fetch all images with Picasso on onCreate
 
 
+// DO NEXT
+
+-fetch all data from JSON and make a list of city model objects
+-replace all underscores with spaces for each city and capitalize each word

@@ -2,7 +2,7 @@
 <!-- English -->
 <resources>
     <string name="app_name">City Skyline Quiz</string>
-    <string name="start_game_button">Start Game</string>
+    <string name="start_game">Start Game</string>
     <string name="city_list">City List</string>
     <string name="settings">Settings</string>
 
