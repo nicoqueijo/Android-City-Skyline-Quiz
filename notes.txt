@@ -16,10 +16,7 @@ https://api.myjson.com/bins/oajlr
 -Try to add timed game mode with unlimited questions
 -Score: 0, 0.25, 0.50, 1.0 per question depending on attempts
 -Put language and theme settings in a dialog fragment
--Fetch all images with Picasso on onCreate
+
 
 
 // DO NEXT
-
--fetch all data from JSON and make a list of cityName model objects
--replace all underscores with spaces for each cityName and capitalize each word

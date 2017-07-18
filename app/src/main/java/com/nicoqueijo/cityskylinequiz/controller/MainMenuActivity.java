@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.model.City;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -17,6 +18,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+
+// JSON file on the cloud:
+// https://api.myjson.com/bins/oajlr
 
 /**
  *
@@ -39,7 +43,6 @@ public class MainMenuActivity extends AppCompatActivity {
 
         cities = new ArrayList<>();
         parseJson();
-
         cacheImagesAndLoadToMemory();
 
         mButtonStartGame = (Button) findViewById(R.id.startGameButton);
@@ -100,6 +103,9 @@ public class MainMenuActivity extends AppCompatActivity {
      *
      */
     private void cacheImagesAndLoadToMemory() {
+        for (City city : cities) {
+            Picasso.with(MainMenuActivity.this).load(city.getImageUrl()).fetch();
+        }
     }
 
     /**
@@ -119,5 +125,15 @@ public class MainMenuActivity extends AppCompatActivity {
             return null;
         }
         return json;
+    }
+
+    /**
+     * @param aString
+     * @return
+     */
+    private String getStringResourceByName(String aString) {
+        String packageName = getPackageName();
+        int resId = getResources().getIdentifier(aString, "string", packageName);
+        return getString(resId);
     }
 }
