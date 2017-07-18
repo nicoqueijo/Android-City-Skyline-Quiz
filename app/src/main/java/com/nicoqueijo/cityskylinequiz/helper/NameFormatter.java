@@ -7,8 +7,8 @@ package com.nicoqueijo.cityskylinequiz.helper;
 public class NameFormatter {
 
     /**
-     * Converts a lower-case string with underscores as delimeters to a string with the first
-     * letter of each word capitalized and spaces as delimeters.
+     * Converts a lower-case string with underscores as delimiters to a string with the first
+     * letter of each word capitalized and spaces as delimiters.
      * For example: "buenos_aires" --> "Buenos Aires"
      *
      * @param rawName

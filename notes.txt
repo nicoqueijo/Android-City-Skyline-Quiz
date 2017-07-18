@@ -7,8 +7,8 @@ https://api.myjson.com/bins/oajlr
 
 // TODO
 
--Internationalise all city and country names in string.xml
--Put all city objects in a recyclerview
+-Internationalise all cityName and countryName names in string.xml
+-Put all cityName objects in a recyclerview
 -Keep hiscores stored in an SQLite
 -Use shared preferences to save language settings and light/dark theme
 -Use gradients
@@ -21,5 +21,5 @@ https://api.myjson.com/bins/oajlr
 
 // DO NEXT
 
--fetch all data from JSON and make a list of city model objects
--replace all underscores with spaces for each city and capitalize each word
+-fetch all data from JSON and make a list of cityName model objects
+-replace all underscores with spaces for each cityName and capitalize each word
