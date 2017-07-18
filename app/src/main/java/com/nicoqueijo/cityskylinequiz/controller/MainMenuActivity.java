@@ -82,7 +82,8 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     * Takes the String JSON and puts it in a JSON object. Then populates the array of model
+     * objects with the data contained in the JSON object.
      */
     private void parseJson() {
         try {
@@ -100,7 +101,7 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     * Caches the city image from each model object (if not cached already) and loads it to memory.
      */
     private void cacheImagesAndLoadToMemory() {
         for (City city : cities) {
@@ -109,7 +110,9 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     /**
-     * @return
+     * Parses the JSON file stored in the assets folder and returns a String representation of it.
+     *
+     * @return the JSON file in String format
      */
     public String loadJSONFromAsset() {
         String json = null;
@@ -128,8 +131,10 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     /**
-     * @param aString
-     * @return
+     * Retrieves String resources using a String instead of an int.
+     *
+     * @param aString name of the String resource
+     * @return the String resource
      */
     private String getStringResourceByName(String aString) {
         String packageName = getPackageName();
