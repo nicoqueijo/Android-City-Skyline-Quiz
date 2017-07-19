@@ -12,11 +12,15 @@ https://api.myjson.com/bins/oajlr
 -Keep hiscores stored in an SQLite
 -Use shared preferences to save language settings and light/dark theme
 -Use gradients
--Play modes: no fault (all cities), 10 questions, 20 questions, 50 questions
--Try to add timed game mode with unlimited questions
+-Create play game activity with:
+	Play modes: 
+		All cities: no fault | faults
+		10 questions, 20 questions, 50 questions
+		60 seconds unlimited questions
 -Score: 0, 0.25, 0.50, 1.0 per question depending on attempts
+-Try to put 3 second countdown splash screen before game starts
 -Put language and theme settings in a dialog fragment
--Fetch all images with Picasso on onCreate
+-Delete getResourceByName methods where not needed
 
 
 // DO NEXT

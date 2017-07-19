@@ -1,16 +1,17 @@
 package com.nicoqueijo.cityskylinequiz.model;
 
+import java.io.Serializable;
+
 /**
  *
  */
-public class City {
+public class City implements Serializable {
 
     private String cityName;
     private String countryName;
     private String imageUrl;
 
     /**
-     *
      * @param cityName
      * @param countryName
      * @param imageUrl
@@ -22,7 +23,6 @@ public class City {
     }
 
     /**
-     *
      * @return
      */
     public String getCityName() {
@@ -30,7 +30,6 @@ public class City {
     }
 
     /**
-     *
      * @param cityName
      */
     public void setCityName(String cityName) {
@@ -38,7 +37,6 @@ public class City {
     }
 
     /**
-     *
      * @return
      */
     public String getCountryName() {
@@ -46,7 +44,6 @@ public class City {
     }
 
     /**
-     *
      * @param countryName
      */
     public void setCountryName(String countryName) {
@@ -54,7 +51,6 @@ public class City {
     }
 
     /**
-     *
      * @return
      */
     public String getImageUrl() {
@@ -62,7 +58,6 @@ public class City {
     }
 
     /**
-     *
      * @param imageUrl
      */
     public void setImageUrl(String imageUrl) {

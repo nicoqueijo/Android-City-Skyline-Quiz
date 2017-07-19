@@ -17,7 +17,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.List;
 
 // JSON file on the cloud:
 // https://api.myjson.com/bins/oajlr
@@ -27,12 +26,8 @@ import java.util.List;
  */
 public class MainMenuActivity extends AppCompatActivity {
 
-    // caching example
-    // for all cities fetch the images...
-    // Picasso.with(MainActivity.this).load(url).fetch();
-
-    List<City> cities;
-    private Button mButtonStartGame;
+    ArrayList<City> mCities;
+    private Button mButtonPlayGame;
     private Button mButtonCityList;
     private Button mButtonSettings;
 
@@ -41,18 +36,18 @@ public class MainMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_main);
 
-        cities = new ArrayList<>();
+        mCities = new ArrayList<>();
         parseJson();
         cacheImagesAndLoadToMemory();
 
-        mButtonStartGame = (Button) findViewById(R.id.startGameButton);
+        mButtonPlayGame = (Button) findViewById(R.id.startGameButton);
         mButtonCityList = (Button) findViewById(R.id.cityListButton);
         mButtonSettings = (Button) findViewById(R.id.settingsButton);
 
         /**
          *
          */
-        mButtonStartGame.setOnClickListener(new View.OnClickListener() {
+        mButtonPlayGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -65,8 +60,9 @@ public class MainMenuActivity extends AppCompatActivity {
         mButtonCityList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent cityListIntent = new Intent(MainMenuActivity.this, CityListActivity.class);
-                startActivity(cityListIntent);
+                Intent intentCityList = new Intent(MainMenuActivity.this, CityListActivity.class);
+                intentCityList.putExtra("cityList", mCities);
+                startActivity(intentCityList);
             }
         });
 
@@ -82,29 +78,10 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     /**
-     * Takes the String JSON and puts it in a JSON object. Then populates the array of model
-     * objects with the data contained in the JSON object.
-     */
-    private void parseJson() {
-        try {
-            JSONObject jsonObject = new JSONObject(loadJSONFromAsset());
-            JSONArray jsonArray = jsonObject.getJSONArray("cities");
-
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject cityObject = jsonArray.getJSONObject(i);
-                cities.add(new City(cityObject.getString("city"), cityObject.getString("country"),
-                        cityObject.getString("url")));
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
      * Caches the city image from each model object (if not cached already) and loads it to memory.
      */
     private void cacheImagesAndLoadToMemory() {
-        for (City city : cities) {
+        for (City city : mCities) {
             Picasso.with(MainMenuActivity.this).load(city.getImageUrl()).fetch();
         }
     }
@@ -131,14 +108,42 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     /**
+     * Takes the String JSON and puts it in a JSON object. Then populates the array of model
+     * objects with the data contained in the JSON object.
+     */
+    private void parseJson() {
+        try {
+            JSONObject jsonObject = new JSONObject(loadJSONFromAsset());
+            JSONArray jsonArray = jsonObject.getJSONArray("cities");
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject cityObject = jsonArray.getJSONObject(i);
+                mCities.add(new City(cityObject.getString("city"), cityObject.getString("country"),
+                        cityObject.getString("url")));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * Retrieves String resources using a String instead of an int.
      *
-     * @param aString name of the String resource
+     * @param name name of the String resource
      * @return the String resource
      */
-    private String getStringResourceByName(String aString) {
-        String packageName = getPackageName();
-        int resId = getResources().getIdentifier(aString, "string", packageName);
+    private String getStringResourceByName(String name) {
+        int resId = getResources().getIdentifier(name, "string", this.getPackageName());
         return getString(resId);
+    }
+
+    /**
+     * Retrieves drawable resources using a String instead of an int.
+     *
+     * @param name name of the drawable resource
+     * @return the drawable resource id
+     */
+    private int getDrawableResourceByName(String name) {
+        return getResources().getIdentifier(name, "drawable", this.getPackageName());
     }
 }
