@@ -23,7 +23,9 @@
                 android:id="@+id/flag_icon"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/logo_skyline"/>
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/skyline"/>
 
             <TextView
                 android:id="@+id/city_name"
@@ -46,8 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_margin="15dp"
-                android:adjustViewBounds="true"
-                android:src="@drawable/sample_city_image"/>
+                android:adjustViewBounds="true"/>
 
         </RelativeLayout>
 

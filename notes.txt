@@ -21,8 +21,9 @@ https://api.myjson.com/bins/oajlr
 -Try to put 3 second countdown splash screen before game starts
 -Put language and theme settings in a dialog fragment
 -Delete getResourceByName methods where not needed
+-Expand city image when card clicked. Hide (gone) last card expanded (Use a stack)
 
 
 // DO NEXT
 
--RecyclerView
+-Add flag to: hong kong, macau, monaco, singapore, 

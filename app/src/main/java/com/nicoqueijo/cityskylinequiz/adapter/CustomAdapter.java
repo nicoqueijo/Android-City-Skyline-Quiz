@@ -38,8 +38,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.mCityTextView.setText(getStringResourceByName(mCities.get(position).getCityName()));
-        holder.mCountryFlagImageView.setImageResource(getDrawableResourceByName("flag_" +
-                mCities.get(position).getCountryName()));
+        holder.mCountryFlagImageView.setImageResource(getDrawableResourceByName
+                (mCities.get(position).getCountryName()));
         Picasso.with(mContext).load(mCities.get(position).getImageUrl()).into(holder.mCityImageView);
     }
 
