@@ -26,4 +26,4 @@ https://api.myjson.com/bins/oajlr
 
 // DO NEXT
 
--Add flag to: hong kong, macau, monaco, singapore, 
+- set listener for cards to hide/show skyline images
