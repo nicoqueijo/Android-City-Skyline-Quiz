@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.model.City;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -24,7 +23,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     LayoutInflater mInflater;
 
     /**
-     *
      * @param context
      * @param cities
      */
@@ -35,7 +33,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     }
 
     /**
-     *
      * @param parent
      * @param viewType
      * @return
@@ -48,7 +45,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     }
 
     /**
-     *
      * @param holder
      * @param position
      */
@@ -57,17 +53,16 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         holder.mCityTextView.setText(getStringResourceByName(mCities.get(position).getCityName()));
         holder.mCountryFlagImageView.setImageResource(getDrawableResourceByName
                 (mCities.get(position).getCountryName()));
-        Picasso.with(mContext).load(mCities.get(position).getImageUrl()).into(holder.mCityImageView);
+        // Open dialog fragment containing popup window of city image, click anywhere to dismiss
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                holder.itemView.findViewById(R.id.container_image_and_more_info).setVisibility(View.VISIBLE);
+
             }
         });
     }
 
     /**
-     *
      * @return
      */
     @Override
@@ -103,10 +98,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         ImageView mCountryFlagImageView;
         TextView mCityTextView;
-        ImageView mCityImageView;
 
         /**
-         *
          * @param itemView
          */
         public ViewHolder(View itemView) {
@@ -114,7 +107,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
             mCountryFlagImageView = (ImageView) itemView.findViewById(R.id.flag_icon);
             mCityTextView = (TextView) itemView.findViewById(R.id.city_name);
-            mCityImageView = (ImageView) itemView.findViewById(R.id.city_image);
         }
     }
 }
