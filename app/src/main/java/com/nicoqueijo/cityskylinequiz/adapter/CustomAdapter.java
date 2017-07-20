@@ -14,35 +14,62 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+/**
+ *
+ */
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
 
     Context mContext;
     ArrayList<City> mCities;
     LayoutInflater mInflater;
 
+    /**
+     *
+     * @param context
+     * @param cities
+     */
     public CustomAdapter(Context context, ArrayList<City> cities) {
         this.mContext = context;
         this.mCities = cities;
         mInflater = LayoutInflater.from(context);
     }
 
+    /**
+     *
+     * @param parent
+     * @param viewType
+     * @return
+     */
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
         View view = mInflater.inflate(R.layout.card_city_detail, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
-
         return viewHolder;
     }
 
+    /**
+     *
+     * @param holder
+     * @param position
+     */
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mCityTextView.setText(getStringResourceByName(mCities.get(position).getCityName()));
         holder.mCountryFlagImageView.setImageResource(getDrawableResourceByName
                 (mCities.get(position).getCountryName()));
         Picasso.with(mContext).load(mCities.get(position).getImageUrl()).into(holder.mCityImageView);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.itemView.findViewById(R.id.container_image_and_more_info).setVisibility(View.VISIBLE);
+            }
+        });
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int getItemCount() {
         return mCities.size();
@@ -69,12 +96,19 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         return mContext.getResources().getIdentifier(name, "drawable", mContext.getPackageName());
     }
 
+    /**
+     *
+     */
     class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView mCountryFlagImageView;
         TextView mCityTextView;
         ImageView mCityImageView;
 
+        /**
+         *
+         * @param itemView
+         */
         public ViewHolder(View itemView) {
             super(itemView);
 

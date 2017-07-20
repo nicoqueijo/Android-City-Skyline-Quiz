@@ -2,13 +2,12 @@ City Skyline Quiz App
 
 
 JSON file on the cloud:
-https://api.myjson.com/bins/oajlr
+https://api.myjson.com/bins/11le13
 
 
 // TODO
 
 -Internationalise all cityName and countryName names in string.xml
--Put all cityName objects in a recyclerview
 -Keep hiscores stored in an SQLite
 -Use shared preferences to save language settings and light/dark theme
 -Use gradients
@@ -22,8 +21,9 @@ https://api.myjson.com/bins/oajlr
 -Put language and theme settings in a dialog fragment
 -Delete getResourceByName methods where not needed
 -Expand city image when card clicked. Hide (gone) last card expanded (Use a stack)
+-Try putting scroll bar with guide on recycler view
 
 
 // DO NEXT
 
-- set listener for cards to hide/show skyline images
+-Expand city image when card clicked. Hide (gone) last card expanded (Use a stack)
