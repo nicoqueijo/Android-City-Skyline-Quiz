@@ -9,6 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.adapter.CustomAdapter;
 import com.nicoqueijo.cityskylinequiz.model.City;
+import com.turingtechnologies.materialscrollbar.AlphabetIndicator;
+import com.turingtechnologies.materialscrollbar.DragScrollBar;
 
 import java.util.ArrayList;
 
@@ -30,6 +32,8 @@ public class CityListActivity extends AppCompatActivity {
         mAdapter = new CustomAdapter(CityListActivity.this, mCities);
         mRecyclerCityList.setAdapter(mAdapter);
         mRecyclerCityList.setLayoutManager(new LinearLayoutManager(CityListActivity.this));
+        ((DragScrollBar) findViewById(R.id.drag_scroll_bar))
+                .setIndicator(new AlphabetIndicator(this), true);
     }
 
     /**

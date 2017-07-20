@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,10 +10,17 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_city_list"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.turingtechnologies.materialscrollbar.DragScrollBar
+        android:id="@+id/drag_scroll_bar"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:fadeScrollbars="true"
-        android:scrollbars="vertical">
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        app:msb_handleColour="@color/colorPrimary"
+        app:msb_lightOnTouch="false"
+        app:msb_recyclerView="@id/recycler_city_list"/>
 
-    </android.support.v7.widget.RecyclerView>
-
-</FrameLayout>
+</RelativeLayout>

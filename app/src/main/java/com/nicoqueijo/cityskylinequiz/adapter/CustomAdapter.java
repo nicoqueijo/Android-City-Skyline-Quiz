@@ -10,13 +10,14 @@ import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.model.City;
+import com.turingtechnologies.materialscrollbar.INameableAdapter;
 
 import java.util.ArrayList;
 
 /**
  *
  */
-public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
+public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> implements INameableAdapter {
 
     Context mContext;
     ArrayList<City> mCities;
@@ -53,7 +54,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         holder.mCityTextView.setText(getStringResourceByName(mCities.get(position).getCityName()));
         holder.mCountryFlagImageView.setImageResource(getDrawableResourceByName
                 (mCities.get(position).getCountryName()));
-        // Open dialog fragment containing popup window of city image, click anywhere to dismiss
+        // popup a dialog with title and image in foreground, can click anywhere to dismiss it
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,6 +90,19 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
      */
     private int getDrawableResourceByName(String name) {
         return mContext.getResources().getIdentifier(name, "drawable", mContext.getPackageName());
+    }
+
+    /**
+     * @param element of the adapter that should be titled.
+     * @return The character that the AlphabetIndicator should display for the corresponding element.
+     */
+    @Override
+    public Character getCharacterForElement(int element) {
+        Character c = mCities.get(element).getCityName().charAt(0);
+        if(Character.isDigit(c)){
+            c = '#';
+        }
+        return c;
     }
 
     /**
