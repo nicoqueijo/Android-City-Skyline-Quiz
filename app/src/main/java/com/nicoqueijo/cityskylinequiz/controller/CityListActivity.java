@@ -35,26 +35,4 @@ public class CityListActivity extends AppCompatActivity {
         ((DragScrollBar) findViewById(R.id.drag_scroll_bar))
                 .setIndicator(new AlphabetIndicator(this), true);
     }
-
-    /**
-     * Retrieves String resources using a String instead of an int.
-     *
-     * @param name name of the String resource
-     * @return the String resource
-     */
-    private String getStringResourceByName(String name) {
-        String packageName = getPackageName();
-        int resId = getResources().getIdentifier(name, "string", packageName);
-        return getString(resId);
-    }
-
-    /**
-     * Retrieves drawable resources using a String instead of an int.
-     *
-     * @param name name of the drawable resource
-     * @return the drawable resource id
-     */
-    private int getDrawableResourceByName(String name) {
-        return getResources().getIdentifier(name, "drawable", this.getPackageName());
-    }
 }

@@ -93,13 +93,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     }
 
     /**
-     * @param element of the adapter that should be titled.
+     * @param position of the adapter that should be titled.
      * @return The character that the AlphabetIndicator should display for the corresponding element.
      */
     @Override
-    public Character getCharacterForElement(int element) {
-        Character c = mCities.get(element).getCityName().charAt(0);
-        if(Character.isDigit(c)){
+    public Character getCharacterForElement(int position) {
+        Character c = mCities.get(position).getCityName().charAt(0);
+        if (Character.isDigit(c)) {
             c = '#';
         }
         return c;
