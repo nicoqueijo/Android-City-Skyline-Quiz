@@ -4,7 +4,7 @@
                 android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/startGameButton"
+        android:id="@+id/button_start_game"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -12,21 +12,31 @@
         android:text="@string/play_game"/>
 
     <Button
-        android:id="@+id/cityListButton"
+        android:id="@+id/button_city_list"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/startGameButton"
+        android:layout_below="@+id/button_start_game"
         android:layout_centerHorizontal="true"
         android:layout_margin="15dp"
         android:text="@string/city_list"/>
 
     <Button
-        android:id="@+id/settingsButton"
+        android:id="@+id/button_settings"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/cityListButton"
+        android:layout_below="@+id/button_city_list"
         android:layout_centerHorizontal="true"
         android:layout_margin="15dp"
         android:text="@string/settings"/>
+
+    <!-- THIS IS FOR TESTING, DELETE WHEN DONE -->
+    <Button
+        android:id="@+id/button_test"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_settings"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp"
+        android:text="test"/>
 
 </RelativeLayout>

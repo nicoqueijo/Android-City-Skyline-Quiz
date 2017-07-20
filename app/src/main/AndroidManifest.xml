@@ -22,6 +22,8 @@
         </activity>
         <activity android:name=".controller.QuizActivity">
         </activity>
+        <activity android:name=".controller.CityDetailTestActivity">
+        </activity>
     </application>
 
 </manifest>
