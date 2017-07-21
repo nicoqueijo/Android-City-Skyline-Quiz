@@ -21,7 +21,7 @@ https://api.myjson.com/bins/11le13
 -Put language and theme settings in a dialog fragment
 -Popup dialog fragment of particular city when clicked, press anywhere to dismiss
 -Disable landscape mode in every activity
--Add gps coordinates and wiki urls in every city on json and model
+-Add wiki urls in every city on json
 -Javadoc all classes and methods, remove all magic numbers
 
 
@@ -29,6 +29,6 @@ https://api.myjson.com/bins/11le13
 
 -Polish city detail layout
 -update cloud json file
+-add wiki urls to json
+-validate json
 -set implicit intents for maps and wiki buttons
--change model class to reflect on new fields
--pass new fields to arraylist initilalization
