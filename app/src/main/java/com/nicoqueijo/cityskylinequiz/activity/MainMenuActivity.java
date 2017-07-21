@@ -30,7 +30,6 @@ public class MainMenuActivity extends AppCompatActivity {
     private Button mButtonPlayGame;
     private Button mButtonCityList;
     private Button mButtonSettings;
-    private Button mButtonTest; // THIS IS FOR TESTING, DELETE WHEN DONE
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +43,6 @@ public class MainMenuActivity extends AppCompatActivity {
         mButtonPlayGame = (Button) findViewById(R.id.button_start_game);
         mButtonCityList = (Button) findViewById(R.id.button_city_list);
         mButtonSettings = (Button) findViewById(R.id.button_settings);
-        mButtonTest = (Button) findViewById(R.id.button_test); // THIS IS FOR TESTING, DELETE WHEN DONE
 
         /**
          *
@@ -78,14 +76,6 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
 
-        // THIS IS FOR TESTING, DELETE WHEN DONE
-        mButtonTest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainMenuActivity.this, CityDetailTestActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     /**
