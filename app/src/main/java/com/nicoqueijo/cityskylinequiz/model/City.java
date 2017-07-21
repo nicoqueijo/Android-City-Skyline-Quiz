@@ -10,16 +10,24 @@ public class City implements Serializable {
     private String cityName;
     private String countryName;
     private String imageUrl;
+    private String coordinates;
+    private String wikiUrl;
+    // add fields to separate latitude and longitude from coordinates
+
 
     /**
      * @param cityName
      * @param countryName
      * @param imageUrl
+     * @param coordinates
+     * @param wikiUrl
      */
-    public City(String cityName, String countryName, String imageUrl) {
+    public City(String cityName, String countryName, String imageUrl, String coordinates, String wikiUrl) {
         this.cityName = cityName;
         this.countryName = countryName;
         this.imageUrl = imageUrl;
+        this.coordinates = coordinates;
+        this.wikiUrl = wikiUrl;
     }
 
     /**
@@ -62,5 +70,33 @@ public class City implements Serializable {
      */
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    /**
+     * @return
+     */
+    public String getCoordinates() {
+        return coordinates;
+    }
+
+    /**
+     * @param coordinates
+     */
+    public void setCoordinates(String coordinates) {
+        this.coordinates = coordinates;
+    }
+
+    /**
+     * @return
+     */
+    public String getWikiUrl() {
+        return wikiUrl;
+    }
+
+    /**
+     * @param wikiUrl
+     */
+    public void setWikiUrl(String wikiUrl) {
+        this.wikiUrl = wikiUrl;
     }
 }

@@ -11,21 +11,21 @@
       "city": "albuquerque",
       "country": "united_states",
       "imageUrl": "http://i.imgur.com/5wIK9hd.jpg",
-      "coordinates": "",
+      "coordinates": "35.085334,-106.605553",
       "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "amsterdam",
       "country": "netherlands",
       "imageUrl": "http://i.imgur.com/TpHX7bY.jpg",
-      "coordinates": "",
+      "coordinates": "52.370216,4.895168",
       "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "anchorage",
       "country": "united_states",
       "imageUrl": "http://i.imgur.com/E3r08Tm.jpg",
-      "coordinates": "",
+      "coordinates": "61.218056,-149.900278",
       "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {

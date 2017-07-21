@@ -25,8 +25,6 @@ public class CityDetailDialog extends DialogFragment {
     private ImageView mImageCity;
     private ImageButton mButtonGoogleMaps;
     private ImageButton mButtonWikipedia;
-    private String mCityCoordinates;
-    private String mCityWikipediaUrl;
 
     @Nullable
     @Override
