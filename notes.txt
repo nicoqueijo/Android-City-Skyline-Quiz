@@ -22,6 +22,7 @@ https://api.myjson.com/bins/11le13
 -Popup dialog fragment of particular city when clicked, press anywhere to dismiss
 -Disable landscape mode in every activity
 -Add gps coordinates and wiki urls in every city on json and model
+-Javadoc all classes and methods, remove all magic numbers
 
 
 // DO NEXT

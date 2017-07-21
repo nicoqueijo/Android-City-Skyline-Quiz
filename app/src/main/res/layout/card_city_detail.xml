@@ -20,7 +20,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/flag_icon"
+                android:id="@+id/flag_image"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="15dp"

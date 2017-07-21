@@ -1,6 +1,7 @@
 package com.nicoqueijo.cityskylinequiz.adapter;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -21,25 +22,17 @@ import java.util.ArrayList;
  */
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> implements INameableAdapter {
 
-    Context mContext;
-    ArrayList<City> mCities;
-    LayoutInflater mInflater;
+    private Context mContext;
+    private ArrayList<City> mCities;
+    private LayoutInflater mInflater;
 
-    /**
-     * @param context
-     * @param cities
-     */
+
     public CustomAdapter(Context context, ArrayList<City> cities) {
         this.mContext = context;
         this.mCities = cities;
         mInflater = LayoutInflater.from(context);
     }
 
-    /**
-     * @param parent
-     * @param viewType
-     * @return
-     */
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.card_city_detail, parent, false);
@@ -47,28 +40,26 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         return viewHolder;
     }
 
-    /**
-     * @param holder
-     * @param position
-     */
+
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
+        final int CURRENT_POSITION = position;
         holder.mCityTextView.setText(getStringResourceByName(mCities.get(position).getCityName()));
         holder.mCountryFlagImageView.setImageResource(getDrawableResourceByName
                 (mCities.get(position).getCountryName()));
-        // popup a dialog with title and image in foreground, can click anywhere to dismiss it
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 CityDetailDialog cityDetailDialog = new CityDetailDialog();
-                cityDetailDialog.show(((FragmentActivity)mContext).getSupportFragmentManager(), "OpenPopup");
+                Bundle args = new Bundle();
+                args.putSerializable("city", mCities.get(CURRENT_POSITION));
+                cityDetailDialog.setArguments(args);
+                cityDetailDialog.show(((FragmentActivity) mContext).getSupportFragmentManager(), "Open Dialog");
             }
         });
     }
 
-    /**
-     * @return
-     */
+
     @Override
     public int getItemCount() {
         return mCities.size();
@@ -96,6 +87,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     }
 
     /**
+     * Retrieves the first character of the element in the current position of the adapter.
+     *
      * @param position of the adapter that should be titled.
      * @return The character that the AlphabetIndicator should display for the corresponding element.
      */
@@ -116,13 +109,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         ImageView mCountryFlagImageView;
         TextView mCityTextView;
 
-        /**
-         * @param itemView
-         */
         public ViewHolder(View itemView) {
             super(itemView);
 
-            mCountryFlagImageView = (ImageView) itemView.findViewById(R.id.flag_icon);
+            mCountryFlagImageView = (ImageView) itemView.findViewById(R.id.flag_image);
             mCityTextView = (TextView) itemView.findViewById(R.id.city_name);
         }
     }
