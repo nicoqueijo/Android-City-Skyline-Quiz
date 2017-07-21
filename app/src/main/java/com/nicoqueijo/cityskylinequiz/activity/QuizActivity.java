@@ -1,4 +1,4 @@
-package com.nicoqueijo.cityskylinequiz.controller;
+package com.nicoqueijo.cityskylinequiz.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

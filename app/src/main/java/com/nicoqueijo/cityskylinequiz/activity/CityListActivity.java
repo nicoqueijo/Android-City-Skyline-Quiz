@@ -1,4 +1,4 @@
-package com.nicoqueijo.cityskylinequiz.controller;
+package com.nicoqueijo.cityskylinequiz.activity;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -1,6 +1,7 @@
 package com.nicoqueijo.cityskylinequiz.adapter;
 
 import android.content.Context;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
+import com.nicoqueijo.cityskylinequiz.fragment.CityDetailDialog;
 import com.nicoqueijo.cityskylinequiz.model.City;
 import com.turingtechnologies.materialscrollbar.INameableAdapter;
 
@@ -58,7 +60,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                CityDetailDialog cityDetailDialog = new CityDetailDialog();
+                cityDetailDialog.show(((FragmentActivity)mContext).getSupportFragmentManager(), "OpenPopup");
             }
         });
     }

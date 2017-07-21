@@ -20,6 +20,8 @@ https://api.myjson.com/bins/11le13
 -Try to put 3 second countdown splash screen before game starts
 -Put language and theme settings in a dialog fragment
 -Popup dialog fragment of particular city when clicked, press anywhere to dismiss
+-Disable landscape mode in every activity
+-Add gps coordinates and wiki urls in every city on json and model
 
 
 // DO NEXT
