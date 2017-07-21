@@ -28,4 +28,7 @@ https://api.myjson.com/bins/11le13
 // DO NEXT
 
 -Polish city detail layout
--create dialog fragment for city detail
+-update cloud json file
+-set implicit intents for maps and wiki buttons
+-change model class to reflect on new fields
+-pass new fields to arraylist initilalization

@@ -3,837 +3,1171 @@
     {
       "city": "abu_dhabi",
       "country": "united_arab_emirates",
-      "url": "http://i.imgur.com/JT36kUI.jpg"
+      "imageUrl": "http://i.imgur.com/JT36kUI.jpg",
+      "coordinates": "24.453884,54.377344",
+      "wikiUrl": "https://wikipedia.org/wiki/Abu_Dhabi"
     },
     {
       "city": "albuquerque",
       "country": "united_states",
-      "url": "http://i.imgur.com/5wIK9hd.jpg"
+      "imageUrl": "http://i.imgur.com/5wIK9hd.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "amsterdam",
       "country": "netherlands",
-      "url": "http://i.imgur.com/TpHX7bY.jpg"
+      "imageUrl": "http://i.imgur.com/TpHX7bY.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "anchorage",
       "country": "united_states",
-      "url": "http://i.imgur.com/E3r08Tm.jpg"
+      "imageUrl": "http://i.imgur.com/E3r08Tm.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "ankara",
       "country": "turkey",
-      "url": "http://i.imgur.com/Eo6ALue.jpg"
+      "imageUrl": "http://i.imgur.com/Eo6ALue.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "astana",
       "country": "kazakhstan",
-      "url": "http://i.imgur.com/vFy4fp5.jpg"
+      "imageUrl": "http://i.imgur.com/vFy4fp5.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "asuncion",
       "country": "paraguay",
-      "url": "http://i.imgur.com/pt0YCFP.jpg"
+      "imageUrl": "http://i.imgur.com/pt0YCFP.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "athens",
       "country": "greece",
-      "url": "http://i.imgur.com/w2gDIu0.jpg"
+      "imageUrl": "http://i.imgur.com/w2gDIu0.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "atlanta",
       "country": "united_states",
-      "url": "http://i.imgur.com/autMh4H.jpg"
+      "imageUrl": "http://i.imgur.com/autMh4H.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "auckland",
       "country": "new_zealand",
-      "url": "http://i.imgur.com/OvSVM0M.jpg"
+      "imageUrl": "http://i.imgur.com/OvSVM0M.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "baku",
       "country": "azerbaijan",
-      "url": "http://i.imgur.com/IvIEzvf.jpg"
+      "imageUrl": "http://i.imgur.com/IvIEzvf.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "baltimore",
       "country": "united_states",
-      "url": "http://i.imgur.com/ygVSVde.jpg"
+      "imageUrl": "http://i.imgur.com/ygVSVde.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "bangkok",
       "country": "thailand",
-      "url": "http://i.imgur.com/tfGsA9p.jpg"
+      "imageUrl": "http://i.imgur.com/tfGsA9p.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "barcelona",
       "country": "spain",
-      "url": "http://i.imgur.com/D3zAcjJ.jpg"
+      "imageUrl": "http://i.imgur.com/D3zAcjJ.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "beijing",
       "country": "china",
-      "url": "http://i.imgur.com/28xAm3V.jpg"
+      "imageUrl": "http://i.imgur.com/28xAm3V.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "beirut",
       "country": "lebanon",
-      "url": "http://i.imgur.com/E6Bqd0H.jpg"
+      "imageUrl": "http://i.imgur.com/E6Bqd0H.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "belfast",
       "country": "northern_ireland",
-      "url": "http://i.imgur.com/2HJtP5z.jpg"
+      "imageUrl": "http://i.imgur.com/2HJtP5z.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "belo_horizonte",
       "country": "brazil",
-      "url": "http://i.imgur.com/v1szI7L.jpg"
+      "imageUrl": "http://i.imgur.com/v1szI7L.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "berlin",
       "country": "germany",
-      "url": "http://i.imgur.com/RJy0hTq.jpg"
+      "imageUrl": "http://i.imgur.com/RJy0hTq.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "birmingham",
       "country": "england",
-      "url": "http://i.imgur.com/xy1nrAr.jpg"
+      "imageUrl": "http://i.imgur.com/xy1nrAr.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "bogota",
       "country": "colombia",
-      "url": "http://i.imgur.com/XqY8qwa.jpg"
+      "imageUrl": "http://i.imgur.com/XqY8qwa.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "boston",
       "country": "united_states",
-      "url": "http://i.imgur.com/gAY9U50.jpg"
+      "imageUrl": "http://i.imgur.com/gAY9U50.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "brussels",
       "country": "belgium",
-      "url": "http://i.imgur.com/xKqgLMm.jpg"
+      "imageUrl": "http://i.imgur.com/xKqgLMm.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "bucharest",
       "country": "romania",
-      "url": "http://i.imgur.com/69azYPL.jpg"
+      "imageUrl": "http://i.imgur.com/69azYPL.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "budapest",
       "country": "hungary",
-      "url": "http://i.imgur.com/C7LMwlF.jpg"
+      "imageUrl": "http://i.imgur.com/C7LMwlF.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "buenos_aires",
       "country": "argentina",
-      "url": "http://i.imgur.com/JTk9Jov.jpg"
+      "imageUrl": "http://i.imgur.com/JTk9Jov.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "busan",
       "country": "south_korea",
-      "url": "http://i.imgur.com/zmohKXu.jpg"
+      "imageUrl": "http://i.imgur.com/zmohKXu.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "cairo",
       "country": "egypt",
-      "url": "http://i.imgur.com/3ItR8kD.jpg"
+      "imageUrl": "http://i.imgur.com/3ItR8kD.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "cali",
       "country": "colombia",
-      "url": "http://i.imgur.com/kSR4mQN.jpg"
+      "imageUrl": "http://i.imgur.com/kSR4mQN.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "cancun",
       "country": "mexico",
-      "url": "http://i.imgur.com/78lb0L8.jpg"
+      "imageUrl": "http://i.imgur.com/78lb0L8.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "cape_town",
       "country": "south_africa",
-      "url": "http://i.imgur.com/ldwyEiI.jpg"
+      "imageUrl": "http://i.imgur.com/ldwyEiI.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "caracas",
       "country": "venezuela",
-      "url": "http://i.imgur.com/5ViOp4L.jpg"
+      "imageUrl": "http://i.imgur.com/5ViOp4L.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "casablanca",
       "country": "morocco",
-      "url": "http://i.imgur.com/S2NKLCM.jpg"
+      "imageUrl": "http://i.imgur.com/S2NKLCM.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "charlotte",
       "country": "united_states",
-      "url": "http://i.imgur.com/UUZGOb1.jpg"
+      "imageUrl": "http://i.imgur.com/UUZGOb1.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "chicago",
       "country": "united_states",
-      "url": "http://i.imgur.com/nJxGxGR.jpg"
+      "imageUrl": "http://i.imgur.com/nJxGxGR.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "chongqing",
       "country": "china",
-      "url": "http://i.imgur.com/EGBdXiu.jpg"
+      "imageUrl": "http://i.imgur.com/EGBdXiu.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "cincinnati",
       "country": "united_states",
-      "url": "http://i.imgur.com/TbXzidw.jpg"
+      "imageUrl": "http://i.imgur.com/TbXzidw.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "cleveland",
       "country": "united_states",
-      "url": "http://i.imgur.com/XPMLjV3.jpg"
+      "imageUrl": "http://i.imgur.com/XPMLjV3.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "cologne",
       "country": "germany",
-      "url": "http://i.imgur.com/KfA8OBz.jpg"
+      "imageUrl": "http://i.imgur.com/KfA8OBz.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "copenhagen",
       "country": "denmark",
-      "url": "http://i.imgur.com/3qRsC86.jpg"
+      "imageUrl": "http://i.imgur.com/3qRsC86.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "dallas",
       "country": "united_states",
-      "url": "http://i.imgur.com/oRv8JVm.jpg"
+      "imageUrl": "http://i.imgur.com/oRv8JVm.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "denver",
       "country": "united_states",
-      "url": "http://i.imgur.com/upwZ7HN.jpg"
+      "imageUrl": "http://i.imgur.com/upwZ7HN.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "detroit",
       "country": "united_states",
-      "url": "http://i.imgur.com/M0K1x45.jpg"
+      "imageUrl": "http://i.imgur.com/M0K1x45.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "doha",
       "country": "qatar",
-      "url": "http://i.imgur.com/RUVClTH.jpg"
+      "imageUrl": "http://i.imgur.com/RUVClTH.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "dortmund",
       "country": "germany",
-      "url": "http://i.imgur.com/UIOFtAd.jpg"
+      "imageUrl": "http://i.imgur.com/UIOFtAd.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "dubai",
       "country": "united_arab_emirates",
-      "url": "http://i.imgur.com/0Cdo8y0.jpg"
+      "imageUrl": "http://i.imgur.com/0Cdo8y0.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "dublin",
       "country": "ireland",
-      "url": "http://i.imgur.com/ghzcKF8.jpg"
+      "imageUrl": "http://i.imgur.com/ghzcKF8.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "edinburgh",
       "country": "scotland",
-      "url": "http://i.imgur.com/ZZMKAsc.jpg"
+      "imageUrl": "http://i.imgur.com/ZZMKAsc.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "florence",
       "country": "italy",
-      "url": "http://i.imgur.com/6K6ZK8x.jpg"
+      "imageUrl": "http://i.imgur.com/6K6ZK8x.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "fortaleza",
       "country": "brazil",
-      "url": "http://i.imgur.com/VL9DBJD.jpg"
+      "imageUrl": "http://i.imgur.com/VL9DBJD.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "frankfurt",
       "country": "germany",
-      "url": "http://i.imgur.com/bONv2J4.jpg"
+      "imageUrl": "http://i.imgur.com/bONv2J4.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "glasgow",
       "country": "scotland",
-      "url": "http://i.imgur.com/k1h0cER.jpg"
+      "imageUrl": "http://i.imgur.com/k1h0cER.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "guadalajara",
       "country": "mexico",
-      "url": "http://i.imgur.com/nhFJgmf.jpg"
+      "imageUrl": "http://i.imgur.com/nhFJgmf.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "guangzhou",
       "country": "china",
-      "url": "http://i.imgur.com/EVhKVGC.jpg"
+      "imageUrl": "http://i.imgur.com/EVhKVGC.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "hamburg",
       "country": "germany",
-      "url": "http://i.imgur.com/Gllgc5w.jpg"
+      "imageUrl": "http://i.imgur.com/Gllgc5w.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "hanoi",
       "country": "vietnam",
-      "url": "http://i.imgur.com/kEyRyKv.jpg"
+      "imageUrl": "http://i.imgur.com/kEyRyKv.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "helsinki",
       "country": "finland",
-      "url": "http://i.imgur.com/iZQl3Qq.jpg"
+      "imageUrl": "http://i.imgur.com/iZQl3Qq.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "ho_chi_minh_city",
       "country": "vietnam",
-      "url": "http://i.imgur.com/R14V35z.jpg"
+      "imageUrl": "http://i.imgur.com/R14V35z.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "hong_kong",
       "country": "hong_kong",
-      "url": "http://i.imgur.com/CkQIQoq.jpg"
+      "imageUrl": "http://i.imgur.com/CkQIQoq.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "honolulu",
       "country": "united_states",
-      "url": "http://i.imgur.com/1G20EgS.jpg"
+      "imageUrl": "http://i.imgur.com/1G20EgS.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "houston",
       "country": "united_states",
-      "url": "http://i.imgur.com/V0XtvXT.jpg"
+      "imageUrl": "http://i.imgur.com/V0XtvXT.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "incheon",
       "country": "south_korea",
-      "url": "http://i.imgur.com/QGCs8YU.jpg"
+      "imageUrl": "http://i.imgur.com/QGCs8YU.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "indianapolis",
       "country": "united_states",
-      "url": "http://i.imgur.com/XKaqy0x.jpg"
+      "imageUrl": "http://i.imgur.com/XKaqy0x.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "istanbul",
       "country": "turkey",
-      "url": "http://i.imgur.com/zwiCg71.jpg"
+      "imageUrl": "http://i.imgur.com/zwiCg71.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "jakarta",
       "country": "indonesia",
-      "url": "http://i.imgur.com/aIZgf0t.jpg"
+      "imageUrl": "http://i.imgur.com/aIZgf0t.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "jerusalem",
       "country": "israel",
-      "url": "http://i.imgur.com/H4t01BT.jpg"
+      "imageUrl": "http://i.imgur.com/H4t01BT.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "johannesburg",
       "country": "south_africa",
-      "url": "http://i.imgur.com/K1fdvRd.jpg"
+      "imageUrl": "http://i.imgur.com/K1fdvRd.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "kansas_city",
       "country": "united_states",
-      "url": "http://i.imgur.com/RfEJVg4.jpg"
+      "imageUrl": "http://i.imgur.com/RfEJVg4.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "kaohsiung_city",
       "country": "taiwan",
-      "url": "http://i.imgur.com/tEmjzFc.jpg"
+      "imageUrl": "http://i.imgur.com/tEmjzFc.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "karachi",
       "country": "pakistan",
-      "url": "http://i.imgur.com/V4pIwoa.jpg"
+      "imageUrl": "http://i.imgur.com/V4pIwoa.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "kiev",
       "country": "ukraine",
-      "url": "http://i.imgur.com/J12RJiS.jpg"
+      "imageUrl": "http://i.imgur.com/J12RJiS.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "kuala_lumpur",
       "country": "malaysia",
-      "url": "http://i.imgur.com/P4nA9Sp.jpg"
+      "imageUrl": "http://i.imgur.com/P4nA9Sp.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "kuwait_city",
       "country": "kuwait",
-      "url": "http://i.imgur.com/C7ThgrV.jpg"
+      "imageUrl": "http://i.imgur.com/C7ThgrV.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "la_paz",
       "country": "bolivia",
-      "url": "http://i.imgur.com/4v5b6T8.jpg"
+      "imageUrl": "http://i.imgur.com/4v5b6T8.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "las_vegas",
       "country": "united_states",
-      "url": "http://i.imgur.com/Zqj1E2y.jpg"
+      "imageUrl": "http://i.imgur.com/Zqj1E2y.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "lima",
       "country": "peru",
-      "url": "http://i.imgur.com/4br0NMg.jpg"
+      "imageUrl": "http://i.imgur.com/4br0NMg.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "lisbon",
       "country": "portugal",
-      "url": "http://i.imgur.com/TiJVKrS.jpg"
+      "imageUrl": "http://i.imgur.com/TiJVKrS.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "liverpool",
       "country": "england",
-      "url": "http://i.imgur.com/tGjdZe1.jpg"
+      "imageUrl": "http://i.imgur.com/tGjdZe1.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "london",
       "country": "england",
-      "url": "http://i.imgur.com/cT82qCy.jpg"
+      "imageUrl": "http://i.imgur.com/cT82qCy.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "los_angeles",
       "country": "united_states",
-      "url": "http://i.imgur.com/hN1Sfvw.jpg"
+      "imageUrl": "http://i.imgur.com/hN1Sfvw.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "louisville",
       "country": "united_states",
-      "url": "http://i.imgur.com/9Izu877.jpg"
+      "imageUrl": "http://i.imgur.com/9Izu877.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "lyon",
       "country": "france",
-      "url": "http://i.imgur.com/xHE0pl4.jpg"
+      "imageUrl": "http://i.imgur.com/xHE0pl4.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "macau",
       "country": "macau",
-      "url": "http://i.imgur.com/xeyn49T.jpg"
+      "imageUrl": "http://i.imgur.com/xeyn49T.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "madrid",
       "country": "spain",
-      "url": "http://i.imgur.com/iXYUilD.jpg"
+      "imageUrl": "http://i.imgur.com/iXYUilD.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "malmo",
       "country": "sweden",
-      "url": "http://i.imgur.com/1BWna9z.jpg"
+      "imageUrl": "http://i.imgur.com/1BWna9z.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "manama",
       "country": "bahrain",
-      "url": "http://i.imgur.com/tUNZudO.jpg"
+      "imageUrl": "http://i.imgur.com/tUNZudO.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "manchester",
       "country": "england",
-      "url": "http://i.imgur.com/USE3r9O.jpg"
+      "imageUrl": "http://i.imgur.com/USE3r9O.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "manila",
       "country": "philippines",
-      "url": "http://i.imgur.com/6sxUZxp.jpg"
+      "imageUrl": "http://i.imgur.com/6sxUZxp.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "mecca",
       "country": "saudi_arabia",
-      "url": "http://i.imgur.com/SoUlOlt.jpg"
+      "imageUrl": "http://i.imgur.com/SoUlOlt.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "medellin",
       "country": "colombia",
-      "url": "http://i.imgur.com/usfC444.jpg"
+      "imageUrl": "http://i.imgur.com/usfC444.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "melbourne",
       "country": "australia",
-      "url": "http://i.imgur.com/3J5866W.jpg"
+      "imageUrl": "http://i.imgur.com/3J5866W.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "memphis",
       "country": "united_states",
-      "url": "http://i.imgur.com/uGsEzn5.jpg"
+      "imageUrl": "http://i.imgur.com/uGsEzn5.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "mexico_city",
       "country": "mexico",
-      "url": "http://i.imgur.com/Dnf1ZZq.jpg"
+      "imageUrl": "http://i.imgur.com/Dnf1ZZq.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "miami",
       "country": "united_states",
-      "url": "http://i.imgur.com/Nw0xdda.jpg"
+      "imageUrl": "http://i.imgur.com/Nw0xdda.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "milan",
       "country": "italy",
-      "url": "http://i.imgur.com/2JToThO.jpg"
+      "imageUrl": "http://i.imgur.com/2JToThO.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "milwaukee",
       "country": "united_states",
-      "url": "http://i.imgur.com/p2WMsrA.jpg"
+      "imageUrl": "http://i.imgur.com/p2WMsrA.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "minneapolis",
       "country": "united_states",
-      "url": "http://i.imgur.com/5ecvSvt.jpg"
+      "imageUrl": "http://i.imgur.com/5ecvSvt.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "mobile",
       "country": "united_states",
-      "url": "http://i.imgur.com/4HxN8Dk.jpg"
+      "imageUrl": "http://i.imgur.com/4HxN8Dk.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "monaco",
       "country": "monaco",
-      "url": "http://i.imgur.com/UCA3l0j.jpg"
+      "imageUrl": "http://i.imgur.com/UCA3l0j.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "monterrey",
       "country": "mexico",
-      "url": "http://i.imgur.com/lc4T2U3.jpg"
+      "imageUrl": "http://i.imgur.com/lc4T2U3.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "montevideo",
       "country": "uruguay",
-      "url": "http://i.imgur.com/LxB0T60.jpg"
+      "imageUrl": "http://i.imgur.com/LxB0T60.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "montreal",
       "country": "canada",
-      "url": "http://i.imgur.com/mNjgtac.jpg"
+      "imageUrl": "http://i.imgur.com/mNjgtac.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "moscow",
       "country": "russia",
-      "url": "http://i.imgur.com/mGtpE2L.jpg"
+      "imageUrl": "http://i.imgur.com/mGtpE2L.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "mumbai",
       "country": "india",
-      "url": "http://i.imgur.com/flbkIL7.jpg"
+      "imageUrl": "http://i.imgur.com/flbkIL7.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "munich",
       "country": "germany",
-      "url": "http://i.imgur.com/DGzvZNt.jpg"
+      "imageUrl": "http://i.imgur.com/DGzvZNt.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "nagoya",
       "country": "japan",
-      "url": "http://i.imgur.com/YIeF79D.jpg"
+      "imageUrl": "http://i.imgur.com/YIeF79D.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "naples",
       "country": "italy",
-      "url": "http://i.imgur.com/xs4EHgh.jpg"
+      "imageUrl": "http://i.imgur.com/xs4EHgh.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "nashville",
       "country": "united_states",
-      "url": "http://i.imgur.com/GnEBJvn.jpg"
+      "imageUrl": "http://i.imgur.com/GnEBJvn.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "new_orleans",
       "country": "united_states",
-      "url": "http://i.imgur.com/CakkIua.jpg"
+      "imageUrl": "http://i.imgur.com/CakkIua.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "new_york_city",
       "country": "united_states",
-      "url": "http://i.imgur.com/pfE4xRI.jpg"
+      "imageUrl": "http://i.imgur.com/pfE4xRI.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "oklahoma_city",
       "country": "united_states",
-      "url": "http://i.imgur.com/kqVYLHl.jpg"
+      "imageUrl": "http://i.imgur.com/kqVYLHl.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "orlando",
       "country": "united_states",
-      "url": "http://i.imgur.com/YmCz5CB.jpg"
+      "imageUrl": "http://i.imgur.com/YmCz5CB.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "osaka",
       "country": "japan",
-      "url": "http://i.imgur.com/sv15LBv.jpg"
+      "imageUrl": "http://i.imgur.com/sv15LBv.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "oslo",
       "country": "norway",
-      "url": "http://i.imgur.com/EngwUgZ.jpg"
+      "imageUrl": "http://i.imgur.com/EngwUgZ.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "panama_city",
       "country": "panama",
-      "url": "http://i.imgur.com/h2zWAmg.jpg"
+      "imageUrl": "http://i.imgur.com/h2zWAmg.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "paris",
       "country": "france",
-      "url": "http://i.imgur.com/43mRz9Q.jpg"
+      "imageUrl": "http://i.imgur.com/43mRz9Q.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "pattaya",
       "country": "thailand",
-      "url": "http://i.imgur.com/eMwgrMo.jpg"
+      "imageUrl": "http://i.imgur.com/eMwgrMo.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "perth",
       "country": "australia",
-      "url": "http://i.imgur.com/MGebli2.jpg"
+      "imageUrl": "http://i.imgur.com/MGebli2.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "philadelphia",
       "country": "united_states",
-      "url": "http://i.imgur.com/0vqvMm8.jpg"
+      "imageUrl": "http://i.imgur.com/0vqvMm8.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "phnom_penh",
       "country": "cambodia",
-      "url": "http://i.imgur.com/AiCVhTy.jpg"
+      "imageUrl": "http://i.imgur.com/AiCVhTy.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "phoenix",
       "country": "united_states",
-      "url": "http://i.imgur.com/yEtdl97.jpg"
+      "imageUrl": "http://i.imgur.com/yEtdl97.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "pittsburgh",
       "country": "united_states",
-      "url": "http://i.imgur.com/pdBDR6M.jpg"
+      "imageUrl": "http://i.imgur.com/pdBDR6M.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "portland",
       "country": "united_states",
-      "url": "http://i.imgur.com/P5kzrnU.jpg"
+      "imageUrl": "http://i.imgur.com/P5kzrnU.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "porto",
       "country": "portugal",
-      "url": "http://i.imgur.com/WBdbAEn.jpg"
+      "imageUrl": "http://i.imgur.com/WBdbAEn.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "prague",
       "country": "czech_republic",
-      "url": "http://i.imgur.com/NR5yyoW.jpg"
+      "imageUrl": "http://i.imgur.com/NR5yyoW.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "pyongyang",
       "country": "north_korea",
-      "url": "http://i.imgur.com/xYZ7aWT.jpg"
+      "imageUrl": "http://i.imgur.com/xYZ7aWT.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "recife",
       "country": "brazil",
-      "url": "http://i.imgur.com/9WA7hCJ.jpg"
+      "imageUrl": "http://i.imgur.com/9WA7hCJ.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "reykjavik",
       "country": "iceland",
-      "url": "http://i.imgur.com/CAflnJQ.jpg"
+      "imageUrl": "http://i.imgur.com/CAflnJQ.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "rio_de_janeiro",
       "country": "brazil",
-      "url": "http://i.imgur.com/yglVG2r.jpg"
+      "imageUrl": "http://i.imgur.com/yglVG2r.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "riyadh",
       "country": "saudi_arabia",
-      "url": "http://i.imgur.com/Jdzu2ip.jpg"
+      "imageUrl": "http://i.imgur.com/Jdzu2ip.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "rome",
       "country": "italy",
-      "url": "http://i.imgur.com/pjpURRZ.jpg"
+      "imageUrl": "http://i.imgur.com/pjpURRZ.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "rosario",
       "country": "argentina",
-      "url": "http://i.imgur.com/mLIJE0L.jpg"
+      "imageUrl": "http://i.imgur.com/mLIJE0L.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "rotterdam",
       "country": "netherlands",
-      "url": "http://i.imgur.com/eTjbFey.jpg"
+      "imageUrl": "http://i.imgur.com/eTjbFey.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "salt_lake_city",
       "country": "united_states",
-      "url": "http://i.imgur.com/3oJqK0h.jpg"
+      "imageUrl": "http://i.imgur.com/3oJqK0h.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "salvador",
       "country": "brazil",
-      "url": "http://i.imgur.com/rlLmNz4.jpg"
+      "imageUrl": "http://i.imgur.com/rlLmNz4.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "san_antonio",
       "country": "united_states",
-      "url": "http://i.imgur.com/YpQOnfh.jpg"
+      "imageUrl": "http://i.imgur.com/YpQOnfh.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "san_diego",
       "country": "united_states",
-      "url": "http://i.imgur.com/aQ3cRI9.jpg"
+      "imageUrl": "http://i.imgur.com/aQ3cRI9.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "san_francisco",
       "country": "united_states",
-      "url": "http://i.imgur.com/OzDTYoL.jpg"
+      "imageUrl": "http://i.imgur.com/OzDTYoL.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "san_juan",
       "country": "puerto_rico",
-      "url": "http://i.imgur.com/LmXKlTK.jpg"
+      "imageUrl": "http://i.imgur.com/LmXKlTK.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "santiago",
       "country": "chile",
-      "url": "http://i.imgur.com/zb5XWYp.jpg"
+      "imageUrl": "http://i.imgur.com/zb5XWYp.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "santo_domingo",
       "country": "dominican_republic",
-      "url": "http://i.imgur.com/AIqxjKY.jpg"
+      "imageUrl": "http://i.imgur.com/AIqxjKY.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "sao_paulo",
       "country": "brazil",
-      "url": "http://i.imgur.com/TXxbYi5.jpg"
+      "imageUrl": "http://i.imgur.com/TXxbYi5.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "seattle",
       "country": "united_states",
-      "url": "http://i.imgur.com/4ggZ8sD.jpg"
+      "imageUrl": "http://i.imgur.com/4ggZ8sD.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "seoul",
       "country": "south_korea",
-      "url": "http://i.imgur.com/JKOXjmI.jpg"
+      "imageUrl": "http://i.imgur.com/JKOXjmI.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "shanghai",
       "country": "china",
-      "url": "http://i.imgur.com/LqFIpJN.jpg"
+      "imageUrl": "http://i.imgur.com/LqFIpJN.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "shenzhen",
       "country": "china",
-      "url": "http://i.imgur.com/CQ0uggM.jpg"
+      "imageUrl": "http://i.imgur.com/CQ0uggM.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "singapore",
       "country": "singapore",
-      "url": "http://i.imgur.com/gZmlfHn.jpg"
+      "imageUrl": "http://i.imgur.com/gZmlfHn.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "st_louis",
       "country": "united_states",
-      "url": "http://i.imgur.com/iayQEzX.jpg"
+      "imageUrl": "http://i.imgur.com/iayQEzX.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "st_petersburg",
       "country": "russia",
-      "url": "http://i.imgur.com/99jxgnu.png"
+      "imageUrl": "http://i.imgur.com/99jxgnu.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "sydney",
       "country": "australia",
-      "url": "http://i.imgur.com/T6Crvqj.jpg"
+      "imageUrl": "http://i.imgur.com/T6Crvqj.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "taichung",
       "country": "taiwan",
-      "url": "http://i.imgur.com/g5eyHII.jpg"
+      "imageUrl": "http://i.imgur.com/g5eyHII.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "taipei",
       "country": "taiwan",
-      "url": "http://i.imgur.com/UFRPL38.jpg"
+      "imageUrl": "http://i.imgur.com/UFRPL38.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "tampa",
       "country": "united_states",
-      "url": "http://i.imgur.com/wMEso5M.jpg"
+      "imageUrl": "http://i.imgur.com/wMEso5M.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "tehran",
       "country": "iran",
-      "url": "http://i.imgur.com/kyFw5oe.jpg"
+      "imageUrl": "http://i.imgur.com/kyFw5oe.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "tel_aviv",
       "country": "israel",
-      "url": "http://i.imgur.com/Sk675EZ.jpg"
+      "imageUrl": "http://i.imgur.com/Sk675EZ.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "the_hauge",
       "country": "netherlands",
-      "url": "http://i.imgur.com/Rh4Ea2S.jpg"
+      "imageUrl": "http://i.imgur.com/Rh4Ea2S.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "tokyo",
       "country": "japan",
-      "url": "http://i.imgur.com/cJ2MpJz.jpg"
+      "imageUrl": "http://i.imgur.com/cJ2MpJz.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "toronto",
       "country": "canada",
-      "url": "http://i.imgur.com/aC47eSi.jpg"
+      "imageUrl": "http://i.imgur.com/aC47eSi.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "vancouver",
       "country": "canada",
-      "url": "http://i.imgur.com/Ec69vQr.jpg"
+      "imageUrl": "http://i.imgur.com/Ec69vQr.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "venice",
       "country": "italy",
-      "url": "http://i.imgur.com/z521PwB.jpg"
+      "imageUrl": "http://i.imgur.com/z521PwB.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "vienna",
       "country": "austria",
-      "url": "http://i.imgur.com/cd7wqYk.jpg"
+      "imageUrl": "http://i.imgur.com/cd7wqYk.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "warsaw",
       "country": "poland",
-      "url": "http://i.imgur.com/pyCuuzl.jpg"
+      "imageUrl": "http://i.imgur.com/pyCuuzl.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "washington_dc",
       "country": "united_states",
-      "url": "http://i.imgur.com/UqzYObX.jpg"
+      "imageUrl": "http://i.imgur.com/UqzYObX.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "wellington",
       "country": "new_zealand",
-      "url": "http://i.imgur.com/WIXZkgP.jpg"
+      "imageUrl": "http://i.imgur.com/WIXZkgP.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "wuhan",
       "country": "china",
-      "url": "http://i.imgur.com/bh24Rv7.jpg"
+      "imageUrl": "http://i.imgur.com/bh24Rv7.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "zagreb",
       "country": "croatia",
-      "url": "http://i.imgur.com/KC3Khss.jpg"
+      "imageUrl": "http://i.imgur.com/KC3Khss.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     },
     {
       "city": "zurich",
       "country": "switzerland",
-      "url": "http://i.imgur.com/gwtuiqR.jpg"
+      "imageUrl": "http://i.imgur.com/gwtuiqR.jpg",
+      "coordinates": "",
+      "wikiUrl": "https://wikipedia.org/wiki/"
     }
   ]
 }
