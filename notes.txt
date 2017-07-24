@@ -2,7 +2,7 @@ City Skyline Quiz App
 
 
 JSON file on the cloud:
-https://api.myjson.com/bins/11le13
+https://api.myjson.com/bins/n9ifb
 
 
 // TODO
@@ -29,6 +29,4 @@ https://api.myjson.com/bins/11le13
 
 -Polish city detail layout
 -update cloud json file
--add wiki urls to json
--validate json
 -set implicit intents for maps and wiki buttons
