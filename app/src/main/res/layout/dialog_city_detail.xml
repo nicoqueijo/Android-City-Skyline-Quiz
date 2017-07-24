@@ -1,117 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <RelativeLayout
-        android:id="@+id/container_name_image"
+        android:id="@+id/container_flag_and_name"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="9">
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
 
-        <LinearLayout
-            android:id="@+id/container_flag_and_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/flag_image"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:adjustViewBounds="true"
-                android:src="@drawable/united_states"/>
-
-            <TextView
-                android:id="@+id/city_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="15dp"
-                android:text="Los Angeles"
-                android:textSize="24dp"/>
-
-        </LinearLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/container_flag_and_name">
-
-            <ImageView
-                android:id="@+id/city_image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:adjustViewBounds="true"
-                android:padding="15dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/sample_city_image"/>
-
-        </RelativeLayout>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/container_more_info"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="5">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-                <ImageButton
-                    android:id="@+id/button_google_maps"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_margin="30dp"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/logo_google_maps"/>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-                <ImageButton
-                    android:id="@+id/button_wikipedia"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_margin="30dp"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/logo_wikipedia"/>
-
-            </RelativeLayout>
-
-        </LinearLayout>
+        <ImageView
+            android:id="@+id/flag_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/united_states"/>
 
         <TextView
-            android:id="@+id/label_more_info"
+            android:id="@+id/city_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:text="More Info"
-            android:textSize="18dp"/>
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/flag_image"
+            android:text="Los Angeles"/>
 
     </RelativeLayout>
 
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/container_city_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/container_flag_and_name"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/city_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true"
+            android:padding="5dp"
+            android:src="@drawable/sample_city_image"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/container_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/container_city_image"
+        android:layout_centerHorizontal="true">
+
+        <ImageButton
+            android:id="@+id/button_google_maps"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo_google_maps"/>
+
+        <ImageButton
+            android:id="@+id/button_wikipedia"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo_wikipedia"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
 
