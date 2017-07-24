@@ -1,5 +1,7 @@
 package com.nicoqueijo.cityskylinequiz.fragment;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
@@ -47,6 +49,26 @@ public class CityDetailDialog extends DialogFragment {
         mImageFlag.setImageResource(getDrawableResourceByName(city.getCountryName()));
         mTextCity.setText(getStringResourceByName(city.getCityName()));
         Picasso.with(getActivity()).load(city.getImageUrl()).into(mImageCity);
+
+        mButtonGoogleMaps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mapsIntent = new Intent(Intent.ACTION_VIEW);
+                mapsIntent.setData(Uri.parse("geo:" + city.getCoordinates()));
+                Intent chooser = Intent.createChooser(mapsIntent, getString(R.string.launch_maps));
+                startActivity(chooser);
+            }
+        });
+
+        mButtonWikipedia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent wikiIntent = new Intent(Intent.ACTION_VIEW);
+                wikiIntent.setData(Uri.parse(city.getWikiUrl()));
+                Intent chooser = Intent.createChooser(wikiIntent, getString(R.string.launch_browser));
+                startActivity(chooser);
+            }
+        });
     }
 
     /**

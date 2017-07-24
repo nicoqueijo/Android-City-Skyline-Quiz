@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- English -->
 <resources>
+    <!-- Labels -->
     <string name="app_name">City Skyline Quiz</string>
     <string name="play_game">Play Game</string>
     <string name="city_list">City List</string>
     <string name="settings">Settings</string>
+    <string name="launch_maps">Launch Maps</string>
+    <string name="launch_browser">Launch Browser</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>

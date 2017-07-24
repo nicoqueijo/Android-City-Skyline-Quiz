@@ -22,11 +22,9 @@ https://api.myjson.com/bins/n9ifb
 -Popup dialog fragment of particular city when clicked, press anywhere to dismiss
 -Disable landscape mode in every activity
 -Javadoc all classes and methods, remove all magic numbers
--Separate the latitude and longitude from coordinate field in model class
 
 
 // DO NEXT
 
 -Polish city detail layout
 -set implicit intents for maps and wiki buttons
--Separate the latitude and longitude from coordinate field in model class
