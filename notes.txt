@@ -21,12 +21,12 @@ https://api.myjson.com/bins/n9ifb
 -Put language and theme settings in a dialog fragment
 -Popup dialog fragment of particular city when clicked, press anywhere to dismiss
 -Disable landscape mode in every activity
--Add wiki urls in every city on json
 -Javadoc all classes and methods, remove all magic numbers
+-Separate the latitude and longitude from coordinate field in model class
 
 
 // DO NEXT
 
 -Polish city detail layout
--update cloud json file
 -set implicit intents for maps and wiki buttons
+-Separate the latitude and longitude from coordinate field in model class

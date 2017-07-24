@@ -37,7 +37,7 @@ public class MainMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu_main);
 
         mCities = new ArrayList<>();
-        parseJson();
+        parseJsonAndCreateCityObjects();
         cacheImagesAndLoadToMemory();
 
         mButtonPlayGame = (Button) findViewById(R.id.button_start_game);
@@ -79,15 +79,6 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     /**
-     * Caches the city image from each model object (if not cached already) and loads it to memory.
-     */
-    private void cacheImagesAndLoadToMemory() {
-        for (City city : mCities) {
-            Picasso.with(MainMenuActivity.this).load(city.getImageUrl()).fetch();
-        }
-    }
-
-    /**
      * Parses the JSON file stored in the assets folder and returns a String representation of it.
      *
      * @return the JSON file in String format
@@ -112,7 +103,7 @@ public class MainMenuActivity extends AppCompatActivity {
      * Takes the String JSON and puts it in a JSON object. Then populates the array of model
      * objects with the data contained in the JSON object.
      */
-    private void parseJson() {
+    private void parseJsonAndCreateCityObjects() {
         try {
             JSONObject jsonObject = new JSONObject(loadJSONFromAsset());
             JSONArray jsonArray = jsonObject.getJSONArray("cities");
@@ -125,6 +116,15 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         } catch (JSONException e) {
             e.printStackTrace();
+        }
+    }
+
+    /**
+     * Caches the city image from each model object (if not cached already) and loads it to memory.
+     */
+    private void cacheImagesAndLoadToMemory() {
+        for (City city : mCities) {
+            Picasso.with(MainMenuActivity.this).load(city.getImageUrl()).fetch();
         }
     }
 

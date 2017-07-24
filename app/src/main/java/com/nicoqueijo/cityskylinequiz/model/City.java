@@ -7,13 +7,14 @@ import java.io.Serializable;
  */
 public class City implements Serializable {
 
+    private final static int LATITUDE = 0;
+    private final static int LONGITUDE = 1;
+
     private String cityName;
     private String countryName;
     private String imageUrl;
     private String coordinates;
     private String wikiUrl;
-    // add fields to separate latitude and longitude from coordinates
-
 
     /**
      * @param cityName
@@ -98,5 +99,26 @@ public class City implements Serializable {
      */
     public void setWikiUrl(String wikiUrl) {
         this.wikiUrl = wikiUrl;
+    }
+
+    /**
+     * @return
+     */
+    private String[] splitCoordinates() {
+        return coordinates.split(",");
+    }
+
+    /**
+     * @return
+     */
+    public String getLatitude() {
+        return splitCoordinates()[LATITUDE];
+    }
+
+    /**
+     * @return
+     */
+    public String getLongitude() {
+        return splitCoordinates()[LONGITUDE];
     }
 }
