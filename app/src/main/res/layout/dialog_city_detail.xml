@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp">
 
     <RelativeLayout
         android:id="@+id/container_flag_and_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_height="0dp"
+        android:layout_weight="2"
         android:gravity="center">
 
         <ImageView
             android:id="@+id/flag_image"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginRight="5dp"
-            android:scaleType="fitCenter"
+            android:layout_width="60dp"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
             android:src="@drawable/united_states"/>
 
         <TextView
@@ -24,25 +26,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="10dp"
             android:layout_toRightOf="@id/flag_image"
-            android:text="Los Angeles"/>
+            android:text="Los Angeles"
+            android:textSize="24dp"/>
 
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/container_city_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/container_flag_and_name"
-        android:layout_centerHorizontal="true">
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="11"
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/city_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="false"
-            android:adjustViewBounds="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:padding="5dp"
             android:src="@drawable/sample_city_image"/>
 
@@ -51,22 +52,22 @@
     <LinearLayout
         android:id="@+id/container_buttons"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/container_city_image"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
+        android:layout_height="0dp"
+        android:layout_weight="6"
         android:orientation="horizontal">
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_weight="1">
 
             <ImageButton
                 android:id="@+id/button_google_maps"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:layout_margin="20dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/logo_google_maps"/>
 
@@ -75,13 +76,15 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_weight="1">
 
             <ImageButton
                 android:id="@+id/button_wikipedia"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:layout_margin="20dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/logo_wikipedia"/>
 
@@ -89,6 +92,9 @@
 
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>
+
+
+
 
 
