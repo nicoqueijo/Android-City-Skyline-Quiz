@@ -25,7 +25,6 @@ https://api.myjson.com/bins/ijzsv
 
 // DO NEXT
 
--Polish city detail layout
--Fix dialogFragment layout
+-Round corners of all images
 
 

@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -42,6 +43,7 @@ public class CityDetailDialog extends DialogFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        removeTitleBar();
         mCity = (City) getArguments().getSerializable("city");
         mImageFlag = (ImageView) view.findViewById(R.id.flag_image);
         mTextCity = (TextView) view.findViewById(R.id.city_name);
@@ -78,6 +80,13 @@ public class CityDetailDialog extends DialogFragment {
     public void onStart() {
         super.onStart();
         adjustWindowSize();
+    }
+
+    /**
+     * Removes title bar from dialog fragment that is displayed on older API versions.
+     */
+    private void removeTitleBar() {
+        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
     }
 
     /**

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +26,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     private ArrayList<City> mCities;
     private LayoutInflater mInflater;
 
-
     public CustomAdapter(Context context, ArrayList<City> cities) {
         this.mContext = context;
         this.mCities = cities;
@@ -41,27 +39,24 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         return viewHolder;
     }
 
-
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        Log.v("onBindViewHolder: ", "called on position " + position);
+        final int CURRENT_POSITION = position;
         holder.mCountryFlagImageView.setImageResource(getDrawableResourceByName
                 (mCities.get(position).getCountryName()));
         holder.mCityTextView.setText(getStringResourceByName(mCities.get(position).getCityName()));
 
-        final CityDetailDialog cityDetailDialog = new CityDetailDialog();
-        Bundle args = new Bundle();
-        args.putSerializable("city", mCities.get(position));
-        cityDetailDialog.setArguments(args);
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                CityDetailDialog cityDetailDialog = new CityDetailDialog();
+                Bundle args = new Bundle();
+                args.putSerializable("city", mCities.get(CURRENT_POSITION));
+                cityDetailDialog.setArguments(args);
                 cityDetailDialog.show(((FragmentActivity) mContext).getSupportFragmentManager(), "Open Dialog");
             }
         });
     }
-
 
     @Override
     public int getItemCount() {

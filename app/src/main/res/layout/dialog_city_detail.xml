@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- REMOVE TEST ELEMENTS BEFORE DEPLOYING (DELETE FROM DRAWABLES TOO)-->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -10,13 +11,15 @@
         android:id="@+id/container_flag_and_name"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp"
         android:layout_weight="2"
         android:gravity="center">
 
         <ImageView
             android:id="@+id/flag_image"
-            android:layout_width="60dp"
-            android:layout_height="45dp"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
             android:src="@drawable/united_states"/>
@@ -26,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="5dp"
             android:layout_toRightOf="@id/flag_image"
             android:text="Los Angeles"
             android:textSize="24dp"/>
@@ -54,6 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="6"
+        android:baselineAligned="false"
         android:orientation="horizontal">
 
         <RelativeLayout
@@ -68,6 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_margin="20dp"
+                android:background="#00000000"
                 android:scaleType="fitCenter"
                 android:src="@drawable/logo_google_maps"/>
 
@@ -85,6 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_margin="20dp"
+                android:background="#00000000"
                 android:scaleType="fitCenter"
                 android:src="@drawable/logo_wikipedia"/>
 
