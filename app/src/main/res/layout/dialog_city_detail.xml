@@ -15,6 +15,7 @@
             android:id="@+id/flag_image"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_marginRight="5dp"
             android:scaleType="fitCenter"
             android:src="@drawable/united_states"/>
 
@@ -23,6 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
             android:layout_toRightOf="@id/flag_image"
             android:text="Los Angeles"/>
 
@@ -30,7 +32,7 @@
 
     <RelativeLayout
         android:id="@+id/container_city_image"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/container_flag_and_name"
         android:layout_centerHorizontal="true">
@@ -39,37 +41,54 @@
             android:id="@+id/city_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_centerInParent="false"
             android:adjustViewBounds="true"
             android:padding="5dp"
             android:src="@drawable/sample_city_image"/>
 
     </RelativeLayout>
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/container_buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/container_city_image"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/button_google_maps"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_alignParentLeft="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/logo_google_maps"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
-        <ImageButton
-            android:id="@+id/button_wikipedia"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_alignParentRight="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/logo_wikipedia"/>
+            <ImageButton
+                android:id="@+id/button_google_maps"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/logo_google_maps"/>
 
-    </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/button_wikipedia"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/logo_wikipedia"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>
+
 

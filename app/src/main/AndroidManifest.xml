@@ -12,8 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.MainMenuActivity"
-            android:screenOrientation="portrait">
+            android:name=".activity.MainMenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -21,12 +20,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.CityListActivity"
-            android:screenOrientation="portrait">
+            android:name=".activity.CityListActivity">
         </activity>
         <activity
-            android:name=".activity.QuizActivity"
-            android:screenOrientation="portrait">
+            android:name=".activity.QuizActivity">
         </activity>
     </application>
 
