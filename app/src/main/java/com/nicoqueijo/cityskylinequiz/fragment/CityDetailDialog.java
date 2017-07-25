@@ -74,11 +74,16 @@ public class CityDetailDialog extends DialogFragment {
 
     @Override
     public void onStart() {
+        super.onStart();
+        adjustWindowSize();
+    }
 
-        // Move all this code to its own method and call it from here
+    /**
+     *
+     */
+    private void adjustWindowSize() {
         final double WIDTH_PERCENTAGE = 0.90;
         final double HEIGHT_PERCENTAGE = 0.65;
-        super.onStart();
         int width = getResources().getDisplayMetrics().widthPixels;
         int height = getResources().getDisplayMetrics().heightPixels;
         int newWidth = (int) (WIDTH_PERCENTAGE * (double) width);
