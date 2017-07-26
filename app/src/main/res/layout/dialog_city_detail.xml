@@ -12,9 +12,9 @@
         android:id="@+id/container_flag_and_name"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
         android:layout_weight="202"
         android:gravity="center"
-        android:paddingBottom="3dp"
         android:paddingTop="3dp">
 
         <ImageView
@@ -52,6 +52,7 @@
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
             android:background="@drawable/round_outline"
+            android:scaleType="fitXY"
             tools:src="@drawable/los_angeles"/>
 
     </RelativeLayout>
@@ -59,7 +60,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="606">
+        android:layout_weight="606"
+        android:paddingTop="5dp">
 
         <LinearLayout
             android:id="@+id/container_buttons"

@@ -53,6 +53,8 @@ public class CityDetailDialog extends DialogFragment {
         if (MainMenuActivity.isRunningLollipopOrHigher()) {
             mImageCity.setClipToOutline(true);
             mImageFlag.setClipToOutline(true);
+        } else {
+            // Sorry, can only round corners on devices running Lollipop or higher :(
         }
 
         mImageFlag.setImageResource(getDrawableResourceByName(mCity.getCountryName()));
@@ -97,7 +99,7 @@ public class CityDetailDialog extends DialogFragment {
      *
      */
     private void adjustWindowSize() {
-        final double WIDTH_PERCENTAGE = 0.90;
+        final double WIDTH_PERCENTAGE = 0.92;
         final double HEIGHT_PERCENTAGE = 0.65;
         int width = getResources().getDisplayMetrics().widthPixels;
         int height = getResources().getDisplayMetrics().heightPixels;

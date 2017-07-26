@@ -48,6 +48,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                 (mCities.get(position).getCountryName()));
         if (MainMenuActivity.isRunningLollipopOrHigher()) {
             holder.mCountryFlagImageView.setClipToOutline(true);
+        } else {
+            // Sorry, can only round corners on devices running Lollipop or higher :(
         }
         holder.mCityTextView.setText(getStringResourceByName(mCities.get(position).getCityName()));
         Picasso.with(mContext).load(mCities.get(position).getImageUrl()).fetch();
