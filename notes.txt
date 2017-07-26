@@ -21,10 +21,12 @@ https://api.myjson.com/bins/ijzsv
 -Put language and theme settings in a dialog fragment
 -Disable landscape mode in every activity
 -Javadoc all classes and methods, remove all magic numbers
+-Add back button on every activity that is not the main menu
 
 
 // DO NEXT
 
 -Round corners of all images
+-Put 1px black outline on each flag image
 
 

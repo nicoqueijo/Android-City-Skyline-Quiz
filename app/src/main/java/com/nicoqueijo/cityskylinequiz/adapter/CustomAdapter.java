@@ -64,10 +64,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     }
 
     /**
-     * Retrieves String resources using a String instead of an int.
+     * Retrieves string resources using a String instead of an int.
      *
-     * @param name name of the String resource
-     * @return the String resource
+     * @param name name of the string resource
+     * @return the string resource
      */
     private String getStringResourceByName(String name) {
         int resId = mContext.getResources().getIdentifier(name, "string", mContext.getPackageName());

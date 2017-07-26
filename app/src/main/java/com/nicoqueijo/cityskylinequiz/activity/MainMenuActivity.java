@@ -129,10 +129,10 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     /**
-     * Retrieves String resources using a String instead of an int.
+     * Retrieves string resources using a String instead of an int.
      *
-     * @param name name of the String resource
-     * @return the String resource
+     * @param name name of the string resource
+     * @return the string resource
      */
     private String getStringResourceByName(String name) {
         int resId = getResources().getIdentifier(name, "string", this.getPackageName());
