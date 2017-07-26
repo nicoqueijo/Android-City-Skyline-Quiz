@@ -5,7 +5,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -99,12 +98,6 @@ public class CityDetailDialog extends DialogFragment {
         int height = getResources().getDisplayMetrics().heightPixels;
         int newWidth = (int) (WIDTH_PERCENTAGE * (double) width);
         int newHeight = (int) (HEIGHT_PERCENTAGE * (double) height);
-        // REMOVE THESE LOG STATEMENTS BEFORE DEPLOYING
-        Log.v("Dimensions", "Original width: " + width + "");
-        Log.v("Dimensions", "Original height: " + height + "");
-        Log.v("Dimensions", "New width: " + newWidth + "");
-        Log.v("Dimensions", "New height: " + newHeight + "");
-        ///////////////////////////////////////////////
         getDialog().getWindow().setLayout(newWidth, newHeight);
     }
 
