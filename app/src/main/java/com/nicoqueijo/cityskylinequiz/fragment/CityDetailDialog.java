@@ -50,6 +50,11 @@ public class CityDetailDialog extends DialogFragment {
         mImageCity = (ImageView) view.findViewById(R.id.city_image);
         mButtonGoogleMaps = (ImageButton) view.findViewById(R.id.button_google_maps);
         mButtonWikipedia = (ImageButton) view.findViewById(R.id.button_wikipedia);
+
+        if (isRunningOnTablet()) {
+            mImageCity.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        }
+
         if (MainMenuActivity.isRunningLollipopOrHigher()) {
             mImageCity.setClipToOutline(true);
             mImageFlag.setClipToOutline(true);
@@ -82,6 +87,9 @@ public class CityDetailDialog extends DialogFragment {
         });
     }
 
+    /**
+     * Overrides the class's onStart() method to make a call to adjust the window size.
+     */
     @Override
     public void onStart() {
         super.onStart();
@@ -96,7 +104,9 @@ public class CityDetailDialog extends DialogFragment {
     }
 
     /**
-     *
+     * Adjusts the dialog fragment's window size in accordance to the device resolution.
+     * Sets the dialog fragment's window width to 92% of the device's screen width.
+     * Sets the dialog fragment's window height to 65% of the device's screen height.
      */
     private void adjustWindowSize() {
         final double WIDTH_PERCENTAGE = 0.92;
@@ -106,6 +116,28 @@ public class CityDetailDialog extends DialogFragment {
         int newWidth = (int) (WIDTH_PERCENTAGE * (double) width);
         int newHeight = (int) (HEIGHT_PERCENTAGE * (double) height);
         getDialog().getWindow().setLayout(newWidth, newHeight);
+    }
+
+    /**
+     * Determines the aspect ratio of the running device by dividing the height by the width.
+     *
+     * @return the aspect ratio of the running device
+     */
+    private double getAspectRatio() {
+        double width = (double) getResources().getDisplayMetrics().widthPixels;
+        double height = (double) getResources().getDisplayMetrics().heightPixels;
+        return (height / width);
+    }
+
+    /**
+     * Assuming the aspect ratio of a standard phone is 1.777 (the division of 16 by 9) this method
+     * tries to determine if the aspect ratio of the running device is of that of a tablet.
+     *
+     * @return whether the aspect ratio on the running device resembles a tablet.
+     */
+    public boolean isRunningOnTablet() {
+        final double MINIMUM_ASPECT_RATIO_OF_A_PHONE = 1.6;
+        return getAspectRatio() < MINIMUM_ASPECT_RATIO_OF_A_PHONE;
     }
 
     /**
