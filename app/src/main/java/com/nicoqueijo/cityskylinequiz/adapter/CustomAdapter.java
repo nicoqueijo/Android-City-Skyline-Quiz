@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.fragment.CityDetailDialog;
 import com.nicoqueijo.cityskylinequiz.model.City;
+import com.squareup.picasso.Picasso;
 import com.turingtechnologies.materialscrollbar.INameableAdapter;
 
 import java.util.ArrayList;
@@ -45,6 +46,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         holder.mCountryFlagImageView.setImageResource(getDrawableResourceByName
                 (mCities.get(position).getCountryName()));
         holder.mCityTextView.setText(getStringResourceByName(mCities.get(position).getCityName()));
+        Picasso.with(mContext).load(mCities.get(position).getImageUrl()).fetch();
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
