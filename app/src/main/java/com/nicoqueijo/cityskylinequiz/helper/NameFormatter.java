@@ -11,7 +11,7 @@ public class NameFormatter {
      * letter of each word capitalized and spaces as delimiters.
      * For example: "buenos_aires" --> "Buenos Aires"
      *
-     * @param rawName
+     * @param rawName the unformatted name
      * @return the formatted name
      */
     public static String nameFormatter(String rawName) {
