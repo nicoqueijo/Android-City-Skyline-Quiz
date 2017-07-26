@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
+import com.nicoqueijo.cityskylinequiz.activity.MainMenuActivity;
 import com.nicoqueijo.cityskylinequiz.fragment.CityDetailDialog;
 import com.nicoqueijo.cityskylinequiz.model.City;
 import com.squareup.picasso.Picasso;
@@ -45,6 +46,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         final int CURRENT_POSITION = position;
         holder.mCountryFlagImageView.setImageResource(getDrawableResourceByName
                 (mCities.get(position).getCountryName()));
+        if (MainMenuActivity.isRunningLollipopOrHigher()) {
+            holder.mCountryFlagImageView.setClipToOutline(true);
+        }
         holder.mCityTextView.setText(getStringResourceByName(mCities.get(position).getCityName()));
         Picasso.with(mContext).load(mCities.get(position).getImageUrl()).fetch();
 

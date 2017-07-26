@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
+import com.nicoqueijo.cityskylinequiz.activity.MainMenuActivity;
 import com.nicoqueijo.cityskylinequiz.model.City;
 import com.squareup.picasso.Picasso;
 
@@ -49,6 +50,10 @@ public class CityDetailDialog extends DialogFragment {
         mImageCity = (ImageView) view.findViewById(R.id.city_image);
         mButtonGoogleMaps = (ImageButton) view.findViewById(R.id.button_google_maps);
         mButtonWikipedia = (ImageButton) view.findViewById(R.id.button_wikipedia);
+        if (MainMenuActivity.isRunningLollipopOrHigher()) {
+            mImageCity.setClipToOutline(true);
+            mImageFlag.setClipToOutline(true);
+        }
 
         mImageFlag.setImageResource(getDrawableResourceByName(mCity.getCountryName()));
         mTextCity.setText(getStringResourceByName(mCity.getCityName()));
