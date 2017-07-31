@@ -59,7 +59,9 @@ public class MainMenuActivity extends AppCompatActivity {
         mButtonPlayGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intentPlayGame = new Intent(MainMenuActivity.this, QuizActivity.class);
+                intentPlayGame.putExtra("cityList", mCities);
+                startActivity(intentPlayGame);
             }
         });
 
@@ -81,7 +83,9 @@ public class MainMenuActivity extends AppCompatActivity {
         mButtonSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intentSettings = new Intent(MainMenuActivity.this, SettingsActivity.class);
+                intentSettings.putExtra("cityList", mCities);
+                startActivity(intentSettings);
             }
         });
 
