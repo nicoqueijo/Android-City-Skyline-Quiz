@@ -14,18 +14,32 @@ https://api.myjson.com/bins/ijzsv
 
 -Create play game activity with:
 	Play modes: 
-		All cities: no fault | faults
-		10 questions, 20 questions, 50 questions
-		60 seconds unlimited questions
+		All cities:
+			Faults allowed
+			No faults
+		Timed:
+			30 secs
+			60 secs
+			120 secs
+		Untimed:
+			10 questions
+			20 questions
+			50 questions
+			
+-Settings:
+	Language
+	Theme
+	Reset scores
+			
 -Score: 0, 0.25, 0.50, 1.0 per question depending on attempts
 -Try to put 3 second countdown splash screen before game starts
 
--Put language and theme settings in a dialog fragment
+-Put settings in a dialog fragment
 -Disable landscape mode in every activity
 -Javadoc all classes and methods, remove all magic numbers
 -Add back button on every activity that is not the main menu
 
 
 // DO NEXT
-
+-Settings Activity (change language app-wide)
 
