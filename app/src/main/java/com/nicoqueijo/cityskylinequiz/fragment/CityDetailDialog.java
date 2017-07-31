@@ -88,7 +88,7 @@ public class CityDetailDialog extends DialogFragment {
     }
 
     /**
-     * Overrides the class's onStart() method to make a call to adjust the window size.
+     * Overrides the class's onStart() method so the window size could be adjusted at run-time.
      */
     @Override
     public void onStart() {

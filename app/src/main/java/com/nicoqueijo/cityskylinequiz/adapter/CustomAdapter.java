@@ -1,5 +1,7 @@
 package com.nicoqueijo.cityskylinequiz.adapter;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -27,6 +29,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     private Context mContext;
     private ArrayList<City> mCities;
     private LayoutInflater mInflater;
+    private int mPreviousPosition = 0;
 
     public CustomAdapter(Context context, ArrayList<City> cities) {
         this.mContext = context;
@@ -43,6 +46,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
+        if (position > mPreviousPosition) { // Scrolling down
+            animate(holder, true);
+        } else { // Scrolling up
+            animate(holder, false);
+        }
+        mPreviousPosition = position;
+
         final int CURRENT_POSITION = position;
         holder.mCountryFlagImageView.setImageResource(getDrawableResourceByName
                 (mCities.get(position).getCountryName()));
@@ -105,6 +115,27 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
             c = '#';
         }
         return c;
+    }
+
+    /**
+     * Animates the holder being binded by shifting it up or down 250 pixels for a duration of half
+     * a second depending on whether the user is scrolling up or down.
+     *
+     * @param holder    the current holder to animate
+     * @param goingDown whether user is scrolling down
+     */
+    private void animate(RecyclerView.ViewHolder holder, boolean goingDown) {
+        final int ORIGINAL_POSITION = 0;
+        final int DOWNSCROLL_STARTING_POSITION = 250;
+        final int UPSCROLL_STARTING_POSITION = -250;
+        final int HALF_SECOND = 500;
+        AnimatorSet animatorSet = new AnimatorSet();
+        ObjectAnimator animatorTranslateY = ObjectAnimator.ofFloat(holder.itemView, "translationY",
+                goingDown ? DOWNSCROLL_STARTING_POSITION : UPSCROLL_STARTING_POSITION,
+                ORIGINAL_POSITION);
+        animatorTranslateY.setDuration(HALF_SECOND);
+        animatorSet.playTogether(animatorTranslateY);
+        animatorSet.start();
     }
 
     /**

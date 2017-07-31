@@ -25,8 +25,6 @@ https://api.myjson.com/bins/ijzsv
 
 
 // DO NEXT
-
--Round corners of all images
--Put 1px black outline on each flag image
-
+-Give recyclerView scrolling animations (watch youtube video)
+-Put back buttons on nonMainActivities Action bars to simulate the device back button 
 
