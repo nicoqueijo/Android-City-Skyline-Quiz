@@ -24,6 +24,7 @@ public class CityListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city_list);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent intentCityList = getIntent();
         mCities = (ArrayList<City>) intentCityList.getSerializableExtra("cityList");

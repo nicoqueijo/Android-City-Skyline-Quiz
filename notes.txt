@@ -25,6 +25,5 @@ https://api.myjson.com/bins/ijzsv
 
 
 // DO NEXT
--Give recyclerView scrolling animations (watch youtube video)
 -Put back buttons on nonMainActivities Action bars to simulate the device back button 
 

@@ -23,7 +23,8 @@
         <activity
             android:name=".activity.CityListActivity"
             android:label="@string/city_list"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:parentActivityName=".activity.MainMenuActivity" >
         </activity>
         <activity
             android:name=".activity.QuizActivity"

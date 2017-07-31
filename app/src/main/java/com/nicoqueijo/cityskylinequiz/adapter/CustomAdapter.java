@@ -24,7 +24,8 @@ import java.util.ArrayList;
 /**
  *
  */
-public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> implements INameableAdapter {
+public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> implements
+        INameableAdapter {
 
     private Context mContext;
     private ArrayList<City> mCities;
@@ -46,9 +47,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        if (position > mPreviousPosition) { // Scrolling down
+        if (position > mPreviousPosition) {
             animate(holder, true);
-        } else { // Scrolling up
+        } else {
             animate(holder, false);
         }
         mPreviousPosition = position;
@@ -71,7 +72,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                 Bundle args = new Bundle();
                 args.putSerializable("city", mCities.get(CURRENT_POSITION));
                 cityDetailDialog.setArguments(args);
-                cityDetailDialog.show(((FragmentActivity) mContext).getSupportFragmentManager(), "Open Dialog");
+                cityDetailDialog.show(((FragmentActivity) mContext).getSupportFragmentManager(),
+                        "Open Dialog");
             }
         });
     }
