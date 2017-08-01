@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <Button
         android:id="@+id/button_start_game"
@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_margin="15dp"
-        android:text="@string/play_game"/>
+        android:text="@string/play_game" />
 
     <Button
         android:id="@+id/button_city_list"
@@ -18,7 +18,7 @@
         android:layout_below="@+id/button_start_game"
         android:layout_centerHorizontal="true"
         android:layout_margin="15dp"
-        android:text="@string/city_list"/>
+        android:text="@string/city_list" />
 
     <Button
         android:id="@+id/button_settings"
@@ -27,6 +27,6 @@
         android:layout_below="@+id/button_city_list"
         android:layout_centerHorizontal="true"
         android:layout_margin="15dp"
-        android:text="@string/settings"/>
+        android:text="@string/settings" />
 
 </RelativeLayout>

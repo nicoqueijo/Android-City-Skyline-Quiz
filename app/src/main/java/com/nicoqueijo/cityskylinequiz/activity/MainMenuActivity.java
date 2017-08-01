@@ -84,7 +84,6 @@ public class MainMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intentSettings = new Intent(MainMenuActivity.this, SettingsActivity.class);
-                intentSettings.putExtra("cityList", mCities);
                 startActivity(intentSettings);
             }
         });

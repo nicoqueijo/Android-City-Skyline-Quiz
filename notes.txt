@@ -37,9 +37,9 @@ https://api.myjson.com/bins/ijzsv
 -Put settings in a dialog fragment
 -Disable landscape mode in every activity
 -Javadoc all classes and methods, remove all magic numbers
--Add back button on every activity that is not the main menu
+-Organize strings in strings.xml by activites/fragments/etc
 
 
 // DO NEXT
--Settings Activity (change language app-wide)
+- Try moving helper methods to its own class in its own package
 
