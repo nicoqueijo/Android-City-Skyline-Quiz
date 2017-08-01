@@ -4,15 +4,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="20dp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
@@ -31,12 +32,12 @@
         </LinearLayout>
 
         <Switch
+            android:id="@+id/theme_switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true" />
+            android:layout_gravity="center_vertical" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
     <View
         android:layout_width="match_parent"
