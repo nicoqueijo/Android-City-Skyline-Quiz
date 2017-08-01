@@ -5,6 +5,7 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/container_settings_theme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -32,7 +33,7 @@
         </LinearLayout>
 
         <Switch
-            android:id="@+id/theme_switch"
+            android:id="@+id/switch_theme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical" />
@@ -47,6 +48,7 @@
         android:background="@color/colorPrimary" />
 
     <LinearLayout
+        android:id="@+id/container_settings_language"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -75,6 +77,7 @@
         android:background="@color/colorPrimary" />
 
     <LinearLayout
+        android:id="@+id/container_settings_scores"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
