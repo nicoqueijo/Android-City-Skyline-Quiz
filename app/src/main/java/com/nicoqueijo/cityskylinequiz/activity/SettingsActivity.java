@@ -36,14 +36,14 @@ public class SettingsActivity extends AppCompatActivity {
         mLanguageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                // open a dialog fragment to change language
             }
         });
 
         mScoresView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                // open dialog fragment to confirm scores reset
             }
         });
 
@@ -53,7 +53,5 @@ public class SettingsActivity extends AppCompatActivity {
                 // do the same as themeview listener
             }
         });
-
-
     }
 }

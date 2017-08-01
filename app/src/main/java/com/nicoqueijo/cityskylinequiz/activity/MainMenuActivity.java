@@ -31,15 +31,6 @@ public class MainMenuActivity extends AppCompatActivity {
     private Button mButtonCityList;
     private Button mButtonSettings;
 
-    /**
-     * Determines if device is running on Lollipop or higher (API level 21).
-     *
-     * @return whether the API level of this device is 21 or higher
-     */
-    public static boolean isRunningLollipopOrHigher() {
-        return android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP;
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -138,26 +129,5 @@ public class MainMenuActivity extends AppCompatActivity {
         for (City city : mCities) {
             Picasso.with(MainMenuActivity.this).load(city.getImageUrl()).fetch();
         }
-    }
-
-    /**
-     * Retrieves string resources using a String instead of an int.
-     *
-     * @param name name of the string resource
-     * @return the string resource
-     */
-    private String getStringResourceByName(String name) {
-        int resId = getResources().getIdentifier(name, "string", this.getPackageName());
-        return getString(resId);
-    }
-
-    /**
-     * Retrieves drawable resources using a String instead of an int.
-     *
-     * @param name name of the drawable resource
-     * @return the drawable resource id
-     */
-    private int getDrawableResourceByName(String name) {
-        return getResources().getIdentifier(name, "drawable", this.getPackageName());
     }
 }

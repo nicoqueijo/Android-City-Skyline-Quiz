@@ -7,10 +7,9 @@ https://api.myjson.com/bins/ijzsv
 
 // TODO
 
--Internationalise all cityName and countryName names in string.xml
--Keep hiscores stored in an SQLite
+-Internationalize all cityName and countryName names in strings.xml
+-Keep hiscores stored in an SQLite database
 -Use shared preferences to save language settings and light/dark theme
--Use gradients
 
 -Create play game activity with:
 	Play modes: 
@@ -34,12 +33,16 @@ https://api.myjson.com/bins/ijzsv
 -Score: 0, 0.25, 0.50, 1.0 per question depending on attempts
 -Try to put 3 second countdown splash screen before game starts
 
--Put settings in a dialog fragment
 -Disable landscape mode in every activity
 -Javadoc all classes and methods, remove all magic numbers
 -Organize strings in strings.xml by activites/fragments/etc
+-Move helper methods as static methods in their own class
 
 
 // DO NEXT
-- Try moving helper methods to its own class in its own package
+-Change theme between dark/light keeping the action bar on switch button toggle
+-Watch videos on android locale
+-Make dialog fragment for language list in xml and java
+-Make dialog fragment for clear scores in xml and java
+
 

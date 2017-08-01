@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.activity.MainMenuActivity;
 import com.nicoqueijo.cityskylinequiz.fragment.CityDetailDialog;
+import com.nicoqueijo.cityskylinequiz.helper.ApiChecker;
 import com.nicoqueijo.cityskylinequiz.model.City;
 import com.squareup.picasso.Picasso;
 import com.turingtechnologies.materialscrollbar.INameableAdapter;
@@ -58,7 +59,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         final int CURRENT_POSITION = position;
         holder.mCountryFlagImageView.setImageResource(getDrawableResourceByName
                 (mCities.get(position).getCountryName()));
-        if (MainMenuActivity.isRunningLollipopOrHigher()) {
+        if (ApiChecker.isRunningLollipopOrHigher()) {
             holder.mCountryFlagImageView.setClipToOutline(true);
         } else {
             // Sorry, can only round corners on devices running Lollipop or higher :(

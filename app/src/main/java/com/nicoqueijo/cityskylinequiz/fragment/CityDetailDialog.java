@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
-import com.nicoqueijo.cityskylinequiz.activity.MainMenuActivity;
+import com.nicoqueijo.cityskylinequiz.helper.ApiChecker;
 import com.nicoqueijo.cityskylinequiz.model.City;
 import com.squareup.picasso.Picasso;
 
@@ -55,7 +55,7 @@ public class CityDetailDialog extends DialogFragment {
             mImageCity.setScaleType(ImageView.ScaleType.FIT_CENTER);
         }
 
-        if (MainMenuActivity.isRunningLollipopOrHigher()) {
+        if (ApiChecker.isRunningLollipopOrHigher()) {
             mImageCity.setClipToOutline(true);
             mImageFlag.setClipToOutline(true);
         } else {
