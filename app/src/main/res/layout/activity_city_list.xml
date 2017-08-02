@@ -18,6 +18,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        app:msb_barColour="@color/colorAccent"
         app:msb_handleColour="@color/colorPrimary"
         app:msb_lightOnTouch="false"
         app:msb_recyclerView="@id/recycler_city_list" />

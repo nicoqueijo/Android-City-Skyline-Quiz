@@ -37,9 +37,11 @@ https://api.myjson.com/bins/ijzsv
 -Javadoc all classes and methods, remove all magic numbers
 -Organize strings in strings.xml by activites/fragments/etc
 -Move helper methods as static methods in their own class
+-Group duplicated xml code in styles.xml
 
 
 // DO NEXT
+-Learn shared preferences (slideNerd has video and pdf on it, videos folder)
 -Change theme between dark/light keeping the action bar on switch button toggle
 -Watch videos on android locale
 -Make dialog fragment for language list in xml and java
