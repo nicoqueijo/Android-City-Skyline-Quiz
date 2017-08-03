@@ -38,10 +38,12 @@ https://api.myjson.com/bins/ijzsv
 -Organize strings in strings.xml by activites/fragments/etc
 -Move helper methods as static methods in their own class
 -Group duplicated xml code in styles.xml
+-Show a toast when user clears scores
+-Use shared preferences to check if first time running app
 
 
 // DO NEXT
--Learn shared preferences (slideNerd has video and pdf on it, videos folder)
+-Learn shared preferences (slideNerd has video and pdf on it, videos folder) also look at stackoverflow bookmarked thread
 -Change theme between dark/light keeping the action bar on switch button toggle
 -Watch videos on android locale
 -Make dialog fragment for language list in xml and java

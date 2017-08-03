@@ -1,15 +1,19 @@
 package com.nicoqueijo.cityskylinequiz.activity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import com.nicoqueijo.cityskylinequiz.R;
 
 public class SettingsActivity extends AppCompatActivity {
 
+    private SharedPreferences sharedPreferences;
     private LinearLayout mThemeView;
     private LinearLayout mLanguageView;
     private LinearLayout mScoresView;
@@ -18,6 +22,8 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        sharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
+        setTheme(sharedPreferences.getInt("theme", R.style.AppThemeLight));
         setContentView(R.layout.activity_settings);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -25,11 +31,21 @@ public class SettingsActivity extends AppCompatActivity {
         mLanguageView = (LinearLayout) findViewById(R.id.container_settings_language);
         mScoresView = (LinearLayout) findViewById(R.id.container_settings_scores);
         mThemeSwitch = (Switch) findViewById(R.id.switch_theme);
+        mThemeSwitch.setChecked(sharedPreferences.getInt("theme", R.style.AppThemeDark) == R.style.AppThemeDark);
 
         mThemeView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mThemeSwitch.setChecked(!mThemeSwitch.isChecked());
+                toggleThemeSwitch();
+                loadTheme();
+            }
+        });
+
+        mThemeSwitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(SettingsActivity.this, mThemeSwitch.isChecked() + "", Toast.LENGTH_SHORT).show();
+                loadTheme();
             }
         });
 
@@ -46,12 +62,26 @@ public class SettingsActivity extends AppCompatActivity {
                 // open dialog fragment to confirm scores reset
             }
         });
+    }
 
-        mThemeSwitch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // do the same as themeview listener
-            }
-        });
+    private void toggleThemeSwitch() {
+        mThemeSwitch.setChecked(!mThemeSwitch.isChecked());
+        Toast.makeText(SettingsActivity.this, mThemeSwitch.isChecked() + "", Toast.LENGTH_SHORT).show();
+    }
+
+
+    public void loadTheme() {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        if (mThemeSwitch.isChecked()) {
+            editor.putInt("theme", R.style.AppThemeDark);
+            editor.commit();
+        } else {
+            editor.putInt("theme", R.style.AppThemeLight);
+            editor.commit();
+        }
+    }
+
+    public void saveLanguage(View view) {
+
     }
 }
