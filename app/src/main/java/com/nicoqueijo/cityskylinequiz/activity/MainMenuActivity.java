@@ -86,6 +86,12 @@ public class MainMenuActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setTheme(sharedPreferences.getInt("theme", R.style.AppThemeLight));
+    }
+
     /**
      * Parses the JSON file stored in the assets folder and returns a String representation of it.
      *
