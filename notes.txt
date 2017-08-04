@@ -44,7 +44,6 @@ https://api.myjson.com/bins/ijzsv
 
 
 // DO NEXT
--Learn shared preferences (slideNerd has video and pdf on it, videos folder) also look at stackoverflow bookmarked thread
 -Change theme between dark/light keeping the action bar on switch button toggle
 -Watch videos on android locale
 -Make dialog fragment for language list in xml and java

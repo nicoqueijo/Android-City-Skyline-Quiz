@@ -18,6 +18,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 // JSON file on the cloud:
@@ -86,10 +87,35 @@ public class MainMenuActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Checks if the theme has been changed. If so the current activity restarts so the new theme
+     * can be applied to all views.
+     */
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
-        setTheme(sharedPreferences.getInt("theme", R.style.AppThemeLight));
+        if (sharedPreferences.getInt("theme", R.style.AppThemeLight) != getThemeId()) {
+            this.finish();
+            final Intent intent = this.getIntent();
+            this.startActivity(intent);
+        }
+    }
+
+    /**
+     * Gets the resource id of the current theme.
+     *
+     * @return the resource id as an int.
+     */
+    int getThemeId() {
+        try {
+            Class<?> wrapper = Context.class;
+            Method method = wrapper.getMethod("getThemeResId");
+            method.setAccessible(true);
+            return (Integer) method.invoke(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
     /**

@@ -14,6 +14,7 @@ import com.nicoqueijo.cityskylinequiz.R;
 
 public class SettingsActivity extends AppCompatActivity {
 
+    AppCompatActivity thisActivity = SettingsActivity.this;
     private SharedPreferences sharedPreferences;
     private LinearLayout mThemeView;
     private LinearLayout mLanguageView;
@@ -39,14 +40,15 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 toggleThemeSwitch();
                 loadTheme();
+                thisActivity.recreate();
             }
         });
 
         mThemeSwitch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(SettingsActivity.this, mThemeSwitch.isChecked() + "", Toast.LENGTH_SHORT).show();
                 loadTheme();
+                thisActivity.recreate();
             }
         });
 
@@ -67,7 +69,6 @@ public class SettingsActivity extends AppCompatActivity {
 
     private void toggleThemeSwitch() {
         mThemeSwitch.setChecked(!mThemeSwitch.isChecked());
-        Toast.makeText(SettingsActivity.this, mThemeSwitch.isChecked() + "", Toast.LENGTH_SHORT).show();
     }
 
 
