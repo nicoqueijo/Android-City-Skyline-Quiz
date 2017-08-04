@@ -42,6 +42,7 @@ https://api.myjson.com/bins/ijzsv
 -Show a toast when user clears scores
 -Use shared preferences to check if first time running app
 -Refactor duplicated code
+-Look for a launcher icon
 
 
 // DO NEXT

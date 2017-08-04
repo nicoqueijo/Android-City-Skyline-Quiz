@@ -32,7 +32,7 @@ public class SettingsActivity extends AppCompatActivity {
         mLanguageView = (LinearLayout) findViewById(R.id.container_settings_language);
         mScoresView = (LinearLayout) findViewById(R.id.container_settings_scores);
         mThemeSwitch = (Switch) findViewById(R.id.switch_theme);
-        mThemeSwitch.setChecked(sharedPreferences.getInt("theme", R.style.AppThemeDark) == R.style.AppThemeDark);
+        mThemeSwitch.setChecked(sharedPreferences.getInt("theme", R.style.AppThemeLight) == R.style.AppThemeDark);
 
         mThemeView.setOnClickListener(new View.OnClickListener() {
             @Override
