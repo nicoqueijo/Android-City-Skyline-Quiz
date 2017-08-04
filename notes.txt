@@ -41,10 +41,10 @@ https://api.myjson.com/bins/ijzsv
 -Add icons to each activity actionbar
 -Show a toast when user clears scores
 -Use shared preferences to check if first time running app
+-Refactor duplicated code
 
 
 // DO NEXT
--Change theme between dark/light keeping the action bar on switch button toggle
 -Watch videos on android locale
 -Make dialog fragment for language list in xml and java
 -Make dialog fragment for clear scores in xml and java

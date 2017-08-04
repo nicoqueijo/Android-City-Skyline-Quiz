@@ -1,14 +1,13 @@
 package com.nicoqueijo.cityskylinequiz.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Switch;
-import android.widget.Toast;
 
 import com.nicoqueijo.cityskylinequiz.R;
 
@@ -39,16 +38,16 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 toggleThemeSwitch();
-                loadTheme();
-                thisActivity.recreate();
+                saveTheme();
+                restartActivity();
             }
         });
 
         mThemeSwitch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadTheme();
-                thisActivity.recreate();
+                saveTheme();
+                restartActivity();
             }
         });
 
@@ -67,12 +66,30 @@ public class SettingsActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Finishes and then starts the activity with a new intent so onCreate gets called and as a
+     * result the new theme is applied.
+     */
+    public void restartActivity() {
+        thisActivity.finish();
+        final Intent intent = thisActivity.getIntent();
+        thisActivity.startActivity(intent);
+    }
+
+    /**
+     * Toggles the status of the theme switch so click listeners of other views can manipulate the
+     * theme switch.
+     */
     private void toggleThemeSwitch() {
         mThemeSwitch.setChecked(!mThemeSwitch.isChecked());
     }
 
 
-    public void loadTheme() {
+    /**
+     * Saves the theme status on sharedPreferences according to the status of the theme switch. If
+     * theme switch is checked, it saved the theme as dark. Else it saves the theme as light.
+     */
+    public void saveTheme() {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         if (mThemeSwitch.isChecked()) {
             editor.putInt("theme", R.style.AppThemeDark);
