@@ -1,6 +1,11 @@
 package com.nicoqueijo.cityskylinequiz.fragment;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,6 +16,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
@@ -23,12 +29,14 @@ import com.squareup.picasso.Picasso;
  */
 public class CityDetailDialog extends DialogFragment {
 
+    private SharedPreferences sharedPreferences;
     private City mCity;
     private ImageView mImageFlag;
     private TextView mTextCity;
     private ImageView mImageCity;
     private ImageButton mButtonGoogleMaps;
     private ImageButton mButtonWikipedia;
+    private TextView mMoreInfoTextView;
 
     public CityDetailDialog() {
     }
@@ -37,6 +45,7 @@ public class CityDetailDialog extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+        sharedPreferences = getActivity().getSharedPreferences("settings", Context.MODE_PRIVATE);
         return inflater.inflate(R.layout.dialog_city_detail, container, false);
     }
 
@@ -50,6 +59,13 @@ public class CityDetailDialog extends DialogFragment {
         mImageCity = (ImageView) view.findViewById(R.id.city_image);
         mButtonGoogleMaps = (ImageButton) view.findViewById(R.id.button_google_maps);
         mButtonWikipedia = (ImageButton) view.findViewById(R.id.button_wikipedia);
+        mMoreInfoTextView = (TextView) view.findViewById(R.id.more_info_label);
+
+        if (sharedPreferences.getInt("theme", R.style.AppThemeLight) == R.style.AppThemeDark) {
+            mMoreInfoTextView.setBackgroundColor(getResources().getColor(R.color.darkBackground));
+        } else {
+            mMoreInfoTextView.setBackgroundColor(getResources().getColor(R.color.lightBackground));
+        }
 
         if (isRunningOnTablet()) {
             mImageCity.setScaleType(ImageView.ScaleType.FIT_CENTER);
