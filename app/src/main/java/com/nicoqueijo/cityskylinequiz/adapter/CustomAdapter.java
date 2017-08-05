@@ -17,6 +17,7 @@ import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.activity.MainMenuActivity;
 import com.nicoqueijo.cityskylinequiz.fragment.CityDetailDialog;
 import com.nicoqueijo.cityskylinequiz.helper.ApiChecker;
+import com.nicoqueijo.cityskylinequiz.helper.ResourceByNameRetriever;
 import com.nicoqueijo.cityskylinequiz.model.City;
 import com.squareup.picasso.Picasso;
 import com.turingtechnologies.materialscrollbar.INameableAdapter;
@@ -57,14 +58,15 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         mPreviousPosition = position;
 
         final int CURRENT_POSITION = position;
-        holder.mCountryFlagImageView.setImageResource(getDrawableResourceByName
-                (mCities.get(position).getCountryName()));
+        holder.mCountryFlagImageView.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
+                (mCities.get(position).getCountryName(), mContext));
         if (ApiChecker.isRunningLollipopOrHigher()) {
             holder.mCountryFlagImageView.setClipToOutline(true);
         } else {
             // Sorry, can only round corners on devices running Lollipop or higher :(
         }
-        holder.mCityTextView.setText(getStringResourceByName(mCities.get(position).getCityName()));
+        holder.mCityTextView.setText(ResourceByNameRetriever.getStringResourceByName(mCities.
+                get(position).getCityName(), mContext));
         Picasso.with(mContext).load(mCities.get(position).getImageUrl()).fetch();
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -83,27 +85,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     @Override
     public int getItemCount() {
         return mCities.size();
-    }
-
-    /**
-     * Retrieves string resources using a String instead of an int.
-     *
-     * @param name name of the string resource
-     * @return the string resource
-     */
-    private String getStringResourceByName(String name) {
-        int resId = mContext.getResources().getIdentifier(name, "string", mContext.getPackageName());
-        return mContext.getString(resId);
-    }
-
-    /**
-     * Retrieves drawable resources using a String instead of an int.
-     *
-     * @param name name of the drawable resource
-     * @return the drawable resource id
-     */
-    private int getDrawableResourceByName(String name) {
-        return mContext.getResources().getIdentifier(name, "drawable", mContext.getPackageName());
     }
 
     /**

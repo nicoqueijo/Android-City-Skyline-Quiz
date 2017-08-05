@@ -21,6 +21,7 @@ import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.helper.ApiChecker;
+import com.nicoqueijo.cityskylinequiz.helper.ResourceByNameRetriever;
 import com.nicoqueijo.cityskylinequiz.model.City;
 import com.squareup.picasso.Picasso;
 
@@ -78,8 +79,10 @@ public class CityDetailDialog extends DialogFragment {
             // Sorry, can only round corners on devices running Lollipop or higher :(
         }
 
-        mImageFlag.setImageResource(getDrawableResourceByName(mCity.getCountryName()));
-        mTextCity.setText(getStringResourceByName(mCity.getCityName()));
+        mImageFlag.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(mCity.
+                getCountryName(), getActivity()));
+        mTextCity.setText(ResourceByNameRetriever.getStringResourceByName(mCity.getCityName(),
+                getActivity()));
         Picasso.with(getActivity()).load(mCity.getImageUrl()).into(mImageCity);
 
         mButtonGoogleMaps.setOnClickListener(new View.OnClickListener() {
@@ -154,26 +157,5 @@ public class CityDetailDialog extends DialogFragment {
     public boolean isRunningOnTablet() {
         final double MINIMUM_ASPECT_RATIO_OF_A_PHONE = 1.6;
         return getAspectRatio() < MINIMUM_ASPECT_RATIO_OF_A_PHONE;
-    }
-
-    /**
-     * Retrieves string resources using a String instead of an int.
-     *
-     * @param name name of the string resource
-     * @return the string resource
-     */
-    private String getStringResourceByName(String name) {
-        int resId = getActivity().getResources().getIdentifier(name, "string", getActivity().getPackageName());
-        return getActivity().getString(resId);
-    }
-
-    /**
-     * Retrieves drawable resources using a String instead of an int.
-     *
-     * @param name name of the drawable resource
-     * @return the drawable resource id
-     */
-    private int getDrawableResourceByName(String name) {
-        return getActivity().getResources().getIdentifier(name, "drawable", getActivity().getPackageName());
     }
 }
