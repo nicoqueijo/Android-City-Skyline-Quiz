@@ -44,10 +44,20 @@ https://api.myjson.com/bins/ijzsv
 -Refactor duplicated code
 -Look for a launcher icon
 
+-Put methods to get resources by name in its own static class passing the context as an argument
+-Record if it's first time running app in shared preferences
+-Group common app status statements on MainActivity in one method
+-Change more info background to container's background color
+-Change wikipedia logo to something that can be read on dark theme
+-Add menu on city list to sort by country or city (use mergesort)
+-Change color of dialog lines
+-Change font to material design font (Roboto)?
+-Find a launcher icon
+-Rate app button on main activity menu
 
 // DO NEXT
--Watch videos on android locale
 -Make dialog fragment for language list in xml and java
 -Make dialog fragment for clear scores in xml and java
+-Watch videos on android locale
 
 

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -41,6 +42,15 @@ public class MainMenuActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
         setTheme(sharedPreferences.getInt("theme", R.style.AppThemeLight));
         setContentView(R.layout.activity_menu_main);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        // do something if it's the first time launching the app
+        // (maybe splash screen for image caching)
+        if (sharedPreferences.getBoolean("first_launch", true)) {
+            // Enter statements to do when first time launching here
+            editor.putBoolean("first_launch", false);
+            editor.commit();
+        }
 
         mCities = new ArrayList<>();
         parseJsonAndCreateCityObjects();
@@ -160,6 +170,7 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     // MAKE SPLASH SCREEN FOR THIS IF CACHING THEM FOR THE FIRST TIME!!!!
+
     /**
      * Caches the city image from each model object (if not cached already) and loads it to memory.
      */
