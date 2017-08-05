@@ -2,11 +2,15 @@ package com.nicoqueijo.cityskylinequiz.helper;
 
 import android.content.Context;
 
+/**
+ * Provides two methods to retrieve resources by their name instead of their int ids.
+ */
 public class ResourceByNameRetriever {
     /**
      * Retrieves string resources using a String instead of an int.
      *
-     * @param name name of the string resource
+     * @param name    name of the string resource
+     * @param context the context from which this method is being called
      * @return the string resource
      */
     public static String getStringResourceByName(String name, Context context) {
@@ -17,7 +21,8 @@ public class ResourceByNameRetriever {
     /**
      * Retrieves drawable resources using a String instead of an int.
      *
-     * @param name name of the drawable resource
+     * @param name    name of the drawable resource
+     * @param context the context from which this method is being called
      * @return the drawable resource id
      */
     public static int getDrawableResourceByName(String name, Context context) {
