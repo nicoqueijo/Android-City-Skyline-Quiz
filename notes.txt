@@ -48,14 +48,13 @@ https://api.myjson.com/bins/ijzsv
 
 
 // DO NEXT
--edit the wikis for new cities
 -add new cities and countries to strings.xml
 -Update json cloud (validate first)
 -Make dialog fragment for language list in xml and java
 -Make dialog fragment for clear scores in xml and java
 -Watch videos on android locale
 
-POSSIBLE NEW CITIES:
+NEW CITIES:
 -Austin
 -Brisbane
 -Calgary
@@ -77,7 +76,7 @@ POSSIBLE NEW CITIES:
 -Marseille
 -Nanchang
 -Nanjing
--Niagra Falls
+-Niagara Falls
 -Porto Alegre
 -Pretoria
 -Qingdao
