@@ -2,7 +2,7 @@ City Skyline Quiz App
 
 
 JSON file on the cloud:
-https://api.myjson.com/bins/ijzsv
+https://api.myjson.com/bins/x3m9t
 
 
 // TODO
@@ -38,57 +38,16 @@ https://api.myjson.com/bins/ijzsv
 -Look for a launcher icon
 -Group common app status statements on MainActivity in one method
 -Change more info background to container's background color
--Add menu on city list to sort by country or city (use mergesort)
+-Add menu option on main activity to report errors via email(implicit intent)
+-Add menu option on main activity to submit suggestions via email (implicit intent)
+-Add menu option on city list to sort by country or city (use mergesort)
 -Change font to material design font (Roboto)?
--Find a launcher icon
 -Rate app button on main activity menu
--Change color of dialog lines
--Change wikipedia logo to something that can be read on dark theme
--Option to report errors via email in mainActivity menu
-
+-Change color of dialog lines to font color of that theme
 
 // DO NEXT
--add new cities and countries to strings.xml
--Update json cloud (validate first)
 -Make dialog fragment for language list in xml and java
 -Make dialog fragment for clear scores in xml and java
 -Watch videos on android locale
-
-NEW CITIES:
--Austin
--Brisbane
--Calgary
--Changzhou
--Chengdu
--Dhaka
--Donetsk
--Dusseldorf
--Edmonton
--Essen
--Fort Worth
--Fukuoka
--Gold Coast
--Hangzhou
--Havana
--Jacksonville
--Kobe
--Lagos
--Marseille
--Nanchang
--Nanjing
--Niagara Falls
--Porto Alegre
--Pretoria
--Qingdao
--Sapporo
--Shenyang
--Tianjin
--Vilnius
--Winnipeg
--Xiamen
--Yokohama
--Zhengzhou
-
-
 
 

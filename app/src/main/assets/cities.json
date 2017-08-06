@@ -1233,6 +1233,13 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Saint_Petersburg"
     },
     {
+      "city": "stockholm",
+      "country": "sweden",
+      "imageUrl": "http://i.imgur.com/zvKdydg.jpg",
+      "coordinates": "59.329323,18.068581",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Stockholm"
+    },
+    {
       "city": "sydney",
       "country": "australia",
       "imageUrl": "http://i.imgur.com/T6Crvqj.jpg",
