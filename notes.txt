@@ -43,11 +43,14 @@ https://api.myjson.com/bins/ijzsv
 -Find a launcher icon
 -Rate app button on main activity menu
 -Change color of dialog lines
--add a few more cities
 -Change wikipedia logo to something that can be read on dark theme
+-Option to report errors via email in mainActivity menu
+
 
 // DO NEXT
--Add flags of new countries in drawable folder
+-edit the wikis for new cities
+-add new cities and countries to strings.xml
+-Update json cloud (validate first)
 -Make dialog fragment for language list in xml and java
 -Make dialog fragment for clear scores in xml and java
 -Watch videos on android locale
@@ -64,7 +67,7 @@ POSSIBLE NEW CITIES:
 -Edmonton
 -Essen
 -Fort Worth
--Fukoaka
+-Fukuoka
 -Gold Coast
 -Hangzhou
 -Havana
@@ -81,16 +84,14 @@ POSSIBLE NEW CITIES:
 -Sapporo
 -Shenyang
 -Tianjin
-
-
-
--Vancouver
--Yokohama
-
--Zhengzhou
--Xiamen
--Vilnius 
+-Vilnius
 -Winnipeg
+-Xiamen
+-Yokohama
+-Zhengzhou
+
+ 
+
 
 
 
