@@ -62,6 +62,7 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // open dialog fragment to confirm scores reset
+                // show toast if user chose to clear scores
             }
         });
     }

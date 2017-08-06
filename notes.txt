@@ -7,10 +7,6 @@ https://api.myjson.com/bins/ijzsv
 
 // TODO
 
--Internationalize all cityName and countryName names in strings.xml
--Keep hiscores stored in an SQLite database
--Use shared preferences to save language settings and light/dark theme
-
 -Create play game activity with:
 	Play modes: 
 		All cities:
@@ -25,14 +21,12 @@ https://api.myjson.com/bins/ijzsv
 			20 questions
 			50 questions
 			
--Settings:
-	Language
-	Theme
-	Reset scores
-			
 -Score: 0, 0.25, 0.50, 1.0 per question depending on attempts
 -Try to put 3 second countdown splash screen before game starts
 
+-Internationalize all cityName and countryName names in strings.xml
+-Keep hiscores stored in an SQLite database
+-Use shared preferences to save language settings
 -Disable landscape mode in every activity
 -Javadoc all classes and methods, remove all magic numbers
 -Organize strings in strings.xml by activites/fragments/etc
@@ -40,22 +34,64 @@ https://api.myjson.com/bins/ijzsv
 -Group duplicated xml code in styles.xml
 -Add icons to each activity actionbar
 -Show a toast when user clears scores
--Use shared preferences to check if first time running app
 -Refactor duplicated code
 -Look for a launcher icon
-
 -Group common app status statements on MainActivity in one method
 -Change more info background to container's background color
--Change wikipedia logo to something that can be read on dark theme
 -Add menu on city list to sort by country or city (use mergesort)
--Change color of dialog lines
 -Change font to material design font (Roboto)?
 -Find a launcher icon
 -Rate app button on main activity menu
+-Change color of dialog lines
+-add a few more cities
+-Change wikipedia logo to something that can be read on dark theme
 
 // DO NEXT
+-Add flags of new countries in drawable folder
 -Make dialog fragment for language list in xml and java
 -Make dialog fragment for clear scores in xml and java
 -Watch videos on android locale
+
+POSSIBLE NEW CITIES:
+-Austin
+-Brisbane
+-Calgary
+-Changzhou
+-Chengdu
+-Dhaka
+-Donetsk
+-Dusseldorf
+-Edmonton
+-Essen
+-Fort Worth
+-Fukoaka
+-Gold Coast
+-Hangzhou
+-Havana
+-Jacksonville
+-Kobe
+-Lagos
+-Marseille
+-Nanchang
+-Nanjing
+-Niagra Falls
+-Porto Alegre
+-Pretoria
+-Qingdao
+-Sapporo
+-Shenyang
+-Tianjin
+
+
+
+-Vancouver
+-Yokohama
+
+-Zhengzhou
+-Xiamen
+-Vilnius 
+-Winnipeg
+
+
 
 

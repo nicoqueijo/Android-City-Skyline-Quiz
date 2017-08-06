@@ -71,6 +71,13 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Auckland"
     },
     {
+      "city": "austin",
+      "country": "united_states",
+      "imageUrl": "http://i.imgur.com/ltpgGxH.jpg",
+      "coordinates": "-36.848460,174.763332",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Auckland"
+    },
+    {
       "city": "baku",
       "country": "azerbaijan",
       "imageUrl": "http://i.imgur.com/IvIEzvf.jpg",
@@ -155,6 +162,13 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Boston"
     },
     {
+      "city": "brisbane",
+      "country": "australia",
+      "imageUrl": "http://i.imgur.com/HkqzbK9.jpg",
+      "coordinates": "4.710989,-74.072092",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Bogotá"
+    },
+    {
       "city": "brussels",
       "country": "belgium",
       "imageUrl": "http://i.imgur.com/xKqgLMm.jpg",
@@ -197,6 +211,13 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Cairo"
     },
     {
+      "city": "calgary",
+      "country": "canada",
+      "imageUrl": "http://i.imgur.com/bFDZXca.jpg",
+      "coordinates": "30.044420,31.235712",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Cairo"
+    },
+    {
       "city": "cali",
       "country": "colombia",
       "imageUrl": "http://i.imgur.com/kSR4mQN.jpg",
@@ -232,9 +253,23 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Casablanca"
     },
     {
+      "city": "changzhou",
+      "country": "china",
+      "imageUrl": "http://i.imgur.com/iMxyg6N.jpg",
+      "coordinates": "33.573110,-7.589843",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Casablanca"
+    },
+    {
       "city": "charlotte",
       "country": "united_states",
       "imageUrl": "http://i.imgur.com/UUZGOb1.jpg",
+      "coordinates": "35.227087,-80.843127",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Charlotte,_North_Carolina"
+    },
+    {
+      "city": "chengdu",
+      "country": "china",
+      "imageUrl": "http://i.imgur.com/FkCdepj.jpg",
       "coordinates": "35.227087,-80.843127",
       "wikiUrl": "https://en.wikipedia.org/wiki/Charlotte,_North_Carolina"
     },
@@ -302,9 +337,23 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Detroit"
     },
     {
+      "city": "dhaka",
+      "country": "bangladesh",
+      "imageUrl": "http://i.imgur.com/oLyiBU1.jpg",
+      "coordinates": "42.331427,-83.045754",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Detroit"
+    },
+    {
       "city": "doha",
       "country": "qatar",
       "imageUrl": "http://i.imgur.com/RUVClTH.jpg",
+      "coordinates": "25.285447,51.53104",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Doha"
+    },
+    {
+      "city": "donetsk",
+      "country": "ukraine",
+      "imageUrl": "http://i.imgur.com/kBI8hAK.jpg",
       "coordinates": "25.285447,51.53104",
       "wikiUrl": "https://en.wikipedia.org/wiki/Doha"
     },
@@ -330,6 +379,13 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Dublin"
     },
     {
+      "city": "dusseldorf",
+      "country": "germany",
+      "imageUrl": "http://i.imgur.com/Q7iUzfz.jpg",
+      "coordinates": "53.349805,-6.26031",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Dublin"
+    },
+    {
       "city": "edinburgh",
       "country": "scotland",
       "imageUrl": "http://i.imgur.com/ZZMKAsc.jpg",
@@ -337,9 +393,30 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Edinburgh"
     },
     {
+      "city": "edmonton",
+      "country": "canada",
+      "imageUrl": "http://i.imgur.com/YTPiNlV.jpg",
+      "coordinates": "55.953252,-3.188267",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Edinburgh"
+    },
+    {
+      "city": "essen",
+      "country": "germany",
+      "imageUrl": "http://i.imgur.com/nafUZRK.jpg",
+      "coordinates": "55.953252,-3.188267",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Edinburgh"
+    },
+    {
       "city": "florence",
       "country": "italy",
       "imageUrl": "http://i.imgur.com/6K6ZK8x.jpg",
+      "coordinates": "43.769560,11.255814",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Florence"
+    },
+    {
+      "city": "fort_worth",
+      "country": "united_states",
+      "imageUrl": "http://i.imgur.com/t9pZkH0.jpg",
       "coordinates": "43.769560,11.255814",
       "wikiUrl": "https://en.wikipedia.org/wiki/Florence"
     },
@@ -358,9 +435,23 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Frankfurt"
     },
     {
+      "city": "fukuoka",
+      "country": "japan",
+      "imageUrl": "http://i.imgur.com/4k7iaLj.jpg",
+      "coordinates": "50.110922,8.682127",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Frankfurt"
+    },
+    {
       "city": "glasgow",
       "country": "scotland",
       "imageUrl": "http://i.imgur.com/k1h0cER.jpg",
+      "coordinates": "55.864237,-4.251806",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Glasgow"
+    },
+    {
+      "city": "gold_coast",
+      "country": "australia",
+      "imageUrl": "http://i.imgur.com/50uJKEF.jpg",
       "coordinates": "55.864237,-4.251806",
       "wikiUrl": "https://en.wikipedia.org/wiki/Glasgow"
     },
@@ -386,9 +477,23 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Hamburg"
     },
     {
+      "city": "hangzhou",
+      "country": "china",
+      "imageUrl": "http://i.imgur.com/MwKZTKb.jpg",
+      "coordinates": "53.551085,9.993682",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Hamburg"
+    },
+    {
       "city": "hanoi",
       "country": "vietnam",
       "imageUrl": "http://i.imgur.com/kEyRyKv.jpg",
+      "coordinates": "21.027764,105.83416",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Hanoi"
+    },
+    {
+      "city": "havana",
+      "country": "cuba",
+      "imageUrl": "http://i.imgur.com/LdnZi5U.jpg",
       "coordinates": "21.027764,105.83416",
       "wikiUrl": "https://en.wikipedia.org/wiki/Hanoi"
     },
@@ -449,6 +554,13 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Istanbul"
     },
     {
+      "city": "jacksonville",
+      "country": "united_states",
+      "imageUrl": "http://i.imgur.com/zwiCg71.jpg",
+      "coordinates": "41.008238,28.978359",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Istanbul"
+    },
+    {
       "city": "jakarta",
       "country": "indonesia",
       "imageUrl": "http://i.imgur.com/aIZgf0t.jpg",
@@ -498,6 +610,13 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Kiev"
     },
     {
+      "city": "kobe",
+      "country": "japan",
+      "imageUrl": "http://i.imgur.com/U7k7cPg.jpg",
+      "coordinates": "50.450100,30.5234",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Kiev"
+    },
+    {
       "city": "kuala_lumpur",
       "country": "malaysia",
       "imageUrl": "http://i.imgur.com/P4nA9Sp.jpg",
@@ -515,6 +634,13 @@
       "city": "la_paz",
       "country": "bolivia",
       "imageUrl": "http://i.imgur.com/4v5b6T8.jpg",
+      "coordinates": "-16.489689,-68.119294",
+      "wikiUrl": "https://en.wikipedia.org/wiki/La_Paz"
+    },
+    {
+      "city": "lagos",
+      "country": "nigeria",
+      "imageUrl": "http://i.imgur.com/3GlxMAU.jpg",
       "coordinates": "-16.489689,-68.119294",
       "wikiUrl": "https://en.wikipedia.org/wiki/La_Paz"
     },
@@ -613,6 +739,13 @@
       "city": "manila",
       "country": "philippines",
       "imageUrl": "http://i.imgur.com/6sxUZxp.jpg",
+      "coordinates": "14.599512,120.984219",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Manila"
+    },
+    {
+      "city": "marseille",
+      "country": "france",
+      "imageUrl": "http://i.imgur.com/Reld0tA.jpg",
       "coordinates": "14.599512,120.984219",
       "wikiUrl": "https://en.wikipedia.org/wiki/Manila"
     },
@@ -743,6 +876,20 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Nagoya"
     },
     {
+      "city": "nanchang",
+      "country": "china",
+      "imageUrl": "http://i.imgur.com/7u1H3XP.jpg",
+      "coordinates": "35.181446,136.906398",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Nagoya"
+    },
+    {
+      "city": "nanjing",
+      "country": "china",
+      "imageUrl": "http://i.imgur.com/tAs5QrD.jpg",
+      "coordinates": "35.181446,136.906398",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Nagoya"
+    },
+    {
       "city": "naples",
       "country": "italy",
       "imageUrl": "http://i.imgur.com/xs4EHgh.jpg",
@@ -767,6 +914,13 @@
       "city": "new_york_city",
       "country": "united_states",
       "imageUrl": "http://i.imgur.com/pfE4xRI.jpg",
+      "coordinates": "40.712784,-74.005941",
+      "wikiUrl": "https://en.wikipedia.org/wiki/New_York_City"
+    },
+    {
+      "city": "niagra_falls",
+      "country": "canada",
+      "imageUrl": "http://i.imgur.com/cy8MIFY.jpg",
       "coordinates": "40.712784,-74.005941",
       "wikiUrl": "https://en.wikipedia.org/wiki/New_York_City"
     },
@@ -869,6 +1023,13 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Porto"
     },
     {
+      "city": "porto_alegre",
+      "country": "brazil",
+      "imageUrl": "http://i.imgur.com/rY9awU6.jpg",
+      "coordinates": "41.157944,-8.629105",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Porto"
+    },
+    {
       "city": "prague",
       "country": "czech_republic",
       "imageUrl": "http://i.imgur.com/NR5yyoW.jpg",
@@ -876,9 +1037,23 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Prague"
     },
     {
+      "city": "pretoria",
+      "country": "south_africa",
+      "imageUrl": "http://i.imgur.com/jPjGVtS.jpg",
+      "coordinates": "50.075538,14.4378",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Prague"
+    },
+    {
       "city": "pyongyang",
       "country": "north_korea",
       "imageUrl": "http://i.imgur.com/xYZ7aWT.jpg",
+      "coordinates": "39.039219,125.762524",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Pyongyang"
+    },
+    {
+      "city": "qingdao",
+      "country": "china",
+      "imageUrl": "http://i.imgur.com/Vml55ys.jpg",
       "coordinates": "39.039219,125.762524",
       "wikiUrl": "https://en.wikipedia.org/wiki/Pyongyang"
     },
@@ -995,6 +1170,13 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/São_Paulo"
     },
     {
+      "city": "sapporo",
+      "country": "japan",
+      "imageUrl": "http://i.imgur.com/ehp9fJn.jpg",
+      "coordinates": "-23.550520,-46.633309",
+      "wikiUrl": "https://en.wikipedia.org/wiki/São_Paulo"
+    },
+    {
       "city": "seattle",
       "country": "united_states",
       "imageUrl": "http://i.imgur.com/4ggZ8sD.jpg",
@@ -1012,6 +1194,13 @@
       "city": "shanghai",
       "country": "china",
       "imageUrl": "http://i.imgur.com/LqFIpJN.jpg",
+      "coordinates": "31.230390,121.473702",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Shanghai"
+    },
+    {
+      "city": "shenyang",
+      "country": "china",
+      "imageUrl": "http://i.imgur.com/95nZpeL.jpg",
       "coordinates": "31.230390,121.473702",
       "wikiUrl": "https://en.wikipedia.org/wiki/Shanghai"
     },
@@ -1093,6 +1282,13 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/The_Hague"
     },
     {
+      "city": "tianjin",
+      "country": "china",
+      "imageUrl": "http://i.imgur.com/cSmUp76.jpg",
+      "coordinates": "52.070498,4.3007",
+      "wikiUrl": "https://en.wikipedia.org/wiki/The_Hague"
+    },
+    {
       "city": "tokyo",
       "country": "japan",
       "imageUrl": "http://i.imgur.com/cJ2MpJz.jpg",
@@ -1109,7 +1305,7 @@
     {
       "city": "vancouver",
       "country": "canada",
-      "imageUrl": "http://i.imgur.com/Ec69vQr.jpg",
+      "imageUrl": "http://i.imgur.com/eV8YHaI.jpg",
       "coordinates": "49.282729,-123.120738",
       "wikiUrl": "https://en.wikipedia.org/wiki/Vancouver"
     },
@@ -1124,6 +1320,20 @@
       "city": "vienna",
       "country": "austria",
       "imageUrl": "http://i.imgur.com/cd7wqYk.jpg",
+      "coordinates": "48.208174,16.373819",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Vienna"
+    },
+    {
+      "city": "vienna",
+      "country": "austria",
+      "imageUrl": "http://i.imgur.com/cd7wqYk.jpg",
+      "coordinates": "48.208174,16.373819",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Vienna"
+    },
+    {
+      "city": "vilnius",
+      "country": "lithuania",
+      "imageUrl": "http://i.imgur.com/GtyXuet.jpg",
       "coordinates": "48.208174,16.373819",
       "wikiUrl": "https://en.wikipedia.org/wiki/Vienna"
     },
@@ -1149,6 +1359,13 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Wellington"
     },
     {
+      "city": "winnipeg",
+      "country": "canada",
+      "imageUrl": "http://i.imgur.com/hecKGEM.jpg",
+      "coordinates": "-41.286460,174.776236",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Wellington"
+    },
+    {
       "city": "wuhan",
       "country": "china",
       "imageUrl": "http://i.imgur.com/bh24Rv7.jpg",
@@ -1156,9 +1373,30 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Wuhan"
     },
     {
+      "city": "xiamen",
+      "country": "china",
+      "imageUrl": "http://i.imgur.com/WSj8mfs.jpg",
+      "coordinates": "30.592849,114.305539",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Wuhan"
+    },
+    {
+      "city": "yokohama",
+      "country": "japan",
+      "imageUrl": "http://i.imgur.com/FL7ztiC.jpg",
+      "coordinates": "30.592849,114.305539",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Wuhan"
+    },
+    {
       "city": "zagreb",
       "country": "croatia",
       "imageUrl": "http://i.imgur.com/KC3Khss.jpg",
+      "coordinates": "45.815011,15.981919",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Zagreb"
+    },
+    {
+      "city": "zhengzhou",
+      "country": "china",
+      "imageUrl": "http://i.imgur.com/c68p88Q.jpg",
       "coordinates": "45.815011,15.981919",
       "wikiUrl": "https://en.wikipedia.org/wiki/Zagreb"
     },
