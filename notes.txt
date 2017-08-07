@@ -42,10 +42,11 @@ https://api.myjson.com/bins/x3m9t
 -Add menu option on city list to sort by country or city (use mergesort)
 -Change font to material design font (Roboto)?
 -Rate app button on main activity menu
+-Draw out app architecture and post on github README
+-change xml attributes (left -> start), (right -> end) to support arabic
 
 
 // DO NEXT
--Adjust space in dialog fragment for symmetry
 -Make dialog fragment for language list in xml and java
 -Make dialog fragment for clear scores in xml and java
 -Watch videos on android locale
