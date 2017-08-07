@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.nicoqueijo.cityskylinequiz.R;
@@ -17,6 +19,7 @@ import com.nicoqueijo.cityskylinequiz.helper.CornerRounder;
 public class LanguageChooserDialog extends DialogFragment {
 
     private SharedPreferences sharedPreferences;
+    private Button cancelButton;
     private ImageView unitedKingdomFlag;
     private ImageView spainFlag;
     private ImageView franceFlag;
@@ -49,6 +52,8 @@ public class LanguageChooserDialog extends DialogFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         removeTitleBar();
+
+        cancelButton = (Button) view.findViewById(R.id.cancel_button);
         unitedKingdomFlag = (ImageView) view.findViewById(R.id.flag_united_kingdom);
         spainFlag = (ImageView) view.findViewById(R.id.flag_spain);
         franceFlag = (ImageView) view.findViewById(R.id.flag_france);
@@ -65,6 +70,7 @@ public class LanguageChooserDialog extends DialogFragment {
         saudiArabiaFlag = (ImageView) view.findViewById(R.id.flag_saudi_arabia);
         indiaFlag = (ImageView) view.findViewById(R.id.flag_india);
         malaysiaFlag = (ImageView) view.findViewById(R.id.flag_malaysia);
+
         CornerRounder.roundImageCorners(unitedKingdomFlag, spainFlag, franceFlag, germanyFlag,
                 italyFlag, netherlandsFlag, portugalFlag, polandFlag, russiaFlag, turkeyFlag,
                 chinaFlag, japanFlag, southKoreaFlag, saudiArabiaFlag, indiaFlag, malaysiaFlag);
