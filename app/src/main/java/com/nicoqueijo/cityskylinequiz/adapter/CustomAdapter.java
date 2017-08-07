@@ -6,7 +6,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
-import com.nicoqueijo.cityskylinequiz.activity.MainMenuActivity;
 import com.nicoqueijo.cityskylinequiz.fragment.CityDetailDialog;
-import com.nicoqueijo.cityskylinequiz.helper.ApiChecker;
 import com.nicoqueijo.cityskylinequiz.helper.CornerRounder;
 import com.nicoqueijo.cityskylinequiz.helper.ResourceByNameRetriever;
 import com.nicoqueijo.cityskylinequiz.model.City;

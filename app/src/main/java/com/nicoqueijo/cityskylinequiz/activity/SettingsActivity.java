@@ -1,20 +1,23 @@
 package com.nicoqueijo.cityskylinequiz.activity;
 
+import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Switch;
-import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
+import com.nicoqueijo.cityskylinequiz.fragment.LanguageChooserDialog;
 
 public class SettingsActivity extends AppCompatActivity {
 
     AppCompatActivity thisActivity = SettingsActivity.this;
+    FragmentManager fragmentManager = getFragmentManager();
     private SharedPreferences sharedPreferences;
     private LinearLayout mThemeView;
     private LinearLayout mLanguageView;
@@ -55,7 +58,8 @@ public class SettingsActivity extends AppCompatActivity {
         mLanguageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // open a dialog fragment to change language
+                LanguageChooserDialog languageChooserDialog = new LanguageChooserDialog();
+                languageChooserDialog.show(fragmentManager, "Open Dialog");
             }
         });
 
@@ -103,6 +107,6 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     public void saveLanguage(View view) {
-
+        // should probably do this in the language fragment?
     }
 }

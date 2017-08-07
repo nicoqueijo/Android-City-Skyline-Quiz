@@ -47,7 +47,10 @@ https://api.myjson.com/bins/x3m9t
 
 
 // DO NEXT
--Make dialog fragment for language list in xml and java
+-Resize the language dialog
+-Round corners of all flags in language dialog
+-Group radio buttons in language dialog
+-Set listeners for each language in language dialog
 -Make dialog fragment for clear scores in xml and java
 -Watch videos on android locale
 

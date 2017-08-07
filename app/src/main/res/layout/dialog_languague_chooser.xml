@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -8,9 +7,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:text="@string/settings_language_title"
-        android:textSize="28dp" />
+        android:textSize="24dp"
+        android:textStyle="bold" />
 
     <ScrollView
         android:id="@+id/scroll_view"
@@ -42,20 +42,22 @@
                     android:layout_marginRight="5dp" />
 
                 <ImageView
+                    android:id="@+id/flag_united_kingdom"
                     android:layout_width="50dp"
                     android:layout_height="36dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/round_outline"
-                    tools:src="@drawable/united_kingdom" />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/united_kingdom" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:textSize="24dp"
-                    tools:text="@string/english" />
+                    android:text="@string/english"
+                    android:textSize="24dp" />
 
             </LinearLayout>
 
@@ -74,20 +76,22 @@
                     android:layout_marginRight="5dp" />
 
                 <ImageView
+                    android:id="@+id/flag_spain"
                     android:layout_width="50dp"
                     android:layout_height="36dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/round_outline"
-                    tools:src="@drawable/spain" />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/spain" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:textSize="24dp"
-                    tools:text="@string/spanish" />
+                    android:text="@string/spanish"
+                    android:textSize="24dp" />
 
             </LinearLayout>
 
@@ -106,20 +110,22 @@
                     android:layout_marginRight="5dp" />
 
                 <ImageView
+                    android:id="@+id/flag_france"
                     android:layout_width="50dp"
                     android:layout_height="36dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/round_outline"
-                    tools:src="@drawable/france" />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/france" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:textSize="24dp"
-                    tools:text="@string/french" />
+                    android:text="@string/french"
+                    android:textSize="24dp" />
 
             </LinearLayout>
 
@@ -138,20 +144,22 @@
                     android:layout_marginRight="5dp" />
 
                 <ImageView
+                    android:id="@+id/flag_germany"
                     android:layout_width="50dp"
                     android:layout_height="36dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/round_outline"
-                    tools:src="@drawable/germany" />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/germany" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:textSize="24dp"
-                    tools:text="@string/german" />
+                    android:text="@string/german"
+                    android:textSize="24dp" />
 
             </LinearLayout>
 
@@ -170,20 +178,22 @@
                     android:layout_marginRight="5dp" />
 
                 <ImageView
+                    android:id="@+id/flag_italy"
                     android:layout_width="50dp"
                     android:layout_height="36dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/round_outline"
-                    tools:src="@drawable/italy" />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/italy" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:textSize="24dp"
-                    tools:text="@string/italian" />
+                    android:text="@string/italian"
+                    android:textSize="24dp" />
 
             </LinearLayout>
 
@@ -202,20 +212,22 @@
                     android:layout_marginRight="5dp" />
 
                 <ImageView
+                    android:id="@+id/flag_netherlands"
                     android:layout_width="50dp"
                     android:layout_height="36dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/round_outline"
-                    tools:src="@drawable/netherlands" />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/netherlands" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:textSize="24dp"
-                    tools:text="@string/dutch" />
+                    android:text="@string/dutch"
+                    android:textSize="24dp" />
 
             </LinearLayout>
 
@@ -234,20 +246,22 @@
                     android:layout_marginRight="5dp" />
 
                 <ImageView
+                    android:id="@+id/flag_portugal"
                     android:layout_width="50dp"
                     android:layout_height="36dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/round_outline"
-                    tools:src="@drawable/portugal" />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/portugal" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:textSize="24dp"
-                    tools:text="@string/portuguese" />
+                    android:text="@string/portuguese"
+                    android:textSize="24dp" />
 
             </LinearLayout>
 
@@ -266,20 +280,22 @@
                     android:layout_marginRight="5dp" />
 
                 <ImageView
+                    android:id="@+id/flag_poland"
                     android:layout_width="50dp"
                     android:layout_height="36dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/round_outline"
-                    tools:src="@drawable/poland" />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/poland" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:textSize="24dp"
-                    tools:text="@string/polish" />
+                    android:text="@string/polish"
+                    android:textSize="24dp" />
 
             </LinearLayout>
 
@@ -298,20 +314,22 @@
                     android:layout_marginRight="5dp" />
 
                 <ImageView
+                    android:id="@+id/flag_russia"
                     android:layout_width="50dp"
                     android:layout_height="36dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/round_outline"
-                    tools:src="@drawable/russia" />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/russia" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:textSize="24dp"
-                    tools:text="@string/russian" />
+                    android:text="@string/russian"
+                    android:textSize="24dp" />
 
             </LinearLayout>
 
@@ -330,20 +348,22 @@
                     android:layout_marginRight="5dp" />
 
                 <ImageView
+                    android:id="@+id/flag_turkey"
                     android:layout_width="50dp"
                     android:layout_height="36dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/round_outline"
-                    tools:src="@drawable/turkey" />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/turkey" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:textSize="24dp"
-                    tools:text="@string/turkish" />
+                    android:text="@string/turkish"
+                    android:textSize="24dp" />
 
             </LinearLayout>
 
@@ -362,20 +382,22 @@
                     android:layout_marginRight="5dp" />
 
                 <ImageView
+                    android:id="@+id/flag_china"
                     android:layout_width="50dp"
                     android:layout_height="36dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/round_outline"
-                    tools:src="@drawable/china" />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/china" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:textSize="24dp"
-                    tools:text="@string/chinese" />
+                    android:text="@string/chinese"
+                    android:textSize="24dp" />
 
             </LinearLayout>
 
@@ -394,20 +416,22 @@
                     android:layout_marginRight="5dp" />
 
                 <ImageView
+                    android:id="@+id/flag_japan"
                     android:layout_width="50dp"
                     android:layout_height="36dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/round_outline"
-                    tools:src="@drawable/japan" />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/japan" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:textSize="24dp"
-                    tools:text="@string/japanese" />
+                    android:text="@string/japanese"
+                    android:textSize="24dp" />
 
             </LinearLayout>
 
@@ -426,20 +450,22 @@
                     android:layout_marginRight="5dp" />
 
                 <ImageView
+                    android:id="@+id/flag_south_korea"
                     android:layout_width="50dp"
                     android:layout_height="36dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/round_outline"
-                    tools:src="@drawable/south_korea" />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/south_korea" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:textSize="24dp"
-                    tools:text="@string/korean" />
+                    android:text="@string/korean"
+                    android:textSize="24dp" />
 
             </LinearLayout>
 
@@ -458,20 +484,22 @@
                     android:layout_marginRight="5dp" />
 
                 <ImageView
+                    android:id="@+id/flag_saudi_arabia"
                     android:layout_width="50dp"
                     android:layout_height="36dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/round_outline"
-                    tools:src="@drawable/saudi_arabia" />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/saudi_arabia" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:textSize="24dp"
-                    tools:text="@string/arabic" />
+                    android:text="@string/arabic"
+                    android:textSize="24dp" />
 
             </LinearLayout>
 
@@ -490,20 +518,22 @@
                     android:layout_marginRight="5dp" />
 
                 <ImageView
+                    android:id="@+id/flag_india"
                     android:layout_width="50dp"
                     android:layout_height="36dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/round_outline"
-                    tools:src="@drawable/india" />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/india" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:textSize="24dp"
-                    tools:text="@string/hindi" />
+                    android:text="@string/hindi"
+                    android:textSize="24dp" />
 
             </LinearLayout>
 
@@ -522,20 +552,22 @@
                     android:layout_marginRight="5dp" />
 
                 <ImageView
+                    android:id="@+id/flag_malaysia"
                     android:layout_width="50dp"
                     android:layout_height="36dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/round_outline"
-                    tools:src="@drawable/malaysia" />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/malaysia" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:textSize="24dp"
-                    tools:text="@string/malay" />
+                    android:text="@string/malay"
+                    android:textSize="24dp" />
 
             </LinearLayout>
 
