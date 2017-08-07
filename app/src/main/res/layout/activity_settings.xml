@@ -18,6 +18,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/theme_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/settings_theme_title"
@@ -25,6 +26,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/theme_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/settings_theme_description"
@@ -41,11 +43,12 @@
     </LinearLayout>
 
     <View
+        android:id="@+id/theme_divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:background="@color/colorPrimary" />
+        android:background="@color/gray" />
 
     <LinearLayout
         android:id="@+id/container_settings_language"
@@ -55,6 +58,7 @@
         android:padding="20dp">
 
         <TextView
+            android:id="@+id/language_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/settings_language_title"
@@ -62,6 +66,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/language_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/settings_language_description"
@@ -70,11 +75,12 @@
     </LinearLayout>
 
     <View
+        android:id="@+id/language_divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:background="@color/colorPrimary" />
+        android:background="@color/gray" />
 
     <LinearLayout
         android:id="@+id/container_settings_scores"
@@ -84,6 +90,7 @@
         android:padding="20dp">
 
         <TextView
+            android:id="@+id/scores_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/settings_scores_title"
@@ -91,6 +98,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/scores_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/settings_scores_description"
@@ -99,10 +107,11 @@
     </LinearLayout>
 
     <View
+        android:id="@+id/scores_divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:background="@color/colorPrimary" />
+        android:background="@color/gray" />
 
 </LinearLayout>

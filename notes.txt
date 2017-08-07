@@ -37,15 +37,15 @@ https://api.myjson.com/bins/x3m9t
 -Refactor duplicated code
 -Look for a launcher icon
 -Group common app status statements on MainActivity in one method
--Change more info background to container's background color
 -Add menu option on main activity to report errors via email(implicit intent)
 -Add menu option on main activity to submit suggestions via email (implicit intent)
 -Add menu option on city list to sort by country or city (use mergesort)
 -Change font to material design font (Roboto)?
 -Rate app button on main activity menu
--Change color of dialog lines to font color of that theme
+
 
 // DO NEXT
+-Change more info background to container's background color
 -Make dialog fragment for language list in xml and java
 -Make dialog fragment for clear scores in xml and java
 -Watch videos on android locale

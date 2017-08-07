@@ -18,20 +18,6 @@
         android:layout_marginRight="25dp"
         android:layout_marginTop="60dp">
 
-        <ScrollView
-            android:id="@+id/language_list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ListView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-
-            </ListView>
-
-        </ScrollView>
-
     </FrameLayout>
 
 

@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +38,6 @@ public class CityDetailDialog extends DialogFragment {
     private ImageView mImageCity;
     private ImageButton mButtonGoogleMaps;
     private ImageButton mButtonWikipedia;
-    private TextView mMoreInfoTextView;
 
     public CityDetailDialog() {
     }
@@ -60,13 +60,12 @@ public class CityDetailDialog extends DialogFragment {
         mImageCity = (ImageView) view.findViewById(R.id.city_image);
         mButtonGoogleMaps = (ImageButton) view.findViewById(R.id.button_google_maps);
         mButtonWikipedia = (ImageButton) view.findViewById(R.id.button_wikipedia);
-        mMoreInfoTextView = (TextView) view.findViewById(R.id.more_info_label);
 
-        if (sharedPreferences.getInt("theme", R.style.AppThemeLight) == R.style.AppThemeDark) {
-            mMoreInfoTextView.setBackgroundColor(getResources().getColor(R.color.darkBackground));
-        } else {
-            mMoreInfoTextView.setBackgroundColor(getResources().getColor(R.color.lightBackground));
-        }
+//        if (sharedPreferences.getInt("theme", R.style.AppThemeLight) == R.style.AppThemeDark) {
+//            mMoreInfoTextView.setBackgroundColor(getResources().getColor(R.color.darkBackground));
+//        } else {
+//            mMoreInfoTextView.setBackgroundColor(getResources().getColor(R.color.lightBackground));
+//        }
 
         if (isRunningOnTablet()) {
             mImageCity.setScaleType(ImageView.ScaleType.FIT_CENTER);
