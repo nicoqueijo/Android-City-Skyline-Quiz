@@ -45,7 +45,7 @@ https://api.myjson.com/bins/x3m9t
 
 
 // DO NEXT
--Change more info background to container's background color
+-Adjust space in dialog fragment for symmetry
 -Make dialog fragment for language list in xml and java
 -Make dialog fragment for clear scores in xml and java
 -Watch videos on android locale

@@ -31,7 +31,6 @@ import com.squareup.picasso.Picasso;
  */
 public class CityDetailDialog extends DialogFragment {
 
-    private SharedPreferences sharedPreferences;
     private City mCity;
     private ImageView mImageFlag;
     private TextView mTextCity;
@@ -46,7 +45,6 @@ public class CityDetailDialog extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        sharedPreferences = getActivity().getSharedPreferences("settings", Context.MODE_PRIVATE);
         return inflater.inflate(R.layout.dialog_city_detail, container, false);
     }
 
@@ -61,15 +59,9 @@ public class CityDetailDialog extends DialogFragment {
         mButtonGoogleMaps = (ImageButton) view.findViewById(R.id.button_google_maps);
         mButtonWikipedia = (ImageButton) view.findViewById(R.id.button_wikipedia);
 
-//        if (sharedPreferences.getInt("theme", R.style.AppThemeLight) == R.style.AppThemeDark) {
-//            mMoreInfoTextView.setBackgroundColor(getResources().getColor(R.color.darkBackground));
-//        } else {
-//            mMoreInfoTextView.setBackgroundColor(getResources().getColor(R.color.lightBackground));
+//        if (isRunningOnTablet()) {
+//            mImageCity.setScaleType(ImageView.ScaleType.FIT_CENTER);
 //        }
-
-        if (isRunningOnTablet()) {
-            mImageCity.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        }
 
         if (ApiChecker.isRunningLollipopOrHigher()) {
             mImageCity.setClipToOutline(true);
