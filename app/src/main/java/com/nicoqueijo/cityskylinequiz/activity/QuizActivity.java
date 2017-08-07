@@ -13,14 +13,14 @@ import java.util.ArrayList;
 
 public class QuizActivity extends AppCompatActivity {
 
-    private SharedPreferences sharedPreferences;
+    private SharedPreferences mSharedPreferences;
     ArrayList<City> mCities;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        sharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
-        setTheme(sharedPreferences.getInt("theme", R.style.AppThemeLight));
+        mSharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
+        setTheme(mSharedPreferences.getInt("theme", R.style.AppThemeLight));
         setContentView(R.layout.activity_quiz);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

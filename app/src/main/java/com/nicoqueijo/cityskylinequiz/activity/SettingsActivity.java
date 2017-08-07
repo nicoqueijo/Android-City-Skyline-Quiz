@@ -4,7 +4,6 @@ import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,9 +15,9 @@ import com.nicoqueijo.cityskylinequiz.fragment.LanguageChooserDialog;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    AppCompatActivity thisActivity = SettingsActivity.this;
-    FragmentManager fragmentManager = getFragmentManager();
-    private SharedPreferences sharedPreferences;
+    AppCompatActivity mThisActivity = SettingsActivity.this;
+    FragmentManager mFragmentManager = getFragmentManager();
+    private SharedPreferences mSharedPreferences;
     private LinearLayout mThemeView;
     private LinearLayout mLanguageView;
     private LinearLayout mScoresView;
@@ -27,8 +26,8 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        sharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
-        setTheme(sharedPreferences.getInt("theme", R.style.AppThemeLight));
+        mSharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
+        setTheme(mSharedPreferences.getInt("theme", R.style.AppThemeLight));
         setContentView(R.layout.activity_settings);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -36,7 +35,7 @@ public class SettingsActivity extends AppCompatActivity {
         mLanguageView = (LinearLayout) findViewById(R.id.container_settings_language);
         mScoresView = (LinearLayout) findViewById(R.id.container_settings_scores);
         mThemeSwitch = (Switch) findViewById(R.id.switch_theme);
-        mThemeSwitch.setChecked(sharedPreferences.getInt("theme", R.style.AppThemeLight) == R.style.AppThemeDark);
+        mThemeSwitch.setChecked(mSharedPreferences.getInt("theme", R.style.AppThemeLight) == R.style.AppThemeDark);
 
         mThemeView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +58,7 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 LanguageChooserDialog languageChooserDialog = new LanguageChooserDialog();
-                languageChooserDialog.show(fragmentManager, "Open Dialog");
+                languageChooserDialog.show(mFragmentManager, "Open Dialog");
             }
         });
 
@@ -77,9 +76,9 @@ public class SettingsActivity extends AppCompatActivity {
      * result the new theme is applied.
      */
     public void restartActivity() {
-        thisActivity.finish();
-        final Intent intent = thisActivity.getIntent();
-        thisActivity.startActivity(intent);
+        mThisActivity.finish();
+        final Intent intent = mThisActivity.getIntent();
+        mThisActivity.startActivity(intent);
     }
 
     /**
@@ -92,11 +91,11 @@ public class SettingsActivity extends AppCompatActivity {
 
 
     /**
-     * Saves the theme status on sharedPreferences according to the status of the theme switch. If
+     * Saves the theme status on mSharedPreferences according to the status of the theme switch. If
      * theme switch is checked, it saved the theme as dark. Else it saves the theme as light.
      */
     public void saveTheme() {
-        SharedPreferences.Editor editor = sharedPreferences.edit();
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
         if (mThemeSwitch.isChecked()) {
             editor.putInt("theme", R.style.AppThemeDark);
             editor.commit();

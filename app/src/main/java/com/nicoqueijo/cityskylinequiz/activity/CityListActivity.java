@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class CityListActivity extends AppCompatActivity {
 
-    private SharedPreferences sharedPreferences;
+    private SharedPreferences mSharedPreferences;
     ArrayList<City> mCities;
     RecyclerView mRecyclerCityList;
     CustomAdapter mAdapter;
@@ -26,8 +26,8 @@ public class CityListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        sharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
-        setTheme(sharedPreferences.getInt("theme", R.style.AppThemeLight));
+        mSharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
+        setTheme(mSharedPreferences.getInt("theme", R.style.AppThemeLight));
         setContentView(R.layout.activity_city_list);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

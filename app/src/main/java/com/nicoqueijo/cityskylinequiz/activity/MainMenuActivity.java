@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -30,7 +29,7 @@ import java.util.ArrayList;
  */
 public class MainMenuActivity extends AppCompatActivity {
 
-    private SharedPreferences sharedPreferences;
+    private SharedPreferences mSharedPreferences;
     ArrayList<City> mCities;
     private Button mButtonPlayGame;
     private Button mButtonCityList;
@@ -39,14 +38,14 @@ public class MainMenuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        sharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
-        setTheme(sharedPreferences.getInt("theme", R.style.AppThemeLight));
+        mSharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
+        setTheme(mSharedPreferences.getInt("theme", R.style.AppThemeLight));
         setContentView(R.layout.activity_menu_main);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
 
         // do something if it's the first time launching the app
         // (maybe splash screen for image caching)
-        if (sharedPreferences.getBoolean("first_launch", true)) {
+        if (mSharedPreferences.getBoolean("first_launch", true)) {
             // Enter statements to do when first time launching here
             editor.putBoolean("first_launch", false);
             editor.commit();
@@ -104,7 +103,7 @@ public class MainMenuActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
-        if (sharedPreferences.getInt("theme", R.style.AppThemeLight) != getThemeId()) {
+        if (mSharedPreferences.getInt("theme", R.style.AppThemeLight) != getThemeId()) {
             this.finish();
             final Intent intent = this.getIntent();
             this.startActivity(intent);

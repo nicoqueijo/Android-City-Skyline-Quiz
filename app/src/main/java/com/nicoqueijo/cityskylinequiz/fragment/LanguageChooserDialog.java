@@ -10,32 +10,52 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RadioGroup;
 
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.helper.CornerRounder;
 
 public class LanguageChooserDialog extends DialogFragment {
 
-    private SharedPreferences sharedPreferences;
-    private Button cancelButton;
-    private ImageView unitedKingdomFlag;
-    private ImageView spainFlag;
-    private ImageView franceFlag;
-    private ImageView germanyFlag;
-    private ImageView italyFlag;
-    private ImageView netherlandsFlag;
-    private ImageView portugalFlag;
-    private ImageView polandFlag;
-    private ImageView russiaFlag;
-    private ImageView turkeyFlag;
-    private ImageView chinaFlag;
-    private ImageView japanFlag;
-    private ImageView southKoreaFlag;
-    private ImageView saudiArabiaFlag;
-    private ImageView indiaFlag;
-    private ImageView malaysiaFlag;
+    private SharedPreferences mSharedPreferences;
+
+    private ImageView mUnitedKingdomFlag;
+    private ImageView mSpainFlag;
+    private ImageView mFanceFlag;
+    private ImageView mGermanyFlag;
+    private ImageView mItalyFlag;
+    private ImageView mNetherlandsFlag;
+    private ImageView mPortugalFlag;
+    private ImageView mPolandFlag;
+    private ImageView mRussiaFlag;
+    private ImageView mTurkeyFlag;
+    private ImageView mChinaFlag;
+    private ImageView mJapanFlag;
+    private ImageView mSouthKoreaFlag;
+    private ImageView mSaudiArabiaFlag;
+    private ImageView mIndiaFlag;
+    private ImageView mMalaysiaFlag;
+
+    private LinearLayout mEnglishOption;
+    private LinearLayout mSpanishOption;
+    private LinearLayout mFrenchOption;
+    private LinearLayout mGermanOption;
+    private LinearLayout mItalianOption;
+    private LinearLayout mDutchOption;
+    private LinearLayout mPortugueseOption;
+    private LinearLayout mPolishOption;
+    private LinearLayout mRussianOption;
+    private LinearLayout mTurkishOption;
+    private LinearLayout mChineseOption;
+    private LinearLayout mJapaneseOption;
+    private LinearLayout mKoreanOption;
+    private LinearLayout mArabicOption;
+    private LinearLayout mHindiOption;
+    private LinearLayout mMalayOption;
+
+    private Button mCancelButton;
 
     public LanguageChooserDialog() {
     }
@@ -44,7 +64,7 @@ public class LanguageChooserDialog extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        sharedPreferences = getActivity().getSharedPreferences("settings", Context.MODE_PRIVATE);
+        mSharedPreferences = getActivity().getSharedPreferences("settings", Context.MODE_PRIVATE);
         return inflater.inflate(R.layout.dialog_languague_chooser, container, false);
     }
 
@@ -53,27 +73,164 @@ public class LanguageChooserDialog extends DialogFragment {
         super.onViewCreated(view, savedInstanceState);
         removeTitleBar();
 
-        cancelButton = (Button) view.findViewById(R.id.cancel_button);
-        unitedKingdomFlag = (ImageView) view.findViewById(R.id.flag_united_kingdom);
-        spainFlag = (ImageView) view.findViewById(R.id.flag_spain);
-        franceFlag = (ImageView) view.findViewById(R.id.flag_france);
-        germanyFlag = (ImageView) view.findViewById(R.id.flag_germany);
-        italyFlag = (ImageView) view.findViewById(R.id.flag_italy);
-        netherlandsFlag = (ImageView) view.findViewById(R.id.flag_netherlands);
-        portugalFlag = (ImageView) view.findViewById(R.id.flag_portugal);
-        polandFlag = (ImageView) view.findViewById(R.id.flag_poland);
-        russiaFlag = (ImageView) view.findViewById(R.id.flag_russia);
-        turkeyFlag = (ImageView) view.findViewById(R.id.flag_turkey);
-        chinaFlag = (ImageView) view.findViewById(R.id.flag_china);
-        japanFlag = (ImageView) view.findViewById(R.id.flag_japan);
-        southKoreaFlag = (ImageView) view.findViewById(R.id.flag_south_korea);
-        saudiArabiaFlag = (ImageView) view.findViewById(R.id.flag_saudi_arabia);
-        indiaFlag = (ImageView) view.findViewById(R.id.flag_india);
-        malaysiaFlag = (ImageView) view.findViewById(R.id.flag_malaysia);
+        mUnitedKingdomFlag = (ImageView) view.findViewById(R.id.flag_united_kingdom);
+        mSpainFlag = (ImageView) view.findViewById(R.id.flag_spain);
+        mFanceFlag = (ImageView) view.findViewById(R.id.flag_france);
+        mGermanyFlag = (ImageView) view.findViewById(R.id.flag_germany);
+        mItalyFlag = (ImageView) view.findViewById(R.id.flag_italy);
+        mNetherlandsFlag = (ImageView) view.findViewById(R.id.flag_netherlands);
+        mPortugalFlag = (ImageView) view.findViewById(R.id.flag_portugal);
+        mPolandFlag = (ImageView) view.findViewById(R.id.flag_poland);
+        mRussiaFlag = (ImageView) view.findViewById(R.id.flag_russia);
+        mTurkeyFlag = (ImageView) view.findViewById(R.id.flag_turkey);
+        mChinaFlag = (ImageView) view.findViewById(R.id.flag_china);
+        mJapanFlag = (ImageView) view.findViewById(R.id.flag_japan);
+        mSouthKoreaFlag = (ImageView) view.findViewById(R.id.flag_south_korea);
+        mSaudiArabiaFlag = (ImageView) view.findViewById(R.id.flag_saudi_arabia);
+        mIndiaFlag = (ImageView) view.findViewById(R.id.flag_india);
+        mMalaysiaFlag = (ImageView) view.findViewById(R.id.flag_malaysia);
 
-        CornerRounder.roundImageCorners(unitedKingdomFlag, spainFlag, franceFlag, germanyFlag,
-                italyFlag, netherlandsFlag, portugalFlag, polandFlag, russiaFlag, turkeyFlag,
-                chinaFlag, japanFlag, southKoreaFlag, saudiArabiaFlag, indiaFlag, malaysiaFlag);
+        mEnglishOption = (LinearLayout) view.findViewById(R.id.choice_english);
+        mSpanishOption = (LinearLayout) view.findViewById(R.id.choice_spanish);
+        mFrenchOption = (LinearLayout) view.findViewById(R.id.choice_french);
+        mGermanOption = (LinearLayout) view.findViewById(R.id.choice_german);
+        mItalianOption = (LinearLayout) view.findViewById(R.id.choice_italian);
+        mDutchOption = (LinearLayout) view.findViewById(R.id.choice_dutch);
+        mPortugueseOption = (LinearLayout) view.findViewById(R.id.choice_portuguese);
+        mPolishOption = (LinearLayout) view.findViewById(R.id.choice_polish);
+        mRussianOption = (LinearLayout) view.findViewById(R.id.choice_russian);
+        mTurkishOption = (LinearLayout) view.findViewById(R.id.choice_turkish);
+        mChineseOption = (LinearLayout) view.findViewById(R.id.choice_chinese);
+        mJapaneseOption = (LinearLayout) view.findViewById(R.id.choice_japanese);
+        mKoreanOption = (LinearLayout) view.findViewById(R.id.choice_korean);
+        mArabicOption = (LinearLayout) view.findViewById(R.id.choice_arabic);
+        mHindiOption = (LinearLayout) view.findViewById(R.id.choice_hindi);
+        mMalayOption = (LinearLayout) view.findViewById(R.id.choice_malay);
+
+        mCancelButton = (Button) view.findViewById(R.id.cancel_button);
+
+        CornerRounder.roundImageCorners(mUnitedKingdomFlag, mSpainFlag, mFanceFlag, mGermanyFlag,
+                mItalyFlag, mNetherlandsFlag, mPortugalFlag, mPolandFlag, mRussiaFlag, mTurkeyFlag,
+                mChinaFlag, mJapanFlag, mSouthKoreaFlag, mSaudiArabiaFlag, mIndiaFlag, mMalaysiaFlag);
+
+        mEnglishOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        mSpanishOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        mFrenchOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        mGermanOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        mItalianOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        mDutchOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        mPortugueseOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        mPolishOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        mRussianOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        mTurkishOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        mChineseOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        mJapaneseOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        mKoreanOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        mArabicOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        mHindiOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        mMalayOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        mCancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismiss();
+            }
+        });
     }
 
     /**
