@@ -2,9 +2,8 @@ package com.nicoqueijo.cityskylinequiz.model;
 
 public class Question {
 
-    private Answer answer1;
-    private Answer answer2;
-    private Answer answer3;
-    private Answer answer4;
-
+    private Answer choice1;
+    private Answer choice2;
+    private Answer choice3;
+    private Answer choice4;
 }

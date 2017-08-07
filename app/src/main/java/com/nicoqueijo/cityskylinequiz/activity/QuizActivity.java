@@ -27,25 +27,4 @@ public class QuizActivity extends AppCompatActivity {
         Intent intentPlayGame = getIntent();
         mCities = (ArrayList<City>) intentPlayGame.getSerializableExtra("cityList");
     }
-
-    /**
-     * Retrieves string resources using a String instead of an int.
-     *
-     * @param name name of the string resource
-     * @return the string resource
-     */
-    private String getStringResourceByName(String name) {
-        int resId = getResources().getIdentifier(name, "string", getPackageName());
-        return getString(resId);
-    }
-
-    /**
-     * Retrieves drawable resources using a String instead of an int.
-     *
-     * @param name name of the drawable resource
-     * @return the drawable resource id
-     */
-    private int getDrawableResourceByName(String name) {
-        return getResources().getIdentifier(name, "drawable", getPackageName());
-    }
 }

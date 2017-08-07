@@ -1,27 +1,21 @@
 package com.nicoqueijo.cityskylinequiz.fragment;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.helper.ApiChecker;
+import com.nicoqueijo.cityskylinequiz.helper.CornerRounder;
 import com.nicoqueijo.cityskylinequiz.helper.ResourceByNameRetriever;
 import com.nicoqueijo.cityskylinequiz.model.City;
 import com.squareup.picasso.Picasso;
@@ -58,17 +52,7 @@ public class CityDetailDialog extends DialogFragment {
         mImageCity = (ImageView) view.findViewById(R.id.city_image);
         mButtonGoogleMaps = (ImageButton) view.findViewById(R.id.button_google_maps);
         mButtonWikipedia = (ImageButton) view.findViewById(R.id.button_wikipedia);
-
-//        if (isRunningOnTablet()) {
-//            mImageCity.setScaleType(ImageView.ScaleType.FIT_CENTER);
-//        }
-
-        if (ApiChecker.isRunningLollipopOrHigher()) {
-            mImageCity.setClipToOutline(true);
-            mImageFlag.setClipToOutline(true);
-        } else {
-            // Sorry, can only round corners on devices running Lollipop or higher :(
-        }
+        CornerRounder.roundImageCorners(mImageFlag, mImageCity);
 
         mImageFlag.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(mCity.
                 getCountryName(), getActivity()));
@@ -145,7 +129,7 @@ public class CityDetailDialog extends DialogFragment {
      *
      * @return whether the aspect ratio on the running device resembles a tablet.
      */
-    public boolean isRunningOnTablet() {
+    private boolean isRunningOnTablet() {
         final double MINIMUM_ASPECT_RATIO_OF_A_PHONE = 1.6;
         return getAspectRatio() < MINIMUM_ASPECT_RATIO_OF_A_PHONE;
     }

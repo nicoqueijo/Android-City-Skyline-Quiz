@@ -17,6 +17,7 @@ import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.activity.MainMenuActivity;
 import com.nicoqueijo.cityskylinequiz.fragment.CityDetailDialog;
 import com.nicoqueijo.cityskylinequiz.helper.ApiChecker;
+import com.nicoqueijo.cityskylinequiz.helper.CornerRounder;
 import com.nicoqueijo.cityskylinequiz.helper.ResourceByNameRetriever;
 import com.nicoqueijo.cityskylinequiz.model.City;
 import com.squareup.picasso.Picasso;
@@ -60,11 +61,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         final int CURRENT_POSITION = position;
         holder.mCountryFlagImageView.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
                 (mCities.get(position).getCountryName(), mContext));
-        if (ApiChecker.isRunningLollipopOrHigher()) {
-            holder.mCountryFlagImageView.setClipToOutline(true);
-        } else {
-            // Sorry, can only round corners on devices running Lollipop or higher :(
-        }
+        CornerRounder.roundImageCorners(holder.mCountryFlagImageView);
         holder.mCityTextView.setText(ResourceByNameRetriever.getStringResourceByName(mCities.
                 get(position).getCityName(), mContext));
         Picasso.with(mContext).load(mCities.get(position).getImageUrl()).fetch();
