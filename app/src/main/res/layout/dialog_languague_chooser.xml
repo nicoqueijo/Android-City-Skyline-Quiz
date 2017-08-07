@@ -188,6 +188,38 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/choice_dutch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_outline"
+                    tools:src="@drawable/netherlands" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="24dp"
+                    tools:text="@string/dutch" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/choice_portuguese"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -220,6 +252,38 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/choice_polish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_outline"
+                    tools:src="@drawable/poland" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="24dp"
+                    tools:text="@string/polish" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/choice_russian"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -248,6 +312,38 @@
                     android:layout_marginRight="5dp"
                     android:textSize="24dp"
                     tools:text="@string/russian" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/choice_turkish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_outline"
+                    tools:src="@drawable/turkey" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="24dp"
+                    tools:text="@string/turkish" />
 
             </LinearLayout>
 
@@ -456,4 +552,5 @@
         android:paddingBottom="5dp"
         android:paddingRight="5dp"
         android:text="@android:string/cancel" />
+
 </RelativeLayout>
