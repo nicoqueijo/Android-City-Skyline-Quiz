@@ -36,6 +36,7 @@
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/radio_button_english"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -70,6 +71,7 @@
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/radio_button_spanish"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -104,6 +106,7 @@
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/radio_button_french"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -138,6 +141,7 @@
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/radio_button_german"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -172,6 +176,7 @@
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/radio_button_italian"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -206,6 +211,7 @@
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/radio_button_dutch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -240,6 +246,7 @@
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/radio_button_portuguese"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -274,6 +281,7 @@
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/radio_button_polish"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -308,6 +316,7 @@
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/radio_button_russian"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -342,6 +351,7 @@
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/radio_button_turkish"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -376,6 +386,7 @@
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/radio_button_chinese"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -410,6 +421,7 @@
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/radio_button_japanese"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -444,6 +456,7 @@
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/radio_button_korean"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -478,6 +491,7 @@
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/radio_button_arabic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -512,6 +526,7 @@
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/radio_button_hindi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -546,6 +561,7 @@
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/radio_button_malay"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"

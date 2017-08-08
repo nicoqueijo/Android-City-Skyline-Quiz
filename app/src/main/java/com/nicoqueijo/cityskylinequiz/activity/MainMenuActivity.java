@@ -43,6 +43,8 @@ public class MainMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu_main);
         SharedPreferences.Editor editor = mSharedPreferences.edit();
 
+        //LOAD APP WITH LANGUAGE IN SHAREDPREFERENCES, IF NULL DEFAULT IS ENGLISH
+
         // do something if it's the first time launching the app
         // (maybe splash screen for image caching)
         if (mSharedPreferences.getBoolean("first_launch", true)) {

@@ -89,7 +89,6 @@ public class SettingsActivity extends AppCompatActivity {
         mThemeSwitch.setChecked(!mThemeSwitch.isChecked());
     }
 
-
     /**
      * Saves the theme status on mSharedPreferences according to the status of the theme switch. If
      * theme switch is checked, it saved the theme as dark. Else it saves the theme as light.
@@ -103,9 +102,5 @@ public class SettingsActivity extends AppCompatActivity {
             editor.putInt("theme", R.style.AppThemeLight);
             editor.commit();
         }
-    }
-
-    public void saveLanguage(View view) {
-        // should probably do this in the language fragment?
     }
 }

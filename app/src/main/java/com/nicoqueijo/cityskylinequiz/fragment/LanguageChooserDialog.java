@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,14 +13,22 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RadioGroup;
+import android.widget.RadioButton;
 
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.helper.CornerRounder;
 
+import java.util.Stack;
+
 public class LanguageChooserDialog extends DialogFragment {
 
+    public enum Language {
+        ENGLISH, SPANISH, FRENCH, GERMAN, ITALIAN, DUTCH, PORTUGUESE, POLISH, RUSSIAN, TURKISH,
+        CHINESE, JAPANESE, KOREAN, ARABIC, HINDI, MALAY
+    }
+
     private SharedPreferences mSharedPreferences;
+    private Stack<RadioButton> mCurrentRadioButtonPressed = new Stack<>();
 
     private ImageView mUnitedKingdomFlag;
     private ImageView mSpainFlag;
@@ -55,6 +64,23 @@ public class LanguageChooserDialog extends DialogFragment {
     private LinearLayout mHindiOption;
     private LinearLayout mMalayOption;
 
+    private RadioButton mEnglishRadioButton;
+    private RadioButton mSpanishRadioButton;
+    private RadioButton mFrenchRadioButton;
+    private RadioButton mGermanRadioButton;
+    private RadioButton mItalianRadioButton;
+    private RadioButton mDutchRadioButton;
+    private RadioButton mPortugueseRadioButton;
+    private RadioButton mPolishRadioButton;
+    private RadioButton mRussianRadioButton;
+    private RadioButton mTurkishRadioButton;
+    private RadioButton mChineseRadioButton;
+    private RadioButton mJapaneseRadioButton;
+    private RadioButton mKoreanRadioButton;
+    private RadioButton mArabicRadioButton;
+    private RadioButton mHindiRadioButton;
+    private RadioButton mMalayRadioButton;
+
     private Button mCancelButton;
 
     public LanguageChooserDialog() {
@@ -71,6 +97,7 @@ public class LanguageChooserDialog extends DialogFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        mSharedPreferences = getActivity().getSharedPreferences("settings", Context.MODE_PRIVATE);
         removeTitleBar();
 
         mUnitedKingdomFlag = (ImageView) view.findViewById(R.id.flag_united_kingdom);
@@ -107,7 +134,29 @@ public class LanguageChooserDialog extends DialogFragment {
         mHindiOption = (LinearLayout) view.findViewById(R.id.choice_hindi);
         mMalayOption = (LinearLayout) view.findViewById(R.id.choice_malay);
 
+        mEnglishRadioButton = (RadioButton) view.findViewById(R.id.radio_button_english);
+        mSpanishRadioButton = (RadioButton) view.findViewById(R.id.radio_button_spanish);
+        mFrenchRadioButton = (RadioButton) view.findViewById(R.id.radio_button_french);
+        mGermanRadioButton = (RadioButton) view.findViewById(R.id.radio_button_german);
+        mItalianRadioButton = (RadioButton) view.findViewById(R.id.radio_button_italian);
+        mDutchRadioButton = (RadioButton) view.findViewById(R.id.radio_button_dutch);
+        mPortugueseRadioButton = (RadioButton) view.findViewById(R.id.radio_button_portuguese);
+        mPolishRadioButton = (RadioButton) view.findViewById(R.id.radio_button_polish);
+        mRussianRadioButton = (RadioButton) view.findViewById(R.id.radio_button_russian);
+        mTurkishRadioButton = (RadioButton) view.findViewById(R.id.radio_button_turkish);
+        mChineseRadioButton = (RadioButton) view.findViewById(R.id.radio_button_chinese);
+        mJapaneseRadioButton = (RadioButton) view.findViewById(R.id.radio_button_japanese);
+        mKoreanRadioButton = (RadioButton) view.findViewById(R.id.radio_button_korean);
+        mArabicRadioButton = (RadioButton) view.findViewById(R.id.radio_button_arabic);
+        mHindiRadioButton = (RadioButton) view.findViewById(R.id.radio_button_hindi);
+        mMalayRadioButton = (RadioButton) view.findViewById(R.id.radio_button_malay);
+
+        disableRadioButtonsClickability();
+
         mCancelButton = (Button) view.findViewById(R.id.cancel_button);
+
+        mSharedPreferences.getInt("language", Language.ENGLISH.ordinal());
+        setSavedLanguage();
 
         CornerRounder.roundImageCorners(mUnitedKingdomFlag, mSpainFlag, mFanceFlag, mGermanyFlag,
                 mItalyFlag, mNetherlandsFlag, mPortugalFlag, mPolandFlag, mRussiaFlag, mTurkeyFlag,
@@ -116,112 +165,224 @@ public class LanguageChooserDialog extends DialogFragment {
         mEnglishOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mCurrentRadioButtonPressed.pop().setChecked(false);
+                mEnglishRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mEnglishRadioButton);
+                saveLanguage(Language.ENGLISH);
+                // change radio button selected
+                // save language selected to sharedPreferences
+                // change language app-wide
+                // dismiss dialog
             }
         });
 
         mSpanishOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mCurrentRadioButtonPressed.pop().setChecked(false);
+                mSpanishRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mSpanishRadioButton);
+                saveLanguage(Language.SPANISH);
+                // change radio button selected
+                // save language selected to sharedPreferences
+                // change language app-wide
+                // dismiss dialog
             }
         });
 
         mFrenchOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mCurrentRadioButtonPressed.pop().setChecked(false);
+                mFrenchRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mFrenchRadioButton);
+                saveLanguage(Language.FRENCH);
+                // change radio button selected
+                // save language selected to sharedPreferences
+                // change language app-wide
+                // dismiss dialog
             }
         });
 
         mGermanOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mCurrentRadioButtonPressed.pop().setChecked(false);
+                mGermanRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mGermanRadioButton);
+                saveLanguage(Language.GERMAN);
+                // change radio button selected
+                // save language selected to sharedPreferences
+                // change language app-wide
+                // dismiss dialog
             }
         });
 
         mItalianOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mCurrentRadioButtonPressed.pop().setChecked(false);
+                mItalianRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mItalianRadioButton);
+                saveLanguage(Language.ITALIAN);
+                // change radio button selected
+                // save language selected to sharedPreferences
+                // change language app-wide
+                // dismiss dialog
             }
         });
 
         mDutchOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mCurrentRadioButtonPressed.pop().setChecked(false);
+                mDutchRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mDutchRadioButton);
+                saveLanguage(Language.DUTCH);
+                // change radio button selected
+                // save language selected to sharedPreferences
+                // change language app-wide
+                // dismiss dialog
             }
         });
 
         mPortugueseOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mCurrentRadioButtonPressed.pop().setChecked(false);
+                mPortugueseRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mPortugueseRadioButton);
+                saveLanguage(Language.PORTUGUESE);
+                // change radio button selected
+                // save language selected to sharedPreferences
+                // change language app-wide
+                // dismiss dialog
             }
         });
 
         mPolishOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mCurrentRadioButtonPressed.pop().setChecked(false);
+                mPolishRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mPolishRadioButton);
+                saveLanguage(Language.POLISH);
+                // change radio button selected
+                // save language selected to sharedPreferences
+                // change language app-wide
+                // dismiss dialog
             }
         });
 
         mRussianOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mCurrentRadioButtonPressed.pop().setChecked(false);
+                mRussianRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mRussianRadioButton);
+                saveLanguage(Language.RUSSIAN);
+                // change radio button selected
+                // save language selected to sharedPreferences
+                // change language app-wide
+                // dismiss dialog
             }
         });
 
         mTurkishOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mCurrentRadioButtonPressed.pop().setChecked(false);
+                mTurkishRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mTurkishRadioButton);
+                saveLanguage(Language.TURKISH);
+                // change radio button selected
+                // save language selected to sharedPreferences
+                // change language app-wide
+                // dismiss dialog
             }
         });
 
         mChineseOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mCurrentRadioButtonPressed.pop().setChecked(false);
+                mChineseRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mChineseRadioButton);
+                saveLanguage(Language.CHINESE);
+                // change radio button selected
+                // save language selected to sharedPreferences
+                // change language app-wide
+                // dismiss dialog
             }
         });
 
         mJapaneseOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mCurrentRadioButtonPressed.pop().setChecked(false);
+                mJapaneseRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mJapaneseRadioButton);
+                saveLanguage(Language.JAPANESE);
+                // change radio button selected
+                // save language selected to sharedPreferences
+                // change language app-wide
+                // dismiss dialog
             }
         });
 
         mKoreanOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mCurrentRadioButtonPressed.pop().setChecked(false);
+                mKoreanRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mKoreanRadioButton);
+                saveLanguage(Language.KOREAN);
+                // change radio button selected
+                // save language selected to sharedPreferences
+                // change language app-wide
+                // dismiss dialog
             }
         });
 
         mArabicOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mCurrentRadioButtonPressed.pop().setChecked(false);
+                mArabicRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mArabicRadioButton);
+                saveLanguage(Language.ARABIC);
+                // change radio button selected
+                // save language selected to sharedPreferences
+                // change language app-wide
+                // dismiss dialog
             }
         });
 
         mHindiOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mCurrentRadioButtonPressed.pop().setChecked(false);
+                mHindiRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mHindiRadioButton);
+                saveLanguage(Language.HINDI);
+                // change radio button selected
+                // save language selected to sharedPreferences
+                // change language app-wide
+                // dismiss dialog
             }
         });
 
         mMalayOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mCurrentRadioButtonPressed.pop().setChecked(false);
+                mMalayRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mMalayRadioButton);
+                saveLanguage(Language.MALAY);
+                // change radio button selected
+                // save language selected to sharedPreferences
+                // change language app-wide
+                // dismiss dialog
             }
         });
 
@@ -231,6 +392,168 @@ public class LanguageChooserDialog extends DialogFragment {
                 dismiss();
             }
         });
+    }
+
+    private void setSavedLanguage() {
+        int savedLanguage = mSharedPreferences.getInt("language", Language.ENGLISH.ordinal());
+        switch (savedLanguage) {
+            case 0:
+                mEnglishRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mEnglishRadioButton);
+        }
+        switch (savedLanguage) {
+            case 1:
+                mSpanishRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mSpanishRadioButton);
+        }
+        switch (savedLanguage) {
+            case 2:
+                mFrenchRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mFrenchRadioButton);
+        }
+        switch (savedLanguage) {
+            case 3:
+                mGermanRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mGermanRadioButton);
+        }
+        switch (savedLanguage) {
+            case 4:
+                mItalianRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mItalianRadioButton);
+        }
+        switch (savedLanguage) {
+            case 5:
+                mDutchRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mDutchRadioButton);
+        }
+        switch (savedLanguage) {
+            case 6:
+                mPortugueseRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mPortugueseRadioButton);
+        }
+        switch (savedLanguage) {
+            case 7:
+                mPolishRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mPolishRadioButton);
+        }
+        switch (savedLanguage) {
+            case 8:
+                mRussianRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mRussianRadioButton);
+        }
+        switch (savedLanguage) {
+            case 9:
+                mTurkishRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mTurkishRadioButton);
+        }
+        switch (savedLanguage) {
+            case 10:
+                mChineseRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mChineseRadioButton);
+        }
+        switch (savedLanguage) {
+            case 11:
+                mJapaneseRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mJapaneseRadioButton);
+        }
+        switch (savedLanguage) {
+            case 12:
+                mKoreanRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mKoreanRadioButton);
+        }
+        switch (savedLanguage) {
+            case 13:
+                mArabicRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mArabicRadioButton);
+        }
+        switch (savedLanguage) {
+            case 14:
+                mHindiRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mHindiRadioButton);
+        }
+        switch (savedLanguage) {
+            case 15:
+                mMalayRadioButton.setChecked(true);
+                mCurrentRadioButtonPressed.push(mMalayRadioButton);
+        }
+    }
+
+    private void saveLanguage(Language language) {
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
+        switch (language) {
+            case ENGLISH:
+                editor.putInt("language", Language.ENGLISH.ordinal()).commit();
+                break;
+            case SPANISH:
+                editor.putInt("language", Language.SPANISH.ordinal()).commit();
+                break;
+            case FRENCH:
+                editor.putInt("language", Language.FRENCH.ordinal()).commit();
+                break;
+            case GERMAN:
+                ;
+                editor.putInt("language", Language.GERMAN.ordinal()).commit();
+                break;
+            case ITALIAN:
+                editor.putInt("language", Language.ITALIAN.ordinal()).commit();
+                break;
+            case DUTCH:
+                editor.putInt("language", Language.DUTCH.ordinal()).commit();
+                break;
+            case PORTUGUESE:
+                editor.putInt("language", Language.PORTUGUESE.ordinal()).commit();
+                break;
+            case POLISH:
+                editor.putInt("language", Language.POLISH.ordinal()).commit();
+                break;
+            case RUSSIAN:
+                editor.putInt("language", Language.RUSSIAN.ordinal()).commit();
+                break;
+            case TURKISH:
+                editor.putInt("language", Language.TURKISH.ordinal()).commit();
+                break;
+            case CHINESE:
+                editor.putInt("language", Language.CHINESE.ordinal()).commit();
+                break;
+            case JAPANESE:
+                editor.putInt("language", Language.JAPANESE.ordinal()).commit();
+                break;
+            case KOREAN:
+                editor.putInt("language", Language.KOREAN.ordinal()).commit();
+                break;
+            case ARABIC:
+                editor.putInt("language", Language.ARABIC.ordinal()).commit();
+                break;
+            case HINDI:
+                editor.putInt("language", Language.HINDI.ordinal()).commit();
+                break;
+            case MALAY:
+                editor.putInt("language", Language.MALAY.ordinal()).commit();
+                break;
+        }
+    }
+
+    /**
+     * Sets clickable of all RadioButtons to false because their clicks are handles by their parent
+     * view.
+     */
+    private void disableRadioButtonsClickability() {
+        mEnglishRadioButton.setClickable(false);
+        mSpanishRadioButton.setClickable(false);
+        mFrenchRadioButton.setClickable(false);
+        mGermanRadioButton.setClickable(false);
+        mItalianRadioButton.setClickable(false);
+        mDutchRadioButton.setClickable(false);
+        mPortugueseRadioButton.setClickable(false);
+        mPolishRadioButton.setClickable(false);
+        mRussianRadioButton.setClickable(false);
+        mTurkishRadioButton.setClickable(false);
+        mChineseRadioButton.setClickable(false);
+        mJapaneseRadioButton.setClickable(false);
+        mKoreanRadioButton.setClickable(false);
+        mArabicRadioButton.setClickable(false);
+        mHindiRadioButton.setClickable(false);
+        mMalayRadioButton.setClickable(false);
     }
 
     /**
