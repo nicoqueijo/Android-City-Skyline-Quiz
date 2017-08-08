@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.ScrollView;
 
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.helper.CornerRounder;
@@ -81,6 +83,7 @@ public class LanguageChooserDialog extends DialogFragment {
     private RadioButton mHindiRadioButton;
     private RadioButton mMalayRadioButton;
 
+    private ScrollView mScrollView;
     private Button mCancelButton;
 
     public LanguageChooserDialog() {
@@ -90,7 +93,6 @@ public class LanguageChooserDialog extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        mSharedPreferences = getActivity().getSharedPreferences("settings", Context.MODE_PRIVATE);
         return inflater.inflate(R.layout.dialog_languague_chooser, container, false);
     }
 
@@ -153,10 +155,11 @@ public class LanguageChooserDialog extends DialogFragment {
 
         disableRadioButtonsClickability();
 
+        mScrollView = (ScrollView) view.findViewById(R.id.scroll_view);
         mCancelButton = (Button) view.findViewById(R.id.cancel_button);
 
-        mSharedPreferences.getInt("language", Language.ENGLISH.ordinal());
-        setSavedLanguage();
+        restoreSavedLanguage();
+        restoreSavedScrollingPosition();
 
         CornerRounder.roundImageCorners(mUnitedKingdomFlag, mSpainFlag, mFanceFlag, mGermanyFlag,
                 mItalyFlag, mNetherlandsFlag, mPortugalFlag, mPolandFlag, mRussiaFlag, mTurkeyFlag,
@@ -367,6 +370,10 @@ public class LanguageChooserDialog extends DialogFragment {
      * user has a chance to see the radio button change to his/her selection.
      */
     private void smallDelayAndDismiss() {
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
+        Log.v("scroll", "saving: " + mScrollView.getScrollY());
+        editor.putInt("scroll_position_language", mScrollView.getScrollY());
+        editor.commit();
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -383,7 +390,7 @@ public class LanguageChooserDialog extends DialogFragment {
      * allows constants in the cases so Language.ENGLISH.ordinal() wouldn't work. The magic numbers
      * map to the order declared in the Language enum.
      */
-    private void setSavedLanguage() {
+    private void restoreSavedLanguage() {
         int savedLanguage = mSharedPreferences.getInt("language", Language.ENGLISH.ordinal());
         switch (savedLanguage) {
             case 0:
@@ -451,6 +458,21 @@ public class LanguageChooserDialog extends DialogFragment {
                 mCurrentRadioButtonPressed.push(mMalayRadioButton);
                 break;
         }
+    }
+
+    /**
+     * Retrieves the position of the the ScrollBar from the state of the last time a language was
+     * selected and scrolls to that position. Since there is no horizontal ScrollBar, the x position
+     * is 0.
+     */
+    private void restoreSavedScrollingPosition() {
+        final int X_POSITION = 0;
+        final int Y_POSITION = mSharedPreferences.getInt("scroll_position_language", 0);
+        mScrollView.post(new Runnable() {
+            public void run() {
+                mScrollView.scrollTo(X_POSITION, Y_POSITION);
+            }
+        });
     }
 
     /**
