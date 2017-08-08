@@ -4,8 +4,8 @@ import android.app.DialogFragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -169,10 +169,8 @@ public class LanguageChooserDialog extends DialogFragment {
                 mEnglishRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mEnglishRadioButton);
                 saveLanguage(Language.ENGLISH);
-                // change radio button selected
-                // save language selected to sharedPreferences
-                // change language app-wide
-                // dismiss dialog
+                // change language app wide to selected
+                smallDelayAndDismiss();
             }
         });
 
@@ -183,10 +181,8 @@ public class LanguageChooserDialog extends DialogFragment {
                 mSpanishRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mSpanishRadioButton);
                 saveLanguage(Language.SPANISH);
-                // change radio button selected
-                // save language selected to sharedPreferences
-                // change language app-wide
-                // dismiss dialog
+                // change language app wide to selected
+                smallDelayAndDismiss();
             }
         });
 
@@ -197,10 +193,8 @@ public class LanguageChooserDialog extends DialogFragment {
                 mFrenchRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mFrenchRadioButton);
                 saveLanguage(Language.FRENCH);
-                // change radio button selected
-                // save language selected to sharedPreferences
-                // change language app-wide
-                // dismiss dialog
+                // change language app wide to selected
+                smallDelayAndDismiss();
             }
         });
 
@@ -211,10 +205,8 @@ public class LanguageChooserDialog extends DialogFragment {
                 mGermanRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mGermanRadioButton);
                 saveLanguage(Language.GERMAN);
-                // change radio button selected
-                // save language selected to sharedPreferences
-                // change language app-wide
-                // dismiss dialog
+                // change language app wide to selected
+                smallDelayAndDismiss();
             }
         });
 
@@ -225,10 +217,8 @@ public class LanguageChooserDialog extends DialogFragment {
                 mItalianRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mItalianRadioButton);
                 saveLanguage(Language.ITALIAN);
-                // change radio button selected
-                // save language selected to sharedPreferences
-                // change language app-wide
-                // dismiss dialog
+                // change language app wide to selected
+                smallDelayAndDismiss();
             }
         });
 
@@ -239,10 +229,8 @@ public class LanguageChooserDialog extends DialogFragment {
                 mDutchRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mDutchRadioButton);
                 saveLanguage(Language.DUTCH);
-                // change radio button selected
-                // save language selected to sharedPreferences
-                // change language app-wide
-                // dismiss dialog
+                // change language app wide to selected
+                smallDelayAndDismiss();
             }
         });
 
@@ -253,10 +241,8 @@ public class LanguageChooserDialog extends DialogFragment {
                 mPortugueseRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mPortugueseRadioButton);
                 saveLanguage(Language.PORTUGUESE);
-                // change radio button selected
-                // save language selected to sharedPreferences
-                // change language app-wide
-                // dismiss dialog
+                // change language app wide to selected
+                smallDelayAndDismiss();
             }
         });
 
@@ -267,10 +253,8 @@ public class LanguageChooserDialog extends DialogFragment {
                 mPolishRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mPolishRadioButton);
                 saveLanguage(Language.POLISH);
-                // change radio button selected
-                // save language selected to sharedPreferences
-                // change language app-wide
-                // dismiss dialog
+                // change language app wide to selected
+                smallDelayAndDismiss();
             }
         });
 
@@ -281,10 +265,8 @@ public class LanguageChooserDialog extends DialogFragment {
                 mRussianRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mRussianRadioButton);
                 saveLanguage(Language.RUSSIAN);
-                // change radio button selected
-                // save language selected to sharedPreferences
-                // change language app-wide
-                // dismiss dialog
+                // change language app wide to selected
+                smallDelayAndDismiss();
             }
         });
 
@@ -295,10 +277,8 @@ public class LanguageChooserDialog extends DialogFragment {
                 mTurkishRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mTurkishRadioButton);
                 saveLanguage(Language.TURKISH);
-                // change radio button selected
-                // save language selected to sharedPreferences
-                // change language app-wide
-                // dismiss dialog
+                // change language app wide to selected
+                smallDelayAndDismiss();
             }
         });
 
@@ -309,10 +289,8 @@ public class LanguageChooserDialog extends DialogFragment {
                 mChineseRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mChineseRadioButton);
                 saveLanguage(Language.CHINESE);
-                // change radio button selected
-                // save language selected to sharedPreferences
-                // change language app-wide
-                // dismiss dialog
+                // change language app wide to selected
+                smallDelayAndDismiss();
             }
         });
 
@@ -323,10 +301,8 @@ public class LanguageChooserDialog extends DialogFragment {
                 mJapaneseRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mJapaneseRadioButton);
                 saveLanguage(Language.JAPANESE);
-                // change radio button selected
-                // save language selected to sharedPreferences
-                // change language app-wide
-                // dismiss dialog
+                // change language app wide to selected
+                smallDelayAndDismiss();
             }
         });
 
@@ -337,10 +313,8 @@ public class LanguageChooserDialog extends DialogFragment {
                 mKoreanRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mKoreanRadioButton);
                 saveLanguage(Language.KOREAN);
-                // change radio button selected
-                // save language selected to sharedPreferences
-                // change language app-wide
-                // dismiss dialog
+                // change language app wide to selected
+                smallDelayAndDismiss();
             }
         });
 
@@ -351,10 +325,8 @@ public class LanguageChooserDialog extends DialogFragment {
                 mArabicRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mArabicRadioButton);
                 saveLanguage(Language.ARABIC);
-                // change radio button selected
-                // save language selected to sharedPreferences
-                // change language app-wide
-                // dismiss dialog
+                // change language app wide to selected
+                smallDelayAndDismiss();
             }
         });
 
@@ -365,10 +337,8 @@ public class LanguageChooserDialog extends DialogFragment {
                 mHindiRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mHindiRadioButton);
                 saveLanguage(Language.HINDI);
-                // change radio button selected
-                // save language selected to sharedPreferences
-                // change language app-wide
-                // dismiss dialog
+                // change language app wide to selected
+                smallDelayAndDismiss();
             }
         });
 
@@ -379,10 +349,8 @@ public class LanguageChooserDialog extends DialogFragment {
                 mMalayRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mMalayRadioButton);
                 saveLanguage(Language.MALAY);
-                // change radio button selected
-                // save language selected to sharedPreferences
-                // change language app-wide
-                // dismiss dialog
+                // change language app wide to selected
+                smallDelayAndDismiss();
             }
         });
 
@@ -392,6 +360,20 @@ public class LanguageChooserDialog extends DialogFragment {
                 dismiss();
             }
         });
+    }
+
+    /**
+     * Dismisses the dialog when the user selects a language after a 200 millisecond delay.
+     */
+    private void smallDelayAndDismiss() {
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //Do something after 100ms
+                dismiss();
+            }
+        }, 200);
     }
 
     private void setSavedLanguage() {
