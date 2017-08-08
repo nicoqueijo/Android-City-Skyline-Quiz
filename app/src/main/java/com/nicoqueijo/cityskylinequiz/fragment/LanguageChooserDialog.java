@@ -153,11 +153,10 @@ public class LanguageChooserDialog extends DialogFragment {
         mHindiRadioButton = (RadioButton) view.findViewById(R.id.radio_button_hindi);
         mMalayRadioButton = (RadioButton) view.findViewById(R.id.radio_button_malay);
 
-        disableRadioButtonsClickability();
-
         mScrollView = (ScrollView) view.findViewById(R.id.scroll_view);
         mCancelButton = (Button) view.findViewById(R.id.cancel_button);
 
+        disableRadioButtonsClickability();
         restoreSavedLanguage();
         restoreSavedScrollingPosition();
 
@@ -371,8 +370,7 @@ public class LanguageChooserDialog extends DialogFragment {
      */
     private void smallDelayAndDismiss() {
         SharedPreferences.Editor editor = mSharedPreferences.edit();
-        Log.v("scroll", "saving: " + mScrollView.getScrollY());
-        editor.putInt("scroll_position_language", mScrollView.getScrollY());
+        editor.putInt("language_scroll_position", mScrollView.getScrollY());
         editor.commit();
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -467,7 +465,7 @@ public class LanguageChooserDialog extends DialogFragment {
      */
     private void restoreSavedScrollingPosition() {
         final int X_POSITION = 0;
-        final int Y_POSITION = mSharedPreferences.getInt("scroll_position_language", 0);
+        final int Y_POSITION = mSharedPreferences.getInt("language_scroll_position", 0);
         mScrollView.post(new Runnable() {
             public void run() {
                 mScrollView.scrollTo(X_POSITION, Y_POSITION);

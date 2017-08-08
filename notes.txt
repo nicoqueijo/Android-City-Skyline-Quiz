@@ -47,7 +47,7 @@ https://api.myjson.com/bins/x3m9t
 
 
 // DO NEXT
--Save position of scrollview in citylist and languagelist
+-Save and restore position of scrollview in citylist
 -Make dialog fragment for clear scores in xml and java
 -Watch videos on android locale
 
