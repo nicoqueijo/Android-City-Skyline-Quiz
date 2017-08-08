@@ -389,141 +389,83 @@ public class LanguageChooserDialog extends DialogFragment {
             case 0:
                 mEnglishRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mEnglishRadioButton);
-        }
-        switch (savedLanguage) {
+                break;
             case 1:
                 mSpanishRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mSpanishRadioButton);
-        }
-        switch (savedLanguage) {
+                break;
             case 2:
                 mFrenchRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mFrenchRadioButton);
-        }
-        switch (savedLanguage) {
+                break;
             case 3:
                 mGermanRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mGermanRadioButton);
-        }
-        switch (savedLanguage) {
+                break;
             case 4:
                 mItalianRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mItalianRadioButton);
-        }
-        switch (savedLanguage) {
+                break;
             case 5:
                 mDutchRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mDutchRadioButton);
-        }
-        switch (savedLanguage) {
+                break;
             case 6:
                 mPortugueseRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mPortugueseRadioButton);
-        }
-        switch (savedLanguage) {
+                break;
             case 7:
                 mPolishRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mPolishRadioButton);
-        }
-        switch (savedLanguage) {
+                break;
             case 8:
                 mRussianRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mRussianRadioButton);
-        }
-        switch (savedLanguage) {
+                break;
             case 9:
                 mTurkishRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mTurkishRadioButton);
-        }
-        switch (savedLanguage) {
+                break;
             case 10:
                 mChineseRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mChineseRadioButton);
-        }
-        switch (savedLanguage) {
+                break;
             case 11:
                 mJapaneseRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mJapaneseRadioButton);
-        }
-        switch (savedLanguage) {
+                break;
             case 12:
                 mKoreanRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mKoreanRadioButton);
-        }
-        switch (savedLanguage) {
+                break;
             case 13:
                 mArabicRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mArabicRadioButton);
-        }
-        switch (savedLanguage) {
+                break;
             case 14:
                 mHindiRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mHindiRadioButton);
-        }
-        switch (savedLanguage) {
+                break;
             case 15:
                 mMalayRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mMalayRadioButton);
-        }
-    }
-
-    private void saveLanguage(Language language) {
-        SharedPreferences.Editor editor = mSharedPreferences.edit();
-        switch (language) {
-            case ENGLISH:
-                editor.putInt("language", Language.ENGLISH.ordinal()).commit();
-                break;
-            case SPANISH:
-                editor.putInt("language", Language.SPANISH.ordinal()).commit();
-                break;
-            case FRENCH:
-                editor.putInt("language", Language.FRENCH.ordinal()).commit();
-                break;
-            case GERMAN:
-                ;
-                editor.putInt("language", Language.GERMAN.ordinal()).commit();
-                break;
-            case ITALIAN:
-                editor.putInt("language", Language.ITALIAN.ordinal()).commit();
-                break;
-            case DUTCH:
-                editor.putInt("language", Language.DUTCH.ordinal()).commit();
-                break;
-            case PORTUGUESE:
-                editor.putInt("language", Language.PORTUGUESE.ordinal()).commit();
-                break;
-            case POLISH:
-                editor.putInt("language", Language.POLISH.ordinal()).commit();
-                break;
-            case RUSSIAN:
-                editor.putInt("language", Language.RUSSIAN.ordinal()).commit();
-                break;
-            case TURKISH:
-                editor.putInt("language", Language.TURKISH.ordinal()).commit();
-                break;
-            case CHINESE:
-                editor.putInt("language", Language.CHINESE.ordinal()).commit();
-                break;
-            case JAPANESE:
-                editor.putInt("language", Language.JAPANESE.ordinal()).commit();
-                break;
-            case KOREAN:
-                editor.putInt("language", Language.KOREAN.ordinal()).commit();
-                break;
-            case ARABIC:
-                editor.putInt("language", Language.ARABIC.ordinal()).commit();
-                break;
-            case HINDI:
-                editor.putInt("language", Language.HINDI.ordinal()).commit();
-                break;
-            case MALAY:
-                editor.putInt("language", Language.MALAY.ordinal()).commit();
                 break;
         }
     }
 
     /**
-     * Sets clickable of all RadioButtons to false because their clicks are handles by their parent
+     * Saves the language that the user selected to SharedPreferences.
+     *
+     * @param language the language that the user selected.
+     */
+    private void saveLanguage(Language language) {
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
+        editor.putInt("language", language.ordinal());
+        editor.commit();
+    }
+
+    /**
+     * Sets clickable of all RadioButtons to false because their clicks are handled by their parent
      * view.
      */
     private void disableRadioButtonsClickability() {
