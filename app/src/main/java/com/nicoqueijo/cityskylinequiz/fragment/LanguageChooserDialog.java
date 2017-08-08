@@ -363,7 +363,8 @@ public class LanguageChooserDialog extends DialogFragment {
     }
 
     /**
-     * Dismisses the dialog when the user selects a language after a 200 millisecond delay.
+     * Dismisses the dialog when the user selects a language after a 200 millisecond delay so the
+     * user has a chance to see the radio button change to his/her selection.
      */
     private void smallDelayAndDismiss() {
         final Handler handler = new Handler();
@@ -376,6 +377,12 @@ public class LanguageChooserDialog extends DialogFragment {
         }, 200);
     }
 
+    /**
+     * Retrieves the language setting from the sharedPreferences file and sets that language to the
+     * appropriate RadioButton. I had to use magic numbers in the switch statement because Java only
+     * allows constants in the cases so Language.ENGLISH.ordinal() wouldn't work. The magic numbers
+     * map to the order declared in the Language enum.
+     */
     private void setSavedLanguage() {
         int savedLanguage = mSharedPreferences.getInt("language", Language.ENGLISH.ordinal());
         switch (savedLanguage) {

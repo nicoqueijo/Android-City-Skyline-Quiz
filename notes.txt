@@ -47,8 +47,7 @@ https://api.myjson.com/bins/x3m9t
 
 
 // DO NEXT
--Group radio buttons in language dialog
--Set listeners for each language in language dialog
+-Save position of scrollview in citylist and languagelist
 -Make dialog fragment for clear scores in xml and java
 -Watch videos on android locale
 
