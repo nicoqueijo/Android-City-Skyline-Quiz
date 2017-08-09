@@ -16,6 +16,9 @@
     <string name="settings_language_description">Ignore device language and use another</string>
     <string name="settings_scores_title">Reset scores</string>
     <string name="settings_scores_description">Clear scores from all games</string>
+    <string name="clear_scores">Clear all scores?</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>

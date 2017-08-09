@@ -3,7 +3,7 @@ package com.nicoqueijo.cityskylinequiz.model;
 import java.io.Serializable;
 
 /**
- *
+ * Serializable must be implemented in order to pass a City object between intents.
  */
 public class City implements Serializable {
 

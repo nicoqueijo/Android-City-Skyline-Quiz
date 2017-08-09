@@ -44,10 +44,10 @@ https://api.myjson.com/bins/x3m9t
 -Rate app button on main activity menu
 -Draw out app architecture and post on github README
 -change xml attributes (left -> start), (right -> end) to support arabic
-
+-Make default selected language to device language if it's supported, not English
 
 // DO NEXT
--Save and restore position of scrollview in citylist
+-Save and restore position of scrollview in citylist (check submitted issue to library repo)
 -Make dialog fragment for clear scores in xml and java
 -Watch videos on android locale
 
