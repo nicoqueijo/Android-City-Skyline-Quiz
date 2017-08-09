@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -154,7 +153,7 @@ public class LanguageChooserDialog extends DialogFragment {
         mMalayRadioButton = (RadioButton) view.findViewById(R.id.radio_button_malay);
 
         mScrollView = (ScrollView) view.findViewById(R.id.scroll_view);
-        mCancelButton = (Button) view.findViewById(R.id.cancel_button);
+        mCancelButton = (Button) view.findViewById(R.id.button_cancel);
 
         disableRadioButtonsClickability();
         restoreSavedLanguage();

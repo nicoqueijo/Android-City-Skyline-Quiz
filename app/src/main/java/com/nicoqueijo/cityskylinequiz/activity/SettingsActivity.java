@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.Switch;
 
 import com.nicoqueijo.cityskylinequiz.R;
+import com.nicoqueijo.cityskylinequiz.fragment.ClearScoresDialog;
 import com.nicoqueijo.cityskylinequiz.fragment.LanguageChooserDialog;
 
 public class SettingsActivity extends AppCompatActivity {
@@ -65,6 +66,8 @@ public class SettingsActivity extends AppCompatActivity {
         mScoresView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ClearScoresDialog clearScoresDialog = new ClearScoresDialog();
+                clearScoresDialog.show(mFragmentManager, "Open Dialog");
                 // open dialog fragment to confirm scores reset
                 // show toast if user chose to clear scores
             }

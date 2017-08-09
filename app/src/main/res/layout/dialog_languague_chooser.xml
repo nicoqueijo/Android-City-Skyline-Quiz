@@ -31,9 +31,9 @@
                 android:id="@+id/choice_english"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
 
                 <RadioButton
                     android:id="@+id/radio_button_english"
@@ -66,9 +66,9 @@
                 android:id="@+id/choice_spanish"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
 
                 <RadioButton
                     android:id="@+id/radio_button_spanish"
@@ -592,7 +592,7 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/cancel_button"
+        android:id="@+id/button_cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
