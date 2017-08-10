@@ -40,6 +40,7 @@ https://api.myjson.com/bins/x3m9t
 -Add menu option on main activity to report errors via email(implicit intent)
 -Add menu option on main activity to submit suggestions via email (implicit intent)
 -Add menu option on city list to sort by country or city (use mergesort)
+-Add menu option to view source code
 -Change everything to Material Design (view dimensions, colors, fonts, etc)
 -Rate app button on main activity menu
 -Draw out app architecture and post on github README
@@ -48,6 +49,21 @@ https://api.myjson.com/bins/x3m9t
 -Clear all unused import statements
 
 // DO NEXT
--Assure all string.xmls look the same and translate everything
+-Find out how to change orientation on Arabic
+-Assure all string.xmls look the same
+-Translate French
+-Translate German
+-Translate Italian
+-Translate Dutch
+-Translate Portuguese
+-Translate Portuguese
+-Translate Polish
+-Translate Russian
+-Translate Turkish
+-Translate Chinese
+-Translate Japanese
+-Translate Korean
+-Translate Arabic
+-Translate Malay
 -Test language switching once translations are done
 -Save and restore position of scrollview in citylist (check submitted issue to library repo)

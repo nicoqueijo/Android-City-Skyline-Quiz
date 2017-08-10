@@ -17,7 +17,7 @@ import com.nicoqueijo.cityskylinequiz.interfaces.Communicator;
 public class ClearScoresDialog extends DialogFragment {
 
     public final static String CLEAR_SCORES = "true";
-    Communicator communicator;
+    Communicator mCommunicator;
     private Button cancelButton;
     private Button deleteButton;
 
@@ -53,7 +53,7 @@ public class ClearScoresDialog extends DialogFragment {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                communicator.onDialogMessage(CLEAR_SCORES);
+                mCommunicator.onDialogMessage(CLEAR_SCORES);
                 dismiss();
             }
         });
@@ -76,7 +76,7 @@ public class ClearScoresDialog extends DialogFragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        communicator = (Communicator) activity;
+        mCommunicator = (Communicator) activity;
     }
 
     /**

@@ -8,7 +8,6 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
-import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -50,7 +49,7 @@ public class LanguageChooserDialog extends DialogFragment {
         ms  // MALAY
     }
 
-    Communicator communicator;
+    Communicator mCommunicator;
     private SharedPreferences mSharedPreferences;
     private Stack<RadioButton> mActiveRadioButton = new Stack<>();
 
@@ -325,7 +324,7 @@ public class LanguageChooserDialog extends DialogFragment {
         mActiveRadioButton.push(languageRadioButton);
         saveLanguage(language);
         setLocale(language.name());
-        communicator.onDialogMessage(language.name());
+        mCommunicator.onDialogMessage(language.name());
         smallDelayAndDismiss();
     }
 
@@ -337,7 +336,7 @@ public class LanguageChooserDialog extends DialogFragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        communicator = (Communicator) activity;
+        mCommunicator = (Communicator) activity;
     }
 
     /**
