@@ -1,5 +1,6 @@
 package com.nicoqueijo.cityskylinequiz.fragment;
 
+import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -21,6 +22,8 @@ import android.widget.ScrollView;
 
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.helper.CornerRounder;
+import com.nicoqueijo.cityskylinequiz.helper.SystemInfo;
+import com.nicoqueijo.cityskylinequiz.interfaces.Communicator;
 
 import java.util.Locale;
 import java.util.Stack;
@@ -46,12 +49,13 @@ public class LanguageChooserDialog extends DialogFragment {
         ms  // MALAY
     }
 
+    Communicator communicator;
     private SharedPreferences mSharedPreferences;
     private Stack<RadioButton> mCurrentRadioButtonPressed = new Stack<>();
 
     private ImageView mUnitedKingdomFlag;
     private ImageView mSpainFlag;
-    private ImageView mFanceFlag;
+    private ImageView mFranceFlag;
     private ImageView mGermanyFlag;
     private ImageView mItalyFlag;
     private ImageView mNetherlandsFlag;
@@ -103,6 +107,9 @@ public class LanguageChooserDialog extends DialogFragment {
     private ScrollView mScrollView;
     private Button mCancelButton;
 
+    /**
+     * Empty constructor required for DialogFragment.
+     */
     public LanguageChooserDialog() {
     }
 
@@ -121,7 +128,7 @@ public class LanguageChooserDialog extends DialogFragment {
 
         mUnitedKingdomFlag = (ImageView) view.findViewById(R.id.flag_united_kingdom);
         mSpainFlag = (ImageView) view.findViewById(R.id.flag_spain);
-        mFanceFlag = (ImageView) view.findViewById(R.id.flag_france);
+        mFranceFlag = (ImageView) view.findViewById(R.id.flag_france);
         mGermanyFlag = (ImageView) view.findViewById(R.id.flag_germany);
         mItalyFlag = (ImageView) view.findViewById(R.id.flag_italy);
         mNetherlandsFlag = (ImageView) view.findViewById(R.id.flag_netherlands);
@@ -185,6 +192,7 @@ public class LanguageChooserDialog extends DialogFragment {
                 mEnglishRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mEnglishRadioButton);
                 saveLanguage(Language.en);
+                communicator.onDialogMessage("en");
                 // change language app wide to selected
                 smallDelayAndDismiss();
             }
@@ -199,7 +207,8 @@ public class LanguageChooserDialog extends DialogFragment {
                 mSpanishRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mSpanishRadioButton);
                 saveLanguage(Language.es);
-                setLocale("es");
+                setLocale(Language.es.name());
+                communicator.onDialogMessage("es");
                 // change language app wide to selected
                 smallDelayAndDismiss();
             }
@@ -381,12 +390,18 @@ public class LanguageChooserDialog extends DialogFragment {
         });
     }
 
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        communicator = (Communicator) activity;
+    }
+
     /**
      * Rounds the corners of all the flag image views by calling a static method in the
      * CornerRounder class.
      */
     private void roundFlagImageCorners() {
-        CornerRounder.roundImageCorners(mUnitedKingdomFlag, mSpainFlag, mFanceFlag, mGermanyFlag,
+        CornerRounder.roundImageCorners(mUnitedKingdomFlag, mSpainFlag, mFranceFlag, mGermanyFlag,
                 mItalyFlag, mNetherlandsFlag, mPortugalFlag, mPolandFlag, mRussiaFlag, mTurkeyFlag,
                 mChinaFlag, mJapanFlag, mSouthKoreaFlag, mSaudiArabiaFlag, mIndiaFlag, mMalaysiaFlag);
     }
@@ -410,78 +425,75 @@ public class LanguageChooserDialog extends DialogFragment {
     }
 
     /**
-     * Retrieves the language setting from the sharedPreferences file and sets that language to the
-     * appropriate RadioButton. I had to use magic numbers in the switch statement because Java only
-     * allows constants in the cases so Language.en.ordinal() wouldn't work. The magic numbers
-     * map to the order declared in the Language enum.
+     * Saves the language that the user selected to SharedPreferences.
+     *
+     * @param language the language that the user selected.
+     */
+    private void saveLanguage(Language language) {
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
+        editor.putString("language", language.name());
+        editor.commit();
+    }
+
+    /**
+     * Retrieves the language setting from the SharedPreferences file and sets that language to the
+     * appropriate RadioButton. If this is the first time running the app SharedPreferences won't
+     * have a language value and the default value will be the system language. If the system
+     * language is a supported language in this app it defaults to English.
      */
     private void restoreSavedLanguage() {
-        int savedLanguage = mSharedPreferences.getInt("language", -1);
-        switch (savedLanguage) {
-            case 0:
-                mEnglishRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mEnglishRadioButton);
-                break;
-            case 1:
-                mSpanishRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mSpanishRadioButton);
-                break;
-            case 2:
-                mFrenchRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mFrenchRadioButton);
-                break;
-            case 3:
-                mGermanRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mGermanRadioButton);
-                break;
-            case 4:
-                mItalianRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mItalianRadioButton);
-                break;
-            case 5:
-                mDutchRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mDutchRadioButton);
-                break;
-            case 6:
-                mPortugueseRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mPortugueseRadioButton);
-                break;
-            case 7:
-                mPolishRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mPolishRadioButton);
-                break;
-            case 8:
-                mRussianRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mRussianRadioButton);
-                break;
-            case 9:
-                mTurkishRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mTurkishRadioButton);
-                break;
-            case 10:
-                mChineseRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mChineseRadioButton);
-                break;
-            case 11:
-                mJapaneseRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mJapaneseRadioButton);
-                break;
-            case 12:
-                mKoreanRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mKoreanRadioButton);
-                break;
-            case 13:
-                mArabicRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mArabicRadioButton);
-                break;
-            case 14:
-                mHindiRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mHindiRadioButton);
-                break;
-            case 15:
-                mMalayRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mMalayRadioButton);
-                break;
+        String savedLanguage = mSharedPreferences.getString("language", SystemInfo.SYSTEM_LOCALE);
+        if (savedLanguage.equals(Language.en.name())) {
+            mEnglishRadioButton.setChecked(true);
+            mCurrentRadioButtonPressed.push(mEnglishRadioButton);
+        } else if (savedLanguage.equals(Language.es.name())) {
+            mSpanishRadioButton.setChecked(true);
+            mCurrentRadioButtonPressed.push(mSpanishRadioButton);
+        } else if (savedLanguage.equals(Language.fr.name())) {
+            mFrenchRadioButton.setChecked(true);
+            mCurrentRadioButtonPressed.push(mFrenchRadioButton);
+        } else if (savedLanguage.equals(Language.de.name())) {
+            mGermanRadioButton.setChecked(true);
+            mCurrentRadioButtonPressed.push(mGermanRadioButton);
+        } else if (savedLanguage.equals(Language.it.name())) {
+            mItalianRadioButton.setChecked(true);
+            mCurrentRadioButtonPressed.push(mItalianRadioButton);
+        } else if (savedLanguage.equals(Language.nl.name())) {
+            mDutchRadioButton.setChecked(true);
+            mCurrentRadioButtonPressed.push(mDutchRadioButton);
+        } else if (savedLanguage.equals(Language.pt.name())) {
+            mPortugueseRadioButton.setChecked(true);
+            mCurrentRadioButtonPressed.push(mPortugueseRadioButton);
+        } else if (savedLanguage.equals(Language.pl.name())) {
+            mPolishRadioButton.setChecked(true);
+            mCurrentRadioButtonPressed.push(mPolishRadioButton);
+        } else if (savedLanguage.equals(Language.ru.name())) {
+            mRussianRadioButton.setChecked(true);
+            mCurrentRadioButtonPressed.push(mRussianRadioButton);
+        } else if (savedLanguage.equals(Language.tr.name())) {
+            mTurkishRadioButton.setChecked(true);
+            mCurrentRadioButtonPressed.push(mTurkishRadioButton);
+        } else if (savedLanguage.equals(Language.zh.name())) {
+            mChineseRadioButton.setChecked(true);
+            mCurrentRadioButtonPressed.push(mChineseRadioButton);
+        } else if (savedLanguage.equals(Language.ja.name())) {
+            mJapaneseRadioButton.setChecked(true);
+            mCurrentRadioButtonPressed.push(mJapaneseRadioButton);
+        } else if (savedLanguage.equals(Language.ko.name())) {
+            mKoreanRadioButton.setChecked(true);
+            mCurrentRadioButtonPressed.push(mKoreanRadioButton);
+        } else if (savedLanguage.equals(Language.ar.name())) {
+            mArabicRadioButton.setChecked(true);
+            mCurrentRadioButtonPressed.push(mArabicRadioButton);
+        } else if (savedLanguage.equals(Language.hi.name())) {
+            mHindiRadioButton.setChecked(true);
+            mCurrentRadioButtonPressed.push(mHindiRadioButton);
+        } else if (savedLanguage.equals(Language.ms.name())) {
+            mMalayRadioButton.setChecked(true);
+            mCurrentRadioButtonPressed.push(mMalayRadioButton);
+        } else {
+            mEnglishRadioButton.setChecked(true);
+            mCurrentRadioButtonPressed.push(mEnglishRadioButton);
         }
     }
 
@@ -498,17 +510,6 @@ public class LanguageChooserDialog extends DialogFragment {
                 mScrollView.scrollTo(X_POSITION, Y_POSITION);
             }
         });
-    }
-
-    /**
-     * Saves the language that the user selected to SharedPreferences.
-     *
-     * @param language the language that the user selected.
-     */
-    private void saveLanguage(Language language) {
-        SharedPreferences.Editor editor = mSharedPreferences.edit();
-        editor.putInt("language", language.ordinal());
-        editor.commit();
     }
 
     /**

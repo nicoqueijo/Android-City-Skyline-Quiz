@@ -71,7 +71,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                 args.putSerializable("city", mCities.get(CURRENT_POSITION));
                 cityDetailDialog.setArguments(args);
                 cityDetailDialog.show(((FragmentActivity) mContext).getSupportFragmentManager(),
-                        "Open Dialog");
+                        "dialog_city");
             }
         });
     }

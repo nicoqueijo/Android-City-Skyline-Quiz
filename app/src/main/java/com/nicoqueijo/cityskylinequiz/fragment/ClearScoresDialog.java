@@ -1,5 +1,6 @@
 package com.nicoqueijo.cityskylinequiz.fragment;
 
+import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -13,13 +14,18 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import com.nicoqueijo.cityskylinequiz.R;
+import com.nicoqueijo.cityskylinequiz.interfaces.Communicator;
 
 public class ClearScoresDialog extends DialogFragment {
 
+    Communicator communicator;
     private SharedPreferences mSharedPreferences;
     private Button cancelButton;
     private Button deleteButton;
 
+    /**
+     * Empty constructor required for DialogFragment.
+     */
     public ClearScoresDialog() {
     }
 
@@ -43,6 +49,7 @@ public class ClearScoresDialog extends DialogFragment {
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                communicator.onDialogMessage("false");
                 dismiss();
             }
         });
@@ -52,6 +59,7 @@ public class ClearScoresDialog extends DialogFragment {
             public void onClick(View v) {
                 // clear the saved scores
                 // show toast confirming operation (might be done from settings activity after receiving dialog status)
+                communicator.onDialogMessage("true");
                 dismiss();
             }
         });
@@ -64,6 +72,12 @@ public class ClearScoresDialog extends DialogFragment {
     public void onStart() {
         super.onStart();
         adjustWindowSize();
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        communicator = (Communicator) activity;
     }
 
     /**

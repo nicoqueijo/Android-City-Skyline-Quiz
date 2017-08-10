@@ -31,6 +31,9 @@ public class CityDetailDialog extends DialogFragment {
     private ImageButton mButtonGoogleMaps;
     private ImageButton mButtonWikipedia;
 
+    /**
+     * Empty constructor required for DialogFragment.
+     */
     public CityDetailDialog() {
     }
 

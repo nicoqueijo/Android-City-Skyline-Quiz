@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Switch;
@@ -13,8 +14,9 @@ import android.widget.Switch;
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.fragment.ClearScoresDialog;
 import com.nicoqueijo.cityskylinequiz.fragment.LanguageChooserDialog;
+import com.nicoqueijo.cityskylinequiz.interfaces.Communicator;
 
-public class SettingsActivity extends AppCompatActivity {
+public class SettingsActivity extends AppCompatActivity implements Communicator {
 
     AppCompatActivity mThisActivity = SettingsActivity.this;
     FragmentManager mFragmentManager = getFragmentManager();
@@ -59,7 +61,7 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 LanguageChooserDialog languageChooserDialog = new LanguageChooserDialog();
-                languageChooserDialog.show(mFragmentManager, "Open Dialog");
+                languageChooserDialog.show(mFragmentManager, "dialog_language");
             }
         });
 
@@ -67,11 +69,22 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ClearScoresDialog clearScoresDialog = new ClearScoresDialog();
-                clearScoresDialog.show(mFragmentManager, "Open Dialog");
+                clearScoresDialog.show(mFragmentManager, "dialog_scores");
                 // open dialog fragment to confirm scores reset
                 // show toast if user chose to clear scores
             }
         });
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.v("onResume", "called");
+    }
+
+    @Override
+    public void onDialogMessage(String message) {
+        Log.v("lang", message);
     }
 
     /**

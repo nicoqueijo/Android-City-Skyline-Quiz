@@ -27,7 +27,6 @@ https://api.myjson.com/bins/x3m9t
 -Internationalize everything in strings.xml
 -Keep hiscores stored in an SQLite database
 -Clear hiscores from database when user resets the scores
--Use shared preferences to save language settings
 -Disable landscape mode in every activity
 -Javadoc all classes and methods, remove all magic numbers
 -Organize strings in strings.xml by activites/fragments/etc
@@ -46,6 +45,7 @@ https://api.myjson.com/bins/x3m9t
 -Draw out app architecture and post on github README
 -change xml attributes (left -> start), (right -> end) to support arabic
 -Make default selected language to device language if it's supported, not English
+-Clear all unused import statements
 
 // DO NEXT
 -Localization
