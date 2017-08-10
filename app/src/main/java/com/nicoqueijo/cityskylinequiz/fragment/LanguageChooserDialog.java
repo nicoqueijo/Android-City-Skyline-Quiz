@@ -8,6 +8,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -51,7 +52,7 @@ public class LanguageChooserDialog extends DialogFragment {
 
     Communicator communicator;
     private SharedPreferences mSharedPreferences;
-    private Stack<RadioButton> mCurrentRadioButtonPressed = new Stack<>();
+    private Stack<RadioButton> mActiveRadioButton = new Stack<>();
 
     private ImageView mUnitedKingdomFlag;
     private ImageView mSpainFlag;
@@ -188,198 +189,112 @@ public class LanguageChooserDialog extends DialogFragment {
         mEnglishOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentRadioButtonPressed.pop().setChecked(false);
-                mEnglishRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mEnglishRadioButton);
-                saveLanguage(Language.en);
-                setLocale(Language.en.name());
-                communicator.onDialogMessage(Language.en.name());
-                // change language app wide to selected
-                smallDelayAndDismiss();
+                changeLanguage(mEnglishRadioButton, Language.en);
             }
         });
 
         mSpanishOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mCurrentRadioButtonPressed.isEmpty()) {
-                    mCurrentRadioButtonPressed.pop().setChecked(false);
-                }
-                mSpanishRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mSpanishRadioButton);
-                saveLanguage(Language.es);
-                setLocale(Language.es.name());
-                communicator.onDialogMessage("es");
-                // change language app wide to selected
-                smallDelayAndDismiss();
+                changeLanguage(mSpanishRadioButton, Language.es);
             }
         });
 
         mFrenchOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentRadioButtonPressed.pop().setChecked(false);
-                mFrenchRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mFrenchRadioButton);
-                saveLanguage(Language.fr);
-                // change language app wide to selected
-                smallDelayAndDismiss();
+                changeLanguage(mFrenchRadioButton, Language.fr);
             }
         });
 
         mGermanOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentRadioButtonPressed.pop().setChecked(false);
-                mGermanRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mGermanRadioButton);
-                saveLanguage(Language.de);
-                // change language app wide to selected
-                smallDelayAndDismiss();
+                changeLanguage(mGermanRadioButton, Language.de);
             }
         });
 
         mItalianOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentRadioButtonPressed.pop().setChecked(false);
-                mItalianRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mItalianRadioButton);
-                saveLanguage(Language.it);
-                // change language app wide to selected
-                smallDelayAndDismiss();
+                changeLanguage(mItalianRadioButton, Language.it);
             }
         });
 
         mDutchOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentRadioButtonPressed.pop().setChecked(false);
-                mDutchRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mDutchRadioButton);
-                saveLanguage(Language.nl);
-                // change language app wide to selected
-                smallDelayAndDismiss();
+                changeLanguage(mDutchRadioButton, Language.nl);
             }
         });
 
         mPortugueseOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentRadioButtonPressed.pop().setChecked(false);
-                mPortugueseRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mPortugueseRadioButton);
-                saveLanguage(Language.pt);
-                // change language app wide to selected
-                smallDelayAndDismiss();
+                changeLanguage(mPortugueseRadioButton, Language.pt);
             }
         });
 
         mPolishOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentRadioButtonPressed.pop().setChecked(false);
-                mPolishRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mPolishRadioButton);
-                saveLanguage(Language.pl);
-                // change language app wide to selected
-                smallDelayAndDismiss();
+                changeLanguage(mPolishRadioButton, Language.pl);
             }
         });
 
         mRussianOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentRadioButtonPressed.pop().setChecked(false);
-                mRussianRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mRussianRadioButton);
-                saveLanguage(Language.ru);
-                // change language app wide to selected
-                smallDelayAndDismiss();
+                changeLanguage(mRussianRadioButton, Language.ru);
             }
         });
 
         mTurkishOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentRadioButtonPressed.pop().setChecked(false);
-                mTurkishRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mTurkishRadioButton);
-                saveLanguage(Language.tr);
-                // change language app wide to selected
-                smallDelayAndDismiss();
+                changeLanguage(mTurkishRadioButton, Language.tr);
             }
         });
 
         mChineseOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentRadioButtonPressed.pop().setChecked(false);
-                mChineseRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mChineseRadioButton);
-                saveLanguage(Language.zh);
-                // change language app wide to selected
-                smallDelayAndDismiss();
+                changeLanguage(mChineseRadioButton, Language.zh);
             }
         });
 
         mJapaneseOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentRadioButtonPressed.pop().setChecked(false);
-                mJapaneseRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mJapaneseRadioButton);
-                saveLanguage(Language.ja);
-                // change language app wide to selected
-                smallDelayAndDismiss();
+                changeLanguage(mJapaneseRadioButton, Language.ja);
             }
         });
 
         mKoreanOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentRadioButtonPressed.pop().setChecked(false);
-                mKoreanRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mKoreanRadioButton);
-                saveLanguage(Language.ko);
-                // change language app wide to selected
-                smallDelayAndDismiss();
+                changeLanguage(mKoreanRadioButton, Language.ko);
             }
         });
 
         mArabicOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentRadioButtonPressed.pop().setChecked(false);
-                mArabicRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mArabicRadioButton);
-                saveLanguage(Language.ar);
-                // change language app wide to selected
-                smallDelayAndDismiss();
+                changeLanguage(mArabicRadioButton, Language.ar);
             }
         });
 
         mHindiOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentRadioButtonPressed.pop().setChecked(false);
-                mHindiRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mHindiRadioButton);
-                saveLanguage(Language.hi);
-                // change language app wide to selected
-                smallDelayAndDismiss();
+                changeLanguage(mHindiRadioButton, Language.hi);
             }
         });
 
         mMalayOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentRadioButtonPressed.pop().setChecked(false);
-                mMalayRadioButton.setChecked(true);
-                mCurrentRadioButtonPressed.push(mMalayRadioButton);
-                saveLanguage(Language.ms);
-                // change language app wide to selected
-                smallDelayAndDismiss();
+                changeLanguage(mMalayRadioButton, Language.ms);
             }
         });
 
@@ -389,6 +304,29 @@ public class LanguageChooserDialog extends DialogFragment {
                 dismiss();
             }
         });
+    }
+
+    /**
+     * All the RadioButtons are grouped manually using a stack. Since only one radio button can be
+     * pressed at a time, a stack is used to pop a button and push another when the user presses
+     * buttons. When a button is pressed it pops the previous button (if any) and pushes the pressed
+     * button. The language of the pressed button is saved to SharedPreferences and the locale is
+     * changed to the new language. A message is sent back to the hosting activity to update the
+     * layout using the strings of the new language.
+     *
+     * @param languageRadioButton the RadioButton pressed.
+     * @param language            the language of the RadioButton pressed.
+     */
+    private void changeLanguage(RadioButton languageRadioButton, Language language) {
+        if (!mActiveRadioButton.isEmpty()) {
+            mActiveRadioButton.pop().setChecked(false);
+        }
+        languageRadioButton.setChecked(true);
+        mActiveRadioButton.push(languageRadioButton);
+        saveLanguage(language);
+        setLocale(language.name());
+        communicator.onDialogMessage(language.name());
+        smallDelayAndDismiss();
     }
 
     /**
@@ -451,55 +389,55 @@ public class LanguageChooserDialog extends DialogFragment {
         String savedLanguage = mSharedPreferences.getString("language", SystemInfo.SYSTEM_LOCALE);
         if (savedLanguage.equals(Language.en.name())) {
             mEnglishRadioButton.setChecked(true);
-            mCurrentRadioButtonPressed.push(mEnglishRadioButton);
+            mActiveRadioButton.push(mEnglishRadioButton);
         } else if (savedLanguage.equals(Language.es.name())) {
             mSpanishRadioButton.setChecked(true);
-            mCurrentRadioButtonPressed.push(mSpanishRadioButton);
+            mActiveRadioButton.push(mSpanishRadioButton);
         } else if (savedLanguage.equals(Language.fr.name())) {
             mFrenchRadioButton.setChecked(true);
-            mCurrentRadioButtonPressed.push(mFrenchRadioButton);
+            mActiveRadioButton.push(mFrenchRadioButton);
         } else if (savedLanguage.equals(Language.de.name())) {
             mGermanRadioButton.setChecked(true);
-            mCurrentRadioButtonPressed.push(mGermanRadioButton);
+            mActiveRadioButton.push(mGermanRadioButton);
         } else if (savedLanguage.equals(Language.it.name())) {
             mItalianRadioButton.setChecked(true);
-            mCurrentRadioButtonPressed.push(mItalianRadioButton);
+            mActiveRadioButton.push(mItalianRadioButton);
         } else if (savedLanguage.equals(Language.nl.name())) {
             mDutchRadioButton.setChecked(true);
-            mCurrentRadioButtonPressed.push(mDutchRadioButton);
+            mActiveRadioButton.push(mDutchRadioButton);
         } else if (savedLanguage.equals(Language.pt.name())) {
             mPortugueseRadioButton.setChecked(true);
-            mCurrentRadioButtonPressed.push(mPortugueseRadioButton);
+            mActiveRadioButton.push(mPortugueseRadioButton);
         } else if (savedLanguage.equals(Language.pl.name())) {
             mPolishRadioButton.setChecked(true);
-            mCurrentRadioButtonPressed.push(mPolishRadioButton);
+            mActiveRadioButton.push(mPolishRadioButton);
         } else if (savedLanguage.equals(Language.ru.name())) {
             mRussianRadioButton.setChecked(true);
-            mCurrentRadioButtonPressed.push(mRussianRadioButton);
+            mActiveRadioButton.push(mRussianRadioButton);
         } else if (savedLanguage.equals(Language.tr.name())) {
             mTurkishRadioButton.setChecked(true);
-            mCurrentRadioButtonPressed.push(mTurkishRadioButton);
+            mActiveRadioButton.push(mTurkishRadioButton);
         } else if (savedLanguage.equals(Language.zh.name())) {
             mChineseRadioButton.setChecked(true);
-            mCurrentRadioButtonPressed.push(mChineseRadioButton);
+            mActiveRadioButton.push(mChineseRadioButton);
         } else if (savedLanguage.equals(Language.ja.name())) {
             mJapaneseRadioButton.setChecked(true);
-            mCurrentRadioButtonPressed.push(mJapaneseRadioButton);
+            mActiveRadioButton.push(mJapaneseRadioButton);
         } else if (savedLanguage.equals(Language.ko.name())) {
             mKoreanRadioButton.setChecked(true);
-            mCurrentRadioButtonPressed.push(mKoreanRadioButton);
+            mActiveRadioButton.push(mKoreanRadioButton);
         } else if (savedLanguage.equals(Language.ar.name())) {
             mArabicRadioButton.setChecked(true);
-            mCurrentRadioButtonPressed.push(mArabicRadioButton);
+            mActiveRadioButton.push(mArabicRadioButton);
         } else if (savedLanguage.equals(Language.hi.name())) {
             mHindiRadioButton.setChecked(true);
-            mCurrentRadioButtonPressed.push(mHindiRadioButton);
+            mActiveRadioButton.push(mHindiRadioButton);
         } else if (savedLanguage.equals(Language.ms.name())) {
             mMalayRadioButton.setChecked(true);
-            mCurrentRadioButtonPressed.push(mMalayRadioButton);
+            mActiveRadioButton.push(mMalayRadioButton);
         } else {
             mEnglishRadioButton.setChecked(true);
-            mCurrentRadioButtonPressed.push(mEnglishRadioButton);
+            mActiveRadioButton.push(mEnglishRadioButton);
         }
     }
 
