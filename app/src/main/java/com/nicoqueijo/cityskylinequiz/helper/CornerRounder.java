@@ -10,7 +10,7 @@ public class CornerRounder {
      * Rounds corners of images if the device is running on Lollipop or higher.
      */
     public static void roundImageCorners(ImageView... imageViews) {
-        if (ApiChecker.isRunningLollipopOrHigher()) {
+        if (SystemInfo.isRunningLollipopOrHigher()) {
             for (ImageView imageView : imageViews) {
                 imageView.setClipToOutline(true);
             }

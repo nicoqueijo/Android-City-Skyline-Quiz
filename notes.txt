@@ -24,8 +24,9 @@ https://api.myjson.com/bins/x3m9t
 -Score: 0, 0.25, 0.50, 1.0 per question depending on attempts
 -Try to put 3 second countdown splash screen before game starts
 
--Internationalize all cityName and countryName names in strings.xml
+-Internationalize everything in strings.xml
 -Keep hiscores stored in an SQLite database
+-Clear hiscores from database when user resets the scores
 -Use shared preferences to save language settings
 -Disable landscape mode in every activity
 -Javadoc all classes and methods, remove all magic numbers
@@ -40,15 +41,30 @@ https://api.myjson.com/bins/x3m9t
 -Add menu option on main activity to report errors via email(implicit intent)
 -Add menu option on main activity to submit suggestions via email (implicit intent)
 -Add menu option on city list to sort by country or city (use mergesort)
--Change font to material design font (Roboto)?
+-Change everything to Material Design (view dimensions, colors, fonts, etc)
 -Rate app button on main activity menu
 -Draw out app architecture and post on github README
 -change xml attributes (left -> start), (right -> end) to support arabic
 -Make default selected language to device language if it's supported, not English
 
 // DO NEXT
+-Localization
 -Save and restore position of scrollview in citylist (check submitted issue to library repo)
--Make dialog fragment for clear scores in xml and java
--Watch videos on android locale
 
-
+-Locale codes
+ENGLISH en
+SPANISH es
+FRENCH fr
+GERMAN de
+ITALIAN it
+DUTCH nl
+PORTUGUESE pt
+POLISH pl
+RUSSIAN ru
+TURKISH tr
+CHINESE zh
+JAPANESE ja
+KOREAN ko
+ARABIC ar
+HINDI hi
+MALAY ms

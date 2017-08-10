@@ -1,9 +1,13 @@
 package com.nicoqueijo.cityskylinequiz.helper;
 
+import java.util.Locale;
+
 /**
  * Class provides one static method to act accordingly depending on device API level.
  */
-public class ApiChecker {
+public class SystemInfo {
+
+    public final static String SYSTEM_LOCALE = Locale.getDefault().getLanguage();
 
     /**
      * Determines if device is running on Lollipop or higher (API level 21).

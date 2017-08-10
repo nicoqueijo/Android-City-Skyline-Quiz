@@ -14,7 +14,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
-import com.nicoqueijo.cityskylinequiz.helper.ApiChecker;
 import com.nicoqueijo.cityskylinequiz.helper.CornerRounder;
 import com.nicoqueijo.cityskylinequiz.helper.ResourceByNameRetriever;
 import com.nicoqueijo.cityskylinequiz.model.City;

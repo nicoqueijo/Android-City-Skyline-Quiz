@@ -5,10 +5,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.nicoqueijo.cityskylinequiz.R;
+import com.nicoqueijo.cityskylinequiz.fragment.LanguageChooserDialog;
 import com.nicoqueijo.cityskylinequiz.model.City;
 import com.squareup.picasso.Picasso;
 
@@ -20,6 +22,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Locale;
 
 // JSON file on the cloud:
 // https://api.myjson.com/bins/x3m9t
@@ -43,7 +46,7 @@ public class MainMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu_main);
         SharedPreferences.Editor editor = mSharedPreferences.edit();
 
-        //LOAD APP WITH LANGUAGE IN SHAREDPREFERENCES, IF NULL DEFAULT IS ENGLISH
+        //LOAD APP WITH LANGUAGE IN SHAREDPREFERENCES, IF NULL DEFAULT IS en
 
         // do something if it's the first time launching the app
         // (maybe splash screen for image caching)

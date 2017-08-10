@@ -3,9 +3,12 @@ package com.nicoqueijo.cityskylinequiz.fragment;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,13 +22,28 @@ import android.widget.ScrollView;
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.helper.CornerRounder;
 
+import java.util.Locale;
 import java.util.Stack;
 
 public class LanguageChooserDialog extends DialogFragment {
 
     public enum Language {
-        ENGLISH, SPANISH, FRENCH, GERMAN, ITALIAN, DUTCH, PORTUGUESE, POLISH, RUSSIAN, TURKISH,
-        CHINESE, JAPANESE, KOREAN, ARABIC, HINDI, MALAY
+        en, // ENGLISH
+        es, // SPANISH
+        fr, // FRENCH
+        de, // GERMAN
+        it, // ITALIAN
+        nl, // DUTCH
+        pt, // PORTUGUESE
+        pl, // POLISH
+        ru, // RUSSIAN
+        tr, // TURKISH
+        zh, // CHINESE
+        ja, // JAPANESE
+        ko, // KOREAN
+        ar, // ARABIC
+        hi, // HINDI
+        ms  // MALAY
     }
 
     private SharedPreferences mSharedPreferences;
@@ -158,10 +176,7 @@ public class LanguageChooserDialog extends DialogFragment {
         disableRadioButtonsClickability();
         restoreSavedLanguage();
         restoreSavedScrollingPosition();
-
-        CornerRounder.roundImageCorners(mUnitedKingdomFlag, mSpainFlag, mFanceFlag, mGermanyFlag,
-                mItalyFlag, mNetherlandsFlag, mPortugalFlag, mPolandFlag, mRussiaFlag, mTurkeyFlag,
-                mChinaFlag, mJapanFlag, mSouthKoreaFlag, mSaudiArabiaFlag, mIndiaFlag, mMalaysiaFlag);
+        roundFlagImageCorners();
 
         mEnglishOption.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -169,7 +184,7 @@ public class LanguageChooserDialog extends DialogFragment {
                 mCurrentRadioButtonPressed.pop().setChecked(false);
                 mEnglishRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mEnglishRadioButton);
-                saveLanguage(Language.ENGLISH);
+                saveLanguage(Language.en);
                 // change language app wide to selected
                 smallDelayAndDismiss();
             }
@@ -178,10 +193,13 @@ public class LanguageChooserDialog extends DialogFragment {
         mSpanishOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentRadioButtonPressed.pop().setChecked(false);
+                if (!mCurrentRadioButtonPressed.isEmpty()) {
+                    mCurrentRadioButtonPressed.pop().setChecked(false);
+                }
                 mSpanishRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mSpanishRadioButton);
-                saveLanguage(Language.SPANISH);
+                saveLanguage(Language.es);
+                setLocale("es");
                 // change language app wide to selected
                 smallDelayAndDismiss();
             }
@@ -193,7 +211,7 @@ public class LanguageChooserDialog extends DialogFragment {
                 mCurrentRadioButtonPressed.pop().setChecked(false);
                 mFrenchRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mFrenchRadioButton);
-                saveLanguage(Language.FRENCH);
+                saveLanguage(Language.fr);
                 // change language app wide to selected
                 smallDelayAndDismiss();
             }
@@ -205,7 +223,7 @@ public class LanguageChooserDialog extends DialogFragment {
                 mCurrentRadioButtonPressed.pop().setChecked(false);
                 mGermanRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mGermanRadioButton);
-                saveLanguage(Language.GERMAN);
+                saveLanguage(Language.de);
                 // change language app wide to selected
                 smallDelayAndDismiss();
             }
@@ -217,7 +235,7 @@ public class LanguageChooserDialog extends DialogFragment {
                 mCurrentRadioButtonPressed.pop().setChecked(false);
                 mItalianRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mItalianRadioButton);
-                saveLanguage(Language.ITALIAN);
+                saveLanguage(Language.it);
                 // change language app wide to selected
                 smallDelayAndDismiss();
             }
@@ -229,7 +247,7 @@ public class LanguageChooserDialog extends DialogFragment {
                 mCurrentRadioButtonPressed.pop().setChecked(false);
                 mDutchRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mDutchRadioButton);
-                saveLanguage(Language.DUTCH);
+                saveLanguage(Language.nl);
                 // change language app wide to selected
                 smallDelayAndDismiss();
             }
@@ -241,7 +259,7 @@ public class LanguageChooserDialog extends DialogFragment {
                 mCurrentRadioButtonPressed.pop().setChecked(false);
                 mPortugueseRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mPortugueseRadioButton);
-                saveLanguage(Language.PORTUGUESE);
+                saveLanguage(Language.pt);
                 // change language app wide to selected
                 smallDelayAndDismiss();
             }
@@ -253,7 +271,7 @@ public class LanguageChooserDialog extends DialogFragment {
                 mCurrentRadioButtonPressed.pop().setChecked(false);
                 mPolishRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mPolishRadioButton);
-                saveLanguage(Language.POLISH);
+                saveLanguage(Language.pl);
                 // change language app wide to selected
                 smallDelayAndDismiss();
             }
@@ -265,7 +283,7 @@ public class LanguageChooserDialog extends DialogFragment {
                 mCurrentRadioButtonPressed.pop().setChecked(false);
                 mRussianRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mRussianRadioButton);
-                saveLanguage(Language.RUSSIAN);
+                saveLanguage(Language.ru);
                 // change language app wide to selected
                 smallDelayAndDismiss();
             }
@@ -277,7 +295,7 @@ public class LanguageChooserDialog extends DialogFragment {
                 mCurrentRadioButtonPressed.pop().setChecked(false);
                 mTurkishRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mTurkishRadioButton);
-                saveLanguage(Language.TURKISH);
+                saveLanguage(Language.tr);
                 // change language app wide to selected
                 smallDelayAndDismiss();
             }
@@ -289,7 +307,7 @@ public class LanguageChooserDialog extends DialogFragment {
                 mCurrentRadioButtonPressed.pop().setChecked(false);
                 mChineseRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mChineseRadioButton);
-                saveLanguage(Language.CHINESE);
+                saveLanguage(Language.zh);
                 // change language app wide to selected
                 smallDelayAndDismiss();
             }
@@ -301,7 +319,7 @@ public class LanguageChooserDialog extends DialogFragment {
                 mCurrentRadioButtonPressed.pop().setChecked(false);
                 mJapaneseRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mJapaneseRadioButton);
-                saveLanguage(Language.JAPANESE);
+                saveLanguage(Language.ja);
                 // change language app wide to selected
                 smallDelayAndDismiss();
             }
@@ -313,7 +331,7 @@ public class LanguageChooserDialog extends DialogFragment {
                 mCurrentRadioButtonPressed.pop().setChecked(false);
                 mKoreanRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mKoreanRadioButton);
-                saveLanguage(Language.KOREAN);
+                saveLanguage(Language.ko);
                 // change language app wide to selected
                 smallDelayAndDismiss();
             }
@@ -325,7 +343,7 @@ public class LanguageChooserDialog extends DialogFragment {
                 mCurrentRadioButtonPressed.pop().setChecked(false);
                 mArabicRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mArabicRadioButton);
-                saveLanguage(Language.ARABIC);
+                saveLanguage(Language.ar);
                 // change language app wide to selected
                 smallDelayAndDismiss();
             }
@@ -337,7 +355,7 @@ public class LanguageChooserDialog extends DialogFragment {
                 mCurrentRadioButtonPressed.pop().setChecked(false);
                 mHindiRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mHindiRadioButton);
-                saveLanguage(Language.HINDI);
+                saveLanguage(Language.hi);
                 // change language app wide to selected
                 smallDelayAndDismiss();
             }
@@ -349,7 +367,7 @@ public class LanguageChooserDialog extends DialogFragment {
                 mCurrentRadioButtonPressed.pop().setChecked(false);
                 mMalayRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mMalayRadioButton);
-                saveLanguage(Language.MALAY);
+                saveLanguage(Language.ms);
                 // change language app wide to selected
                 smallDelayAndDismiss();
             }
@@ -361,6 +379,16 @@ public class LanguageChooserDialog extends DialogFragment {
                 dismiss();
             }
         });
+    }
+
+    /**
+     * Rounds the corners of all the flag image views by calling a static method in the
+     * CornerRounder class.
+     */
+    private void roundFlagImageCorners() {
+        CornerRounder.roundImageCorners(mUnitedKingdomFlag, mSpainFlag, mFanceFlag, mGermanyFlag,
+                mItalyFlag, mNetherlandsFlag, mPortugalFlag, mPolandFlag, mRussiaFlag, mTurkeyFlag,
+                mChinaFlag, mJapanFlag, mSouthKoreaFlag, mSaudiArabiaFlag, mIndiaFlag, mMalaysiaFlag);
     }
 
     /**
@@ -384,11 +412,11 @@ public class LanguageChooserDialog extends DialogFragment {
     /**
      * Retrieves the language setting from the sharedPreferences file and sets that language to the
      * appropriate RadioButton. I had to use magic numbers in the switch statement because Java only
-     * allows constants in the cases so Language.ENGLISH.ordinal() wouldn't work. The magic numbers
+     * allows constants in the cases so Language.en.ordinal() wouldn't work. The magic numbers
      * map to the order declared in the Language enum.
      */
     private void restoreSavedLanguage() {
-        int savedLanguage = mSharedPreferences.getInt("language", Language.ENGLISH.ordinal());
+        int savedLanguage = mSharedPreferences.getInt("language", -1);
         switch (savedLanguage) {
             case 0:
                 mEnglishRadioButton.setChecked(true);
@@ -513,6 +541,15 @@ public class LanguageChooserDialog extends DialogFragment {
     public void onStart() {
         super.onStart();
         adjustWindowSize();
+    }
+
+    public void setLocale(String lang) {
+        Locale myLocale = new Locale(lang);
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale = myLocale;
+        res.updateConfiguration(conf, dm);
     }
 
     /**
