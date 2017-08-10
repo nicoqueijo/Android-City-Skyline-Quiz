@@ -3,14 +3,16 @@ package com.nicoqueijo.cityskylinequiz.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 
 import com.nicoqueijo.cityskylinequiz.R;
-import com.nicoqueijo.cityskylinequiz.fragment.LanguageChooserDialog;
+import com.nicoqueijo.cityskylinequiz.helper.SystemInfo;
 import com.nicoqueijo.cityskylinequiz.model.City;
 import com.squareup.picasso.Picasso;
 
@@ -33,6 +35,7 @@ import java.util.Locale;
 public class MainMenuActivity extends AppCompatActivity {
 
     private SharedPreferences mSharedPreferences;
+    String currentLanguage;
     ArrayList<City> mCities;
     private Button mButtonPlayGame;
     private Button mButtonCityList;
@@ -43,10 +46,10 @@ public class MainMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mSharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
         setTheme(mSharedPreferences.getInt("theme", R.style.AppThemeLight));
+        setLocale(mSharedPreferences.getString("language", SystemInfo.SYSTEM_LOCALE));
         setContentView(R.layout.activity_menu_main);
         SharedPreferences.Editor editor = mSharedPreferences.edit();
-
-        //LOAD APP WITH LANGUAGE IN SHAREDPREFERENCES, IF NULL DEFAULT IS en
+        currentLanguage = mSharedPreferences.getString("language", SystemInfo.SYSTEM_LOCALE);
 
         // do something if it's the first time launching the app
         // (maybe splash screen for image caching)
@@ -102,17 +105,33 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     /**
-     * Checks if the theme has been changed. If so the current activity restarts so the new theme
-     * can be applied to all views.
+     * Checks if either the theme or language has been changed. If either has changed the current
+     * activity restarts so the new theme/language can be applied to all views.
      */
     @Override
     public void onResume() {
         super.onResume();
-        if (mSharedPreferences.getInt("theme", R.style.AppThemeLight) != getThemeId()) {
+        if (mSharedPreferences.getInt("theme", R.style.AppThemeLight) != getThemeId()
+                || !mSharedPreferences.getString("language", SystemInfo.SYSTEM_LOCALE)
+                .equals(currentLanguage)) {
             this.finish();
             final Intent intent = this.getIntent();
             this.startActivity(intent);
         }
+    }
+
+    /**
+     * Sets the locale to a new language.
+     *
+     * @param lang the new language to set the app to.
+     */
+    public void setLocale(String lang) {
+        Locale myLocale = new Locale(lang);
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale = myLocale;
+        res.updateConfiguration(conf, dm);
     }
 
     /**

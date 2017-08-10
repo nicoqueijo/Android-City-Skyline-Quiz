@@ -192,7 +192,8 @@ public class LanguageChooserDialog extends DialogFragment {
                 mEnglishRadioButton.setChecked(true);
                 mCurrentRadioButtonPressed.push(mEnglishRadioButton);
                 saveLanguage(Language.en);
-                communicator.onDialogMessage("en");
+                setLocale(Language.en.name());
+                communicator.onDialogMessage(Language.en.name());
                 // change language app wide to selected
                 smallDelayAndDismiss();
             }
@@ -390,6 +391,11 @@ public class LanguageChooserDialog extends DialogFragment {
         });
     }
 
+    /**
+     * Attaches this DialogFragment to its hosting Activity.
+     *
+     * @param activity the Activity hosting this DialogFragment.
+     */
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -544,6 +550,11 @@ public class LanguageChooserDialog extends DialogFragment {
         adjustWindowSize();
     }
 
+    /**
+     * Sets the locale to a new language.
+     *
+     * @param lang the new language to set the app to.
+     */
     public void setLocale(String lang) {
         Locale myLocale = new Locale(lang);
         Resources res = getResources();

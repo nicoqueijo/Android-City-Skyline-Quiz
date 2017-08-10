@@ -1,5 +1,9 @@
 package com.nicoqueijo.cityskylinequiz.helper;
 
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.util.DisplayMetrics;
+
 import java.util.Locale;
 
 /**
@@ -17,5 +21,4 @@ public class SystemInfo {
     public static boolean isRunningLollipopOrHigher() {
         return android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP;
     }
-
 }

@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.fragment.ClearScoresDialog;
@@ -76,15 +77,22 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
         });
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        Log.v("onResume", "called");
-    }
-
+    /**
+     * When the user selects an option in a DialogFragment without cancelling this method executes
+     * passing back the result of the option the user selected. If the user confirmed to clearing
+     * the game's scores it does that, otherwise the user set the app to a new language and it
+     * restarts the activity to load the layout in the language the user selected.
+     *
+     * @param message the result returned from opening a DialogFragment.
+     */
     @Override
     public void onDialogMessage(String message) {
-        Log.v("lang", message);
+        if (message.equals(ClearScoresDialog.CLEAR_SCORES)) {
+            // Reset scores
+            Toast.makeText(mThisActivity, R.string.scores_cleared, Toast.LENGTH_SHORT).show();
+        } else {
+            restartActivity();
+        }
     }
 
     /**

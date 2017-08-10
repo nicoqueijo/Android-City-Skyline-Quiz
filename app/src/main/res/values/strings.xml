@@ -17,6 +17,7 @@
     <string name="settings_scores_title">Reset scores</string>
     <string name="settings_scores_description">Clear scores from all games</string>
     <string name="clear_scores">Clear all scores?</string>
+    <string name="scores_cleared">Scores cleared!</string>
     <string name="cancel">Cancel</string>
     <string name="delete">Delete</string>
 
