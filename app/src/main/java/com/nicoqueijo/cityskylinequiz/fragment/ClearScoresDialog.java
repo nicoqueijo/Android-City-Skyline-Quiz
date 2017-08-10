@@ -2,8 +2,6 @@ package com.nicoqueijo.cityskylinequiz.fragment;
 
 import android.app.Activity;
 import android.app.DialogFragment;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -20,7 +18,6 @@ public class ClearScoresDialog extends DialogFragment {
 
     public final static String CLEAR_SCORES = "true";
     Communicator communicator;
-    private SharedPreferences mSharedPreferences;
     private Button cancelButton;
     private Button deleteButton;
 
@@ -41,7 +38,6 @@ public class ClearScoresDialog extends DialogFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mSharedPreferences = getActivity().getSharedPreferences("settings", Context.MODE_PRIVATE);
         removeTitleBar();
 
         cancelButton = (Button) view.findViewById(R.id.button_cancel);

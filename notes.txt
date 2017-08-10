@@ -48,23 +48,6 @@ https://api.myjson.com/bins/x3m9t
 -Clear all unused import statements
 
 // DO NEXT
--Localization
+-Assure all string.xmls look the same and translate everything
+-Test language switching once translations are done
 -Save and restore position of scrollview in citylist (check submitted issue to library repo)
-
--Locale codes
-ENGLISH en
-SPANISH es
-FRENCH fr
-GERMAN de
-ITALIAN it
-DUTCH nl
-PORTUGUESE pt
-POLISH pl
-RUSSIAN ru
-TURKISH tr
-CHINESE zh
-JAPANESE ja
-KOREAN ko
-ARABIC ar
-HINDI hi
-MALAY ms
