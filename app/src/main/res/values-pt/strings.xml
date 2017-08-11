@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Portuguese -->
 <resources>
+    <!-- Portuguese -->
+
+    <!-- UI labels -->
     <string name="app_name">City Skyline Quiz</string>
-    <string name="play_game">Start Game</string>
+    <string name="play_game">Play Game</string>
     <string name="city_list">City List</string>
+    <string name="settings">Settings</string>
+    <string name="launch_maps">Launch Maps</string>
+    <string name="launch_browser">Launch Browser</string>
+    <string name="more_info">More Info</string>
+    <string name="settings_theme_title">Theme</string>
+    <string name="settings_theme_description">Toggle between light/dark theme</string>
+    <string name="settings_language_title">Language</string>
+    <string name="settings_language_description">Ignore device language and use another</string>
+    <string name="settings_scores_title">Reset scores</string>
+    <string name="settings_scores_description">Clear scores from all games</string>
+    <string name="clear_scores">Clear all scores?</string>
+    <string name="scores_cleared">Scores cleared!</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>
@@ -16,6 +32,7 @@
     <string name="athens">Athens</string>
     <string name="atlanta">Atlanta</string>
     <string name="auckland">Auckland</string>
+    <string name="austin">Austin</string>
     <string name="baku">Baku</string>
     <string name="baltimore">Baltimore</string>
     <string name="bangkok">Bangkok</string>
@@ -28,18 +45,22 @@
     <string name="birmingham">Birmingham</string>
     <string name="bogota">Bogota</string>
     <string name="boston">Boston</string>
+    <string name="brisbane">Brisbane</string>
     <string name="brussels">Brussels</string>
     <string name="bucharest">Bucharest</string>
     <string name="budapest">Budapest</string>
     <string name="buenos_aires">Buenos Aires</string>
     <string name="busan">Busan</string>
     <string name="cairo">Cairo</string>
+    <string name="calgary">Calgary</string>
     <string name="cali">Cali</string>
     <string name="cancun">Cancun</string>
     <string name="cape_town">Cape Town</string>
     <string name="caracas">Caracas</string>
     <string name="casablanca">Casablanca</string>
+    <string name="changzhou">Changzhou</string>
     <string name="charlotte">Charlotte</string>
+    <string name="chengdu">Chengdu</string>
     <string name="chicago">Chicago</string>
     <string name="chongqing">Chongqing</string>
     <string name="cincinnati">Cincinnati</string>
@@ -49,19 +70,29 @@
     <string name="dallas">Dallas</string>
     <string name="denver">Denver</string>
     <string name="detroit">Detroit</string>
+    <string name="dhaka">Dhaka</string>
     <string name="doha">Doha</string>
+    <string name="donetsk">Donetsk</string>
     <string name="dortmund">Dortmund</string>
     <string name="dubai">Dubai</string>
     <string name="dublin">Dublin</string>
+    <string name="dusseldorf">Dusseldorf</string>
     <string name="edinburgh">Edinburgh</string>
+    <string name="edmonton">Edmonton</string>
+    <string name="essen">Essen</string>
     <string name="florence">Florence</string>
+    <string name="fort_worth">Fort Worth</string>
     <string name="fortaleza">Fortaleza</string>
     <string name="frankfurt">Frankfurt</string>
+    <string name="fukuoka">Fukuoka</string>
     <string name="glasgow">Glasgow</string>
+    <string name="gold_coast">Gold Coast</string>
     <string name="guadalajara">Guadalajara</string>
     <string name="guangzhou">Guangzhou</string>
     <string name="hamburg">Hamburg</string>
+    <string name="hangzhou">Hangzhou</string>
     <string name="hanoi">Hanoi</string>
+    <string name="havana">Havana</string>
     <string name="helsinki">Helsinki</string>
     <string name="ho_chi_minh_city">Ho Chi Minh City</string>
     <string name="hong_kong">Hong Kong</string>
@@ -70,6 +101,7 @@
     <string name="incheon">Incheon</string>
     <string name="indianapolis">Indianapolis</string>
     <string name="istanbul">Istanbul</string>
+    <string name="jacksonville">Jacksonville</string>
     <string name="jakarta">Jakarta</string>
     <string name="jerusalem">Jerusalem</string>
     <string name="johannesburg">Johannesburg</string>
@@ -77,9 +109,11 @@
     <string name="kaohsiung_city">Kaohsiung City</string>
     <string name="karachi">Karachi</string>
     <string name="kiev">Kiev</string>
+    <string name="kobe">Kobe</string>
     <string name="kuala_lumpur">Kuala Lumpur</string>
     <string name="kuwait_city">Kuwait City</string>
     <string name="la_paz">La Paz</string>
+    <string name="lagos">Lagos</string>
     <string name="las_vegas">Las Vegas</string>
     <string name="lima">Lima</string>
     <string name="lisbon">Lisbon</string>
@@ -94,6 +128,7 @@
     <string name="manama">Manama</string>
     <string name="manchester">Manchester</string>
     <string name="manila">Manila</string>
+    <string name="marseille">Marseille</string>
     <string name="mecca">Mecca</string>
     <string name="medellin">Medellin</string>
     <string name="melbourne">Melbourne</string>
@@ -112,10 +147,13 @@
     <string name="mumbai">Mumbai</string>
     <string name="munich">Munich</string>
     <string name="nagoya">Nagoya</string>
+    <string name="nanchang">Nanchang</string>
+    <string name="nanjing">Nanjing</string>
     <string name="naples">Naples</string>
     <string name="nashville">Nashville</string>
     <string name="new_orleans">New Orleans</string>
     <string name="new_york_city">New York City</string>
+    <string name="niagara_falls">Niagara Falls</string>
     <string name="oklahoma_city">Oklahoma City</string>
     <string name="orlando">Orlando</string>
     <string name="osaka">Osaka</string>
@@ -130,8 +168,11 @@
     <string name="pittsburgh">Pittsburgh</string>
     <string name="portland">Portland</string>
     <string name="porto">Porto</string>
+    <string name="porto_alegre">Porto Alegre</string>
     <string name="prague">Prague</string>
+    <string name="pretoria">Pretoria</string>
     <string name="pyongyang">Pyongyang</string>
+    <string name="qingdao">Qingdao</string>
     <string name="recife">Recife</string>
     <string name="reykjavik">Reykjavik</string>
     <string name="rio_de_janeiro">Rio De Janeiro</string>
@@ -148,30 +189,39 @@
     <string name="santiago">Santiago</string>
     <string name="santo_domingo">Santo Domingo</string>
     <string name="sao_paulo">Sao Paulo</string>
+    <string name="sapporo">Sapporo</string>
     <string name="seattle">Seattle</string>
     <string name="seoul">Seoul</string>
     <string name="shanghai">Shanghai</string>
+    <string name="shenyang">Shenyang</string>
     <string name="shenzhen">Shenzhen</string>
     <string name="singapore">Singapore</string>
     <string name="st_louis">St Louis</string>
     <string name="st_petersburg">St Petersburg</string>
+    <string name="stockholm">Stockholm</string>
     <string name="sydney">Sydney</string>
     <string name="taichung">Taichung</string>
     <string name="taipei">Taipei</string>
     <string name="tampa">Tampa</string>
     <string name="tehran">Tehran</string>
     <string name="tel_aviv">Tel Aviv</string>
-    <string name="the_hauge">The Hauge</string>
+    <string name="the_hauge">The Hague</string>
+    <string name="tianjin">Tianjin</string>
     <string name="tokyo">Tokyo</string>
     <string name="toronto">Toronto</string>
     <string name="vancouver">Vancouver</string>
     <string name="venice">Venice</string>
     <string name="vienna">Vienna</string>
+    <string name="vilnius">Vilnius</string>
     <string name="warsaw">Warsaw</string>
     <string name="washington_dc">Washington DC</string>
     <string name="wellington">Wellington</string>
+    <string name="winnipeg">Winnipeg</string>
     <string name="wuhan">Wuhan</string>
+    <string name="xiamen">Xiamen</string>
+    <string name="yokohama">Yokohama</string>
     <string name="zagreb">Zagreb</string>
+    <string name="zhengzhou">Zhengzhou</string>
     <string name="zurich">Zurich</string>
 
     <!-- Countries -->
@@ -180,6 +230,7 @@
     <string name="austria">Austria</string>
     <string name="azerbaijan">Azerbaijan</string>
     <string name="bahrain">Bahrain</string>
+    <string name="bangladesh">Bangladesh</string>
     <string name="belgium">Belgium</string>
     <string name="bolivia">Bolivia</string>
     <string name="brazil">Brazil</string>
@@ -189,6 +240,7 @@
     <string name="china">China</string>
     <string name="colombia">Colombia</string>
     <string name="croatia">Croatia</string>
+    <string name="cuba">Cuba</string>
     <string name="czech_republic">Czech Republic</string>
     <string name="denmark">Denmark</string>
     <string name="dominican_republic">Dominican Republic</string>
@@ -210,11 +262,13 @@
     <string name="kazakhstan">Kazakhstan</string>
     <string name="kuwait">Kuwait</string>
     <string name="lebanon">Lebanon</string>
+    <string name="lithuania">Lithuania</string>
     <string name="malaysia">Malaysia</string>
     <string name="mexico">Mexico</string>
     <string name="morocco">Morocco</string>
     <string name="netherlands">Netherlands</string>
     <string name="new_zealand">New Zealand</string>
+    <string name="nigeria">Nigeria</string>
     <string name="north_korea">North Korea</string>
     <string name="northern_ireland">Northern Ireland</string>
     <string name="norway">Norway</string>
@@ -245,4 +299,22 @@
     <string name="uruguay">Uruguay</string>
     <string name="venezuela">Venezuela</string>
     <string name="vietnam">Vietnam</string>
+
+    <!-- Languages -->
+    <string name="arabic">العَرَبِيَّة</string>
+    <string name="chinese">中文</string>
+    <string name="dutch">Nederlands</string>
+    <string name="english">English</string>
+    <string name="french">Français</string>
+    <string name="german">Deutsche</string>
+    <string name="hindi">हिंदी</string>
+    <string name="italian">Italiano</string>
+    <string name="japanese">日本語</string>
+    <string name="korean">한국어</string>
+    <string name="malay">Bahasa Melayu</string>
+    <string name="polish">Polski</string>
+    <string name="portuguese">Português</string>
+    <string name="russian">Pу́сский</string>
+    <string name="spanish">Español</string>
+    <string name="turkish">Türkçe</string>
 </resources>

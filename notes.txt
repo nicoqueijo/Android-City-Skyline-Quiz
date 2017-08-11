@@ -50,8 +50,6 @@ https://api.myjson.com/bins/x3m9t
 
 // DO NEXT
 -Find out how to change orientation on Arabic
--Assure all string.xmls look the same
--Translate French
 -Translate German
 -Translate Italian
 -Translate Dutch
