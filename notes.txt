@@ -47,6 +47,7 @@ https://api.myjson.com/bins/x3m9t
 -change xml attributes (left -> start), (right -> end) to support arabic
 -Make default selected language to device language if it's supported, not English
 -Clear all unused import statements
+-Make sure the longest string possible fits in each UI label
 
 // DO NEXT
 -Find out how to change orientation on Arabic
