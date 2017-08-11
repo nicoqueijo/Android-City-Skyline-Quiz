@@ -51,10 +51,8 @@ https://api.myjson.com/bins/x3m9t
 
 // DO NEXT
 -Find out how to change orientation on Arabic
--Translate German
 -Translate Italian
 -Translate Dutch
--Translate Portuguese
 -Translate Portuguese
 -Translate Polish
 -Translate Russian
@@ -62,6 +60,7 @@ https://api.myjson.com/bins/x3m9t
 -Translate Chinese
 -Translate Japanese
 -Translate Korean
+-Translate Hindi
 -Translate Arabic
 -Translate Malay
 -Test language switching once translations are done
