@@ -51,7 +51,6 @@ https://api.myjson.com/bins/x3m9t
 
 // DO NEXT
 -Find out how to change orientation on Arabic
--Translate Dutch
 -Translate Portuguese
 -Translate Polish
 -Translate Russian
@@ -63,4 +62,6 @@ https://api.myjson.com/bins/x3m9t
 -Translate Arabic
 -Translate Malay
 -Test language switching once translations are done
+-Assure cities are sorted alphabetically regardless of language
+-If not sorted use insertion sort since it will be almost sorted already (can vary on non-latin languages)
 -Save and restore position of scrollview in citylist (check submitted issue to library repo)
