@@ -51,8 +51,6 @@ https://api.myjson.com/bins/x3m9t
 
 // DO NEXT
 -Find out how to change orientation (right to left) on Arabic
--Translate Russian
--Translate Turkish
 -Translate Chinese
 -Translate Japanese
 -Translate Korean
@@ -63,5 +61,6 @@ https://api.myjson.com/bins/x3m9t
 -Make sure settings actionbar changes language
 -Sort cities alphabetically when City List Activity launches. Add option to sort by country in menu.
 	Either implement an insertion sort (because cities are almost sorted) or use Collections.sort (which is mergesort)
-		https://stackoverflow.com/questions/17769057/how-to-sort-the-multiple-languages
+		Insertion sort best: (~200 operations) worst: (~40000 operations) | Merge sort best: (~1500 operations) worst: (~1500 operations)
+			https://stackoverflow.com/questions/17769057/how-to-sort-the-multiple-languages
 -Save and restore position of scrollview in citylist (check submitted issue to library repo)
