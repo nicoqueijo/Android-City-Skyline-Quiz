@@ -51,9 +51,7 @@ https://api.myjson.com/bins/x3m9t
 
 // DO NEXT
 -Find out how to change orientation (right to left) on Arabic
--Translate Japanese
 -Translate Korean
--Translate Hindi
 -Translate Arabic
 -Test language switching once translations are done
 -Make sure settings actionbar changes language
