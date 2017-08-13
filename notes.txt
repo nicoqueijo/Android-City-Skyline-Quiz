@@ -51,8 +51,6 @@ https://api.myjson.com/bins/x3m9t
 
 // DO NEXT
 -Find out how to change orientation (right to left) on Arabic
--Translate Korean
--Translate Arabic
 -Test language switching once translations are done
 -Make sure settings actionbar changes language
 -Sort cities alphabetically when City List Activity launches. Add option to sort by country in menu.
