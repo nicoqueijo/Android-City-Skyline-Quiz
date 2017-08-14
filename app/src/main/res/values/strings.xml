@@ -20,6 +20,9 @@
     <string name="scores_cleared">Scores cleared!</string>
     <string name="cancel">Cancel</string>
     <string name="delete">Delete</string>
+    <string name="sort_by">Sort by:</string>
+    <string name="city">City</string>
+    <string name="country">Country</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>

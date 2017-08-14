@@ -8,6 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.nicoqueijo.cityskylinequiz.R;
@@ -26,6 +29,9 @@ import java.util.Locale;
 
 public class CityListActivity extends AppCompatActivity {
 
+    public static final int CITY_SORT = 0;
+    public static final int COUNTRY_SORT = 1;
+
     private SharedPreferences mSharedPreferences;
     ArrayList<City> mCities;
     RecyclerView mRecyclerCityList;
@@ -43,16 +49,7 @@ public class CityListActivity extends AppCompatActivity {
 
         Intent intentCityList = getIntent();
         mCities = (ArrayList<City>) intentCityList.getSerializableExtra("cityList");
-        Collections.sort(mCities, new Comparator<City>() {
-            public int compare(City o1, City o2) {
-                Collator collator = Collator.getInstance(Locale.JAPAN);
-                return collator.compare(o1.getCityNameInCurrentLanguage(), o2.getCityNameInCurrentLanguage());
-            }
-        });
-
-//        Collator coll = Collator.getInstance(new Locale(mSharedPreferences
-//                .getString("language", LanguageChooserDialog.Language.en.name())));
-//        Collections.sort(mCities, coll);
+        sortCities(mSharedPreferences.getInt("sort_mode", CITY_SORT));
 
         mRecyclerCityList = (RecyclerView) findViewById(R.id.recycler_city_list);
         mDragScrollBar = (DragScrollBar) findViewById(R.id.drag_scroll_bar);
@@ -61,6 +58,72 @@ public class CityListActivity extends AppCompatActivity {
         mRecyclerCityList.setLayoutManager(new LinearLayoutManager(CityListActivity.this));
         ((DragScrollBar) findViewById(R.id.drag_scroll_bar))
                 .setIndicator(new AlphabetIndicator(this), true);
+    }
+
+    /**
+     * Creates a hamburger-style menu for options to sort the list.
+     *
+     * @param menu The menu to be created.
+     * @return Status of the operation.
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_list_sort, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    /**
+     * Sorts the list of cities by either city name or country name, refreshes the recycler view to
+     * show the changes, and saves the sorting mode in the sharedPreferences.
+     *
+     * @param item The menu item being selected.
+     * @return Status of the operation.
+     */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
+        switch (item.getItemId()) {
+            case (R.id.menu_sort_city):
+                sortCities(CITY_SORT);
+                mAdapter.notifyDataSetChanged();
+                editor.putInt("sort_mode", CITY_SORT);
+                editor.commit();
+                break;
+            case (R.id.menu_sort_country):
+                sortCities(COUNTRY_SORT);
+                mAdapter.notifyDataSetChanged();
+                editor.putInt("sort_mode", COUNTRY_SORT);
+                editor.commit();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Sorts the list of cities using a Collator for the locale. If the sorting mode is by city,
+     * we using the city name fields of the city objects to sort the list, otherwise the sorting
+     * mode is country and we use the country name fields to sort.
+     *
+     * @param sortMode the mode to sort by (either by city or country)
+     */
+    private void sortCities(final int sortMode) {
+        final String currentLanguage = mSharedPreferences
+                .getString("language", LanguageChooserDialog.Language.en.name());
+        Collections.sort(mCities, new Comparator<City>() {
+            Collator collator = Collator.getInstance(new Locale(currentLanguage));
+
+            public int compare(City city1, City city2) {
+                Log.v("sort", "sort operation");
+                if (sortMode == CITY_SORT) {
+                    return collator.compare(city1.getCityNameInCurrentLanguage(),
+                            city2.getCityNameInCurrentLanguage());
+                } else {
+                    return collator.compare(city1.getCountryNameInCurrentLanguage(),
+                            city2.getCountryNameInCurrentLanguage());
+                }
+            }
+        });
     }
 
 //    CODE TO SAVE AND RESTORE RECYCLERVIEW POSITION

@@ -20,6 +20,10 @@
     <string name="scores_cleared">Skorlar silindi!</string>
     <string name="cancel">İptal etmek</string>
     <string name="delete">Silmek</string>
+    <!-- NEEDS TRANSLATION -->
+    <string name="sort_by">Sort by:</string>
+    <string name="city">City</string>
+    <string name="country">Country</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dabi</string>

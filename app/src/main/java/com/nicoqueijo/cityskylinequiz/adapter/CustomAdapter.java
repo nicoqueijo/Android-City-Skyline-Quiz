@@ -3,6 +3,7 @@ package com.nicoqueijo.cityskylinequiz.adapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
@@ -13,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
+import com.nicoqueijo.cityskylinequiz.activity.CityListActivity;
 import com.nicoqueijo.cityskylinequiz.fragment.CityDetailDialog;
 import com.nicoqueijo.cityskylinequiz.helper.CornerRounder;
 import com.nicoqueijo.cityskylinequiz.helper.ResourceByNameRetriever;
@@ -28,6 +30,7 @@ import java.util.ArrayList;
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> implements
         INameableAdapter {
 
+    private SharedPreferences mSharedPreferences;
     private Context mContext;
     private ArrayList<City> mCities;
     private LayoutInflater mInflater;
@@ -37,6 +40,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         this.mContext = context;
         this.mCities = cities;
         mInflater = LayoutInflater.from(context);
+        mSharedPreferences = mContext.getSharedPreferences("settings", Context.MODE_PRIVATE);
     }
 
     @Override
@@ -82,22 +86,27 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     }
 
     /**
-     * Retrieves the first character of the element in the current position of the adapter.
+     * Retrieves the first character of the element in the current position of the adapter. If the
+     * list is being sorted by city name it gets the first character of the city name, else it is
+     * being sorted by country name so it gets the first character of the country name.
      *
      * @param position of the adapter that should be titled.
      * @return The character that the AlphabetIndicator should display for the corresponding element.
      */
     @Override
     public Character getCharacterForElement(int position) {
-        Character c = mCities.get(position).getCityNameInCurrentLanguage().charAt(0);
-        if (Character.isDigit(c)) {
-            c = '#';
+        Character firstCharacter = ' ';
+        int sortMode = mSharedPreferences.getInt("sort_mode", CityListActivity.CITY_SORT);
+        if (sortMode == CityListActivity.CITY_SORT) {
+            firstCharacter = mCities.get(position).getCityNameInCurrentLanguage().charAt(0);
+        } else if (sortMode == CityListActivity.COUNTRY_SORT) {
+            firstCharacter = mCities.get(position).getCountryNameInCurrentLanguage().charAt(0);
         }
-        return c;
+        return firstCharacter;
     }
 
     /**
-     * Animates the holder being binded by shifting it up or down 250 pixels for a duration of half
+     * Animates the holder being bound by shifting it up or down 250 pixels for a duration of half
      * a second depending on whether the user is scrolling up or down.
      *
      * @param holder    the current holder to animate

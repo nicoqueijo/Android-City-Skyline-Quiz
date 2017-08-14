@@ -122,9 +122,6 @@ public class MainMenuActivity extends AppCompatActivity {
         super.onResume();
         loadTheme();
         updateCitiesWithCurrentLanguage();
-        for (City city : mCities) {
-            Log.v("city", city.getCityNameInCurrentLanguage());
-        }
     }
 
     /**

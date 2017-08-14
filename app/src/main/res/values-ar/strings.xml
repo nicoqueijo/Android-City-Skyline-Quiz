@@ -20,6 +20,10 @@
     <string name="scores_cleared">عشرات مسح!</string>
     <string name="cancel">إلغاء</string>
     <string name="delete">حذف</string>
+    <!-- NEEDS TRANSLATION -->
+    <string name="sort_by">Sort by:</string>
+    <string name="city">City</string>
+    <string name="country">Country</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">أبو ظبي</string>

@@ -20,6 +20,10 @@
 	<string name="scores_cleared">Puntajes borrados!</string>
     <string name="cancel">Cancelar</string>
     <string name="delete">Borrar</string>
+    <!-- NEEDS TRANSLATION -->
+    <string name="sort_by">Sort by:</string>
+    <string name="city">City</string>
+    <string name="country">Country</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>

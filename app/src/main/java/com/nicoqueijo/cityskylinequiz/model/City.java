@@ -1,14 +1,12 @@
 package com.nicoqueijo.cityskylinequiz.model;
 
-import android.support.annotation.NonNull;
-
 import java.io.Serializable;
 
 /**
  * The model class for each city object. Each city has a name, a country, a URl that is used to
  * fetch its image file from the cloud, GPS coordinates to locate it on a mapping application, and
  * a URL to fetch its Wikipedia article. There are two additional fields to store the city and country
- * name on the language the application is running on. This is used to properly sort the objects by
+ * name in the language the application is running on. This is used to properly sort the objects by
  * city or country name.
  * Serializable must be implemented in order to pass a City object between intents.
  */
