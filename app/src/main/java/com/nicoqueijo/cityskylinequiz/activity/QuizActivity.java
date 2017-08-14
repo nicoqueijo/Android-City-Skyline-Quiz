@@ -23,6 +23,7 @@ public class QuizActivity extends AppCompatActivity {
         setTheme(mSharedPreferences.getInt("theme", R.style.AppThemeLight));
         setContentView(R.layout.activity_quiz);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(R.string.play_game);
 
         Intent intentPlayGame = getIntent();
         mCities = (ArrayList<City>) intentPlayGame.getSerializableExtra("cityList");

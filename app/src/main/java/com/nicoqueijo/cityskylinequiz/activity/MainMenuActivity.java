@@ -51,6 +51,7 @@ public class MainMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu_main);
         SharedPreferences.Editor editor = mSharedPreferences.edit();
         currentLanguage = mSharedPreferences.getString("language", SystemInfo.SYSTEM_LOCALE);
+        getSupportActionBar().setTitle(R.string.app_name);
 
         // do something if it's the first time launching the app
         // (maybe splash screen for image caching)

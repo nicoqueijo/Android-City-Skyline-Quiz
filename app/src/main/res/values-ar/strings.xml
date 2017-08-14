@@ -22,8 +22,7 @@
     <string name="delete">حذف</string>
 
     <!--- Cities -->
-    <string name="abu_dhabi">أبو ظبي
-</string>
+    <string name="abu_dhabi">أبو ظبي</string>
     <string name="albuquerque">ألباكركي</string>
     <string name="amsterdam">أمستردام</string>
     <string name="anchorage">انكوراج</string>

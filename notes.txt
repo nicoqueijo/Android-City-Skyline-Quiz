@@ -50,11 +50,11 @@ https://api.myjson.com/bins/x3m9t
 -Make sure the longest string possible fits in each UI label
 
 // DO NEXT
--Find out how to change orientation (right to left) on Arabic
--Test language switching once translations are done
 -Make sure settings actionbar changes language
--Sort cities alphabetically when City List Activity launches. Add option to sort by country in menu.
-	Either implement an insertion sort (because cities are almost sorted) or use Collections.sort (which is mergesort)
-		Insertion sort best: (~200 operations) worst: (~40000 operations) | Merge sort best: (~1500 operations) worst: (~1500 operations)
-			https://stackoverflow.com/questions/17769057/how-to-sort-the-multiple-languages
+-Sort cities alphabetically when City List Activity launches. Add option to sort by country/city in menu. (Only perform a sort if language has changed)
+	Implement Collections.sort (which is mergesort)
+		https://stackoverflow.com/questions/17769057/how-to-sort-the-multiple-languages
+-Fix handle indicator (first character display on different languages)
+-Find out how to change orientation (right to left) on Arabic
+-Fix the left padding/margin on arabic
 -Save and restore position of scrollview in citylist (check submitted issue to library repo)

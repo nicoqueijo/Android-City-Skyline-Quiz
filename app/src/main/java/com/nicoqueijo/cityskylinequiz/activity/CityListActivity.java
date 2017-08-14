@@ -34,6 +34,7 @@ public class CityListActivity extends AppCompatActivity {
         setTheme(mSharedPreferences.getInt("theme", R.style.AppThemeLight));
         setContentView(R.layout.activity_city_list);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(R.string.city_list);
 
         Intent intentCityList = getIntent();
         mCities = (ArrayList<City>) intentCityList.getSerializableExtra("cityList");
