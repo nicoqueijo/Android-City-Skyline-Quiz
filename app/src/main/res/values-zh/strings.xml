@@ -20,10 +20,9 @@
     <string name="scores_cleared">得分清除</string>
     <string name="cancel">取消</string>
     <string name="delete">删除</string>
-    <!-- NEEDS TRANSLATION -->
-    <string name="sort_by">Sort by:</string>
-    <string name="city">City</string>
-    <string name="country">Country</string>
+    <string name="sort_by">排序方式：</string>
+    <string name="city">市</string>
+    <string name="country">国家</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">阿布扎比</string>

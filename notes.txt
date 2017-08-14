@@ -50,12 +50,6 @@ https://api.myjson.com/bins/x3m9t
 -Make sure the longest string possible fits in each UI label
 
 // DO NEXT
--Sort cities alphabetically when City List Activity launches. Add option to sort by country/city in menu. (Only perform a sort if language has changed)
-	Implement Collections.sort (which is mergesort)
-		https://stackoverflow.com/questions/17769057/how-to-sort-the-multiple-languages
-		
--Only perform sort if language has changed		
--change the behavior of getCharacterForElement depending on city/country sort
-		
+-Add custom items on sorting menu and disable the first item and change its background color	
 -Find out how to change orientation (right to left) on Arabic
 -Fix the left padding/margin on arabic

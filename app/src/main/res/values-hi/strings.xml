@@ -20,10 +20,9 @@
     <string name="scores_cleared">स्कोर साफ़ कर दिया!</string>
     <string name="cancel">रद्द करना</string>
     <string name="delete">हटाना</string>
-    <!-- NEEDS TRANSLATION -->
-    <string name="sort_by">Sort by:</string>
-    <string name="city">City</string>
-    <string name="country">Country</string>
+    <string name="sort_by">इसके अनुसार क्रमबद्ध करें:</string>
+    <string name="city">शहर</string>
+    <string name="country">देश</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">अबू धाबी</string>

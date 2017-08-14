@@ -20,10 +20,9 @@
     <string name="scores_cleared">Счет очищен!</string>
     <string name="cancel">Отмена</string>
     <string name="delete">Удалить</string>
-    <!-- NEEDS TRANSLATION -->
-    <string name="sort_by">Sort by:</string>
-    <string name="city">City</string>
-    <string name="country">Country</string>
+    <string name="sort_by">Сортировать по:</string>
+    <string name="city">Город</string>
+    <string name="country">Страна</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Абу-Даби</string>

@@ -20,10 +20,9 @@
     <string name="scores_cleared">Noten gelöscht!</string>
     <string name="cancel">Stornieren</string>
     <string name="delete">Löschen</string>
-    <!-- NEEDS TRANSLATION -->
-    <string name="sort_by">Sort by:</string>
-    <string name="city">City</string>
-    <string name="country">Country</string>
+    <string name="sort_by">Sortiere nach:</string>
+    <string name="city">Stadt</string>
+    <string name="country">Land</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>
