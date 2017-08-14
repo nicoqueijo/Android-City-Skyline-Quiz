@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.nicoqueijo.cityskylinequiz.R;
+import com.nicoqueijo.cityskylinequiz.fragment.LanguageChooserDialog;
+import com.nicoqueijo.cityskylinequiz.helper.ResourceByNameRetriever;
 import com.nicoqueijo.cityskylinequiz.helper.SystemInfo;
 import com.nicoqueijo.cityskylinequiz.model.City;
 import com.squareup.picasso.Picasso;
@@ -24,7 +26,11 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
+import java.text.Collator;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Locale;
 
 // JSON file on the cloud:
@@ -53,8 +59,9 @@ public class MainMenuActivity extends AppCompatActivity {
         currentLanguage = mSharedPreferences.getString("language", SystemInfo.SYSTEM_LOCALE);
         getSupportActionBar().setTitle(R.string.app_name);
 
-        // do something if it's the first time launching the app
-        // (maybe splash screen for image caching)
+        // Do something if it's the first time launching the app (maybe splash screen for image caching)
+        // Note: Splash screen should probably execute every time the app is launched. It will just
+        // take long on first time and will be instant on future launches.
         if (mSharedPreferences.getBoolean("first_launch", true)) {
             // Enter statements to do when first time launching here
             editor.putBoolean("first_launch", false);
@@ -107,18 +114,16 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     /**
-     * Checks if either the theme or language has been changed. If either has changed the current
-     * activity restarts so the new theme/language can be applied to all views.
+     * Loads the theme if it was changed. Updates the city objects with city and country names in
+     * its appropriate language if the language was changed.
      */
     @Override
     public void onResume() {
         super.onResume();
-        if (mSharedPreferences.getInt("theme", R.style.AppThemeLight) != getThemeId()
-                || !mSharedPreferences.getString("language", SystemInfo.SYSTEM_LOCALE)
-                .equals(currentLanguage)) {
-            this.finish();
-            final Intent intent = this.getIntent();
-            this.startActivity(intent);
+        loadTheme();
+        updateCitiesWithCurrentLanguage();
+        for (City city : mCities) {
+            Log.v("city", city.getCityNameInCurrentLanguage());
         }
     }
 
@@ -202,6 +207,29 @@ public class MainMenuActivity extends AppCompatActivity {
     private void cacheImagesAndLoadToMemory() {
         for (City city : mCities) {
             Picasso.with(MainMenuActivity.this).load(city.getImageUrl()).fetch();
+        }
+    }
+
+    /**
+     * Checks if either the theme or language has been changed. If either has changed the current
+     * activity restarts so the new theme/language can be applied to all views.
+     */
+    private void loadTheme() {
+        if (mSharedPreferences.getInt("theme", R.style.AppThemeLight) != getThemeId()
+                || !mSharedPreferences.getString("language", SystemInfo.SYSTEM_LOCALE)
+                .equals(currentLanguage)) {
+            this.finish();
+            final Intent intent = this.getIntent();
+            this.startActivity(intent);
+        }
+    }
+
+    private void updateCitiesWithCurrentLanguage() {
+        for (City city : mCities) {
+            city.setCityNameInCurrentLanguage(ResourceByNameRetriever
+                    .getStringResourceByName(city.getCityName(), this));
+            city.setCountryNameInCurrentLanguage(ResourceByNameRetriever
+                    .getStringResourceByName(city.getCountryName(), this));
         }
     }
 }

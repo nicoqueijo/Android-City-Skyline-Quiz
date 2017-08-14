@@ -1,8 +1,15 @@
 package com.nicoqueijo.cityskylinequiz.model;
 
+import android.support.annotation.NonNull;
+
 import java.io.Serializable;
 
 /**
+ * The model class for each city object. Each city has a name, a country, a URl that is used to
+ * fetch its image file from the cloud, GPS coordinates to locate it on a mapping application, and
+ * a URL to fetch its Wikipedia article. There are two additional fields to store the city and country
+ * name on the language the application is running on. This is used to properly sort the objects by
+ * city or country name.
  * Serializable must be implemented in order to pass a City object between intents.
  */
 public class City implements Serializable {
@@ -15,6 +22,9 @@ public class City implements Serializable {
     private String imageUrl;
     private String coordinates;
     private String wikiUrl;
+
+    private String cityNameInCurrentLanguage;
+    private String countryNameInCurrentLanguage;
 
     /**
      * @param cityName
@@ -120,5 +130,21 @@ public class City implements Serializable {
      */
     public String getLongitude() {
         return splitCoordinates()[LONGITUDE];
+    }
+
+    public String getCityNameInCurrentLanguage() {
+        return cityNameInCurrentLanguage;
+    }
+
+    public void setCityNameInCurrentLanguage(String cityNameInCurrentLanguage) {
+        this.cityNameInCurrentLanguage = cityNameInCurrentLanguage;
+    }
+
+    public String getCountryNameInCurrentLanguage() {
+        return countryNameInCurrentLanguage;
+    }
+
+    public void setCountryNameInCurrentLanguage(String countryNameInCurrentLanguage) {
+        this.countryNameInCurrentLanguage = countryNameInCurrentLanguage;
     }
 }

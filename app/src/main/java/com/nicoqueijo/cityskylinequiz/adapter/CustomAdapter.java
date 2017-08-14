@@ -89,7 +89,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
      */
     @Override
     public Character getCharacterForElement(int position) {
-        Character c = mCities.get(position).getCityName().charAt(0);
+        Character c = mCities.get(position).getCityNameInCurrentLanguage().charAt(0);
         if (Character.isDigit(c)) {
             c = '#';
         }

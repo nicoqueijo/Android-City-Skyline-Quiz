@@ -17,6 +17,8 @@ import com.nicoqueijo.cityskylinequiz.fragment.ClearScoresDialog;
 import com.nicoqueijo.cityskylinequiz.fragment.LanguageChooserDialog;
 import com.nicoqueijo.cityskylinequiz.interfaces.Communicator;
 
+import java.util.Collection;
+
 public class SettingsActivity extends AppCompatActivity implements Communicator {
 
     AppCompatActivity mThisActivity = SettingsActivity.this;
