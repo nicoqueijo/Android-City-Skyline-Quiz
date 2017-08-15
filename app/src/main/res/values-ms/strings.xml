@@ -21,8 +21,8 @@
     <string name="cancel">Batalkan</string>
     <string name="delete">Padam</string>
     <string name="sort_by">Disusun mengikut:</string>
-    <string name="city">Bandar</string>
-    <string name="country">Negara</string>
+    <string name="city">\t\tBandar</string>
+    <string name="country">\t\tNegara</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>

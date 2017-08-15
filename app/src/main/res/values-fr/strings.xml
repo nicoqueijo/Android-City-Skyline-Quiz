@@ -21,8 +21,8 @@
     <string name="cancel">Annuler</string>
     <string name="delete">Effacer</string>
     <string name="sort_by">Trier par:</string>
-    <string name="city">Ville</string>
-    <string name="country">Pays</string>
+    <string name="city">\t\tVille</string>
+    <string name="country">\t\tPays</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abou Dabi</string>

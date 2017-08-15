@@ -21,8 +21,8 @@
     <string name="cancel">Отмена</string>
     <string name="delete">Удалить</string>
     <string name="sort_by">Сортировать по:</string>
-    <string name="city">Город</string>
-    <string name="country">Страна</string>
+    <string name="city">\t\tГород</string>
+    <string name="country">\t\tСтрана</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Абу-Даби</string>

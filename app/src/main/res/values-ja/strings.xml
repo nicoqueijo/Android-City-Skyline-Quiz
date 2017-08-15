@@ -21,8 +21,8 @@
     <string name="cancel">キャンセル</string>
     <string name="delete">削除</string>
     <string name="sort_by">並び替え：</string>
-    <string name="city">シティ</string>
-    <string name="country">国</string>
+    <string name="city">\t\tシティ</string>
+    <string name="country">\t\t国</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">アブダビ</string>

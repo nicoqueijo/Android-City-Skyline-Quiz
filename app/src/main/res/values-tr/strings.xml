@@ -21,8 +21,8 @@
     <string name="cancel">İptal etmek</string>
     <string name="delete">Silmek</string>
     <string name="sort_by">Göre sırala:</string>
-    <string name="city">Şehir</string>
-    <string name="country">Ülke</string>
+    <string name="city">\t\tŞehir</string>
+    <string name="country">\t\tÜlke</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dabi</string>

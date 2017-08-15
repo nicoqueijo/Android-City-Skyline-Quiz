@@ -21,8 +21,8 @@
     <string name="cancel">取消</string>
     <string name="delete">删除</string>
     <string name="sort_by">排序方式：</string>
-    <string name="city">市</string>
-    <string name="country">国家</string>
+    <string name="city">\t\t市</string>
+    <string name="country">\t\t国家</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">阿布扎比</string>
