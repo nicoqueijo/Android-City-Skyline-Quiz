@@ -36,20 +36,29 @@ https://api.myjson.com/bins/x3m9t
 -Refactor duplicated code
 -Look for a launcher icon
 -Group common app status statements on MainActivity in one method
+-Change everything to Material Design (view dimensions, colors, fonts, font size, etc)
+-Find a suitable color pallete
+-Change all text sizes from dp to sp
+-Draw out app architecture and post on github README
+-change xml attributes (left -> start), (right -> end) to support arabic
+-Clear all unused import statements
+-Remove Log statements from entire app
+-Assure layouts are good on Arabic (left/start right/end)
+
+// DO NEXT
+-Add icons to each actionbar title
 -Add menu option on main activity to report errors via email (implicit intent)
 -Add menu option on main activity to submit suggestions via email (implicit intent)
 -Add menu option to view source code
 -Add menu option to Rate app (implicit intent)
--Change everything to Material Design (view dimensions, colors, fonts, font size, etc)
 
--Draw out app architecture and post on github README
--change xml attributes (left -> start), (right -> end) to support arabic
--Make default selected language to device language if it's supported, not English
--Clear all unused import statements
--Make sure the longest string possible fits in each UI label
 
-// DO NEXT
--Disable the first item in sort menu and change its background color to the accent color
--Set the sort item radio button to the current sort mode and preserve on activity destroy
--Find out how to change orientation (right to left) on Arabic
--Fix the left padding/margin on arabic
+
+
+
+
+
+
+
+
+// TESTING

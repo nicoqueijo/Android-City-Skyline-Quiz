@@ -62,7 +62,7 @@ public class CityListActivity extends AppCompatActivity {
 
     /**
      * Creates a hamburger-style menu for options to sort the list. Sets the sort mode to the last
-     * selected mode or to sort it by city if first tine.
+     * selected mode or to sort by city by default.
      *
      * @param menu The menu to be created.
      * @return Status of the operation.
@@ -128,7 +128,6 @@ public class CityListActivity extends AppCompatActivity {
             Collator collator = Collator.getInstance(new Locale(currentLanguage));
 
             public int compare(City city1, City city2) {
-                Log.v("sort", "sort operation");
                 if (sortMode == CITY_SORT) {
                     return collator.compare(city1.getCityNameInCurrentLanguage(),
                             city2.getCityNameInCurrentLanguage());
