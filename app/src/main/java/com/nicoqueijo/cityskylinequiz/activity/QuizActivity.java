@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class QuizActivity extends AppCompatActivity {
 
     private SharedPreferences mSharedPreferences;
-    ArrayList<City> mCities;
+    private ArrayList<City> mCities;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

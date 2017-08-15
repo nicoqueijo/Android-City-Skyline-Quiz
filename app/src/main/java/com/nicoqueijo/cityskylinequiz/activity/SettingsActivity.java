@@ -21,8 +21,8 @@ import java.util.Collection;
 
 public class SettingsActivity extends AppCompatActivity implements Communicator {
 
-    AppCompatActivity mThisActivity = SettingsActivity.this;
-    FragmentManager mFragmentManager = getFragmentManager();
+    private AppCompatActivity mThisActivity = SettingsActivity.this;
+    private FragmentManager mFragmentManager = getFragmentManager();
     private SharedPreferences mSharedPreferences;
     private LinearLayout mThemeView;
     private LinearLayout mLanguageView;

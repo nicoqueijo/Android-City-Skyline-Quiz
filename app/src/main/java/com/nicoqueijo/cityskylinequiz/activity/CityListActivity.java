@@ -30,10 +30,10 @@ public class CityListActivity extends AppCompatActivity {
     public static final int COUNTRY_SORT = 1;
 
     private SharedPreferences mSharedPreferences;
-    ArrayList<City> mCities;
-    RecyclerView mRecyclerCityList;
-    DragScrollBar mDragScrollBar;
-    CustomAdapter mAdapter;
+    private ArrayList<City> mCities;
+    private RecyclerView mRecyclerCityList;
+    private DragScrollBar mDragScrollBar;
+    private CustomAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

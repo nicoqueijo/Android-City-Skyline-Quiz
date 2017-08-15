@@ -44,9 +44,11 @@ import java.util.Locale;
  */
 public class MainMenuActivity extends AppCompatActivity {
 
+    public static final String DEVELOPER_GITHUB_URL = "https://github.com/nicoqueijo";
+
     private SharedPreferences mSharedPreferences;
-    String currentLanguage;
-    ArrayList<City> mCities;
+    private String currentLanguage;
+    private ArrayList<City> mCities;
     private Button mButtonPlayGame;
     private Button mButtonCityList;
     private Button mButtonSettings;
