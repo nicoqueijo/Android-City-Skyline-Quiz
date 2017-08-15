@@ -23,6 +23,7 @@
     <string name="sort_by">इसके अनुसार क्रमबद्ध करें:</string>
     <string name="sort_option_city">\t\tशहर</string>
     <string name="sort_option_country">\t\tदेश</string>
+    <string name="google_play_error">Google Play ऐप ढूंढने में असमर्थ</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">अबू धाबी</string>

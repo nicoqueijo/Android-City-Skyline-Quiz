@@ -23,6 +23,7 @@
     <string name="sort_by">Сортировать по:</string>
     <string name="sort_option_city">\t\tГород</string>
     <string name="sort_option_country">\t\tСтрана</string>
+    <string name="google_play_error">Не удалось найти приложение Google Play</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Абу-Даби</string>

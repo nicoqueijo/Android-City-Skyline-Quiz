@@ -23,6 +23,7 @@
     <string name="sort_by">並び替え：</string>
     <string name="sort_option_city">\t\tシティ</string>
     <string name="sort_option_country">\t\t国</string>
+    <string name="google_play_error">Google Playアプリが見つかりません</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">アブダビ</string>

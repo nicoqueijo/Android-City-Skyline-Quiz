@@ -1,10 +1,12 @@
 package com.nicoqueijo.cityskylinequiz.activity;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
@@ -14,6 +16,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.fragment.LanguageChooserDialog;
@@ -154,6 +157,10 @@ public class MainMenuActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case (R.id.menu_item_source_code):
                 // Implicit intent to open github.com/nicoqueijo in device browser
+                Intent sourceCodeIntent = new Intent(Intent.ACTION_VIEW);
+                sourceCodeIntent.setData(Uri.parse(DEVELOPER_GITHUB_URL));
+                Intent chooser = Intent.createChooser(sourceCodeIntent, getString(R.string.launch_browser));
+                startActivity(chooser);
                 break;
             case (R.id.menu_item_suggest):
                 // Implicit intent to open email app with subject set as "SUGGESTION" in app language
@@ -163,9 +170,20 @@ public class MainMenuActivity extends AppCompatActivity {
                 break;
             case (R.id.menu_item_rate):
                 // Explicit intent to open up app url in PlayStore app
+                Uri uri = Uri.parse("market://details?id=" + getPackageName());
+                Intent rateAppIntent = new Intent(Intent.ACTION_VIEW, uri);
+                try {
+                    startActivity(rateAppIntent);
+                } catch (ActivityNotFoundException e) {
+                    Toast.makeText(this, R.string.google_play_error, Toast.LENGTH_LONG).show();
+                }
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void launchMarket() {
+
     }
 
     /**

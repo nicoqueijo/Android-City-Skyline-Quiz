@@ -27,6 +27,7 @@
     <string name="suggestion">Make a suggestion</string>
     <string name="report_error">Report an error</string>
     <string name="rate_app">Rate app</string>
+    <string name="google_play_error">Unable to find Google Play app</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>

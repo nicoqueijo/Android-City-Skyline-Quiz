@@ -23,6 +23,7 @@
     <string name="sort_by">Sortiere nach:</string>
     <string name="sort_option_city">\t\tStadt</string>
     <string name="sort_option_country">\t\tLand</string>
+    <string name="google_play_error">Google Play App kann nicht gefunden werden</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>
