@@ -9,6 +9,7 @@
     <string name="settings">Einstellungen</string>
     <string name="launch_maps">Karten starten</string>
     <string name="launch_browser">Starten Sie Browser</string>
+    <string name="launch_email">E-Mail starten</string>
     <string name="more_info">Mehr Info</string>
     <string name="settings_theme_title">Thema</string>
     <string name="settings_theme_description">Umschalten zwischen licht/dunkel thema</string>

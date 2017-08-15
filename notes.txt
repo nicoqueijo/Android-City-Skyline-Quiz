@@ -24,6 +24,7 @@ https://api.myjson.com/bins/x3m9t
 -Score: 0, 0.25, 0.50, 1.0 per question depending on attempts
 -Try to put 3 second countdown splash screen before game starts
 
+-Put disclaimer about translations somewhere in app
 -Internationalize everything in strings.xml
 -Keep hiscores stored in an SQLite database
 -Clear hiscores from database when user resets the scores
@@ -47,6 +48,9 @@ https://api.myjson.com/bins/x3m9t
 -Add menu option on main activity to report errors via email (implicit intent)
 -Add menu option to Rate app (implicit intent)
 -Add icons to each actionbar title
+-Change intent strings to say "Select [type] app" where type can be Maps, Email, Browser etc.
+-Put SUGGESTION and ISSUE in strings.xml 
+-Move intent stuff to its own methods
 
 
 

@@ -9,6 +9,7 @@
     <string name="settings">Ayarlar</string>
     <string name="launch_maps">Haritaları Başlatın</string>
     <string name="launch_browser">Tarayıcıyı Başlat</string>
+    <string name="launch_email">E-postayı Başlat</string>
     <string name="more_info">Daha Fazla Bilgi</string>
     <string name="settings_theme_title">Tema</string>
     <string name="settings_theme_description">Açık veya koyu tema arasında geçiş yapma</string>

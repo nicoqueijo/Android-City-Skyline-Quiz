@@ -48,6 +48,7 @@ import java.util.Locale;
 public class MainMenuActivity extends AppCompatActivity {
 
     public static final String DEVELOPER_GITHUB_URL = "https://github.com/nicoqueijo";
+    public static final String SUPPORT_EMAIL = "cityskylinequiz@gmail.com";
 
     private SharedPreferences mSharedPreferences;
     private String currentLanguage;
@@ -154,24 +155,39 @@ public class MainMenuActivity extends AppCompatActivity {
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        String[] to = {SUPPORT_EMAIL};
         switch (item.getItemId()) {
             case (R.id.menu_item_source_code):
                 // Implicit intent to open github.com/nicoqueijo in device browser
                 Intent sourceCodeIntent = new Intent(Intent.ACTION_VIEW);
                 sourceCodeIntent.setData(Uri.parse(DEVELOPER_GITHUB_URL));
-                Intent chooser = Intent.createChooser(sourceCodeIntent, getString(R.string.launch_browser));
-                startActivity(chooser);
+                Intent sourceCodeChooser = Intent.createChooser(sourceCodeIntent, getString(R.string.launch_browser));
+                startActivity(sourceCodeChooser);
                 break;
             case (R.id.menu_item_suggest):
                 // Implicit intent to open email app with subject set as "SUGGESTION" in app language
+                Intent emailSuggestionIntent = new Intent(Intent.ACTION_SEND);
+                emailSuggestionIntent.setData(Uri.parse("mailto:"));
+                emailSuggestionIntent.putExtra(Intent.EXTRA_EMAIL, to);
+                emailSuggestionIntent.putExtra(Intent.EXTRA_SUBJECT, "SUGGESTION");
+                emailSuggestionIntent.setType("message/rfc822");
+                Intent emailSuggestionChooser = Intent.createChooser(emailSuggestionIntent, getString(R.string.launch_email));
+                startActivity(emailSuggestionChooser);
                 break;
             case (R.id.menu_item_report):
                 // Implicit intent to open email app with subject set as "ERROR" in app language
+                Intent emailBugIntent = new Intent(Intent.ACTION_SEND);
+                emailBugIntent.setData(Uri.parse("mailto:"));
+                emailBugIntent.putExtra(Intent.EXTRA_EMAIL, to);
+                emailBugIntent.putExtra(Intent.EXTRA_SUBJECT, "ISSUE");
+                emailBugIntent.setType("message/rfc822");
+                Intent emailBugChooser = Intent.createChooser(emailBugIntent, getString(R.string.launch_email));
+                startActivity(emailBugChooser);
                 break;
             case (R.id.menu_item_rate):
                 // Explicit intent to open up app url in PlayStore app
-                Uri uri = Uri.parse("market://details?id=" + getPackageName());
-                Intent rateAppIntent = new Intent(Intent.ACTION_VIEW, uri);
+                Intent rateAppIntent = new Intent(Intent.ACTION_VIEW);
+                rateAppIntent.setData(Uri.parse("market://details?id=" + getPackageName()));
                 try {
                     startActivity(rateAppIntent);
                 } catch (ActivityNotFoundException e) {
@@ -180,10 +196,6 @@ public class MainMenuActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    private void launchMarket() {
-
     }
 
     /**

@@ -8,7 +8,8 @@
     <string name="city_list">Lista Miast</string>
     <string name="settings">Ustawienia</string>
     <string name="launch_maps">Uruchom Mapy</string>
-    <string name="launch_browser">Uruchom przeglądarkę</string>
+    <string name="launch_browser">Uruchom Przeglądarkę</string>
+    <string name="launch_email">Uruchom E-mail</string>
     <string name="more_info">Więcej Informacji</string>
     <string name="settings_theme_title">Motyw</string>
     <string name="settings_theme_description">Przełączanie między tematem światła/ciemności</string>

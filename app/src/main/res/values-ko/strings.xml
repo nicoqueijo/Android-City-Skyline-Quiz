@@ -9,6 +9,7 @@
     <string name="settings">설정</string>
     <string name="launch_maps">지도 실행</string>
     <string name="launch_browser">브라우저 시작</string>
+    <string name="launch_email">전자 메일 시작</string>
     <string name="more_info">더 많은 정보</string>
     <string name="settings_theme_title">테마</string>
     <string name="settings_theme_description">밝은 테마와 어두운 테마 간을 전환합니다.</string>

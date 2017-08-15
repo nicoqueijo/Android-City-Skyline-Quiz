@@ -9,6 +9,7 @@
     <string name="settings">إعدادات</string>
     <string name="launch_maps">إطلاق الخرائط</string>
     <string name="launch_browser">إطلاق المتصفح</string>
+    <string name="launch_email">تشغيل البريد الإلكتروني</string>
     <string name="more_info">مزيد من المعلومات</string>
     <string name="settings_theme_title">المقدمة</string>
     <string name="settings_theme_description">التبديل بين الضوء أو الظلام موضوع</string>

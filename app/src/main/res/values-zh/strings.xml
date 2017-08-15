@@ -9,6 +9,7 @@
     <string name="settings">设置</string>
     <string name="launch_maps">启动地图</string>
     <string name="launch_browser">启动浏览器</string>
+    <string name="launch_email">启动电子邮件</string>
     <string name="more_info">更多信息</string>
     <string name="settings_theme_title">主题</string>
     <string name="settings_theme_description">在明暗之间切换主题</string>

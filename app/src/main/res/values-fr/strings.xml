@@ -9,6 +9,7 @@
     <string name="settings">Paramètres</string>
     <string name="launch_maps">Lancer Des Cartes</string>
     <string name="launch_browser">Lancer Le Navigateur</string>
+    <string name="launch_email">Lancer l\'Email</string>
     <string name="more_info">Plus d\'informations</string>
     <string name="settings_theme_title">Thème</string>
     <string name="settings_theme_description">Bascule entre le thème clair/sombre</string>

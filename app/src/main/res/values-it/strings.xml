@@ -9,6 +9,7 @@
     <string name="settings">Impostazioni</string>
     <string name="launch_maps">Avvia Mappe</string>
     <string name="launch_browser">Avvia Browser</string>
+    <string name="launch_email">Lancia l\'email</string>
     <string name="more_info">Ulteriori Informazioni</string>
     <string name="settings_theme_title">Tema</string>
     <string name="settings_theme_description">Spostamento tra tema chiaro/scuro</string>
