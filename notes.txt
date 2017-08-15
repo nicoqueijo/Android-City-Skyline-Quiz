@@ -27,13 +27,10 @@ https://api.myjson.com/bins/x3m9t
 -Internationalize everything in strings.xml
 -Keep hiscores stored in an SQLite database
 -Clear hiscores from database when user resets the scores
--Disable landscape mode in every activity
 -Javadoc all classes and methods, remove all magic numbers
 -Organize strings in strings.xml by activites/fragments/etc
 -Move helper methods as static methods in their own class
 -Group duplicated xml code in styles.xml
--Add icons to each activity actionbar
--Refactor duplicated code
 -Look for a launcher icon
 -Group common app status statements on MainActivity in one method
 -Change everything to Material Design (view dimensions, colors, fonts, font size, etc)
@@ -41,24 +38,21 @@ https://api.myjson.com/bins/x3m9t
 -Change all text sizes from dp to sp
 -Draw out app architecture and post on github README
 -change xml attributes (left -> start), (right -> end) to support arabic
--Clear all unused import statements
--Remove Log statements from entire app
--Assure layouts are good on Arabic (left/start right/end)
+
+
 
 // DO NEXT
--Add icons to each actionbar title
--Add menu option on main activity to report errors via email (implicit intent)
--Add menu option on main activity to submit suggestions via email (implicit intent)
 -Add menu option to view source code
+-Add menu option on main activity to submit suggestions via email (implicit intent)
+-Add menu option on main activity to report errors via email (implicit intent)
 -Add menu option to Rate app (implicit intent)
-
-
-
-
-
-
-
+-Add icons to each actionbar title
 
 
 
 // TESTING
+-Assure layouts are good on Arabic (left/start right/end)
+-Clear all unused import statements
+-Remove Log statements from entire app
+-Refactor duplicated code
+-Disable landscape mode in every activity

@@ -21,8 +21,12 @@
     <string name="cancel">Cancel</string>
     <string name="delete">Delete</string>
     <string name="sort_by">Sort by:</string>
-    <string name="city">\t\tCity</string>
-    <string name="country">\t\tCountry</string>
+    <string name="sort_option_city">\t\tCity</string>
+    <string name="sort_option_country">\t\tCountry</string>
+    <string name="source_code">View source code</string>
+    <string name="suggestion">Make a suggestion</string>
+    <string name="report_error">Report an error</string>
+    <string name="rate_app">Rate app</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>

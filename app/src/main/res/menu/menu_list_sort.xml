@@ -2,19 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/menu_title"
+        android:id="@+id/menu_item_title"
         android:title="@string/sort_by"
         app:showAsAction="never" />
     <group
         android:id="@+id/menu_group_sort"
         android:checkableBehavior="single">
         <item
-            android:id="@+id/menu_sort_city"
-            android:title="@string/city"
+            android:id="@+id/menu_item_sort_city"
+            android:title="@string/sort_option_city"
             app:showAsAction="never" />
         <item
-            android:id="@+id/menu_sort_country"
-            android:title="@string/country"
+            android:id="@+id/menu_item_sort_country"
+            android:title="@string/sort_option_country"
             app:showAsAction="never" />
     </group>
 </menu>

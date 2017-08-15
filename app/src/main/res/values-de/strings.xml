@@ -21,8 +21,8 @@
     <string name="cancel">Stornieren</string>
     <string name="delete">Löschen</string>
     <string name="sort_by">Sortiere nach:</string>
-    <string name="city">\t\tStadt</string>
-    <string name="country">\t\tLand</string>
+    <string name="sort_option_city">\t\tStadt</string>
+    <string name="sort_option_country">\t\tLand</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>

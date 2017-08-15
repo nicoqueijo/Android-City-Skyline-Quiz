@@ -21,8 +21,8 @@
     <string name="cancel">취소</string>
     <string name="delete">지우다</string>
     <string name="sort_by">정렬 기준 :</string>
-    <string name="city">\t\t시티</string>
-    <string name="country">\t\t국가</string>
+    <string name="sort_option_city">\t\t시티</string>
+    <string name="sort_option_country">\t\t국가</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">아부다비</string>

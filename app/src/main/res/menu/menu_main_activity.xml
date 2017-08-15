@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_item_source_code"
+        android:title="@string/source_code"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_item_suggest"
+        android:title="@string/suggestion"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_item_report"
+        android:title="@string/report_error"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_item_rate"
+        android:title="@string/rate_app"
+        app:showAsAction="never" />
+</menu>

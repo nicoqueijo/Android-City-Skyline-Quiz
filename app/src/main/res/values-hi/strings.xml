@@ -21,8 +21,8 @@
     <string name="cancel">रद्द करना</string>
     <string name="delete">हटाना</string>
     <string name="sort_by">इसके अनुसार क्रमबद्ध करें:</string>
-    <string name="city">\t\tशहर</string>
-    <string name="country">\t\tदेश</string>
+    <string name="sort_option_city">\t\tशहर</string>
+    <string name="sort_option_country">\t\tदेश</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">अबू धाबी</string>

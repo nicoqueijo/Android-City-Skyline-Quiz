@@ -7,11 +7,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.adapter.CustomAdapter;
@@ -19,7 +17,6 @@ import com.nicoqueijo.cityskylinequiz.fragment.LanguageChooserDialog;
 import com.nicoqueijo.cityskylinequiz.model.City;
 import com.turingtechnologies.materialscrollbar.AlphabetIndicator;
 import com.turingtechnologies.materialscrollbar.DragScrollBar;
-import com.turingtechnologies.materialscrollbar.MaterialScrollBar;
 
 import java.text.Collator;
 import java.util.ArrayList;
@@ -61,7 +58,7 @@ public class CityListActivity extends AppCompatActivity {
     }
 
     /**
-     * Creates a hamburger-style menu for options to sort the list. Sets the sort mode to the last
+     * Creates a hamburger-style menu with options to sort the list. Sets the sort mode to the last
      * selected mode or to sort by city by default.
      *
      * @param menu The menu to be created.
@@ -96,14 +93,14 @@ public class CityListActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         SharedPreferences.Editor editor = mSharedPreferences.edit();
         switch (item.getItemId()) {
-            case (R.id.menu_sort_city):
+            case (R.id.menu_item_sort_city):
                 item.setChecked(true);
                 sortCities(CITY_SORT);
                 mAdapter.notifyDataSetChanged();
                 editor.putInt("sort_mode", CITY_SORT);
                 editor.commit();
                 break;
-            case (R.id.menu_sort_country):
+            case (R.id.menu_item_sort_country):
                 item.setChecked(true);
                 sortCities(COUNTRY_SORT);
                 mAdapter.notifyDataSetChanged();

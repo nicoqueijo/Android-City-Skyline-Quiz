@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -125,6 +128,45 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     /**
+     * Creates a hamburger-style menu with options to view the app source code, make a suggestion,
+     * report an error, or rate the app.
+     *
+     * @param menu The menu to be created.
+     * @return Status of the operation.
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main_activity, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    /**
+     * Starts an intent based on the menu item selected. EXPLAIN WHAT EACH OF THE FOUR INTETNS DO!!!
+     *
+     * @param item The menu item being selected.
+     * @return Status of the operation.
+     */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case (R.id.menu_item_source_code):
+                // Implicit intent to open github.com/nicoqueijo in device browser
+                break;
+            case (R.id.menu_item_suggest):
+                // Implicit intent to open email app with subject set as "SUGGESTION" in app language
+                break;
+            case (R.id.menu_item_report):
+                // Implicit intent to open email app with subject set as "ERROR" in app language
+                break;
+            case (R.id.menu_item_rate):
+                // Explicit intent to open up app url in PlayStore app
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    /**
      * Sets the locale to a new language.
      *
      * @param lang the new language to set the app to.
@@ -221,6 +263,9 @@ public class MainMenuActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     *
+     */
     private void updateCitiesWithCurrentLanguage() {
         for (City city : mCities) {
             city.setCityNameInCurrentLanguage(ResourceByNameRetriever
