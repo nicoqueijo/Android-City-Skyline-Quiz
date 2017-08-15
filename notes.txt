@@ -43,14 +43,8 @@ https://api.myjson.com/bins/x3m9t
 
 
 // DO NEXT
--Add menu option to view source code
--Add menu option on main activity to submit suggestions via email (implicit intent)
--Add menu option on main activity to report errors via email (implicit intent)
--Add menu option to Rate app (implicit intent)
--Add icons to each actionbar title
--Change intent strings to say "Select [type] app" where type can be Maps, Email, Browser etc.
 -Put SUGGESTION and ISSUE in strings.xml 
--Move intent stuff to its own methods
+-Add icons to each actionbar title
 
 
 

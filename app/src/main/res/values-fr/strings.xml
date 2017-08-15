@@ -7,9 +7,9 @@
     <string name="play_game">Jouer</string>
     <string name="city_list">Liste Des Villes</string>
     <string name="settings">Paramètres</string>
-    <string name="launch_maps">Lancer Des Cartes</string>
-    <string name="launch_browser">Lancer Le Navigateur</string>
-    <string name="launch_email">Lancer l\'Email</string>
+    <string name="launch_maps">Sélectionnez l\'application de cartographie</string>
+    <string name="launch_browser">Sélectionnez l\'application du navigateur</string>
+    <string name="launch_email">Sélectionnez l\'application e-mail</string>
     <string name="more_info">Plus d\'informations</string>
     <string name="settings_theme_title">Thème</string>
     <string name="settings_theme_description">Bascule entre le thème clair/sombre</string>

@@ -7,9 +7,9 @@
     <string name="play_game">Spiel Spielen</string>
     <string name="city_list">Stadtliste</string>
     <string name="settings">Einstellungen</string>
-    <string name="launch_maps">Karten starten</string>
-    <string name="launch_browser">Starten Sie Browser</string>
-    <string name="launch_email">E-Mail starten</string>
+    <string name="launch_maps">Wählen Sie Mapping-Anwendung</string>
+    <string name="launch_browser">Wählen Sie Browser-Anwendung</string>
+    <string name="launch_email">Wählen Sie E-Mail-Anwendung</string>
     <string name="more_info">Mehr Info</string>
     <string name="settings_theme_title">Thema</string>
     <string name="settings_theme_description">Umschalten zwischen licht/dunkel thema</string>

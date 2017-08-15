@@ -7,9 +7,9 @@
     <string name="play_game">Играть в игру</string>
     <string name="city_list">Список городов</string>
     <string name="settings">настройки</string>
-    <string name="launch_maps">Запустить карты</string>
-    <string name="launch_browser">Запустить браузер</string>
-    <string name="launch_email">Запустить электронную почту</string>
+    <string name="launch_maps">Выберите картографическое приложение</string>
+    <string name="launch_browser">Выберите приложение браузера</string>
+    <string name="launch_email">Выбор приложения электронной почты</string>
     <string name="more_info">Больше информации</string>
     <string name="settings_theme_title">тема</string>
     <string name="settings_theme_description">Переключение между темными/темными темами</string>

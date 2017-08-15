@@ -7,9 +7,9 @@
     <string name="play_game">Spel Spelen</string>
     <string name="city_list">Stad Lijst</string>
     <string name="settings">Instellingen</string>
-    <string name="launch_maps">Launch Maps</string>
-    <string name="launch_browser">Launch Browser</string>
-    <string name="launch_email">Launch Email</string>
+    <string name="launch_maps">Kies een mapping applicatie</string>
+    <string name="launch_browser">Select browser applicatie</string>
+    <string name="launch_email">Kies een e-mailtoepassing</string>
     <string name="more_info">Meer Informatie</string>
     <string name="settings_theme_title">Thema</string>
     <string name="settings_theme_description">Wissel tussen licht/donker thema</string>

@@ -7,9 +7,9 @@
     <string name="play_game">खेल खेले</string>
     <string name="city_list">शहर की सूची</string>
     <string name="settings">सेटिंग्स</string>
-    <string name="launch_maps">मानचित्र लॉन्च करें</string>
-    <string name="launch_browser">ब्राउज़र लॉन्च करें</string>
-    <string name="launch_email">ईमेल लॉन्च करें</string>
+    <string name="launch_maps">मानचित्रण आवेदन करें</string>
+    <string name="launch_browser">ब्राउज़र आवेदन करें</string>
+    <string name="launch_email">ईमेल आवेदन करें</string>
     <string name="more_info">और जानकारी</string>
     <string name="settings_theme_title">विषय</string>
     <string name="settings_theme_description">प्रकाश या गहरे रंग की थीम के बीच टॉगल करें</string>

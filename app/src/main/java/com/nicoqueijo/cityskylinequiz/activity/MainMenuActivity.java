@@ -10,7 +10,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -19,7 +18,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.nicoqueijo.cityskylinequiz.R;
-import com.nicoqueijo.cityskylinequiz.fragment.LanguageChooserDialog;
 import com.nicoqueijo.cityskylinequiz.helper.ResourceByNameRetriever;
 import com.nicoqueijo.cityskylinequiz.helper.SystemInfo;
 import com.nicoqueijo.cityskylinequiz.model.City;
@@ -32,11 +30,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
-import java.text.Collator;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Locale;
 
 // JSON file on the cloud:
@@ -48,7 +42,7 @@ import java.util.Locale;
 public class MainMenuActivity extends AppCompatActivity {
 
     public static final String DEVELOPER_GITHUB_URL = "https://github.com/nicoqueijo";
-    public static final String SUPPORT_EMAIL = "cityskylinequiz@gmail.com";
+    public static final String DEVELOPER_EMAIL = "queijonicolas@gmail.com";
 
     private SharedPreferences mSharedPreferences;
     private String currentLanguage;
@@ -85,9 +79,6 @@ public class MainMenuActivity extends AppCompatActivity {
         mButtonCityList = (Button) findViewById(R.id.button_city_list);
         mButtonSettings = (Button) findViewById(R.id.button_settings);
 
-        /**
-         *
-         */
         mButtonPlayGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,9 +88,6 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
 
-        /**
-         *
-         */
         mButtonCityList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,9 +97,6 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
 
-        /**
-         *
-         */
         mButtonSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -148,44 +133,39 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     /**
-     * Starts an intent based on the menu item selected. EXPLAIN WHAT EACH OF THE FOUR INTETNS DO!!!
+     * Starts an intent based on the menu item selected. Source code intent opens the developer's
+     * Github profile on a browser app. Suggestion intent and report intent open a new email message
+     * with a predefined subject. Rate intent opens the app's url in the Google Play store.
      *
      * @param item The menu item being selected.
      * @return Status of the operation.
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        String[] to = {SUPPORT_EMAIL};
         switch (item.getItemId()) {
             case (R.id.menu_item_source_code):
-                // Implicit intent to open github.com/nicoqueijo in device browser
                 Intent sourceCodeIntent = new Intent(Intent.ACTION_VIEW);
                 sourceCodeIntent.setData(Uri.parse(DEVELOPER_GITHUB_URL));
                 Intent sourceCodeChooser = Intent.createChooser(sourceCodeIntent, getString(R.string.launch_browser));
                 startActivity(sourceCodeChooser);
                 break;
             case (R.id.menu_item_suggest):
-                // Implicit intent to open email app with subject set as "SUGGESTION" in app language
-                Intent emailSuggestionIntent = new Intent(Intent.ACTION_SEND);
-                emailSuggestionIntent.setData(Uri.parse("mailto:"));
-                emailSuggestionIntent.putExtra(Intent.EXTRA_EMAIL, to);
-                emailSuggestionIntent.putExtra(Intent.EXTRA_SUBJECT, "SUGGESTION");
-                emailSuggestionIntent.setType("message/rfc822");
-                Intent emailSuggestionChooser = Intent.createChooser(emailSuggestionIntent, getString(R.string.launch_email));
+                Intent emailSuggestionIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:"
+                        + DEVELOPER_EMAIL));
+                emailSuggestionIntent.putExtra("subject", "SUGGESTION");
+                Intent emailSuggestionChooser = Intent.createChooser(emailSuggestionIntent,
+                        getString(R.string.launch_email));
                 startActivity(emailSuggestionChooser);
                 break;
             case (R.id.menu_item_report):
-                // Implicit intent to open email app with subject set as "ERROR" in app language
-                Intent emailBugIntent = new Intent(Intent.ACTION_SEND);
-                emailBugIntent.setData(Uri.parse("mailto:"));
-                emailBugIntent.putExtra(Intent.EXTRA_EMAIL, to);
-                emailBugIntent.putExtra(Intent.EXTRA_SUBJECT, "ISSUE");
-                emailBugIntent.setType("message/rfc822");
-                Intent emailBugChooser = Intent.createChooser(emailBugIntent, getString(R.string.launch_email));
-                startActivity(emailBugChooser);
+                Intent emailIssueIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:"
+                        + DEVELOPER_EMAIL));
+                emailIssueIntent.putExtra("subject", "ISSUE");
+                Intent emailIssueChooser = Intent.createChooser(emailIssueIntent,
+                        getString(R.string.launch_email));
+                startActivity(emailIssueChooser);
                 break;
             case (R.id.menu_item_rate):
-                // Explicit intent to open up app url in PlayStore app
                 Intent rateAppIntent = new Intent(Intent.ACTION_VIEW);
                 rateAppIntent.setData(Uri.parse("market://details?id=" + getPackageName()));
                 try {
@@ -237,11 +217,11 @@ public class MainMenuActivity extends AppCompatActivity {
     public String loadJSONFromAsset() {
         String json = null;
         try {
-            InputStream is = getAssets().open("cities.json");
-            int size = is.available();
+            InputStream inputStream = getAssets().open("cities.json");
+            int size = inputStream.available();
             byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
+            inputStream.read(buffer);
+            inputStream.close();
             json = new String(buffer, "UTF-8");
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -296,7 +276,8 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     * Updates the city and country names of the model objects upon the language change with the
+     * names in that language.
      */
     private void updateCitiesWithCurrentLanguage() {
         for (City city : mCities) {

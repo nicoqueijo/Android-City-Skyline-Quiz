@@ -7,9 +7,9 @@
     <string name="play_game">게임하다</string>
     <string name="city_list">도시 목록</string>
     <string name="settings">설정</string>
-    <string name="launch_maps">지도 실행</string>
-    <string name="launch_browser">브라우저 시작</string>
-    <string name="launch_email">전자 메일 시작</string>
+    <string name="launch_maps">선택지도 응용 프로그램</string>
+    <string name="launch_browser">선택 브라우저 응용 프로그램</string>
+    <string name="launch_email">선택 이메일 응용 프로그램</string>
     <string name="more_info">더 많은 정보</string>
     <string name="settings_theme_title">테마</string>
     <string name="settings_theme_description">밝은 테마와 어두운 테마 간을 전환합니다.</string>

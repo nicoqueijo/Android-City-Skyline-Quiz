@@ -7,9 +7,9 @@
     <string name="play_game">玩游戏</string>
     <string name="city_list">城市名单</string>
     <string name="settings">设置</string>
-    <string name="launch_maps">启动地图</string>
-    <string name="launch_browser">启动浏览器</string>
-    <string name="launch_email">启动电子邮件</string>
+    <string name="launch_maps">选择地图应用</string>
+    <string name="launch_browser">选择浏览器应用程序</string>
+    <string name="launch_email">选择电子邮件应用程序</string>
     <string name="more_info">更多信息</string>
     <string name="settings_theme_title">主题</string>
     <string name="settings_theme_description">在明暗之间切换主题</string>

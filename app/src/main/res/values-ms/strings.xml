@@ -7,9 +7,9 @@
     <string name="play_game">Bermain Permainan</string>
     <string name="city_list">Senarai Bandar Raya</string>
     <string name="settings">Tetapan</string>
-    <string name="launch_maps">Pelancaran Peta</string>
-    <string name="launch_browser">Pelancaran Pelancar</string>
-    <string name="launch_email">Pelancaran E-mel</string>
+    <string name="launch_maps">Pilih aplikasi pemetaan</string>
+    <string name="launch_browser">Pilih aplikasi pelayar</string>
+    <string name="launch_email">Pilih aplikasi e-mel</string>
     <string name="more_info">Maklumat lanjut</string>
     <string name="settings_theme_title">Tema</string>
     <string name="settings_theme_description">Togol antara tema cahaya/gelap</string>
