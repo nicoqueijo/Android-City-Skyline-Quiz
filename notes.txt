@@ -33,16 +33,15 @@ https://api.myjson.com/bins/x3m9t
 -Move helper methods as static methods in their own class
 -Group duplicated xml code in styles.xml
 -Add icons to each activity actionbar
--Show a toast when user clears scores
 -Refactor duplicated code
 -Look for a launcher icon
 -Group common app status statements on MainActivity in one method
--Add menu option on main activity to report errors via email(implicit intent)
+-Add menu option on main activity to report errors via email (implicit intent)
 -Add menu option on main activity to submit suggestions via email (implicit intent)
--Add menu option on city list to sort by country or city (use mergesort)
 -Add menu option to view source code
--Change everything to Material Design (view dimensions, colors, fonts, etc)
--Rate app button on main activity menu
+-Add menu option to Rate app (implicit intent)
+-Change everything to Material Design (view dimensions, colors, fonts, font size, etc)
+
 -Draw out app architecture and post on github README
 -change xml attributes (left -> start), (right -> end) to support arabic
 -Make default selected language to device language if it's supported, not English
@@ -50,6 +49,7 @@ https://api.myjson.com/bins/x3m9t
 -Make sure the longest string possible fits in each UI label
 
 // DO NEXT
--Add custom items on sorting menu and disable the first item and change its background color	
+-Disable the first item in sort menu and change its background color to the accent color
+-Set the sort item radio button to the current sort mode and preserve on activity destroy
 -Find out how to change orientation (right to left) on Arabic
 -Fix the left padding/margin on arabic

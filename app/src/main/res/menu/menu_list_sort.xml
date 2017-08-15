@@ -5,11 +5,16 @@
         android:id="@+id/menu_title"
         android:title="@string/sort_by"
         app:showAsAction="never" />
-    <item
-        android:id="@+id/menu_sort_city"
-        android:title="@string/city" />
-    <item
-        android:id="@+id/menu_sort_country"
-        android:title="@string/country"
-        app:showAsAction="never" />
+    <group
+        android:id="@+id/menu_group_sort"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_sort_city"
+            android:title="@string/city"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/menu_sort_country"
+            android:title="@string/country"
+            app:showAsAction="never" />
+    </group>
 </menu>

@@ -61,15 +61,27 @@ public class CityListActivity extends AppCompatActivity {
     }
 
     /**
-     * Creates a hamburger-style menu for options to sort the list.
+     * Creates a hamburger-style menu for options to sort the list. Sets the sort mode to the last
+     * selected mode or to sort it by city if first tine.
      *
      * @param menu The menu to be created.
      * @return Status of the operation.
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        final int CITY_SORT_MENU_POSITION = 1;
+        final int COUNTRY_SORT_MENU_POSITION = 2;
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_list_sort, menu);
+        int sortMode = mSharedPreferences.getInt("sort_mode", CITY_SORT);
+        switch (sortMode) {
+            case CITY_SORT:
+                menu.getItem(CITY_SORT_MENU_POSITION).setChecked(true);
+                break;
+            case COUNTRY_SORT:
+                menu.getItem(COUNTRY_SORT_MENU_POSITION).setChecked(true);
+                break;
+        }
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -85,12 +97,14 @@ public class CityListActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = mSharedPreferences.edit();
         switch (item.getItemId()) {
             case (R.id.menu_sort_city):
+                item.setChecked(true);
                 sortCities(CITY_SORT);
                 mAdapter.notifyDataSetChanged();
                 editor.putInt("sort_mode", CITY_SORT);
                 editor.commit();
                 break;
             case (R.id.menu_sort_country):
+                item.setChecked(true);
                 sortCities(COUNTRY_SORT);
                 mAdapter.notifyDataSetChanged();
                 editor.putInt("sort_mode", COUNTRY_SORT);
