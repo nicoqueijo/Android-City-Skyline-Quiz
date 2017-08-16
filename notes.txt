@@ -44,6 +44,7 @@ https://api.myjson.com/bins/x3m9t
 
 // DO NEXT
 -Design main activity layout
+-Switch main activity icons based on theme
 
 
 
@@ -53,3 +54,4 @@ https://api.myjson.com/bins/x3m9t
 -Remove Log statements from entire app
 -Refactor duplicated code
 -Disable landscape mode in every activity
+-Assure Rate app button works once app is in Google Play

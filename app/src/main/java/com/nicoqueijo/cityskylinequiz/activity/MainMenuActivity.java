@@ -16,6 +16,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.nicoqueijo.cityskylinequiz.R;
@@ -49,9 +50,9 @@ public class MainMenuActivity extends AppCompatActivity {
     private SharedPreferences mSharedPreferences;
     private String currentLanguage;
     private ArrayList<City> mCities;
-    private Button mButtonPlayGame;
-    private Button mButtonCityList;
-    private Button mButtonSettings;
+    private RelativeLayout mRelativeLayoutPlayGame;
+    private RelativeLayout mRelativeLayoutCityList;
+    private RelativeLayout mRelativeLayoutSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,11 +82,11 @@ public class MainMenuActivity extends AppCompatActivity {
         parseJsonAndCreateCityObjects();
         cacheImagesAndLoadToMemory();
 
-        mButtonPlayGame = (Button) findViewById(R.id.button_start_game);
-        mButtonCityList = (Button) findViewById(R.id.button_city_list);
-        mButtonSettings = (Button) findViewById(R.id.button_settings);
+        mRelativeLayoutPlayGame = (RelativeLayout) findViewById(R.id.container_play_game);
+        mRelativeLayoutCityList = (RelativeLayout) findViewById(R.id.container_city_list);
+        mRelativeLayoutSettings = (RelativeLayout) findViewById(R.id.container_settings);
 
-        mButtonPlayGame.setOnClickListener(new View.OnClickListener() {
+        mRelativeLayoutPlayGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intentPlayGame = new Intent(MainMenuActivity.this, QuizActivity.class);
@@ -94,7 +95,7 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
 
-        mButtonCityList.setOnClickListener(new View.OnClickListener() {
+        mRelativeLayoutCityList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intentCityList = new Intent(MainMenuActivity.this, CityListActivity.class);
@@ -103,7 +104,7 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
 
-        mButtonSettings.setOnClickListener(new View.OnClickListener() {
+        mRelativeLayoutSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intentSettings = new Intent(MainMenuActivity.this, SettingsActivity.class);

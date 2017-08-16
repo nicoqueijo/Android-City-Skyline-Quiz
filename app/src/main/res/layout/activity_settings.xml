@@ -43,7 +43,7 @@
     </LinearLayout>
 
     <View
-        android:id="@+id/theme_divider"
+        android:id="@+id/divider_theme"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="10dp"
@@ -75,7 +75,7 @@
     </LinearLayout>
 
     <View
-        android:id="@+id/language_divider"
+        android:id="@+id/divider_language"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="10dp"
@@ -107,7 +107,7 @@
     </LinearLayout>
 
     <View
-        android:id="@+id/scores_divider"
+        android:id="@+id/divider_scores"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="10dp"
