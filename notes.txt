@@ -43,7 +43,6 @@ https://api.myjson.com/bins/x3m9t
 
 
 // DO NEXT
--Put SUGGESTION and ISSUE in strings.xml 
 -Add icons to each actionbar title
 
 

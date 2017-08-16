@@ -152,7 +152,8 @@ public class MainMenuActivity extends AppCompatActivity {
             case (R.id.menu_item_suggest):
                 Intent emailSuggestionIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:"
                         + DEVELOPER_EMAIL));
-                emailSuggestionIntent.putExtra("subject", "SUGGESTION");
+                emailSuggestionIntent.putExtra("subject", getResources().getString(R.string.app_name)
+                        + " - " + getResources().getString(R.string.suggestion));
                 Intent emailSuggestionChooser = Intent.createChooser(emailSuggestionIntent,
                         getString(R.string.launch_email));
                 startActivity(emailSuggestionChooser);
@@ -160,7 +161,8 @@ public class MainMenuActivity extends AppCompatActivity {
             case (R.id.menu_item_report):
                 Intent emailIssueIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:"
                         + DEVELOPER_EMAIL));
-                emailIssueIntent.putExtra("subject", "ISSUE");
+                emailIssueIntent.putExtra("subject", getResources().getString(R.string.app_name)
+                        + " - " + getResources().getString(R.string.report_error));
                 Intent emailIssueChooser = Intent.createChooser(emailIssueIntent,
                         getString(R.string.launch_email));
                 startActivity(emailIssueChooser);
