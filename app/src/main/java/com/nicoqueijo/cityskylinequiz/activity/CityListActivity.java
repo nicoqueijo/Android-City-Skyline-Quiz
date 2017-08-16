@@ -47,7 +47,7 @@ public class CityListActivity extends AppCompatActivity {
         mActionBar.setDisplayShowHomeEnabled(true);
         mActionBar.setDisplayHomeAsUpEnabled(true);
         mActionBar.setIcon(R.drawable.ic_city);
-        mActionBar.setTitle(R.string.city_list);
+        mActionBar.setTitle(R.string.actionbar_city_list);
 
         Intent intentCityList = getIntent();
         mCities = (ArrayList<City>) intentCityList.getSerializableExtra("cityList");

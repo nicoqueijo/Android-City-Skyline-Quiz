@@ -7,6 +7,10 @@
     <string name="play_game">Bermain Permainan</string>
     <string name="city_list">Senarai Bandar Raya</string>
     <string name="settings">Tetapan</string>
+	<string name="actionbar_app_name">\t\tCity Skyline Quiz</string>
+    <string name="actionbar_play_game">\t\tBermain Permainan</string>
+    <string name="actionbar_city_list">\t\tSenarai Bandar Raya</string>
+    <string name="actionbar_settings">\t\tTetapan</string>
     <string name="launch_maps">Pilih aplikasi pemetaan</string>
     <string name="launch_browser">Pilih aplikasi pelayar</string>
     <string name="launch_email">Pilih aplikasi e-mel</string>

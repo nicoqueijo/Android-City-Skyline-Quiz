@@ -7,6 +7,10 @@
     <string name="play_game">ゲームします</string>
     <string name="city_list">市リスト</string>
     <string name="settings">設定</string>
+	<string name="actionbar_app_name">\t\tCity Skyline Quiz</string>
+    <string name="actionbar_play_game">\t\tゲームします</string>
+    <string name="actionbar_city_list">\t\t市リスト</string>
+    <string name="actionbar_settings">\t\t設定</string>
     <string name="launch_maps">マッピングアプリケーションを選択します</string>
     <string name="launch_browser">セレクトブラウザアプリケーション</string>
     <string name="launch_email">電子メールアプリケーションを選択します</string>

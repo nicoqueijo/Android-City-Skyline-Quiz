@@ -28,7 +28,7 @@ public class QuizActivity extends AppCompatActivity {
         mActionBar.setDisplayShowHomeEnabled(true);
         mActionBar.setDisplayHomeAsUpEnabled(true);
         mActionBar.setIcon(R.drawable.ic_game);
-        mActionBar.setTitle(R.string.play_game);
+        mActionBar.setTitle(R.string.actionbar_play_game);
 
         Intent intentPlayGame = getIntent();
         mCities = (ArrayList<City>) intentPlayGame.getSerializableExtra("cityList");

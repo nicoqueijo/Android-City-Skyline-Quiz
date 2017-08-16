@@ -66,7 +66,7 @@ public class MainMenuActivity extends AppCompatActivity {
         mActionBar.setDisplayShowHomeEnabled(true);
         // CHANGE THIS TO ACTUAL ICON LAUNCHER WHEN I FIND ONE
         mActionBar.setIcon(R.mipmap.ic_launcher);
-        mActionBar.setTitle(R.string.app_name);
+        mActionBar.setTitle(R.string.actionbar_app_name);
 
         // Do something if it's the first time launching the app (maybe splash screen for image caching)
         // Note: Splash screen should probably execute every time the app is launched. It will just

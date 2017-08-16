@@ -7,6 +7,10 @@
     <string name="play_game">게임하다</string>
     <string name="city_list">도시 목록</string>
     <string name="settings">설정</string>
+	<string name="actionbar_app_name">\t\tCity Skyline Quiz</string>
+    <string name="actionbar_play_game">\t\t게임하다</string>
+    <string name="actionbar_city_list">\t\t도시 목록</string>
+    <string name="actionbar_settings">\t\t설정</string>
     <string name="launch_maps">선택지도 응용 프로그램</string>
     <string name="launch_browser">선택 브라우저 응용 프로그램</string>
     <string name="launch_email">선택 이메일 응용 프로그램</string>

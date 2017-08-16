@@ -7,6 +7,10 @@
     <string name="play_game">Jouer</string>
     <string name="city_list">Liste Des Villes</string>
     <string name="settings">Paramètres</string>
+	<string name="actionbar_app_name">\t\tCity Skyline Quiz</string>
+    <string name="actionbar_play_game">\t\tJouer</string>
+    <string name="actionbar_city_list">\t\tListe Des Villes</string>
+    <string name="actionbar_settings">\t\tParamètres</string>
     <string name="launch_maps">Sélectionnez l\'application de cartographie</string>
     <string name="launch_browser">Sélectionnez l\'application du navigateur</string>
     <string name="launch_email">Sélectionnez l\'application e-mail</string>

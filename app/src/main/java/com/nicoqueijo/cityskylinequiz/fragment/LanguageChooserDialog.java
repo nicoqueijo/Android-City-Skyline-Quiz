@@ -361,10 +361,10 @@ public class LanguageChooserDialog extends DialogFragment {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                //Do something after 100ms
-                dismiss();
+                // Half for 200 milliseconds
             }
         }, 200);
+        dismiss();
     }
 
     /**

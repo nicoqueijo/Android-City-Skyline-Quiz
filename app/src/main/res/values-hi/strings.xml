@@ -7,6 +7,10 @@
     <string name="play_game">खेल खेले</string>
     <string name="city_list">शहर की सूची</string>
     <string name="settings">सेटिंग्स</string>
+	<string name="actionbar_app_name">\t\tCity Skyline Quiz</string>
+    <string name="actionbar_play_game">\t\tखेल खेले</string>
+    <string name="actionbar_city_list">\t\tशहर की सूची</string>
+    <string name="actionbar_settings">\t\tसेटिंग्स</string>
     <string name="launch_maps">मानचित्रण आवेदन करें</string>
     <string name="launch_browser">ब्राउज़र आवेदन करें</string>
     <string name="launch_email">ईमेल आवेदन करें</string>

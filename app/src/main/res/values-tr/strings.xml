@@ -7,6 +7,10 @@
     <string name="play_game">Oyun Oynamak</string>
     <string name="city_list">Şehir Listesi</string>
     <string name="settings">Ayarlar</string>
+	<string name="actionbar_app_name">\t\tCity Skyline Quiz</string>
+    <string name="actionbar_play_game">\t\tOyun Oynamak</string>
+    <string name="actionbar_city_list">\t\tŞehir Listesi</string>
+    <string name="actionbar_settings">\t\tAyarlar</string>
     <string name="launch_maps">Seç haritalama uygulaması</string>
     <string name="launch_browser">Seç tarayıcı uygulaması</string>
     <string name="launch_email">Seç e-posta uygulaması</string>
