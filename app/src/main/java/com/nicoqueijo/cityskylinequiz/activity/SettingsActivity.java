@@ -40,7 +40,7 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
         mActionBar = getSupportActionBar();
         mActionBar.setDisplayShowHomeEnabled(true);
         mActionBar.setDisplayHomeAsUpEnabled(true);
-        mActionBar.setIcon(R.drawable.ic_settings);
+        mActionBar.setIcon(R.drawable.ic_light_settings);
         mActionBar.setTitle(R.string.actionbar_settings);
 
         mThemeView = (LinearLayout) findViewById(R.id.container_settings_theme);

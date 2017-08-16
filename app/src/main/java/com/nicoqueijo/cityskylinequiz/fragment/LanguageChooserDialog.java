@@ -362,9 +362,9 @@ public class LanguageChooserDialog extends DialogFragment {
             @Override
             public void run() {
                 // Half for 200 milliseconds
+                dismiss();
             }
         }, 200);
-        dismiss();
     }
 
     /**

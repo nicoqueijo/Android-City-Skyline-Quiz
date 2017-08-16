@@ -27,7 +27,7 @@ public class QuizActivity extends AppCompatActivity {
         mActionBar = getSupportActionBar();
         mActionBar.setDisplayShowHomeEnabled(true);
         mActionBar.setDisplayHomeAsUpEnabled(true);
-        mActionBar.setIcon(R.drawable.ic_game);
+        mActionBar.setIcon(R.drawable.ic_light_game);
         mActionBar.setTitle(R.string.actionbar_play_game);
 
         Intent intentPlayGame = getIntent();

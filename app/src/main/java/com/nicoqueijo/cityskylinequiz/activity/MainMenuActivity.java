@@ -15,7 +15,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -53,6 +53,9 @@ public class MainMenuActivity extends AppCompatActivity {
     private RelativeLayout mRelativeLayoutPlayGame;
     private RelativeLayout mRelativeLayoutCityList;
     private RelativeLayout mRelativeLayoutSettings;
+    private ImageView mImageGameIcon;
+    private ImageView mImageCityIcon;
+    private ImageView mImageSettingsIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +88,9 @@ public class MainMenuActivity extends AppCompatActivity {
         mRelativeLayoutPlayGame = (RelativeLayout) findViewById(R.id.container_play_game);
         mRelativeLayoutCityList = (RelativeLayout) findViewById(R.id.container_city_list);
         mRelativeLayoutSettings = (RelativeLayout) findViewById(R.id.container_settings);
+        mImageGameIcon = (ImageView) findViewById(R.id.icon_play_game);
+        mImageCityIcon = (ImageView) findViewById(R.id.icon_city_list);
+        mImageSettingsIcon = (ImageView) findViewById(R.id.icon_settings);
 
         mRelativeLayoutPlayGame.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -272,7 +278,8 @@ public class MainMenuActivity extends AppCompatActivity {
 
     /**
      * Checks if either the theme or language has been changed. If either has changed the current
-     * activity restarts so the new theme/language can be applied to all views.
+     * activity restarts so the new theme/language can be applied to all views. The main activity
+     * icons get switched from light/dark vice-versa depending on the theme change.
      */
     private void loadTheme() {
         if (mSharedPreferences.getInt("theme", R.style.AppThemeLight) != getThemeId()
@@ -281,6 +288,18 @@ public class MainMenuActivity extends AppCompatActivity {
             this.finish();
             final Intent intent = this.getIntent();
             this.startActivity(intent);
+        }
+        switch (getThemeId()) {
+            case (R.style.AppThemeLight):
+                mImageGameIcon.setImageResource(R.drawable.ic_dark_game);
+                mImageCityIcon.setImageResource(R.drawable.ic_dark_city);
+                mImageSettingsIcon.setImageResource(R.drawable.ic_dark_settings);
+                break;
+            case (R.style.AppThemeDark):
+                mImageGameIcon.setImageResource(R.drawable.ic_light_game);
+                mImageCityIcon.setImageResource(R.drawable.ic_light_city);
+                mImageSettingsIcon.setImageResource(R.drawable.ic_light_settings);
+                break;
         }
     }
 
