@@ -24,6 +24,10 @@
     <string name="sort_by">Disusun mengikut:</string>
     <string name="sort_option_city">\t\tBandar</string>
     <string name="sort_option_country">\t\tNegara</string>
+	<string name="source_code">Lihat kod sumber</string>
+    <string name="suggestion">Buat cadangan</string>
+    <string name="report_error">Laporkan ralat</string>
+    <string name="rate_app">Kadar aplikasi</string>
     <string name="google_play_error">Tidak dapat mencari apl Google Play</string>
 
     <!--- Cities -->

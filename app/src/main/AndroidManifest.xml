@@ -24,20 +24,17 @@
             android:name=".activity.CityListActivity"
             android:label="@string/city_list"
             android:parentActivityName=".activity.MainMenuActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.QuizActivity"
             android:label="@string/play_game"
             android:parentActivityName=".activity.MainMenuActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.SettingsActivity"
             android:label="@string/settings"
             android:parentActivityName=".activity.MainMenuActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

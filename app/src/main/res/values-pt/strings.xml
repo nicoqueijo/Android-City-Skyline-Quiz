@@ -24,6 +24,10 @@
     <string name="sort_by">Ordenar por:</string>
     <string name="sort_option_city">\t\tCidade</string>
     <string name="sort_option_country">\t\tPaís</string>
+	<string name="source_code">Ver código fonte</string>
+    <string name="suggestion">Faça uma sugestão</string>
+    <string name="report_error">Relatar um erro</string>
+    <string name="rate_app">Avalie o aplicativo</string>
     <string name="google_play_error">Não foi possível encontrar o aplicativo Google Play</string>
 
     <!--- Cities -->

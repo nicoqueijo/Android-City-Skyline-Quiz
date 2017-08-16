@@ -24,6 +24,10 @@
     <string name="sort_by">इसके अनुसार क्रमबद्ध करें:</string>
     <string name="sort_option_city">\t\tशहर</string>
     <string name="sort_option_country">\t\tदेश</string>
+	<string name="source_code">स्रोत कोड देखें</string>
+    <string name="suggestion">एक सुझाव दो</string>
+    <string name="report_error">त्रुटि की रिपोर्ट करें</string>
+    <string name="rate_app">एप्लिकेशन का मूल्यांकन करें</string>
     <string name="google_play_error">Google Play ऐप ढूंढने में असमर्थ</string>
 
     <!--- Cities -->

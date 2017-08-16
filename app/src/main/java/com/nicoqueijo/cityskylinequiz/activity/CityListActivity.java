@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -29,6 +30,7 @@ public class CityListActivity extends AppCompatActivity {
     public static final int CITY_SORT = 0;
     public static final int COUNTRY_SORT = 1;
 
+    private ActionBar mActionBar;
     private SharedPreferences mSharedPreferences;
     private ArrayList<City> mCities;
     private RecyclerView mRecyclerCityList;
@@ -41,8 +43,11 @@ public class CityListActivity extends AppCompatActivity {
         mSharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
         setTheme(mSharedPreferences.getInt("theme", R.style.AppThemeLight));
         setContentView(R.layout.activity_city_list);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(R.string.city_list);
+        mActionBar = getSupportActionBar();
+        mActionBar.setDisplayShowHomeEnabled(true);
+        mActionBar.setDisplayHomeAsUpEnabled(true);
+        mActionBar.setIcon(R.drawable.ic_city);
+        mActionBar.setTitle(R.string.city_list);
 
         Intent intentCityList = getIntent();
         mCities = (ArrayList<City>) intentCityList.getSerializableExtra("cityList");
@@ -53,8 +58,7 @@ public class CityListActivity extends AppCompatActivity {
         mAdapter = new CustomAdapter(CityListActivity.this, mCities);
         mRecyclerCityList.setAdapter(mAdapter);
         mRecyclerCityList.setLayoutManager(new LinearLayoutManager(CityListActivity.this));
-        ((DragScrollBar) findViewById(R.id.drag_scroll_bar))
-                .setIndicator(new AlphabetIndicator(this), true);
+        mDragScrollBar.setIndicator(new AlphabetIndicator(this), true);
     }
 
     /**

@@ -24,6 +24,10 @@
     <string name="sort_by">Trier par:</string>
     <string name="sort_option_city">\t\tVille</string>
     <string name="sort_option_country">\t\tPays</string>
+	<string name="source_code">Afficher le code source</string>
+    <string name="suggestion">Faire une suggestion</string>
+    <string name="report_error">Signaler une erreur</string>
+    <string name="rate_app">Application de taux</string>
     <string name="google_play_error">Impossible de trouver l\'application Google Play</string>
 
     <!--- Cities -->

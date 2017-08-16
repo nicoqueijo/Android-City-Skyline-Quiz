@@ -8,6 +8,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.Menu;
@@ -44,6 +45,7 @@ public class MainMenuActivity extends AppCompatActivity {
     public static final String DEVELOPER_GITHUB_URL = "https://github.com/nicoqueijo";
     public static final String DEVELOPER_EMAIL = "queijonicolas@gmail.com";
 
+    private ActionBar mActionBar;
     private SharedPreferences mSharedPreferences;
     private String currentLanguage;
     private ArrayList<City> mCities;
@@ -60,7 +62,11 @@ public class MainMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu_main);
         SharedPreferences.Editor editor = mSharedPreferences.edit();
         currentLanguage = mSharedPreferences.getString("language", SystemInfo.SYSTEM_LOCALE);
-        getSupportActionBar().setTitle(R.string.app_name);
+        mActionBar = getSupportActionBar();
+        mActionBar.setDisplayShowHomeEnabled(true);
+        // CHANGE THIS TO ACTUAL ICON LAUNCHER WHEN I FIND ONE
+        mActionBar.setIcon(R.mipmap.ic_launcher);
+        mActionBar.setTitle(R.string.app_name);
 
         // Do something if it's the first time launching the app (maybe splash screen for image caching)
         // Note: Splash screen should probably execute every time the app is launched. It will just

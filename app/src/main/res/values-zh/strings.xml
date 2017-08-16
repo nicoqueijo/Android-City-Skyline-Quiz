@@ -24,6 +24,10 @@
     <string name="sort_by">排序方式：</string>
     <string name="sort_option_city">\t\t市</string>
     <string name="sort_option_country">\t\t国家</string>
+	<string name="source_code">查看源代码</string>
+    <string name="suggestion">提个建议</string>
+    <string name="report_error">报告错误</string>
+    <string name="rate_app">评价应用</string>
     <string name="google_play_error">无法找到Google Play应用程式</string>
 
     <!--- Cities -->

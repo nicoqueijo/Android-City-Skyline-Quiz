@@ -24,6 +24,10 @@
     <string name="sort_by">ترتيب حسب:</string>
     <string name="sort_option_city">\t\tمدينة</string>
     <string name="sort_option_country">\t\tبلد</string>
+	<string name="source_code">عرض شفرة المصدر</string>
+    <string name="suggestion">قدم اقتراح</string>
+    <string name="report_error">الإبلاغ عن خطأ</string>
+    <string name="rate_app">معدل التطبيق</string>
     <string name="google_play_error">تعذر العثور على تطبيق غوغل بلاي</string>
 
     <!--- Cities -->

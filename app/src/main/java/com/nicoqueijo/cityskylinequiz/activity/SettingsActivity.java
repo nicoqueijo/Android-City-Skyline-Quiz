@@ -4,6 +4,7 @@ import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.view.ActionMode;
@@ -21,6 +22,7 @@ import java.util.Collection;
 
 public class SettingsActivity extends AppCompatActivity implements Communicator {
 
+    private ActionBar mActionBar;
     private AppCompatActivity mThisActivity = SettingsActivity.this;
     private FragmentManager mFragmentManager = getFragmentManager();
     private SharedPreferences mSharedPreferences;
@@ -35,8 +37,11 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
         mSharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
         setTheme(mSharedPreferences.getInt("theme", R.style.AppThemeLight));
         setContentView(R.layout.activity_settings);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(R.string.settings);
+        mActionBar = getSupportActionBar();
+        mActionBar.setDisplayShowHomeEnabled(true);
+        mActionBar.setDisplayHomeAsUpEnabled(true);
+        mActionBar.setIcon(R.drawable.ic_settings);
+        mActionBar.setTitle(R.string.settings);
 
         mThemeView = (LinearLayout) findViewById(R.id.container_settings_theme);
         mLanguageView = (LinearLayout) findViewById(R.id.container_settings_language);
