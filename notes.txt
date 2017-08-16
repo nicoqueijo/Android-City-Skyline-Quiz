@@ -43,8 +43,6 @@ https://api.myjson.com/bins/x3m9t
 
 
 // DO NEXT
--Design main activity layout
--Switch main activity icons based on theme
 
 
 

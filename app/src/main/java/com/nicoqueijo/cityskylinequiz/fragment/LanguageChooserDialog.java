@@ -7,7 +7,6 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -325,7 +324,7 @@ public class LanguageChooserDialog extends DialogFragment {
         saveLanguage(language);
         setLocale(language.name());
         mCommunicator.onDialogMessage(language.name());
-        smallDelayAndDismiss();
+        saveScrollPositionAndDismiss();
     }
 
     /**
@@ -350,21 +349,14 @@ public class LanguageChooserDialog extends DialogFragment {
     }
 
     /**
-     * Dismisses the dialog when the user selects a language after a 200 millisecond delay so the
-     * user has a chance to see the radio button change to his/her selection.
+     * Dismisses the dialog when the user selects a language and saves the position of the scrollbar
+     * in the process.
      */
-    private void smallDelayAndDismiss() {
+    private void saveScrollPositionAndDismiss() {
         SharedPreferences.Editor editor = mSharedPreferences.edit();
         editor.putInt("language_scroll_position", mScrollView.getScrollY());
         editor.commit();
-        final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                // Half for 200 milliseconds
-                dismiss();
-            }
-        }, 200);
+        dismiss();
     }
 
     /**
