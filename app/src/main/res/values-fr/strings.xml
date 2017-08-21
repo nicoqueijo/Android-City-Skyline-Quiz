@@ -17,7 +17,7 @@
     <string name="more_info">Plus d\'informations</string>
     <string name="settings_theme_title">Thème</string>
     <string name="settings_theme_description">Bascule entre le thème clair/sombre</string>
-    <string name="settings_language_title">La Langue</string>
+    <string name="settings_language_title">Langue</string>
     <string name="settings_language_description">Ignorez la langue de l\'appareil et utilisez une autre</string>
     <string name="settings_scores_title">Rétablir les résultats</string>
     <string name="settings_scores_description">Effacer les scores de tous les jeux</string>

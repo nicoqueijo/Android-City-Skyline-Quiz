@@ -26,8 +26,8 @@
     <string name="cancel">إلغاء</string>
     <string name="delete">حذف</string>
     <string name="sort_by">ترتيب حسب:</string>
-    <string name="sort_option_city">\t\tمدينة</string>
-    <string name="sort_option_country">\t\tبلد</string>
+    <string name="sort_option_city">مدينة\t\t</string>
+    <string name="sort_option_country">بلد\t\t</string>
 	<string name="source_code">عرض شفرة المصدر</string>
     <string name="suggestion">قدم اقتراح</string>
     <string name="report_error">الإبلاغ عن خطأ</string>

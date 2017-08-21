@@ -374,7 +374,7 @@ public class LanguageChooserDialog extends DialogFragment {
      * Retrieves the language setting from the SharedPreferences file and sets that language to the
      * appropriate RadioButton. If this is the first time running the app SharedPreferences won't
      * have a language value and the default value will be the system language. If the system
-     * language is a supported language in this app it defaults to English.
+     * language is not a supported language in this app it defaults to English.
      */
     private void restoreSavedLanguage() {
         String savedLanguage = mSharedPreferences.getString("language", SystemInfo.SYSTEM_LOCALE);
