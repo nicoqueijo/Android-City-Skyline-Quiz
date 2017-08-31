@@ -8,7 +8,7 @@ https://api.myjson.com/bins/x3m9t
 // TODO
 
 -Create play game activity with:
-	Play modes: 
+	Play modes:
 		All cities:
 			Faults allowed
 			No faults
@@ -44,6 +44,8 @@ https://api.myjson.com/bins/x3m9t
 
 
 // DO NEXT
+-Change icons to vector graphics
+-Change settings xml to PreferenceScreen
 -Put custom fonts in all activity actionbars
 	http://www.tristanwaddington.com/2013/03/styling-the-android-action-bar-with-a-custom-font/
 		Use Typeface class from Base Converter project
