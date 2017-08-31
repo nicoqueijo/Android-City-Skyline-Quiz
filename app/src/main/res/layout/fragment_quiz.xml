@@ -4,76 +4,163 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="16dp"
-    android:paddingLeft="64dp"
-    android:paddingRight="64dp"
-    android:paddingTop="16dp">
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/questionNumberTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="8dp"
-        tools:text="Question 1 of 10" />
+        android:padding="16dp"
+        tools:text="Question 1 of 10 / Time left" />
 
     <ImageView
         android:id="@+id/flagImageView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_weight="1"
         android:adjustViewBounds="true"
+        android:padding="16dp"
         android:scaleType="fitCenter"
         tools:src="@drawable/los_angeles" />
 
     <LinearLayout
-        android:id="@+id/row1LinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button"
+        <RelativeLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
-            android:lines="2"
-            android:text="New Button" />
+            android:background="@color/colorAccent"
+            android:gravity="center">
 
-        <Button
-            android:id="@+id/button2"
+            <LinearLayout
+                android:id="@+id/answer_choice_one"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/round_outline"
+                    android:scaleType="fitXY"
+                    tools:src="@drawable/united_states" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    tools:text="Los Angeles" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
-            android:lines="2"
-            android:text="New Button" />
+            android:background="@color/colorAccent"
+            android:gravity="center">
+
+            <LinearLayout
+                android:id="@+id/answer_choice_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/round_outline"
+                    android:scaleType="fitXY"
+                    tools:src="@drawable/united_states" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    tools:text="Los Angeles" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/row2LinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button3"
+        <RelativeLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
-            android:lines="2"
-            android:text="New Button" />
+            android:background="@color/colorAccent"
+            android:gravity="center">
 
-        <Button
-            android:id="@+id/button4"
+            <LinearLayout
+                android:id="@+id/answer_choice_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/round_outline"
+                    android:scaleType="fitXY"
+                    tools:src="@drawable/united_states" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    tools:text="Los Angeles" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
-            android:lines="2"
-            android:text="New Button" />
+            android:background="@color/colorAccent"
+            android:gravity="center">
+
+            <LinearLayout
+                android:id="@+id/answer_choice_four"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/round_outline"
+                    android:scaleType="fitXY"
+                    tools:src="@drawable/united_states" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    tools:text="Los Angeles" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
     </LinearLayout>
 
 </LinearLayout>
