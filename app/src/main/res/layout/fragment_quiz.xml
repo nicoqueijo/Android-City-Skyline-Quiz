@@ -20,146 +20,201 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:adjustViewBounds="true"
-        android:padding="16dp"
+        android:paddingBottom="16dp"
         android:scaleType="fitCenter"
         tools:src="@drawable/los_angeles" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:orientation="horizontal">
 
-        <RelativeLayout
-            android:id="@+id/answer_choice_one"
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_margin="4dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
             android:layout_weight="1"
-            android:background="@color/colorAccent"
-            android:gravity="center">
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="horizontal">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/round_outline"
+                android:paddingLeft="5dp"
+                android:scaleType="fitXY"
+                tools:src="@drawable/ukraine" />
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="36dp"
-                    android:background="@drawable/round_outline"
-                    android:scaleType="fitXY"
-                    tools:src="@drawable/united_states" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    tools:text="Los Angeles" />
-
-            </LinearLayout>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/answer_choice_two"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_margin="4dp"
-            android:layout_weight="1"
-            android:background="@color/colorAccent"
-            android:gravity="center">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="24dp"
+                    tools:text="Kiev" />
 
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="36dp"
-                    android:background="@drawable/round_outline"
-                    android:scaleType="fitXY"
-                    tools:src="@drawable/united_states" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    tools:src="@drawable/ic_check_black_24dp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    tools:src="@drawable/ic_close_black_24dp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/round_outline"
+                android:paddingLeft="5dp"
+                android:scaleType="fitXY"
+                tools:src="@drawable/ukraine" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    tools:text="Los Angeles" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="24dp"
+                    tools:text="Kiev" />
 
-            </LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    tools:src="@drawable/ic_check_black_24dp" />
 
-        </RelativeLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    tools:src="@drawable/ic_close_black_24dp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:orientation="horizontal">
 
-        <RelativeLayout
-            android:id="@+id/answer_choice_three"
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_margin="4dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
             android:layout_weight="1"
-            android:background="@color/colorAccent"
-            android:gravity="center">
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/round_outline"
+                android:paddingLeft="5dp"
+                android:scaleType="fitXY"
+                tools:src="@drawable/ukraine" />
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="36dp"
-                    android:background="@drawable/round_outline"
-                    android:scaleType="fitXY"
-                    tools:src="@drawable/united_states" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    tools:text="Los Angeles" />
-
-            </LinearLayout>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/answer_choice_four"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_margin="4dp"
-            android:layout_weight="1"
-            android:background="@color/colorAccent"
-            android:gravity="center">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="24dp"
+                    tools:text="Kiev" />
 
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="36dp"
-                    android:background="@drawable/round_outline"
-                    android:scaleType="fitXY"
-                    tools:src="@drawable/united_states" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    tools:src="@drawable/ic_check_black_24dp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    tools:src="@drawable/ic_close_black_24dp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/round_outline"
+                android:paddingLeft="5dp"
+                android:scaleType="fitXY"
+                tools:src="@drawable/ukraine" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    tools:text="Los Angeles" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="24dp"
+                    tools:text="Kiev" />
 
-            </LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    tools:src="@drawable/ic_check_black_24dp" />
 
-        </RelativeLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    tools:src="@drawable/ic_close_black_24dp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 
