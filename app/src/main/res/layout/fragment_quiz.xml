@@ -26,23 +26,25 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="4dp"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="2dp"
+            android:layout_marginRight="4dp"
             android:layout_weight="1"
             android:background="@color/colorPrimary"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="36dp"
+                android:layout_width="40dp"
+                android:layout_height="29dp"
                 android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:background="@drawable/round_outline"
-                android:paddingLeft="5dp"
                 android:scaleType="fitXY"
                 tools:src="@drawable/ukraine" />
 
@@ -54,20 +56,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textAllCaps="true"
                     android:textColor="@color/white"
-                    android:textSize="24dp"
-                    tools:text="Kiev" />
+                    android:textSize="14dp"
+                    tools:text="@string/kiev" />
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="gone"
+                    android:visibility="invisible"
                     tools:src="@drawable/ic_check_black_24dp" />
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="gone"
+                    android:visibility="invisible"
                     tools:src="@drawable/ic_close_black_24dp" />
 
             </RelativeLayout>
@@ -77,19 +80,20 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="2dp"
+            android:layout_marginLeft="4dp"
             android:layout_weight="1"
             android:background="@color/colorPrimary"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="36dp"
+                android:layout_width="40dp"
+                android:layout_height="29dp"
                 android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:background="@drawable/round_outline"
-                android:paddingLeft="5dp"
                 android:scaleType="fitXY"
-                tools:src="@drawable/ukraine" />
+                tools:src="@drawable/vietnam" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -99,20 +103,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textAllCaps="true"
                     android:textColor="@color/white"
-                    android:textSize="24dp"
-                    tools:text="Kiev" />
+                    android:textSize="14dp"
+                    tools:text="@string/ho_chi_minh_city" />
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="gone"
+                    android:visibility="invisible"
                     tools:src="@drawable/ic_check_black_24dp" />
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="gone"
+                    android:visibility="invisible"
                     tools:src="@drawable/ic_close_black_24dp" />
 
             </RelativeLayout>
@@ -123,25 +128,27 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="4dp"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="2dp"
+            android:layout_marginRight="4dp"
             android:layout_weight="1"
             android:background="@color/colorPrimary"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="36dp"
+                android:layout_width="40dp"
+                android:layout_height="29dp"
                 android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:background="@drawable/round_outline"
-                android:paddingLeft="5dp"
                 android:scaleType="fitXY"
-                tools:src="@drawable/ukraine" />
+                tools:src="@drawable/united_states" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -151,20 +158,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textAllCaps="true"
                     android:textColor="@color/white"
-                    android:textSize="24dp"
-                    tools:text="Kiev" />
+                    android:textSize="14dp"
+                    tools:text="@string/los_angeles" />
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="gone"
+                    android:visibility="invisible"
                     tools:src="@drawable/ic_check_black_24dp" />
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="gone"
+                    android:visibility="invisible"
                     tools:src="@drawable/ic_close_black_24dp" />
 
             </RelativeLayout>
@@ -174,19 +182,20 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="2dp"
+            android:layout_marginLeft="4dp"
             android:layout_weight="1"
             android:background="@color/colorPrimary"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="36dp"
+                android:layout_width="40dp"
+                android:layout_height="29dp"
                 android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:background="@drawable/round_outline"
-                android:paddingLeft="5dp"
                 android:scaleType="fitXY"
-                tools:src="@drawable/ukraine" />
+                tools:src="@drawable/colombia" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -196,20 +205,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textAllCaps="true"
                     android:textColor="@color/white"
-                    android:textSize="24dp"
-                    tools:text="Kiev" />
+                    android:textSize="14dp"
+                    tools:text="@string/cali" />
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="gone"
+                    android:visibility="invisible"
                     tools:src="@drawable/ic_check_black_24dp" />
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="gone"
+                    android:visibility="invisible"
                     tools:src="@drawable/ic_close_black_24dp" />
 
             </RelativeLayout>
