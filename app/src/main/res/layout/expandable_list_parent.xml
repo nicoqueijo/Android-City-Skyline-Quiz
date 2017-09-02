@@ -11,6 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         tools:src="@drawable/ic_dark_timer_on" />
 
     <TextView
@@ -20,7 +22,7 @@
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
-        android:textSize="22dp"
+        android:textSize="24dp"
         tools:text="@string/timed" />
 
 </LinearLayout>
