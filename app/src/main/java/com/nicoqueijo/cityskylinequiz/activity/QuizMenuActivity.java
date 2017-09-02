@@ -8,10 +8,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ExpandableListView;
 
+import com.nicoqueijo.cityskylinequiz.adapter.ExpandableListAdapter;
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.model.City;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class QuizMenuActivity extends AppCompatActivity {
 
@@ -19,6 +23,9 @@ public class QuizMenuActivity extends AppCompatActivity {
     private SharedPreferences mSharedPreferences;
     private ArrayList<City> mCities;
     private ExpandableListView mExpandableList;
+    private ExpandableListAdapter mExpandableListAdapter;
+    private List<Integer> mParentGameModes;
+    private Map<Integer, List<Integer>> mChildGameModes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,5 +41,41 @@ public class QuizMenuActivity extends AppCompatActivity {
 
         Intent intentPlayGame = getIntent();
         mCities = (ArrayList<City>) intentPlayGame.getSerializableExtra("cityList");
+
+        mExpandableList = (ExpandableListView) findViewById(R.id.expandable_list_view);
+        fillExpandableListData();
+        mExpandableListAdapter = new ExpandableListAdapter(this, mParentGameModes, mChildGameModes);
+        mExpandableList.setAdapter(mExpandableListAdapter);
+    }
+
+    /**
+     * JAVADOC THIS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     */
+    private void fillExpandableListData() {
+        mParentGameModes = new ArrayList<>();
+        mChildGameModes = new HashMap<>();
+
+        mParentGameModes.add(R.string.timed);
+        mParentGameModes.add(R.string.untimed);
+        mParentGameModes.add(R.string.every_city);
+
+        List<Integer> timedModeChildren = new ArrayList<>();
+        List<Integer> untimedModeChildren = new ArrayList<>();
+        List<Integer> everyCityModeChildren = new ArrayList<>();
+
+        timedModeChildren.add(R.string.seconds_30);
+        timedModeChildren.add(R.string.seconds_60);
+        timedModeChildren.add(R.string.seconds_120);
+
+        untimedModeChildren.add(R.string.questions_10);
+        untimedModeChildren.add(R.string.questions_20);
+        untimedModeChildren.add(R.string.questions_50);
+
+        everyCityModeChildren.add(R.string.no_faults);
+        everyCityModeChildren.add(R.string.faults_allowed);
+
+        mChildGameModes.put(mParentGameModes.get(0), timedModeChildren);
+        mChildGameModes.put(mParentGameModes.get(1), untimedModeChildren);
+        mChildGameModes.put(mParentGameModes.get(2), everyCityModeChildren);
     }
 }

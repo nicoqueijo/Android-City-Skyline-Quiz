@@ -27,7 +27,7 @@ import java.util.ArrayList;
 /**
  *
  */
-public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> implements
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> implements
         INameableAdapter {
 
     private SharedPreferences mSharedPreferences;
@@ -36,7 +36,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     private LayoutInflater mInflater;
     private int mPreviousPosition = 0;
 
-    public CustomAdapter(Context context, ArrayList<City> cities) {
+    public RecyclerViewAdapter(Context context, ArrayList<City> cities) {
         this.mContext = context;
         this.mCities = cities;
         mInflater = LayoutInflater.from(context);
