@@ -11,34 +11,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:padding="16dp"
+        android:paddingBottom="16dp"
         tools:text="Question 1 of 10 / Time left" />
 
     <ImageView
-        android:id="@+id/flagImageView"
+        android:id="@+id/city_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:adjustViewBounds="true"
+        android:background="@drawable/round_outline"
         android:paddingBottom="16dp"
-        android:scaleType="fitCenter"
+        android:scaleType="fitXY"
         tools:src="@drawable/los_angeles" />
 
     <LinearLayout
+        android:id="@+id/answer_choices_row_one"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginBottom="4dp"
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/answer_choice_one"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="4dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/round_outline_answer_choice"
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/flag_choice_one"
                 android:layout_width="40dp"
                 android:layout_height="29dp"
                 android:layout_gravity="center_vertical"
@@ -53,6 +57,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    android:id="@+id/city_name_choice_one"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -62,12 +67,14 @@
                     tools:text="@string/kiev" />
 
                 <ImageView
+                    android:id="@+id/correct_mark_choice_one"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:visibility="invisible"
                     tools:src="@drawable/ic_check_black_24dp" />
 
                 <ImageView
+                    android:id="@+id/incorrect_mark_choice_one"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:visibility="invisible"
@@ -78,14 +85,16 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/answer_choice_two"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="4dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/round_outline_answer_choice"
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/flag_choice_two"
                 android:layout_width="40dp"
                 android:layout_height="29dp"
                 android:layout_gravity="center_vertical"
@@ -100,6 +109,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    android:id="@+id/city_name_choice_two"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -109,12 +119,14 @@
                     tools:text="@string/ho_chi_minh_city" />
 
                 <ImageView
+                    android:id="@+id/correct_mark_choice_two"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:visibility="invisible"
                     tools:src="@drawable/ic_check_black_24dp" />
 
                 <ImageView
+                    android:id="@+id/incorrect_mark_choice_two"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:visibility="invisible"
@@ -127,20 +139,23 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/answer_choices_row_two"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginTop="4dp"
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/answer_choice_three"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="4dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/round_outline_answer_choice"
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/flag_choice_three"
                 android:layout_width="40dp"
                 android:layout_height="29dp"
                 android:layout_gravity="center_vertical"
@@ -155,6 +170,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    android:id="@+id/city_name_choice_three"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -164,12 +180,14 @@
                     tools:text="@string/los_angeles" />
 
                 <ImageView
+                    android:id="@+id/correct_mark_choice_three"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:visibility="invisible"
                     tools:src="@drawable/ic_check_black_24dp" />
 
                 <ImageView
+                    android:id="@+id/incorrect_mark_choice_three"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:visibility="invisible"
@@ -180,14 +198,16 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/answer_choice_four"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="4dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/round_outline_answer_choice"
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/flag_choice_four"
                 android:layout_width="40dp"
                 android:layout_height="29dp"
                 android:layout_gravity="center_vertical"
@@ -202,6 +222,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    android:id="@+id/city_name_choice_four"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -211,12 +232,14 @@
                     tools:text="@string/cali" />
 
                 <ImageView
+                    android:id="@+id/correct_mark_choice_four"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:visibility="invisible"
                     tools:src="@drawable/ic_check_black_24dp" />
 
                 <ImageView
+                    android:id="@+id/incorrect_mark_choice_four"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:visibility="invisible"

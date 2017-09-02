@@ -9,7 +9,7 @@ https://api.myjson.com/bins/x3m9t
 
 -Create play game activity with:
 	Play modes:
-		All cities:
+		Every city:
 			Faults allowed
 			No faults
 		Timed:
