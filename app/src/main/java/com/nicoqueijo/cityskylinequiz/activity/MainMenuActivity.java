@@ -212,7 +212,7 @@ public class MainMenuActivity extends AppCompatActivity {
      *
      * @return the resource id as an int.
      */
-    int getThemeId() {
+    private int getThemeId() {
         try {
             Class<?> wrapper = Context.class;
             Method method = wrapper.getMethod("getThemeResId");

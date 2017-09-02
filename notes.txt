@@ -46,7 +46,8 @@ https://api.myjson.com/bins/x3m9t
 
 
 // DO NEXT
--Implement play game activity with submenus for game types
+-Prepare the listeners for expandable list children
+-Dynamically set the icon for expandable list parents
 -Put custom fonts in all activity actionbars
 	http://www.tristanwaddington.com/2013/03/styling-the-android-action-bar-with-a-custom-font/
 		Use Typeface class from Base Converter project

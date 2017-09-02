@@ -1,16 +1,18 @@
 package com.nicoqueijo.cityskylinequiz.adapter;
 
 import android.content.Context;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
+import com.nicoqueijo.cityskylinequiz.activity.QuizMenuActivity;
 
+import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Map;
 
@@ -142,8 +144,36 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                     (mContext.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.expandable_list_parent, null);
         }
+        ImageView iconListParent = (ImageView) convertView.findViewById(R.id.icon_list_parent);
         TextView labelListParent = (TextView) convertView.findViewById(R.id.label_list_parent);
         labelListParent.setText(mContext.getString(parentMode));
+        switch (getThemeId()) {
+            case (R.style.AppThemeLight):
+                switch (groupPosition) {
+                    case (QuizMenuActivity.TIMED_MODE):
+                        iconListParent.setImageResource(R.drawable.ic_dark_timer_on);
+                        break;
+                    case (QuizMenuActivity.UNTIMED_MODE):
+                        iconListParent.setImageResource(R.drawable.ic_dark_timer_off);
+                        break;
+                    case (QuizMenuActivity.EVERY_CITY_MODE):
+                        iconListParent.setImageResource(R.drawable.ic_dark_all_inclusive);
+                        break;
+                }
+                break;
+            case (R.style.AppThemeDark):
+                switch (groupPosition) {
+                    case (QuizMenuActivity.TIMED_MODE):
+                        iconListParent.setImageResource(R.drawable.ic_light_timer_on);
+                        break;
+                    case (QuizMenuActivity.UNTIMED_MODE):
+                        iconListParent.setImageResource(R.drawable.ic_light_timer_off);
+                        break;
+                    case (QuizMenuActivity.EVERY_CITY_MODE):
+                        iconListParent.setImageResource(R.drawable.ic_light_all_inclusive);
+                        break;
+                }
+        }
         return convertView;
     }
 
@@ -189,5 +219,22 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     @Override
     public boolean isChildSelectable(int groupPosition, int childPosition) {
         return true;
+    }
+
+    /**
+     * Gets the resource id of the current theme.
+     *
+     * @return the resource id as an int.
+     */
+    private int getThemeId() {
+        try {
+            Class<?> wrapper = Context.class;
+            Method method = wrapper.getMethod("getThemeResId");
+            method.setAccessible(true);
+            return (Integer) method.invoke(mContext);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 }

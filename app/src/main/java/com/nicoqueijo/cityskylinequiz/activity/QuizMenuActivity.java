@@ -19,6 +19,10 @@ import java.util.Map;
 
 public class QuizMenuActivity extends AppCompatActivity {
 
+    public static final int TIMED_MODE = 0;
+    public static final int UNTIMED_MODE = 1;
+    public static final int EVERY_CITY_MODE = 2;
+
     private ActionBar mActionBar;
     private SharedPreferences mSharedPreferences;
     private ArrayList<City> mCities;
@@ -74,8 +78,8 @@ public class QuizMenuActivity extends AppCompatActivity {
         everyCityModeChildren.add(R.string.no_faults);
         everyCityModeChildren.add(R.string.faults_allowed);
 
-        mChildGameModes.put(mParentGameModes.get(0), timedModeChildren);
-        mChildGameModes.put(mParentGameModes.get(1), untimedModeChildren);
-        mChildGameModes.put(mParentGameModes.get(2), everyCityModeChildren);
+        mChildGameModes.put(mParentGameModes.get(TIMED_MODE), timedModeChildren);
+        mChildGameModes.put(mParentGameModes.get(UNTIMED_MODE), untimedModeChildren);
+        mChildGameModes.put(mParentGameModes.get(EVERY_CITY_MODE), everyCityModeChildren);
     }
 }
