@@ -9,9 +9,6 @@ https://api.myjson.com/bins/x3m9t
 
 -Create play game activity with:
 	Play modes:
-		Every city:
-			Faults allowed
-			No faults
 		Timed:
 			30 secs
 			60 secs
@@ -20,10 +17,14 @@ https://api.myjson.com/bins/x3m9t
 			10 questions
 			20 questions
 			50 questions
+		Every city:
+			No faults
+			Faults allowed
 			
 -Score: 0, 0.25, 0.50, 1.0 per question depending on attempts
 -Try to put 3 second countdown splash screen before game starts
 
+-put selector on quiz choices
 -Put disclaimer about translations somewhere in app
 -Internationalize everything in strings.xml
 -Keep hiscores stored in an SQLite database
@@ -44,8 +45,6 @@ https://api.myjson.com/bins/x3m9t
 
 
 // DO NEXT
--Change icons to vector graphics
--Change settings xml to PreferenceScreen
 -Put custom fonts in all activity actionbars
 	http://www.tristanwaddington.com/2013/03/styling-the-android-action-bar-with-a-custom-font/
 		Use Typeface class from Base Converter project

@@ -70,15 +70,15 @@
                     android:id="@+id/correct_mark_choice_one"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="invisible"
-                    tools:src="@drawable/ic_check_black_24dp" />
+                    android:src="@drawable/ic_check_black_24dp"
+                    android:visibility="invisible" />
 
                 <ImageView
                     android:id="@+id/incorrect_mark_choice_one"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="invisible"
-                    tools:src="@drawable/ic_close_black_24dp" />
+                    android:src="@drawable/ic_close_black_24dp"
+                    android:visibility="invisible" />
 
             </RelativeLayout>
 
@@ -122,15 +122,15 @@
                     android:id="@+id/correct_mark_choice_two"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="invisible"
-                    tools:src="@drawable/ic_check_black_24dp" />
+                    android:src="@drawable/ic_check_black_24dp"
+                    android:visibility="invisible" />
 
                 <ImageView
                     android:id="@+id/incorrect_mark_choice_two"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="invisible"
-                    tools:src="@drawable/ic_close_black_24dp" />
+                    android:src="@drawable/ic_close_black_24dp"
+                    android:visibility="invisible" />
 
             </RelativeLayout>
 
@@ -183,15 +183,15 @@
                     android:id="@+id/correct_mark_choice_three"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="invisible"
-                    tools:src="@drawable/ic_check_black_24dp" />
+                    android:src="@drawable/ic_check_black_24dp"
+                    android:visibility="invisible" />
 
                 <ImageView
                     android:id="@+id/incorrect_mark_choice_three"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="invisible"
-                    tools:src="@drawable/ic_close_black_24dp" />
+                    android:src="@drawable/ic_close_black_24dp"
+                    android:visibility="invisible" />
 
             </RelativeLayout>
 
@@ -235,15 +235,15 @@
                     android:id="@+id/correct_mark_choice_four"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="invisible"
-                    tools:src="@drawable/ic_check_black_24dp" />
+                    android:src="@drawable/ic_check_black_24dp"
+                    android:visibility="invisible" />
 
                 <ImageView
                     android:id="@+id/incorrect_mark_choice_four"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="invisible"
-                    tools:src="@drawable/ic_close_black_24dp" />
+                    android:src="@drawable/ic_close_black_24dp"
+                    android:visibility="invisible" />
 
             </RelativeLayout>
 
