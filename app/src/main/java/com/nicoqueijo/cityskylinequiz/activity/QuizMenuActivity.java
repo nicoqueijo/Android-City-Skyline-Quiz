@@ -6,24 +6,26 @@ import android.content.SharedPreferences;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ExpandableListView;
 
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.model.City;
 
 import java.util.ArrayList;
 
-public class QuizActivity extends AppCompatActivity {
+public class QuizMenuActivity extends AppCompatActivity {
 
     private ActionBar mActionBar;
     private SharedPreferences mSharedPreferences;
     private ArrayList<City> mCities;
+    private ExpandableListView mExpandableList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mSharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
         setTheme(mSharedPreferences.getInt("theme", R.style.AppThemeLight));
-        setContentView(R.layout.activity_quiz);
+        setContentView(R.layout.activity_menu_quiz);
         mActionBar = getSupportActionBar();
         mActionBar.setDisplayShowHomeEnabled(true);
         mActionBar.setDisplayHomeAsUpEnabled(true);

@@ -7,7 +7,7 @@
     <string name="play_game">Play Game</string>
     <string name="city_list">City List</string>
     <string name="settings">Settings</string>
-	<string name="actionbar_app_name">\t\tCity Skyline Quiz</string>
+    <string name="actionbar_app_name">\t\tCity Skyline Quiz</string>
     <string name="actionbar_play_game">\t\tPlay Game</string>
     <string name="actionbar_city_list">\t\tCity List</string>
     <string name="actionbar_settings">\t\tSettings</string>
@@ -33,6 +33,19 @@
     <string name="report_error">Report an error</string>
     <string name="rate_app">Rate app</string>
     <string name="google_play_error">Unable to find Google Play app</string>
+
+    <!-- TRANSLATE EVERYTHING BELOW THIS -->
+    <string name="timed">Timed</string>
+    <string name="seconds_30">30 seconds</string>
+    <string name="seconds_60">60 seconds</string>
+    <string name="seconds_120">120 seconds</string>
+    <string name="untimed">Untimed</string>
+    <string name="questions_10">10 questions</string>
+    <string name="questions_20">20 questions</string>
+    <string name="questions_50">50 questions</string>
+    <string name="every_city">Every city</string>
+    <string name="no_faults">No faults</string>
+    <string name="faults_allowed">Faults allowed</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>

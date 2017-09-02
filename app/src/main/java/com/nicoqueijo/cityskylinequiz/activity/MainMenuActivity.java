@@ -95,7 +95,7 @@ public class MainMenuActivity extends AppCompatActivity {
         mRelativeLayoutPlayGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentPlayGame = new Intent(MainMenuActivity.this, QuizActivity.class);
+                Intent intentPlayGame = new Intent(MainMenuActivity.this, QuizMenuActivity.class);
                 intentPlayGame.putExtra("cityList", mCities);
                 startActivity(intentPlayGame);
             }
