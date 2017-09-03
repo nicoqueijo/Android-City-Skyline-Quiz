@@ -75,7 +75,7 @@ public class QuizMenuActivity extends AppCompatActivity {
     }
 
     /**
-     * JAVADOC THIS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * Populates the parent and child items of the expandable list view with their appropriate strings.
      */
     private void fillExpandableListData() {
         mParentGameModes = new ArrayList<>();
