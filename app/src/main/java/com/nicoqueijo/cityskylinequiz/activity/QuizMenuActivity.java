@@ -6,7 +6,9 @@ import android.content.SharedPreferences;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.Toast;
 
 import com.nicoqueijo.cityskylinequiz.adapter.ExpandableListAdapter;
 import com.nicoqueijo.cityskylinequiz.R;
@@ -22,6 +24,14 @@ public class QuizMenuActivity extends AppCompatActivity {
     public static final int TIMED_MODE = 0;
     public static final int UNTIMED_MODE = 1;
     public static final int EVERY_CITY_MODE = 2;
+    public static final int SECONDS_30 = 0;
+    public static final int SECONDS_60 = 1;
+    public static final int SECONDS_120 = 2;
+    public static final int QUESTIONS_10 = 0;
+    public static final int QUESTIONS_20 = 1;
+    public static final int QUESTIONS_50 = 2;
+    public static final int NO_FAULTS = 0;
+    public static final int FAULTS_ALLOWED = 1;
 
     private ActionBar mActionBar;
     private SharedPreferences mSharedPreferences;
@@ -50,6 +60,18 @@ public class QuizMenuActivity extends AppCompatActivity {
         fillExpandableListData();
         mExpandableListAdapter = new ExpandableListAdapter(this, mParentGameModes, mChildGameModes);
         mExpandableList.setAdapter(mExpandableListAdapter);
+        mExpandableList.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition,
+                                        int childPosition, long id) {
+
+                // Pass the parent and child index to an intent which will start the game activity
+                // and load the game according to the index combo. Also pass the array of cities.
+                // Delete toast below when done.
+                Toast.makeText(QuizMenuActivity.this, groupPosition + " : " + childPosition, Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
     }
 
     /**

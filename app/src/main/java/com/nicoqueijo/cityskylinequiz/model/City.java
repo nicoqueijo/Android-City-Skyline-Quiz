@@ -130,18 +130,30 @@ public class City implements Serializable {
         return splitCoordinates()[LONGITUDE];
     }
 
+    /**
+     * @return
+     */
     public String getCityNameInCurrentLanguage() {
         return cityNameInCurrentLanguage;
     }
 
+    /**
+     * @param cityNameInCurrentLanguage
+     */
     public void setCityNameInCurrentLanguage(String cityNameInCurrentLanguage) {
         this.cityNameInCurrentLanguage = cityNameInCurrentLanguage;
     }
 
+    /**
+     * @return
+     */
     public String getCountryNameInCurrentLanguage() {
         return countryNameInCurrentLanguage;
     }
 
+    /**
+     * @param countryNameInCurrentLanguage
+     */
     public void setCountryNameInCurrentLanguage(String countryNameInCurrentLanguage) {
         this.countryNameInCurrentLanguage = countryNameInCurrentLanguage;
     }

@@ -130,10 +130,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
      *
      */
     class ViewHolder extends RecyclerView.ViewHolder {
-
         ImageView mCountryFlagImageView;
         TextView mCityTextView;
-
         public ViewHolder(View itemView) {
             super(itemView);
             mCountryFlagImageView = (ImageView) itemView.findViewById(R.id.flag_image);
