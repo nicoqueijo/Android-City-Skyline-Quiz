@@ -1,9 +1,28 @@
 package com.nicoqueijo.cityskylinequiz.model;
 
+import java.util.ArrayList;
+
+/**
+ * The model class for each question object.
+ * COMPLETE THIS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ */
 public class Question {
 
-    private Answer choice1;
-    private Answer choice2;
-    private Answer choice3;
-    private Answer choice4;
+    private City correctChoice;
+    private City choice1;
+    private City choice2;
+    private City choice3;
+    private City choice4;
+
+    public Question(City correctChoice, ArrayList<City> cities) {
+        /*
+            1) Assign correctChoice to this.correctChoice
+            2) Assign correctChoice to a random choice between choice1, choice2, choice3, choice4
+            3) Assign three random non-repeating cities to the remaining choices
+
+            **Alternative way of doing this: do the randomization in the previous activity and
+            * pass the three random choices instead of the while city list and doing the randomization
+            * here **
+         */
+    }
 }
