@@ -46,18 +46,9 @@ https://api.myjson.com/bins/x3m9t
 
 
 // DO NEXT
--Prepare the listeners for expandable list children
-
--put this on readme
-
-## Built With
-* <a href="https://github.com/turing-tech/MaterialScrollBar" target="_blank">MaterialScrollBar</a> - An Android library that brings the Material Design 5.1 scrollbar to pre-5.1 devices. Designed for Android's recyclerView.
-
 -Put custom fonts in all activity actionbars
 	http://www.tristanwaddington.com/2013/03/styling-the-android-action-bar-with-a-custom-font/
 		Use Typeface class from Base Converter project
-
-
 
 
 // TESTING
