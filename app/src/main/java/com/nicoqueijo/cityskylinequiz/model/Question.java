@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * The model class for each question object.
- * COMPLETE THIS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ * COMPLETE JAVADOC @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
  */
 public class Question {
 
@@ -14,6 +14,9 @@ public class Question {
     private City choice3;
     private City choice4;
 
+    /**
+     * JAVADOC THIS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     */
     public Question(City correctChoice, ArrayList<City> cities) {
         /*
             1) Assign correctChoice to this.correctChoice
@@ -21,7 +24,7 @@ public class Question {
             3) Assign three random non-repeating cities to the remaining choices
 
             **Alternative way of doing this: do the randomization in the previous activity and
-            * pass the three random choices instead of the while city list and doing the randomization
+            * pass the three random choices instead of the whole city list and doing the randomization
             * here **
          */
     }

@@ -78,7 +78,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_close_black_24dp"
-                    android:visibility="invisible" />
+                    android:visibility="visible" />
 
             </RelativeLayout>
 
@@ -130,7 +130,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_close_black_24dp"
-                    android:visibility="invisible" />
+                    android:visibility="visible" />
 
             </RelativeLayout>
 
@@ -184,7 +184,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_check_black_24dp"
-                    android:visibility="invisible" />
+                    android:visibility="visible" />
 
                 <ImageView
                     android:id="@+id/incorrect_mark_choice_three"
@@ -243,7 +243,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_close_black_24dp"
-                    android:visibility="invisible" />
+                    android:visibility="visible" />
 
             </RelativeLayout>
 
