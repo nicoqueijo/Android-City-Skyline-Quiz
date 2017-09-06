@@ -53,9 +53,8 @@ public class QuizMenuActivity extends AppCompatActivity {
         mActionBar.setIcon(R.drawable.ic_light_game);
         mActionBar.setTitle(R.string.actionbar_play_game);
 
-        Intent intentPlayGame = getIntent();
-        mCities = (ArrayList<City>) intentPlayGame.getSerializableExtra("cityList");
-
+        Intent intentQuizMenu = getIntent();
+        mCities = (ArrayList<City>) intentQuizMenu.getSerializableExtra("cityList");
         mExpandableList = (ExpandableListView) findViewById(R.id.expandable_list_view);
         fillExpandableListData();
         mExpandableListAdapter = new ExpandableListAdapter(this, mParentGameModes, mChildGameModes);
@@ -65,69 +64,13 @@ public class QuizMenuActivity extends AppCompatActivity {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition,
                                         int childPosition, long id) {
-                switch (groupPosition) {
-                    case (TIMED_MODE):
-                        switch (childPosition) {
-                            case (SECONDS_30):
-                                Toast.makeText(QuizMenuActivity.this, "Timed : 30 seconds", Toast.LENGTH_SHORT).show();
-                                // Start quiz game intent appropriate for unlimited questions within 30 seconds.
-                                // Keep dequeueing questions while there is time remaining.
-                                // Don't forget to pass the city list!
-                                break;
-                            case (SECONDS_60):
-                                Toast.makeText(QuizMenuActivity.this, "Timed : 60 seconds", Toast.LENGTH_SHORT).show();
-                                // Start quiz game intent appropriate for unlimited questions within 60 seconds.
-                                // Keep dequeueing questions while there is time remaining.
-                                // Don't forget to pass the city list!
-                                break;
-                            case (SECONDS_120):
-                                Toast.makeText(QuizMenuActivity.this, "Timed : 120 seconds", Toast.LENGTH_SHORT).show();
-                                // Start quiz game intent appropriate for unlimited questions within 120 seconds.
-                                // Keep dequeueing questions while there is time remaining.
-                                // Don't forget to pass the city list!
-                                break;
-                        }
-                        break;
-                    case (UNTIMED_MODE):
-                        switch (childPosition) {
-                            case (QUESTIONS_10):
-                                Toast.makeText(QuizMenuActivity.this, "Untimed : 10 questions", Toast.LENGTH_SHORT).show();
-                                // Start quiz game intent appropriate for 10 questions.
-                                // Keep dequeueing questions while the queue is not empty.
-                                // Don't forget to pass the city list!
-                                break;
-                            case (QUESTIONS_20):
-                                Toast.makeText(QuizMenuActivity.this, "Untimed : 20 questions", Toast.LENGTH_SHORT).show();
-                                // Start quiz game intent appropriate for 20 questions.
-                                // Keep dequeueing questions while the queue is not empty.
-                                // Don't forget to pass the city list!
-                                break;
-                            case (QUESTIONS_50):
-                                Toast.makeText(QuizMenuActivity.this, "Untimed : 50 questions", Toast.LENGTH_SHORT).show();
-                                // Start quiz game intent appropriate for 50 questions.
-                                // Keep dequeueing questions while the queue is not empty.
-                                // Don't forget to pass the city list!
-                                break;
-                        }
-                        break;
-                    case (EVERY_CITY_MODE):
-                        switch (childPosition) {
-                            case (NO_FAULTS):
-                                Toast.makeText(QuizMenuActivity.this, "Every city : No faults", Toast.LENGTH_SHORT).show();
-                                // Start quiz game intent appropriate for unlimited questions without faults.
-                                // Keep dequeueing questions while the queue is not empty.
-                                // End the game immediately upon a wrong answer.
-                                // Don't forget to pass the city list!
-                                break;
-                            case (FAULTS_ALLOWED):
-                                Toast.makeText(QuizMenuActivity.this, "Every city : Faults allowed", Toast.LENGTH_SHORT).show();
-                                // Start quiz game intent appropriate for unlimited questions with faults allowed.
-                                // Keep dequeueing questions while the queue is not empty.
-                                // Don't forget to pass the city list!
-                                break;
-                        }
-                        break;
-                }
+
+                Intent intentQuizGame = new Intent(QuizMenuActivity.this, QuizGameActivity.class);
+                intentQuizGame.putExtra("cityList", mCities);
+                intentQuizGame.putExtra("parentMode", groupPosition);
+                intentQuizGame.putExtra("childMode", childPosition);
+                startActivity(intentQuizGame);
+
                 return true;
             }
         });
