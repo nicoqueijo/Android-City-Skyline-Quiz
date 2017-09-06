@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ExpandableListView;
-import android.widget.Toast;
 
 import com.nicoqueijo.cityskylinequiz.adapter.ExpandableListAdapter;
 import com.nicoqueijo.cityskylinequiz.R;

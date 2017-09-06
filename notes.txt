@@ -6,20 +6,6 @@ https://api.myjson.com/bins/x3m9t
 
 
 // TODO
-
--Create play game activity with:
-	Play modes:
-		Timed:
-			30 seconds
-			60 seconds
-			120 seconds
-		Untimed:
-			10 questions
-			20 questions
-			50 questions
-		Every city:
-			No faults
-			Faults allowed
 			
 -Score: 0, 0.25, 0.50, 1.0 per question depending on attempts
 -Try to put 3 second countdown splash screen before game starts
@@ -41,8 +27,8 @@ https://api.myjson.com/bins/x3m9t
 -Change all text sizes from dp to sp
 -Draw out app architecture and post on github README
 -change xml attributes (left -> start), (right -> end) to support arabic
-
-
+-make all activities portrait in the manifest
+-group common statements in methods for modularity
 
 
 // DO NEXT
