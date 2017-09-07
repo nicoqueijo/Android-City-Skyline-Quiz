@@ -53,7 +53,7 @@ public class QuizMenuActivity extends AppCompatActivity {
         mActionBar.setTitle(R.string.actionbar_play_game);
 
         Intent intentQuizMenu = getIntent();
-        mCities = (ArrayList<City>) intentQuizMenu.getSerializableExtra("cityList");
+        mCities = (ArrayList<City>) MainMenuActivity.cities;
         mExpandableList = (ExpandableListView) findViewById(R.id.expandable_list_view);
         fillExpandableListData();
         mExpandableListAdapter = new ExpandableListAdapter(this, mParentGameModes, mChildGameModes);
@@ -65,7 +65,6 @@ public class QuizMenuActivity extends AppCompatActivity {
                                         int childPosition, long id) {
 
                 Intent intentQuizGame = new Intent(QuizMenuActivity.this, QuizGameActivity.class);
-                intentQuizGame.putExtra("cityList", mCities);
                 intentQuizGame.putExtra("parentMode", groupPosition);
                 intentQuizGame.putExtra("childMode", childPosition);
                 startActivity(intentQuizGame);

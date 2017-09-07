@@ -33,6 +33,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 // JSON file on the cloud:
@@ -46,10 +47,10 @@ public class MainMenuActivity extends AppCompatActivity {
     public static final String DEVELOPER_GITHUB_URL = "https://github.com/nicoqueijo";
     public static final String DEVELOPER_EMAIL = "queijonicolas@gmail.com";
 
+    public static List<City> cities;
+    private String currentLanguage;
     private ActionBar mActionBar;
     private SharedPreferences mSharedPreferences;
-    private String currentLanguage;
-    private ArrayList<City> mCities;
     private RelativeLayout mRelativeLayoutPlayGame;
     private RelativeLayout mRelativeLayoutCityList;
     private RelativeLayout mRelativeLayoutSettings;
@@ -81,7 +82,7 @@ public class MainMenuActivity extends AppCompatActivity {
             editor.commit();
         }
 
-        mCities = new ArrayList<>();
+        cities = new ArrayList<>();
         parseJsonAndCreateCityObjects();
         cacheImagesAndLoadToMemory();
 
@@ -96,7 +97,6 @@ public class MainMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intentQuizMenu = new Intent(MainMenuActivity.this, QuizMenuActivity.class);
-                intentQuizMenu.putExtra("cityList", mCities);
                 startActivity(intentQuizMenu);
             }
         });
@@ -105,7 +105,6 @@ public class MainMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intentCityList = new Intent(MainMenuActivity.this, CityListActivity.class);
-                intentCityList.putExtra("cityList", mCities);
                 startActivity(intentCityList);
             }
         });
@@ -256,7 +255,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject cityObject = jsonArray.getJSONObject(i);
-                mCities.add(new City(cityObject.getString("city"), cityObject.getString("country"),
+                cities.add(new City(cityObject.getString("city"), cityObject.getString("country"),
                         cityObject.getString("imageUrl"), cityObject.getString("coordinates"),
                         cityObject.getString("wikiUrl")));
             }
@@ -271,7 +270,7 @@ public class MainMenuActivity extends AppCompatActivity {
      * Caches the city image from each model object (if not cached already) and loads it to memory.
      */
     private void cacheImagesAndLoadToMemory() {
-        for (City city : mCities) {
+        for (City city : cities) {
             Picasso.with(MainMenuActivity.this).load(city.getImageUrl()).fetch();
         }
     }
@@ -308,7 +307,7 @@ public class MainMenuActivity extends AppCompatActivity {
      * names in that language.
      */
     private void updateCitiesWithCurrentLanguage() {
-        for (City city : mCities) {
+        for (City city : cities) {
             city.setCityNameInCurrentLanguage(ResourceByNameRetriever
                     .getStringResourceByName(city.getCityName(), this));
             city.setCountryNameInCurrentLanguage(ResourceByNameRetriever

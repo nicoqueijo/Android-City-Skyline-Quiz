@@ -29,6 +29,7 @@ public class QuizGameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.v("method call", "onCreate");
         mSharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
         setTheme(mSharedPreferences.getInt("theme", R.style.AppThemeLight));
         setContentView(R.layout.activity_quiz_game);
@@ -39,7 +40,7 @@ public class QuizGameActivity extends AppCompatActivity {
         mActionBar.setTitle(R.string.actionbar_play_game);
 
         Intent intentQuizGame = getIntent();
-        mCities = (ArrayList<City>) intentQuizGame.getSerializableExtra("cityList");
+        mCities = (ArrayList<City>) MainMenuActivity.cities;
         Collections.shuffle(mCities);
         mQuestions = new LinkedList<>();
         mGroupPosition = intentQuizGame.getIntExtra("parentMode", QuizMenuActivity.UNTIMED_MODE);

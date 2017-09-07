@@ -50,7 +50,7 @@ public class CityListActivity extends AppCompatActivity {
         mActionBar.setTitle(R.string.actionbar_city_list);
 
         Intent intentCityList = getIntent();
-        mCities = (ArrayList<City>) intentCityList.getSerializableExtra("cityList");
+        mCities = (ArrayList<City>) MainMenuActivity.cities;
         sortCities(mSharedPreferences.getInt("sort_mode", CITY_SORT));
 
         mRecyclerCityList = (RecyclerView) findViewById(R.id.recycler_city_list);
