@@ -568,6 +568,13 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Jakarta"
     },
     {
+      "city": "jersey_city",
+      "country": "united_states",
+      "imageUrl": "http://i.imgur.com/i1t0vzO.jpg",
+      "coordinates": "40.728157,-74.077642",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Jersey_City,_New_Jersey"
+    },
+    {
       "city": "jerusalem",
       "country": "israel",
       "imageUrl": "http://i.imgur.com/H4t01BT.jpg",
