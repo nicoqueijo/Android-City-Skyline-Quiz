@@ -1,9 +1,6 @@
 package com.nicoqueijo.cityskylinequiz.model;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 /**
  * The model class for each question object.
@@ -11,22 +8,61 @@ import java.util.Random;
  */
 public class Question {
 
+    private City correctChoice;
+    private City choice1;
+    private City choice2;
+    private City choice3;
+    private City choice4;
 
     /**
      * JAVADOC THIS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
      */
     public Question(List<City> choices) {
+        correctChoice = choices.get(0);
+        choice1 = choices.get(1);
+        choice2 = choices.get(2);
+        choice3 = choices.get(3);
+        choice4 = choices.get(4);
+    }
 
+    public City getCorrectChoice() {
+        return correctChoice;
+    }
 
-        /*
-            1) Assign correctChoice to this.correctChoice
-            2) Assign correctChoice to a random choice between choice1, choice2, choice3, choice4
-            3) Assign three random non-repeating cities to the remaining choices
+    public void setCorrectChoice(City correctChoice) {
+        this.correctChoice = correctChoice;
+    }
 
-            **Alternative way of doing this: do the randomization in the previous activity and
-            * pass the three random choices instead of the whole city list and doing the randomization
-            * here **
-         */
+    public City getChoice1() {
+        return choice1;
+    }
+
+    public void setChoice1(City choice1) {
+        this.choice1 = choice1;
+    }
+
+    public City getChoice2() {
+        return choice2;
+    }
+
+    public void setChoice2(City choice2) {
+        this.choice2 = choice2;
+    }
+
+    public City getChoice3() {
+        return choice3;
+    }
+
+    public void setChoice3(City choice3) {
+        this.choice3 = choice3;
+    }
+
+    public City getChoice4() {
+        return choice4;
+    }
+
+    public void setChoice4(City choice4) {
+        this.choice4 = choice4;
     }
 
 }

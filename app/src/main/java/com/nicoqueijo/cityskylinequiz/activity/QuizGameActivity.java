@@ -52,26 +52,28 @@ public class QuizGameActivity extends AppCompatActivity {
 
 ////////////////////////////////////////////////////////////////////////
         List<City> choices = new ArrayList<>();
-
-        List<City> orderedList = new ArrayList<>();
-        for (int i = 0; i < mCities.size(); i++) {
-            orderedList.add(mCities.get(i));
-        }
-
         List<City> exclusionList = new ArrayList<>();
-        exclusionList.addAll(orderedList);
-        for (City city : orderedList) {
+        exclusionList.addAll(mCities);
+        for (City city : mCities) {
             exclusionList.remove(city);
             Collections.shuffle(exclusionList);
             choices.add(city);
+            choices.add(city);
             choices.addAll(exclusionList.subList(0, 3));
-            Collections.shuffle(choices);
-            choices.add(0, city);
+            Collections.shuffle(choices.subList(1, 5));
+            mQuestions.add(new Question(choices));
             choices.clear();
             exclusionList.add(city);
         }
 ////////////////////////////////////////////////////////////////////////
 
+        for (Question question : mQuestions) {
+            Log.v("question:", question.getCorrectChoice().getCityName()
+                    + " " + question.getChoice1().getCityName()
+                    + " " + question.getChoice2().getCityName()
+                    + " " + question.getChoice3().getCityName()
+                    + " " + question.getChoice4().getCityName());
+        }
 
         mGroupPosition = intentQuizGame.getIntExtra("parentMode", QuizMenuActivity.PARENT_MODE_UNTIMED);
         mChildPosition = intentQuizGame.getIntExtra("childMode", QuizMenuActivity.CHILD_MODE_QUESTIONS_10);
