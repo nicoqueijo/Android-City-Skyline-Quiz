@@ -20,6 +20,12 @@ import java.util.Queue;
 
 public class QuizGameActivity extends AppCompatActivity {
 
+    public static final int CORRECT_CHOICE = 0;
+    public static final int CHOICE_1 = 1;
+    public static final int CHOICE_2 = 2;
+    public static final int CHOICE_3 = 3;
+    public static final int CHOICE_4 = 4;
+
     public static final int ALL_QUESTIONS = MainMenuActivity.cities.size();
     public static final int TEN_QUESTIONS = 10;
     public static final int TWENTY_QUESTIONS = 20;
@@ -45,28 +51,16 @@ public class QuizGameActivity extends AppCompatActivity {
         mActionBar.setTitle(R.string.actionbar_play_game);
 
         Intent intentQuizGame = getIntent();
+        mGroupPosition = intentQuizGame.getIntExtra("parentMode", QuizMenuActivity.PARENT_MODE_UNTIMED);
+        mChildPosition = intentQuizGame.getIntExtra("childMode", QuizMenuActivity.CHILD_MODE_QUESTIONS_10);
+
         mCities = (ArrayList<City>) MainMenuActivity.cities;
         Collections.shuffle(mCities);
         mQuestions = new LinkedList<>();
 
+        createQuestions();
 
-////////////////////////////////////////////////////////////////////////
-        List<City> choices = new ArrayList<>();
-        List<City> exclusionList = new ArrayList<>();
-        exclusionList.addAll(mCities);
-        for (City city : mCities) {
-            exclusionList.remove(city);
-            Collections.shuffle(exclusionList);
-            choices.add(city);
-            choices.add(city);
-            choices.addAll(exclusionList.subList(0, 3));
-            Collections.shuffle(choices.subList(1, 5));
-            mQuestions.add(new Question(choices));
-            choices.clear();
-            exclusionList.add(city);
-        }
-////////////////////////////////////////////////////////////////////////
-
+        // REMOVE THIS LATER
         for (Question question : mQuestions) {
             Log.v("question:", question.getCorrectChoice().getCityName()
                     + " " + question.getChoice1().getCityName()
@@ -74,9 +68,6 @@ public class QuizGameActivity extends AppCompatActivity {
                     + " " + question.getChoice3().getCityName()
                     + " " + question.getChoice4().getCityName());
         }
-
-        mGroupPosition = intentQuizGame.getIntExtra("parentMode", QuizMenuActivity.PARENT_MODE_UNTIMED);
-        mChildPosition = intentQuizGame.getIntExtra("childMode", QuizMenuActivity.CHILD_MODE_QUESTIONS_10);
 
         switch (mGroupPosition) {
             case (QuizMenuActivity.PARENT_MODE_TIMED):
@@ -118,6 +109,23 @@ public class QuizGameActivity extends AppCompatActivity {
                         break;
                 }
                 break;
+        }
+    }
+
+    private void createQuestions() {
+        List<City> choices = new ArrayList<>();
+        List<City> exclusionList = new ArrayList<>();
+        exclusionList.addAll(mCities);
+        for (City city : mCities) {
+            exclusionList.remove(city);
+            Collections.shuffle(exclusionList);
+            choices.add(city);
+            choices.add(city);
+            choices.addAll(exclusionList.subList(0, 3));
+            Collections.shuffle(choices.subList(1, 5));
+            mQuestions.add(new Question(choices));
+            choices.clear();
+            exclusionList.add(city);
         }
     }
 }

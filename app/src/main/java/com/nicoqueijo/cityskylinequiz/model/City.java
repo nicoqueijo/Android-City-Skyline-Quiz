@@ -26,6 +26,8 @@ public class City implements Serializable {
     private String countryNameInCurrentLanguage;
 
     /**
+     * Constructor for the City object
+     *
      * @param cityName    the city name as it appears in the JSON object
      * @param countryName the country name as it appears in the JSON object
      * @param imageUrl    the URL of the city image as it appears in the JSON object
