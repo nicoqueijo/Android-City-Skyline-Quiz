@@ -20,17 +20,17 @@ import java.util.Map;
 
 public class QuizMenuActivity extends AppCompatActivity {
 
-    public static final int TIMED_MODE = 0;
-    public static final int UNTIMED_MODE = 1;
-    public static final int EVERY_CITY_MODE = 2;
-    public static final int SECONDS_30 = 0;
-    public static final int SECONDS_60 = 1;
-    public static final int SECONDS_120 = 2;
-    public static final int QUESTIONS_10 = 0;
-    public static final int QUESTIONS_20 = 1;
-    public static final int QUESTIONS_50 = 2;
-    public static final int NO_FAULTS = 0;
-    public static final int FAULTS_ALLOWED = 1;
+    public static final int PARENT_MODE_TIMED = 0;
+    public static final int PARENT_MODE_UNTIMED = 1;
+    public static final int PARENT_MODE_EVERY_CITY = 2;
+    public static final int CHILD_MODE_SECONDS_30 = 0;
+    public static final int CHILD_MODE_SECONDS_60 = 1;
+    public static final int CHILD_MODE_SECONDS_120 = 2;
+    public static final int CHILD_MODE_QUESTIONS_10 = 0;
+    public static final int CHILD_MODE_QUESTIONS_20 = 1;
+    public static final int CHILD_MODE_QUESTIONS_50 = 2;
+    public static final int CHILD_MODE_NO_FAULTS = 0;
+    public static final int CHILD_MODE_FAULTS_ALLOWED = 1;
 
     private ActionBar mActionBar;
     private SharedPreferences mSharedPreferences;
@@ -68,7 +68,6 @@ public class QuizMenuActivity extends AppCompatActivity {
                 intentQuizGame.putExtra("parentMode", groupPosition);
                 intentQuizGame.putExtra("childMode", childPosition);
                 startActivity(intentQuizGame);
-
                 return true;
             }
         });
@@ -100,8 +99,8 @@ public class QuizMenuActivity extends AppCompatActivity {
         everyCityModeChildren.add(R.string.no_faults);
         everyCityModeChildren.add(R.string.faults_allowed);
 
-        mChildGameModes.put(mParentGameModes.get(TIMED_MODE), timedModeChildren);
-        mChildGameModes.put(mParentGameModes.get(UNTIMED_MODE), untimedModeChildren);
-        mChildGameModes.put(mParentGameModes.get(EVERY_CITY_MODE), everyCityModeChildren);
+        mChildGameModes.put(mParentGameModes.get(PARENT_MODE_TIMED), timedModeChildren);
+        mChildGameModes.put(mParentGameModes.get(PARENT_MODE_UNTIMED), untimedModeChildren);
+        mChildGameModes.put(mParentGameModes.get(PARENT_MODE_EVERY_CITY), everyCityModeChildren);
     }
 }

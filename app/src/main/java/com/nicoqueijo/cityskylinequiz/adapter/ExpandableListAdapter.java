@@ -150,26 +150,26 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         switch (getThemeId()) {
             case (R.style.AppThemeLight):
                 switch (groupPosition) {
-                    case (QuizMenuActivity.TIMED_MODE):
+                    case (QuizMenuActivity.PARENT_MODE_TIMED):
                         iconListParent.setImageResource(R.drawable.ic_dark_timer_on);
                         break;
-                    case (QuizMenuActivity.UNTIMED_MODE):
+                    case (QuizMenuActivity.PARENT_MODE_UNTIMED):
                         iconListParent.setImageResource(R.drawable.ic_dark_timer_off);
                         break;
-                    case (QuizMenuActivity.EVERY_CITY_MODE):
+                    case (QuizMenuActivity.PARENT_MODE_EVERY_CITY):
                         iconListParent.setImageResource(R.drawable.ic_dark_all_inclusive);
                         break;
                 }
                 break;
             case (R.style.AppThemeDark):
                 switch (groupPosition) {
-                    case (QuizMenuActivity.TIMED_MODE):
+                    case (QuizMenuActivity.PARENT_MODE_TIMED):
                         iconListParent.setImageResource(R.drawable.ic_light_timer_on);
                         break;
-                    case (QuizMenuActivity.UNTIMED_MODE):
+                    case (QuizMenuActivity.PARENT_MODE_UNTIMED):
                         iconListParent.setImageResource(R.drawable.ic_light_timer_off);
                         break;
-                    case (QuizMenuActivity.EVERY_CITY_MODE):
+                    case (QuizMenuActivity.PARENT_MODE_EVERY_CITY):
                         iconListParent.setImageResource(R.drawable.ic_light_all_inclusive);
                         break;
                 }

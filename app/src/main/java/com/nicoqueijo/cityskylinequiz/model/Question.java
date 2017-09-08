@@ -1,6 +1,9 @@
 package com.nicoqueijo.cityskylinequiz.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
 
 /**
  * The model class for each question object.
@@ -8,16 +11,13 @@ import java.util.ArrayList;
  */
 public class Question {
 
-    private City correctChoice;
-    private City choice1;
-    private City choice2;
-    private City choice3;
-    private City choice4;
 
     /**
      * JAVADOC THIS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
      */
-    public Question(City correctChoice, ArrayList<City> cities) {
+    public Question(List<City> choices) {
+
+
         /*
             1) Assign correctChoice to this.correctChoice
             2) Assign correctChoice to a random choice between choice1, choice2, choice3, choice4
@@ -28,4 +28,5 @@ public class Question {
             * here **
          */
     }
+
 }
