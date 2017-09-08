@@ -11,7 +11,6 @@ import android.widget.ExpandableListView;
 
 import com.nicoqueijo.cityskylinequiz.adapter.ExpandableListAdapter;
 import com.nicoqueijo.cityskylinequiz.R;
-import com.nicoqueijo.cityskylinequiz.model.City;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,7 +33,6 @@ public class QuizMenuActivity extends AppCompatActivity {
 
     private ActionBar mActionBar;
     private SharedPreferences mSharedPreferences;
-    private ArrayList<City> mCities;
     private ExpandableListView mExpandableList;
     private ExpandableListAdapter mExpandableListAdapter;
     private List<Integer> mParentGameModes;
@@ -52,8 +50,6 @@ public class QuizMenuActivity extends AppCompatActivity {
         mActionBar.setIcon(R.drawable.ic_light_game);
         mActionBar.setTitle(R.string.actionbar_play_game);
 
-        Intent intentQuizMenu = getIntent();
-        mCities = (ArrayList<City>) MainMenuActivity.cities;
         mExpandableList = (ExpandableListView) findViewById(R.id.expandable_list_view);
         fillExpandableListData();
         mExpandableListAdapter = new ExpandableListAdapter(this, mParentGameModes, mChildGameModes);
