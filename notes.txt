@@ -32,6 +32,7 @@ https://api.myjson.com/bins/1a5vld
 
 
 // DO NEXT
+-change question generation algorithm to something more efficient (see stackoverflow answer)
 -Put custom fonts in all activity actionbars
 	http://www.tristanwaddington.com/2013/03/styling-the-android-action-bar-with-a-custom-font/
 		Use Typeface class from Base Converter project
