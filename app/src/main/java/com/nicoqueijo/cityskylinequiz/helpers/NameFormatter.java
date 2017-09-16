@@ -1,4 +1,4 @@
-package com.nicoqueijo.cityskylinequiz.helper;
+package com.nicoqueijo.cityskylinequiz.helpers;
 
 /**
  * Class with one static method to convert a city/country name that is in its filename format

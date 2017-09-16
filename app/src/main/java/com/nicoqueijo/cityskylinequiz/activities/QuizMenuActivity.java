@@ -1,4 +1,4 @@
-package com.nicoqueijo.cityskylinequiz.activity;
+package com.nicoqueijo.cityskylinequiz.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ExpandableListView;
 
-import com.nicoqueijo.cityskylinequiz.adapter.ExpandableListAdapter;
+import com.nicoqueijo.cityskylinequiz.adapters.ExpandableListAdapter;
 import com.nicoqueijo.cityskylinequiz.R;
 
 import java.util.ArrayList;

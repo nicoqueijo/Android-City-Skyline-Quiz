@@ -1,4 +1,4 @@
-package com.nicoqueijo.cityskylinequiz.fragment;
+package com.nicoqueijo.cityskylinequiz.fragments;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -14,9 +14,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
-import com.nicoqueijo.cityskylinequiz.helper.CornerRounder;
-import com.nicoqueijo.cityskylinequiz.helper.ResourceByNameRetriever;
-import com.nicoqueijo.cityskylinequiz.model.City;
+import com.nicoqueijo.cityskylinequiz.helpers.CornerRounder;
+import com.nicoqueijo.cityskylinequiz.helpers.ResourceByNameRetriever;
+import com.nicoqueijo.cityskylinequiz.models.City;
 import com.squareup.picasso.Picasso;
 
 /**

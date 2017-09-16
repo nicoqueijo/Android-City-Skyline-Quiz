@@ -1,6 +1,6 @@
-package com.nicoqueijo.cityskylinequiz.model;
+package com.nicoqueijo.cityskylinequiz.models;
 
-import com.nicoqueijo.cityskylinequiz.activity.QuizGameActivity;
+import com.nicoqueijo.cityskylinequiz.activities.QuizGameActivity;
 
 import java.util.List;
 

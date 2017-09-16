@@ -1,4 +1,4 @@
-package com.nicoqueijo.cityskylinequiz.activity;
+package com.nicoqueijo.cityskylinequiz.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,9 +13,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.nicoqueijo.cityskylinequiz.R;
-import com.nicoqueijo.cityskylinequiz.adapter.RecyclerViewAdapter;
-import com.nicoqueijo.cityskylinequiz.fragment.LanguageChooserDialog;
-import com.nicoqueijo.cityskylinequiz.model.City;
+import com.nicoqueijo.cityskylinequiz.adapters.RecyclerViewAdapter;
+import com.nicoqueijo.cityskylinequiz.fragments.LanguageChooserDialog;
+import com.nicoqueijo.cityskylinequiz.models.City;
 import com.turingtechnologies.materialscrollbar.AlphabetIndicator;
 import com.turingtechnologies.materialscrollbar.DragScrollBar;
 

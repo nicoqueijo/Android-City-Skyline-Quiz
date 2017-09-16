@@ -1,4 +1,4 @@
-package com.nicoqueijo.cityskylinequiz.model;
+package com.nicoqueijo.cityskylinequiz.models;
 
 import java.io.Serializable;
 

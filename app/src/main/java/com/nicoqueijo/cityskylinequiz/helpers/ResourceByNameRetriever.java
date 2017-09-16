@@ -1,4 +1,4 @@
-package com.nicoqueijo.cityskylinequiz.helper;
+package com.nicoqueijo.cityskylinequiz.helpers;
 
 import android.content.Context;
 

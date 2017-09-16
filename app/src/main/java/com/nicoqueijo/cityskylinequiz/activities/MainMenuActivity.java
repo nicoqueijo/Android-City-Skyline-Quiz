@@ -1,4 +1,4 @@
-package com.nicoqueijo.cityskylinequiz.activity;
+package com.nicoqueijo.cityskylinequiz.activities;
 
 import android.content.ActivityNotFoundException;
 import android.content.Context;
@@ -20,9 +20,9 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.nicoqueijo.cityskylinequiz.R;
-import com.nicoqueijo.cityskylinequiz.helper.ResourceByNameRetriever;
-import com.nicoqueijo.cityskylinequiz.helper.SystemInfo;
-import com.nicoqueijo.cityskylinequiz.model.City;
+import com.nicoqueijo.cityskylinequiz.helpers.ResourceByNameRetriever;
+import com.nicoqueijo.cityskylinequiz.helpers.SystemInfo;
+import com.nicoqueijo.cityskylinequiz.models.City;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;

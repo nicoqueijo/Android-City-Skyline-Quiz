@@ -1,4 +1,4 @@
-package com.nicoqueijo.cityskylinequiz.adapter;
+package com.nicoqueijo.cityskylinequiz.adapters;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -14,11 +14,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
-import com.nicoqueijo.cityskylinequiz.activity.CityListActivity;
-import com.nicoqueijo.cityskylinequiz.fragment.CityDetailDialog;
-import com.nicoqueijo.cityskylinequiz.helper.CornerRounder;
-import com.nicoqueijo.cityskylinequiz.helper.ResourceByNameRetriever;
-import com.nicoqueijo.cityskylinequiz.model.City;
+import com.nicoqueijo.cityskylinequiz.activities.CityListActivity;
+import com.nicoqueijo.cityskylinequiz.fragments.CityDetailDialog;
+import com.nicoqueijo.cityskylinequiz.helpers.CornerRounder;
+import com.nicoqueijo.cityskylinequiz.helpers.ResourceByNameRetriever;
+import com.nicoqueijo.cityskylinequiz.models.City;
 import com.squareup.picasso.Picasso;
 import com.turingtechnologies.materialscrollbar.INameableAdapter;
 

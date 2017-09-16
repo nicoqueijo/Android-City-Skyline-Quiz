@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.nicoqueijo.cityskylinequiz.activity.QuizMenuActivity">
+    tools:context="com.nicoqueijo.cityskylinequiz.activities.QuizMenuActivity">
 
     <ExpandableListView
         android:id="@+id/expandable_list_view"

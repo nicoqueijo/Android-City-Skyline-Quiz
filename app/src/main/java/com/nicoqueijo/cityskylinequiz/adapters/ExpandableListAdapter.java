@@ -1,4 +1,4 @@
-package com.nicoqueijo.cityskylinequiz.adapter;
+package com.nicoqueijo.cityskylinequiz.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
-import com.nicoqueijo.cityskylinequiz.activity.QuizMenuActivity;
+import com.nicoqueijo.cityskylinequiz.activities.QuizMenuActivity;
 
 import java.lang.reflect.Method;
 import java.util.List;

@@ -1,16 +1,18 @@
-package com.nicoqueijo.cityskylinequiz.activity;
+package com.nicoqueijo.cityskylinequiz.activities;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.nicoqueijo.cityskylinequiz.R;
-import com.nicoqueijo.cityskylinequiz.model.City;
-import com.nicoqueijo.cityskylinequiz.model.Question;
+import com.nicoqueijo.cityskylinequiz.fragments.QuizFragment;
+import com.nicoqueijo.cityskylinequiz.models.City;
+import com.nicoqueijo.cityskylinequiz.models.Question;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -50,6 +52,9 @@ public class QuizGameActivity extends AppCompatActivity {
         mActionBar.setIcon(R.drawable.ic_light_game);
         mActionBar.setTitle(R.string.actionbar_play_game);
 
+        FragmentManager mFragmentManager = getSupportFragmentManager();
+        QuizFragment mQuizFragment = (QuizFragment) mFragmentManager.findFragmentById(R.id.quizFragment);
+
         Intent intentQuizGame = getIntent();
         mGroupPosition = intentQuizGame.getIntExtra("parentMode", QuizMenuActivity.PARENT_MODE_UNTIMED);
         mChildPosition = intentQuizGame.getIntExtra("childMode", QuizMenuActivity.CHILD_MODE_QUESTIONS_10);
@@ -57,22 +62,7 @@ public class QuizGameActivity extends AppCompatActivity {
         mCities = (ArrayList<City>) MainMenuActivity.cities;
         Collections.shuffle(mCities);
         mQuestions = new LinkedList<>();
-
-        long start = System.currentTimeMillis();
         generateQuestions();
-        long end = System.currentTimeMillis();
-        long executionTime = end - start;
-
-        Log.v("time", executionTime + "");
-
-        // REMOVE THIS LATER
-        for (Question question : mQuestions) {
-            Log.v("question:", question.getCorrectChoice().getCityName()
-                    + " " + question.getChoice1().getCityName()
-                    + " " + question.getChoice2().getCityName()
-                    + " " + question.getChoice3().getCityName()
-                    + " " + question.getChoice4().getCityName());
-        }
 
         switch (mGroupPosition) {
             case (QuizMenuActivity.PARENT_MODE_TIMED):

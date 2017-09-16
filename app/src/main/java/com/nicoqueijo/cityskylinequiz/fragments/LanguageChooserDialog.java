@@ -1,4 +1,4 @@
-package com.nicoqueijo.cityskylinequiz.fragment;
+package com.nicoqueijo.cityskylinequiz.fragments;
 
 import android.app.Activity;
 import android.app.DialogFragment;
@@ -20,8 +20,8 @@ import android.widget.RadioButton;
 import android.widget.ScrollView;
 
 import com.nicoqueijo.cityskylinequiz.R;
-import com.nicoqueijo.cityskylinequiz.helper.CornerRounder;
-import com.nicoqueijo.cityskylinequiz.helper.SystemInfo;
+import com.nicoqueijo.cityskylinequiz.helpers.CornerRounder;
+import com.nicoqueijo.cityskylinequiz.helpers.SystemInfo;
 import com.nicoqueijo.cityskylinequiz.interfaces.Communicator;
 
 import java.util.Locale;

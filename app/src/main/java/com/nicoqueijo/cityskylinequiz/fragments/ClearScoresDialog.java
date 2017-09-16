@@ -1,4 +1,4 @@
-package com.nicoqueijo.cityskylinequiz.fragment;
+package com.nicoqueijo.cityskylinequiz.fragments;
 
 import android.app.Activity;
 import android.app.DialogFragment;

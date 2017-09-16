@@ -1,8 +1,4 @@
-package com.nicoqueijo.cityskylinequiz.helper;
-
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.util.DisplayMetrics;
+package com.nicoqueijo.cityskylinequiz.helpers;
 
 import java.util.Locale;
 

@@ -1,4 +1,4 @@
-package com.nicoqueijo.cityskylinequiz.activity;
+package com.nicoqueijo.cityskylinequiz.activities;
 
 import android.app.FragmentManager;
 import android.content.Context;
@@ -7,18 +7,15 @@ import android.content.SharedPreferences;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.view.ActionMode;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.Toast;
 
 import com.nicoqueijo.cityskylinequiz.R;
-import com.nicoqueijo.cityskylinequiz.fragment.ClearScoresDialog;
-import com.nicoqueijo.cityskylinequiz.fragment.LanguageChooserDialog;
+import com.nicoqueijo.cityskylinequiz.fragments.ClearScoresDialog;
+import com.nicoqueijo.cityskylinequiz.fragments.LanguageChooserDialog;
 import com.nicoqueijo.cityskylinequiz.interfaces.Communicator;
-
-import java.util.Collection;
 
 public class SettingsActivity extends AppCompatActivity implements Communicator {
 

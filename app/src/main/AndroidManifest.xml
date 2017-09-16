@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppThemeLight">
         <activity
-            android:name=".activity.MainMenuActivity"
+            android:name=".activities.MainMenuActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -22,24 +22,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.CityListActivity"
+            android:name=".activities.CityListActivity"
             android:label="@string/city_list"
-            android:parentActivityName=".activity.MainMenuActivity"
+            android:parentActivityName=".activities.MainMenuActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.QuizMenuActivity"
+            android:name=".activities.QuizMenuActivity"
             android:label="@string/play_game"
-            android:parentActivityName=".activity.MainMenuActivity"
+            android:parentActivityName=".activities.MainMenuActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.SettingsActivity"
+            android:name=".activities.SettingsActivity"
             android:label="@string/settings"
-            android:parentActivityName=".activity.MainMenuActivity"
+            android:parentActivityName=".activities.MainMenuActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.QuizGameActivity"
+            android:name=".activities.QuizGameActivity"
             android:label="@string/play_game"
-            android:parentActivityName=".activity.QuizMenuActivity"
+            android:parentActivityName=".activities.QuizMenuActivity"
             android:screenOrientation="portrait" />
     </application>
 
