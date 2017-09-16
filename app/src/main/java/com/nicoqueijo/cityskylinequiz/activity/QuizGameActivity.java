@@ -57,7 +57,13 @@ public class QuizGameActivity extends AppCompatActivity {
         mCities = (ArrayList<City>) MainMenuActivity.cities;
         Collections.shuffle(mCities);
         mQuestions = new LinkedList<>();
+
+        long start = System.currentTimeMillis();
         generateQuestions();
+        long end = System.currentTimeMillis();
+        long executionTime = end - start;
+
+        Log.v("time", executionTime + "");
 
         // REMOVE THIS LATER
         for (Question question : mQuestions) {
