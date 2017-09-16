@@ -25,7 +25,9 @@ import com.turingtechnologies.materialscrollbar.INameableAdapter;
 import java.util.ArrayList;
 
 /**
- *
+ * RecyclerViewAdapter for the city list. Implements INameableAdapter to get the first character of the
+ * city/country in the first position of the adapter and have it displayed on the ScrollBar when
+ * the user drags it.
  */
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> implements
         INameableAdapter {
@@ -36,6 +38,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private LayoutInflater mInflater;
     private int mPreviousPosition = 0;
 
+    /**
+     * Constructor for the RecyclerView adapter.
+     *
+     * @param context activity hosting the RecyclerView
+     * @param cities  data set of the RecyclerViewAdapter
+     */
     public RecyclerViewAdapter(Context context, ArrayList<City> cities) {
         this.mContext = context;
         this.mCities = cities;
@@ -43,6 +51,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         mSharedPreferences = mContext.getSharedPreferences("settings", Context.MODE_PRIVATE);
     }
 
+    /**
+     * Called when RecyclerView needs a new ViewHolder of the given type to represent an item.
+     *
+     * @param parent   The ViewGroup into which the new View will be added after it is bound to
+     *                 an adapter position.
+     * @param viewType The view type of the new View.
+     * @return A new ViewHolder that holds a View of the given view type.
+     */
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.card_city_detail, parent, false);
@@ -50,6 +66,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return viewHolder;
     }
 
+    /**
+     * Called by RecyclerView to display the data at the specified position. This method updates the
+     * contents of the ViewHolder to reflect the item at the given position.
+     *
+     * @param holder   The ViewHolder which should be updated to represent the contents of the
+     *                 item at the given position in the data set.
+     * @param position The position of the item within the adapter's data set.
+     */
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         if (position > mPreviousPosition) {
@@ -80,6 +104,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         });
     }
 
+    /**
+     * Returns the total number of items in the data set held by the adapter.
+     *
+     * @return The total number of items in this adapter.
+     */
     @Override
     public int getItemCount() {
         return mCities.size();
@@ -127,11 +156,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     /**
-     *
+     * Representation of each item in the RecyclerViewAdapter's data set. Each item in the data set
+     * has a flag to represent the country of that city, and the name of the city.
      */
     class ViewHolder extends RecyclerView.ViewHolder {
         ImageView mCountryFlagImageView;
         TextView mCityTextView;
+
         public ViewHolder(View itemView) {
             super(itemView);
             mCountryFlagImageView = (ImageView) itemView.findViewById(R.id.flag_image);

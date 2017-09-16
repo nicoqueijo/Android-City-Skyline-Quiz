@@ -43,3 +43,8 @@ https://api.myjson.com/bins/1a5vld
 -Remove Log statements from entire app
 -Refactor duplicated code
 -Assure Rate app button works once app is in Google Play
+
+
+// ALTERNATIVE TO CORRECT/INCORRECT MARKS ON CHOICES
+linearLayout.setEnabled(false);
+linearLayout.setAlpha(0.5f);
