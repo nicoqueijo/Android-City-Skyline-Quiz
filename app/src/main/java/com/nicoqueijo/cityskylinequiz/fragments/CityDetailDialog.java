@@ -20,7 +20,8 @@ import com.nicoqueijo.cityskylinequiz.models.City;
 import com.squareup.picasso.Picasso;
 
 /**
- *
+ * This is the DialogFragment that provides the details of the city selected by the user in the
+ * RecyclerView.
  */
 public class CityDetailDialog extends DialogFragment {
 

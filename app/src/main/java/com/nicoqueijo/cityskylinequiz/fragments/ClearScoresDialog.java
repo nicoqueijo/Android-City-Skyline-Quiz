@@ -3,7 +3,6 @@ package com.nicoqueijo.cityskylinequiz.fragments;
 import android.app.Activity;
 import android.app.DialogFragment;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +13,9 @@ import android.widget.Button;
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.interfaces.Communicator;
 
+/**
+ * This is the DialogFragment for the dialog window that asks the user to confirm clearing the scores.
+ */
 public class ClearScoresDialog extends DialogFragment {
 
     public final static String CLEAR_SCORES = "true";
@@ -28,15 +30,33 @@ public class ClearScoresDialog extends DialogFragment {
     }
 
 
-    @Nullable
+    /**
+     * * Called to have the fragment instantiate its user interface view.
+     *
+     * @param inflater           The LayoutInflater object that can be used to inflate
+     *                           any views in the fragment.
+     * @param container          If non-null, this is the parent view that the fragment's
+     *                           UI should be attached to.
+     * @param savedInstanceState If non-null, this fragment is being re-constructed
+     *                           from a previous saved state as given here.
+     * @return Return the View for the fragment's UI, or null.
+     */
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.dialog_clear_scores, container, false);
     }
 
+    /**
+     * Called immediately after onCreateView has returned, but before any saved state has been
+     * restored in to the view. This gives subclasses a chance to initialize themselves once
+     * they know their view hierarchy has been completely created.
+     *
+     * @param view               The View returned by onCreateView
+     * @param savedInstanceState If non-null, this fragment is being re-constructed
+     *                           from a previous saved state as given here.
+     */
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         removeTitleBar();
 
