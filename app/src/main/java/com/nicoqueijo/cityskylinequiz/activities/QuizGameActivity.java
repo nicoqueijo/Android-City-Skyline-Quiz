@@ -3,7 +3,6 @@ package com.nicoqueijo.cityskylinequiz.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +19,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * This activity hosts the fragment that will run the quiz game.
+ */
 public class QuizGameActivity extends AppCompatActivity {
 
     public static final int CORRECT_CHOICE = 0;

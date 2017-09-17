@@ -17,6 +17,10 @@ import com.nicoqueijo.cityskylinequiz.fragments.ClearScoresDialog;
 import com.nicoqueijo.cityskylinequiz.fragments.LanguageChooserDialog;
 import com.nicoqueijo.cityskylinequiz.interfaces.Communicator;
 
+/**
+ * This is the settings activity where the user can change the app configurations. This includes
+ * changing the theme, changing the language, and resetting the scores.
+ */
 public class SettingsActivity extends AppCompatActivity implements Communicator {
 
     private AppCompatActivity mThisActivity = SettingsActivity.this;

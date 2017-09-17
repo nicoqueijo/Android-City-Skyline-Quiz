@@ -25,6 +25,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Locale;
 
+/**
+ * This activity hosts the RecyclerView that displays the list of all the cities available in the
+ * Quiz Game.
+ */
 public class CityListActivity extends AppCompatActivity {
 
     public static final int CITY_SORT = 0;

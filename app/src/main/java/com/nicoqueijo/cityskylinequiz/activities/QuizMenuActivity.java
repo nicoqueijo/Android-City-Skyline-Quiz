@@ -17,6 +17,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * This activity hosts an expandable list of options that serve as the different modes the game can
+ * be played in.
+ */
 public class QuizMenuActivity extends AppCompatActivity {
 
     public static final int PARENT_MODE_TIMED = 0;
