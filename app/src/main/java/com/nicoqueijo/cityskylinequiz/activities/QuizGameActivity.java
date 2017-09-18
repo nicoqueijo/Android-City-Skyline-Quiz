@@ -3,16 +3,17 @@ package com.nicoqueijo.cityskylinequiz.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import com.nicoqueijo.cityskylinequiz.R;
-import com.nicoqueijo.cityskylinequiz.fragments.QuizFragment;
 import com.nicoqueijo.cityskylinequiz.models.City;
 import com.nicoqueijo.cityskylinequiz.models.Question;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -54,9 +55,6 @@ public class QuizGameActivity extends AppCompatActivity {
         mActionBar.setIcon(R.drawable.ic_light_game);
         mActionBar.setTitle(R.string.actionbar_play_game);
 
-        //FragmentManager mFragmentManager = getSupportFragmentManager();
-
-
         Intent intentQuizGame = getIntent();
         mGroupPosition = intentQuizGame.getIntExtra("parentMode", QuizMenuActivity.PARENT_MODE_UNTIMED);
         mChildPosition = intentQuizGame.getIntExtra("childMode", QuizMenuActivity.CHILD_MODE_QUESTIONS_10);
@@ -66,8 +64,20 @@ public class QuizGameActivity extends AppCompatActivity {
         mQuestions = new LinkedList<>();
         generateQuestions();
 
-        QuizFragment mQuizFragment = (QuizFragment) getSupportFragmentManager().
-                findFragmentById(R.id.quizFragment);
+        Bundle bundle = new Bundle();
+
+        bundle.putSerializable("questions", (Serializable) mQuestions);
+        bundle.putInt("group", mGroupPosition);
+        bundle.putInt("child", mChildPosition);
+
+        FragmentManager mFragmentManager = getSupportFragmentManager();
+        Fragment mQuizFragment = mFragmentManager.findFragmentById(R.id.quizFragment);
+        mQuizFragment.setArguments(bundle);
+        mFragmentManager.beginTransaction().add(R.id.quizFragment, mQuizFragment).commit();
+
+//        QuizFragment mQuizFragment = (QuizFragment) mFragmentManager.
+//                findFragmentById(R.id.quizFragment);
+//        mQuizFragment.setArguments(bundle);
 
         switch (mGroupPosition) {
             case (QuizMenuActivity.PARENT_MODE_TIMED):
@@ -76,11 +86,9 @@ public class QuizGameActivity extends AppCompatActivity {
                         // Keep dequeueing questions while there is time remaining.
                         break;
                     case (QuizMenuActivity.CHILD_MODE_SECONDS_60):
-
                         // Keep dequeueing questions while there is time remaining.
                         break;
                     case (QuizMenuActivity.CHILD_MODE_SECONDS_120):
-
                         // Keep dequeueing questions while there is time remaining.
                         break;
                 }

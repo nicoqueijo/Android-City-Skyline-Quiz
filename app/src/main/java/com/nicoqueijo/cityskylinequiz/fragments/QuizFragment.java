@@ -1,6 +1,5 @@
 package com.nicoqueijo.cityskylinequiz.fragments;
 
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,8 +11,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
+import com.nicoqueijo.cityskylinequiz.models.Question;
+
+import java.util.Queue;
 
 public class QuizFragment extends Fragment {
+
+    private Queue<Question> mQuestions;
+    private int mGroupPosition;
+    private int mChildPosition;
 
     private ImageView mCityImage;
 
@@ -50,23 +56,23 @@ public class QuizFragment extends Fragment {
     public QuizFragment() {
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment QuizFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static QuizFragment newInstance(String param1, String param2) {
-        QuizFragment fragment = new QuizFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+//    /**
+//     * Use this factory method to create a new instance of
+//     * this fragment using the provided parameters.
+//     *
+//     * @param param1 Parameter 1.
+//     * @param param2 Parameter 2.
+//     * @return A new instance of fragment QuizFragment.
+//     */
+//    // TODO: Rename and change types and number of parameters
+//    public static QuizFragment newInstance(String param1, String param2) {
+//        QuizFragment fragment = new QuizFragment();
+//        Bundle args = new Bundle();
+//        args.putString(ARG_PARAM1, param1);
+//        args.putString(ARG_PARAM2, param2);
+//        fragment.setArguments(args);
+//        return fragment;
+//    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -77,6 +83,16 @@ public class QuizFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_quiz, container, false);
+
+//        mQuestions = (Queue<Question>) this.getArguments().getSerializable("questions");
+//        mGroupPosition = this.getArguments().getInt("group");
+//        mChildPosition = this.getArguments().getInt("child");
+//
+//        Log.v("fragment", mGroupPosition + "");
+//        Log.v("fragment", mChildPosition + "");
+//        for (Question question : mQuestions) {
+//            Log.v("fragment", question.getCorrectChoice().getCityNameInCurrentLanguage());
+//        }
 
         mCityImage = (ImageView) view.findViewById(R.id.city_image);
 
@@ -108,16 +124,16 @@ public class QuizFragment extends Fragment {
         return view;
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
+//    @Override
+//    public void onAttach(Context context) {
+//        super.onAttach(context);
+//        if (context instanceof OnFragmentInteractionListener) {
+//            mListener = (OnFragmentInteractionListener) context;
+//        } else {
+//            throw new RuntimeException(context.toString()
+//                    + " must implement OnFragmentInteractionListener");
+//        }
+//    }
 
     @Override
     public void onDetach() {

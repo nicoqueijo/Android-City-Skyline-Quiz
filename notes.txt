@@ -29,13 +29,9 @@ https://api.myjson.com/bins/1a5vld
 -change xml attributes (left -> start), (right -> end) to support arabic
 -make all activities portrait in the manifest
 -group common statements in methods for modularity
-
-
-// DO NEXT
--Put custom fonts in all activity actionbars
+-Put custom fonts (Material design) in all activity actionbars
 	http://www.tristanwaddington.com/2013/03/styling-the-android-action-bar-with-a-custom-font/
 		Use Typeface class from Base Converter project
-
 
 // TESTING
 -Assure layouts are good on Arabic (left/start right/end)
@@ -48,3 +44,9 @@ https://api.myjson.com/bins/1a5vld
 // ALTERNATIVE TO CORRECT/INCORRECT MARKS ON CHOICES
 linearLayout.setEnabled(false);
 linearLayout.setAlpha(0.5f);
+
+// QUIZ GAME ARCHITECTURE
+-Quiz game will run on a fragment hosted on an activity
+-When quiz is over (time expried OR correct answers match amount of questions)
+	-Replace fragment with a game report fragment (don't add game to backstack)
+-If user chooses to see report detail replace game report fragment with report detail (don't add game report to backstack)
