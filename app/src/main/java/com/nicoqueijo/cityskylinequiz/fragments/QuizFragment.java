@@ -12,7 +12,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
+import com.nicoqueijo.cityskylinequiz.activities.QuizGameActivity;
+import com.nicoqueijo.cityskylinequiz.helpers.ResourceByNameRetriever;
 import com.nicoqueijo.cityskylinequiz.models.Question;
+import com.squareup.picasso.Picasso;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -142,7 +145,18 @@ public class QuizFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        Log.v("fragment", "onStart called");
+
+        Picasso.with(getActivity()).load(QuizGameActivity.mQuestions.peek().getCorrectChoice().getImageUrl()).into(mCityImage);
+
+        mCityNameChoice1.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.mQuestions.peek().getChoice1().getCityName(), getActivity()));
+        mCityNameChoice2.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.mQuestions.peek().getChoice2().getCityName(), getActivity()));
+        mCityNameChoice3.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.mQuestions.peek().getChoice3().getCityName(), getActivity()));
+        mCityNameChoice4.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.mQuestions.peek().getChoice4().getCityName(), getActivity()));
+
+        mFlagChoice1.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.mQuestions.peek().getChoice1().getCountryName(), getActivity()));
+        mFlagChoice2.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.mQuestions.peek().getChoice2().getCountryName(), getActivity()));
+        mFlagChoice3.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.mQuestions.peek().getChoice3().getCountryName(), getActivity()));
+        mFlagChoice4.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.mQuestions.peek().getChoice4().getCountryName(), getActivity()));
     }
 
     /**

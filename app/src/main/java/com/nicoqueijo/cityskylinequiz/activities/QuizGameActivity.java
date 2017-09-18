@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.models.City;
@@ -39,7 +40,7 @@ public class QuizGameActivity extends AppCompatActivity {
     private ActionBar mActionBar;
     private SharedPreferences mSharedPreferences;
     private ArrayList<City> mCities;
-    private Queue<Question> mQuestions;
+    public static Queue<Question> mQuestions;
     private int mGroupPosition;
     private int mChildPosition;
 
@@ -133,6 +134,7 @@ public class QuizGameActivity extends AppCompatActivity {
      * https://stackoverflow.com/a/46104762/5906793
      */
     private void generateQuestions() {
+        Log.v("fragment", "randomizing questions");
         List<City> choices = new ArrayList<>();
         List<City> exclusionList = new ArrayList<>();
         exclusionList.addAll(mCities);
