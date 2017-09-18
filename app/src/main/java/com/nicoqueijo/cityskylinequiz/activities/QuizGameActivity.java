@@ -54,8 +54,8 @@ public class QuizGameActivity extends AppCompatActivity {
         mActionBar.setIcon(R.drawable.ic_light_game);
         mActionBar.setTitle(R.string.actionbar_play_game);
 
-        FragmentManager mFragmentManager = getSupportFragmentManager();
-        QuizFragment mQuizFragment = (QuizFragment) mFragmentManager.findFragmentById(R.id.quizFragment);
+        //FragmentManager mFragmentManager = getSupportFragmentManager();
+
 
         Intent intentQuizGame = getIntent();
         mGroupPosition = intentQuizGame.getIntExtra("parentMode", QuizMenuActivity.PARENT_MODE_UNTIMED);
@@ -65,6 +65,9 @@ public class QuizGameActivity extends AppCompatActivity {
         Collections.shuffle(mCities);
         mQuestions = new LinkedList<>();
         generateQuestions();
+
+        QuizFragment mQuizFragment = (QuizFragment) getSupportFragmentManager().
+                findFragmentById(R.id.quizFragment);
 
         switch (mGroupPosition) {
             case (QuizMenuActivity.PARENT_MODE_TIMED):
