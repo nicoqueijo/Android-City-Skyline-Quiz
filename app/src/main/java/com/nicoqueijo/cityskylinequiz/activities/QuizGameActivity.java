@@ -4,8 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
@@ -71,13 +71,11 @@ public class QuizGameActivity extends AppCompatActivity {
         bundle.putInt("child", mChildPosition);
 
         FragmentManager mFragmentManager = getSupportFragmentManager();
-        Fragment mQuizFragment = mFragmentManager.findFragmentById(R.id.quizFragment);
-        mQuizFragment.setArguments(bundle);
-        mFragmentManager.beginTransaction().add(R.id.quizFragment, mQuizFragment).commit();
-
-//        QuizFragment mQuizFragment = (QuizFragment) mFragmentManager.
-//                findFragmentById(R.id.quizFragment);
-//        mQuizFragment.setArguments(bundle);
+        FragmentTransaction mTransaction = mFragmentManager.beginTransaction();
+        //mQuizFragment.passQuestionsAndGameMode(mQuestions, mGroupPosition, mChildPosition);
+        //mQuizFragment.setArguments(bundle);
+//        mTransaction.add(R.id.quizFragment, new QuizFragment());
+//        mTransaction.commit();
 
         switch (mGroupPosition) {
             case (QuizMenuActivity.PARENT_MODE_TIMED):

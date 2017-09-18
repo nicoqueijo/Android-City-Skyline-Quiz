@@ -8,6 +8,7 @@ import java.util.List;
 /**
  * The model class for each question object. Each question has four possible choices, one of those
  * being the correct choice. Each of those choices is represented by a City object.
+ *
  * Serializable must be implemented in order to pass Question objects between intents.
  */
 public class Question implements Serializable {

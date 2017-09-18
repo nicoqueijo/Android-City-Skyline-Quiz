@@ -8,6 +8,7 @@ import java.io.Serializable;
  * a URL to fetch its Wikipedia article. There are two additional fields to store the city and country
  * name in the language the application is running on. This is used to properly sort the objects by
  * city or country name.
+ *
  * Serializable must be implemented in order to pass City objects between intents.
  */
 public class City implements Serializable {

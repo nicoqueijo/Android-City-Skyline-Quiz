@@ -3,6 +3,7 @@ package com.nicoqueijo.cityskylinequiz.fragments;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,11 +14,12 @@ import android.widget.TextView;
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.models.Question;
 
+import java.util.LinkedList;
 import java.util.Queue;
 
 public class QuizFragment extends Fragment {
 
-    private Queue<Question> mQuestions;
+    private Queue<Question> mQuestions = new LinkedList<>();
     private int mGroupPosition;
     private int mChildPosition;
 
@@ -84,15 +86,11 @@ public class QuizFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_quiz, container, false);
 
+        Log.v("fragment", "onCreateView called");
+
 //        mQuestions = (Queue<Question>) this.getArguments().getSerializable("questions");
 //        mGroupPosition = this.getArguments().getInt("group");
 //        mChildPosition = this.getArguments().getInt("child");
-//
-//        Log.v("fragment", mGroupPosition + "");
-//        Log.v("fragment", mChildPosition + "");
-//        for (Question question : mQuestions) {
-//            Log.v("fragment", question.getCorrectChoice().getCityNameInCurrentLanguage());
-//        }
 
         mCityImage = (ImageView) view.findViewById(R.id.city_image);
 
@@ -141,6 +139,12 @@ public class QuizFragment extends Fragment {
         mListener = null;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        Log.v("fragment", "onStart called");
+    }
+
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -150,5 +154,14 @@ public class QuizFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    public void passQuestionsAndGameMode(Queue<Question> questions, int group, int child) {
+        Log.v("fragment", "passQuestions called");
+        for (Question question : questions) {
+            mQuestions.add(question);
+        }
+        mGroupPosition = group;
+        mChildPosition = child;
     }
 }
