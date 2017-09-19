@@ -14,13 +14,16 @@ import android.widget.TextView;
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.activities.QuizGameActivity;
 import com.nicoqueijo.cityskylinequiz.helpers.ResourceByNameRetriever;
+import com.nicoqueijo.cityskylinequiz.models.City;
 import com.nicoqueijo.cityskylinequiz.models.Question;
 import com.squareup.picasso.Picasso;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class QuizFragment extends Fragment {
+public class QuizFragment extends Fragment implements View.OnClickListener {
+
+    public static final String QUIZ_FRAGMENT = "QUIZ";
 
     private Queue<Question> mQuestions = new LinkedList<>();
     private int mGroupPosition;
@@ -122,6 +125,11 @@ public class QuizFragment extends Fragment {
         mIncorrectMarkChoice3 = (ImageView) view.findViewById(R.id.incorrect_mark_choice_three);
         mIncorrectMarkChoice4 = (ImageView) view.findViewById(R.id.incorrect_mark_choice_four);
 
+        mContainerChoice1.setOnClickListener(this);
+        mContainerChoice2.setOnClickListener(this);
+        mContainerChoice3.setOnClickListener(this);
+        mContainerChoice4.setOnClickListener(this);
+
         return view;
     }
 
@@ -146,6 +154,7 @@ public class QuizFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
+        // TESTING REMOVE LATER
         Picasso.with(getActivity()).load(QuizGameActivity.mQuestions.peek().getCorrectChoice().getImageUrl()).into(mCityImage);
 
         mCityNameChoice1.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.mQuestions.peek().getChoice1().getCityName(), getActivity()));
@@ -157,6 +166,37 @@ public class QuizFragment extends Fragment {
         mFlagChoice2.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.mQuestions.peek().getChoice2().getCountryName(), getActivity()));
         mFlagChoice3.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.mQuestions.peek().getChoice3().getCountryName(), getActivity()));
         mFlagChoice4.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.mQuestions.peek().getChoice4().getCountryName(), getActivity()));
+    }
+
+    /**
+     * Called when a view has been clicked.
+     *
+     * @param v The view that was clicked.
+     */
+    @Override
+    public void onClick(View v) {
+        // TESTING, REMOVE LATER
+        LinearLayout choicePress = (LinearLayout) v;
+        Question question = QuizGameActivity.mQuestions.peek();
+        City guess = null;
+        int choiceIndex = 0;
+        if (choicePress == mContainerChoice1) {
+            guess = question.getChoice1();
+        } else if (choicePress == mContainerChoice2) {
+            guess = question.getChoice2();
+        } else if (choicePress == mContainerChoice3) {
+            guess = question.getChoice3();
+        } else if (choicePress == mContainerChoice4) {
+            guess = question.getChoice4();
+        }
+
+        if (guess.getCityName().equals(question.getCorrectChoice().getCityName())) {
+            Log.v(QUIZ_FRAGMENT, "Correct!");
+        } else {
+            Log.v(QUIZ_FRAGMENT, "Incorrect...");
+            choicePress.setEnabled(false);
+            choicePress.setAlpha(0.5f);
+        }
     }
 
     /**
