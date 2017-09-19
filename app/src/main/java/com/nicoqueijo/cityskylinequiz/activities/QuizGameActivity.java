@@ -40,7 +40,7 @@ public class QuizGameActivity extends AppCompatActivity {
     private ActionBar mActionBar;
     private SharedPreferences mSharedPreferences;
     private ArrayList<City> mCities;
-    public static Queue<Question> mQuestions;
+    public static Queue<Question> questions;
     private int mGroupPosition;
     private int mChildPosition;
 
@@ -62,18 +62,18 @@ public class QuizGameActivity extends AppCompatActivity {
 
         mCities = (ArrayList<City>) MainMenuActivity.cities;
         Collections.shuffle(mCities);
-        mQuestions = new LinkedList<>();
+        questions = new LinkedList<>();
         generateQuestions();
 
         Bundle bundle = new Bundle();
 
-        bundle.putSerializable("questions", (Serializable) mQuestions);
+        bundle.putSerializable("questions", (Serializable) questions);
         bundle.putInt("group", mGroupPosition);
         bundle.putInt("child", mChildPosition);
 
         FragmentManager mFragmentManager = getSupportFragmentManager();
         FragmentTransaction mTransaction = mFragmentManager.beginTransaction();
-        //mQuizFragment.passQuestionsAndGameMode(mQuestions, mGroupPosition, mChildPosition);
+        //mQuizFragment.passQuestionsAndGameMode(questions, mGroupPosition, mChildPosition);
         //mQuizFragment.setArguments(bundle);
 //        mTransaction.add(R.id.quizFragment, new QuizFragment());
 //        mTransaction.commit();
@@ -145,7 +145,7 @@ public class QuizGameActivity extends AppCompatActivity {
             choices.add(city);
             choices.addAll(exclusionList.subList(0, 3));
             Collections.shuffle(choices.subList(1, 5));
-            mQuestions.add(new Question(choices));
+            questions.add(new Question(choices));
             choices.clear();
             exclusionList.add(city);
         }

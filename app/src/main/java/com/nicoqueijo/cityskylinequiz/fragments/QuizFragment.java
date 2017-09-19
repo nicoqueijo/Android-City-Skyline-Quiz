@@ -18,14 +18,12 @@ import com.nicoqueijo.cityskylinequiz.models.City;
 import com.nicoqueijo.cityskylinequiz.models.Question;
 import com.squareup.picasso.Picasso;
 
-import java.util.LinkedList;
 import java.util.Queue;
 
 public class QuizFragment extends Fragment implements View.OnClickListener {
 
     public static final String QUIZ_FRAGMENT = "QUIZ";
 
-    private Queue<Question> mQuestions = new LinkedList<>();
     private int mGroupPosition;
     private int mChildPosition;
 
@@ -94,7 +92,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
 
         Log.v("fragment", "onCreateView called");
 
-//        mQuestions = (Queue<Question>) this.getArguments().getSerializable("questions");
+//        questions = (Queue<Question>) this.getArguments().getSerializable("questions");
 //        mGroupPosition = this.getArguments().getInt("group");
 //        mChildPosition = this.getArguments().getInt("child");
 
@@ -155,17 +153,17 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         super.onStart();
 
         // TESTING REMOVE LATER
-        Picasso.with(getActivity()).load(QuizGameActivity.mQuestions.peek().getCorrectChoice().getImageUrl()).into(mCityImage);
+        Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice().getImageUrl()).into(mCityImage);
 
-        mCityNameChoice1.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.mQuestions.peek().getChoice1().getCityName(), getActivity()));
-        mCityNameChoice2.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.mQuestions.peek().getChoice2().getCityName(), getActivity()));
-        mCityNameChoice3.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.mQuestions.peek().getChoice3().getCityName(), getActivity()));
-        mCityNameChoice4.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.mQuestions.peek().getChoice4().getCityName(), getActivity()));
+        mCityNameChoice1.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.questions.peek().getChoice1().getCityName(), getActivity()));
+        mCityNameChoice2.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.questions.peek().getChoice2().getCityName(), getActivity()));
+        mCityNameChoice3.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.questions.peek().getChoice3().getCityName(), getActivity()));
+        mCityNameChoice4.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.questions.peek().getChoice4().getCityName(), getActivity()));
 
-        mFlagChoice1.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.mQuestions.peek().getChoice1().getCountryName(), getActivity()));
-        mFlagChoice2.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.mQuestions.peek().getChoice2().getCountryName(), getActivity()));
-        mFlagChoice3.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.mQuestions.peek().getChoice3().getCountryName(), getActivity()));
-        mFlagChoice4.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.mQuestions.peek().getChoice4().getCountryName(), getActivity()));
+        mFlagChoice1.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.questions.peek().getChoice1().getCountryName(), getActivity()));
+        mFlagChoice2.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.questions.peek().getChoice2().getCountryName(), getActivity()));
+        mFlagChoice3.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.questions.peek().getChoice3().getCountryName(), getActivity()));
+        mFlagChoice4.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.questions.peek().getChoice4().getCountryName(), getActivity()));
     }
 
     /**
@@ -177,7 +175,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         // TESTING, REMOVE LATER
         LinearLayout choicePress = (LinearLayout) v;
-        Question question = QuizGameActivity.mQuestions.peek();
+        Question question = QuizGameActivity.questions.peek();
         City guess = null;
         int choiceIndex = 0;
         if (choicePress == mContainerChoice1) {
@@ -211,10 +209,6 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     }
 
     public void passQuestionsAndGameMode(Queue<Question> questions, int group, int child) {
-        Log.v("fragment", "passQuestions called");
-        for (Question question : questions) {
-            mQuestions.add(question);
-        }
         mGroupPosition = group;
         mChildPosition = child;
     }
