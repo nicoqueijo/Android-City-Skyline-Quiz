@@ -11,8 +11,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.nicoqueijo.cityskylinequiz.R;
+import com.nicoqueijo.cityskylinequiz.fragments.QuizFragment;
 import com.nicoqueijo.cityskylinequiz.models.City;
 import com.nicoqueijo.cityskylinequiz.models.Question;
+import com.squareup.picasso.Picasso;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -26,6 +28,8 @@ import java.util.Queue;
  */
 public class QuizGameActivity extends AppCompatActivity {
 
+    private final String LOG_V_QUIZ_GAME_ACTIVITY = "QuizGameActivity";
+
     public static final int CORRECT_CHOICE = 0;
     public static final int CHOICE_1 = 1;
     public static final int CHOICE_2 = 2;
@@ -37,10 +41,11 @@ public class QuizGameActivity extends AppCompatActivity {
     public static final int TWENTY_QUESTIONS = 20;
     public static final int FIFTY_QUESTIONS = 50;
 
+    public static Queue<Question> questions;
+
     private ActionBar mActionBar;
     private SharedPreferences mSharedPreferences;
     private ArrayList<City> mCities;
-    public static Queue<Question> questions;
     private int mGroupPosition;
     private int mChildPosition;
 
@@ -64,19 +69,19 @@ public class QuizGameActivity extends AppCompatActivity {
         Collections.shuffle(mCities);
         questions = new LinkedList<>();
         generateQuestions();
+        Picasso.with(QuizGameActivity.this).load(questions.peek().getCorrectChoice().getImageUrl())
+                .fetch();
 
+        // THIS MIGHT BE USELESS
         Bundle bundle = new Bundle();
-
         bundle.putSerializable("questions", (Serializable) questions);
         bundle.putInt("group", mGroupPosition);
         bundle.putInt("child", mChildPosition);
 
         FragmentManager mFragmentManager = getSupportFragmentManager();
         FragmentTransaction mTransaction = mFragmentManager.beginTransaction();
-        //mQuizFragment.passQuestionsAndGameMode(questions, mGroupPosition, mChildPosition);
-        //mQuizFragment.setArguments(bundle);
-//        mTransaction.add(R.id.quizFragment, new QuizFragment());
-//        mTransaction.commit();
+        mTransaction.add(R.id.quiz_fragment_container, new QuizFragment(), "quizFragment");
+        mTransaction.commit();
 
         switch (mGroupPosition) {
             case (QuizMenuActivity.PARENT_MODE_TIMED):
@@ -134,7 +139,7 @@ public class QuizGameActivity extends AppCompatActivity {
      * https://stackoverflow.com/a/46104762/5906793
      */
     private void generateQuestions() {
-        Log.v("fragment", "randomizing questions");
+        Log.v("callorder", "generateQuestions() called");
         List<City> choices = new ArrayList<>();
         List<City> exclusionList = new ArrayList<>();
         exclusionList.addAll(mCities);

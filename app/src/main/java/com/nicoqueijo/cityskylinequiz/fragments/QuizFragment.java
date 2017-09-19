@@ -3,7 +3,6 @@ package com.nicoqueijo.cityskylinequiz.fragments;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,11 +18,9 @@ import com.nicoqueijo.cityskylinequiz.models.City;
 import com.nicoqueijo.cityskylinequiz.models.Question;
 import com.squareup.picasso.Picasso;
 
-import java.util.Queue;
-
 public class QuizFragment extends Fragment implements View.OnClickListener {
 
-    public static final String QUIZ_FRAGMENT = "QUIZ";
+    private final String LOG_V_QUIZ_FRAGMENT = "QuizFragment";
 
     private int mGroupPosition;
     private int mChildPosition;
@@ -83,9 +80,6 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_quiz, container, false);
 
-        Log.v("fragment", "onCreateView called");
-
-//        questions = (Queue<Question>) this.getArguments().getSerializable("questions");
 //        mGroupPosition = this.getArguments().getInt("group");
 //        mChildPosition = this.getArguments().getInt("child");
 
@@ -139,7 +133,6 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onStart() {
         super.onStart();
-
         // TESTING REMOVE LATER
         Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice().getImageUrl()).into(mCityImage);
 
@@ -180,7 +173,6 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
             mFeedback.setTextColor(getResources().getColor(R.color.green));
             mFeedback.setText(getResources().getString(R.string.correct));
         } else {
-            Log.v(QUIZ_FRAGMENT, "Incorrect...");
             choicePress.setEnabled(false);
             choicePress.setAlpha(0.5f);
             mFeedback.setTextColor(getResources().getColor(R.color.red));
@@ -199,7 +191,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         void onFragmentInteraction(Uri uri);
     }
 
-    public void passQuestionsAndGameMode(Queue<Question> questions, int group, int child) {
+    public void passGameMode( int group, int child) {
         mGroupPosition = group;
         mChildPosition = child;
     }

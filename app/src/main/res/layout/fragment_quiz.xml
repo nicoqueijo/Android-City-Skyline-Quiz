@@ -6,29 +6,21 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/questionNumberTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:paddingBottom="16dp"
-        tools:text="Question 1 of 10 / Time left" />
-
     <ImageView
         android:id="@+id/city_image"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:adjustViewBounds="true"
         android:background="@drawable/round_outline"
-        android:paddingBottom="16dp"
+        android:layout_marginBottom="12dp"
         android:scaleType="fitXY"
         tools:src="@drawable/los_angeles" />
 
     <LinearLayout
         android:id="@+id/answer_choices_row_one"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="4dp"
         android:orientation="horizontal">
 
@@ -113,7 +105,7 @@
     <LinearLayout
         android:id="@+id/answer_choices_row_two"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:layout_marginTop="4dp"
         android:orientation="horizontal">
 
@@ -197,11 +189,12 @@
 
     <TextView
         android:id="@+id/feedback"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:layout_margin="16dp"
-        android:textSize="32sp"
+        android:gravity="center"
+        android:textSize="38dp"
+        android:textStyle="bold"
         tools:text="@string/correct"
         tools:textColor="@color/green" />
 
