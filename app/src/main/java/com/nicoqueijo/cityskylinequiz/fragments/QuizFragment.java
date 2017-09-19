@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.activities.QuizGameActivity;
+import com.nicoqueijo.cityskylinequiz.helpers.CornerRounder;
 import com.nicoqueijo.cityskylinequiz.helpers.ResourceByNameRetriever;
 import com.nicoqueijo.cityskylinequiz.models.City;
 import com.nicoqueijo.cityskylinequiz.models.Question;
@@ -44,15 +45,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     private TextView mCityNameChoice3;
     private TextView mCityNameChoice4;
 
-    private ImageView mCorrectMarkChoice1;
-    private ImageView mCorrectMarkChoice2;
-    private ImageView mCorrectMarkChoice3;
-    private ImageView mCorrectMarkChoice4;
-
-    private ImageView mIncorrectMarkChoice1;
-    private ImageView mIncorrectMarkChoice2;
-    private ImageView mIncorrectMarkChoice3;
-    private ImageView mIncorrectMarkChoice4;
+    private TextView mFeedback;
 
     private OnFragmentInteractionListener mListener;
 
@@ -113,20 +106,15 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         mCityNameChoice3 = (TextView) view.findViewById(R.id.city_name_choice_three);
         mCityNameChoice4 = (TextView) view.findViewById(R.id.city_name_choice_four);
 
-        mCorrectMarkChoice1 = (ImageView) view.findViewById(R.id.correct_mark_choice_one);
-        mCorrectMarkChoice2 = (ImageView) view.findViewById(R.id.correct_mark_choice_two);
-        mCorrectMarkChoice3 = (ImageView) view.findViewById(R.id.correct_mark_choice_three);
-        mCorrectMarkChoice4 = (ImageView) view.findViewById(R.id.correct_mark_choice_four);
-
-        mIncorrectMarkChoice1 = (ImageView) view.findViewById(R.id.incorrect_mark_choice_one);
-        mIncorrectMarkChoice2 = (ImageView) view.findViewById(R.id.incorrect_mark_choice_two);
-        mIncorrectMarkChoice3 = (ImageView) view.findViewById(R.id.incorrect_mark_choice_three);
-        mIncorrectMarkChoice4 = (ImageView) view.findViewById(R.id.incorrect_mark_choice_four);
+        mFeedback = (TextView) view.findViewById(R.id.feedback);
 
         mContainerChoice1.setOnClickListener(this);
         mContainerChoice2.setOnClickListener(this);
         mContainerChoice3.setOnClickListener(this);
         mContainerChoice4.setOnClickListener(this);
+
+        CornerRounder.roundImageCorners(mCityImage, mFlagChoice1, mFlagChoice2, mFlagChoice3,
+                mFlagChoice4);
 
         return view;
     }
@@ -177,7 +165,6 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         LinearLayout choicePress = (LinearLayout) v;
         Question question = QuizGameActivity.questions.peek();
         City guess = null;
-        int choiceIndex = 0;
         if (choicePress == mContainerChoice1) {
             guess = question.getChoice1();
         } else if (choicePress == mContainerChoice2) {
@@ -189,11 +176,15 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         }
 
         if (guess.getCityName().equals(question.getCorrectChoice().getCityName())) {
-            Log.v(QUIZ_FRAGMENT, "Correct!");
+            choicePress.setEnabled(false);
+            mFeedback.setTextColor(getResources().getColor(R.color.green));
+            mFeedback.setText(getResources().getString(R.string.correct));
         } else {
             Log.v(QUIZ_FRAGMENT, "Incorrect...");
             choicePress.setEnabled(false);
             choicePress.setAlpha(0.5f);
+            mFeedback.setTextColor(getResources().getColor(R.color.red));
+            mFeedback.setText(getResources().getString(R.string.try_again));
         }
     }
 

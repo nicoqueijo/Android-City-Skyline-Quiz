@@ -66,20 +66,6 @@
                     android:textSize="14dp"
                     tools:text="@string/kiev" />
 
-                <ImageView
-                    android:id="@+id/correct_mark_choice_one"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/ic_check_black_24dp"
-                    android:visibility="invisible" />
-
-                <ImageView
-                    android:id="@+id/incorrect_mark_choice_one"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/ic_close_black_24dp"
-                    android:visibility="invisible" />
-
             </RelativeLayout>
 
         </LinearLayout>
@@ -117,20 +103,6 @@
                     android:textColor="@color/white"
                     android:textSize="14dp"
                     tools:text="@string/ho_chi_minh_city" />
-
-                <ImageView
-                    android:id="@+id/correct_mark_choice_two"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/ic_check_black_24dp"
-                    android:visibility="invisible" />
-
-                <ImageView
-                    android:id="@+id/incorrect_mark_choice_two"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/ic_close_black_24dp"
-                    android:visibility="invisible" />
 
             </RelativeLayout>
 
@@ -179,20 +151,6 @@
                     android:textSize="14dp"
                     tools:text="@string/los_angeles" />
 
-                <ImageView
-                    android:id="@+id/correct_mark_choice_three"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/ic_check_black_24dp"
-                    android:visibility="invisible" />
-
-                <ImageView
-                    android:id="@+id/incorrect_mark_choice_three"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/ic_close_black_24dp"
-                    android:visibility="invisible" />
-
             </RelativeLayout>
 
         </LinearLayout>
@@ -231,24 +189,20 @@
                     android:textSize="14dp"
                     tools:text="@string/cali" />
 
-                <ImageView
-                    android:id="@+id/correct_mark_choice_four"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/ic_check_black_24dp"
-                    android:visibility="invisible" />
-
-                <ImageView
-                    android:id="@+id/incorrect_mark_choice_four"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/ic_close_black_24dp"
-                    android:visibility="invisible" />
-
             </RelativeLayout>
 
         </LinearLayout>
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:textSize="32sp"
+        tools:text="@string/correct"
+        tools:textColor="@color/green" />
 
 </LinearLayout>

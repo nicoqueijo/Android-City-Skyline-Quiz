@@ -46,6 +46,8 @@
     <string name="every_city">Every city</string>
     <string name="no_faults">No faults</string>
     <string name="faults_allowed">Faults allowed</string>
+    <string name="correct">Correct!</string>
+    <string name="try_again">Try Again</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>
