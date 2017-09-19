@@ -11,9 +11,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
         android:adjustViewBounds="true"
         android:background="@drawable/round_outline"
-        android:layout_marginBottom="12dp"
         android:scaleType="fitXY"
         tools:src="@drawable/los_angeles" />
 
@@ -106,6 +106,7 @@
         android:id="@+id/answer_choices_row_two"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
         android:layout_marginTop="4dp"
         android:orientation="horizontal">
 
@@ -191,7 +192,6 @@
         android:id="@+id/feedback"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
         android:gravity="center"
         android:textSize="38dp"
         android:textStyle="bold"

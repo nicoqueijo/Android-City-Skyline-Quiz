@@ -69,6 +69,7 @@ public class QuizGameActivity extends AppCompatActivity {
         Collections.shuffle(mCities);
         questions = new LinkedList<>();
         generateQuestions();
+
         Picasso.with(QuizGameActivity.this).load(questions.peek().getCorrectChoice().getImageUrl())
                 .fetch();
 

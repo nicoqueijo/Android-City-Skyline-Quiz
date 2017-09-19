@@ -2,6 +2,7 @@ package com.nicoqueijo.cityskylinequiz.fragments;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -124,27 +125,12 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
 //        }
 //    }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
 
     @Override
     public void onStart() {
         super.onStart();
-        // TESTING REMOVE LATER
-        Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice().getImageUrl()).into(mCityImage);
+        loadNextQuestion();
 
-        mCityNameChoice1.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.questions.peek().getChoice1().getCityName(), getActivity()));
-        mCityNameChoice2.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.questions.peek().getChoice2().getCityName(), getActivity()));
-        mCityNameChoice3.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.questions.peek().getChoice3().getCityName(), getActivity()));
-        mCityNameChoice4.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.questions.peek().getChoice4().getCityName(), getActivity()));
-
-        mFlagChoice1.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.questions.peek().getChoice1().getCountryName(), getActivity()));
-        mFlagChoice2.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.questions.peek().getChoice2().getCountryName(), getActivity()));
-        mFlagChoice3.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.questions.peek().getChoice3().getCountryName(), getActivity()));
-        mFlagChoice4.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.questions.peek().getChoice4().getCountryName(), getActivity()));
     }
 
     /**
@@ -169,15 +155,59 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         }
 
         if (guess.getCityName().equals(question.getCorrectChoice().getCityName())) {
-            choicePress.setEnabled(false);
+            mContainerChoice1.setEnabled(false);
+            mContainerChoice2.setEnabled(false);
+            mContainerChoice3.setEnabled(false);
+            mContainerChoice4.setEnabled(false);
             mFeedback.setTextColor(getResources().getColor(R.color.green));
             mFeedback.setText(getResources().getString(R.string.correct));
+
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    QuizGameActivity.questions.remove();
+                    loadNextQuestion();
+                }
+            }, 500);   // 0.5 seconds
+
         } else {
             choicePress.setEnabled(false);
             choicePress.setAlpha(0.5f);
             mFeedback.setTextColor(getResources().getColor(R.color.red));
             mFeedback.setText(getResources().getString(R.string.try_again));
         }
+    }
+
+    private void loadNextQuestion() {
+
+        if (QuizGameActivity.questions.isEmpty()) {
+            // We answered every question
+            // If we remove another NullPointerException
+            // Show game score
+            return;
+        }
+
+        mContainerChoice1.setEnabled(true);
+        mContainerChoice2.setEnabled(true);
+        mContainerChoice3.setEnabled(true);
+        mContainerChoice4.setEnabled(true);
+        mContainerChoice1.setAlpha(1.0f);
+        mContainerChoice2.setAlpha(1.0f);
+        mContainerChoice3.setAlpha(1.0f);
+        mContainerChoice4.setAlpha(1.0f);
+        mFeedback.setText("");
+
+        Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice().getImageUrl()).into(mCityImage);
+
+        mCityNameChoice1.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.questions.peek().getChoice1().getCityName(), getActivity()));
+        mCityNameChoice2.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.questions.peek().getChoice2().getCityName(), getActivity()));
+        mCityNameChoice3.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.questions.peek().getChoice3().getCityName(), getActivity()));
+        mCityNameChoice4.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.questions.peek().getChoice4().getCityName(), getActivity()));
+
+        mFlagChoice1.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.questions.peek().getChoice1().getCountryName(), getActivity()));
+        mFlagChoice2.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.questions.peek().getChoice2().getCountryName(), getActivity()));
+        mFlagChoice3.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.questions.peek().getChoice3().getCountryName(), getActivity()));
+        mFlagChoice4.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.questions.peek().getChoice4().getCountryName(), getActivity()));
     }
 
     /**
@@ -191,7 +221,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         void onFragmentInteraction(Uri uri);
     }
 
-    public void passGameMode( int group, int child) {
+    public void passGameMode(int group, int child) {
         mGroupPosition = group;
         mChildPosition = child;
     }
