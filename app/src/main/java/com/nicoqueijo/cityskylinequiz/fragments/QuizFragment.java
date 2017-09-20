@@ -23,6 +23,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
 
     private final String LOG_V_QUIZ_FRAGMENT = "QuizFragment";
 
+    public static int questionCounter = 10;
     private int mGroupPosition;
     private int mChildPosition;
 
@@ -130,7 +131,6 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     public void onStart() {
         super.onStart();
         loadNextQuestion();
-
     }
 
     /**
@@ -140,8 +140,9 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
      */
     @Override
     public void onClick(View v) {
-        // TESTING, REMOVE LATER
+        // gets the choice that was clicked
         LinearLayout choicePress = (LinearLayout) v;
+
         Question question = QuizGameActivity.questions.peek();
         City guess = null;
         if (choicePress == mContainerChoice1) {
@@ -178,13 +179,20 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        questionCounter = 0;
+    }
+
     private void loadNextQuestion() {
 
-        if (QuizGameActivity.questions.isEmpty()) {
+        questionCounter++;
+        if (questionCounter > 2) {
             // We answered every question
             // If we remove another NullPointerException
             // Show game score
-            return;
+            getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
         }
 
         mContainerChoice1.setEnabled(true);

@@ -32,6 +32,9 @@ https://api.myjson.com/bins/1a5vld
 -Put custom fonts (Material design) in all activity actionbars
 	http://www.tristanwaddington.com/2013/03/styling-the-android-action-bar-with-a-custom-font/
 		Use Typeface class from Base Converter project
+		
+// DO NEXT
+-Assure city image sits on a fixed container and doesn't shift other views when changing image
 
 // TESTING
 -Assure layouts are good on Arabic (left/start right/end)

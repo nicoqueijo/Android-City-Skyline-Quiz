@@ -17,6 +17,17 @@
         android:scaleType="fitXY"
         tools:src="@drawable/los_angeles" />
 
+    <TextView
+        android:id="@+id/feedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:textSize="38dp"
+        android:textStyle="bold"
+        tools:text="@string/correct"
+        tools:textColor="@color/green" />
+
     <LinearLayout
         android:id="@+id/answer_choices_row_one"
         android:layout_width="match_parent"
@@ -106,7 +117,7 @@
         android:id="@+id/answer_choices_row_two"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginTop="4dp"
         android:orientation="horizontal">
 
@@ -188,14 +199,10 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/feedback"
+    <ProgressBar
+        style="@android:style/Widget.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="38dp"
-        android:textStyle="bold"
-        tools:text="@string/correct"
-        tools:textColor="@color/green" />
+        android:progress="50" />
 
 </LinearLayout>
