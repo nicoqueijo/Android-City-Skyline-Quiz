@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
@@ -22,11 +23,13 @@ import com.squareup.picasso.Picasso;
 public class QuizFragment extends Fragment implements View.OnClickListener {
 
     private final String LOG_V_QUIZ_FRAGMENT = "QuizFragment";
+    private final int PROGRESS_BAR_MULTIPLIER = 10;
 
     public static int questionCounter = 0;
     private int attemptNumber = 0;
     private int mGroupPosition;
     private int mChildPosition;
+    private Handler handler = new Handler();
 
     private ImageView mCityImage;
 
@@ -46,6 +49,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     private TextView mCityNameChoice4;
 
     private TextView mFeedback;
+    private ProgressBar mProgressBar;
 
     private OnFragmentInteractionListener mListener;
 
@@ -104,6 +108,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         mCityNameChoice4 = (TextView) view.findViewById(R.id.city_name_choice_four);
 
         mFeedback = (TextView) view.findViewById(R.id.feedback);
+        mProgressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
 
         mContainerChoice1.setOnClickListener(this);
         mContainerChoice2.setOnClickListener(this);
@@ -165,7 +170,6 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
             mFeedback.setTextColor(getResources().getColor(R.color.green));
             mFeedback.setText(getResources().getString(R.string.correct));
 
-            Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 public void run() {
                     QuizGameActivity.questions.remove();
@@ -201,6 +205,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
 
     private void loadNextQuestion() {
 
+        mProgressBar.setProgress(questionCounter * PROGRESS_BAR_MULTIPLIER);
         questionCounter++;
         if (questionCounter > 10) {
             // We answered every question
