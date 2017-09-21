@@ -29,17 +29,6 @@
         android:layout_weight="808"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/feedback"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"
-            android:textSize="38dp"
-            android:textStyle="bold"
-            tools:text="@string/correct"
-            tools:textColor="@color/green" />
-
         <LinearLayout
             android:id="@+id/answer_choices_row_one"
             android:layout_width="match_parent"
@@ -129,7 +118,7 @@
             android:id="@+id/answer_choices_row_two"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="16dp"
             android:layout_marginTop="4dp"
             android:orientation="horizontal">
 
@@ -216,7 +205,18 @@
             style="@android:style/Widget.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:progress="0" />
+
+        <TextView
+            android:id="@+id/feedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            tools:text="@string/correct"
+            tools:textColor="@color/green" />
 
     </LinearLayout>
 
