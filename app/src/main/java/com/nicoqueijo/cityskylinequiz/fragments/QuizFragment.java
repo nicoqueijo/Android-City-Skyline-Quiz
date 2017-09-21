@@ -23,7 +23,8 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
 
     private final String LOG_V_QUIZ_FRAGMENT = "QuizFragment";
 
-    public static int questionCounter = 10;
+    public static int questionCounter = 0;
+    private int attemptNumber = 0;
     private int mGroupPosition;
     private int mChildPosition;
 
@@ -156,6 +157,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         }
 
         if (guess.getCityName().equals(question.getCorrectChoice().getCityName())) {
+            attemptNumber = 0;
             mContainerChoice1.setEnabled(false);
             mContainerChoice2.setEnabled(false);
             mContainerChoice3.setEnabled(false);
@@ -174,8 +176,20 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         } else {
             choicePress.setEnabled(false);
             choicePress.setAlpha(0.5f);
+            Handler handler = new Handler();
+            mFeedback.setVisibility(View.INVISIBLE);
             mFeedback.setTextColor(getResources().getColor(R.color.red));
             mFeedback.setText(getResources().getString(R.string.try_again));
+            if (attemptNumber > 0) {
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        mFeedback.setVisibility(View.VISIBLE);
+                    }
+                }, 100);   // 0.5 seconds
+            } else {
+                mFeedback.setVisibility(View.VISIBLE);
+            }
+            attemptNumber++;
         }
     }
 
@@ -188,7 +202,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     private void loadNextQuestion() {
 
         questionCounter++;
-        if (questionCounter > 2) {
+        if (questionCounter > 10) {
             // We answered every question
             // If we remove another NullPointerException
             // Show game score

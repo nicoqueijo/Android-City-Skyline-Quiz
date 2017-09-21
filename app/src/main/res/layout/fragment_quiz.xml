@@ -6,203 +6,217 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <ImageView
-        android:id="@+id/city_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_marginBottom="16dp"
-        android:adjustViewBounds="true"
-        android:background="@drawable/round_outline"
-        android:scaleType="fitXY"
-        tools:src="@drawable/los_angeles" />
+        android:layout_weight="1112">
 
-    <TextView
-        android:id="@+id/feedback"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:gravity="center"
-        android:textSize="38dp"
-        android:textStyle="bold"
-        tools:text="@string/correct"
-        tools:textColor="@color/green" />
+        <ImageView
+            android:id="@+id/city_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/round_outline"
+            android:scaleType="fitXY"
+            tools:src="@drawable/los_angeles" />
+
+    </RelativeLayout>
 
     <LinearLayout
-        android:id="@+id/answer_choices_row_one"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginBottom="4dp"
-        android:orientation="horizontal">
+        android:layout_height="0dp"
+        android:layout_weight="808"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/feedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:textSize="38dp"
+            android:textStyle="bold"
+            tools:text="@string/correct"
+            tools:textColor="@color/green" />
 
         <LinearLayout
-            android:id="@+id/answer_choice_one"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginRight="4dp"
-            android:layout_weight="1"
-            android:background="@drawable/round_outline_answer_choice"
+            android:id="@+id/answer_choices_row_one"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="4dp"
             android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/flag_choice_one"
-                android:layout_width="40dp"
-                android:layout_height="29dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:background="@drawable/round_outline"
-                android:scaleType="fitXY"
-                tools:src="@drawable/ukraine" />
+            <LinearLayout
+                android:id="@+id/answer_choice_one"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_outline_answer_choice"
+                android:orientation="horizontal">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/flag_choice_one"
+                    android:layout_width="40dp"
+                    android:layout_height="29dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_outline"
+                    android:scaleType="fitXY"
+                    tools:src="@drawable/ukraine" />
 
-                <TextView
-                    android:id="@+id/city_name_choice_one"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:textAllCaps="true"
-                    android:textColor="@color/white"
-                    android:textSize="14dp"
-                    tools:text="@string/kiev" />
+                    android:layout_height="match_parent">
 
-            </RelativeLayout>
+                    <TextView
+                        android:id="@+id/city_name_choice_one"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="14dp"
+                        tools:text="@string/kiev" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/answer_choice_two"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_outline_answer_choice"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/flag_choice_two"
+                    android:layout_width="40dp"
+                    android:layout_height="29dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_outline"
+                    android:scaleType="fitXY"
+                    tools:src="@drawable/vietnam" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/city_name_choice_two"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="14dp"
+                        tools:text="@string/ho_chi_minh_city" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/answer_choice_two"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="4dp"
-            android:layout_weight="1"
-            android:background="@drawable/round_outline_answer_choice"
+            android:id="@+id/answer_choices_row_two"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="4dp"
             android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/flag_choice_two"
-                android:layout_width="40dp"
-                android:layout_height="29dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:background="@drawable/round_outline"
-                android:scaleType="fitXY"
-                tools:src="@drawable/vietnam" />
+            <LinearLayout
+                android:id="@+id/answer_choice_three"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_outline_answer_choice"
+                android:orientation="horizontal">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/flag_choice_three"
+                    android:layout_width="40dp"
+                    android:layout_height="29dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_outline"
+                    android:scaleType="fitXY"
+                    tools:src="@drawable/united_states" />
 
-                <TextView
-                    android:id="@+id/city_name_choice_two"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:textAllCaps="true"
-                    android:textColor="@color/white"
-                    android:textSize="14dp"
-                    tools:text="@string/ho_chi_minh_city" />
+                    android:layout_height="match_parent">
 
-            </RelativeLayout>
+                    <TextView
+                        android:id="@+id/city_name_choice_three"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="14dp"
+                        tools:text="@string/los_angeles" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/answer_choice_four"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_outline_answer_choice"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/flag_choice_four"
+                    android:layout_width="40dp"
+                    android:layout_height="29dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_outline"
+                    android:scaleType="fitXY"
+                    tools:src="@drawable/colombia" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/city_name_choice_four"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="14dp"
+                        tools:text="@string/cali" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
+
+        <ProgressBar
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="50" />
 
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/answer_choices_row_two"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:id="@+id/answer_choice_three"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginRight="4dp"
-            android:layout_weight="1"
-            android:background="@drawable/round_outline_answer_choice"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/flag_choice_three"
-                android:layout_width="40dp"
-                android:layout_height="29dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:background="@drawable/round_outline"
-                android:scaleType="fitXY"
-                tools:src="@drawable/united_states" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/city_name_choice_three"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:textAllCaps="true"
-                    android:textColor="@color/white"
-                    android:textSize="14dp"
-                    tools:text="@string/los_angeles" />
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/answer_choice_four"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="4dp"
-            android:layout_weight="1"
-            android:background="@drawable/round_outline_answer_choice"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/flag_choice_four"
-                android:layout_width="40dp"
-                android:layout_height="29dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:background="@drawable/round_outline"
-                android:scaleType="fitXY"
-                tools:src="@drawable/colombia" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/city_name_choice_four"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:textAllCaps="true"
-                    android:textColor="@color/white"
-                    android:textSize="14dp"
-                    tools:text="@string/cali" />
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <ProgressBar
-        style="@android:style/Widget.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:progress="50" />
 
 </LinearLayout>
