@@ -3,7 +3,6 @@ package com.nicoqueijo.cityskylinequiz.fragments;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,9 +22,7 @@ import com.squareup.picasso.Picasso;
 public class QuizFragmentUntimed extends Fragment implements View.OnClickListener {
 
     public static int questionCounter = 0;
-    // to be changed accordingly
-    private final int PROGRESS_BAR_MULTIPLIER = 10;
-
+    private int mProgressBarMultiplier;
     private Question mCurrentQuestion;
     private int mAttemptNumber = 0;
     private int mChildPosition;
@@ -71,6 +68,17 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
         View view = inflater.inflate(R.layout.fragment_quiz, container, false);
 
         mChildPosition = getArguments().getInt("child");
+        switch (mChildPosition) {
+            case 0:
+                mProgressBarMultiplier = 10;
+                break;
+            case 1:
+                mProgressBarMultiplier = 5;
+                break;
+            case 2:
+                mProgressBarMultiplier = 2;
+                break;
+        }
 
         mCityImage = (ImageView) view.findViewById(R.id.city_image);
         mContainerChoice1 = (LinearLayout) view.findViewById(R.id.answer_choice_one);
@@ -103,7 +111,6 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
     public void onStart() {
         super.onStart();
         loadNextQuestion();
-        Log.v("fragment", "Untimed " + mChildPosition);
     }
 
     /**
@@ -173,8 +180,10 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
 
     private void loadNextQuestion() {
         mCurrentQuestion = QuizGameActivity.questions.remove();
-        mProgressBar.setProgress(questionCounter * PROGRESS_BAR_MULTIPLIER);
+        mProgressBar.setProgress(questionCounter * mProgressBarMultiplier);
         questionCounter++;
+
+        // CHANGE THIS TO APPLY TO THIS GAME MODE
         if (questionCounter > 10) {
             // We answered every question
             // If we remove another NullPointerException

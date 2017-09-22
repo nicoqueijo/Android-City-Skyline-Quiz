@@ -3,7 +3,6 @@ package com.nicoqueijo.cityskylinequiz.fragments;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,9 +22,7 @@ import com.squareup.picasso.Picasso;
 public class QuizFragmentEveryCity extends Fragment implements View.OnClickListener {
 
     public static int questionCounter = 0;
-    // to be changed accordingly
-    private final int PROGRESS_BAR_MULTIPLIER = 10;
-
+    private boolean mNoFaults;
     private Question mCurrentQuestion;
     private int mAttemptNumber = 0;
     private int mChildPosition;
@@ -67,6 +64,14 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
         View view = inflater.inflate(R.layout.fragment_quiz, container, false);
 
         mChildPosition = getArguments().getInt("child");
+        switch (mChildPosition) {
+            case 0:
+                mNoFaults = true;
+                break;
+            case 1:
+                mNoFaults = false;
+                break;
+        }
 
         mCityImage = (ImageView) view.findViewById(R.id.city_image);
         mContainerChoice1 = (LinearLayout) view.findViewById(R.id.answer_choice_one);
@@ -99,7 +104,6 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
     public void onStart() {
         super.onStart();
         loadNextQuestion();
-        Log.v("fragment", "EveryCity " + mChildPosition);
     }
 
     /**
@@ -169,8 +173,10 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
 
     private void loadNextQuestion() {
         mCurrentQuestion = QuizGameActivity.questions.remove();
-        mProgressBar.setProgress(questionCounter * PROGRESS_BAR_MULTIPLIER);
+        mProgressBar.setProgress(questionCounter);
         questionCounter++;
+
+        // CHANGE THIS TO APPLY TO THIS GAME MODE
         if (questionCounter > 10) {
             // We answered every question
             // If we remove another NullPointerException
