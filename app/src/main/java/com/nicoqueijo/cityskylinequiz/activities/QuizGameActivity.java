@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
@@ -11,12 +12,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.nicoqueijo.cityskylinequiz.R;
-import com.nicoqueijo.cityskylinequiz.fragments.QuizFragment;
+import com.nicoqueijo.cityskylinequiz.fragments.QuizFragmentEveryCity;
+import com.nicoqueijo.cityskylinequiz.fragments.QuizFragmentTimed;
+import com.nicoqueijo.cityskylinequiz.fragments.QuizFragmentUntimed;
 import com.nicoqueijo.cityskylinequiz.models.City;
 import com.nicoqueijo.cityskylinequiz.models.Question;
 import com.squareup.picasso.Picasso;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -27,8 +29,6 @@ import java.util.Queue;
  * This activity hosts the fragment that will run the quiz game.
  */
 public class QuizGameActivity extends AppCompatActivity {
-
-    private final String LOG_V_QUIZ_GAME_ACTIVITY = "QuizGameActivity";
 
     public static final int CORRECT_CHOICE = 0;
     public static final int CHOICE_1 = 1;
@@ -73,56 +73,31 @@ public class QuizGameActivity extends AppCompatActivity {
         Picasso.with(QuizGameActivity.this).load(questions.peek().getCorrectChoice().getImageUrl())
                 .fetch();
 
-        // THIS MIGHT BE USELESS
         Bundle bundle = new Bundle();
-        bundle.putSerializable("questions", (Serializable) questions);
-        bundle.putInt("group", mGroupPosition);
         bundle.putInt("child", mChildPosition);
 
         FragmentManager mFragmentManager = getSupportFragmentManager();
         FragmentTransaction mTransaction = mFragmentManager.beginTransaction();
-        mTransaction.add(R.id.quiz_fragment_container, new QuizFragment(), "quizFragment");
-        mTransaction.commit();
+        Fragment mQuizFragment = null;
 
         switch (mGroupPosition) {
             case (QuizMenuActivity.PARENT_MODE_TIMED):
-                switch (mChildPosition) {
-                    case (QuizMenuActivity.CHILD_MODE_SECONDS_30):
-                        // Keep dequeueing questions while there is time remaining.
-                        break;
-                    case (QuizMenuActivity.CHILD_MODE_SECONDS_60):
-                        // Keep dequeueing questions while there is time remaining.
-                        break;
-                    case (QuizMenuActivity.CHILD_MODE_SECONDS_120):
-                        // Keep dequeueing questions while there is time remaining.
-                        break;
-                }
+                mQuizFragment = new QuizFragmentTimed();
+                mQuizFragment.setArguments(bundle);
                 break;
             case (QuizMenuActivity.PARENT_MODE_UNTIMED):
-                switch (mChildPosition) {
-                    case (QuizMenuActivity.CHILD_MODE_QUESTIONS_10):
-                        // Keep dequeueing questions while the queue is not empty.
-                        break;
-                    case (QuizMenuActivity.CHILD_MODE_QUESTIONS_20):
-                        // Keep dequeueing questions while the queue is not empty.
-                        break;
-                    case (QuizMenuActivity.CHILD_MODE_QUESTIONS_50):
-                        // Keep dequeueing questions while the queue is not empty.
-                        break;
-                }
+                mQuizFragment = new QuizFragmentUntimed();
+                mQuizFragment.setArguments(bundle);
                 break;
             case (QuizMenuActivity.PARENT_MODE_EVERY_CITY):
-                switch (mChildPosition) {
-                    case (QuizMenuActivity.CHILD_MODE_NO_FAULTS):
-                        // Keep dequeueing questions while the queue is not empty.
-                        // End the game immediately upon a wrong answer.
-                        break;
-                    case (QuizMenuActivity.CHILD_MODE_FAULTS_ALLOWED):
-                        // Keep dequeueing questions while the queue is not empty.
-                        break;
-                }
+                mQuizFragment = new QuizFragmentEveryCity();
+                mQuizFragment.setArguments(bundle);
                 break;
         }
+
+        mTransaction.add(R.id.quiz_fragment_container, mQuizFragment, "quizFragment");
+        mTransaction.commit();
+
     }
 
     /**

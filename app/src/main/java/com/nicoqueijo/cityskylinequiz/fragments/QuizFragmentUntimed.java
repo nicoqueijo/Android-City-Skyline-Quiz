@@ -1,9 +1,9 @@
 package com.nicoqueijo.cityskylinequiz.fragments;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,17 +20,16 @@ import com.nicoqueijo.cityskylinequiz.models.City;
 import com.nicoqueijo.cityskylinequiz.models.Question;
 import com.squareup.picasso.Picasso;
 
-public class QuizFragment extends Fragment implements View.OnClickListener {
+public class QuizFragmentUntimed extends Fragment implements View.OnClickListener {
 
-    private final String LOG_V_QUIZ_FRAGMENT = "QuizFragment";
+    public static int questionCounter = 0;
+    // to be changed accordingly
     private final int PROGRESS_BAR_MULTIPLIER = 10;
 
     private Question mCurrentQuestion;
-    public static int questionCounter = 0;
     private int mAttemptNumber = 0;
-    private int mGroupPosition;
     private int mChildPosition;
-    private Handler handler = new Handler();
+    private Handler mHandler = new Handler();
 
     private ImageView mCityImage;
 
@@ -52,31 +51,11 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     private TextView mFeedback;
     private ProgressBar mProgressBar;
 
-    private OnFragmentInteractionListener mListener;
-
     /**
      * Required empty public constructor
      */
-    public QuizFragment() {
+    public QuizFragmentUntimed() {
     }
-
-//    /**
-//     * Use this factory method to create a new instance of
-//     * this fragment using the provided parameters.
-//     *
-//     * @param param1 Parameter 1.
-//     * @param param2 Parameter 2.
-//     * @return A new instance of fragment QuizFragment.
-//     */
-//    // TODO: Rename and change types and number of parameters
-//    public static QuizFragment newInstance(String param1, String param2) {
-//        QuizFragment fragment = new QuizFragment();
-//        Bundle args = new Bundle();
-//        args.putString(ARG_PARAM1, param1);
-//        args.putString(ARG_PARAM2, param2);
-//        fragment.setArguments(args);
-//        return fragment;
-//    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -91,26 +70,21 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_quiz, container, false);
 
-//        mGroupPosition = this.getArguments().getInt("group");
-//        mChildPosition = this.getArguments().getInt("child");
+        mChildPosition = getArguments().getInt("child");
 
         mCityImage = (ImageView) view.findViewById(R.id.city_image);
-
         mContainerChoice1 = (LinearLayout) view.findViewById(R.id.answer_choice_one);
         mContainerChoice2 = (LinearLayout) view.findViewById(R.id.answer_choice_two);
         mContainerChoice3 = (LinearLayout) view.findViewById(R.id.answer_choice_three);
         mContainerChoice4 = (LinearLayout) view.findViewById(R.id.answer_choice_four);
-
         mFlagChoice1 = (ImageView) view.findViewById(R.id.flag_choice_one);
         mFlagChoice2 = (ImageView) view.findViewById(R.id.flag_choice_two);
         mFlagChoice3 = (ImageView) view.findViewById(R.id.flag_choice_three);
         mFlagChoice4 = (ImageView) view.findViewById(R.id.flag_choice_four);
-
         mCityNameChoice1 = (TextView) view.findViewById(R.id.city_name_choice_one);
         mCityNameChoice2 = (TextView) view.findViewById(R.id.city_name_choice_two);
         mCityNameChoice3 = (TextView) view.findViewById(R.id.city_name_choice_three);
         mCityNameChoice4 = (TextView) view.findViewById(R.id.city_name_choice_four);
-
         mFeedback = (TextView) view.findViewById(R.id.feedback);
         mProgressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
 
@@ -125,22 +99,11 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         return view;
     }
 
-//    @Override
-//    public void onAttach(Context context) {
-//        super.onAttach(context);
-//        if (context instanceof OnFragmentInteractionListener) {
-//            mListener = (OnFragmentInteractionListener) context;
-//        } else {
-//            throw new RuntimeException(context.toString()
-//                    + " must implement OnFragmentInteractionListener");
-//        }
-//    }
-
-
     @Override
     public void onStart() {
         super.onStart();
         loadNextQuestion();
+        Log.v("fragment", "Untimed " + mChildPosition);
     }
 
     /**
@@ -176,7 +139,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
             mFeedback.setTextColor(getResources().getColor(R.color.green));
             mFeedback.setText(getResources().getString(R.string.correct));
 
-            handler.postDelayed(new Runnable() {
+            mHandler.postDelayed(new Runnable() {
                 public void run() {
                     loadNextQuestion();
                 }
@@ -249,21 +212,5 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
                 (mCurrentQuestion.getChoice3().getCountryName(), getActivity()));
         mFlagChoice4.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
                 (mCurrentQuestion.getChoice4().getCountryName(), getActivity()));
-    }
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
-    }
-
-    public void passGameMode(int group, int child) {
-        mGroupPosition = group;
-        mChildPosition = child;
     }
 }
