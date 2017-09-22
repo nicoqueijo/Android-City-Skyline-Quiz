@@ -81,6 +81,9 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // ready-up the first question image for fast loading
+        Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
+                .getImageUrl()).fetch();
     }
 
     @Override
@@ -150,6 +153,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         // gets the choice that was clicked
         LinearLayout choicePress = (LinearLayout) v;
 
+        // load the image of the next question in cache
         Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
                 .getImageUrl()).fetch();
         City guess = null;
