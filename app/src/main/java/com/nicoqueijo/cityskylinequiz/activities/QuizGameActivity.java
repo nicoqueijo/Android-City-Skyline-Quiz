@@ -36,10 +36,13 @@ public class QuizGameActivity extends AppCompatActivity {
     public static final int CHOICE_3 = 3;
     public static final int CHOICE_4 = 4;
 
-    public static final int ALL_QUESTIONS = MainMenuActivity.cities.size();
-    public static final int TEN_QUESTIONS = 10;
-    public static final int TWENTY_QUESTIONS = 20;
-    public static final int FIFTY_QUESTIONS = 50;
+    public static final int TEN_QUESTIONS_MODE = 0;
+    public static final int TWENTY_QUESTIONS_MODE = 1;
+    public static final int FIFTY_QUESTIONS_MODE = 2;
+
+    public static final int THIRTY_SECONDS_MODE = 0;
+    public static final int SIXTY_SECONDS_MODE = 1;
+    public static final int ONE_HUNDRED_TWENTY_SECONDS_MODE = 2;
 
     public static Queue<Question> questions;
 

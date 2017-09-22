@@ -3,6 +3,7 @@ package com.nicoqueijo.cityskylinequiz.fragments;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,7 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
 
     private final int PROGRESS_BAR_UNITS = 100;
     public static int questionCounter = 0;
+    private int mQuestionLimit;
     private int mProgressBarMultiplier;
     private Question mCurrentQuestion;
     private int mAttemptNumber = 0;
@@ -70,13 +72,16 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
 
         mChildPosition = getArguments().getInt("child");
         switch (mChildPosition) {
-            case 0:
+            case QuizGameActivity.TEN_QUESTIONS_MODE:
+                mQuestionLimit = 10;
                 mProgressBarMultiplier = 10;
                 break;
-            case 1:
+            case QuizGameActivity.TWENTY_QUESTIONS_MODE:
+                mQuestionLimit = 20;
                 mProgressBarMultiplier = 5;
                 break;
-            case 2:
+            case QuizGameActivity.FIFTY_QUESTIONS_MODE:
+                mQuestionLimit = 50;
                 mProgressBarMultiplier = 2;
                 break;
         }
@@ -180,47 +185,47 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
     }
 
     private void loadNextQuestion() {
-        mCurrentQuestion = QuizGameActivity.questions.remove();
-        mProgressBar.setProgress(questionCounter * mProgressBarMultiplier);
-        questionCounter++;
-
-        // CHANGE THIS TO APPLY TO THIS GAME MODE
-        if (questionCounter > 10) {
+        Log.v("question", "question count: " + questionCounter);
+        if (questionCounter >= mQuestionLimit) {
             // We answered every question
             // If we remove another NullPointerException
             // Show game score
             getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
+        } else {
+            mCurrentQuestion = QuizGameActivity.questions.remove();
+            mProgressBar.setProgress(questionCounter * mProgressBarMultiplier);
+            questionCounter++;
+
+            mContainerChoice1.setEnabled(true);
+            mContainerChoice2.setEnabled(true);
+            mContainerChoice3.setEnabled(true);
+            mContainerChoice4.setEnabled(true);
+            mContainerChoice1.setAlpha(1.0f);
+            mContainerChoice2.setAlpha(1.0f);
+            mContainerChoice3.setAlpha(1.0f);
+            mContainerChoice4.setAlpha(1.0f);
+            mFeedback.setText("");
+
+            Picasso.with(getActivity()).load(mCurrentQuestion.getCorrectChoice().getImageUrl())
+                    .into(mCityImage);
+
+            mCityNameChoice1.setText(ResourceByNameRetriever.getStringResourceByName
+                    (mCurrentQuestion.getChoice1().getCityName(), getActivity()));
+            mCityNameChoice2.setText(ResourceByNameRetriever.getStringResourceByName
+                    (mCurrentQuestion.getChoice2().getCityName(), getActivity()));
+            mCityNameChoice3.setText(ResourceByNameRetriever.getStringResourceByName
+                    (mCurrentQuestion.getChoice3().getCityName(), getActivity()));
+            mCityNameChoice4.setText(ResourceByNameRetriever.getStringResourceByName
+                    (mCurrentQuestion.getChoice4().getCityName(), getActivity()));
+
+            mFlagChoice1.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
+                    (mCurrentQuestion.getChoice1().getCountryName(), getActivity()));
+            mFlagChoice2.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
+                    (mCurrentQuestion.getChoice2().getCountryName(), getActivity()));
+            mFlagChoice3.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
+                    (mCurrentQuestion.getChoice3().getCountryName(), getActivity()));
+            mFlagChoice4.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
+                    (mCurrentQuestion.getChoice4().getCountryName(), getActivity()));
         }
-
-        mContainerChoice1.setEnabled(true);
-        mContainerChoice2.setEnabled(true);
-        mContainerChoice3.setEnabled(true);
-        mContainerChoice4.setEnabled(true);
-        mContainerChoice1.setAlpha(1.0f);
-        mContainerChoice2.setAlpha(1.0f);
-        mContainerChoice3.setAlpha(1.0f);
-        mContainerChoice4.setAlpha(1.0f);
-        mFeedback.setText("");
-
-        Picasso.with(getActivity()).load(mCurrentQuestion.getCorrectChoice().getImageUrl())
-                .into(mCityImage);
-
-        mCityNameChoice1.setText(ResourceByNameRetriever.getStringResourceByName
-                (mCurrentQuestion.getChoice1().getCityName(), getActivity()));
-        mCityNameChoice2.setText(ResourceByNameRetriever.getStringResourceByName
-                (mCurrentQuestion.getChoice2().getCityName(), getActivity()));
-        mCityNameChoice3.setText(ResourceByNameRetriever.getStringResourceByName
-                (mCurrentQuestion.getChoice3().getCityName(), getActivity()));
-        mCityNameChoice4.setText(ResourceByNameRetriever.getStringResourceByName
-                (mCurrentQuestion.getChoice4().getCityName(), getActivity()));
-
-        mFlagChoice1.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
-                (mCurrentQuestion.getChoice1().getCountryName(), getActivity()));
-        mFlagChoice2.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
-                (mCurrentQuestion.getChoice2().getCountryName(), getActivity()));
-        mFlagChoice3.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
-                (mCurrentQuestion.getChoice3().getCountryName(), getActivity()));
-        mFlagChoice4.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
-                (mCurrentQuestion.getChoice4().getCountryName(), getActivity()));
     }
 }

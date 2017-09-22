@@ -66,13 +66,13 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
 
         mChildPosition = getArguments().getInt("child");
         switch (mChildPosition) {
-            case 0:
+            case QuizGameActivity.THIRTY_SECONDS_MODE:
                 mProgressBarMultiplier = 4;
                 break;
-            case 1:
+            case QuizGameActivity.SIXTY_SECONDS_MODE:
                 mProgressBarMultiplier = 2;
                 break;
-            case 2:
+            case QuizGameActivity.ONE_HUNDRED_TWENTY_SECONDS_MODE:
                 mProgressBarMultiplier = 1;
                 break;
         }
