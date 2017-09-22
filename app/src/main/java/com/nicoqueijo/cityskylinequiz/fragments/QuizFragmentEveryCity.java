@@ -121,8 +121,11 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
         LinearLayout choicePress = (LinearLayout) v;
 
         // load the image of the next question in cache
-        Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
-                .getImageUrl()).fetch();
+        if (!(QuizGameActivity.questions.isEmpty())) {
+            Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
+                    .getImageUrl()).fetch();
+        }
+
         City guess = null;
         if (choicePress == mContainerChoice1) {
             guess = mCurrentQuestion.getChoice1();
@@ -147,7 +150,7 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
                 public void run() {
                     loadNextQuestion();
                 }
-            }, 500);   // 0.5 seconds
+            }, 300);   // 0.3 seconds
 
         } else if (mNoFaults) {
             choicePress.setAlpha(0.5f);
@@ -191,44 +194,44 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
     private void loadNextQuestion() {
         if (QuizGameActivity.questions.isEmpty()) {
             // We answered every question
-            // If we remove another NullPointerException
+            // If we remove another: NullPointerException
             // Show game score
             getActivity().getSupportFragmentManager().beginTransaction().remove(thisFragment).commit();
+        } else {
+            mCurrentQuestion = QuizGameActivity.questions.remove();
+            mProgressBar.setProgress(questionCounter);
+            questionCounter++;
+
+            mContainerChoice1.setEnabled(true);
+            mContainerChoice2.setEnabled(true);
+            mContainerChoice3.setEnabled(true);
+            mContainerChoice4.setEnabled(true);
+            mContainerChoice1.setAlpha(1.0f);
+            mContainerChoice2.setAlpha(1.0f);
+            mContainerChoice3.setAlpha(1.0f);
+            mContainerChoice4.setAlpha(1.0f);
+            mFeedback.setText("");
+
+            Picasso.with(getActivity()).load(mCurrentQuestion.getCorrectChoice().getImageUrl())
+                    .into(mCityImage);
+
+            mCityNameChoice1.setText(ResourceByNameRetriever.getStringResourceByName
+                    (mCurrentQuestion.getChoice1().getCityName(), getActivity()));
+            mCityNameChoice2.setText(ResourceByNameRetriever.getStringResourceByName
+                    (mCurrentQuestion.getChoice2().getCityName(), getActivity()));
+            mCityNameChoice3.setText(ResourceByNameRetriever.getStringResourceByName
+                    (mCurrentQuestion.getChoice3().getCityName(), getActivity()));
+            mCityNameChoice4.setText(ResourceByNameRetriever.getStringResourceByName
+                    (mCurrentQuestion.getChoice4().getCityName(), getActivity()));
+
+            mFlagChoice1.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
+                    (mCurrentQuestion.getChoice1().getCountryName(), getActivity()));
+            mFlagChoice2.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
+                    (mCurrentQuestion.getChoice2().getCountryName(), getActivity()));
+            mFlagChoice3.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
+                    (mCurrentQuestion.getChoice3().getCountryName(), getActivity()));
+            mFlagChoice4.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
+                    (mCurrentQuestion.getChoice4().getCountryName(), getActivity()));
         }
-
-        mCurrentQuestion = QuizGameActivity.questions.remove();
-        mProgressBar.setProgress(questionCounter);
-        questionCounter++;
-
-        mContainerChoice1.setEnabled(true);
-        mContainerChoice2.setEnabled(true);
-        mContainerChoice3.setEnabled(true);
-        mContainerChoice4.setEnabled(true);
-        mContainerChoice1.setAlpha(1.0f);
-        mContainerChoice2.setAlpha(1.0f);
-        mContainerChoice3.setAlpha(1.0f);
-        mContainerChoice4.setAlpha(1.0f);
-        mFeedback.setText("");
-
-        Picasso.with(getActivity()).load(mCurrentQuestion.getCorrectChoice().getImageUrl())
-                .into(mCityImage);
-
-        mCityNameChoice1.setText(ResourceByNameRetriever.getStringResourceByName
-                (mCurrentQuestion.getChoice1().getCityName(), getActivity()));
-        mCityNameChoice2.setText(ResourceByNameRetriever.getStringResourceByName
-                (mCurrentQuestion.getChoice2().getCityName(), getActivity()));
-        mCityNameChoice3.setText(ResourceByNameRetriever.getStringResourceByName
-                (mCurrentQuestion.getChoice3().getCityName(), getActivity()));
-        mCityNameChoice4.setText(ResourceByNameRetriever.getStringResourceByName
-                (mCurrentQuestion.getChoice4().getCityName(), getActivity()));
-
-        mFlagChoice1.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
-                (mCurrentQuestion.getChoice1().getCountryName(), getActivity()));
-        mFlagChoice2.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
-                (mCurrentQuestion.getChoice2().getCountryName(), getActivity()));
-        mFlagChoice3.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
-                (mCurrentQuestion.getChoice3().getCountryName(), getActivity()));
-        mFlagChoice4.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
-                (mCurrentQuestion.getChoice4().getCountryName(), getActivity()));
     }
 }

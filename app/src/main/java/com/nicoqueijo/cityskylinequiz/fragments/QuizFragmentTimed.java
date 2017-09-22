@@ -148,7 +148,7 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
                 public void run() {
                     loadNextQuestion();
                 }
-            }, 500);   // 0.5 seconds
+            }, 300);   // 0.3 seconds
 
         } else {
             choicePress.setEnabled(false);
@@ -162,7 +162,7 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
                     public void run() {
                         mFeedback.setVisibility(View.VISIBLE);
                     }
-                }, 100);   // 0.5 seconds
+                }, 100);   // 0.1 seconds
             } else {
                 mFeedback.setVisibility(View.VISIBLE);
             }
