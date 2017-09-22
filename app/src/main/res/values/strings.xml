@@ -48,6 +48,7 @@
     <string name="faults_allowed">Faults allowed</string>
     <string name="guess_message">Guess the city</string>
     <string name="correct">Correct!</string>
+    <string name="incorrect">Incorrect!</string>
     <string name="try_again">Try Again</string>
 
     <!--- Cities -->

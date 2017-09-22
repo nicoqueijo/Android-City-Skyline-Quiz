@@ -21,6 +21,7 @@ import com.squareup.picasso.Picasso;
 
 public class QuizFragmentUntimed extends Fragment implements View.OnClickListener {
 
+    private final int PROGRESS_BAR_UNITS = 100;
     public static int questionCounter = 0;
     private int mProgressBarMultiplier;
     private Question mCurrentQuestion;
@@ -95,6 +96,7 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
         mCityNameChoice4 = (TextView) view.findViewById(R.id.city_name_choice_four);
         mFeedback = (TextView) view.findViewById(R.id.feedback);
         mProgressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
+        mProgressBar.setMax(PROGRESS_BAR_UNITS);
 
         mContainerChoice1.setOnClickListener(this);
         mContainerChoice2.setOnClickListener(this);
@@ -155,12 +157,11 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
         } else {
             choicePress.setEnabled(false);
             choicePress.setAlpha(0.5f);
-            Handler handler = new Handler();
             mFeedback.setVisibility(View.INVISIBLE);
             mFeedback.setTextColor(getResources().getColor(R.color.red));
             mFeedback.setText(getResources().getString(R.string.try_again));
             if (mAttemptNumber > 0) {
-                handler.postDelayed(new Runnable() {
+                mHandler.postDelayed(new Runnable() {
                     public void run() {
                         mFeedback.setVisibility(View.VISIBLE);
                     }

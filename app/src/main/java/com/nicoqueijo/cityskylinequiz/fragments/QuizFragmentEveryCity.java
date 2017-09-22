@@ -21,6 +21,9 @@ import com.squareup.picasso.Picasso;
 
 public class QuizFragmentEveryCity extends Fragment implements View.OnClickListener {
 
+    QuizFragmentEveryCity thisFragment = this;
+
+    private final int PROGRESS_BAR_UNITS = QuizGameActivity.questions.size();
     public static int questionCounter = 0;
     private boolean mNoFaults;
     private Question mCurrentQuestion;
@@ -88,6 +91,7 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
         mCityNameChoice4 = (TextView) view.findViewById(R.id.city_name_choice_four);
         mFeedback = (TextView) view.findViewById(R.id.feedback);
         mProgressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
+        mProgressBar.setMax(PROGRESS_BAR_UNITS);
 
         mContainerChoice1.setOnClickListener(this);
         mContainerChoice2.setOnClickListener(this);
@@ -145,19 +149,32 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
                 }
             }, 500);   // 0.5 seconds
 
+        } else if (mNoFaults) {
+            choicePress.setAlpha(0.5f);
+            mContainerChoice1.setEnabled(false);
+            mContainerChoice2.setEnabled(false);
+            mContainerChoice3.setEnabled(false);
+            mContainerChoice4.setEnabled(false);
+            mFeedback.setTextColor(getResources().getColor(R.color.red));
+            mFeedback.setText(getResources().getString(R.string.incorrect));
+            mHandler.postDelayed(new Runnable() {
+                public void run() {
+                    getActivity().getSupportFragmentManager().beginTransaction()
+                            .remove(thisFragment).commit();
+                }
+            }, 500);   // 0.5 seconds
         } else {
             choicePress.setEnabled(false);
             choicePress.setAlpha(0.5f);
-            Handler handler = new Handler();
             mFeedback.setVisibility(View.INVISIBLE);
             mFeedback.setTextColor(getResources().getColor(R.color.red));
             mFeedback.setText(getResources().getString(R.string.try_again));
             if (mAttemptNumber > 0) {
-                handler.postDelayed(new Runnable() {
+                mHandler.postDelayed(new Runnable() {
                     public void run() {
                         mFeedback.setVisibility(View.VISIBLE);
                     }
-                }, 100);   // 0.5 seconds
+                }, 100);   // 0.1 seconds
             } else {
                 mFeedback.setVisibility(View.VISIBLE);
             }
@@ -172,17 +189,16 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
     }
 
     private void loadNextQuestion() {
-        mCurrentQuestion = QuizGameActivity.questions.remove();
-        mProgressBar.setProgress(questionCounter);
-        questionCounter++;
-
-        // CHANGE THIS TO APPLY TO THIS GAME MODE
-        if (questionCounter > 10) {
+        if (QuizGameActivity.questions.isEmpty()) {
             // We answered every question
             // If we remove another NullPointerException
             // Show game score
-            getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
+            getActivity().getSupportFragmentManager().beginTransaction().remove(thisFragment).commit();
         }
+
+        mCurrentQuestion = QuizGameActivity.questions.remove();
+        mProgressBar.setProgress(questionCounter);
+        questionCounter++;
 
         mContainerChoice1.setEnabled(true);
         mContainerChoice2.setEnabled(true);

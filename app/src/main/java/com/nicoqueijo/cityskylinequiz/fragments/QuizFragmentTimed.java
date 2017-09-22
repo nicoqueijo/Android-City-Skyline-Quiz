@@ -21,6 +21,7 @@ import com.squareup.picasso.Picasso;
 
 public class QuizFragmentTimed extends Fragment implements View.OnClickListener {
 
+    private final int PROGRESS_BAR_UNITS = 120;
     public static int questionCounter = 0;
     private int mProgressBarMultiplier;
     private Question mCurrentQuestion;
@@ -91,6 +92,7 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
         mCityNameChoice4 = (TextView) view.findViewById(R.id.city_name_choice_four);
         mFeedback = (TextView) view.findViewById(R.id.feedback);
         mProgressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
+        mProgressBar.setMax(PROGRESS_BAR_UNITS);
 
         mContainerChoice1.setOnClickListener(this);
         mContainerChoice2.setOnClickListener(this);
