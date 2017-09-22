@@ -34,6 +34,8 @@ https://api.myjson.com/bins/1a5vld
 		Use Typeface class from Base Converter project
 		
 // DO NEXT
+-Implement timer for timed game mode
+-Make game-report model
 -Try to classify cities by regions (Americas, Europe, Rest of World)
 
 // TESTING

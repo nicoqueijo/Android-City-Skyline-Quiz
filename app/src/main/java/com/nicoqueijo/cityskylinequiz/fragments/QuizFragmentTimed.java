@@ -26,7 +26,6 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
     private int mProgressBarMultiplier;
     private Question mCurrentQuestion;
     private int mAttemptNumber = 0;
-    private int mChildPosition;
     private Handler mHandler = new Handler();
 
     private ImageView mCityImage;
@@ -64,7 +63,7 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_quiz, container, false);
 
-        mChildPosition = getArguments().getInt("child");
+        int mChildPosition = getArguments().getInt("child");
         switch (mChildPosition) {
             case QuizGameActivity.THIRTY_SECONDS_MODE:
                 mProgressBarMultiplier = 4;
@@ -101,14 +100,9 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
 
         CornerRounder.roundImageCorners(mCityImage, mFlagChoice1, mFlagChoice2, mFlagChoice3,
                 mFlagChoice4);
+        loadNextQuestion();
 
         return view;
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        loadNextQuestion();
     }
 
     /**

@@ -9,7 +9,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.fragments.QuizFragmentEveryCity;
@@ -118,7 +117,6 @@ public class QuizGameActivity extends AppCompatActivity {
      * https://stackoverflow.com/a/46104762/5906793
      */
     private void generateQuestions() {
-        Log.v("callorder", "generateQuestions() called");
         List<City> choices = new ArrayList<>();
         List<City> exclusionList = new ArrayList<>();
         exclusionList.addAll(mCities);

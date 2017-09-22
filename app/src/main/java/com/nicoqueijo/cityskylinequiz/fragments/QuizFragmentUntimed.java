@@ -23,12 +23,11 @@ import com.squareup.picasso.Picasso;
 public class QuizFragmentUntimed extends Fragment implements View.OnClickListener {
 
     private final int PROGRESS_BAR_UNITS = 100;
-    public static int questionCounter = 0;
+    private int questionCounter = 0;
     private int mQuestionLimit;
     private int mProgressBarMultiplier;
     private Question mCurrentQuestion;
     private int mAttemptNumber = 0;
-    private int mChildPosition;
     private Handler mHandler = new Handler();
 
     private ImageView mCityImage;
@@ -70,7 +69,7 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_quiz, container, false);
 
-        mChildPosition = getArguments().getInt("child");
+        int mChildPosition = getArguments().getInt("child");
         switch (mChildPosition) {
             case QuizGameActivity.TEN_QUESTIONS_MODE:
                 mQuestionLimit = 10;
@@ -110,14 +109,9 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
 
         CornerRounder.roundImageCorners(mCityImage, mFlagChoice1, mFlagChoice2, mFlagChoice3,
                 mFlagChoice4);
+        loadNextQuestion();
 
         return view;
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        loadNextQuestion();
     }
 
     /**
@@ -181,16 +175,15 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
     @Override
     public void onDestroy() {
         super.onDestroy();
-        questionCounter = 0;
     }
 
     private void loadNextQuestion() {
         Log.v("question", "question count: " + questionCounter);
         if (questionCounter >= mQuestionLimit) {
             // We answered every question
-            // If we remove another NullPointerException
             // Show game score
             getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
+            // push the report fragment
         } else {
             mCurrentQuestion = QuizGameActivity.questions.remove();
             mProgressBar.setProgress(questionCounter * mProgressBarMultiplier);

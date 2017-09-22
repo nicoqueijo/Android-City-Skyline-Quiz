@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="5dp"
-        android:layout_weight="202"
+        android:layout_weight="162"
         android:gravity="center">
 
         <ImageView
@@ -41,7 +41,7 @@
         android:id="@+id/container_city_image"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1112"
+        android:layout_weight="812"
         android:gravity="center">
 
         <ImageView
@@ -49,6 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:adjustViewBounds="true"
             android:background="@drawable/round_outline"
             android:scaleType="fitXY"
             tools:src="@drawable/los_angeles" />
@@ -58,7 +59,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="606">
+        android:layout_weight="406">
 
         <LinearLayout
             android:id="@+id/container_buttons"

@@ -28,7 +28,6 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
     private boolean mNoFaults;
     private Question mCurrentQuestion;
     private int mAttemptNumber = 0;
-    private int mChildPosition;
     private Handler mHandler = new Handler();
 
     private ImageView mCityImage;
@@ -66,7 +65,7 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_quiz, container, false);
 
-        mChildPosition = getArguments().getInt("child");
+        int mChildPosition = getArguments().getInt("child");
         switch (mChildPosition) {
             case 0:
                 mNoFaults = true;
@@ -100,14 +99,9 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
 
         CornerRounder.roundImageCorners(mCityImage, mFlagChoice1, mFlagChoice2, mFlagChoice3,
                 mFlagChoice4);
+        loadNextQuestion();
 
         return view;
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        loadNextQuestion();
     }
 
     /**
@@ -165,7 +159,7 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
                     getActivity().getSupportFragmentManager().beginTransaction()
                             .remove(thisFragment).commit();
                 }
-            }, 500);   // 0.5 seconds
+            }, 500);    // 0.5 seconds
         } else {
             choicePress.setEnabled(false);
             choicePress.setAlpha(0.5f);
