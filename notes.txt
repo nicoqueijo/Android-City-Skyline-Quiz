@@ -34,7 +34,6 @@ https://api.myjson.com/bins/1a5vld
 		Use Typeface class from Base Converter project
 		
 // DO NEXT
--Assure city image sits on a fixed container and doesn't shift other views when changing image
 
 // TESTING
 -Assure layouts are good on Arabic (left/start right/end)
@@ -43,10 +42,6 @@ https://api.myjson.com/bins/1a5vld
 -Refactor duplicated code
 -Assure Rate app button works once app is in Google Play
 
-
-// ALTERNATIVE TO CORRECT/INCORRECT MARKS ON CHOICES
-linearLayout.setEnabled(false);
-linearLayout.setAlpha(0.5f);
 
 // QUIZ GAME ARCHITECTURE
 -Quiz game will run on a fragment hosted on an activity

@@ -25,8 +25,9 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     private final String LOG_V_QUIZ_FRAGMENT = "QuizFragment";
     private final int PROGRESS_BAR_MULTIPLIER = 10;
 
+    private Question mCurrentQuestion;
     public static int questionCounter = 0;
-    private int attemptNumber = 0;
+    private int mAttemptNumber = 0;
     private int mGroupPosition;
     private int mChildPosition;
     private Handler handler = new Handler();
@@ -149,20 +150,21 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         // gets the choice that was clicked
         LinearLayout choicePress = (LinearLayout) v;
 
-        Question question = QuizGameActivity.questions.peek();
+        Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
+                .getImageUrl()).fetch();
         City guess = null;
         if (choicePress == mContainerChoice1) {
-            guess = question.getChoice1();
+            guess = mCurrentQuestion.getChoice1();
         } else if (choicePress == mContainerChoice2) {
-            guess = question.getChoice2();
+            guess = mCurrentQuestion.getChoice2();
         } else if (choicePress == mContainerChoice3) {
-            guess = question.getChoice3();
+            guess = mCurrentQuestion.getChoice3();
         } else if (choicePress == mContainerChoice4) {
-            guess = question.getChoice4();
+            guess = mCurrentQuestion.getChoice4();
         }
 
-        if (guess.getCityName().equals(question.getCorrectChoice().getCityName())) {
-            attemptNumber = 0;
+        if (guess.getCityName().equals(mCurrentQuestion.getCorrectChoice().getCityName())) {
+            mAttemptNumber = 0;
             mContainerChoice1.setEnabled(false);
             mContainerChoice2.setEnabled(false);
             mContainerChoice3.setEnabled(false);
@@ -172,7 +174,6 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
 
             handler.postDelayed(new Runnable() {
                 public void run() {
-                    QuizGameActivity.questions.remove();
                     loadNextQuestion();
                 }
             }, 500);   // 0.5 seconds
@@ -184,7 +185,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
             mFeedback.setVisibility(View.INVISIBLE);
             mFeedback.setTextColor(getResources().getColor(R.color.red));
             mFeedback.setText(getResources().getString(R.string.try_again));
-            if (attemptNumber > 0) {
+            if (mAttemptNumber > 0) {
                 handler.postDelayed(new Runnable() {
                     public void run() {
                         mFeedback.setVisibility(View.VISIBLE);
@@ -193,7 +194,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
             } else {
                 mFeedback.setVisibility(View.VISIBLE);
             }
-            attemptNumber++;
+            mAttemptNumber++;
         }
     }
 
@@ -204,7 +205,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     }
 
     private void loadNextQuestion() {
-
+        mCurrentQuestion = QuizGameActivity.questions.remove();
         mProgressBar.setProgress(questionCounter * PROGRESS_BAR_MULTIPLIER);
         questionCounter++;
         if (questionCounter > 10) {
@@ -224,17 +225,26 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         mContainerChoice4.setAlpha(1.0f);
         mFeedback.setText("");
 
-        Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice().getImageUrl()).into(mCityImage);
+        Picasso.with(getActivity()).load(mCurrentQuestion.getCorrectChoice().getImageUrl())
+                .into(mCityImage);
 
-        mCityNameChoice1.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.questions.peek().getChoice1().getCityName(), getActivity()));
-        mCityNameChoice2.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.questions.peek().getChoice2().getCityName(), getActivity()));
-        mCityNameChoice3.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.questions.peek().getChoice3().getCityName(), getActivity()));
-        mCityNameChoice4.setText(ResourceByNameRetriever.getStringResourceByName(QuizGameActivity.questions.peek().getChoice4().getCityName(), getActivity()));
+        mCityNameChoice1.setText(ResourceByNameRetriever.getStringResourceByName
+                (mCurrentQuestion.getChoice1().getCityName(), getActivity()));
+        mCityNameChoice2.setText(ResourceByNameRetriever.getStringResourceByName
+                (mCurrentQuestion.getChoice2().getCityName(), getActivity()));
+        mCityNameChoice3.setText(ResourceByNameRetriever.getStringResourceByName
+                (mCurrentQuestion.getChoice3().getCityName(), getActivity()));
+        mCityNameChoice4.setText(ResourceByNameRetriever.getStringResourceByName
+                (mCurrentQuestion.getChoice4().getCityName(), getActivity()));
 
-        mFlagChoice1.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.questions.peek().getChoice1().getCountryName(), getActivity()));
-        mFlagChoice2.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.questions.peek().getChoice2().getCountryName(), getActivity()));
-        mFlagChoice3.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.questions.peek().getChoice3().getCountryName(), getActivity()));
-        mFlagChoice4.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(QuizGameActivity.questions.peek().getChoice4().getCountryName(), getActivity()));
+        mFlagChoice1.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
+                (mCurrentQuestion.getChoice1().getCountryName(), getActivity()));
+        mFlagChoice2.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
+                (mCurrentQuestion.getChoice2().getCountryName(), getActivity()));
+        mFlagChoice3.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
+                (mCurrentQuestion.getChoice3().getCountryName(), getActivity()));
+        mFlagChoice4.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
+                (mCurrentQuestion.getChoice4().getCountryName(), getActivity()));
     }
 
     /**
