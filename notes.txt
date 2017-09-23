@@ -35,7 +35,11 @@ https://api.myjson.com/bins/1a5vld
 		
 // DO NEXT
 -Implement timer for timed game mode
+-Make three second countdown before game starts
 -Make game-report model
+-Make score fragment
+-Make report fragment
+-Save scores in SQLite database
 -Try to classify cities by regions (Americas, Europe, Rest of World)
 
 // TESTING

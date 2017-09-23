@@ -3,6 +3,7 @@ package com.nicoqueijo.cityskylinequiz.fragments;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,12 +22,12 @@ import com.squareup.picasso.Picasso;
 
 public class QuizFragmentEveryCity extends Fragment implements View.OnClickListener {
 
-    QuizFragmentEveryCity thisFragment = this;
+    private final QuizFragmentEveryCity THIS_FRAGMENT = this;
 
     private final int PROGRESS_BAR_UNITS = QuizGameActivity.questions.size();
-    public static int questionCounter = 0;
     private boolean mNoFaults;
     private Question mCurrentQuestion;
+    private int mQuestionCounter = 0;
     private int mAttemptNumber = 0;
     private Handler mHandler = new Handler();
 
@@ -157,7 +158,7 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
             mHandler.postDelayed(new Runnable() {
                 public void run() {
                     getActivity().getSupportFragmentManager().beginTransaction()
-                            .remove(thisFragment).commit();
+                            .remove(THIS_FRAGMENT).commit();
                 }
             }, 500);    // 0.5 seconds
         } else {
@@ -179,22 +180,17 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
         }
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        questionCounter = 0;
-    }
-
     private void loadNextQuestion() {
+        Log.v("qcounter: ", mQuestionCounter + "");
         if (QuizGameActivity.questions.isEmpty()) {
             // We answered every question
             // If we remove another: NullPointerException
             // Show game score
-            getActivity().getSupportFragmentManager().beginTransaction().remove(thisFragment).commit();
+            getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT).commit();
         } else {
             mCurrentQuestion = QuizGameActivity.questions.remove();
-            mProgressBar.setProgress(questionCounter);
-            questionCounter++;
+            mProgressBar.setProgress(mQuestionCounter);
+            mQuestionCounter++;
 
             mContainerChoice1.setEnabled(true);
             mContainerChoice2.setEnabled(true);

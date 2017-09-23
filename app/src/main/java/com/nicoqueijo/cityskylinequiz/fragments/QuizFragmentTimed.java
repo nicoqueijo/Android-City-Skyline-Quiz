@@ -1,6 +1,7 @@
 package com.nicoqueijo.cityskylinequiz.fragments;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -21,12 +22,14 @@ import com.squareup.picasso.Picasso;
 
 public class QuizFragmentTimed extends Fragment implements View.OnClickListener {
 
-    private final int PROGRESS_BAR_UNITS = 120;
-    public static int questionCounter = 0;
-    private int mProgressBarMultiplier;
+    private final QuizFragmentTimed THIS_FRAGMENT = this;
+
     private Question mCurrentQuestion;
     private int mAttemptNumber = 0;
+    private int mSeconds;
+    private CountDownTimer mCountDownTimer;
     private Handler mHandler = new Handler();
+    private int i = 1;
 
     private ImageView mCityImage;
     private LinearLayout mContainerChoice1;
@@ -53,7 +56,7 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // ready-up the first question image for fast loading
+        // cache the first question image for fast loading
         Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
                 .getImageUrl()).fetch();
     }
@@ -66,13 +69,13 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
         int mChildPosition = getArguments().getInt("child");
         switch (mChildPosition) {
             case QuizGameActivity.THIRTY_SECONDS_MODE:
-                mProgressBarMultiplier = 4;
+                mSeconds = 30;
                 break;
             case QuizGameActivity.SIXTY_SECONDS_MODE:
-                mProgressBarMultiplier = 2;
+                mSeconds = 60;
                 break;
             case QuizGameActivity.ONE_HUNDRED_TWENTY_SECONDS_MODE:
-                mProgressBarMultiplier = 1;
+                mSeconds = 120;
                 break;
         }
 
@@ -91,7 +94,7 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
         mCityNameChoice4 = (TextView) view.findViewById(R.id.city_name_choice_four);
         mFeedback = (TextView) view.findViewById(R.id.feedback);
         mProgressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
-        mProgressBar.setMax(PROGRESS_BAR_UNITS);
+        mProgressBar.setMax(mSeconds);
 
         mContainerChoice1.setOnClickListener(this);
         mContainerChoice2.setOnClickListener(this);
@@ -101,6 +104,21 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
         CornerRounder.roundImageCorners(mCityImage, mFlagChoice1, mFlagChoice2, mFlagChoice3,
                 mFlagChoice4);
         loadNextQuestion();
+
+        mCountDownTimer = new CountDownTimer(mSeconds * 1000, i * 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                mProgressBar.setProgress(i);
+                i++;
+            }
+
+            @Override
+            public void onFinish() {
+                getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT)
+                        .commit();
+            }
+        };
+        mCountDownTimer.start();
 
         return view;
     }
@@ -164,24 +182,8 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
         }
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        questionCounter = 0;
-    }
-
     private void loadNextQuestion() {
         mCurrentQuestion = QuizGameActivity.questions.remove();
-        mProgressBar.setProgress(questionCounter * mProgressBarMultiplier);
-        questionCounter++;
-
-        // CHANGE THIS TO APPLY TO THIS GAME MODE
-        if (questionCounter > 10) {
-            // We answered every question
-            // If we remove another NullPointerException
-            // Show game score
-            getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
-        }
 
         mContainerChoice1.setEnabled(true);
         mContainerChoice2.setEnabled(true);

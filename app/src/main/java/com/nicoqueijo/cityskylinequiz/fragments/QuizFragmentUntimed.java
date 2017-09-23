@@ -22,11 +22,13 @@ import com.squareup.picasso.Picasso;
 
 public class QuizFragmentUntimed extends Fragment implements View.OnClickListener {
 
+    private final QuizFragmentUntimed THIS_FRAGMENT = this;
+
     private final int PROGRESS_BAR_UNITS = 100;
-    private int questionCounter = 0;
     private int mQuestionLimit;
     private int mProgressBarMultiplier;
     private Question mCurrentQuestion;
+    private int mQuestionCounter = 0;
     private int mAttemptNumber = 0;
     private Handler mHandler = new Handler();
 
@@ -172,22 +174,17 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
         }
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-    }
-
     private void loadNextQuestion() {
-        Log.v("question", "question count: " + questionCounter);
-        if (questionCounter >= mQuestionLimit) {
+        Log.v("question", "question count: " + mQuestionCounter);
+        if (mQuestionCounter >= mQuestionLimit) {
             // We answered every question
             // Show game score
-            getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
+            getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT).commit();
             // push the report fragment
         } else {
             mCurrentQuestion = QuizGameActivity.questions.remove();
-            mProgressBar.setProgress(questionCounter * mProgressBarMultiplier);
-            questionCounter++;
+            mProgressBar.setProgress(mQuestionCounter * mProgressBarMultiplier);
+            mQuestionCounter++;
 
             mContainerChoice1.setEnabled(true);
             mContainerChoice2.setEnabled(true);
