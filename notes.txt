@@ -34,7 +34,7 @@ https://api.myjson.com/bins/1a5vld
 		Use Typeface class from Base Converter project
 		
 // DO NEXT
--Implement timer for timed game mode
+-Design score system for different game modes
 -Make three second countdown before game starts
 -Make game-report model
 -Make score fragment

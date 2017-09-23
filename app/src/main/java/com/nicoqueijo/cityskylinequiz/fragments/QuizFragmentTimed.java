@@ -26,10 +26,10 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
 
     private Question mCurrentQuestion;
     private int mAttemptNumber = 0;
-    private int mSeconds;
+    private int mTotalSeconds;
+    private int mElapsedSeconds = 0;
     private CountDownTimer mCountDownTimer;
     private Handler mHandler = new Handler();
-    private int i = 1;
 
     private ImageView mCityImage;
     private LinearLayout mContainerChoice1;
@@ -69,13 +69,13 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
         int mChildPosition = getArguments().getInt("child");
         switch (mChildPosition) {
             case QuizGameActivity.THIRTY_SECONDS_MODE:
-                mSeconds = 30;
+                mTotalSeconds = 30;
                 break;
             case QuizGameActivity.SIXTY_SECONDS_MODE:
-                mSeconds = 60;
+                mTotalSeconds = 60;
                 break;
             case QuizGameActivity.ONE_HUNDRED_TWENTY_SECONDS_MODE:
-                mSeconds = 120;
+                mTotalSeconds = 120;
                 break;
         }
 
@@ -94,7 +94,7 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
         mCityNameChoice4 = (TextView) view.findViewById(R.id.city_name_choice_four);
         mFeedback = (TextView) view.findViewById(R.id.feedback);
         mProgressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
-        mProgressBar.setMax(mSeconds);
+        mProgressBar.setMax(mTotalSeconds);
 
         mContainerChoice1.setOnClickListener(this);
         mContainerChoice2.setOnClickListener(this);
@@ -105,17 +105,29 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
                 mFlagChoice4);
         loadNextQuestion();
 
-        mCountDownTimer = new CountDownTimer(mSeconds * 1000, i * 1000) {
+        long millisInFuture = (3 + mTotalSeconds) * 1000;
+        long countDownInterval = (1 + mElapsedSeconds) * 1000;
+        mCountDownTimer = new CountDownTimer(millisInFuture, countDownInterval) {
+            /**
+             * Callback fired on regular interval.
+             * @param millisUntilFinished The amount of time until finished.
+             */
             @Override
             public void onTick(long millisUntilFinished) {
-                mProgressBar.setProgress(i);
-                i++;
+                mProgressBar.setProgress(mElapsedSeconds);
+                if (mElapsedSeconds > mTotalSeconds) {
+                    getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT)
+                            .commit();
+                }
+                mElapsedSeconds++;
             }
 
+            /**
+             * Callback fired when the time is up. Unused because we make this check in the onTick
+             * method and remove the fragment if the countdown is over.
+             */
             @Override
             public void onFinish() {
-                getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT)
-                        .commit();
             }
         };
         mCountDownTimer.start();
