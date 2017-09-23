@@ -1,8 +1,9 @@
 # City-Skyline-Quiz
 Under construction... coming soon.
 
-## Sneak peak
-<img src="screenshots/demo.gif">
+## Preview
+<img src="screenshots/game_demo.gif" width="300">
+<img src="screenshots/list_demo.gif" width="300">
 
 ## Built with
 * <a href="https://github.com/square/picasso" target="_blank">Picasso</a> - A powerful image downloading and caching library for Android.
