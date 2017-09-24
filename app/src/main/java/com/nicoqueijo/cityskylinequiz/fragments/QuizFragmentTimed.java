@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -107,7 +106,7 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
         loadNextQuestion();
 
         long millisInFuture = (3 + mTotalSeconds) * 1000;
-        long countDownInterval = (1 + mElapsedSeconds) * 1000;
+        long countDownInterval = 1000;
         mCountDownTimer = new CountDownTimer(millisInFuture, countDownInterval) {
             /**
              * Callback fired on regular interval.
@@ -115,11 +114,10 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
              */
             @Override
             public void onTick(long millisUntilFinished) {
-                Log.v("fragment", "onTick called");
                 mProgressBar.setProgress(mElapsedSeconds);
                 if (mElapsedSeconds > mTotalSeconds) {
                     getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT)
-                            .commit();
+                            .commitAllowingStateLoss();
                 }
                 mElapsedSeconds++;
             }
@@ -231,9 +229,11 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
                 (mCurrentQuestion.getChoice4().getCountryName(), getActivity()));
     }
 
+    /**
+     * Called when the fragment is no longer in use.
+     */
     @Override
     public void onDestroy() {
-        Log.v("fragment", "onDestroy called");
         mCountDownTimer.cancel();
         super.onDestroy();
     }

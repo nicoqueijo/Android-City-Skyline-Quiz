@@ -34,7 +34,8 @@ https://api.myjson.com/bins/1a5vld
 		Use Typeface class from Base Converter project
 		
 // DO NEXT
--Make three second countdown before game starts
+-Put countdown on purple red circle background with white text
+-disable app from tablets
 -Design score system for different game modes
 -Make game-report model
 -Make score fragment

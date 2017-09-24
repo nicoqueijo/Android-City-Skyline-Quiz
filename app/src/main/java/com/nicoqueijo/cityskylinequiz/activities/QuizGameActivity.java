@@ -10,7 +10,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -58,8 +57,8 @@ public class QuizGameActivity extends AppCompatActivity {
     private int mGroupPosition;
     private int mChildPosition;
     private CountDownTimer mCountDownTimer;
+    private int mCount = 3;
     private TextView mCountdown;
-    int i = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +71,6 @@ public class QuizGameActivity extends AppCompatActivity {
         mActionBar.setDisplayHomeAsUpEnabled(true);
         mActionBar.setIcon(R.drawable.ic_light_game);
         mActionBar.setTitle(R.string.actionbar_play_game);
-
         mCountdown = (TextView) findViewById(R.id.countdown);
 
         Intent intentQuizGame = getIntent();
@@ -90,7 +88,6 @@ public class QuizGameActivity extends AppCompatActivity {
         Bundle bundle = new Bundle();
         bundle.putInt("child", mChildPosition);
 
-
         switch (mGroupPosition) {
             case (QuizMenuActivity.PARENT_MODE_TIMED):
                 mQuizFragment = new QuizFragmentTimed();
@@ -105,27 +102,29 @@ public class QuizGameActivity extends AppCompatActivity {
 
         mQuizFragment.setArguments(bundle);
 
-        mCountDownTimer = new CountDownTimer((1000 * 3) + 100, 1000) {
+        final long MARGIN_OF_ERROR = 200;
+        long millisInFuture = (1000 * 3) + MARGIN_OF_ERROR;
+        long countDownInterval = 1000;
+        mCountDownTimer = new CountDownTimer(millisInFuture, countDownInterval) {
             /**
              * Callback fired on regular interval.
              * @param millisUntilFinished The amount of time until finished.
              */
             @Override
             public void onTick(long millisUntilFinished) {
-                Log.v("time", i + "");
-                Log.v("time", millisUntilFinished + "");
-                mCountdown.setText(String.valueOf(i));
-                i--;
+                mCountdown.setText(String.valueOf(mCount));
+                mCount--;
             }
 
             /**
-             * Callback fired when the time is up.
+             * Callback fired when the time is up. Once the three second countdown splash screen is
+             * over the quiz fragment is added.
              */
             @Override
             public void onFinish() {
                 mCountdown.setVisibility(View.GONE);
                 mTransaction.add(R.id.quiz_fragment_container, mQuizFragment, "quizFragment");
-                mTransaction.commit();
+                mTransaction.commitAllowingStateLoss();
             }
         };
         mCountDownTimer.start();
@@ -160,5 +159,14 @@ public class QuizGameActivity extends AppCompatActivity {
             choices.clear();
             exclusionList.add(city);
         }
+    }
+
+    /**
+     * Perform any final cleanup before an activity is destroyed.
+     */
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mCountDownTimer.cancel();
     }
 }
