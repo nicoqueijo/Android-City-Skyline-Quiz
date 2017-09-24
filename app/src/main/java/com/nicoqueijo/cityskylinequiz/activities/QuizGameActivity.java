@@ -4,11 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.fragments.QuizFragmentEveryCity;
@@ -44,12 +48,18 @@ public class QuizGameActivity extends AppCompatActivity {
     public static final int ONE_HUNDRED_TWENTY_SECONDS_MODE = 2;
 
     public static Queue<Question> questions;
+    private FragmentManager mFragmentManager = getSupportFragmentManager();
+    private FragmentTransaction mTransaction = mFragmentManager.beginTransaction();
+    private Fragment mQuizFragment = null;
 
     private ActionBar mActionBar;
     private SharedPreferences mSharedPreferences;
     private ArrayList<City> mCities;
     private int mGroupPosition;
     private int mChildPosition;
+    private CountDownTimer mCountDownTimer;
+    private TextView mCountdown;
+    int i = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +72,8 @@ public class QuizGameActivity extends AppCompatActivity {
         mActionBar.setDisplayHomeAsUpEnabled(true);
         mActionBar.setIcon(R.drawable.ic_light_game);
         mActionBar.setTitle(R.string.actionbar_play_game);
+
+        mCountdown = (TextView) findViewById(R.id.countdown);
 
         Intent intentQuizGame = getIntent();
         mGroupPosition = intentQuizGame.getIntExtra("parentMode", QuizMenuActivity.PARENT_MODE_UNTIMED);
@@ -78,9 +90,6 @@ public class QuizGameActivity extends AppCompatActivity {
         Bundle bundle = new Bundle();
         bundle.putInt("child", mChildPosition);
 
-        FragmentManager mFragmentManager = getSupportFragmentManager();
-        FragmentTransaction mTransaction = mFragmentManager.beginTransaction();
-        Fragment mQuizFragment = null;
 
         switch (mGroupPosition) {
             case (QuizMenuActivity.PARENT_MODE_TIMED):
@@ -95,9 +104,31 @@ public class QuizGameActivity extends AppCompatActivity {
         }
 
         mQuizFragment.setArguments(bundle);
-        mTransaction.add(R.id.quiz_fragment_container, mQuizFragment, "quizFragment");
-        mTransaction.commit();
 
+        mCountDownTimer = new CountDownTimer((1000 * 3) + 100, 1000) {
+            /**
+             * Callback fired on regular interval.
+             * @param millisUntilFinished The amount of time until finished.
+             */
+            @Override
+            public void onTick(long millisUntilFinished) {
+                Log.v("time", i + "");
+                Log.v("time", millisUntilFinished + "");
+                mCountdown.setText(String.valueOf(i));
+                i--;
+            }
+
+            /**
+             * Callback fired when the time is up.
+             */
+            @Override
+            public void onFinish() {
+                mCountdown.setVisibility(View.GONE);
+                mTransaction.add(R.id.quiz_fragment_container, mQuizFragment, "quizFragment");
+                mTransaction.commit();
+            }
+        };
+        mCountDownTimer.start();
     }
 
     /**
