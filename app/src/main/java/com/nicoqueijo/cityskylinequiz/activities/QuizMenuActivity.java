@@ -3,14 +3,14 @@ package com.nicoqueijo.cityskylinequiz.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ExpandableListView;
 
-import com.nicoqueijo.cityskylinequiz.adapters.ExpandableListAdapter;
 import com.nicoqueijo.cityskylinequiz.R;
+import com.nicoqueijo.cityskylinequiz.adapters.ExpandableListAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,14 +26,7 @@ public class QuizMenuActivity extends AppCompatActivity {
     public static final int PARENT_MODE_TIMED = 0;
     public static final int PARENT_MODE_UNTIMED = 1;
     public static final int PARENT_MODE_EVERY_CITY = 2;
-    public static final int CHILD_MODE_SECONDS_30 = 0;
-    public static final int CHILD_MODE_SECONDS_60 = 1;
-    public static final int CHILD_MODE_SECONDS_120 = 2;
     public static final int CHILD_MODE_QUESTIONS_10 = 0;
-    public static final int CHILD_MODE_QUESTIONS_20 = 1;
-    public static final int CHILD_MODE_QUESTIONS_50 = 2;
-    public static final int CHILD_MODE_NO_FAULTS = 0;
-    public static final int CHILD_MODE_FAULTS_ALLOWED = 1;
 
     private ActionBar mActionBar;
     private SharedPreferences mSharedPreferences;

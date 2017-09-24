@@ -85,18 +85,16 @@ public class QuizGameActivity extends AppCompatActivity {
         switch (mGroupPosition) {
             case (QuizMenuActivity.PARENT_MODE_TIMED):
                 mQuizFragment = new QuizFragmentTimed();
-                mQuizFragment.setArguments(bundle);
                 break;
             case (QuizMenuActivity.PARENT_MODE_UNTIMED):
                 mQuizFragment = new QuizFragmentUntimed();
-                mQuizFragment.setArguments(bundle);
                 break;
             case (QuizMenuActivity.PARENT_MODE_EVERY_CITY):
                 mQuizFragment = new QuizFragmentEveryCity();
-                mQuizFragment.setArguments(bundle);
                 break;
         }
 
+        mQuizFragment.setArguments(bundle);
         mTransaction.add(R.id.quiz_fragment_container, mQuizFragment, "quizFragment");
         mTransaction.commit();
 

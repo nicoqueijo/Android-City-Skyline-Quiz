@@ -61,7 +61,7 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // ready-up the first question image for fast loading
+        // cache the first question image for fast loading
         Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
                 .getImageUrl()).fetch();
     }

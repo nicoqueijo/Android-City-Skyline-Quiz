@@ -67,7 +67,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:textAllCaps="true"
+                        android:textAllCaps="false"
                         android:textColor="@color/white"
                         android:textSize="14dp"
                         tools:text="@string/kiev" />
@@ -105,7 +105,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:textAllCaps="true"
+                        android:textAllCaps="false"
                         android:textColor="@color/white"
                         android:textSize="14dp"
                         tools:text="@string/ho_chi_minh_city" />
@@ -153,7 +153,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:textAllCaps="true"
+                        android:textAllCaps="false"
                         android:textColor="@color/white"
                         android:textSize="14dp"
                         tools:text="@string/los_angeles" />
@@ -191,7 +191,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:textAllCaps="true"
+                        android:textAllCaps="false"
                         android:textColor="@color/white"
                         android:textSize="14dp"
                         tools:text="@string/cali" />
