@@ -11,6 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:textSize="128dp" />
+        android:background="@drawable/countdown_background"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="128dp"
+        tools:text="3" />
 
 </RelativeLayout>

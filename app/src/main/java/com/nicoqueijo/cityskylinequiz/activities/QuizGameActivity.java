@@ -103,8 +103,8 @@ public class QuizGameActivity extends AppCompatActivity {
         mQuizFragment.setArguments(bundle);
 
         final long MARGIN_OF_ERROR = 200;
-        long millisInFuture = (1000 * 3) + MARGIN_OF_ERROR;
-        long countDownInterval = 1000;
+        long millisInFuture = (700 * 3) + MARGIN_OF_ERROR;
+        long countDownInterval = 700;
         mCountDownTimer = new CountDownTimer(millisInFuture, countDownInterval) {
             /**
              * Callback fired on regular interval.
