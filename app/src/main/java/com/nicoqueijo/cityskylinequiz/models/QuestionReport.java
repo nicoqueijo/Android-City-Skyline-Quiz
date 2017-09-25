@@ -4,7 +4,7 @@ import com.nicoqueijo.cityskylinequiz.activities.QuizGameActivity;
 
 public class QuestionReport {
 
-    private enum Mark {
+    public enum Mark {
         correct,
         incorrect
     }

@@ -168,6 +168,8 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
                 public void run() {
                     getActivity().getSupportFragmentManager().beginTransaction()
                             .remove(THIS_FRAGMENT).commit();
+                    getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,
+                            new QuizReportFragment(), "quizReportFragment").commit();
                 }
             }, 500);    // 0.5 seconds
         } else {
@@ -197,6 +199,8 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
             // If we remove another: NullPointerException
             // Show game score
             getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT).commit();
+            getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,
+                    new QuizReportFragment(), "quizReportFragment").commit();
         } else {
             mCurrentQuestion = QuizGameActivity.questions.remove();
             QuestionReport mCurrentQuestionReport = new QuestionReport(mCurrentQuestion, mQuestionCounter);

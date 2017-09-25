@@ -29,8 +29,8 @@ import java.util.ArrayList;
  * city/country in the first position of the adapter and have it displayed on the ScrollBar when
  * the user drags it.
  */
-public class CityListRecyclerViewAdapter extends RecyclerView.Adapter<CityListRecyclerViewAdapter.ViewHolder> implements
-        INameableAdapter {
+public class CityListRecyclerViewAdapter extends RecyclerView.Adapter<CityListRecyclerViewAdapter.ViewHolder>
+        implements INameableAdapter {
 
     private SharedPreferences mSharedPreferences;
     private Context mContext;

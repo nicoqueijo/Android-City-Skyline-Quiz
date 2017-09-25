@@ -186,6 +186,8 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
             // Show game score
             getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT).commit();
             // push the report fragment
+            getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,
+                    new QuizReportFragment(), "quizReportFragment").commit();
         } else {
             mCurrentQuestion = QuizGameActivity.questions.remove();
             QuestionReport mCurrentQuestionReport = new QuestionReport(mCurrentQuestion, mQuestionCounter);

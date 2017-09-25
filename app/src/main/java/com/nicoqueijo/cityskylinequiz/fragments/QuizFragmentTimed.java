@@ -120,6 +120,8 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
                 if (mElapsedSeconds > mTotalSeconds) {
                     getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT)
                             .commitAllowingStateLoss();
+                    getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,
+                            new QuizReportFragment(), "quizReportFragment").commitAllowingStateLoss();
                 }
                 mElapsedSeconds++;
             }
