@@ -3,7 +3,7 @@ package com.nicoqueijo.cityskylinequiz.helpers;
 import java.util.Locale;
 
 /**
- * Class provides one static method to act accordingly depending on device API level.
+ * Class provides fields and methods that give us information on the user's device.
  */
 public class SystemInfo {
 

@@ -13,7 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.nicoqueijo.cityskylinequiz.R;
-import com.nicoqueijo.cityskylinequiz.adapters.RecyclerViewAdapter;
+import com.nicoqueijo.cityskylinequiz.adapters.CityListRecyclerViewAdapter;
 import com.nicoqueijo.cityskylinequiz.fragments.LanguageChooserDialog;
 import com.nicoqueijo.cityskylinequiz.models.City;
 import com.turingtechnologies.materialscrollbar.AlphabetIndicator;
@@ -39,7 +39,7 @@ public class CityListActivity extends AppCompatActivity {
     private ArrayList<City> mCities;
     private RecyclerView mRecyclerCityList;
     private DragScrollBar mDragScrollBar;
-    private RecyclerViewAdapter mAdapter;
+    private CityListRecyclerViewAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +59,7 @@ public class CityListActivity extends AppCompatActivity {
 
         mRecyclerCityList = (RecyclerView) findViewById(R.id.recycler_city_list);
         mDragScrollBar = (DragScrollBar) findViewById(R.id.drag_scroll_bar);
-        mAdapter = new RecyclerViewAdapter(CityListActivity.this, mCities);
+        mAdapter = new CityListRecyclerViewAdapter(CityListActivity.this, mCities);
         mRecyclerCityList.setAdapter(mAdapter);
         mRecyclerCityList.setLayoutManager(new LinearLayoutManager(CityListActivity.this));
         mDragScrollBar.setIndicator(new AlphabetIndicator(this), true);
