@@ -1,8 +1,10 @@
 package com.nicoqueijo.cityskylinequiz.models;
 
+import com.nicoqueijo.cityskylinequiz.activities.QuizGameActivity;
+
 public class QuestionReport {
 
-    public enum Mark {
+    private enum Mark {
         correct,
         incorrect
     }
@@ -16,7 +18,41 @@ public class QuestionReport {
 
     public QuestionReport(Question question, int questionNumber) {
         this.question = question;
-        this.questionNumber = questionNumber;
+        this.questionNumber = questionNumber + QuizGameActivity.OFF_BY_ONE;
+    }
+
+    public void setCorrectMark(int markNumber) {
+        switch (markNumber) {
+            case QuizGameActivity.CHOICE_1:
+                choice1mark = Mark.correct;
+                break;
+            case QuizGameActivity.CHOICE_2:
+                choice2mark = Mark.correct;
+                break;
+            case QuizGameActivity.CHOICE_3:
+                choice3mark = Mark.correct;
+                break;
+            case QuizGameActivity.CHOICE_4:
+                choice4mark = Mark.correct;
+                break;
+        }
+    }
+
+    public void setIncorrectMark(int markNumber) {
+        switch (markNumber) {
+            case QuizGameActivity.CHOICE_1:
+                choice1mark = Mark.incorrect;
+                break;
+            case QuizGameActivity.CHOICE_2:
+                choice2mark = Mark.incorrect;
+                break;
+            case QuizGameActivity.CHOICE_3:
+                choice3mark = Mark.incorrect;
+                break;
+            case QuizGameActivity.CHOICE_4:
+                choice4mark = Mark.incorrect;
+                break;
+        }
     }
 
     public Question getQuestion() {

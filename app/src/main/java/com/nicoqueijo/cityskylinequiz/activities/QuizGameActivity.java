@@ -33,6 +33,8 @@ import java.util.Queue;
  */
 public class QuizGameActivity extends AppCompatActivity {
 
+    public static final int OFF_BY_ONE = 1;
+
     public static final int CORRECT_CHOICE = 0;
     public static final int CHOICE_1 = 1;
     public static final int CHOICE_2 = 2;

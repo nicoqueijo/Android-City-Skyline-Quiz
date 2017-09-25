@@ -3,6 +3,7 @@ package com.nicoqueijo.cityskylinequiz.fragments;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +29,6 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
     private int mQuestionLimit;
     private int mProgressBarMultiplier;
     private Question mCurrentQuestion;
-    private QuestionReport mCurrentQuestionReport;
     private int mQuestionCounter = 0;
     private int mAttemptNumber = 0;
     private Handler mHandler = new Handler();
@@ -131,18 +131,25 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
         Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
                 .getImageUrl()).fetch();
 
+        int markNumber = 0;
         City guess = null;
         if (choicePress == mContainerChoice1) {
             guess = mCurrentQuestion.getChoice1();
+            markNumber = QuizGameActivity.CHOICE_1;
         } else if (choicePress == mContainerChoice2) {
             guess = mCurrentQuestion.getChoice2();
+            markNumber = QuizGameActivity.CHOICE_2;
         } else if (choicePress == mContainerChoice3) {
             guess = mCurrentQuestion.getChoice3();
+            markNumber = QuizGameActivity.CHOICE_3;
         } else if (choicePress == mContainerChoice4) {
             guess = mCurrentQuestion.getChoice4();
+            markNumber = QuizGameActivity.CHOICE_4;
         }
 
         if (guess.getCityName().equals(mCurrentQuestion.getCorrectChoice().getCityName())) {
+            QuizGameActivity.questionReports.get(mQuestionCounter - QuizGameActivity.OFF_BY_ONE)
+                    .setCorrectMark(markNumber);
             mAttemptNumber = 0;
             mContainerChoice1.setEnabled(false);
             mContainerChoice2.setEnabled(false);
@@ -158,6 +165,8 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
             }, 300);   // 0.3 seconds
 
         } else {
+            QuizGameActivity.questionReports.get(mQuestionCounter - QuizGameActivity.OFF_BY_ONE)
+                    .setIncorrectMark(markNumber);
             choicePress.setEnabled(false);
             choicePress.setAlpha(0.5f);
             mFeedback.setVisibility(View.INVISIBLE);
@@ -182,9 +191,17 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
             // Show game score
             getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT).commit();
             // push the report fragment
+            for (QuestionReport questionReport : QuizGameActivity.questionReports) {
+                Log.v("report", questionReport.getQuestionNumber() + "\n");
+                Log.v("report", questionReport.getChoice1mark() + "\n");
+                Log.v("report", questionReport.getChoice2mark() + "\n");
+                Log.v("report", questionReport.getChoice3mark() + "\n");
+                Log.v("report", questionReport.getChoice4mark() + "\n");
+                Log.v("report", "-----------------------------" + "\n");
+            }
         } else {
             mCurrentQuestion = QuizGameActivity.questions.remove();
-            mCurrentQuestionReport = new QuestionReport(mCurrentQuestion, mQuestionCounter);
+            QuestionReport mCurrentQuestionReport = new QuestionReport(mCurrentQuestion, mQuestionCounter);
             QuizGameActivity.questionReports.add(mCurrentQuestionReport);
             mProgressBar.setProgress(mQuestionCounter * mProgressBarMultiplier);
             mQuestionCounter++;
