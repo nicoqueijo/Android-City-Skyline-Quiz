@@ -25,6 +25,7 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
     private final QuizFragmentTimed THIS_FRAGMENT = this;
 
     private Question mCurrentQuestion;
+    private int mQuestionCounter = 0;
     private int mAttemptNumber = 0;
     private int mTotalSeconds;
     private int mElapsedSeconds = 0;

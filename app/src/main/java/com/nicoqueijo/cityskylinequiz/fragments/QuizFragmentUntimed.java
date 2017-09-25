@@ -3,7 +3,6 @@ package com.nicoqueijo.cityskylinequiz.fragments;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +17,7 @@ import com.nicoqueijo.cityskylinequiz.helpers.CornerRounder;
 import com.nicoqueijo.cityskylinequiz.helpers.ResourceByNameRetriever;
 import com.nicoqueijo.cityskylinequiz.models.City;
 import com.nicoqueijo.cityskylinequiz.models.Question;
+import com.nicoqueijo.cityskylinequiz.models.QuestionReport;
 import com.squareup.picasso.Picasso;
 
 public class QuizFragmentUntimed extends Fragment implements View.OnClickListener {
@@ -28,6 +28,7 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
     private int mQuestionLimit;
     private int mProgressBarMultiplier;
     private Question mCurrentQuestion;
+    private QuestionReport mCurrentQuestionReport;
     private int mQuestionCounter = 0;
     private int mAttemptNumber = 0;
     private Handler mHandler = new Handler();
@@ -129,6 +130,7 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
         // load the image of the next question in cache
         Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
                 .getImageUrl()).fetch();
+
         City guess = null;
         if (choicePress == mContainerChoice1) {
             guess = mCurrentQuestion.getChoice1();
@@ -175,7 +177,6 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
     }
 
     private void loadNextQuestion() {
-        Log.v("question", "question count: " + mQuestionCounter);
         if (mQuestionCounter >= mQuestionLimit) {
             // We answered every question
             // Show game score
@@ -183,6 +184,8 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
             // push the report fragment
         } else {
             mCurrentQuestion = QuizGameActivity.questions.remove();
+            mCurrentQuestionReport = new QuestionReport(mCurrentQuestion, mQuestionCounter);
+            QuizGameActivity.questionReports.add(mCurrentQuestionReport);
             mProgressBar.setProgress(mQuestionCounter * mProgressBarMultiplier);
             mQuestionCounter++;
 

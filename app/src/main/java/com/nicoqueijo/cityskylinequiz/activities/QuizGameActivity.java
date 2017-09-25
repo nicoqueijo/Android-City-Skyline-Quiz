@@ -19,6 +19,7 @@ import com.nicoqueijo.cityskylinequiz.fragments.QuizFragmentTimed;
 import com.nicoqueijo.cityskylinequiz.fragments.QuizFragmentUntimed;
 import com.nicoqueijo.cityskylinequiz.models.City;
 import com.nicoqueijo.cityskylinequiz.models.Question;
+import com.nicoqueijo.cityskylinequiz.models.QuestionReport;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -47,6 +48,7 @@ public class QuizGameActivity extends AppCompatActivity {
     public static final int ONE_HUNDRED_TWENTY_SECONDS_MODE = 2;
 
     public static Queue<Question> questions;
+    public static List<QuestionReport> questionReports;
     private FragmentManager mFragmentManager = getSupportFragmentManager();
     private FragmentTransaction mTransaction = mFragmentManager.beginTransaction();
     private Fragment mQuizFragment = null;
@@ -81,6 +83,7 @@ public class QuizGameActivity extends AppCompatActivity {
         Collections.shuffle(mCities);
         questions = new LinkedList<>();
         generateQuestions();
+        questionReports = new ArrayList<>();
 
         Picasso.with(QuizGameActivity.this).load(questions.peek().getCorrectChoice().getImageUrl())
                 .fetch();
