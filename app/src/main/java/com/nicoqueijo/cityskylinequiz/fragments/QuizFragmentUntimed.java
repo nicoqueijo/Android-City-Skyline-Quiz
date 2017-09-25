@@ -3,7 +3,6 @@ package com.nicoqueijo.cityskylinequiz.fragments;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,22 +33,18 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
     private Handler mHandler = new Handler();
 
     private ImageView mCityImage;
-
     private LinearLayout mContainerChoice1;
     private LinearLayout mContainerChoice2;
     private LinearLayout mContainerChoice3;
     private LinearLayout mContainerChoice4;
-
     private ImageView mFlagChoice1;
     private ImageView mFlagChoice2;
     private ImageView mFlagChoice3;
     private ImageView mFlagChoice4;
-
     private TextView mCityNameChoice1;
     private TextView mCityNameChoice2;
     private TextView mCityNameChoice3;
     private TextView mCityNameChoice4;
-
     private TextView mFeedback;
     private ProgressBar mProgressBar;
 
@@ -191,14 +186,6 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
             // Show game score
             getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT).commit();
             // push the report fragment
-            for (QuestionReport questionReport : QuizGameActivity.questionReports) {
-                Log.v("report", questionReport.getQuestionNumber() + "\n");
-                Log.v("report", questionReport.getChoice1mark() + "\n");
-                Log.v("report", questionReport.getChoice2mark() + "\n");
-                Log.v("report", questionReport.getChoice3mark() + "\n");
-                Log.v("report", questionReport.getChoice4mark() + "\n");
-                Log.v("report", "-----------------------------" + "\n");
-            }
         } else {
             mCurrentQuestion = QuizGameActivity.questions.remove();
             QuestionReport mCurrentQuestionReport = new QuestionReport(mCurrentQuestion, mQuestionCounter);

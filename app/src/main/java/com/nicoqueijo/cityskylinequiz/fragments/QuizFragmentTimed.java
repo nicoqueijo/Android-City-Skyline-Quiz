@@ -18,6 +18,7 @@ import com.nicoqueijo.cityskylinequiz.helpers.CornerRounder;
 import com.nicoqueijo.cityskylinequiz.helpers.ResourceByNameRetriever;
 import com.nicoqueijo.cityskylinequiz.models.City;
 import com.nicoqueijo.cityskylinequiz.models.Question;
+import com.nicoqueijo.cityskylinequiz.models.QuestionReport;
 import com.squareup.picasso.Picasso;
 
 public class QuizFragmentTimed extends Fragment implements View.OnClickListener {
@@ -149,18 +150,26 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
         // load the image of the next question in cache
         Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
                 .getImageUrl()).fetch();
+
+        int markNumber = 0;
         City guess = null;
         if (choicePress == mContainerChoice1) {
             guess = mCurrentQuestion.getChoice1();
+            markNumber = QuizGameActivity.CHOICE_1;
         } else if (choicePress == mContainerChoice2) {
             guess = mCurrentQuestion.getChoice2();
+            markNumber = QuizGameActivity.CHOICE_2;
         } else if (choicePress == mContainerChoice3) {
             guess = mCurrentQuestion.getChoice3();
+            markNumber = QuizGameActivity.CHOICE_3;
         } else if (choicePress == mContainerChoice4) {
             guess = mCurrentQuestion.getChoice4();
+            markNumber = QuizGameActivity.CHOICE_4;
         }
 
         if (guess.getCityName().equals(mCurrentQuestion.getCorrectChoice().getCityName())) {
+            QuizGameActivity.questionReports.get(mQuestionCounter - QuizGameActivity.OFF_BY_ONE)
+                    .setCorrectMark(markNumber);
             mAttemptNumber = 0;
             mContainerChoice1.setEnabled(false);
             mContainerChoice2.setEnabled(false);
@@ -176,6 +185,8 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
             }, 300);   // 0.3 seconds
 
         } else {
+            QuizGameActivity.questionReports.get(mQuestionCounter - QuizGameActivity.OFF_BY_ONE)
+                    .setIncorrectMark(markNumber);
             choicePress.setEnabled(false);
             choicePress.setAlpha(0.5f);
             Handler handler = new Handler();
@@ -197,6 +208,9 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
 
     private void loadNextQuestion() {
         mCurrentQuestion = QuizGameActivity.questions.remove();
+        QuestionReport mCurrentQuestionReport = new QuestionReport(mCurrentQuestion, mQuestionCounter);
+        QuizGameActivity.questionReports.add(mCurrentQuestionReport);
+        mQuestionCounter++;
 
         mContainerChoice1.setEnabled(true);
         mContainerChoice2.setEnabled(true);

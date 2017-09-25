@@ -17,6 +17,7 @@ import com.nicoqueijo.cityskylinequiz.helpers.CornerRounder;
 import com.nicoqueijo.cityskylinequiz.helpers.ResourceByNameRetriever;
 import com.nicoqueijo.cityskylinequiz.models.City;
 import com.nicoqueijo.cityskylinequiz.models.Question;
+import com.nicoqueijo.cityskylinequiz.models.QuestionReport;
 import com.squareup.picasso.Picasso;
 
 public class QuizFragmentEveryCity extends Fragment implements View.OnClickListener {
@@ -120,18 +121,25 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
                     .getImageUrl()).fetch();
         }
 
+        int markNumber = 0;
         City guess = null;
         if (choicePress == mContainerChoice1) {
             guess = mCurrentQuestion.getChoice1();
+            markNumber = QuizGameActivity.CHOICE_1;
         } else if (choicePress == mContainerChoice2) {
             guess = mCurrentQuestion.getChoice2();
+            markNumber = QuizGameActivity.CHOICE_2;
         } else if (choicePress == mContainerChoice3) {
             guess = mCurrentQuestion.getChoice3();
+            markNumber = QuizGameActivity.CHOICE_3;
         } else if (choicePress == mContainerChoice4) {
             guess = mCurrentQuestion.getChoice4();
+            markNumber = QuizGameActivity.CHOICE_4;
         }
 
         if (guess.getCityName().equals(mCurrentQuestion.getCorrectChoice().getCityName())) {
+            QuizGameActivity.questionReports.get(mQuestionCounter - QuizGameActivity.OFF_BY_ONE)
+                    .setCorrectMark(markNumber);
             mAttemptNumber = 0;
             mContainerChoice1.setEnabled(false);
             mContainerChoice2.setEnabled(false);
@@ -147,6 +155,8 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
             }, 300);   // 0.3 seconds
 
         } else if (mNoFaults) {
+            QuizGameActivity.questionReports.get(mQuestionCounter - QuizGameActivity.OFF_BY_ONE)
+                    .setIncorrectMark(markNumber);
             choicePress.setAlpha(0.5f);
             mContainerChoice1.setEnabled(false);
             mContainerChoice2.setEnabled(false);
@@ -161,6 +171,8 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
                 }
             }, 500);    // 0.5 seconds
         } else {
+            QuizGameActivity.questionReports.get(mQuestionCounter - QuizGameActivity.OFF_BY_ONE)
+                    .setIncorrectMark(markNumber);
             choicePress.setEnabled(false);
             choicePress.setAlpha(0.5f);
             mFeedback.setVisibility(View.INVISIBLE);
@@ -187,6 +199,8 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
             getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT).commit();
         } else {
             mCurrentQuestion = QuizGameActivity.questions.remove();
+            QuestionReport mCurrentQuestionReport = new QuestionReport(mCurrentQuestion, mQuestionCounter);
+            QuizGameActivity.questionReports.add(mCurrentQuestionReport);
             mProgressBar.setProgress(mQuestionCounter);
             mQuestionCounter++;
 
