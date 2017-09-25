@@ -69,7 +69,7 @@
                         android:gravity="center"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
-                        android:textSize="14dp"
+                        android:textSize="16dp"
                         tools:text="@string/kiev" />
 
                 </RelativeLayout>
@@ -107,7 +107,7 @@
                         android:gravity="center"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
-                        android:textSize="14dp"
+                        android:textSize="16dp"
                         tools:text="@string/ho_chi_minh_city" />
 
                 </RelativeLayout>
@@ -155,7 +155,7 @@
                         android:gravity="center"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
-                        android:textSize="14dp"
+                        android:textSize="16dp"
                         tools:text="@string/los_angeles" />
 
                 </RelativeLayout>
@@ -193,7 +193,7 @@
                         android:gravity="center"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
-                        android:textSize="14dp"
+                        android:textSize="16dp"
                         tools:text="@string/cali" />
 
                 </RelativeLayout>

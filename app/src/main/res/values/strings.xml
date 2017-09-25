@@ -50,6 +50,7 @@
     <string name="correct">Correct!</string>
     <string name="incorrect">Incorrect!</string>
     <string name="try_again">Try Again</string>
+    <string name="question">Question:</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>

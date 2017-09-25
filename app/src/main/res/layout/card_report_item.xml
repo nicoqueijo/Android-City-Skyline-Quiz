@@ -14,14 +14,28 @@
         android:orientation="vertical"
         android:padding="6dp">
 
-        <TextView
-            android:id="@+id/question_number"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="4dp"
-            android:textSize="12dp"
-            tools:text="Question: 1" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/question_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/question"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/question_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                tools:text=" 23 " />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,6 +69,7 @@
                     android:background="@drawable/round_outline_answer_choice">
 
                     <ImageView
+                        android:id="@+id/flag_choice_one"
                         android:layout_width="25dp"
                         android:layout_height="18dp"
                         android:layout_alignParentLeft="true"
@@ -64,6 +79,7 @@
                         tools:src="@drawable/united_states" />
 
                     <TextView
+                        android:id="@+id/city_name_choice_one"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
@@ -72,6 +88,7 @@
                         tools:text="@string/los_angeles" />
 
                     <ImageView
+                        android:id="@+id/mark_choice_one"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -91,6 +108,7 @@
                     android:background="@drawable/round_outline_answer_choice">
 
                     <ImageView
+                        android:id="@+id/flag_choice_two"
                         android:layout_width="25dp"
                         android:layout_height="18dp"
                         android:layout_alignParentLeft="true"
@@ -100,6 +118,7 @@
                         tools:src="@drawable/united_states" />
 
                     <TextView
+                        android:id="@+id/city_name_choice_two"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
@@ -108,6 +127,7 @@
                         tools:text="@string/los_angeles" />
 
                     <ImageView
+                        android:id="@+id/mark_choice_two"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -127,6 +147,7 @@
                     android:background="@drawable/round_outline_answer_choice">
 
                     <ImageView
+                        android:id="@+id/flag_choice_three"
                         android:layout_width="25dp"
                         android:layout_height="18dp"
                         android:layout_alignParentLeft="true"
@@ -136,6 +157,7 @@
                         tools:src="@drawable/united_states" />
 
                     <TextView
+                        android:id="@+id/city_name_choice_three"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
@@ -144,6 +166,7 @@
                         tools:text="@string/los_angeles" />
 
                     <ImageView
+                        android:id="@+id/mark_choice_three"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -162,6 +185,7 @@
                     android:background="@drawable/round_outline_answer_choice">
 
                     <ImageView
+                        android:id="@+id/flag_choice_four"
                         android:layout_width="25dp"
                         android:layout_height="18dp"
                         android:layout_alignParentLeft="true"
@@ -171,6 +195,7 @@
                         tools:src="@drawable/united_states" />
 
                     <TextView
+                        android:id="@+id/city_name_choice_four"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
@@ -179,6 +204,7 @@
                         tools:text="@string/los_angeles" />
 
                     <ImageView
+                        android:id="@+id/mark_choice_four"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
