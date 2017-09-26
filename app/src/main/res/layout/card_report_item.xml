@@ -76,7 +76,7 @@
                         android:layout_gravity="center"
                         android:layout_margin="4dp"
                         android:background="@drawable/round_outline"
-                        tools:src="@drawable/united_states" />
+                        tools:src="@drawable/australia" />
 
                     <TextView
                         android:id="@+id/city_name_choice_one"
@@ -87,15 +87,15 @@
                         android:gravity="center"
                         android:textColor="@color/white"
                         android:textSize="11dp"
-                        tools:text="@string/los_angeles" />
+                        tools:text="@string/sydney" />
 
                     <ImageView
                         android:id="@+id/mark_choice_one"
                         android:layout_width="25dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:paddingRight="2dp"
-                        tools:src="@drawable/ic_close_black_24dp" />
+                        android:paddingRight="4dp"
+                        tools:src="@drawable/ic_incorrect" />
 
                 </LinearLayout>
 
@@ -117,7 +117,7 @@
                         android:layout_gravity="center"
                         android:layout_margin="4dp"
                         android:background="@drawable/round_outline"
-                        tools:src="@drawable/united_states" />
+                        tools:src="@drawable/argentina" />
 
                     <TextView
                         android:id="@+id/city_name_choice_two"
@@ -128,15 +128,15 @@
                         android:gravity="center"
                         android:textColor="@color/white"
                         android:textSize="11dp"
-                        tools:text="@string/los_angeles" />
+                        tools:text="@string/buenos_aires" />
 
                     <ImageView
                         android:id="@+id/mark_choice_two"
                         android:layout_width="25dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:paddingRight="2dp"
-                        tools:src="@drawable/ic_close_black_24dp" />
+                        android:paddingRight="4dp"
+                        tools:src="@drawable/ic_incorrect" />
 
                 </LinearLayout>
 
@@ -176,8 +176,8 @@
                         android:layout_width="25dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:paddingRight="2dp"
-                        tools:src="@drawable/ic_close_black_24dp" />
+                        android:paddingRight="4dp"
+                        tools:src="@drawable/ic_correct" />
 
                 </LinearLayout>
 
@@ -198,7 +198,7 @@
                         android:layout_gravity="center"
                         android:layout_margin="4dp"
                         android:background="@drawable/round_outline"
-                        tools:src="@drawable/united_states" />
+                        tools:src="@drawable/england" />
 
                     <TextView
                         android:id="@+id/city_name_choice_four"
@@ -209,15 +209,15 @@
                         android:gravity="center"
                         android:textColor="@color/white"
                         android:textSize="11dp"
-                        tools:text="@string/los_angeles" />
+                        tools:text="@string/london" />
 
                     <ImageView
                         android:id="@+id/mark_choice_four"
                         android:layout_width="25dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:paddingRight="2dp"
-                        tools:src="@drawable/ic_close_black_24dp" />
+                        android:paddingRight="4dp"
+                        tools:src="@drawable/ic_incorrect" />
 
                 </LinearLayout>
 
