@@ -55,6 +55,12 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
     public QuizFragmentTimed() {
     }
 
+    /**
+     * Called to do initial creation of a fragment.
+     *
+     * @param savedInstanceState If the fragment is being re-created from
+     *                           a previous saved state, this is the state.
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
