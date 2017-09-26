@@ -26,13 +26,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/question"
-                android:textSize="14dp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/question_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 tools:text=" 23 " />
 
         </LinearLayout>
@@ -86,7 +86,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="@color/white"
-                        android:textSize="11dp"
+                        android:textSize="12sp"
                         tools:text="@string/sydney" />
 
                     <ImageView
@@ -127,7 +127,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="@color/white"
-                        android:textSize="11dp"
+                        android:textSize="12sp"
                         tools:text="@string/buenos_aires" />
 
                     <ImageView
@@ -168,7 +168,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="@color/white"
-                        android:textSize="11dp"
+                        android:textSize="12sp"
                         tools:text="@string/los_angeles" />
 
                     <ImageView
@@ -208,7 +208,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="@color/white"
-                        android:textSize="11dp"
+                        android:textSize="12sp"
                         tools:text="@string/london" />
 
                     <ImageView
