@@ -5,8 +5,8 @@ import com.nicoqueijo.cityskylinequiz.activities.QuizGameActivity;
 public class QuestionReport {
 
     public enum Mark {
-        correct,
-        incorrect
+        CORRECT,
+        INCORRECT
     }
 
     private Question question;
@@ -24,16 +24,16 @@ public class QuestionReport {
     public void setCorrectMark(int markNumber) {
         switch (markNumber) {
             case QuizGameActivity.CHOICE_1:
-                choice1mark = Mark.correct;
+                choice1mark = Mark.CORRECT;
                 break;
             case QuizGameActivity.CHOICE_2:
-                choice2mark = Mark.correct;
+                choice2mark = Mark.CORRECT;
                 break;
             case QuizGameActivity.CHOICE_3:
-                choice3mark = Mark.correct;
+                choice3mark = Mark.CORRECT;
                 break;
             case QuizGameActivity.CHOICE_4:
-                choice4mark = Mark.correct;
+                choice4mark = Mark.CORRECT;
                 break;
         }
     }
@@ -41,16 +41,16 @@ public class QuestionReport {
     public void setIncorrectMark(int markNumber) {
         switch (markNumber) {
             case QuizGameActivity.CHOICE_1:
-                choice1mark = Mark.incorrect;
+                choice1mark = Mark.INCORRECT;
                 break;
             case QuizGameActivity.CHOICE_2:
-                choice2mark = Mark.incorrect;
+                choice2mark = Mark.INCORRECT;
                 break;
             case QuizGameActivity.CHOICE_3:
-                choice3mark = Mark.incorrect;
+                choice3mark = Mark.INCORRECT;
                 break;
             case QuizGameActivity.CHOICE_4:
-                choice4mark = Mark.incorrect;
+                choice4mark = Mark.INCORRECT;
                 break;
         }
     }

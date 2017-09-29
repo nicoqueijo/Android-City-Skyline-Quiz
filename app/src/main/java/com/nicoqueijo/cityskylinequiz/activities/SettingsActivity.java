@@ -4,9 +4,9 @@ import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Switch;
@@ -91,7 +91,7 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
     /**
      * When the user selects an option in a DialogFragment without cancelling this method executes
      * passing back the result of the option the user selected. If the user confirmed to clearing
-     * the game's scores it does that, otherwise the user set the app to a new language and it
+     * the game's scores IT does that, otherwise the user set the app to a new language and IT
      * restarts the activity to load the layout in the language the user selected.
      *
      * @param message the result returned from opening a DialogFragment.
@@ -126,7 +126,7 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
 
     /**
      * Saves the theme status on mSharedPreferences according to the status of the theme switch. If
-     * theme switch is checked, it saved the theme as dark. Else it saves the theme as light.
+     * theme switch is checked, IT saved the theme as dark. Else IT saves the theme as light.
      */
     public void saveTheme() {
         SharedPreferences.Editor editor = mSharedPreferences.edit();

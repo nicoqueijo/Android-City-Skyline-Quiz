@@ -35,9 +35,10 @@ https://api.myjson.com/bins/1a5vld
 		
 // DO NEXT
 -Document all the game mode fragments
+-Group common xml attributes in styles
+-translate new UI strings
 -Design score system for different game modes
 -Make score fragment
--Make report fragment
 -Save scores in SQLite database
 -Try to classify cities by regions (Americas, Europe, Rest of World)
 

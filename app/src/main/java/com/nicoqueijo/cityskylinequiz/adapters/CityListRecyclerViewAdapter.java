@@ -116,7 +116,7 @@ public class CityListRecyclerViewAdapter extends RecyclerView.Adapter<CityListRe
 
     /**
      * Retrieves the first character of the element in the current position of the adapter. If the
-     * list is being sorted by city name it gets the first character of the city name, else it is
+     * list is being sorted by city name IT gets the first character of the city name, else IT is
      * being sorted by country name so it gets the first character of the country name.
      *
      * @param position of the adapter that should be titled.

@@ -139,11 +139,11 @@ public class QuizGameActivity extends AppCompatActivity {
      * Generates the questions for the quiz game. The Question objects are stored in a queue data
      * structure. Each Question is in the following format: It has five fields of City objects which
      * we'll call choices. There are four choices fields which are random cities from the shuffled
-     * city list and a correct choice field which is a random city from the four choices.
+     * city list and a CORRECT choice field which is a random city from the four choices.
      * <p>
-     * The algorithm chooses the first city of the shuffled list as the correct choice and then
+     * The algorithm chooses the first city of the shuffled list as the CORRECT choice and then
      * three random, non-repeating cities as the other choices. When a question with its choices has
-     * been created it enqueues it to the Question queue. It does this n times where n is the number
+     * been created IT enqueues IT to the Question queue. It does this n times where n is the number
      * of cities.
      * <p>
      * Credit to mav3n and Miroslav Lazovich who helped me implement this algorithm:

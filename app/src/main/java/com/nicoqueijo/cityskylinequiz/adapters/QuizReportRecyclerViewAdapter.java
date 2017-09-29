@@ -86,27 +86,27 @@ public class QuizReportRecyclerViewAdapter extends RecyclerView.Adapter<QuizRepo
         holder.mCityNameChoice4.setText((ResourceByNameRetriever.getStringResourceByName
                 (mQuestionReports.get(position).getQuestion().getChoice4().getCityName(), mContext)));
 
-        if (mQuestionReports.get(position).getChoice1mark() == QuestionReport.Mark.correct) {
+        if (mQuestionReports.get(position).getChoice1mark() == QuestionReport.Mark.CORRECT) {
             holder.mMarkChoice1.setImageResource(R.drawable.ic_correct);
-        } else if (mQuestionReports.get(position).getChoice1mark() == QuestionReport.Mark.incorrect) {
+        } else if (mQuestionReports.get(position).getChoice1mark() == QuestionReport.Mark.INCORRECT) {
             holder.mMarkChoice1.setImageResource(R.drawable.ic_incorrect);
         }
 
-        if (mQuestionReports.get(position).getChoice2mark() == QuestionReport.Mark.correct) {
+        if (mQuestionReports.get(position).getChoice2mark() == QuestionReport.Mark.CORRECT) {
             holder.mMarkChoice2.setImageResource(R.drawable.ic_correct);
-        } else if (mQuestionReports.get(position).getChoice2mark() == QuestionReport.Mark.incorrect) {
+        } else if (mQuestionReports.get(position).getChoice2mark() == QuestionReport.Mark.INCORRECT) {
             holder.mMarkChoice2.setImageResource(R.drawable.ic_incorrect);
         }
 
-        if (mQuestionReports.get(position).getChoice3mark() == QuestionReport.Mark.correct) {
+        if (mQuestionReports.get(position).getChoice3mark() == QuestionReport.Mark.CORRECT) {
             holder.mMarkChoice3.setImageResource(R.drawable.ic_correct);
-        } else if (mQuestionReports.get(position).getChoice3mark() == QuestionReport.Mark.incorrect) {
+        } else if (mQuestionReports.get(position).getChoice3mark() == QuestionReport.Mark.INCORRECT) {
             holder.mMarkChoice3.setImageResource(R.drawable.ic_incorrect);
         }
 
-        if (mQuestionReports.get(position).getChoice4mark() == QuestionReport.Mark.correct) {
+        if (mQuestionReports.get(position).getChoice4mark() == QuestionReport.Mark.CORRECT) {
             holder.mMarkChoice4.setImageResource(R.drawable.ic_correct);
-        } else if (mQuestionReports.get(position).getChoice4mark() == QuestionReport.Mark.incorrect) {
+        } else if (mQuestionReports.get(position).getChoice4mark() == QuestionReport.Mark.INCORRECT) {
             holder.mMarkChoice4.setImageResource(R.drawable.ic_incorrect);
         }
 
