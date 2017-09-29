@@ -74,7 +74,7 @@ public class MainMenuActivity extends AppCompatActivity {
         mActionBar.setIcon(R.mipmap.ic_launcher);
         mActionBar.setTitle(R.string.actionbar_app_name);
 
-        // Do something if IT's the first time launching the app (maybe splash screen for image caching)
+        // Do something if it's the first time launching the app (maybe splash screen for image caching)
         // Note: Splash screen should probably execute every time the app is launched. It will just
         // take long on first time and will be instant on future launches.
         if (mSharedPreferences.getBoolean("first_launch", true)) {
@@ -121,7 +121,7 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     /**
-     * Loads the theme if IT was changed. Updates the city objects with city and country names in
+     * Loads the theme if it was changed. Updates the city objects with city and country names in
      * its appropriate language if the language was changed.
      */
     @Override
@@ -225,7 +225,7 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     /**
-     * Parses the JSON file stored in the assets folder and returns a String representation of IT.
+     * Parses the JSON file stored in the assets folder and returns a String representation of it.
      *
      * @return the JSON file in String format
      */
@@ -246,7 +246,7 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     /**
-     * Takes the String JSON and puts IT in a JSON object. Then populates the array of model
+     * Takes the String JSON and puts it in a JSON object. Then populates the array of model
      * objects with the data contained in the JSON object.
      */
     private void parseJsonAndCreateCityObjects() {
@@ -268,7 +268,7 @@ public class MainMenuActivity extends AppCompatActivity {
     // MAKE SPLASH SCREEN FOR THIS IF CACHING THEM FOR THE FIRST TIME!!!!
 
     /**
-     * Caches the city image from each model object (if not cached already) and loads IT to memory.
+     * Caches the city image from each model object (if not cached already) and loads it to memory.
      */
     private void cacheImagesAndLoadToMemory() {
         for (City city : cities) {

@@ -33,22 +33,22 @@ import java.util.Stack;
 public class LanguageChooserDialog extends DialogFragment {
 
     public enum Language {
-        EN, // ENGLISH
-        ES, // SPANISH
-        FR, // FRENCH
-        DE, // GERMAN
-        IT, // ITALIAN
-        NL, // DUTCH
-        PT, // PORTUGUESE
-        PL, // POLISH
-        RU, // RUSSIAN
-        TR, // TURKISH
-        ZH, // CHINESE
-        JA, // JAPANESE
-        KO, // KOREAN
-        AR, // ARABIC
-        HI, // HINDI
-        MS  // MALAY
+        en, // ENGLISH
+        es, // SPANISH
+        fr, // FRENCH
+        de, // GERMAN
+        it, // ITALIAN
+        nl, // DUTCH
+        pt, // PORTUGUESE
+        pl, // POLISH
+        ru, // RUSSIAN
+        tr, // TURKISH
+        zh, // CHINESE
+        ja, // JAPANESE
+        ko, // KOREAN
+        ar, // ARABIC
+        hi, // HINDI
+        ms  // MALAY
     }
 
     Communicator mCommunicator;
@@ -208,112 +208,112 @@ public class LanguageChooserDialog extends DialogFragment {
         mEnglishOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                changeLanguage(mEnglishRadioButton, Language.EN);
+                changeLanguage(mEnglishRadioButton, Language.en);
             }
         });
 
         mSpanishOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                changeLanguage(mSpanishRadioButton, Language.ES);
+                changeLanguage(mSpanishRadioButton, Language.es);
             }
         });
 
         mFrenchOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                changeLanguage(mFrenchRadioButton, Language.FR);
+                changeLanguage(mFrenchRadioButton, Language.fr);
             }
         });
 
         mGermanOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                changeLanguage(mGermanRadioButton, Language.DE);
+                changeLanguage(mGermanRadioButton, Language.de);
             }
         });
 
         mItalianOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                changeLanguage(mItalianRadioButton, Language.IT);
+                changeLanguage(mItalianRadioButton, Language.it);
             }
         });
 
         mDutchOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                changeLanguage(mDutchRadioButton, Language.NL);
+                changeLanguage(mDutchRadioButton, Language.nl);
             }
         });
 
         mPortugueseOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                changeLanguage(mPortugueseRadioButton, Language.PT);
+                changeLanguage(mPortugueseRadioButton, Language.pt);
             }
         });
 
         mPolishOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                changeLanguage(mPolishRadioButton, Language.PL);
+                changeLanguage(mPolishRadioButton, Language.pl);
             }
         });
 
         mRussianOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                changeLanguage(mRussianRadioButton, Language.RU);
+                changeLanguage(mRussianRadioButton, Language.ru);
             }
         });
 
         mTurkishOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                changeLanguage(mTurkishRadioButton, Language.TR);
+                changeLanguage(mTurkishRadioButton, Language.tr);
             }
         });
 
         mChineseOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                changeLanguage(mChineseRadioButton, Language.ZH);
+                changeLanguage(mChineseRadioButton, Language.zh);
             }
         });
 
         mJapaneseOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                changeLanguage(mJapaneseRadioButton, Language.JA);
+                changeLanguage(mJapaneseRadioButton, Language.ja);
             }
         });
 
         mKoreanOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                changeLanguage(mKoreanRadioButton, Language.KO);
+                changeLanguage(mKoreanRadioButton, Language.ko);
             }
         });
 
         mArabicOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                changeLanguage(mArabicRadioButton, Language.AR);
+                changeLanguage(mArabicRadioButton, Language.ar);
             }
         });
 
         mHindiOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                changeLanguage(mHindiRadioButton, Language.HI);
+                changeLanguage(mHindiRadioButton, Language.hi);
             }
         });
 
         mMalayOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                changeLanguage(mMalayRadioButton, Language.MS);
+                changeLanguage(mMalayRadioButton, Language.ms);
             }
         });
 
@@ -328,7 +328,7 @@ public class LanguageChooserDialog extends DialogFragment {
     /**
      * All the RadioButtons are grouped manually using a stack. Since only one radio button can be
      * pressed at a time, a stack is used to pop a button and push another when the user presses
-     * buttons. When a button is pressed IT pops the previous button (if any) and pushes the pressed
+     * buttons. When a button is pressed it pops the previous button (if any) and pushes the pressed
      * button. The language of the pressed button is saved to SharedPreferences and the locale is
      * changed to the new language. A message is sent back to the hosting activity to update the
      * layout using the strings of the new language.
@@ -395,56 +395,56 @@ public class LanguageChooserDialog extends DialogFragment {
      * Retrieves the language setting from the SharedPreferences file and sets that language to the
      * appropriate RadioButton. If this is the first time running the app SharedPreferences won't
      * have a language value and the default value will be the system language. If the system
-     * language is not a supported language in this app IT defaults to English.
+     * language is not a supported language in this app it defaults to English.
      */
     private void restoreSavedLanguage() {
         String savedLanguage = mSharedPreferences.getString("language", SystemInfo.SYSTEM_LOCALE);
-        if (savedLanguage.equals(Language.EN.name())) {
+        if (savedLanguage.equals(Language.en.name())) {
             mEnglishRadioButton.setChecked(true);
             mActiveRadioButton.push(mEnglishRadioButton);
-        } else if (savedLanguage.equals(Language.ES.name())) {
+        } else if (savedLanguage.equals(Language.es.name())) {
             mSpanishRadioButton.setChecked(true);
             mActiveRadioButton.push(mSpanishRadioButton);
-        } else if (savedLanguage.equals(Language.FR.name())) {
+        } else if (savedLanguage.equals(Language.fr.name())) {
             mFrenchRadioButton.setChecked(true);
             mActiveRadioButton.push(mFrenchRadioButton);
-        } else if (savedLanguage.equals(Language.DE.name())) {
+        } else if (savedLanguage.equals(Language.de.name())) {
             mGermanRadioButton.setChecked(true);
             mActiveRadioButton.push(mGermanRadioButton);
-        } else if (savedLanguage.equals(Language.IT.name())) {
+        } else if (savedLanguage.equals(Language.it.name())) {
             mItalianRadioButton.setChecked(true);
             mActiveRadioButton.push(mItalianRadioButton);
-        } else if (savedLanguage.equals(Language.NL.name())) {
+        } else if (savedLanguage.equals(Language.nl.name())) {
             mDutchRadioButton.setChecked(true);
             mActiveRadioButton.push(mDutchRadioButton);
-        } else if (savedLanguage.equals(Language.PT.name())) {
+        } else if (savedLanguage.equals(Language.pt.name())) {
             mPortugueseRadioButton.setChecked(true);
             mActiveRadioButton.push(mPortugueseRadioButton);
-        } else if (savedLanguage.equals(Language.PL.name())) {
+        } else if (savedLanguage.equals(Language.pl.name())) {
             mPolishRadioButton.setChecked(true);
             mActiveRadioButton.push(mPolishRadioButton);
-        } else if (savedLanguage.equals(Language.RU.name())) {
+        } else if (savedLanguage.equals(Language.ru.name())) {
             mRussianRadioButton.setChecked(true);
             mActiveRadioButton.push(mRussianRadioButton);
-        } else if (savedLanguage.equals(Language.TR.name())) {
+        } else if (savedLanguage.equals(Language.tr.name())) {
             mTurkishRadioButton.setChecked(true);
             mActiveRadioButton.push(mTurkishRadioButton);
-        } else if (savedLanguage.equals(Language.ZH.name())) {
+        } else if (savedLanguage.equals(Language.zh.name())) {
             mChineseRadioButton.setChecked(true);
             mActiveRadioButton.push(mChineseRadioButton);
-        } else if (savedLanguage.equals(Language.JA.name())) {
+        } else if (savedLanguage.equals(Language.ja.name())) {
             mJapaneseRadioButton.setChecked(true);
             mActiveRadioButton.push(mJapaneseRadioButton);
-        } else if (savedLanguage.equals(Language.KO.name())) {
+        } else if (savedLanguage.equals(Language.ko.name())) {
             mKoreanRadioButton.setChecked(true);
             mActiveRadioButton.push(mKoreanRadioButton);
-        } else if (savedLanguage.equals(Language.AR.name())) {
+        } else if (savedLanguage.equals(Language.ar.name())) {
             mArabicRadioButton.setChecked(true);
             mActiveRadioButton.push(mArabicRadioButton);
-        } else if (savedLanguage.equals(Language.HI.name())) {
+        } else if (savedLanguage.equals(Language.hi.name())) {
             mHindiRadioButton.setChecked(true);
             mActiveRadioButton.push(mHindiRadioButton);
-        } else if (savedLanguage.equals(Language.MS.name())) {
+        } else if (savedLanguage.equals(Language.ms.name())) {
             mMalayRadioButton.setChecked(true);
             mActiveRadioButton.push(mMalayRadioButton);
         } else {

@@ -143,7 +143,7 @@ public class QuizGameActivity extends AppCompatActivity {
      * <p>
      * The algorithm chooses the first city of the shuffled list as the CORRECT choice and then
      * three random, non-repeating cities as the other choices. When a question with its choices has
-     * been created IT enqueues IT to the Question queue. It does this n times where n is the number
+     * been created it enqueues it to the Question queue. It does this n times where n is the number
      * of cities.
      * <p>
      * Credit to mav3n and Miroslav Lazovich who helped me implement this algorithm:

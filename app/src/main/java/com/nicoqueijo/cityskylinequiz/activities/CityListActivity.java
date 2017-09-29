@@ -128,7 +128,7 @@ public class CityListActivity extends AppCompatActivity {
      */
     private void sortCities(final int sortMode) {
         final String currentLanguage = mSharedPreferences
-                .getString("language", LanguageChooserDialog.Language.EN.name());
+                .getString("language", LanguageChooserDialog.Language.en.name());
         Collections.sort(mCities, new Comparator<City>() {
             Collator collator = Collator.getInstance(new Locale(currentLanguage));
 
