@@ -89,7 +89,7 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
         int mChildPosition = getArguments().getInt("child");
         switch (mChildPosition) {
             case QuizGameActivity.THIRTY_SECONDS_MODE:
-                mTotalSeconds = 3;
+                mTotalSeconds = 30;
                 break;
             case QuizGameActivity.SIXTY_SECONDS_MODE:
                 mTotalSeconds = 60;
