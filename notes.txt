@@ -34,13 +34,13 @@ https://api.myjson.com/bins/1a5vld
 		Use Typeface class from Base Converter project
 		
 // DO NEXT
--Document all the game mode fragments
+-Document quiz fragments and report fragment
 -Group common xml attributes in styles
 -translate new UI strings
 -Design score system for different game modes
 -Make score fragment
 -Save scores in SQLite database
--Try to classify cities by regions (Americas, Europe, Rest of World)
+-Try to classify cities by regions (Americas, Europe, Asia/Africa/Oceania)
 
 // TESTING
 -Assure layouts are good on Arabic (left/start right/end)

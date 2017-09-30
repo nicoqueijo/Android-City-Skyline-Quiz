@@ -58,5 +58,4 @@ public class QuizReportFragment extends Fragment {
 
         return view;
     }
-
 }
