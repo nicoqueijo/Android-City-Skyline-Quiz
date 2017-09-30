@@ -10,12 +10,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.activities.QuizGameActivity;
 import com.nicoqueijo.cityskylinequiz.helpers.CornerRounder;
 import com.nicoqueijo.cityskylinequiz.helpers.ResourceByNameRetriever;
+import com.nicoqueijo.cityskylinequiz.helpers.SystemInfo;
 import com.nicoqueijo.cityskylinequiz.models.City;
 import com.nicoqueijo.cityskylinequiz.models.Question;
 import com.nicoqueijo.cityskylinequiz.models.QuestionReport;
@@ -33,6 +35,7 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
     private CountDownTimer mCountDownTimer;
     private Handler mHandler = new Handler();
 
+    private RelativeLayout mContainerCityImage;
     private ImageView mCityImage;
     private LinearLayout mContainerChoice1;
     private LinearLayout mContainerChoice2;
@@ -98,6 +101,7 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
                 break;
         }
 
+        mContainerCityImage = (RelativeLayout) view.findViewById(R.id.container_city_image);
         mCityImage = (ImageView) view.findViewById(R.id.city_image);
         mContainerChoice1 = (LinearLayout) view.findViewById(R.id.answer_choice_one);
         mContainerChoice2 = (LinearLayout) view.findViewById(R.id.answer_choice_two);
@@ -114,6 +118,13 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
         mFeedback = (TextView) view.findViewById(R.id.feedback);
         mProgressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
         mProgressBar.setMax(mTotalSeconds);
+
+        if (SystemInfo.isRunningLollipopOrHigher()) {
+            mContainerChoice1.setElevation(12.0f);
+            mContainerChoice2.setElevation(12.0f);
+            mContainerChoice3.setElevation(12.0f);
+            mContainerChoice4.setElevation(12.0f);
+        }
 
         mContainerChoice1.setOnClickListener(this);
         mContainerChoice2.setOnClickListener(this);

@@ -4,8 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="3dp"
-    app:cardCornerRadius="2dp">
+    android:layout_marginBottom="6dp"
+    android:layout_marginLeft="3dp"
+    android:layout_marginRight="3dp"
+    android:layout_marginTop="6dp"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="4dp">
 
     <LinearLayout
         android:id="@+id/container_report_item"

@@ -15,6 +15,7 @@ import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.activities.QuizGameActivity;
 import com.nicoqueijo.cityskylinequiz.helpers.CornerRounder;
 import com.nicoqueijo.cityskylinequiz.helpers.ResourceByNameRetriever;
+import com.nicoqueijo.cityskylinequiz.helpers.SystemInfo;
 import com.nicoqueijo.cityskylinequiz.models.City;
 import com.nicoqueijo.cityskylinequiz.models.Question;
 import com.nicoqueijo.cityskylinequiz.models.QuestionReport;
@@ -109,6 +110,13 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
         mFeedback = (TextView) view.findViewById(R.id.feedback);
         mProgressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
         mProgressBar.setMax(PROGRESS_BAR_UNITS);
+
+        if (SystemInfo.isRunningLollipopOrHigher()) {
+            mContainerChoice1.setElevation(12.0f);
+            mContainerChoice2.setElevation(12.0f);
+            mContainerChoice3.setElevation(12.0f);
+            mContainerChoice4.setElevation(12.0f);
+        }
 
         mContainerChoice1.setOnClickListener(this);
         mContainerChoice2.setOnClickListener(this);

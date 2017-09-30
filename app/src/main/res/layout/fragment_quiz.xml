@@ -4,14 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="12dp">
 
     <RelativeLayout
+        android:id="@+id/container_city_image"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="16dp"
         android:layout_weight="612"
-        android:gravity="center">
+        android:gravity="center"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp">
 
         <ImageView
             android:id="@+id/city_image"
@@ -34,9 +36,11 @@
         <LinearLayout
             android:id="@+id/answer_choices_row_one"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginBottom="4dp"
-            android:orientation="horizontal">
+            android:layout_height="60dp"
+            android:layout_marginBottom="0dp"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:padding="4dp">
 
             <LinearLayout
                 android:id="@+id/answer_choice_one"
@@ -119,10 +123,11 @@
         <LinearLayout
             android:id="@+id/answer_choices_row_two"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:layout_marginBottom="16dp"
-            android:layout_marginTop="4dp"
-            android:orientation="horizontal">
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:padding="4dp">
 
             <LinearLayout
                 android:id="@+id/answer_choice_three"
@@ -209,6 +214,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:max="100"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
             android:progress="0" />
 
         <TextView
