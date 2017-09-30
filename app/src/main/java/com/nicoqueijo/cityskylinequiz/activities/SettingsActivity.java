@@ -82,8 +82,6 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
             public void onClick(View v) {
                 ClearScoresDialog clearScoresDialog = new ClearScoresDialog();
                 clearScoresDialog.show(mFragmentManager, "dialog_scores");
-                // open dialog fragment to confirm scores reset
-                // show toast if user chose to clear scores
             }
         });
     }

@@ -17,14 +17,22 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QuizReportRecyclerViewAdapter extends RecyclerView.Adapter<QuizReportRecyclerViewAdapter
-        .ViewHolder> {
+/**
+ * The Recycler View adapter for the game report.
+ */
+public class QuizReportRecyclerViewAdapter extends RecyclerView.Adapter
+        <QuizReportRecyclerViewAdapter.ViewHolder> {
 
     private Context mContext;
     private ArrayList<QuestionReport> mQuestionReports;
     private LayoutInflater mInflater;
 
-
+    /**
+     * Constructor for the RecyclerView adapter.
+     *
+     * @param context         fragment hosting the RecyclerView
+     * @param questionReports data set of the QuizReportRecyclerViewAdapter
+     */
     public QuizReportRecyclerViewAdapter(Context context, List<QuestionReport> questionReports) {
         mContext = context;
         mQuestionReports = (ArrayList<QuestionReport>) questionReports;
@@ -32,8 +40,7 @@ public class QuizReportRecyclerViewAdapter extends RecyclerView.Adapter<QuizRepo
     }
 
     /**
-     * Called when RecyclerView needs a new ViewHolder of the given type to represent
-     * an item.
+     * Called when RecyclerView needs a new ViewHolder of the given type to represent an item.
      *
      * @param parent   The ViewGroup into which the new View will be added after it is bound to
      *                 an adapter position.
@@ -49,8 +56,7 @@ public class QuizReportRecyclerViewAdapter extends RecyclerView.Adapter<QuizRepo
 
     /**
      * Called by RecyclerView to display the data at the specified position. This method should
-     * update the contents of the ViewHolder to reflect the item at the given
-     * position.
+     * update the contents of the ViewHolder to reflect the item at the given position.
      *
      * @param holder   The ViewHolder which should be updated to represent the contents of the
      *                 item at the given position in the data set.
@@ -124,6 +130,9 @@ public class QuizReportRecyclerViewAdapter extends RecyclerView.Adapter<QuizRepo
         return mQuestionReports.size();
     }
 
+    /**
+     * A ViewHolder describes an item view and metadata about its place within the RecyclerView.
+     */
     class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView mQuestionNumber;
@@ -146,26 +155,20 @@ public class QuizReportRecyclerViewAdapter extends RecyclerView.Adapter<QuizRepo
 
         public ViewHolder(View itemView) {
             super(itemView);
-
             mQuestionNumber = (TextView) itemView.findViewById(R.id.question_number);
             mCityImage = (ImageView) itemView.findViewById(R.id.city_image);
-
             mFlagChoice1 = (ImageView) itemView.findViewById(R.id.flag_choice_one);
             mFlagChoice2 = (ImageView) itemView.findViewById(R.id.flag_choice_two);
             mFlagChoice3 = (ImageView) itemView.findViewById(R.id.flag_choice_three);
             mFlagChoice4 = (ImageView) itemView.findViewById(R.id.flag_choice_four);
-
             mCityNameChoice1 = (TextView) itemView.findViewById(R.id.city_name_choice_one);
             mCityNameChoice2 = (TextView) itemView.findViewById(R.id.city_name_choice_two);
             mCityNameChoice3 = (TextView) itemView.findViewById(R.id.city_name_choice_three);
             mCityNameChoice4 = (TextView) itemView.findViewById(R.id.city_name_choice_four);
-
             mMarkChoice1 = (ImageView) itemView.findViewById(R.id.mark_choice_one);
             mMarkChoice2 = (ImageView) itemView.findViewById(R.id.mark_choice_two);
             mMarkChoice3 = (ImageView) itemView.findViewById(R.id.mark_choice_three);
             mMarkChoice4 = (ImageView) itemView.findViewById(R.id.mark_choice_four);
-
         }
     }
-
 }

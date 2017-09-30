@@ -25,12 +25,12 @@ import com.turingtechnologies.materialscrollbar.INameableAdapter;
 import java.util.ArrayList;
 
 /**
- * CityListRecyclerViewAdapter for the city list. Implements INameableAdapter to get the first character of the
- * city/country in the first position of the adapter and have it displayed on the ScrollBar when
- * the user drags it.
+ * The Recycler View adapter for the city list. Implements INameableAdapter to get the first
+ * character of the city/country in the first position of the adapter and have it displayed on the
+ * ScrollBar when the user drags it.
  */
-public class CityListRecyclerViewAdapter extends RecyclerView.Adapter<CityListRecyclerViewAdapter.ViewHolder>
-        implements INameableAdapter {
+public class CityListRecyclerViewAdapter extends RecyclerView.Adapter<CityListRecyclerViewAdapter
+        .ViewHolder> implements INameableAdapter {
 
     private SharedPreferences mSharedPreferences;
     private Context mContext;
@@ -156,8 +156,7 @@ public class CityListRecyclerViewAdapter extends RecyclerView.Adapter<CityListRe
     }
 
     /**
-     * Representation of each item in the CityListRecyclerViewAdapter's data set. Each item in the data set
-     * has a flag to represent the country of that city, and the name of the city.
+     * A ViewHolder describes an item view and metadata about its place within the RecyclerView.
      */
     class ViewHolder extends RecyclerView.ViewHolder {
         ImageView mCountryFlagImageView;

@@ -125,6 +125,7 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
 
         CornerRounder.roundImageCorners(mCityImage, mFlagChoice1, mFlagChoice2, mFlagChoice3,
                 mFlagChoice4);
+
         loadNextQuestion();
 
         return view;
@@ -137,10 +138,9 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
      */
     @Override
     public void onClick(View v) {
-        // gets the choice that was clicked
         LinearLayout choicePress = (LinearLayout) v;
 
-        // load the image of the next question in cache
+        // loads the image of the next question in cache
         if (!(QuizGameActivity.questions.isEmpty())) {
             Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
                     .getImageUrl()).fetch();

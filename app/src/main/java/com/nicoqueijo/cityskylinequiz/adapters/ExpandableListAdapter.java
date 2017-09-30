@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,6 +20,10 @@ import java.util.Map;
  */
 public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
+    private Context mContext;
+    private List<Integer> mParentGameModes;
+    private Map<Integer, List<Integer>> mChildGameModes;
+
     /**
      * Constructor for the ExpandableListAdapter
      *
@@ -34,10 +37,6 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         this.mParentGameModes = parentGameModes;
         this.mChildGameModes = childGameModes;
     }
-
-    private Context mContext;
-    private List<Integer> mParentGameModes;
-    private Map<Integer, List<Integer>> mChildGameModes;
 
     /**
      * Gets the number of groups.
@@ -114,7 +113,6 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
      * underlying data.
      *
      * @return whether or not the same ID always refers to the same object
-     * @see Adapter#hasStableIds()
      */
     @Override
     public boolean hasStableIds() {

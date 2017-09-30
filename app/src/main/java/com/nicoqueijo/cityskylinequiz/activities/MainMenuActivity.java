@@ -265,8 +265,6 @@ public class MainMenuActivity extends AppCompatActivity {
         }
     }
 
-    // MAKE SPLASH SCREEN FOR THIS IF CACHING THEM FOR THE FIRST TIME!!!!
-
     /**
      * Caches the city image from each model object (if not cached already) and loads it to memory.
      */
