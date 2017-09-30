@@ -89,7 +89,7 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
         int mChildPosition = getArguments().getInt("child");
         switch (mChildPosition) {
             case QuizGameActivity.THIRTY_SECONDS_MODE:
-                mTotalSeconds = 30;
+                mTotalSeconds = 3;
                 break;
             case QuizGameActivity.SIXTY_SECONDS_MODE:
                 mTotalSeconds = 60;
@@ -234,6 +234,9 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
     }
 
     private void loadNextQuestion() {
+        if (getActivity() == null) {
+            return;
+        }
         mCurrentQuestion = QuizGameActivity.questions.remove();
         QuestionReport mCurrentQuestionReport = new QuestionReport(mCurrentQuestion, mQuestionCounter);
         QuizGameActivity.questionReports.add(mCurrentQuestionReport);
