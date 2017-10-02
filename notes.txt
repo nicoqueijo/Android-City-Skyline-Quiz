@@ -34,7 +34,6 @@ https://api.myjson.com/bins/1a5vld
 		Use Typeface class from Base Converter project
 		
 // DO NEXT
--Document quiz fragments and report fragment
 -Group common xml attributes in styles
 -translate new UI strings
 -Design score system for different game modes
