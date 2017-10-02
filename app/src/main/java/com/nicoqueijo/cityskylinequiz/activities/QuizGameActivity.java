@@ -29,7 +29,8 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * This activity hosts the fragment that will run the quiz game.
+ * This activity hosts the fragment that will run the quiz game and the fragment that reports
+ * the game report afterwards.
  */
 public class QuizGameActivity extends AppCompatActivity {
 
@@ -140,7 +141,8 @@ public class QuizGameActivity extends AppCompatActivity {
 
     /**
      * Generates the questions for the quiz game. The Question objects are stored in a queue data
-     * structure. Each Question is in the following format: It has five fields of City objects which
+     * structure since we always access them one after the other and never require random access.
+     * Each Question is in the following format: It has five fields of City objects which
      * we'll call choices. There are four choices fields which are random cities from the shuffled
      * city list and a CORRECT choice field which is a random city from the four choices.
      * <p>

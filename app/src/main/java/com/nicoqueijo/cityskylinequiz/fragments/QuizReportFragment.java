@@ -12,6 +12,9 @@ import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.activities.QuizGameActivity;
 import com.nicoqueijo.cityskylinequiz.adapters.QuizReportRecyclerViewAdapter;
 
+/**
+ * This fragment hosts a Recycler View whose data set is a list of question reports.
+ */
 public class QuizReportFragment extends Fragment {
 
     private RecyclerView mRecyclerQuizReport;
