@@ -15,6 +15,7 @@ public class HighScoresHelper extends SQLiteOpenHelper {
     private static final String SCORE = "Score";
     private static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " (" + MODE + " VARCHAR(25) PRIMARY KEY, "
             + SCORE + " DECIMAL(5,2));";
+    private static final String DROP_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME;
     private Context context;
 
     /**
@@ -24,16 +25,11 @@ public class HighScoresHelper extends SQLiteOpenHelper {
      * {@link #getReadableDatabase} is called.
      *
      * @param context to use to open or create the database
-     * @param name    of the database file, or null for an in-memory database
-     * @param factory to use for creating cursor objects, or null for the default
-     * @param version number of the database (starting at 1); if the database is older,
-     *                {@link #onUpgrade} will be used to upgrade the database; if the database is
-     *                newer, {@link #onDowngrade} will be used to downgrade the database
      */
-    public HighScoresHelper(Context context, String name, SQLiteDatabase.CursorFactory factory,
-                            int version) {
-        super(context, name, factory, version);
+    public HighScoresHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.context = context;
+        Toast.makeText(context, "DB constructor called", Toast.LENGTH_LONG).show();
     }
 
     /**
@@ -45,6 +41,7 @@ public class HighScoresHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         try {
+            Toast.makeText(context, "DB onCreate() called", Toast.LENGTH_LONG).show();
             db.execSQL(CREATE_TABLE);
         } catch (SQLException e) {
             Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();
@@ -73,6 +70,12 @@ public class HighScoresHelper extends SQLiteOpenHelper {
      */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        try {
+            Toast.makeText(context, "DB onUpgrade() called", Toast.LENGTH_LONG).show();
+            db.execSQL(DROP_TABLE);
+            onCreate(db);
+        } catch (SQLException e) {
+            Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();
+        }
     }
 }

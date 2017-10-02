@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -20,6 +21,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.nicoqueijo.cityskylinequiz.R;
+import com.nicoqueijo.cityskylinequiz.databases.HighScoresHelper;
 import com.nicoqueijo.cityskylinequiz.helpers.ResourceByNameRetriever;
 import com.nicoqueijo.cityskylinequiz.helpers.SystemInfo;
 import com.nicoqueijo.cityskylinequiz.models.City;
@@ -48,6 +50,7 @@ public class MainMenuActivity extends AppCompatActivity {
     public static final String DEVELOPER_GITHUB_URL = "https://github.com/nicoqueijo";
     public static final String DEVELOPER_EMAIL = "queijonicolas@gmail.com";
 
+    private HighScoresHelper mHighScoresHelper;
     public static List<City> cities;
     private String currentLanguage;
     private ActionBar mActionBar;
@@ -62,6 +65,8 @@ public class MainMenuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mHighScoresHelper = new HighScoresHelper(this);
+        SQLiteDatabase sqLiteDatabase = mHighScoresHelper.getWritableDatabase();
         mSharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
         setTheme(mSharedPreferences.getInt("theme", R.style.AppThemeLight));
         setLocale(mSharedPreferences.getString("language", SystemInfo.SYSTEM_LOCALE));
