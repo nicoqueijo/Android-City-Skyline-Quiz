@@ -21,6 +21,11 @@ import com.nicoqueijo.cityskylinequiz.models.Question;
 import com.nicoqueijo.cityskylinequiz.models.QuestionReport;
 import com.squareup.picasso.Picasso;
 
+/**
+ * This fragment also hosts an untimed game but without a restriction on the amount of questions.
+ * The user will be answering every possible question but they can either choose a mode in which
+ * the game ends immediately upon a wrong answer or a mode were wrong answers are allowed.
+ */
 public class QuizFragmentEveryCity extends Fragment implements View.OnClickListener {
 
     private final QuizFragmentEveryCity THIS_FRAGMENT = this;
@@ -32,6 +37,7 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
     private int mAttemptNumber = 0;
     private Handler mHandler = new Handler();
 
+    // Declaration of UI components
     private ImageView mCityImage;
     private LinearLayout mContainerChoice1;
     private LinearLayout mContainerChoice2;
@@ -63,7 +69,7 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // ready-up the first question image for fast loading
+        // Warm up the cache with the image of the first question for fast UI loading
         Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
                 .getImageUrl()).fetch();
     }
@@ -84,6 +90,10 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_quiz, container, false);
 
+        /**
+         * Retrieves the game mode selected by the user to know if the game should end upon an
+         * incorrect choice or not.
+         */
         int mChildPosition = getArguments().getInt("child");
         switch (mChildPosition) {
             case 0:
@@ -94,6 +104,7 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
                 break;
         }
 
+        // Initialization of UI components
         mCityImage = (ImageView) view.findViewById(R.id.city_image);
         mContainerChoice1 = (LinearLayout) view.findViewById(R.id.answer_choice_one);
         mContainerChoice2 = (LinearLayout) view.findViewById(R.id.answer_choice_two);
@@ -111,6 +122,7 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
         mProgressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
         mProgressBar.setMax(PROGRESS_BAR_UNITS);
 
+        // Adds a shadow effect to the choice buttons
         if (SystemInfo.isRunningLollipopOrHigher()) {
             mContainerChoice1.setElevation(12.0f);
             mContainerChoice2.setElevation(12.0f);
@@ -138,14 +150,19 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
      */
     @Override
     public void onClick(View v) {
+        // Gets the choice that was clicked
         LinearLayout choicePress = (LinearLayout) v;
 
-        // loads the image of the next question in cache
         if (!(QuizGameActivity.questions.isEmpty())) {
+            // Warm up the cache with the image of the first question for fast UI loading
             Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
                     .getImageUrl()).fetch();
         }
 
+        /**
+         * Takes note of which choice was selected by the user to mark it correct/incorrect in
+         * the next step.
+         */
         int markNumber = 0;
         City guess = null;
         if (choicePress == mContainerChoice1) {
@@ -182,7 +199,7 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
         } else if (mNoFaults) {
             QuizGameActivity.questionReports.get(mQuestionCounter - QuizGameActivity.OFF_BY_ONE)
                     .setIncorrectMark(markNumber);
-            choicePress.setAlpha(0.5f);
+            choicePress.setAlpha(QuizGameActivity.HALF_OPAQUE);
             mContainerChoice1.setEnabled(false);
             mContainerChoice2.setEnabled(false);
             mContainerChoice3.setEnabled(false);
@@ -201,7 +218,7 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
             QuizGameActivity.questionReports.get(mQuestionCounter - QuizGameActivity.OFF_BY_ONE)
                     .setIncorrectMark(markNumber);
             choicePress.setEnabled(false);
-            choicePress.setAlpha(0.5f);
+            choicePress.setAlpha(QuizGameActivity.HALF_OPAQUE);
             mFeedback.setVisibility(View.INVISIBLE);
             mFeedback.setTextColor(getResources().getColor(R.color.red));
             mFeedback.setText(getResources().getString(R.string.try_again));
@@ -237,10 +254,10 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
             mContainerChoice2.setEnabled(true);
             mContainerChoice3.setEnabled(true);
             mContainerChoice4.setEnabled(true);
-            mContainerChoice1.setAlpha(1.0f);
-            mContainerChoice2.setAlpha(1.0f);
-            mContainerChoice3.setAlpha(1.0f);
-            mContainerChoice4.setAlpha(1.0f);
+            mContainerChoice1.setAlpha(QuizGameActivity.FULLY_OPAQUE);
+            mContainerChoice2.setAlpha(QuizGameActivity.FULLY_OPAQUE);
+            mContainerChoice3.setAlpha(QuizGameActivity.FULLY_OPAQUE);
+            mContainerChoice4.setAlpha(QuizGameActivity.FULLY_OPAQUE);
             mFeedback.setText("");
 
             Picasso.with(getActivity()).load(mCurrentQuestion.getCorrectChoice().getImageUrl())

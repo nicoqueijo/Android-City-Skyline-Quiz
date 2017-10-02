@@ -21,6 +21,10 @@ import com.nicoqueijo.cityskylinequiz.models.Question;
 import com.nicoqueijo.cityskylinequiz.models.QuestionReport;
 import com.squareup.picasso.Picasso;
 
+/**
+ * This fragment hosts an untimed game. With this fragment user can choose to play the game by
+ * answering 10, 20, or 50 questions.
+ */
 public class QuizFragmentUntimed extends Fragment implements View.OnClickListener {
 
     private final QuizFragmentUntimed THIS_FRAGMENT = this;
@@ -33,6 +37,7 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
     private int mAttemptNumber = 0;
     private Handler mHandler = new Handler();
 
+    // Declaration of UI components
     private ImageView mCityImage;
     private LinearLayout mContainerChoice1;
     private LinearLayout mContainerChoice2;
@@ -64,7 +69,7 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // cache the first question image for fast loading
+        // Warm up the cache with the image of the first question for fast UI loading
         Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
                 .getImageUrl()).fetch();
     }
@@ -85,6 +90,11 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_quiz, container, false);
 
+        /**
+         * Retrieves the game mode selected by the user to know after how many questions the game
+         * should end and how the progress bar should be updated in relation to the questions to
+         * be answered.
+         */
         int mChildPosition = getArguments().getInt("child");
         switch (mChildPosition) {
             case QuizGameActivity.TEN_QUESTIONS_MODE:
@@ -101,6 +111,7 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
                 break;
         }
 
+        // Initialization of UI components
         mCityImage = (ImageView) view.findViewById(R.id.city_image);
         mContainerChoice1 = (LinearLayout) view.findViewById(R.id.answer_choice_one);
         mContainerChoice2 = (LinearLayout) view.findViewById(R.id.answer_choice_two);
@@ -118,6 +129,7 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
         mProgressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
         mProgressBar.setMax(PROGRESS_BAR_UNITS);
 
+        // Adds a shadow effect to the choice buttons
         if (SystemInfo.isRunningLollipopOrHigher()) {
             mContainerChoice1.setElevation(12.0f);
             mContainerChoice2.setElevation(12.0f);
@@ -144,13 +156,16 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
      */
     @Override
     public void onClick(View v) {
-        // gets the choice that was clicked
+        // Gets the choice that was clicked.
         LinearLayout choicePress = (LinearLayout) v;
 
-        // load the image of the next question in cache
+        // Warm up the cache with the image of the next question for fast UI loading.
         Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
                 .getImageUrl()).fetch();
 
+
+        // Takes note of which choice was selected by the user to mark it correct/incorrect in
+        // the next step.
         int markNumber = 0;
         City guess = null;
         if (choicePress == mContainerChoice1) {
@@ -168,6 +183,8 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
         }
 
         if (guess.getCityName().equals(mCurrentQuestion.getCorrectChoice().getCityName())) {
+            // If the choice the user selected is the correct choice we mark that choice in the
+            // report object belonging to this question as correct.
             QuizGameActivity.questionReports.get(mQuestionCounter - QuizGameActivity.OFF_BY_ONE)
                     .setCorrectMark(markNumber);
             mAttemptNumber = 0;
@@ -185,13 +202,18 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
             }, 300);   // 0.3 seconds
 
         } else {
+            // If the choice the user selected is an incorrect choice we mark that choice in the
+            // report object belonging to this question as incorrect.
             QuizGameActivity.questionReports.get(mQuestionCounter - QuizGameActivity.OFF_BY_ONE)
                     .setIncorrectMark(markNumber);
             choicePress.setEnabled(false);
-            choicePress.setAlpha(0.5f);
+            choicePress.setAlpha(QuizGameActivity.HALF_OPAQUE);
             mFeedback.setVisibility(View.INVISIBLE);
             mFeedback.setTextColor(getResources().getColor(R.color.red));
             mFeedback.setText(getResources().getString(R.string.try_again));
+
+            // If this is not the first time the user answers this question incorrect we perform a
+            // small delay in the redisplay of the feedback label to produce a "flash".
             if (mAttemptNumber > 0) {
                 mHandler.postDelayed(new Runnable() {
                     public void run() {
@@ -224,10 +246,10 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
             mContainerChoice2.setEnabled(true);
             mContainerChoice3.setEnabled(true);
             mContainerChoice4.setEnabled(true);
-            mContainerChoice1.setAlpha(1.0f);
-            mContainerChoice2.setAlpha(1.0f);
-            mContainerChoice3.setAlpha(1.0f);
-            mContainerChoice4.setAlpha(1.0f);
+            mContainerChoice1.setAlpha(QuizGameActivity.FULLY_OPAQUE);
+            mContainerChoice2.setAlpha(QuizGameActivity.FULLY_OPAQUE);
+            mContainerChoice3.setAlpha(QuizGameActivity.FULLY_OPAQUE);
+            mContainerChoice4.setAlpha(QuizGameActivity.FULLY_OPAQUE);
             mFeedback.setText("");
 
             Picasso.with(getActivity()).load(mCurrentQuestion.getCorrectChoice().getImageUrl())

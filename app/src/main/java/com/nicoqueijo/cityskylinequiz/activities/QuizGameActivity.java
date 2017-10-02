@@ -33,6 +33,8 @@ import java.util.Queue;
  */
 public class QuizGameActivity extends AppCompatActivity {
 
+    public static final float HALF_OPAQUE = 0.5f;
+    public static final float FULLY_OPAQUE = 1.0f;
     public static final int OFF_BY_ONE = 1;
 
     public static final int CORRECT_CHOICE = 0;

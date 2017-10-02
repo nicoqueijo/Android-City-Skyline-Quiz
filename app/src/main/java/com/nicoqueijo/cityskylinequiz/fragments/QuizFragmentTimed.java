@@ -22,6 +22,10 @@ import com.nicoqueijo.cityskylinequiz.models.Question;
 import com.nicoqueijo.cityskylinequiz.models.QuestionReport;
 import com.squareup.picasso.Picasso;
 
+/**
+ * This fragment hosts an timed game. With this fragment the user can choose to play the game by
+ * answering as much questions as they can within 30, 60, or 120 seconds.
+ */
 public class QuizFragmentTimed extends Fragment implements View.OnClickListener {
 
     private final QuizFragmentTimed THIS_FRAGMENT = this;
@@ -34,6 +38,7 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
     private CountDownTimer mCountDownTimer;
     private Handler mHandler = new Handler();
 
+    // Declaration of UI components
     private ImageView mCityImage;
     private LinearLayout mContainerChoice1;
     private LinearLayout mContainerChoice2;
@@ -65,7 +70,7 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // cache the first question image for fast loading
+        // Warm up the cache with the image of the first question for fast UI loading
         Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
                 .getImageUrl()).fetch();
     }
@@ -86,6 +91,10 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_quiz, container, false);
 
+        /**
+         * Retrieves the game mode selected by the user to know after how many seconds the game
+         * should end.
+         */
         int mChildPosition = getArguments().getInt("child");
         switch (mChildPosition) {
             case QuizGameActivity.THIRTY_SECONDS_MODE:
@@ -99,6 +108,7 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
                 break;
         }
 
+        // Initialization of UI components
         mCityImage = (ImageView) view.findViewById(R.id.city_image);
         mContainerChoice1 = (LinearLayout) view.findViewById(R.id.answer_choice_one);
         mContainerChoice2 = (LinearLayout) view.findViewById(R.id.answer_choice_two);
@@ -116,6 +126,7 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
         mProgressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
         mProgressBar.setMax(mTotalSeconds);
 
+        // Adds a shadow effect to the choice buttons
         if (SystemInfo.isRunningLollipopOrHigher()) {
             mContainerChoice1.setElevation(12.0f);
             mContainerChoice2.setElevation(12.0f);
@@ -171,13 +182,17 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
      */
     @Override
     public void onClick(View v) {
-        // gets the choice that was clicked
+        // Gets the choice that was clicked
         LinearLayout choicePress = (LinearLayout) v;
 
-        // load the image of the next question in cache
+        // Warm up the cache with the image of the first question for fast UI loading
         Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
                 .getImageUrl()).fetch();
 
+        /**
+         * Takes note of which choice was selected by the user to mark it correct/incorrect in
+         * the next step.
+         */
         int markNumber = 0;
         City guess = null;
         if (choicePress == mContainerChoice1) {
@@ -215,7 +230,7 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
             QuizGameActivity.questionReports.get(mQuestionCounter - QuizGameActivity.OFF_BY_ONE)
                     .setIncorrectMark(markNumber);
             choicePress.setEnabled(false);
-            choicePress.setAlpha(0.5f);
+            choicePress.setAlpha(QuizGameActivity.HALF_OPAQUE);
             Handler handler = new Handler();
             mFeedback.setVisibility(View.INVISIBLE);
             mFeedback.setTextColor(getResources().getColor(R.color.red));
@@ -246,10 +261,10 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
         mContainerChoice2.setEnabled(true);
         mContainerChoice3.setEnabled(true);
         mContainerChoice4.setEnabled(true);
-        mContainerChoice1.setAlpha(1.0f);
-        mContainerChoice2.setAlpha(1.0f);
-        mContainerChoice3.setAlpha(1.0f);
-        mContainerChoice4.setAlpha(1.0f);
+        mContainerChoice1.setAlpha(QuizGameActivity.FULLY_OPAQUE);
+        mContainerChoice2.setAlpha(QuizGameActivity.FULLY_OPAQUE);
+        mContainerChoice3.setAlpha(QuizGameActivity.FULLY_OPAQUE);
+        mContainerChoice4.setAlpha(QuizGameActivity.FULLY_OPAQUE);
         mFeedback.setText("");
 
         Picasso.with(getActivity()).load(mCurrentQuestion.getCorrectChoice().getImageUrl())
