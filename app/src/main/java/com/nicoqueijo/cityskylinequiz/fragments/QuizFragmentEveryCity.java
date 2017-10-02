@@ -16,6 +16,7 @@ import com.nicoqueijo.cityskylinequiz.activities.QuizGameActivity;
 import com.nicoqueijo.cityskylinequiz.helpers.CornerRounder;
 import com.nicoqueijo.cityskylinequiz.helpers.ResourceByNameRetriever;
 import com.nicoqueijo.cityskylinequiz.helpers.SystemInfo;
+import com.nicoqueijo.cityskylinequiz.interfaces.Quiz;
 import com.nicoqueijo.cityskylinequiz.models.City;
 import com.nicoqueijo.cityskylinequiz.models.Question;
 import com.nicoqueijo.cityskylinequiz.models.QuestionReport;
@@ -25,8 +26,10 @@ import com.squareup.picasso.Picasso;
  * This fragment also hosts an untimed game but without a restriction on the amount of questions.
  * The user will be answering every possible question but they can either choose a mode in which
  * the game ends immediately upon a wrong answer or a mode were wrong answers are allowed.
+ * Implements Quiz to assure the question-loading functionality.
+ * Implements View.OnClickListener to register the choices with click listeners.
  */
-public class QuizFragmentEveryCity extends Fragment implements View.OnClickListener {
+public class QuizFragmentEveryCity extends Fragment implements Quiz, View.OnClickListener {
 
     private final QuizFragmentEveryCity THIS_FRAGMENT = this;
 
@@ -90,10 +93,8 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_quiz, container, false);
 
-        /**
-         * Retrieves the game mode selected by the user to know if the game should end upon an
-         * incorrect choice or not.
-         */
+        // Retrieves the game mode selected by the user to know if the game should end upon an
+        // incorrect choice or not.
         int mChildPosition = getArguments().getInt("child");
         switch (mChildPosition) {
             case 0:
@@ -124,10 +125,10 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
 
         // Adds a shadow effect to the choice buttons
         if (SystemInfo.isRunningLollipopOrHigher()) {
-            mContainerChoice1.setElevation(12.0f);
-            mContainerChoice2.setElevation(12.0f);
-            mContainerChoice3.setElevation(12.0f);
-            mContainerChoice4.setElevation(12.0f);
+            mContainerChoice1.setElevation(QuizGameActivity.CHOICE_ELEVATION);
+            mContainerChoice2.setElevation(QuizGameActivity.CHOICE_ELEVATION);
+            mContainerChoice3.setElevation(QuizGameActivity.CHOICE_ELEVATION);
+            mContainerChoice4.setElevation(QuizGameActivity.CHOICE_ELEVATION);
         }
 
         mContainerChoice1.setOnClickListener(this);
@@ -150,19 +151,17 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
      */
     @Override
     public void onClick(View v) {
-        // Gets the choice that was clicked
+        // Gets the choice that was clicked.
         LinearLayout choicePress = (LinearLayout) v;
 
         if (!(QuizGameActivity.questions.isEmpty())) {
-            // Warm up the cache with the image of the first question for fast UI loading
+            // Warm up the cache with the image of the first question for fast UI loading.
             Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
                     .getImageUrl()).fetch();
         }
 
-        /**
-         * Takes note of which choice was selected by the user to mark it correct/incorrect in
-         * the next step.
-         */
+        // Takes note of which choice was selected by the user to mark it correct/incorrect in
+        // the next step.
         int markNumber = 0;
         City guess = null;
         if (choicePress == mContainerChoice1) {
@@ -180,6 +179,8 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
         }
 
         if (guess.getCityName().equals(mCurrentQuestion.getCorrectChoice().getCityName())) {
+            // If the choice the user selected is the correct choice we mark that choice in the
+            // report object belonging to this question as correct.
             QuizGameActivity.questionReports.get(mQuestionCounter - QuizGameActivity.OFF_BY_ONE)
                     .setCorrectMark(markNumber);
             mAttemptNumber = 0;
@@ -197,6 +198,8 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
             }, 300);   // 0.3 seconds
 
         } else if (mNoFaults) {
+            // If the choice the user selected is an incorrect choice we mark that choice in the
+            // report object belonging to this question as incorrect.
             QuizGameActivity.questionReports.get(mQuestionCounter - QuizGameActivity.OFF_BY_ONE)
                     .setIncorrectMark(markNumber);
             choicePress.setAlpha(QuizGameActivity.HALF_OPAQUE);
@@ -206,6 +209,8 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
             mContainerChoice4.setEnabled(false);
             mFeedback.setTextColor(getResources().getColor(R.color.red));
             mFeedback.setText(getResources().getString(R.string.incorrect));
+
+            // The game ends upon the first incorrect choice selected.
             mHandler.postDelayed(new Runnable() {
                 public void run() {
                     getActivity().getSupportFragmentManager().beginTransaction()
@@ -215,6 +220,8 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
                 }
             }, 500);    // 0.5 seconds
         } else {
+            // If the choice the user selected is an incorrect choice we mark that choice in the
+            // report object belonging to this question as incorrect.
             QuizGameActivity.questionReports.get(mQuestionCounter - QuizGameActivity.OFF_BY_ONE)
                     .setIncorrectMark(markNumber);
             choicePress.setEnabled(false);
@@ -235,11 +242,13 @@ public class QuizFragmentEveryCity extends Fragment implements View.OnClickListe
         }
     }
 
-    private void loadNextQuestion() {
+    /**
+     * Refreshes the UI components with the information of the next question. If we the game has
+     * ended, this fragment is removed and the report fragment is added.
+     */
+    @Override
+    public void loadNextQuestion() {
         if (QuizGameActivity.questions.isEmpty()) {
-            // We answered every question
-            // If we remove another: NullPointerException
-            // Show game score
             getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT).commit();
             getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,
                     new QuizReportFragment(), "quizReportFragment").commit();

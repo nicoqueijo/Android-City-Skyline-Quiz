@@ -16,16 +16,19 @@ import com.nicoqueijo.cityskylinequiz.activities.QuizGameActivity;
 import com.nicoqueijo.cityskylinequiz.helpers.CornerRounder;
 import com.nicoqueijo.cityskylinequiz.helpers.ResourceByNameRetriever;
 import com.nicoqueijo.cityskylinequiz.helpers.SystemInfo;
+import com.nicoqueijo.cityskylinequiz.interfaces.Quiz;
 import com.nicoqueijo.cityskylinequiz.models.City;
 import com.nicoqueijo.cityskylinequiz.models.Question;
 import com.nicoqueijo.cityskylinequiz.models.QuestionReport;
 import com.squareup.picasso.Picasso;
 
 /**
- * This fragment hosts an untimed game. With this fragment user can choose to play the game by
+ * This fragment hosts an untimed game. With this fragment users can choose to play the game by
  * answering 10, 20, or 50 questions.
+ * Implements Quiz to assure the question-loading functionality.
+ * Implements View.OnClickListener to register the choices with click listeners.
  */
-public class QuizFragmentUntimed extends Fragment implements View.OnClickListener {
+public class QuizFragmentUntimed extends Fragment implements Quiz, View.OnClickListener {
 
     private final QuizFragmentUntimed THIS_FRAGMENT = this;
 
@@ -90,11 +93,10 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_quiz, container, false);
 
-        /**
-         * Retrieves the game mode selected by the user to know after how many questions the game
-         * should end and how the progress bar should be updated in relation to the questions to
-         * be answered.
-         */
+
+        // Retrieves the game mode selected by the user to know after how many questions the game
+        // should end and how the progress bar should be updated in relation to the questions to
+        // be answered.
         int mChildPosition = getArguments().getInt("child");
         switch (mChildPosition) {
             case QuizGameActivity.TEN_QUESTIONS_MODE:
@@ -131,10 +133,10 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
 
         // Adds a shadow effect to the choice buttons
         if (SystemInfo.isRunningLollipopOrHigher()) {
-            mContainerChoice1.setElevation(12.0f);
-            mContainerChoice2.setElevation(12.0f);
-            mContainerChoice3.setElevation(12.0f);
-            mContainerChoice4.setElevation(12.0f);
+            mContainerChoice1.setElevation(QuizGameActivity.CHOICE_ELEVATION);
+            mContainerChoice2.setElevation(QuizGameActivity.CHOICE_ELEVATION);
+            mContainerChoice3.setElevation(QuizGameActivity.CHOICE_ELEVATION);
+            mContainerChoice4.setElevation(QuizGameActivity.CHOICE_ELEVATION);
         }
 
         mContainerChoice1.setOnClickListener(this);
@@ -213,7 +215,7 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
             mFeedback.setText(getResources().getString(R.string.try_again));
 
             // If this is not the first time the user answers this question incorrect we perform a
-            // small delay in the redisplay of the feedback label to produce a "flash".
+            // small delay in the redisplay of the "try again" label to produce a flash effect.
             if (mAttemptNumber > 0) {
                 mHandler.postDelayed(new Runnable() {
                     public void run() {
@@ -227,12 +229,14 @@ public class QuizFragmentUntimed extends Fragment implements View.OnClickListene
         }
     }
 
-    private void loadNextQuestion() {
+    /**
+     * Refreshes the UI components with the information of the next question. If we the game has
+     * ended, this fragment is removed and the report fragment is added.
+     */
+    @Override
+    public void loadNextQuestion() {
         if (mQuestionCounter >= mQuestionLimit) {
-            // We answered every question
-            // Show game score
             getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT).commit();
-            // push the report fragment
             getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,
                     new QuizReportFragment(), "quizReportFragment").commit();
         } else {

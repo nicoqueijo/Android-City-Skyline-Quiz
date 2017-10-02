@@ -17,6 +17,7 @@ import com.nicoqueijo.cityskylinequiz.activities.QuizGameActivity;
 import com.nicoqueijo.cityskylinequiz.helpers.CornerRounder;
 import com.nicoqueijo.cityskylinequiz.helpers.ResourceByNameRetriever;
 import com.nicoqueijo.cityskylinequiz.helpers.SystemInfo;
+import com.nicoqueijo.cityskylinequiz.interfaces.Quiz;
 import com.nicoqueijo.cityskylinequiz.models.City;
 import com.nicoqueijo.cityskylinequiz.models.Question;
 import com.nicoqueijo.cityskylinequiz.models.QuestionReport;
@@ -25,8 +26,10 @@ import com.squareup.picasso.Picasso;
 /**
  * This fragment hosts an timed game. With this fragment the user can choose to play the game by
  * answering as much questions as they can within 30, 60, or 120 seconds.
+ * Implements Quiz to assure the question-loading functionality.
+ * Implements View.OnClickListener to register the choices with click listeners.
  */
-public class QuizFragmentTimed extends Fragment implements View.OnClickListener {
+public class QuizFragmentTimed extends Fragment implements Quiz, View.OnClickListener {
 
     private final QuizFragmentTimed THIS_FRAGMENT = this;
 
@@ -91,10 +94,8 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_quiz, container, false);
 
-        /**
-         * Retrieves the game mode selected by the user to know after how many seconds the game
-         * should end.
-         */
+        // Retrieves the game mode selected by the user to know after how many seconds the game
+        // should end.
         int mChildPosition = getArguments().getInt("child");
         switch (mChildPosition) {
             case QuizGameActivity.THIRTY_SECONDS_MODE:
@@ -128,10 +129,10 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
 
         // Adds a shadow effect to the choice buttons
         if (SystemInfo.isRunningLollipopOrHigher()) {
-            mContainerChoice1.setElevation(12.0f);
-            mContainerChoice2.setElevation(12.0f);
-            mContainerChoice3.setElevation(12.0f);
-            mContainerChoice4.setElevation(12.0f);
+            mContainerChoice1.setElevation(QuizGameActivity.CHOICE_ELEVATION);
+            mContainerChoice2.setElevation(QuizGameActivity.CHOICE_ELEVATION);
+            mContainerChoice3.setElevation(QuizGameActivity.CHOICE_ELEVATION);
+            mContainerChoice4.setElevation(QuizGameActivity.CHOICE_ELEVATION);
         }
 
         mContainerChoice1.setOnClickListener(this);
@@ -147,7 +148,8 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
         long countDownInterval = 1000;
         mCountDownTimer = new CountDownTimer(millisInFuture, countDownInterval) {
             /**
-             * Callback fired on regular interval.
+             * Callback fired on regular interval. Removes the game fragment when the time expires
+             * and replaces it with the report fragment.
              * @param millisUntilFinished The amount of time until finished.
              */
             @Override
@@ -182,17 +184,15 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
      */
     @Override
     public void onClick(View v) {
-        // Gets the choice that was clicked
+        // Gets the choice that was clicked,
         LinearLayout choicePress = (LinearLayout) v;
 
-        // Warm up the cache with the image of the first question for fast UI loading
+        // Warm up the cache with the image of the first question for fast UI loading,
         Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
                 .getImageUrl()).fetch();
 
-        /**
-         * Takes note of which choice was selected by the user to mark it correct/incorrect in
-         * the next step.
-         */
+        // Takes note of which choice was selected by the user to mark it correct/incorrect in
+        // the next step.
         int markNumber = 0;
         City guess = null;
         if (choicePress == mContainerChoice1) {
@@ -210,6 +210,8 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
         }
 
         if (guess.getCityName().equals(mCurrentQuestion.getCorrectChoice().getCityName())) {
+            // If the choice the user selected is the correct choice we mark that choice in the
+            // report object belonging to this question as correct.
             QuizGameActivity.questionReports.get(mQuestionCounter - QuizGameActivity.OFF_BY_ONE)
                     .setCorrectMark(markNumber);
             mAttemptNumber = 0;
@@ -227,6 +229,8 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
             }, 300);   // 0.3 seconds
 
         } else {
+            // If the choice the user selected is an incorrect choice we mark that choice in the
+            // report object belonging to this question as incorrect.
             QuizGameActivity.questionReports.get(mQuestionCounter - QuizGameActivity.OFF_BY_ONE)
                     .setIncorrectMark(markNumber);
             choicePress.setEnabled(false);
@@ -248,7 +252,10 @@ public class QuizFragmentTimed extends Fragment implements View.OnClickListener 
         }
     }
 
-    private void loadNextQuestion() {
+    /**
+     * Refreshes the UI components with the information of the next question.
+     */
+    public void loadNextQuestion() {
         if (getActivity() == null) {
             return;
         }
