@@ -51,6 +51,9 @@
     <string name="incorrect">Incorrect!</string>
     <string name="try_again">Try Again</string>
     <string name="question">Question:</string>
+    <string name="results">Results</string>
+    <string name="game_menu">Game Menu</string>
+    <string name="view_report">View Report</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>
