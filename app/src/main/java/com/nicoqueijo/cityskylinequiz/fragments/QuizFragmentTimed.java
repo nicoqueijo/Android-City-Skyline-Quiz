@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +37,7 @@ public class QuizFragmentTimed extends Fragment implements Quiz, View.OnClickLis
     private Question mCurrentQuestion;
     private int mQuestionCounter = 0;
     private int mAttemptNumber = 0;
+    private int mAttemptOfLastQuestion = 0;
     private int mTotalSeconds;
     private int mElapsedSeconds = 0;
     private CountDownTimer mCountDownTimer;
@@ -214,6 +216,7 @@ public class QuizFragmentTimed extends Fragment implements Quiz, View.OnClickLis
             // report object belonging to this question as correct.
             QuizGameActivity.questionReports.get(mQuestionCounter - QuizGameActivity.OFF_BY_ONE)
                     .setCorrectMark(markNumber);
+            mAttemptOfLastQuestion = mAttemptNumber;
             mAttemptNumber = 0;
             mContainerChoice1.setEnabled(false);
             mContainerChoice2.setEnabled(false);
@@ -256,6 +259,24 @@ public class QuizFragmentTimed extends Fragment implements Quiz, View.OnClickLis
      * Refreshes the UI components with the information of the next question.
      */
     public void loadNextQuestion() {
+        Log.v("attempts", mAttemptOfLastQuestion + "");
+
+        switch (mAttemptOfLastQuestion) {
+            case 0:
+                QuizGameActivity.correctAnswersOnAttemptOne++;
+                break;
+            case 1:
+                QuizGameActivity.correctAnswersOnAttemptTwo++;
+                break;
+            case 2:
+                QuizGameActivity.correctAnswersOnAttemptThree++;
+                break;
+            case 3:
+                QuizGameActivity.correctAnswersOnAttemptFour++;
+                break;
+        }
+
+        mAttemptOfLastQuestion = 0;
         if (getActivity() == null) {
             return;
         }

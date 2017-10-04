@@ -3,6 +3,7 @@ package com.nicoqueijo.cityskylinequiz.fragments;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +39,7 @@ public class QuizFragmentUntimed extends Fragment implements Quiz, View.OnClickL
     private Question mCurrentQuestion;
     private int mQuestionCounter = 0;
     private int mAttemptNumber = 0;
+    private int mAttemptOfLastQuestion = 0;
     private Handler mHandler = new Handler();
 
     // Declaration of UI components
@@ -165,7 +167,6 @@ public class QuizFragmentUntimed extends Fragment implements Quiz, View.OnClickL
         Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
                 .getImageUrl()).fetch();
 
-
         // Takes note of which choice was selected by the user to mark it correct/incorrect in
         // the next step.
         int markNumber = 0;
@@ -189,6 +190,7 @@ public class QuizFragmentUntimed extends Fragment implements Quiz, View.OnClickL
             // report object belonging to this question as correct.
             QuizGameActivity.questionReports.get(mQuestionCounter - QuizGameActivity.OFF_BY_ONE)
                     .setCorrectMark(markNumber);
+            mAttemptOfLastQuestion = mAttemptNumber;
             mAttemptNumber = 0;
             mContainerChoice1.setEnabled(false);
             mContainerChoice2.setEnabled(false);
@@ -235,6 +237,24 @@ public class QuizFragmentUntimed extends Fragment implements Quiz, View.OnClickL
      */
     @Override
     public void loadNextQuestion() {
+        Log.v("attempts", mAttemptOfLastQuestion + "");
+
+        switch (mAttemptOfLastQuestion) {
+            case 0:
+                QuizGameActivity.correctAnswersOnAttemptOne++;
+                break;
+            case 1:
+                QuizGameActivity.correctAnswersOnAttemptTwo++;
+                break;
+            case 2:
+                QuizGameActivity.correctAnswersOnAttemptThree++;
+                break;
+            case 3:
+                QuizGameActivity.correctAnswersOnAttemptFour++;
+                break;
+        }
+
+        mAttemptOfLastQuestion = 0;
         if (mQuestionCounter >= mQuestionLimit) {
             getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT).commit();
             getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,

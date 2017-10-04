@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,6 +51,10 @@ public class QuizReportFragment extends Fragment {
      */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        Log.v("report", "1 attempt: " + QuizGameActivity.correctAnswersOnAttemptOne);
+        Log.v("report", "2 attempt: " + QuizGameActivity.correctAnswersOnAttemptTwo);
+        Log.v("report", "3 attempt: " + QuizGameActivity.correctAnswersOnAttemptThree);
+        Log.v("report", "4 attempt: " + QuizGameActivity.correctAnswersOnAttemptFour);
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_quiz_report, container, false);
 

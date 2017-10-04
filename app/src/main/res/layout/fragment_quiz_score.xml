@@ -155,6 +155,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/attempt_one_correct"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -187,6 +188,7 @@
                         android:textColor="@color/white" />
 
                     <TextView
+                        android:id="@+id/attempt_one_score"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -203,6 +205,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/attempt_two_correct"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -235,6 +238,7 @@
                         android:textColor="@color/white" />
 
                     <TextView
+                        android:id="@+id/attempt_two_score"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -251,6 +255,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/attempt_three_correct"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -283,6 +288,7 @@
                         android:textColor="@color/white" />
 
                     <TextView
+                        android:id="@+id/attempt_three_score"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -299,6 +305,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/attempt_four_correct"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -331,6 +338,7 @@
                         android:textColor="@color/white" />
 
                     <TextView
+                        android:id="@+id/attempt_four_score"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -355,6 +363,7 @@
                 </RelativeLayout>
 
                 <TextView
+                    android:id="@+id/total_score"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="10"

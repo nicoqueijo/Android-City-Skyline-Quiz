@@ -55,6 +55,11 @@ public class QuizGameActivity extends AppCompatActivity {
 
     public static Queue<Question> questions;
     public static List<QuestionReport> questionReports;
+    public static int correctAnswersOnAttemptOne = -1;
+    public static int correctAnswersOnAttemptTwo = 0;
+    public static int correctAnswersOnAttemptThree = 0;
+    public static int correctAnswersOnAttemptFour = 0;
+
     private FragmentManager mFragmentManager = getSupportFragmentManager();
     private FragmentTransaction mTransaction = mFragmentManager.beginTransaction();
     private Fragment mQuizFragment = null;
