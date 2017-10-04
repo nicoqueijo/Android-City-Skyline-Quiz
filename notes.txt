@@ -8,10 +8,8 @@ https://api.myjson.com/bins/1a5vld
 // TODO
 			
 -Score: 0, 0.25, 0.50, 1.0 per question depending on attempts
--Try to put 3 second countdown splash screen before game starts
 
 -translate new UI labels
--put selector on quiz choices
 -Put disclaimer about translations somewhere in app
 -Internationalize everything in strings.xml
 -Keep hiscores stored in an SQLite database
@@ -20,11 +18,8 @@ https://api.myjson.com/bins/1a5vld
 -Organize strings in strings.xml by activites/fragments/etc
 -Move helper methods as static methods in their own class
 -Group duplicated xml code in styles.xml
--Look for a launcher icon
 -Group common app status statements on MainActivity in one method
 -Change everything to Material Design (view dimensions, colors, fonts, font size, etc)
--Find a suitable color pallete
--Change all text sizes from dp to sp
 -Draw out app architecture and post on github README
 -change xml attributes (left -> start), (right -> end) to support arabic
 -make all activities portrait in the manifest
@@ -36,7 +31,6 @@ https://api.myjson.com/bins/1a5vld
 // DO NEXT
 -Group common xml attributes in styles
 -translate new UI strings
--Design score system for different game modes
 -Make score fragment
 -Save scores in SQLite database
 -Try to classify cities by regions (Americas, Europe, Asia/Africa/Oceania)
