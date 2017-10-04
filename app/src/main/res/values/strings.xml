@@ -61,6 +61,12 @@
     <string name="attempt_four">After 4 attempts</string>
     <string name="final_score">Final score</string>
     <string name="score">Score:</string>
+    <string name="multiply">x</string>
+    <string name="equal">=</string>
+    <string name="attempt_one_multiplier">1.00</string>
+    <string name="attempt_two_multiplier">0.50</string>
+    <string name="attempt_three_multiplier">0.25</string>
+    <string name="attempt_four_multiplier">0.00</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>

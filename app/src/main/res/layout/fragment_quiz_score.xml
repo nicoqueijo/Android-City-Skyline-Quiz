@@ -17,13 +17,15 @@
     <LinearLayout
         android:id="@+id/container_results"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="160dp"
         android:layout_below="@id/results_label"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/round_outline_answer_choice"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -39,10 +41,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    android:layout_marginBottom="5dp"
                     android:layout_weight="10"
                     android:gravity="center"
                     android:text="@string/correct_answers"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -97,10 +101,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
                 android:layout_weight="10"
                 android:gravity="center"
                 android:text="@string/score"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -112,6 +118,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:gravity="right"
                     android:textColor="@color/white"
                     tools:text="8" />
 
@@ -119,25 +126,33 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/multiply"
                     android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="@string/attempt_one_multiplier"
                     android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/equal"
                     android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textColor="@color/white" />
+                    android:gravity="right"
+                    android:textColor="@color/white"
+                    tools:text="8.00" />
 
             </LinearLayout>
 
@@ -151,31 +166,41 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:gravity="right"
+                    android:textColor="@color/white"
+                    tools:text="5" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/multiply"
                     android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="@string/attempt_two_multiplier"
                     android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/equal"
                     android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:textColor="@color/white" />
+                    android:gravity="right"
+                    android:textColor="@color/white"
+                    tools:text="2.50" />
 
             </LinearLayout>
 
@@ -189,31 +214,41 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:gravity="right"
+                    android:textColor="@color/white"
+                    tools:text="4" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/multiply"
                     android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="@string/attempt_three_multiplier"
                     android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/equal"
                     android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:textColor="@color/white" />
+                    android:gravity="right"
+                    android:textColor="@color/white"
+                    tools:text="1.00" />
 
             </LinearLayout>
 
@@ -227,31 +262,41 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:gravity="right"
+                    android:textColor="@color/white"
+                    tools:text="3" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/multiply"
                     android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="@string/attempt_four_multiplier"
                     android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/equal"
                     android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:textColor="@color/white" />
+                    android:gravity="right"
+                    android:textColor="@color/white"
+                    tools:text="0.00" />
 
             </LinearLayout>
 
@@ -264,7 +309,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="22dp"
                     android:background="@color/white" />
 
             </RelativeLayout>
