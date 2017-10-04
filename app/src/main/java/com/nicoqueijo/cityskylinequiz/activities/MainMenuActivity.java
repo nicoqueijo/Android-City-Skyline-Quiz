@@ -50,7 +50,9 @@ public class MainMenuActivity extends AppCompatActivity {
     public static final String DEVELOPER_GITHUB_URL = "https://github.com/nicoqueijo";
     public static final String DEVELOPER_EMAIL = "queijonicolas@gmail.com";
 
+    ///////////////////////// maybe move this to game activity where it'll be used
     private HighScoresHelper mHighScoresHelper;
+    /////////////////////////
     public static List<City> cities;
     private String currentLanguage;
     private ActionBar mActionBar;
@@ -65,8 +67,10 @@ public class MainMenuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /////////////////////////
         mHighScoresHelper = new HighScoresHelper(this);
         SQLiteDatabase sqLiteDatabase = mHighScoresHelper.getWritableDatabase();
+        /////////////////////////
         mSharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
         setTheme(mSharedPreferences.getInt("theme", R.style.AppThemeLight));
         setLocale(mSharedPreferences.getString("language", SystemInfo.SYSTEM_LOCALE));
