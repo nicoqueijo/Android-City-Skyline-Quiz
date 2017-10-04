@@ -10,13 +10,14 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
-import com.nicoqueijo.cityskylinequiz.fragments.QuizFragmentEveryCity;
-import com.nicoqueijo.cityskylinequiz.fragments.QuizFragmentTimed;
-import com.nicoqueijo.cityskylinequiz.fragments.QuizFragmentUntimed;
+import com.nicoqueijo.cityskylinequiz.fragments.QuizGameEveryCityFragment;
+import com.nicoqueijo.cityskylinequiz.fragments.QuizGameTimedFragment;
+import com.nicoqueijo.cityskylinequiz.fragments.QuizGameUntimedFragment;
 import com.nicoqueijo.cityskylinequiz.models.City;
 import com.nicoqueijo.cityskylinequiz.models.Question;
 import com.nicoqueijo.cityskylinequiz.models.QuestionReport;
@@ -104,13 +105,13 @@ public class QuizGameActivity extends AppCompatActivity {
 
         switch (mGroupPosition) {
             case (QuizMenuActivity.PARENT_MODE_TIMED):
-                mQuizFragment = new QuizFragmentTimed();
+                mQuizFragment = new QuizGameTimedFragment();
                 break;
             case (QuizMenuActivity.PARENT_MODE_UNTIMED):
-                mQuizFragment = new QuizFragmentUntimed();
+                mQuizFragment = new QuizGameUntimedFragment();
                 break;
             case (QuizMenuActivity.PARENT_MODE_EVERY_CITY):
-                mQuizFragment = new QuizFragmentEveryCity();
+                mQuizFragment = new QuizGameEveryCityFragment();
                 break;
         }
 
@@ -142,6 +143,17 @@ public class QuizGameActivity extends AppCompatActivity {
             }
         };
         mCountDownTimer.start();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.v("onResume", "called");
+        // put this in a method
+        QuizGameActivity.correctAnswersOnAttemptOne = -1;
+        QuizGameActivity.correctAnswersOnAttemptTwo = 0;
+        QuizGameActivity.correctAnswersOnAttemptThree = 0;
+        QuizGameActivity.correctAnswersOnAttemptFour = 0;
     }
 
     /**

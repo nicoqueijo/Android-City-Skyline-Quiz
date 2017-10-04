@@ -28,12 +28,13 @@
         android:paddingRight="5dp">
 
         <LinearLayout
+            android:id="@+id/new_record_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="horizontal"
             android:padding="5dp"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -73,62 +74,55 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="10"
+                    android:gravity="center"
+                    android:text="@string/correct_answers"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_marginBottom="5dp"
-                        android:layout_weight="10"
-                        android:gravity="center"
-                        android:text="@string/correct_answers"
-                        android:textColor="@color/white"
-                        android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="10"
+                    android:text="@string/attempt_one"
+                    android:textColor="@color/white" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="10"
-                        android:text="@string/attempt_one"
-                        android:textColor="@color/white" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="10"
+                    android:text="@string/attempt_two"
+                    android:textColor="@color/white" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="10"
-                        android:text="@string/attempt_two"
-                        android:textColor="@color/white" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="10"
+                    android:text="@string/attempt_three"
+                    android:textColor="@color/white" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="10"
-                        android:text="@string/attempt_three"
-                        android:textColor="@color/white" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="10"
+                    android:text="@string/attempt_four"
+                    android:textColor="@color/white" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="10"
-                        android:text="@string/attempt_four"
-                        android:textColor="@color/white" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="3" />
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="3" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="10"
-                        android:text="@string/final_score"
-                        android:textColor="@color/white" />
-
-                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="10"
+                    android:text="@string/final_score"
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
@@ -388,6 +382,7 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/game_menu_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="2dp"
@@ -397,6 +392,7 @@
             android:textColor="@color/white" />
 
         <Button
+            android:id="@+id/view_report_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="2dp"

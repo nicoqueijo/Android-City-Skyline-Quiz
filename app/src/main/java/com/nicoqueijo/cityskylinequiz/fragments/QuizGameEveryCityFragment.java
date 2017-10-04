@@ -24,18 +24,18 @@ import com.nicoqueijo.cityskylinequiz.models.QuestionReport;
 import com.squareup.picasso.Picasso;
 
 /**
- * This fragment hosts an untimed game. With this fragment users can choose to play the game by
- * answering 10, 20, or 50 questions.
+ * This fragment also hosts an untimed game but without a restriction on the amount of questions.
+ * The user will be answering every possible question but they can either choose a mode in which
+ * the game ends immediately upon a wrong answer or a mode were wrong answers are allowed.
  * Implements Quiz to assure the question-loading functionality.
  * Implements View.OnClickListener to register the choices with click listeners.
  */
-public class QuizFragmentUntimed extends Fragment implements Quiz, View.OnClickListener {
+public class QuizGameEveryCityFragment extends Fragment implements Quiz, View.OnClickListener {
 
-    private final QuizFragmentUntimed THIS_FRAGMENT = this;
+    private final QuizGameEveryCityFragment THIS_FRAGMENT = this;
 
-    private final int PROGRESS_BAR_UNITS = 100;
-    private int mQuestionLimit;
-    private int mProgressBarMultiplier;
+    private final int PROGRESS_BAR_UNITS = QuizGameActivity.questions.size();
+    private boolean mNoFaults;
     private Question mCurrentQuestion;
     private int mQuestionCounter = 0;
     private int mAttemptNumber = 0;
@@ -62,7 +62,7 @@ public class QuizFragmentUntimed extends Fragment implements Quiz, View.OnClickL
     /**
      * Required empty public constructor
      */
-    public QuizFragmentUntimed() {
+    public QuizGameEveryCityFragment() {
     }
 
     /**
@@ -95,23 +95,15 @@ public class QuizFragmentUntimed extends Fragment implements Quiz, View.OnClickL
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_quiz, container, false);
 
-
-        // Retrieves the game mode selected by the user to know after how many questions the game
-        // should end and how the progress bar should be updated in relation to the questions to
-        // be answered.
+        // Retrieves the game mode selected by the user to know if the game should end upon an
+        // incorrect choice or not.
         int mChildPosition = getArguments().getInt("child");
         switch (mChildPosition) {
-            case QuizGameActivity.TEN_QUESTIONS_MODE:
-                mQuestionLimit = 10;
-                mProgressBarMultiplier = 10;
+            case 0:
+                mNoFaults = true;
                 break;
-            case QuizGameActivity.TWENTY_QUESTIONS_MODE:
-                mQuestionLimit = 20;
-                mProgressBarMultiplier = 5;
-                break;
-            case QuizGameActivity.FIFTY_QUESTIONS_MODE:
-                mQuestionLimit = 50;
-                mProgressBarMultiplier = 2;
+            case 1:
+                mNoFaults = false;
                 break;
         }
 
@@ -148,6 +140,7 @@ public class QuizFragmentUntimed extends Fragment implements Quiz, View.OnClickL
 
         CornerRounder.roundImageCorners(mCityImage, mFlagChoice1, mFlagChoice2, mFlagChoice3,
                 mFlagChoice4);
+
         loadNextQuestion();
 
         return view;
@@ -163,9 +156,11 @@ public class QuizFragmentUntimed extends Fragment implements Quiz, View.OnClickL
         // Gets the choice that was clicked.
         LinearLayout choicePress = (LinearLayout) v;
 
-        // Warm up the cache with the image of the next question for fast UI loading.
-        Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
-                .getImageUrl()).fetch();
+        if (!(QuizGameActivity.questions.isEmpty())) {
+            // Warm up the cache with the image of the first question for fast UI loading.
+            Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
+                    .getImageUrl()).fetch();
+        }
 
         // Takes note of which choice was selected by the user to mark it correct/incorrect in
         // the next step.
@@ -205,6 +200,30 @@ public class QuizFragmentUntimed extends Fragment implements Quiz, View.OnClickL
                 }
             }, 300);   // 0.3 seconds
 
+        } else if (mNoFaults) {
+            // If the choice the user selected is an incorrect choice we mark that choice in the
+            // report object belonging to this question as incorrect.
+            QuizGameActivity.questionReports.get(mQuestionCounter - QuizGameActivity.OFF_BY_ONE)
+                    .setIncorrectMark(markNumber);
+            choicePress.setAlpha(QuizGameActivity.HALF_OPAQUE);
+            mContainerChoice1.setEnabled(false);
+            mContainerChoice2.setEnabled(false);
+            mContainerChoice3.setEnabled(false);
+            mContainerChoice4.setEnabled(false);
+            mFeedback.setTextColor(getResources().getColor(R.color.red));
+            mFeedback.setText(getResources().getString(R.string.incorrect));
+
+            // The game ends upon the first incorrect choice selected.
+            mHandler.postDelayed(new Runnable() {
+                public void run() {
+                    getActivity().getSupportFragmentManager().beginTransaction()
+                            .remove(THIS_FRAGMENT).commit();
+                    getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,
+                            new QuizScoreFragment(), "quizReportFragment").commit();
+//                    getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,
+//                            new QuizReportFragment(), "quizReportFragment").commit();
+                }
+            }, 500);    // 0.5 seconds
         } else {
             // If the choice the user selected is an incorrect choice we mark that choice in the
             // report object belonging to this question as incorrect.
@@ -215,9 +234,6 @@ public class QuizFragmentUntimed extends Fragment implements Quiz, View.OnClickL
             mFeedback.setVisibility(View.INVISIBLE);
             mFeedback.setTextColor(getResources().getColor(R.color.red));
             mFeedback.setText(getResources().getString(R.string.try_again));
-
-            // If this is not the first time the user answers this question incorrect we perform a
-            // small delay in the redisplay of the "try again" label to produce a flash effect.
             if (mAttemptNumber > 0) {
                 mHandler.postDelayed(new Runnable() {
                     public void run() {
@@ -239,6 +255,7 @@ public class QuizFragmentUntimed extends Fragment implements Quiz, View.OnClickL
     public void loadNextQuestion() {
         Log.v("attempts", mAttemptOfLastQuestion + "");
 
+        // try moving this to its own method
         switch (mAttemptOfLastQuestion) {
             case 0:
                 QuizGameActivity.correctAnswersOnAttemptOne++;
@@ -255,15 +272,17 @@ public class QuizFragmentUntimed extends Fragment implements Quiz, View.OnClickL
         }
 
         mAttemptOfLastQuestion = 0;
-        if (mQuestionCounter >= mQuestionLimit) {
+        if (QuizGameActivity.questions.isEmpty()) {
             getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT).commit();
             getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,
-                    new QuizReportFragment(), "quizReportFragment").commit();
+                    new QuizScoreFragment(), "quizReportFragment").commit();
+//            getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,
+//                    new QuizReportFragment(), "quizReportFragment").commit();
         } else {
             mCurrentQuestion = QuizGameActivity.questions.remove();
             QuestionReport mCurrentQuestionReport = new QuestionReport(mCurrentQuestion, mQuestionCounter);
             QuizGameActivity.questionReports.add(mCurrentQuestionReport);
-            mProgressBar.setProgress(mQuestionCounter * mProgressBarMultiplier);
+            mProgressBar.setProgress(mQuestionCounter);
             mQuestionCounter++;
 
             mContainerChoice1.setEnabled(true);

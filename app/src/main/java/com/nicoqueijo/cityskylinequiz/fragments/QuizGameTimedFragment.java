@@ -30,9 +30,9 @@ import com.squareup.picasso.Picasso;
  * Implements Quiz to assure the question-loading functionality.
  * Implements View.OnClickListener to register the choices with click listeners.
  */
-public class QuizFragmentTimed extends Fragment implements Quiz, View.OnClickListener {
+public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClickListener {
 
-    private final QuizFragmentTimed THIS_FRAGMENT = this;
+    private final QuizGameTimedFragment THIS_FRAGMENT = this;
 
     private Question mCurrentQuestion;
     private int mQuestionCounter = 0;
@@ -63,7 +63,7 @@ public class QuizFragmentTimed extends Fragment implements Quiz, View.OnClickLis
     /**
      * Required empty public constructor
      */
-    public QuizFragmentTimed() {
+    public QuizGameTimedFragment() {
     }
 
     /**
@@ -161,7 +161,9 @@ public class QuizFragmentTimed extends Fragment implements Quiz, View.OnClickLis
                     getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT)
                             .commitAllowingStateLoss();
                     getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,
-                            new QuizReportFragment(), "quizReportFragment").commitAllowingStateLoss();
+                            new QuizScoreFragment(), "quizReportFragment").commitAllowingStateLoss();
+//                    getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,
+//                            new QuizReportFragment(), "quizReportFragment").commitAllowingStateLoss();
                 }
                 mElapsedSeconds++;
             }
