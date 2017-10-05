@@ -96,8 +96,10 @@ public class QuizScoreFragment extends Fragment {
         mTotalScore = (TextView) view.findViewById(R.id.total_score);
         mGameMenuButton = (Button) view.findViewById(R.id.game_menu_button);
         mViewReportButton = (Button) view.findViewById(R.id.view_report_button);
-
         mSharedPreferences = getActivity().getSharedPreferences("settings", Context.MODE_PRIVATE);
+
+        // Used to reshow the new record label if the user chooses to see the report and then
+        // returns to this fragment.
         if (newHighscoreAcquired) {
             mNewRecordLabel.setVisibility(View.VISIBLE);
         }
@@ -197,9 +199,13 @@ public class QuizScoreFragment extends Fragment {
     }
 
     /**
-     * @param finalScore
-     * @param currentHighscore
-     * @param sharedPreferencesKey
+     * If the user achieved a score in this game that is higher than the current highscore, that
+     * score replaces the current highscore. Also the label notifying the user that a new
+     * highscore was achieved gets displayed.
+     *
+     * @param finalScore           score of this game
+     * @param currentHighscore     highscore stored in sharedPreferences
+     * @param sharedPreferencesKey the key of the game mode that belongs to that highscore
      */
     private void checkNewHighscore(float finalScore, float currentHighscore,
                                    String sharedPreferencesKey) {
