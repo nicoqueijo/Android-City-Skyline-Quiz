@@ -14,15 +14,18 @@ import android.widget.TextView;
 
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.activities.QuizGameActivity;
+import com.nicoqueijo.cityskylinequiz.activities.QuizMenuActivity;
 
 public class QuizScoreFragment extends Fragment {
 
+    public static final float DEFAULT_HIGHSCORE = 0.0f;
     public static final double ATTEMPT_ONE_MULTIPLIER = 1.0;
     public static final double ATTEMPT_TWO_MULTIPLIER = 0.5;
     public static final double ATTEMPT_THREE_MULTIPLIER = 0.25;
     public static final double ATTEMPT_FOUR_MULTIPLIER = 0.0;
 
     private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
 
     private LinearLayout mNewRecordLabel;
     private TextView mAttemptOneCorrect;
@@ -46,7 +49,7 @@ public class QuizScoreFragment extends Fragment {
     private double mScoreAttemptTwo = mCorrectAnswersOnAttemptTwo * ATTEMPT_TWO_MULTIPLIER;
     private double mScoreAttemptThree = mCorrectAnswersOnAttemptThree * ATTEMPT_THREE_MULTIPLIER;
     private double mScoreAttemptFour = mCorrectAnswersOnAttemptFour * ATTEMPT_FOUR_MULTIPLIER;
-    private double mFinalScore = (mScoreAttemptOne + mScoreAttemptTwo + mScoreAttemptThree +
+    private float mFinalScore = (float) (mScoreAttemptOne + mScoreAttemptTwo + mScoreAttemptThree +
             mScoreAttemptFour);
 
     /**
@@ -97,14 +100,94 @@ public class QuizScoreFragment extends Fragment {
         mSharedPreferences = getActivity().getSharedPreferences("settings", Context.MODE_PRIVATE);
         SharedPreferences.Editor mEditor = mSharedPreferences.edit();
 
-        // need to use these values to handle the different high scores fields in sharedPreferences
-        Log.v("mode", "parent " + QuizGameActivity.groupPosition);
-        Log.v("mode", "child " + QuizGameActivity.childPosition);
-
-        // if this score is greater than the score stored in sharedPreferences, overwrite the score
-        // in sharedPreferences with this scores and make the mNewRecordLabel visible
-        if (true) {
-            mNewRecordLabel.setVisibility(View.VISIBLE);
+        float currentHighscore;
+        switch (QuizGameActivity.groupPosition) {
+            case QuizMenuActivity.PARENT_MODE_TIMED:
+                switch (QuizGameActivity.childPosition) {
+                    case QuizMenuActivity.CHILD_MODE_SECONDS_30:
+                        currentHighscore = mSharedPreferences.getFloat("highscore_30_seconds"
+                                , DEFAULT_HIGHSCORE);
+                        if (mFinalScore > currentHighscore) {
+                            mNewRecordLabel.setVisibility(View.VISIBLE);
+                            mEditor.putFloat("highscore_30_seconds", mFinalScore);
+                            mEditor.commit();
+                        }
+                        break;
+                    case QuizMenuActivity.CHILD_MODE_SECONDS_60:
+                        currentHighscore = mSharedPreferences.getFloat("highscore_60_seconds"
+                                , DEFAULT_HIGHSCORE);
+                        if (mFinalScore > currentHighscore) {
+                            mNewRecordLabel.setVisibility(View.VISIBLE);
+                            mEditor.putFloat("highscore_60_seconds", mFinalScore);
+                            mEditor.commit();
+                        }
+                        break;
+                    case QuizMenuActivity.CHILD_MODE_SECONDS_120:
+                        currentHighscore = mSharedPreferences.getFloat("highscore_120_seconds"
+                                , DEFAULT_HIGHSCORE);
+                        if (mFinalScore > currentHighscore) {
+                            mNewRecordLabel.setVisibility(View.VISIBLE);
+                            mEditor.putFloat("highscore_120_seconds", mFinalScore);
+                            mEditor.commit();
+                        }
+                        break;
+                }
+                break;
+            case QuizMenuActivity.PARENT_MODE_UNTIMED:
+                switch (QuizGameActivity.childPosition) {
+                    case QuizMenuActivity.CHILD_MODE_QUESTIONS_10:
+                        currentHighscore = mSharedPreferences.getFloat("highscore_10_questions"
+                                , DEFAULT_HIGHSCORE);
+                        if (mFinalScore > currentHighscore) {
+                            mNewRecordLabel.setVisibility(View.VISIBLE);
+                            mEditor.putFloat("highscore_10_questions", mFinalScore);
+                            mEditor.commit();
+                        }
+                        Log.v("score", "" + currentHighscore);
+                        Log.v("score", "" + mFinalScore);
+                        break;
+                    case QuizMenuActivity.CHILD_MODE_QUESTIONS_20:
+                        currentHighscore = mSharedPreferences.getFloat("highscore_20_questions"
+                                , DEFAULT_HIGHSCORE);
+                        if (mFinalScore > currentHighscore) {
+                            mNewRecordLabel.setVisibility(View.VISIBLE);
+                            mEditor.putFloat("highscore_20_questions", mFinalScore);
+                            mEditor.commit();
+                        }
+                        break;
+                    case QuizMenuActivity.CHILD_MODE_QUESTIONS_50:
+                        currentHighscore = mSharedPreferences.getFloat("highscore_50_questions"
+                                , DEFAULT_HIGHSCORE);
+                        if (mFinalScore > currentHighscore) {
+                            mNewRecordLabel.setVisibility(View.VISIBLE);
+                            mEditor.putFloat("highscore_50_questions", mFinalScore);
+                            mEditor.commit();
+                        }
+                        break;
+                }
+                break;
+            case QuizMenuActivity.PARENT_MODE_EVERY_CITY:
+                switch (QuizGameActivity.childPosition) {
+                    case QuizMenuActivity.CHILD_MODE_EVERY_CITY_NO_FAULTS:
+                        currentHighscore = mSharedPreferences.getFloat
+                                ("highscore_every_city_no_faults", DEFAULT_HIGHSCORE);
+                        if (mFinalScore > currentHighscore) {
+                            mNewRecordLabel.setVisibility(View.VISIBLE);
+                            mEditor.putFloat("highscore_every_city_no_faults", mFinalScore);
+                            mEditor.commit();
+                        }
+                        break;
+                    case QuizMenuActivity.CHILD_MODE_EVERY_CITY_FAULTS_ALLOWED:
+                        currentHighscore = mSharedPreferences.getFloat
+                                ("highscore_every_city_faults_allowed", DEFAULT_HIGHSCORE);
+                        if (mFinalScore > currentHighscore) {
+                            mNewRecordLabel.setVisibility(View.VISIBLE);
+                            mEditor.putFloat("highscore_every_city_faults_allowed", mFinalScore);
+                            mEditor.commit();
+                        }
+                        break;
+                }
+                break;
         }
 
         mAttemptOneCorrect.setText(String.valueOf(mCorrectAnswersOnAttemptOne));

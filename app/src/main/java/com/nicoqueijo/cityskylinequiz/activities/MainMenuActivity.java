@@ -79,7 +79,6 @@ public class MainMenuActivity extends AppCompatActivity {
         currentLanguage = mSharedPreferences.getString("language", SystemInfo.SYSTEM_LOCALE);
         mActionBar = getSupportActionBar();
         mActionBar.setDisplayShowHomeEnabled(true);
-        // CHANGE THIS TO ACTUAL ICON LAUNCHER WHEN I FIND ONE
         mActionBar.setIcon(R.mipmap.ic_launcher);
         mActionBar.setTitle(R.string.actionbar_app_name);
 
@@ -88,6 +87,7 @@ public class MainMenuActivity extends AppCompatActivity {
         // take long on first time and will be instant on future launches.
         if (mSharedPreferences.getBoolean("first_launch", true)) {
             // Enter statements to do when first time launching here
+            // Dialog message to allow a minute to load resources
             editor.putBoolean("first_launch", false);
             editor.commit();
         }

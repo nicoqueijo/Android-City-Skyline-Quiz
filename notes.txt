@@ -30,6 +30,8 @@ https://api.myjson.com/bins/1a5vld
 // DO NEXT
 -save high scores to sharedpreferences
 -show new record label if score is greater than sharedpreferences score
+-remove SQLite
+-update JSON cloud file
 -Group common xml attributes in styles
 -translate new UI strings
 -Try to classify cities by regions (Americas, Europe, Asia/Africa/Oceania)
