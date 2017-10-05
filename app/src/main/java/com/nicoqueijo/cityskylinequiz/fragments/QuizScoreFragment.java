@@ -26,6 +26,7 @@ public class QuizScoreFragment extends Fragment {
 
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
+    private boolean newHighScoreAcquired = false;
 
     private LinearLayout mNewRecordLabel;
     private TextView mAttemptOneCorrect;
@@ -99,6 +100,9 @@ public class QuizScoreFragment extends Fragment {
 
         mSharedPreferences = getActivity().getSharedPreferences("settings", Context.MODE_PRIVATE);
         SharedPreferences.Editor mEditor = mSharedPreferences.edit();
+        if (newHighScoreAcquired) {
+            mNewRecordLabel.setVisibility(View.VISIBLE);
+        }
 
         float currentHighscore;
         switch (QuizGameActivity.groupPosition) {
@@ -175,6 +179,7 @@ public class QuizScoreFragment extends Fragment {
                             mNewRecordLabel.setVisibility(View.VISIBLE);
                             mEditor.putFloat("highscore_every_city_no_faults", mFinalScore);
                             mEditor.commit();
+                            newHighScoreAcquired = true;
                         }
                         break;
                     case QuizMenuActivity.CHILD_MODE_EVERY_CITY_FAULTS_ALLOWED:

@@ -28,6 +28,7 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
     private ActionBar mActionBar;
     private FragmentManager mFragmentManager = getFragmentManager();
     private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
     private LinearLayout mThemeView;
     private LinearLayout mLanguageView;
     private LinearLayout mScoresView;
@@ -97,7 +98,15 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
     @Override
     public void onDialogMessage(String message) {
         if (message.equals(ClearScoresDialog.CLEAR_SCORES)) {
-            // Reset scores
+            mEditor = mSharedPreferences.edit();
+            mEditor.remove("highscore_30_seconds").commit();
+            mEditor.remove("highscore_60_seconds").commit();
+            mEditor.remove("highscore_120_seconds").commit();
+            mEditor.remove("highscore_10_questions").commit();
+            mEditor.remove("highscore_20_questions").commit();
+            mEditor.remove("highscore_50_questions").commit();
+            mEditor.remove("highscore_every_city_no_faults").commit();
+            mEditor.remove("highscore_every_city_faults_allowed").commit();
             Toast.makeText(mThisActivity, R.string.scores_cleared, Toast.LENGTH_SHORT).show();
         } else {
             restartActivity();
@@ -127,13 +136,13 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
      * theme switch is checked, it saved the theme as dark. Else it saves the theme as light.
      */
     public void saveTheme() {
-        SharedPreferences.Editor editor = mSharedPreferences.edit();
+        mEditor = mSharedPreferences.edit();
         if (mThemeSwitch.isChecked()) {
-            editor.putInt("theme", R.style.AppThemeDark);
-            editor.commit();
+            mEditor.putInt("theme", R.style.AppThemeDark);
+            mEditor.commit();
         } else {
-            editor.putInt("theme", R.style.AppThemeLight);
-            editor.commit();
+            mEditor.putInt("theme", R.style.AppThemeLight);
+            mEditor.commit();
         }
     }
 }
