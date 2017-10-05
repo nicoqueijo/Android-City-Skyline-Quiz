@@ -56,6 +56,8 @@ public class QuizGameActivity extends AppCompatActivity {
 
     public static Queue<Question> questions;
     public static List<QuestionReport> questionReports;
+    public static int groupPosition;
+    public static int childPosition;
     public static int correctAnswersOnAttemptOne = -1;
     public static int correctAnswersOnAttemptTwo = 0;
     public static int correctAnswersOnAttemptThree = 0;
@@ -68,8 +70,6 @@ public class QuizGameActivity extends AppCompatActivity {
     private ActionBar mActionBar;
     private SharedPreferences mSharedPreferences;
     private ArrayList<City> mCities;
-    private int mGroupPosition;
-    private int mChildPosition;
     private CountDownTimer mCountDownTimer;
     private int mCount = 3;
     private TextView mCountdown;
@@ -88,8 +88,8 @@ public class QuizGameActivity extends AppCompatActivity {
         mCountdown = (TextView) findViewById(R.id.countdown);
 
         Intent intentQuizGame = getIntent();
-        mGroupPosition = intentQuizGame.getIntExtra("parentMode", QuizMenuActivity.PARENT_MODE_UNTIMED);
-        mChildPosition = intentQuizGame.getIntExtra("childMode", QuizMenuActivity.CHILD_MODE_QUESTIONS_10);
+        groupPosition = intentQuizGame.getIntExtra("parentMode", QuizMenuActivity.PARENT_MODE_UNTIMED);
+        childPosition = intentQuizGame.getIntExtra("childMode", QuizMenuActivity.CHILD_MODE_QUESTIONS_10);
 
         mCities = (ArrayList<City>) MainMenuActivity.cities;
         Collections.shuffle(mCities);
@@ -101,9 +101,9 @@ public class QuizGameActivity extends AppCompatActivity {
                 .fetch();
 
         Bundle bundle = new Bundle();
-        bundle.putInt("child", mChildPosition);
+        bundle.putInt("child", childPosition);
 
-        switch (mGroupPosition) {
+        switch (groupPosition) {
             case (QuizMenuActivity.PARENT_MODE_TIMED):
                 mQuizFragment = new QuizGameTimedFragment();
                 break;

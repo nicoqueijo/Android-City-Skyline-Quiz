@@ -1,7 +1,10 @@
 package com.nicoqueijo.cityskylinequiz.fragments;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +21,8 @@ public class QuizScoreFragment extends Fragment {
     public static final double ATTEMPT_TWO_MULTIPLIER = 0.5;
     public static final double ATTEMPT_THREE_MULTIPLIER = 0.25;
     public static final double ATTEMPT_FOUR_MULTIPLIER = 0.0;
+
+    private SharedPreferences mSharedPreferences;
 
     private LinearLayout mNewRecordLabel;
     private TextView mAttemptOneCorrect;
@@ -89,7 +94,15 @@ public class QuizScoreFragment extends Fragment {
         mGameMenuButton = (Button) view.findViewById(R.id.game_menu_button);
         mViewReportButton = (Button) view.findViewById(R.id.view_report_button);
 
+        mSharedPreferences = getActivity().getSharedPreferences("settings", Context.MODE_PRIVATE);
+        SharedPreferences.Editor mEditor = mSharedPreferences.edit();
 
+        // need to use these values to handle the different high scores fields in sharedPreferences
+        Log.v("mode", "parent " + QuizGameActivity.groupPosition);
+        Log.v("mode", "child " + QuizGameActivity.childPosition);
+
+        // if this score is greater than the score stored in sharedPreferences, overwrite the score
+        // in sharedPreferences with this scores and make the mNewRecordLabel visible
         if (true) {
             mNewRecordLabel.setVisibility(View.VISIBLE);
         }

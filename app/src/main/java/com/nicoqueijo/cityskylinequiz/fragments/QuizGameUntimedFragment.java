@@ -3,7 +3,6 @@ package com.nicoqueijo.cityskylinequiz.fragments;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -236,8 +235,9 @@ public class QuizGameUntimedFragment extends Fragment implements Quiz, View.OnCl
      */
     @Override
     public void loadNextQuestion() {
-        Log.v("attempts", mAttemptOfLastQuestion + "");
-
+        // If attempt is 0 it means they did not answer anything incorrect prior to correctly
+        // answering this questions, if it is 1 their last choice selection was incorrect and they
+        // are on their second attempt, same logic applies to the last two cases.
         switch (mAttemptOfLastQuestion) {
             case 0:
                 QuizGameActivity.correctAnswersOnAttemptOne++;
