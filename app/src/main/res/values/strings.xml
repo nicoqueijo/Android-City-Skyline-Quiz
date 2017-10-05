@@ -55,10 +55,10 @@
     <string name="game_menu">Game Menu</string>
     <string name="view_report">View Report</string>
     <string name="correct_answers">Correct Answers:</string>
-    <string name="attempt_one">After 1 attempt</string>
-    <string name="attempt_two">After 2 attempts</string>
-    <string name="attempt_three">After 3 attempts</string>
-    <string name="attempt_four">After 4 attempts</string>
+    <string name="attempt_one">On 1 attempt</string>
+    <string name="attempt_two">On 2 attempts</string>
+    <string name="attempt_three">On 3 attempts</string>
+    <string name="attempt_four">On 4 attempts</string>
     <string name="final_score">Final score</string>
     <string name="score">Score:</string>
     <string name="multiply">x</string>

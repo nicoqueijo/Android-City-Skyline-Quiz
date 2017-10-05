@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +25,7 @@ public class QuizScoreFragment extends Fragment {
 
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
-    private boolean newHighScoreAcquired = false;
+    private boolean newHighscoreAcquired = false;
 
     private LinearLayout mNewRecordLabel;
     private TextView mAttemptOneCorrect;
@@ -99,8 +98,7 @@ public class QuizScoreFragment extends Fragment {
         mViewReportButton = (Button) view.findViewById(R.id.view_report_button);
 
         mSharedPreferences = getActivity().getSharedPreferences("settings", Context.MODE_PRIVATE);
-        SharedPreferences.Editor mEditor = mSharedPreferences.edit();
-        if (newHighScoreAcquired) {
+        if (newHighscoreAcquired) {
             mNewRecordLabel.setVisibility(View.VISIBLE);
         }
 
@@ -111,29 +109,20 @@ public class QuizScoreFragment extends Fragment {
                     case QuizMenuActivity.CHILD_MODE_SECONDS_30:
                         currentHighscore = mSharedPreferences.getFloat("highscore_30_seconds"
                                 , DEFAULT_HIGHSCORE);
-                        if (mFinalScore > currentHighscore) {
-                            mNewRecordLabel.setVisibility(View.VISIBLE);
-                            mEditor.putFloat("highscore_30_seconds", mFinalScore);
-                            mEditor.commit();
-                        }
+                        checkNewHighscore(mFinalScore, currentHighscore,
+                                "highscore_30_seconds");
                         break;
                     case QuizMenuActivity.CHILD_MODE_SECONDS_60:
                         currentHighscore = mSharedPreferences.getFloat("highscore_60_seconds"
                                 , DEFAULT_HIGHSCORE);
-                        if (mFinalScore > currentHighscore) {
-                            mNewRecordLabel.setVisibility(View.VISIBLE);
-                            mEditor.putFloat("highscore_60_seconds", mFinalScore);
-                            mEditor.commit();
-                        }
+                        checkNewHighscore(mFinalScore, currentHighscore,
+                                "highscore_60_seconds");
                         break;
                     case QuizMenuActivity.CHILD_MODE_SECONDS_120:
                         currentHighscore = mSharedPreferences.getFloat("highscore_120_seconds"
                                 , DEFAULT_HIGHSCORE);
-                        if (mFinalScore > currentHighscore) {
-                            mNewRecordLabel.setVisibility(View.VISIBLE);
-                            mEditor.putFloat("highscore_120_seconds", mFinalScore);
-                            mEditor.commit();
-                        }
+                        checkNewHighscore(mFinalScore, currentHighscore,
+                                "highscore_120_seconds");
                         break;
                 }
                 break;
@@ -142,31 +131,20 @@ public class QuizScoreFragment extends Fragment {
                     case QuizMenuActivity.CHILD_MODE_QUESTIONS_10:
                         currentHighscore = mSharedPreferences.getFloat("highscore_10_questions"
                                 , DEFAULT_HIGHSCORE);
-                        if (mFinalScore > currentHighscore) {
-                            mNewRecordLabel.setVisibility(View.VISIBLE);
-                            mEditor.putFloat("highscore_10_questions", mFinalScore);
-                            mEditor.commit();
-                        }
-                        Log.v("score", "" + currentHighscore);
-                        Log.v("score", "" + mFinalScore);
+                        checkNewHighscore(mFinalScore, currentHighscore,
+                                "highscore_10_questions");
                         break;
                     case QuizMenuActivity.CHILD_MODE_QUESTIONS_20:
                         currentHighscore = mSharedPreferences.getFloat("highscore_20_questions"
                                 , DEFAULT_HIGHSCORE);
-                        if (mFinalScore > currentHighscore) {
-                            mNewRecordLabel.setVisibility(View.VISIBLE);
-                            mEditor.putFloat("highscore_20_questions", mFinalScore);
-                            mEditor.commit();
-                        }
+                        checkNewHighscore(mFinalScore, currentHighscore,
+                                "highscore_20_questions");
                         break;
                     case QuizMenuActivity.CHILD_MODE_QUESTIONS_50:
                         currentHighscore = mSharedPreferences.getFloat("highscore_50_questions"
                                 , DEFAULT_HIGHSCORE);
-                        if (mFinalScore > currentHighscore) {
-                            mNewRecordLabel.setVisibility(View.VISIBLE);
-                            mEditor.putFloat("highscore_50_questions", mFinalScore);
-                            mEditor.commit();
-                        }
+                        checkNewHighscore(mFinalScore, currentHighscore,
+                                "highscore_50_questions");
                         break;
                 }
                 break;
@@ -175,21 +153,14 @@ public class QuizScoreFragment extends Fragment {
                     case QuizMenuActivity.CHILD_MODE_EVERY_CITY_NO_FAULTS:
                         currentHighscore = mSharedPreferences.getFloat
                                 ("highscore_every_city_no_faults", DEFAULT_HIGHSCORE);
-                        if (mFinalScore > currentHighscore) {
-                            mNewRecordLabel.setVisibility(View.VISIBLE);
-                            mEditor.putFloat("highscore_every_city_no_faults", mFinalScore);
-                            mEditor.commit();
-                            newHighScoreAcquired = true;
-                        }
+                        checkNewHighscore(mFinalScore, currentHighscore,
+                                "highscore_every_city_no_faults");
                         break;
                     case QuizMenuActivity.CHILD_MODE_EVERY_CITY_FAULTS_ALLOWED:
                         currentHighscore = mSharedPreferences.getFloat
                                 ("highscore_every_city_faults_allowed", DEFAULT_HIGHSCORE);
-                        if (mFinalScore > currentHighscore) {
-                            mNewRecordLabel.setVisibility(View.VISIBLE);
-                            mEditor.putFloat("highscore_every_city_faults_allowed", mFinalScore);
-                            mEditor.commit();
-                        }
+                        checkNewHighscore(mFinalScore, currentHighscore,
+                                "highscore_every_city_faults_allowed");
                         break;
                 }
                 break;
@@ -201,11 +172,11 @@ public class QuizScoreFragment extends Fragment {
         mAttemptThreeCorrect.setText(String.valueOf(mCorrectAnswersOnAttemptThree));
         mAttemptFourCorrect.setText(String.valueOf(mCorrectAnswersOnAttemptFour));
 
-        mAttemptOneScore.setText(String.format("%.2f", mScoreAttemptOne));
-        mAttemptTwoScore.setText(String.format("%.2f", mScoreAttemptTwo));
-        mAttemptThreeScore.setText(String.format("%.2f", mScoreAttemptThree));
-        mAttemptFourScore.setText(String.format("%.2f", mScoreAttemptFour));
-        mTotalScore.setText(String.format("%.2f", mFinalScore));
+        mAttemptOneScore.setText(String.format("%3.2f", mScoreAttemptOne));
+        mAttemptTwoScore.setText(String.format("%3.2f", mScoreAttemptTwo));
+        mAttemptThreeScore.setText(String.format("%3.2f", mScoreAttemptThree));
+        mAttemptFourScore.setText(String.format("%3.2f", mScoreAttemptFour));
+        mTotalScore.setText(String.format("%3.2f", mFinalScore));
 
         mGameMenuButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -223,5 +194,21 @@ public class QuizScoreFragment extends Fragment {
             }
         });
         return view;
+    }
+
+    /**
+     * @param finalScore
+     * @param currentHighscore
+     * @param sharedPreferencesKey
+     */
+    private void checkNewHighscore(float finalScore, float currentHighscore,
+                                   String sharedPreferencesKey) {
+        mEditor = mSharedPreferences.edit();
+        if (finalScore > currentHighscore) {
+            mNewRecordLabel.setVisibility(View.VISIBLE);
+            mEditor.putFloat(sharedPreferencesKey, mFinalScore);
+            mEditor.commit();
+            newHighscoreAcquired = true;
+        }
     }
 }
