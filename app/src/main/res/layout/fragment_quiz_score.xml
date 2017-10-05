@@ -64,6 +64,7 @@
             android:layout_height="160dp"
             android:layout_marginTop="3dp"
             android:background="@drawable/round_outline_answer_choice"
+            android:baselineAligned="false"
             android:orientation="horizontal"
             android:paddingLeft="5dp"
             android:paddingRight="5dp">
@@ -146,47 +147,48 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="10"
+                    android:gravity="right"
                     android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/attempt_one_correct"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="right"
+                        android:paddingLeft="7dp"
                         android:textColor="@color/white"
                         tools:text="8" />
 
                     <TextView
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="center_horizontal"
+                        android:paddingLeft="7dp"
                         android:text="@string/multiply"
                         android:textColor="@color/white" />
 
                     <TextView
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="right"
+                        android:paddingLeft="7dp"
                         android:text="@string/attempt_one_multiplier"
                         android:textColor="@color/white" />
 
                     <TextView
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="center_horizontal"
+                        android:paddingLeft="7dp"
                         android:text="@string/equal"
                         android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/attempt_one_score"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="right"
+                        android:paddingLeft="15dp"
                         android:textColor="@color/white"
                         tools:text="8.00" />
 
@@ -196,47 +198,48 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="10"
+                    android:gravity="right"
                     android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/attempt_two_correct"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="right"
+                        android:paddingLeft="7dp"
                         android:textColor="@color/white"
                         tools:text="5" />
 
                     <TextView
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="center_horizontal"
+                        android:paddingLeft="7dp"
                         android:text="@string/multiply"
                         android:textColor="@color/white" />
 
                     <TextView
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="right"
+                        android:paddingLeft="7dp"
                         android:text="@string/attempt_two_multiplier"
                         android:textColor="@color/white" />
 
                     <TextView
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="center_horizontal"
+                        android:paddingLeft="7dp"
                         android:text="@string/equal"
                         android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/attempt_two_score"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="right"
+                        android:paddingLeft="15dp"
                         android:textColor="@color/white"
                         tools:text="2.50" />
 
@@ -246,47 +249,48 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="10"
+                    android:gravity="right"
                     android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/attempt_three_correct"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="right"
+                        android:paddingLeft="7dp"
                         android:textColor="@color/white"
                         tools:text="4" />
 
                     <TextView
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="center_horizontal"
+                        android:paddingLeft="7dp"
                         android:text="@string/multiply"
                         android:textColor="@color/white" />
 
                     <TextView
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="right"
+                        android:paddingLeft="7dp"
                         android:text="@string/attempt_three_multiplier"
                         android:textColor="@color/white" />
 
                     <TextView
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="center_horizontal"
+                        android:paddingLeft="7dp"
                         android:text="@string/equal"
                         android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/attempt_three_score"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="right"
+                        android:paddingLeft="15dp"
                         android:textColor="@color/white"
                         tools:text="1.00" />
 
@@ -296,47 +300,48 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="10"
+                    android:gravity="right"
                     android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/attempt_four_correct"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="right"
+                        android:paddingLeft="7dp"
                         android:textColor="@color/white"
                         tools:text="3" />
 
                     <TextView
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="center_horizontal"
+                        android:paddingLeft="7dp"
                         android:text="@string/multiply"
                         android:textColor="@color/white" />
 
                     <TextView
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="right"
+                        android:paddingLeft="7dp"
                         android:text="@string/attempt_four_multiplier"
                         android:textColor="@color/white" />
 
                     <TextView
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="center_horizontal"
+                        android:paddingLeft="7dp"
                         android:text="@string/equal"
                         android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/attempt_four_score"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="right"
+                        android:paddingLeft="15dp"
                         android:textColor="@color/white"
                         tools:text="0.00" />
 
@@ -351,7 +356,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="22dp"
+                        android:layout_marginLeft="42dp"
                         android:background="@color/white" />
 
                 </RelativeLayout>
@@ -385,7 +390,7 @@
             android:id="@+id/game_menu_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="2dp"
+            android:layout_marginRight="3dp"
             android:layout_weight="1"
             android:background="@drawable/round_outline_answer_choice"
             android:text="@string/game_menu"
@@ -395,7 +400,7 @@
             android:id="@+id/view_report_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="2dp"
+            android:layout_marginLeft="3dp"
             android:layout_weight="1"
             android:background="@drawable/round_outline_answer_choice"
             android:text="@string/view_report"

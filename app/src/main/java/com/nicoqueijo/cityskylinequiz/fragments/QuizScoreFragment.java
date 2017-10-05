@@ -32,11 +32,17 @@ public class QuizScoreFragment extends Fragment {
     private Button mGameMenuButton;
     private Button mViewReportButton;
 
-    private double mScoreAttemptOne;
-    private double mScoreAttemptTwo;
-    private double mScoreAttemptThree;
-    private double mScoreAttemptFour;
-    private double mFinalScore;
+    private int mCorrectAnswersOnAttemptOne = QuizGameActivity.correctAnswersOnAttemptOne;
+    private int mCorrectAnswersOnAttemptTwo = QuizGameActivity.correctAnswersOnAttemptTwo;
+    private int mCorrectAnswersOnAttemptThree = QuizGameActivity.correctAnswersOnAttemptThree;
+    private int mCorrectAnswersOnAttemptFour = QuizGameActivity.correctAnswersOnAttemptFour;
+
+    private double mScoreAttemptOne = mCorrectAnswersOnAttemptOne * ATTEMPT_ONE_MULTIPLIER;
+    private double mScoreAttemptTwo = mCorrectAnswersOnAttemptTwo * ATTEMPT_TWO_MULTIPLIER;
+    private double mScoreAttemptThree = mCorrectAnswersOnAttemptThree * ATTEMPT_THREE_MULTIPLIER;
+    private double mScoreAttemptFour = mCorrectAnswersOnAttemptFour * ATTEMPT_FOUR_MULTIPLIER;
+    private double mFinalScore = (mScoreAttemptOne + mScoreAttemptTwo + mScoreAttemptThree +
+            mScoreAttemptFour);
 
     /**
      * Required empty public constructor
@@ -53,7 +59,6 @@ public class QuizScoreFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     /**
@@ -84,24 +89,23 @@ public class QuizScoreFragment extends Fragment {
         mGameMenuButton = (Button) view.findViewById(R.id.game_menu_button);
         mViewReportButton = (Button) view.findViewById(R.id.view_report_button);
 
-        mScoreAttemptOne = QuizGameActivity.correctAnswersOnAttemptOne * ATTEMPT_ONE_MULTIPLIER;
-        mScoreAttemptTwo = QuizGameActivity.correctAnswersOnAttemptTwo * ATTEMPT_TWO_MULTIPLIER;
-        mScoreAttemptThree = QuizGameActivity.correctAnswersOnAttemptThree * ATTEMPT_THREE_MULTIPLIER;
-        mScoreAttemptFour = QuizGameActivity.correctAnswersOnAttemptFour * ATTEMPT_FOUR_MULTIPLIER;
-        mFinalScore = (mScoreAttemptOne + mScoreAttemptTwo + mScoreAttemptThree + mScoreAttemptFour);
 
-        mAttemptOneCorrect.setText(String.valueOf(QuizGameActivity.correctAnswersOnAttemptOne));
-        mAttemptTwoCorrect.setText(String.valueOf(QuizGameActivity.correctAnswersOnAttemptTwo));
-        mAttemptThreeCorrect.setText(String.valueOf(QuizGameActivity.correctAnswersOnAttemptThree));
-        mAttemptFourCorrect.setText(String.valueOf(QuizGameActivity.correctAnswersOnAttemptFour));
+        if (true) {
+            mNewRecordLabel.setVisibility(View.VISIBLE);
+        }
 
-        mAttemptOneScore.setText(String.valueOf(mScoreAttemptOne));
-        mAttemptTwoScore.setText(String.valueOf(mScoreAttemptTwo));
-        mAttemptThreeScore.setText(String.valueOf(mScoreAttemptThree));
-        mAttemptFourScore.setText(String.valueOf(mScoreAttemptFour));
-        mTotalScore.setText(String.valueOf(mFinalScore));
+        mAttemptOneCorrect.setText(String.valueOf(mCorrectAnswersOnAttemptOne));
+        mAttemptOneCorrect.setText(String.valueOf(mCorrectAnswersOnAttemptOne));
+        mAttemptTwoCorrect.setText(String.valueOf(mCorrectAnswersOnAttemptTwo));
+        mAttemptThreeCorrect.setText(String.valueOf(mCorrectAnswersOnAttemptThree));
+        mAttemptFourCorrect.setText(String.valueOf(mCorrectAnswersOnAttemptFour));
 
-        // remove this fragment
+        mAttemptOneScore.setText(String.format("%.2f", mScoreAttemptOne));
+        mAttemptTwoScore.setText(String.format("%.2f", mScoreAttemptTwo));
+        mAttemptThreeScore.setText(String.format("%.2f", mScoreAttemptThree));
+        mAttemptFourScore.setText(String.format("%.2f", mScoreAttemptFour));
+        mTotalScore.setText(String.format("%.2f", mFinalScore));
+
         mGameMenuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,7 +113,6 @@ public class QuizScoreFragment extends Fragment {
             }
         });
 
-        // add this fragment to backstack, load report fragment
         mViewReportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,5 +123,4 @@ public class QuizScoreFragment extends Fragment {
         });
         return view;
     }
-
 }
