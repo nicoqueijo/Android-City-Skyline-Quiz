@@ -285,7 +285,7 @@ public class QuizGameUntimedFragment extends Fragment implements Quiz, View.OnCl
      * Records how many attempts it took to answer the previous question so we can reflect
      * this information on the score of the game.
      */
-    private void recordAttemptsOfLastQuestion() {
+    public void recordAttemptsOfLastQuestion() {
         switch (mAttemptOfLastQuestion) {
             case 0:
                 QuizGameActivity.correctAnswersOnAttemptOne++;
