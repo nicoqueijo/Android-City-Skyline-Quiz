@@ -196,15 +196,20 @@
                         android:textColor="@color/white"
                         android:textSize="16sp" />
 
-                    <TextView
-                        android:id="@+id/attempt_one_score"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="right"
-                        android:paddingLeft="15dp"
-                        android:textColor="@color/white"
-                        android:textSize="16sp"
-                        tools:text="8.00" />
+                    <FrameLayout
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/attempt_one_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="right"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            tools:text="128.00" />
+
+                    </FrameLayout>
 
                 </LinearLayout>
 
@@ -252,15 +257,20 @@
                         android:textColor="@color/white"
                         android:textSize="16sp" />
 
-                    <TextView
-                        android:id="@+id/attempt_two_score"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="right"
-                        android:paddingLeft="15dp"
-                        android:textColor="@color/white"
-                        android:textSize="16sp"
-                        tools:text="2.50" />
+                    <FrameLayout
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/attempt_two_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="right"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            tools:text="2.50" />
+
+                    </FrameLayout>
 
                 </LinearLayout>
 
@@ -308,15 +318,20 @@
                         android:textColor="@color/white"
                         android:textSize="16sp" />
 
-                    <TextView
-                        android:id="@+id/attempt_three_score"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="right"
-                        android:paddingLeft="15dp"
-                        android:textColor="@color/white"
-                        android:textSize="16sp"
-                        tools:text="1.00" />
+                    <FrameLayout
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/attempt_three_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="right"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            tools:text="1.00" />
+
+                    </FrameLayout>
 
                 </LinearLayout>
 
@@ -364,15 +379,20 @@
                         android:textColor="@color/white"
                         android:textSize="16sp" />
 
-                    <TextView
-                        android:id="@+id/attempt_four_score"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="right"
-                        android:paddingLeft="15dp"
-                        android:textColor="@color/white"
-                        android:textSize="16sp"
-                        tools:text="0.00" />
+                    <FrameLayout
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/attempt_four_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="right"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            tools:text="0.00" />
+
+                    </FrameLayout>
 
                 </LinearLayout>
 
@@ -398,7 +418,7 @@
                     android:gravity="right"
                     android:textColor="@color/white"
                     android:textSize="16sp"
-                    tools:text="11.50" />
+                    tools:text="131.50" />
 
             </LinearLayout>
 

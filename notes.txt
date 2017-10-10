@@ -6,9 +6,6 @@ https://api.myjson.com/bins/1a5vld
 
 
 // TODO
-			
--Score: 0, 0.25, 0.50, 1.0 per question depending on attempts
-
 -translate new UI labels
 -Put disclaimer about translations somewhere in app
 -Internationalize everything in strings.xml
@@ -28,9 +25,7 @@ https://api.myjson.com/bins/1a5vld
 		Use Typeface class from Base Converter project
 		
 // DO NEXT
--Put dialog on first launch to allow a minute for resources to download
 -put elevation on score fragment views
--format score string to three leading spaces
 -translate new UI strings
 -document undocumented java classes
 -update JSON cloud file
