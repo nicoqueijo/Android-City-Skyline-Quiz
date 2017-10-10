@@ -434,29 +434,49 @@
         android:layout_marginBottom="55dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
+        android:clipToPadding="false"
         android:orientation="horizontal">
 
-        <Button
+        <FrameLayout
             android:id="@+id/game_menu_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="3dp"
             android:layout_weight="1"
-            android:background="@drawable/round_outline_answer_choice"
-            android:text="@string/game_menu"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:background="@drawable/round_outline_answer_choice">
 
-        <Button
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:text="@string/game_menu"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+        </FrameLayout>
+
+        <FrameLayout
             android:id="@+id/view_report_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
             android:layout_weight="1"
-            android:background="@drawable/round_outline_answer_choice"
-            android:text="@string/view_report"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:background="@drawable/round_outline_answer_choice">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:text="@string/view_report"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+        </FrameLayout>
 
     </LinearLayout>
 

@@ -130,10 +130,10 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
 
         // Adds a shadow effect to the choice buttons
         if (SystemInfo.isRunningLollipopOrHigher()) {
-            mContainerChoice1.setElevation(QuizGameActivity.CHOICE_ELEVATION);
-            mContainerChoice2.setElevation(QuizGameActivity.CHOICE_ELEVATION);
-            mContainerChoice3.setElevation(QuizGameActivity.CHOICE_ELEVATION);
-            mContainerChoice4.setElevation(QuizGameActivity.CHOICE_ELEVATION);
+            mContainerChoice1.setElevation(QuizGameActivity.VIEW_ELEVATION);
+            mContainerChoice2.setElevation(QuizGameActivity.VIEW_ELEVATION);
+            mContainerChoice3.setElevation(QuizGameActivity.VIEW_ELEVATION);
+            mContainerChoice4.setElevation(QuizGameActivity.VIEW_ELEVATION);
         }
 
         mContainerChoice1.setOnClickListener(this);

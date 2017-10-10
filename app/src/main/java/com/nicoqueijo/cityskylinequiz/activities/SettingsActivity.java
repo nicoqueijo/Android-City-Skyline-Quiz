@@ -99,14 +99,14 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
     public void onDialogMessage(String message) {
         if (message.equals(ClearScoresDialog.CLEAR_SCORES)) {
             mEditor = mSharedPreferences.edit();
-            mEditor.remove("highscore_30_seconds").commit();
-            mEditor.remove("highscore_60_seconds").commit();
-            mEditor.remove("highscore_120_seconds").commit();
-            mEditor.remove("highscore_10_questions").commit();
-            mEditor.remove("highscore_20_questions").commit();
-            mEditor.remove("highscore_50_questions").commit();
-            mEditor.remove("highscore_every_city_no_faults").commit();
-            mEditor.remove("highscore_every_city_faults_allowed").commit();
+            mEditor.remove("high_score_30_seconds").commit();
+            mEditor.remove("high_score_60_seconds").commit();
+            mEditor.remove("high_score_120_seconds").commit();
+            mEditor.remove("high_score_10_questions").commit();
+            mEditor.remove("high_score_20_questions").commit();
+            mEditor.remove("high_score_50_questions").commit();
+            mEditor.remove("high_score_every_city_no_faults").commit();
+            mEditor.remove("high_score_every_city_faults_allowed").commit();
             Toast.makeText(mThisActivity, R.string.scores_cleared, Toast.LENGTH_SHORT).show();
         } else {
             restartActivity();

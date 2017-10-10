@@ -7,7 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -33,6 +33,7 @@ public class QuizScoreFragment extends Fragment {
     private SharedPreferences.Editor mEditor;
     private boolean newHighScoreAcquired = false;
 
+    private LinearLayout mContainerResults;
     private LinearLayout mNewRecordLabel;
     private TextView mAttemptOneCorrect;
     private TextView mAttemptTwoCorrect;
@@ -43,8 +44,8 @@ public class QuizScoreFragment extends Fragment {
     private TextView mAttemptThreeScore;
     private TextView mAttemptFourScore;
     private TextView mTotalScore;
-    private Button mGameMenuButton;
-    private Button mViewReportButton;
+    private FrameLayout mGameMenuButton;
+    private FrameLayout mViewReportButton;
 
     private int mCorrectAnswersOnAttemptOne = QuizGameActivity.correctAnswersOnAttemptOne;
     private int mCorrectAnswersOnAttemptTwo = QuizGameActivity.correctAnswersOnAttemptTwo;
@@ -90,6 +91,7 @@ public class QuizScoreFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_quiz_score, container, false);
+        mContainerResults = (LinearLayout) view.findViewById(R.id.container_results);
         mNewRecordLabel = (LinearLayout) view.findViewById(R.id.new_record_label);
         mAttemptOneCorrect = (TextView) view.findViewById(R.id.attempt_one_correct);
         mAttemptTwoCorrect = (TextView) view.findViewById(R.id.attempt_two_correct);
@@ -100,11 +102,15 @@ public class QuizScoreFragment extends Fragment {
         mAttemptThreeScore = (TextView) view.findViewById(R.id.attempt_three_score);
         mAttemptFourScore = (TextView) view.findViewById(R.id.attempt_four_score);
         mTotalScore = (TextView) view.findViewById(R.id.total_score);
-        mGameMenuButton = (Button) view.findViewById(R.id.game_menu_button);
-        mViewReportButton = (Button) view.findViewById(R.id.view_report_button);
+        mGameMenuButton = (FrameLayout) view.findViewById(R.id.game_menu_button);
+        mViewReportButton = (FrameLayout) view.findViewById(R.id.view_report_button);
         mSharedPreferences = getActivity().getSharedPreferences("settings", Context.MODE_PRIVATE);
 
+        // Adds a shadow effect to UI components
         if (SystemInfo.isRunningLollipopOrHigher()) {
+            mContainerResults.setElevation(QuizGameActivity.VIEW_ELEVATION);
+            mGameMenuButton.setElevation(QuizGameActivity.VIEW_ELEVATION);
+            mViewReportButton.setElevation(QuizGameActivity.VIEW_ELEVATION);
 
         }
 
@@ -123,7 +129,7 @@ public class QuizScoreFragment extends Fragment {
                         currentHighScore = mSharedPreferences.getFloat("high_score_30_seconds"
                                 , DEFAULT_HIGHSCORE);
                         checkNewHighScore(mFinalScore, currentHighScore,
-                                "highs_core_30_seconds");
+                                "high_score_30_seconds");
                         break;
                     case QuizMenuActivity.CHILD_MODE_SECONDS_60:
                         currentHighScore = mSharedPreferences.getFloat("high_score_60_seconds"
