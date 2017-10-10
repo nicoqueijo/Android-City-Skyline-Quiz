@@ -3,7 +3,6 @@ package com.nicoqueijo.cityskylinequiz.fragments;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -253,31 +252,12 @@ public class QuizGameEveryCityFragment extends Fragment implements Quiz, View.On
      */
     @Override
     public void loadNextQuestion() {
-        Log.v("attempts", mAttemptOfLastQuestion + "");
+        recordAttemptsOfLastQuestion();
 
-        // try moving this to its own method
-        switch (mAttemptOfLastQuestion) {
-            case 0:
-                QuizGameActivity.correctAnswersOnAttemptOne++;
-                break;
-            case 1:
-                QuizGameActivity.correctAnswersOnAttemptTwo++;
-                break;
-            case 2:
-                QuizGameActivity.correctAnswersOnAttemptThree++;
-                break;
-            case 3:
-                QuizGameActivity.correctAnswersOnAttemptFour++;
-                break;
-        }
-
-        mAttemptOfLastQuestion = 0;
         if (QuizGameActivity.questions.isEmpty()) {
             getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT).commit();
             getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,
                     new QuizScoreFragment(), "quizReportFragment").commit();
-//            getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,
-//                    new QuizReportFragment(), "quizReportFragment").commit();
         } else {
             mCurrentQuestion = QuizGameActivity.questions.remove();
             QuestionReport mCurrentQuestionReport = new QuestionReport(mCurrentQuestion, mQuestionCounter);
@@ -316,5 +296,27 @@ public class QuizGameEveryCityFragment extends Fragment implements Quiz, View.On
             mFlagChoice4.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
                     (mCurrentQuestion.getChoice4().getCountryName(), getActivity()));
         }
+    }
+
+    /**
+     * Records how many attempts it took to answer the previous question so we can reflect
+     * this information on the score of the game.
+     */
+    private void recordAttemptsOfLastQuestion() {
+        switch (mAttemptOfLastQuestion) {
+            case 0:
+                QuizGameActivity.correctAnswersOnAttemptOne++;
+                break;
+            case 1:
+                QuizGameActivity.correctAnswersOnAttemptTwo++;
+                break;
+            case 2:
+                QuizGameActivity.correctAnswersOnAttemptThree++;
+                break;
+            case 3:
+                QuizGameActivity.correctAnswersOnAttemptFour++;
+                break;
+        }
+        mAttemptOfLastQuestion = 0;
     }
 }

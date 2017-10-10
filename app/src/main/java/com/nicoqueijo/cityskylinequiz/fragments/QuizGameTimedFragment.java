@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -162,8 +161,6 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
                             .commitAllowingStateLoss();
                     getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,
                             new QuizScoreFragment(), "quizReportFragment").commitAllowingStateLoss();
-//                    getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,
-//                            new QuizReportFragment(), "quizReportFragment").commitAllowingStateLoss();
                 }
                 mElapsedSeconds++;
             }
@@ -261,24 +258,8 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
      * Refreshes the UI components with the information of the next question.
      */
     public void loadNextQuestion() {
-        Log.v("attempts", mAttemptOfLastQuestion + "");
+        recordAttemptsOfLastQuestion();
 
-        switch (mAttemptOfLastQuestion) {
-            case 0:
-                QuizGameActivity.correctAnswersOnAttemptOne++;
-                break;
-            case 1:
-                QuizGameActivity.correctAnswersOnAttemptTwo++;
-                break;
-            case 2:
-                QuizGameActivity.correctAnswersOnAttemptThree++;
-                break;
-            case 3:
-                QuizGameActivity.correctAnswersOnAttemptFour++;
-                break;
-        }
-
-        mAttemptOfLastQuestion = 0;
         if (getActivity() == null) {
             return;
         }
@@ -317,6 +298,28 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
                 (mCurrentQuestion.getChoice3().getCountryName(), getActivity()));
         mFlagChoice4.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
                 (mCurrentQuestion.getChoice4().getCountryName(), getActivity()));
+    }
+
+    /**
+     * Records how many attempts it took to answer the previous question so we can reflect
+     * this information on the score of the game.
+     */
+    private void recordAttemptsOfLastQuestion() {
+        switch (mAttemptOfLastQuestion) {
+            case 0:
+                QuizGameActivity.correctAnswersOnAttemptOne++;
+                break;
+            case 1:
+                QuizGameActivity.correctAnswersOnAttemptTwo++;
+                break;
+            case 2:
+                QuizGameActivity.correctAnswersOnAttemptThree++;
+                break;
+            case 3:
+                QuizGameActivity.correctAnswersOnAttemptFour++;
+                break;
+        }
+        mAttemptOfLastQuestion = 0;
     }
 
     /**

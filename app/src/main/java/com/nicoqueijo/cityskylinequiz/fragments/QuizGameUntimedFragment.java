@@ -235,31 +235,12 @@ public class QuizGameUntimedFragment extends Fragment implements Quiz, View.OnCl
      */
     @Override
     public void loadNextQuestion() {
-        // If attempt is 0 it means they did not answer anything incorrect prior to correctly
-        // answering this questions, if it is 1 their last choice selection was incorrect and they
-        // are on their second attempt, same logic applies to the last two cases.
-        switch (mAttemptOfLastQuestion) {
-            case 0:
-                QuizGameActivity.correctAnswersOnAttemptOne++;
-                break;
-            case 1:
-                QuizGameActivity.correctAnswersOnAttemptTwo++;
-                break;
-            case 2:
-                QuizGameActivity.correctAnswersOnAttemptThree++;
-                break;
-            case 3:
-                QuizGameActivity.correctAnswersOnAttemptFour++;
-                break;
-        }
+        recordAttemptsOfLastQuestion();
 
-        mAttemptOfLastQuestion = 0;
         if (mQuestionCounter >= mQuestionLimit) {
             getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT).commit();
             getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,
                     new QuizScoreFragment(), "quizReportFragment").commit();
-//            getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,
-//                    new QuizReportFragment(), "quizReportFragment").commit();
         } else {
             mCurrentQuestion = QuizGameActivity.questions.remove();
             QuestionReport mCurrentQuestionReport = new QuestionReport(mCurrentQuestion, mQuestionCounter);
@@ -298,5 +279,27 @@ public class QuizGameUntimedFragment extends Fragment implements Quiz, View.OnCl
             mFlagChoice4.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
                     (mCurrentQuestion.getChoice4().getCountryName(), getActivity()));
         }
+    }
+
+    /**
+     * Records how many attempts it took to answer the previous question so we can reflect
+     * this information on the score of the game.
+     */
+    private void recordAttemptsOfLastQuestion() {
+        switch (mAttemptOfLastQuestion) {
+            case 0:
+                QuizGameActivity.correctAnswersOnAttemptOne++;
+                break;
+            case 1:
+                QuizGameActivity.correctAnswersOnAttemptTwo++;
+                break;
+            case 2:
+                QuizGameActivity.correctAnswersOnAttemptThree++;
+                break;
+            case 3:
+                QuizGameActivity.correctAnswersOnAttemptFour++;
+                break;
+        }
+        mAttemptOfLastQuestion = 0;
     }
 }

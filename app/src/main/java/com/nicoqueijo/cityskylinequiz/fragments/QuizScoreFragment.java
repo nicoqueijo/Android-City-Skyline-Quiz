@@ -14,7 +14,13 @@ import android.widget.TextView;
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.activities.QuizGameActivity;
 import com.nicoqueijo.cityskylinequiz.activities.QuizMenuActivity;
+import com.nicoqueijo.cityskylinequiz.helpers.SystemInfo;
 
+/**
+ * This fragment hosts the score information regarding the game that was just concluded. It shows
+ * the user how they performed and also if a new high score was achieved in this particular game
+ * mode.
+ */
 public class QuizScoreFragment extends Fragment {
 
     public static final float DEFAULT_HIGHSCORE = 0.0f;
@@ -25,7 +31,7 @@ public class QuizScoreFragment extends Fragment {
 
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
-    private boolean newHighscoreAcquired = false;
+    private boolean newHighScoreAcquired = false;
 
     private LinearLayout mNewRecordLabel;
     private TextView mAttemptOneCorrect;
@@ -98,71 +104,76 @@ public class QuizScoreFragment extends Fragment {
         mViewReportButton = (Button) view.findViewById(R.id.view_report_button);
         mSharedPreferences = getActivity().getSharedPreferences("settings", Context.MODE_PRIVATE);
 
+        if (SystemInfo.isRunningLollipopOrHigher()) {
+
+        }
+
         // Used to reshow the new record label if the user chooses to see the report and then
         // returns to this fragment.
-        if (newHighscoreAcquired) {
+        if (newHighScoreAcquired) {
             mNewRecordLabel.setVisibility(View.VISIBLE);
         }
 
-        float currentHighscore;
+        // Checks if a new high score was achieved in this particular game mode.
+        float currentHighScore;
         switch (QuizGameActivity.groupPosition) {
             case QuizMenuActivity.PARENT_MODE_TIMED:
                 switch (QuizGameActivity.childPosition) {
                     case QuizMenuActivity.CHILD_MODE_SECONDS_30:
-                        currentHighscore = mSharedPreferences.getFloat("highscore_30_seconds"
+                        currentHighScore = mSharedPreferences.getFloat("high_score_30_seconds"
                                 , DEFAULT_HIGHSCORE);
-                        checkNewHighscore(mFinalScore, currentHighscore,
-                                "highscore_30_seconds");
+                        checkNewHighScore(mFinalScore, currentHighScore,
+                                "highs_core_30_seconds");
                         break;
                     case QuizMenuActivity.CHILD_MODE_SECONDS_60:
-                        currentHighscore = mSharedPreferences.getFloat("highscore_60_seconds"
+                        currentHighScore = mSharedPreferences.getFloat("high_score_60_seconds"
                                 , DEFAULT_HIGHSCORE);
-                        checkNewHighscore(mFinalScore, currentHighscore,
-                                "highscore_60_seconds");
+                        checkNewHighScore(mFinalScore, currentHighScore,
+                                "high_score_60_seconds");
                         break;
                     case QuizMenuActivity.CHILD_MODE_SECONDS_120:
-                        currentHighscore = mSharedPreferences.getFloat("highscore_120_seconds"
+                        currentHighScore = mSharedPreferences.getFloat("high_score_120_seconds"
                                 , DEFAULT_HIGHSCORE);
-                        checkNewHighscore(mFinalScore, currentHighscore,
-                                "highscore_120_seconds");
+                        checkNewHighScore(mFinalScore, currentHighScore,
+                                "high_score_120_seconds");
                         break;
                 }
                 break;
             case QuizMenuActivity.PARENT_MODE_UNTIMED:
                 switch (QuizGameActivity.childPosition) {
                     case QuizMenuActivity.CHILD_MODE_QUESTIONS_10:
-                        currentHighscore = mSharedPreferences.getFloat("highscore_10_questions"
+                        currentHighScore = mSharedPreferences.getFloat("high_score_10_questions"
                                 , DEFAULT_HIGHSCORE);
-                        checkNewHighscore(mFinalScore, currentHighscore,
-                                "highscore_10_questions");
+                        checkNewHighScore(mFinalScore, currentHighScore,
+                                "high_score_10_questions");
                         break;
                     case QuizMenuActivity.CHILD_MODE_QUESTIONS_20:
-                        currentHighscore = mSharedPreferences.getFloat("highscore_20_questions"
+                        currentHighScore = mSharedPreferences.getFloat("high_score_20_questions"
                                 , DEFAULT_HIGHSCORE);
-                        checkNewHighscore(mFinalScore, currentHighscore,
-                                "highscore_20_questions");
+                        checkNewHighScore(mFinalScore, currentHighScore,
+                                "high_score_20_questions");
                         break;
                     case QuizMenuActivity.CHILD_MODE_QUESTIONS_50:
-                        currentHighscore = mSharedPreferences.getFloat("highscore_50_questions"
+                        currentHighScore = mSharedPreferences.getFloat("high_score_50_questions"
                                 , DEFAULT_HIGHSCORE);
-                        checkNewHighscore(mFinalScore, currentHighscore,
-                                "highscore_50_questions");
+                        checkNewHighScore(mFinalScore, currentHighScore,
+                                "high_score_50_questions");
                         break;
                 }
                 break;
             case QuizMenuActivity.PARENT_MODE_EVERY_CITY:
                 switch (QuizGameActivity.childPosition) {
                     case QuizMenuActivity.CHILD_MODE_EVERY_CITY_NO_FAULTS:
-                        currentHighscore = mSharedPreferences.getFloat
-                                ("highscore_every_city_no_faults", DEFAULT_HIGHSCORE);
-                        checkNewHighscore(mFinalScore, currentHighscore,
-                                "highscore_every_city_no_faults");
+                        currentHighScore = mSharedPreferences.getFloat
+                                ("high_score_every_city_no_faults", DEFAULT_HIGHSCORE);
+                        checkNewHighScore(mFinalScore, currentHighScore,
+                                "high_score_every_city_no_faults");
                         break;
                     case QuizMenuActivity.CHILD_MODE_EVERY_CITY_FAULTS_ALLOWED:
-                        currentHighscore = mSharedPreferences.getFloat
-                                ("highscore_every_city_faults_allowed", DEFAULT_HIGHSCORE);
-                        checkNewHighscore(mFinalScore, currentHighscore,
-                                "highscore_every_city_faults_allowed");
+                        currentHighScore = mSharedPreferences.getFloat
+                                ("high_score_every_city_faults_allowed", DEFAULT_HIGHSCORE);
+                        checkNewHighScore(mFinalScore, currentHighScore,
+                                "high_score_every_city_faults_allowed");
                         break;
                 }
                 break;
@@ -199,22 +210,22 @@ public class QuizScoreFragment extends Fragment {
     }
 
     /**
-     * If the user achieved a score in this game that is higher than the current highscore, that
-     * score replaces the current highscore. Also the label notifying the user that a new
-     * highscore was achieved gets displayed.
+     * If the user achieved a score in this game that is higher than the current highs core, that
+     * score replaces the current high score. Also the label notifying the user that a new
+     * high score was achieved gets displayed.
      *
      * @param finalScore           score of this game
-     * @param currentHighscore     highscore stored in sharedPreferences
-     * @param sharedPreferencesKey the key of the game mode that belongs to that highscore
+     * @param currentHighScore     highs core stored in sharedPreferences
+     * @param sharedPreferencesKey the key of the game mode that belongs to that high score
      */
-    private void checkNewHighscore(float finalScore, float currentHighscore,
+    private void checkNewHighScore(float finalScore, float currentHighScore,
                                    String sharedPreferencesKey) {
         mEditor = mSharedPreferences.edit();
-        if (finalScore > currentHighscore) {
+        if (finalScore > currentHighScore) {
             mNewRecordLabel.setVisibility(View.VISIBLE);
             mEditor.putFloat(sharedPreferencesKey, mFinalScore);
             mEditor.commit();
-            newHighscoreAcquired = true;
+            newHighScoreAcquired = true;
         }
     }
 }
