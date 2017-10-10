@@ -7,7 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -44,8 +44,8 @@ public class QuizScoreFragment extends Fragment {
     private TextView mAttemptThreeScore;
     private TextView mAttemptFourScore;
     private TextView mTotalScore;
-    private FrameLayout mGameMenuButton;
-    private FrameLayout mViewReportButton;
+    private Button mGameMenuButton;
+    private Button mViewReportButton;
 
     private int mCorrectAnswersOnAttemptOne = QuizGameActivity.correctAnswersOnAttemptOne;
     private int mCorrectAnswersOnAttemptTwo = QuizGameActivity.correctAnswersOnAttemptTwo;
@@ -102,8 +102,8 @@ public class QuizScoreFragment extends Fragment {
         mAttemptThreeScore = (TextView) view.findViewById(R.id.attempt_three_score);
         mAttemptFourScore = (TextView) view.findViewById(R.id.attempt_four_score);
         mTotalScore = (TextView) view.findViewById(R.id.total_score);
-        mGameMenuButton = (FrameLayout) view.findViewById(R.id.game_menu_button);
-        mViewReportButton = (FrameLayout) view.findViewById(R.id.view_report_button);
+        mGameMenuButton = (Button) view.findViewById(R.id.game_menu_button);
+        mViewReportButton = (Button) view.findViewById(R.id.view_report_button);
         mSharedPreferences = getActivity().getSharedPreferences("settings", Context.MODE_PRIVATE);
 
         // Adds a shadow effect to UI components
@@ -111,7 +111,6 @@ public class QuizScoreFragment extends Fragment {
             mContainerResults.setElevation(QuizGameActivity.VIEW_ELEVATION);
             mGameMenuButton.setElevation(QuizGameActivity.VIEW_ELEVATION);
             mViewReportButton.setElevation(QuizGameActivity.VIEW_ELEVATION);
-
         }
 
         // Used to reshow the new record label if the user chooses to see the report and then
