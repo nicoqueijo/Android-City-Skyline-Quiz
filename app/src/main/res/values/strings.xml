@@ -68,6 +68,9 @@
     <string name="attempt_three_multiplier">0.25</string>
     <string name="attempt_four_multiplier">0.00</string>
     <string name="new_record">New Record!</string>
+    <string name="welcome">Welcome!</string>
+    <string name="load_resources">Please allow a minute for the image resources to be loaded</string>
+    <string name="ok">OK</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>

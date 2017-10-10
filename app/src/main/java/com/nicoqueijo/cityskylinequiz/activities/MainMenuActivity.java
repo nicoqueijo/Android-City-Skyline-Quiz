@@ -2,6 +2,7 @@ package com.nicoqueijo.cityskylinequiz.activities;
 
 import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -9,6 +10,7 @@ import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.Menu;
@@ -73,12 +75,21 @@ public class MainMenuActivity extends AppCompatActivity {
         mActionBar.setIcon(R.mipmap.ic_launcher);
         mActionBar.setTitle(R.string.actionbar_app_name);
 
-        // Do something if it's the first time launching the app (maybe splash screen for image caching)
-        // Note: Splash screen should probably execute every time the app is launched. It will just
-        // take long on first time and will be instant on future launches.
+        // If first time launching app, show an alert dialog advising
+        // user to allow a minute for image resources to load.
         if (mSharedPreferences.getBoolean("first_launch", true)) {
-            // Enter statements to do when first time launching here
-            // Dialog message to allow a minute to load resources
+            final AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+            alertDialog.setTitle(getResources().getString(R.string.welcome));
+            alertDialog.setMessage(getResources().getString(R.string.load_resources));
+            alertDialog.setIcon(R.mipmap.ic_launcher);
+            alertDialog.setPositiveButton(getResources().getString(R.string.ok),
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+            alertDialog.show();
             editor.putBoolean("first_launch", false);
             editor.commit();
         }
