@@ -2,7 +2,7 @@ City Skyline Quiz App
 
 
 JSON file on the cloud:
-https://api.myjson.com/bins/1a5vld
+https://api.myjson.com/bins/7frmp
 
 
 // TODO
@@ -25,12 +25,9 @@ https://api.myjson.com/bins/1a5vld
 		Use Typeface class from Base Converter project
 		
 // DO NEXT
--put elevation on score fragment views
 -translate new UI strings
 -document undocumented java classes
--update JSON cloud file
 -Group common xml attributes in styles
--Try to classify cities by regions (Americas, Europe, Asia/Africa/Oceania)
 
 // TESTING
 -Assure layouts are good on Arabic (left/start right/end)

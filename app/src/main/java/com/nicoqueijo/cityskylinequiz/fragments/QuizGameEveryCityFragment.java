@@ -156,7 +156,7 @@ public class QuizGameEveryCityFragment extends Fragment implements Quiz, View.On
         LinearLayout choicePress = (LinearLayout) v;
 
         if (!(QuizGameActivity.questions.isEmpty())) {
-            // Warm up the cache with the image of the first question for fast UI loading.
+            // Warm up the cache with the image of the next question for fast UI loading.
             Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
                     .getImageUrl()).fetch();
         }

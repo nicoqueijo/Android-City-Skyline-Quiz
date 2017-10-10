@@ -188,7 +188,7 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
         // Gets the choice that was clicked,
         LinearLayout choicePress = (LinearLayout) v;
 
-        // Warm up the cache with the image of the first question for fast UI loading,
+        // Warm up the cache with the image of the next question for fast UI loading,
         Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
                 .getImageUrl()).fetch();
 

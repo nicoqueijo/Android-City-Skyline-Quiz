@@ -39,7 +39,7 @@ import java.util.List;
 import java.util.Locale;
 
 // JSON file on the cloud:
-// https://api.myjson.com/bins/1a5vld
+// https://api.myjson.com/bins/7frmp
 
 /**
  * This is the main activity that runs when the app is launched. Serves as the entry point holding
@@ -82,6 +82,7 @@ public class MainMenuActivity extends AppCompatActivity {
             alertDialog.setTitle(getResources().getString(R.string.welcome));
             alertDialog.setMessage(getResources().getString(R.string.load_resources));
             alertDialog.setIcon(R.drawable.ic_welcome);
+            alertDialog.setCancelable(false);
             alertDialog.setPositiveButton(getResources().getString(R.string.ok),
                     new DialogInterface.OnClickListener() {
                         @Override
