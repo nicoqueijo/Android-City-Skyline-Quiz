@@ -69,7 +69,7 @@
     <string name="attempt_four_multiplier">0.00</string>
     <string name="new_record">New Record!</string>
     <string name="welcome">Welcome!</string>
-    <string name="load_resources">Please allow a minute for the image resources to be loaded</string>
+    <string name="load_resources">Please allow a minute for the image resources to load</string>
     <string name="ok">OK</string>
 
     <!--- Cities -->
