@@ -81,7 +81,7 @@ public class MainMenuActivity extends AppCompatActivity {
             final AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
             alertDialog.setTitle(getResources().getString(R.string.welcome));
             alertDialog.setMessage(getResources().getString(R.string.load_resources));
-            alertDialog.setIcon(R.mipmap.ic_launcher);
+            alertDialog.setIcon(R.drawable.ic_welcome);
             alertDialog.setPositiveButton(getResources().getString(R.string.ok),
                     new DialogInterface.OnClickListener() {
                         @Override
