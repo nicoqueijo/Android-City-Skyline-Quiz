@@ -33,6 +33,42 @@
     <string name="report_error">Informar de un error</string>
     <string name="rate_app">Calificar aplicacion</string>
     <string name="google_play_error">No se puede encontrar la aplicación de Google Play</string>
+    <string name="timed">Con tiempo</string>
+    <string name="seconds_30">30 segundos</string>
+    <string name="seconds_60">60 segundos</string>
+    <string name="seconds_120">120 segundos</string>
+    <string name="untimed">Sin tiempo</string>
+    <string name="questions_10">10 preguntas</string>
+    <string name="questions_20">20 preguntas</string>
+    <string name="questions_50">50 preguntas</string>
+    <string name="every_city">Todas las ciudades</string>
+    <string name="no_faults">Sin fallos</string>
+    <string name="faults_allowed">Fallos permitidos</string>
+    <string name="guess_message">Adivine la ciudad</string>
+    <string name="correct">¡Correcto!</string>
+    <string name="incorrect">¡Incorrecto!</string>
+    <string name="try_again">Inténtalo de nuevo</string>
+    <string name="question">Pregunta:</string>
+    <string name="results">Resultados</string>
+    <string name="game_menu">Menú de Juego</string>
+    <string name="view_report">Ver el reporte</string>
+    <string name="correct_answers">Respuestas correctas:</string>
+    <string name="attempt_one">En 1 intento</string>
+    <string name="attempt_two">En 2 intentos</string>
+    <string name="attempt_three">En 3 intentos</string>
+    <string name="attempt_four">En 4 intentos</string>
+    <string name="final_score">Puntuación final</string>
+    <string name="score">Puntuación:</string>
+    <string name="multiply">x</string>
+    <string name="equal">=</string>
+    <string name="attempt_one_multiplier">1.00</string>
+    <string name="attempt_two_multiplier">0.50</string>
+    <string name="attempt_three_multiplier">0.25</string>
+    <string name="attempt_four_multiplier">0.00</string>
+    <string name="new_record">¡Nuevo record!</string>
+    <string name="welcome">¡Bienvenido!</string>
+    <string name="load_resources">Por favor espere un minuto para que los recursos de imagen se cargen</string>
+    <string name="ok">DE ACUERDO</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>

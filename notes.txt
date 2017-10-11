@@ -9,7 +9,6 @@ https://api.myjson.com/bins/7frmp
 -translate new UI labels
 -Put disclaimer about translations somewhere in app
 -Internationalize everything in strings.xml
--Clear hiscores from database when user resets the scores
 -Javadoc all classes and methods, remove all magic numbers
 -Organize strings in strings.xml by activites/fragments/etc
 -Move helper methods as static methods in their own class
