@@ -33,8 +33,6 @@
     <string name="report_error">Report an error</string>
     <string name="rate_app">Rate app</string>
     <string name="google_play_error">Unable to find Google Play app</string>
-
-    <!-- TRANSLATE EVERYTHING BELOW THIS -->
     <string name="timed">Timed</string>
     <string name="seconds_30">30 seconds</string>
     <string name="seconds_60">60 seconds</string>
