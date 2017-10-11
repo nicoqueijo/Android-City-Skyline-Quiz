@@ -10,7 +10,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -148,7 +147,6 @@ public class QuizGameActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Log.v("onResume", "called");
         // put this in a method
         QuizGameActivity.correctAnswersOnAttemptOne = -1;
         QuizGameActivity.correctAnswersOnAttemptTwo = 0;

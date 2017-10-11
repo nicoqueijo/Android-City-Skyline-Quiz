@@ -22,8 +22,6 @@ https://api.myjson.com/bins/7frmp
 
 // TESTING
 -Assure layouts are good on Arabic (left/start right/end)
--Clear all unused import statements
--Remove Log statements from entire app
 -Refactor duplicated code
 -Assure Rate app button works once app is in Google Play
 
