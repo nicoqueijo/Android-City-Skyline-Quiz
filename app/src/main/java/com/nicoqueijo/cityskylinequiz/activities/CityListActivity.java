@@ -144,25 +144,27 @@ public class CityListActivity extends AppCompatActivity {
         });
     }
 
-//    CODE TO SAVE AND RESTORE RECYCLERVIEW POSITION
-//
-//    @Override
-//    public void onPause() {
-//        super.onPause();
-//        // Save the current position of the recycler view
-//        int lastFirstVisiblePosition = ((LinearLayoutManager) mRecyclerCityList.getLayoutManager()).
-//                findFirstCompletelyVisibleItemPosition();
-//        SharedPreferences.Editor editor = mSharedPreferences.edit();
-//        editor.putInt("recycler_adapter_position", lastFirstVisiblePosition);
-//        editor.commit();
-//    }
-//
-//    @Override
-//    public void onResume() {
-//        super.onResume();
-//        // Restore the recycler view to the previous position
-//        int lastFirstVisiblePosition = mSharedPreferences.getInt("recycler_adapter_position", 0);
-//        mRecyclerCityList.getLayoutManager().
-//                scrollToPosition(lastFirstVisiblePosition);
-//    }
+    /*
+    // CODE TO SAVE AND RESTORE RECYCLERVIEW POSITION
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        // Save the current position of the recycler view
+        int lastFirstVisiblePosition = ((LinearLayoutManager) mRecyclerCityList.getLayoutManager()).
+                findFirstCompletelyVisibleItemPosition();
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
+        editor.putInt("recycler_adapter_position", lastFirstVisiblePosition);
+        editor.commit();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        // Restore the recycler view to the previous position
+        int lastFirstVisiblePosition = mSharedPreferences.getInt("recycler_adapter_position", 0);
+        mRecyclerCityList.getLayoutManager().
+                scrollToPosition(lastFirstVisiblePosition);
+    }
+    */
 }

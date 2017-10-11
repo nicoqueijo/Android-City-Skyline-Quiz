@@ -6,26 +6,18 @@ https://api.myjson.com/bins/7frmp
 
 
 // TODO
--translate new UI labels
 -Put disclaimer about translations somewhere in app
--Internationalize everything in strings.xml
--Javadoc all classes and methods, remove all magic numbers
--Organize strings in strings.xml by activites/fragments/etc
--Move helper methods as static methods in their own class
 -Group duplicated xml code in styles.xml
 -Group common app status statements on MainActivity in one method
 -Change everything to Material Design (view dimensions, colors, fonts, font size, etc)
 -Draw out app architecture and post on github README
 -change xml attributes (left -> start), (right -> end) to support arabic
--make all activities portrait in the manifest
 -group common statements in methods for modularity
 -Put custom fonts (Material design) in all activity actionbars
 	http://www.tristanwaddington.com/2013/03/styling-the-android-action-bar-with-a-custom-font/
 		Use Typeface class from Base Converter project
 		
 // DO NEXT
--translate new UI strings
--document undocumented java classes
 -Group common xml attributes in styles
 
 // TESTING

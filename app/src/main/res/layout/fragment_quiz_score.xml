@@ -434,6 +434,7 @@
         android:layout_marginBottom="55dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
+        android:baselineAligned="false"
         android:clipToPadding="false"
         android:orientation="horizontal"
         android:padding="4dp">
@@ -441,7 +442,7 @@
         <Button
             android:id="@+id/game_menu_button"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:background="@drawable/round_outline_answer_choice"
@@ -452,7 +453,7 @@
         <Button
             android:id="@+id/view_report_button"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:background="@drawable/round_outline_answer_choice"
