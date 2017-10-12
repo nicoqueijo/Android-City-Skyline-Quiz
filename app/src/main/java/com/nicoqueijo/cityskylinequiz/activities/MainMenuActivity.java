@@ -77,7 +77,6 @@ public class MainMenuActivity extends AppCompatActivity {
 
         showFirstLaunchDialogs(editor);
 
-        cities = new ArrayList<>();
         parseJsonAndCreateCityObjects();
         cacheImagesAndLoadToMemory();
 
@@ -244,6 +243,7 @@ public class MainMenuActivity extends AppCompatActivity {
      * objects with the data contained in the JSON object.
      */
     private void parseJsonAndCreateCityObjects() {
+        cities = new ArrayList<>();
         try {
             JSONObject jsonObject = new JSONObject(loadJSONFromAsset());
             JSONArray jsonArray = jsonObject.getJSONArray("cities");

@@ -69,6 +69,11 @@
     <string name="welcome">환영!</string>
     <string name="load_resources">이미지 리소스가로드 될 때까지 1 분 소요</string>
     <string name="ok">승인</string>
+	
+	<string name="language_disclaimer_title">Language notice</string>
+    <string name="language_disclaimer_message">Non-English versions of this app were translated by
+        automated means. Apologies if translations are inaccurate. To make any corrections please
+        email the developer using the menu in the top-right corner.</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">아부다비</string>
