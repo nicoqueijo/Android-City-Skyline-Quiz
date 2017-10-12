@@ -78,19 +78,34 @@ public class MainMenuActivity extends AppCompatActivity {
         // If first time launching app, show an alert dialog advising
         // user to allow a minute for image resources to load.
         if (mSharedPreferences.getBoolean("first_launch", true)) {
-            final AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-            alertDialog.setTitle(getResources().getString(R.string.welcome));
-            alertDialog.setMessage(getResources().getString(R.string.load_resources));
-            alertDialog.setIcon(R.drawable.ic_welcome);
-            alertDialog.setCancelable(false);
-            alertDialog.setPositiveButton(getResources().getString(R.string.ok),
+
+            final AlertDialog.Builder translationDialog = new AlertDialog.Builder(this);
+            final AlertDialog.Builder welcomeDialog = new AlertDialog.Builder(this);
+            welcomeDialog.setTitle(getResources().getString(R.string.welcome));
+            welcomeDialog.setMessage(getResources().getString(R.string.load_resources));
+            welcomeDialog.setIcon(R.drawable.ic_welcome);
+            welcomeDialog.setCancelable(false);
+            welcomeDialog.setPositiveButton(getResources().getString(R.string.ok),
                     new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.dismiss();
+                            translationDialog.setTitle(getResources().getString(R.string.language_disclaimer_title));
+                            translationDialog.setMessage(getResources().getString(R.string.language_disclaimer_message));
+                            translationDialog.setIcon(R.drawable.ic_translate);
+                            translationDialog.setCancelable(false);
+                            translationDialog.setPositiveButton(getResources().getString(R.string.ok),
+                                    new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.dismiss();
+                                        }
+                                    });
+                            translationDialog.show();
                         }
                     });
-            alertDialog.show();
+            welcomeDialog.show();
+
             editor.putBoolean("first_launch", false);
             editor.commit();
         }

@@ -70,6 +70,12 @@
     <string name="load_resources">Please allow a minute for the image resources to load</string>
     <string name="ok">OK</string>
 
+    <string name="language_disclaimer_title">Language notice</string>
+    <string name="language_disclaimer_message">Non-english versions of this app (including this
+        message) were translated by automated means. Apologies if translations are inaccurate. To
+        make translation corrections please email the developer using the menu in the top-right
+        area.</string>
+
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>
     <string name="albuquerque">Albuquerque</string>
@@ -367,5 +373,5 @@
     <string name="russian">Pу́сский</string>
     <string name="spanish">Español</string>
     <string name="turkish">Türkçe</string>
-	
+
 </resources>
