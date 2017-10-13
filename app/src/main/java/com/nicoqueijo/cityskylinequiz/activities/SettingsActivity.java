@@ -57,8 +57,7 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
 
         mThemeSwitch.setChecked(mSharedPreferences.getInt("theme", R.style.AppThemeLight)
                 == R.style.AppThemeDark);
-        // just like the theme switch, set the vibration check status depending on the value inside
-        // sharedPreferences
+        mVibrationSwitch.setChecked(mSharedPreferences.getBoolean("vibration", false));
 
         mThemeView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,14 +68,38 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
             }
         });
 
-        // for the vibration switch, perform similar functionality as the theme switch, allow clicking
-        // on the entire linear layout to toggle the switch
-
         mThemeSwitch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 saveTheme();
                 restartActivity();
+            }
+        });
+
+        mVibrationView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleVibrationSwitch();
+                mEditor = mSharedPreferences.edit();
+                if (mVibrationSwitch.isChecked()) {
+                    mEditor.putBoolean("vibration", true);
+                } else {
+                    mEditor.putBoolean("vibration", false);
+                }
+                mEditor.commit();
+            }
+        });
+
+        mVibrationSwitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mEditor = mSharedPreferences.edit();
+                if (mVibrationSwitch.isChecked()) {
+                    mEditor.putBoolean("vibration", true);
+                } else {
+                    mEditor.putBoolean("vibration", false);
+                }
+                mEditor.commit();
             }
         });
 
@@ -139,6 +162,14 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
      */
     private void toggleThemeSwitch() {
         mThemeSwitch.setChecked(!mThemeSwitch.isChecked());
+    }
+
+    /**
+     * Toggles the status of the vibration switch so click listeners of other views can manipulate
+     * the vibration switch.
+     */
+    private void toggleVibrationSwitch() {
+        mVibrationSwitch.setChecked(!mVibrationSwitch.isChecked());
     }
 
     /**
