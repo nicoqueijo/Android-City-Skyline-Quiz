@@ -67,9 +67,9 @@
     <string name="attempt_four_multiplier">0.00</string>
     <string name="new_record">Новая запись!</string>
     <string name="welcome">Добро пожаловать!</string>
-    <string name="load_resources">Пожалуйста, позвольте одну минуту ресурсов изображения для загрузки</string>
+    <string name="load_resources">Укажите время загрузки ресурсов изображения.</string>
     <string name="ok">ОК</string>
-	<string name="language_disclaimer_title">уведомление</string>
+    <string name="language_disclaimer_title">уведомление</string>
     <string name="language_disclaimer_message">Неанглийские версии этого приложения были переведены автоматическими средствами. Извините, если переводы неточны. Чтобы внести какие-либо исправления, напишите разработчику, используя меню в правом верхнем углу.</string>
 
     <!--- Cities -->

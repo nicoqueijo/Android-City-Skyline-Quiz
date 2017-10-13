@@ -67,9 +67,9 @@
     <string name="attempt_four_multiplier">0.00</string>
     <string name="new_record">新記録！</string>
     <string name="welcome">ようこそ！</string>
-    <string name="load_resources">負荷に画像リソースの1分を許可してください</string>
+    <string name="load_resources">画像リソースが読み込まれるまでしばらくお待ちください。</string>
     <string name="ok">はい</string>
-	<string name="language_disclaimer_title">告知</string>
+    <string name="language_disclaimer_title">告知</string>
     <string name="language_disclaimer_message">このアプリの英語以外のバージョンは自動化された手段で翻訳されました。 翻訳が不正確な場合にはお詫び申し上げます。 修正を加えるには、右上隅のメニューを使用して開発者に電子メールを送ってください。</string>
 
     <!--- Cities -->

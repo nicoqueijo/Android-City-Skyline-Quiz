@@ -67,9 +67,9 @@
     <string name="attempt_four_multiplier">0.00</string>
     <string name="new_record">¡Nuevo record!</string>
     <string name="welcome">¡Bienvenido!</string>
-    <string name="load_resources">Por favor espere un minuto para que los recursos de imagen se cargen</string>
+    <string name="load_resources">Por favor permita un momento para que se carguen los recursos de imagen.</string>
     <string name="ok">DE ACUERDO</string>
-	<string name="language_disclaimer_title">Aviso</string>
+    <string name="language_disclaimer_title">Aviso</string>
     <string name="language_disclaimer_message">Las versiones no inglesas de esta aplicación se tradujeron por medios automáticos. Disculpa si las traducciones son inexactas. Para realizar cualquier corrección, envíe un correo electrónico al desarrollador usando el menú en la esquina superior derecha.</string>
 
     <!--- Cities -->

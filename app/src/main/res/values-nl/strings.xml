@@ -67,9 +67,9 @@
     <string name="attempt_four_multiplier">0.00</string>
     <string name="new_record">Nieuw record!</string>
     <string name="welcome">Welkom!</string>
-    <string name="load_resources">Houdt u rekening met een minuut voor het middelen om te laden</string>
+    <string name="load_resources">Gelieve een moment toe te staan voor het laden van de afbeeldingen.</string>
     <string name="ok">OK</string>
-	<string name="language_disclaimer_title">Aandacht</string>
+    <string name="language_disclaimer_title">Aandacht</string>
     <string name="language_disclaimer_message">Niet-Engelse versies van deze app werden vertaald door geautomatiseerde middelen. Verontschuldigingen als vertalingen onjuist zijn. Om eventuele correcties te doen, kunt u de ontwikkelaar emailen via het menu in de rechterbovenhoek.</string>
 
     <!--- Cities -->

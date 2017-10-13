@@ -67,9 +67,9 @@
     <string name="attempt_four_multiplier">0.00</string>
     <string name="new_record">Rekod baru!</string>
     <string name="welcome">Dialu-alukan!</string>
-    <string name="load_resources">Sila membolehkan satu minit untuk sumber imej untuk memuatkan</string>
+    <string name="load_resources">Sila berikan seketika untuk memuatkan sumber imej.</string>
     <string name="ok">Okey</string>
-	<string name="language_disclaimer_title">Kenyataan</string>
+    <string name="language_disclaimer_title">Kenyataan</string>
     <string name="language_disclaimer_message">Versi bahasa Inggeris bukan aplikasi ini diterjemahkan secara automatik. Memohon maaf jika terjemahan tidak tepat. Untuk membuat sebarang pembetulan, sila emel pemaju menggunakan menu di penjuru kanan sebelah atas.</string>
 
     <!--- Cities -->

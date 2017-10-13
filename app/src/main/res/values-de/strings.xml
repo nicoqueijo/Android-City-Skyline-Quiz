@@ -67,9 +67,9 @@
     <string name="attempt_four_multiplier">0.00</string>
     <string name="new_record">Neuer Eintrag!</string>
     <string name="welcome">Herzlich willkommen!</string>
-    <string name="load_resources">Bitte erlauben Sie eine Minute Bild Ressourcen laden zu</string>
+    <string name="load_resources">Bitte erlauben Sie einen Moment, damit die Image-Ressourcen geladen werden.</string>
     <string name="ok">OK</string>
-	<string name="language_disclaimer_title">Bekanntmachung</string>
+    <string name="language_disclaimer_title">Bekanntmachung</string>
     <string name="language_disclaimer_message">Nicht-englische Versionen dieser App wurden mit automatisierten Mitteln übersetzt. Entschuldigt, wenn Übersetzungen ungenau sind. Um Korrekturen vorzunehmen, senden Sie bitte eine E-Mail an den Entwickler über das Menü in der oberen rechten Ecke.</string>
 
     <!--- Cities -->
