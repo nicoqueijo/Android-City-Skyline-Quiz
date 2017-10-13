@@ -69,11 +69,8 @@
     <string name="welcome">स्वागत हे!</string>
     <string name="load_resources">छवि संसाधनों के लोड होने कृपया एक मिनट के लिए अनुमति देते</string>
     <string name="ok">ठीक</string>
-	
-	<string name="language_disclaimer_title">Language notice</string>
-    <string name="language_disclaimer_message">Non-English versions of this app were translated by
-        automated means. Apologies if translations are inaccurate. To make any corrections please
-        email the developer using the menu in the top-right corner.</string>
+	<string name="language_disclaimer_title">सूचना</string>
+    <string name="language_disclaimer_message">इस ऐप के गैर-अंग्रेज़ी संस्करण स्वचालित रूप से अनुवादित किए गए थे। अगर अनुवाद गलत हैं तो माफी। किसी भी सुधार करने के लिए, कृपया मेनू को ऊपर दाएं कोने में मेनू का उपयोग करके ईमेल करें।</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">अबू धाबी</string>

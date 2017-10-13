@@ -69,11 +69,8 @@
     <string name="welcome">أهلا بك!</string>
     <string name="load_resources">اسمحوا دقيقة واحدة لموارد الصورة لتحميل</string>
     <string name="ok">حسنا</string>
-	
-	<string name="language_disclaimer_title">Language notice</string>
-    <string name="language_disclaimer_message">Non-English versions of this app were translated by
-        automated means. Apologies if translations are inaccurate. To make any corrections please
-        email the developer using the menu in the top-right corner.</string>
+	<string name="language_disclaimer_title">إشعار</string>
+    <string name="language_disclaimer_message">تمت ترجمة الإصدارات غير الإنجليزية من هذا التطبيق عن طريق وسائل الآلي. الاعتذار إذا كانت الترجمات غير دقيقة. لإجراء أي تصحيحات يرجى البريد الإلكتروني المطور باستخدام القائمة في الزاوية العليا اليمنى.</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">أبو ظبي</string>

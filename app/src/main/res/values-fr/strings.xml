@@ -69,11 +69,8 @@
     <string name="welcome">Bienvenue!</string>
     <string name="load_resources">S\'il vous plaît permettre à une minute pour les ressources d\'image pour charger</string>
     <string name="ok">D\'accord</string>
-	
-	<string name="language_disclaimer_title">Language notice</string>
-    <string name="language_disclaimer_message">Non-English versions of this app were translated by
-        automated means. Apologies if translations are inaccurate. To make any corrections please
-        email the developer using the menu in the top-right corner.</string>
+	<string name="language_disclaimer_title">Avis</string>
+    <string name="language_disclaimer_message">Les versions non anglaises de cette application ont été traduites par des moyens automatisés. Toutes nos excuses si les traductions sont inexactes. Pour apporter des corrections, veuillez envoyer un e-mail au développeur en utilisant le menu situé dans le coin supérieur droit.</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abou Dabi</string>

@@ -69,11 +69,8 @@
     <string name="welcome">Herzlich willkommen!</string>
     <string name="load_resources">Bitte erlauben Sie eine Minute Bild Ressourcen laden zu</string>
     <string name="ok">OK</string>
-	
-	<string name="language_disclaimer_title">Language notice</string>
-    <string name="language_disclaimer_message">Non-English versions of this app were translated by
-        automated means. Apologies if translations are inaccurate. To make any corrections please
-        email the developer using the menu in the top-right corner.</string>
+	<string name="language_disclaimer_title">Bekanntmachung</string>
+    <string name="language_disclaimer_message">Nicht-englische Versionen dieser App wurden mit automatisierten Mitteln übersetzt. Entschuldigt, wenn Übersetzungen ungenau sind. Um Korrekturen vorzunehmen, senden Sie bitte eine E-Mail an den Entwickler über das Menü in der oberen rechten Ecke.</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>

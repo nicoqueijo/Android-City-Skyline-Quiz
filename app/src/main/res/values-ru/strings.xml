@@ -69,11 +69,8 @@
     <string name="welcome">Добро пожаловать!</string>
     <string name="load_resources">Пожалуйста, позвольте одну минуту ресурсов изображения для загрузки</string>
     <string name="ok">ОК</string>
-	
-	<string name="language_disclaimer_title">Language notice</string>
-    <string name="language_disclaimer_message">Non-English versions of this app were translated by
-        automated means. Apologies if translations are inaccurate. To make any corrections please
-        email the developer using the menu in the top-right corner.</string>
+	<string name="language_disclaimer_title">уведомление</string>
+    <string name="language_disclaimer_message">Неанглийские версии этого приложения были переведены автоматическими средствами. Извините, если переводы неточны. Чтобы внести какие-либо исправления, напишите разработчику, используя меню в правом верхнем углу.</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Абу-Даби</string>
