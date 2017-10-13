@@ -17,6 +17,8 @@
     <string name="more_info">更多信息</string>
     <string name="settings_theme_title">主题</string>
     <string name="settings_theme_description">在明暗之间切换主题</string>
+	<string name="settings_vibration_title">振动</string>
+    <string name="settings_vibration_description">禁用或启用振动</string>
     <string name="settings_language_title">语言</string>
     <string name="settings_language_description">忽略设备语言并使用其他语言</string>
     <string name="settings_scores_title">重置分数</string>

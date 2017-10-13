@@ -17,6 +17,8 @@
     <string name="more_info">더 많은 정보</string>
     <string name="settings_theme_title">테마</string>
     <string name="settings_theme_description">밝은 테마와 어두운 테마 간을 전환합니다.</string>
+	<string name="settings_vibration_title">진동</string>
+    <string name="settings_vibration_description">진동 비활성화 또는 활성화</string>
     <string name="settings_language_title">언어</string>
     <string name="settings_language_description">기기 언어를 무시하고 다른 기기 언어 사용</string>
     <string name="settings_scores_title">점수 재설정</string>

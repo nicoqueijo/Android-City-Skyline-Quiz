@@ -45,8 +45,7 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
     private CountDownTimer mCountDownTimer;
     private Handler mHandler = new Handler();
     private Vibrator mVibrator;
-    private SharedPreferences mSharedPreferences = getActivity().getSharedPreferences
-            ("settings", Context.MODE_PRIVATE);
+    private SharedPreferences mSharedPreferences;
 
     // Declaration of UI components
     private ImageView mCityImage;
@@ -84,6 +83,8 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
         Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
                 .getImageUrl()).fetch();
         mVibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
+        mSharedPreferences = getActivity().getSharedPreferences
+                ("settings", Context.MODE_PRIVATE);
     }
 
     /**
@@ -238,7 +239,7 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
             }, 300);   // 0.3 seconds
 
         } else {
-            if (mSharedPreferences.getBoolean("vibrate", true)) {
+            if (mSharedPreferences.getBoolean("vibration", true)) {
                 mVibrator.vibrate(QuizGameActivity.VIBRATION_TIME);
             }
             // If the choice the user selected is an incorrect choice we mark that choice in the

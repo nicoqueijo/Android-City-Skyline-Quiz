@@ -17,6 +17,8 @@
     <string name="more_info">Mehr Info</string>
     <string name="settings_theme_title">Thema</string>
     <string name="settings_theme_description">Umschalten zwischen licht/dunkel thema</string>
+	<string name="settings_vibration_title">Vibration</string>
+    <string name="settings_vibration_description">Deaktivieren oder aktivieren Sie die Vibration</string>
     <string name="settings_language_title">Sprache</string>
     <string name="settings_language_description">Gerätesprache ignorieren und andere verwenden</string>
     <string name="settings_scores_title">Ergebnisse zurücksetzen</string>

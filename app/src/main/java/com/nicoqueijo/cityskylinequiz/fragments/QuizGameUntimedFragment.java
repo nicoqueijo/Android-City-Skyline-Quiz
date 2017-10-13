@@ -44,8 +44,7 @@ public class QuizGameUntimedFragment extends Fragment implements Quiz, View.OnCl
     private int mAttemptOfLastQuestion = 0;
     private Handler mHandler = new Handler();
     private Vibrator mVibrator;
-    private SharedPreferences mSharedPreferences = getActivity().getSharedPreferences
-            ("settings", Context.MODE_PRIVATE);
+    private SharedPreferences mSharedPreferences;
 
     // Declaration of UI components
     private ImageView mCityImage;
@@ -83,6 +82,8 @@ public class QuizGameUntimedFragment extends Fragment implements Quiz, View.OnCl
         Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
                 .getImageUrl()).fetch();
         mVibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
+        mSharedPreferences = getActivity().getSharedPreferences
+                ("settings", Context.MODE_PRIVATE);
     }
 
     /**
@@ -211,7 +212,7 @@ public class QuizGameUntimedFragment extends Fragment implements Quiz, View.OnCl
             }, 300);   // 0.3 seconds
 
         } else {
-            if (mSharedPreferences.getBoolean("vibrate", true)) {
+            if (mSharedPreferences.getBoolean("vibration", true)) {
                 mVibrator.vibrate(QuizGameActivity.VIBRATION_TIME);
             }
             // If the choice the user selected is an incorrect choice we mark that choice in the

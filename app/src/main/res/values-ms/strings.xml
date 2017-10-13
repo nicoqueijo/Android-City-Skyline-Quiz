@@ -17,6 +17,8 @@
     <string name="more_info">Maklumat lanjut</string>
     <string name="settings_theme_title">Tema</string>
     <string name="settings_theme_description">Togol antara tema cahaya/gelap</string>
+	<string name="settings_vibration_title">Getaran</string>
+    <string name="settings_vibration_description">Lumpuhkan atau dayakan getaran</string>
     <string name="settings_language_title">Bahasa</string>
     <string name="settings_language_description">Abaikan bahasa peranti dan gunakan yang lain</string>
     <string name="settings_scores_title">Tetapkan semula skor</string>

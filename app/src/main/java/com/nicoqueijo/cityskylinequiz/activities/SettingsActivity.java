@@ -57,7 +57,7 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
 
         mThemeSwitch.setChecked(mSharedPreferences.getInt("theme", R.style.AppThemeLight)
                 == R.style.AppThemeDark);
-        mVibrationSwitch.setChecked(mSharedPreferences.getBoolean("vibration", false));
+        mVibrationSwitch.setChecked(mSharedPreferences.getBoolean("vibration", true));
 
         mThemeView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,30 +76,20 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
             }
         });
 
+        // move vibration save in its own method
         mVibrationView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 toggleVibrationSwitch();
-                mEditor = mSharedPreferences.edit();
-                if (mVibrationSwitch.isChecked()) {
-                    mEditor.putBoolean("vibration", true);
-                } else {
-                    mEditor.putBoolean("vibration", false);
-                }
-                mEditor.commit();
+                saveVibration();
             }
         });
 
+        // move vibration save in its own method
         mVibrationSwitch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mEditor = mSharedPreferences.edit();
-                if (mVibrationSwitch.isChecked()) {
-                    mEditor.putBoolean("vibration", true);
-                } else {
-                    mEditor.putBoolean("vibration", false);
-                }
-                mEditor.commit();
+                saveVibration();
             }
         });
 
@@ -176,7 +166,7 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
      * Saves the theme status on mSharedPreferences according to the status of the theme switch. If
      * theme switch is checked, it saved the theme as dark. Else it saves the theme as light.
      */
-    public void saveTheme() {
+    private void saveTheme() {
         mEditor = mSharedPreferences.edit();
         if (mThemeSwitch.isChecked()) {
             mEditor.putInt("theme", R.style.AppThemeDark);
@@ -185,5 +175,19 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
             mEditor.putInt("theme", R.style.AppThemeLight);
             mEditor.commit();
         }
+    }
+
+    /**
+     * Saves the vibration setting to SharedPreferences according to check status of the vibration
+     * switch.
+     */
+    private void saveVibration() {
+        mEditor = mSharedPreferences.edit();
+        if (mVibrationSwitch.isChecked()) {
+            mEditor.putBoolean("vibration", true);
+        } else {
+            mEditor.putBoolean("vibration", false);
+        }
+        mEditor.commit();
     }
 }

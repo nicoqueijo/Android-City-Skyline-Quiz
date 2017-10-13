@@ -17,6 +17,8 @@
     <string name="more_info">Daha Fazla Bilgi</string>
     <string name="settings_theme_title">Tema</string>
     <string name="settings_theme_description">Açık veya koyu tema arasında geçiş yapma</string>
+	<string name="settings_vibration_title">Titreşim</string>
+    <string name="settings_vibration_description">Titreşimi devre dışı bırak veya etkinleştir</string>
     <string name="settings_language_title">Dil</string>
     <string name="settings_language_description">Cihaz dilini yok sayın ve başka bir cihazı kullanın</string>
     <string name="settings_scores_title">Puanları sıfırlayın</string>

@@ -17,6 +17,8 @@
     <string name="more_info">और जानकारी</string>
     <string name="settings_theme_title">विषय</string>
     <string name="settings_theme_description">प्रकाश या गहरे रंग की थीम के बीच टॉगल करें</string>
+	<string name="settings_vibration_title">कंपन</string>
+    <string name="settings_vibration_description">कंपन को निष्क्रिय या सक्षम करें</string>
     <string name="settings_language_title">भाषा</string>
     <string name="settings_language_description">डिवाइस की भाषा को अनदेखा करें और दूसरे का उपयोग करें</string>
     <string name="settings_scores_title">स्कोर रीसेट करें</string>

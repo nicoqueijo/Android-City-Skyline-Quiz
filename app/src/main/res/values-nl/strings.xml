@@ -17,6 +17,8 @@
     <string name="more_info">Meer Informatie</string>
     <string name="settings_theme_title">Thema</string>
     <string name="settings_theme_description">Wissel tussen licht/donker thema</string>
+	<string name="settings_vibration_title">Trilling</string>
+    <string name="settings_vibration_description">Schakel de trilling uit of activeer deze</string>
     <string name="settings_language_title">Taal</string>
     <string name="settings_language_description">Ignoreer de apparaattaal en gebruik een andere</string>
     <string name="settings_scores_title">Herstel scores</string>

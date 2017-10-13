@@ -17,6 +17,8 @@
     <string name="more_info">Больше информации</string>
     <string name="settings_theme_title">тема</string>
     <string name="settings_theme_description">Переключение между темными/темными темами</string>
+	<string name="settings_vibration_title">вибрация</string>
+    <string name="settings_vibration_description">Отключить или включить вибрацию</string>
     <string name="settings_language_title">язык</string>
     <string name="settings_language_description">Игнорируйте язык устройства и используйте другой</string>
     <string name="settings_scores_title">Сбросить баллы</string>

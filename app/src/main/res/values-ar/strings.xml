@@ -17,6 +17,8 @@
     <string name="more_info">مزيد من المعلومات</string>
     <string name="settings_theme_title">المقدمة</string>
     <string name="settings_theme_description">التبديل بين الضوء أو الظلام موضوع</string>
+	<string name="settings_vibration_title">اهتزاز</string>
+    <string name="settings_vibration_description">تعطيل أو تمكين الاهتزاز</string>
     <string name="settings_language_title">لغة</string>
     <string name="settings_language_description">تجاهل لغة الجهاز واستخدام لغة أخرى</string>
     <string name="settings_scores_title">إعادة تعيين الدرجات</string>
