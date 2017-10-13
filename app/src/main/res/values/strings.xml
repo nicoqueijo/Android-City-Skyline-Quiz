@@ -17,6 +17,8 @@
     <string name="more_info">More Info</string>
     <string name="settings_theme_title">Theme</string>
     <string name="settings_theme_description">Toggle between light/dark theme</string>
+    <string name="settings_vibrate_title">Vibration</string>
+    <string name="settings_vibrate_description">Disable or enable vibration</string>
     <string name="settings_language_title">Language</string>
     <string name="settings_language_description">Ignore device language and use another</string>
     <string name="settings_scores_title">Reset scores</string>

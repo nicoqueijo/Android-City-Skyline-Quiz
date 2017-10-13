@@ -1,6 +1,7 @@
 package com.nicoqueijo.cityskylinequiz.fragments;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
@@ -43,6 +44,8 @@ public class QuizGameEveryCityFragment extends Fragment implements Quiz, View.On
     private int mAttemptOfLastQuestion = 0;
     private Handler mHandler = new Handler();
     private Vibrator mVibrator;
+    private SharedPreferences mSharedPreferences = getActivity().getSharedPreferences
+            ("settings", Context.MODE_PRIVATE);
 
     // Declaration of UI components
     private ImageView mCityImage;
@@ -204,7 +207,9 @@ public class QuizGameEveryCityFragment extends Fragment implements Quiz, View.On
             }, 300);   // 0.3 seconds
 
         } else if (mNoFaults) {
-            mVibrator.vibrate(QuizGameActivity.VIBRATION_TIME);
+            if (mSharedPreferences.getBoolean("vibrate", true)) {
+                mVibrator.vibrate(QuizGameActivity.VIBRATION_TIME);
+            }
             // If the choice the user selected is an incorrect choice we mark that choice in the
             // report object belonging to this question as incorrect.
             QuizGameActivity.questionReports.get(mQuestionCounter - QuizGameActivity.OFF_BY_ONE)
@@ -229,7 +234,9 @@ public class QuizGameEveryCityFragment extends Fragment implements Quiz, View.On
                 }
             }, 500);    // 0.5 seconds
         } else {
-            mVibrator.vibrate(QuizGameActivity.VIBRATION_TIME);
+            if (mSharedPreferences.getBoolean("vibrate", true)) {
+                mVibrator.vibrate(QuizGameActivity.VIBRATION_TIME);
+            }
             // If the choice the user selected is an incorrect choice we mark that choice in the
             // report object belonging to this question as incorrect.
             QuizGameActivity.questionReports.get(mQuestionCounter - QuizGameActivity.OFF_BY_ONE)

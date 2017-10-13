@@ -23,7 +23,7 @@ import com.nicoqueijo.cityskylinequiz.helpers.SystemInfo;
  */
 public class QuizScoreFragment extends Fragment {
 
-    public static final float DEFAULT_HIGHSCORE = 0.0f;
+    public static final float DEFAULT_HIGH_SCORE = 0.0f;
     public static final double ATTEMPT_ONE_MULTIPLIER = 1.0;
     public static final double ATTEMPT_TWO_MULTIPLIER = 0.5;
     public static final double ATTEMPT_THREE_MULTIPLIER = 0.25;
@@ -134,19 +134,19 @@ public class QuizScoreFragment extends Fragment {
                 switch (QuizGameActivity.childPosition) {
                     case QuizMenuActivity.CHILD_MODE_SECONDS_30:
                         currentHighScore = mSharedPreferences.getFloat("high_score_30_seconds"
-                                , DEFAULT_HIGHSCORE);
+                                , DEFAULT_HIGH_SCORE);
                         checkNewHighScore(mFinalScore, currentHighScore,
                                 "high_score_30_seconds");
                         break;
                     case QuizMenuActivity.CHILD_MODE_SECONDS_60:
                         currentHighScore = mSharedPreferences.getFloat("high_score_60_seconds"
-                                , DEFAULT_HIGHSCORE);
+                                , DEFAULT_HIGH_SCORE);
                         checkNewHighScore(mFinalScore, currentHighScore,
                                 "high_score_60_seconds");
                         break;
                     case QuizMenuActivity.CHILD_MODE_SECONDS_120:
                         currentHighScore = mSharedPreferences.getFloat("high_score_120_seconds"
-                                , DEFAULT_HIGHSCORE);
+                                , DEFAULT_HIGH_SCORE);
                         checkNewHighScore(mFinalScore, currentHighScore,
                                 "high_score_120_seconds");
                         break;
@@ -156,19 +156,19 @@ public class QuizScoreFragment extends Fragment {
                 switch (QuizGameActivity.childPosition) {
                     case QuizMenuActivity.CHILD_MODE_QUESTIONS_10:
                         currentHighScore = mSharedPreferences.getFloat("high_score_10_questions"
-                                , DEFAULT_HIGHSCORE);
+                                , DEFAULT_HIGH_SCORE);
                         checkNewHighScore(mFinalScore, currentHighScore,
                                 "high_score_10_questions");
                         break;
                     case QuizMenuActivity.CHILD_MODE_QUESTIONS_20:
                         currentHighScore = mSharedPreferences.getFloat("high_score_20_questions"
-                                , DEFAULT_HIGHSCORE);
+                                , DEFAULT_HIGH_SCORE);
                         checkNewHighScore(mFinalScore, currentHighScore,
                                 "high_score_20_questions");
                         break;
                     case QuizMenuActivity.CHILD_MODE_QUESTIONS_50:
                         currentHighScore = mSharedPreferences.getFloat("high_score_50_questions"
-                                , DEFAULT_HIGHSCORE);
+                                , DEFAULT_HIGH_SCORE);
                         checkNewHighScore(mFinalScore, currentHighScore,
                                 "high_score_50_questions");
                         break;
@@ -178,13 +178,13 @@ public class QuizScoreFragment extends Fragment {
                 switch (QuizGameActivity.childPosition) {
                     case QuizMenuActivity.CHILD_MODE_EVERY_CITY_NO_FAULTS:
                         currentHighScore = mSharedPreferences.getFloat
-                                ("high_score_every_city_no_faults", DEFAULT_HIGHSCORE);
+                                ("high_score_every_city_no_faults", DEFAULT_HIGH_SCORE);
                         checkNewHighScore(mFinalScore, currentHighScore,
                                 "high_score_every_city_no_faults");
                         break;
                     case QuizMenuActivity.CHILD_MODE_EVERY_CITY_FAULTS_ALLOWED:
                         currentHighScore = mSharedPreferences.getFloat
-                                ("high_score_every_city_faults_allowed", DEFAULT_HIGHSCORE);
+                                ("high_score_every_city_faults_allowed", DEFAULT_HIGH_SCORE);
                         checkNewHighScore(mFinalScore, currentHighScore,
                                 "high_score_every_city_faults_allowed");
                         break;
