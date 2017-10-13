@@ -30,9 +30,11 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
     private LinearLayout mThemeView;
+    private LinearLayout mVibrationView;
     private LinearLayout mLanguageView;
     private LinearLayout mScoresView;
     private Switch mThemeSwitch;
+    private Switch mVibrationSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +49,16 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
         mActionBar.setTitle(R.string.actionbar_settings);
 
         mThemeView = (LinearLayout) findViewById(R.id.container_settings_theme);
+        mVibrationView = (LinearLayout) findViewById(R.id.container_settings_vibration);
         mLanguageView = (LinearLayout) findViewById(R.id.container_settings_language);
         mScoresView = (LinearLayout) findViewById(R.id.container_settings_scores);
         mThemeSwitch = (Switch) findViewById(R.id.switch_theme);
+        mVibrationSwitch = (Switch) findViewById(R.id.switch_vibration);
+
         mThemeSwitch.setChecked(mSharedPreferences.getInt("theme", R.style.AppThemeLight)
                 == R.style.AppThemeDark);
+        // just like the theme switch, set the vibration check status depending on the value inside
+        // sharedPreferences
 
         mThemeView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +68,9 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
                 restartActivity();
             }
         });
+
+        // for the vibration switch, perform similar functionality as the theme switch, allow clicking
+        // on the entire linear layout to toggle the switch
 
         mThemeSwitch.setOnClickListener(new View.OnClickListener() {
             @Override
