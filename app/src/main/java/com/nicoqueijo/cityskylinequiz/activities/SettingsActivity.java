@@ -19,8 +19,8 @@ import com.nicoqueijo.cityskylinequiz.interfaces.Communicator;
 
 /**
  * This is the settings activity where the user can change the app configurations. This includes
- * changing the theme, changing the language, and resetting the scores. Implements Communicator to
- * receive a message back from a DialogFragment and act accordingly.
+ * changing the theme, toggling the vibration, changing the language, and resetting the scores.
+ * Implements Communicator to receive a message back from a DialogFragment and act accordingly.
  */
 public class SettingsActivity extends AppCompatActivity implements Communicator {
 
@@ -76,7 +76,6 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
             }
         });
 
-        // move vibration save in its own method
         mVibrationView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,7 +84,6 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
             }
         });
 
-        // move vibration save in its own method
         mVibrationSwitch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -6,7 +6,6 @@ https://api.myjson.com/bins/7frmp
 
 
 // TODO
--Put disclaimer about translations somewhere in app
 -Group duplicated xml code in styles.xml
 -Group common app status statements on MainActivity in one method
 -Change everything to Material Design (view dimensions, colors, fonts, font size, etc)
@@ -18,8 +17,6 @@ https://api.myjson.com/bins/7frmp
 		Use Typeface class from Base Converter project
 		
 // DO NEXT
--Implement enable/disable vibration functionality
--Translate vibration titles and descriptions
 -Add option to view high scores in each game mode
 -Group common xml attributes in styles
 

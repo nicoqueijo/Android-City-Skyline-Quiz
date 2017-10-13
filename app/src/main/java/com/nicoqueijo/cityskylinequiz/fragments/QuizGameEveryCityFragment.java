@@ -45,6 +45,7 @@ public class QuizGameEveryCityFragment extends Fragment implements Quiz, View.On
     private Handler mHandler = new Handler();
     private Vibrator mVibrator;
     private SharedPreferences mSharedPreferences;
+    private boolean mVibrationEnabled;
 
     // Declaration of UI components
     private ImageView mCityImage;
@@ -84,6 +85,7 @@ public class QuizGameEveryCityFragment extends Fragment implements Quiz, View.On
         mVibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
         mSharedPreferences = getActivity().getSharedPreferences
                 ("settings", Context.MODE_PRIVATE);
+        mVibrationEnabled = mSharedPreferences.getBoolean("vibration", true);
     }
 
     /**
@@ -208,7 +210,7 @@ public class QuizGameEveryCityFragment extends Fragment implements Quiz, View.On
             }, 300);   // 0.3 seconds
 
         } else if (mNoFaults) {
-            if (mSharedPreferences.getBoolean("vibration", true)) {
+            if (mVibrationEnabled) {
                 mVibrator.vibrate(QuizGameActivity.VIBRATION_TIME);
             }
             // If the choice the user selected is an incorrect choice we mark that choice in the
@@ -235,7 +237,7 @@ public class QuizGameEveryCityFragment extends Fragment implements Quiz, View.On
                 }
             }, 500);    // 0.5 seconds
         } else {
-            if (mSharedPreferences.getBoolean("vibration", true)) {
+            if (mVibrationEnabled) {
                 mVibrator.vibrate(QuizGameActivity.VIBRATION_TIME);
             }
             // If the choice the user selected is an incorrect choice we mark that choice in the
