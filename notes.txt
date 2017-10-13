@@ -18,6 +18,8 @@ https://api.myjson.com/bins/7frmp
 		Use Typeface class from Base Converter project
 		
 // DO NEXT
+-Add option to disable vibration in settings activity
+-Add option to view high scores in each game mode
 -Group common xml attributes in styles
 
 // TESTING

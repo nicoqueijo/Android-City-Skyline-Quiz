@@ -61,10 +61,6 @@
     <string name="score">Partituur:</string>
     <string name="multiply">x</string>
     <string name="equal">=</string>
-    <string name="attempt_one_multiplier">1.00</string>
-    <string name="attempt_two_multiplier">0.50</string>
-    <string name="attempt_three_multiplier">0.25</string>
-    <string name="attempt_four_multiplier">0.00</string>
     <string name="new_record">Nieuw record!</string>
     <string name="welcome">Welkom!</string>
     <string name="load_resources">Gelieve een moment toe te staan voor het laden van de afbeeldingen.</string>

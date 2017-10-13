@@ -43,6 +43,10 @@ public class QuizScoreFragment extends Fragment {
     private TextView mAttemptTwoScore;
     private TextView mAttemptThreeScore;
     private TextView mAttemptFourScore;
+    private TextView mAttemptOneMultiplier;
+    private TextView mAttemptTwoMultiplier;
+    private TextView mAttemptThreeMultiplier;
+    private TextView mAttemptFourMultiplier;
     private TextView mTotalScore;
     private Button mGameMenuButton;
     private Button mViewReportButton;
@@ -101,6 +105,10 @@ public class QuizScoreFragment extends Fragment {
         mAttemptTwoScore = (TextView) view.findViewById(R.id.attempt_two_score);
         mAttemptThreeScore = (TextView) view.findViewById(R.id.attempt_three_score);
         mAttemptFourScore = (TextView) view.findViewById(R.id.attempt_four_score);
+        mAttemptOneMultiplier = (TextView) view.findViewById(R.id.attempt_one_multiplier);
+        mAttemptTwoMultiplier = (TextView) view.findViewById(R.id.attempt_two_multiplier);
+        mAttemptThreeMultiplier = (TextView) view.findViewById(R.id.attempt_three_multiplier);
+        mAttemptFourMultiplier = (TextView) view.findViewById(R.id.attempt_four_multiplier);
         mTotalScore = (TextView) view.findViewById(R.id.total_score);
         mGameMenuButton = (Button) view.findViewById(R.id.game_menu_button);
         mViewReportButton = (Button) view.findViewById(R.id.view_report_button);
@@ -195,6 +203,11 @@ public class QuizScoreFragment extends Fragment {
         mAttemptThreeScore.setText(String.format("%3.2f", mScoreAttemptThree));
         mAttemptFourScore.setText(String.format("%3.2f", mScoreAttemptFour));
         mTotalScore.setText(String.format("%3.2f", mFinalScore));
+
+        mAttemptOneMultiplier.setText(String.format("%1.2f", ATTEMPT_ONE_MULTIPLIER));
+        mAttemptTwoMultiplier.setText(String.format("%1.2f", ATTEMPT_TWO_MULTIPLIER));
+        mAttemptThreeMultiplier.setText(String.format("%1.2f", ATTEMPT_THREE_MULTIPLIER));
+        mAttemptFourMultiplier.setText(String.format("%1.2f", ATTEMPT_FOUR_MULTIPLIER));
 
         mGameMenuButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -179,13 +179,14 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/attempt_one_multiplier"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="right"
                         android:paddingLeft="7dp"
-                        android:text="@string/attempt_one_multiplier"
                         android:textColor="@color/white"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        tools:text="1.00" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -240,13 +241,14 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/attempt_two_multiplier"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="right"
                         android:paddingLeft="7dp"
-                        android:text="@string/attempt_two_multiplier"
                         android:textColor="@color/white"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        tools:text="0.50" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -301,13 +303,14 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/attempt_three_multiplier"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="right"
                         android:paddingLeft="7dp"
-                        android:text="@string/attempt_three_multiplier"
                         android:textColor="@color/white"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        tools:text="0.25" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -362,13 +365,14 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/attempt_four_multiplier"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="right"
                         android:paddingLeft="7dp"
-                        android:text="@string/attempt_four_multiplier"
                         android:textColor="@color/white"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        tools:text="0.00" />
 
                     <TextView
                         android:layout_width="wrap_content"
