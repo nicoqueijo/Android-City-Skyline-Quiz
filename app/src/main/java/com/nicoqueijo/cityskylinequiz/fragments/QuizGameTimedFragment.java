@@ -1,8 +1,10 @@
 package com.nicoqueijo.cityskylinequiz.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.os.Vibrator;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,6 +43,7 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
     private int mElapsedSeconds = 0;
     private CountDownTimer mCountDownTimer;
     private Handler mHandler = new Handler();
+    private Vibrator mVibrator;
 
     // Declaration of UI components
     private ImageView mCityImage;
@@ -77,6 +80,7 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
         // Warm up the cache with the image of the first question for fast UI loading
         Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
                 .getImageUrl()).fetch();
+        mVibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
     }
 
     /**
@@ -231,6 +235,7 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
             }, 300);   // 0.3 seconds
 
         } else {
+            mVibrator.vibrate(QuizGameActivity.VIBRATION_TIME);
             // If the choice the user selected is an incorrect choice we mark that choice in the
             // report object belonging to this question as incorrect.
             QuizGameActivity.questionReports.get(mQuestionCounter - QuizGameActivity.OFF_BY_ONE)
