@@ -16,6 +16,7 @@ import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.adapters.CityListRecyclerViewAdapter;
 import com.nicoqueijo.cityskylinequiz.fragments.LanguageChooserDialog;
 import com.nicoqueijo.cityskylinequiz.models.City;
+import com.squareup.picasso.Picasso;
 import com.turingtechnologies.materialscrollbar.AlphabetIndicator;
 import com.turingtechnologies.materialscrollbar.DragScrollBar;
 
@@ -44,6 +45,7 @@ public class CityListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        cacheImagesAndLoadToMemory();
         mSharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
         setTheme(mSharedPreferences.getInt("theme", R.style.AppThemeLight));
         setContentView(R.layout.activity_city_list);
@@ -142,6 +144,15 @@ public class CityListActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    /**
+     * Caches the city image from each model object (if not cached already) and loads it to memory.
+     */
+    private void cacheImagesAndLoadToMemory() {
+        for (City city : MainMenuActivity.cities) {
+            Picasso.with(CityListActivity.this).load(city.getImageUrl()).fetch();
+        }
     }
 
     /*

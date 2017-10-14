@@ -3,6 +3,7 @@
     android:id="@+id/quiz_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:keepScreenOn="true"
     android:orientation="vertical"
     android:padding="12dp">
 
@@ -24,6 +25,12 @@
             android:background="@drawable/round_outline"
             android:scaleType="fitXY"
             tools:src="@drawable/los_angeles" />
+
+        <ProgressBar
+            android:id="@+id/image_progress_bar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true" />
 
     </RelativeLayout>
 
@@ -208,7 +215,7 @@
         </LinearLayout>
 
         <ProgressBar
-            android:id="@+id/progress_bar"
+            android:id="@+id/game_progress_bar"
             style="@android:style/Widget.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

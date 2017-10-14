@@ -95,7 +95,10 @@ public class QuizGameActivity extends AppCompatActivity {
         Collections.shuffle(mCities);
         questions = new LinkedList<>();
         generateQuestions();
-        cacheAndLoadQuestionImages();
+        cacheImagesAndLoadToMemory();
+        // Warm up the cache with the image of the first question for fast UI loading
+        Picasso.with(QuizGameActivity.this).load(questions.peek().getCorrectChoice().getImageUrl())
+                .priority(Picasso.Priority.HIGH).fetch();
         questionReports = new ArrayList<>();
 
         Bundle bundle = new Bundle();
@@ -186,10 +189,9 @@ public class QuizGameActivity extends AppCompatActivity {
     }
 
     /**
-     * Caches and loads the city image of each question in order. This is done to minimize the
-     * probability that the user can't see the image of the first question.
+     * Caches the city image from each model object (if not cached already) and loads it to memory.
      */
-    private void cacheAndLoadQuestionImages() {
+    private void cacheImagesAndLoadToMemory() {
         for (Question question : questions) {
             Picasso.with(QuizGameActivity.this).load(question.getCorrectChoice().getImageUrl())
                     .fetch();

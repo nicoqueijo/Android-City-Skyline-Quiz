@@ -6,6 +6,9 @@ https://api.myjson.com/bins/7frmp
 
 
 // TODO
+-Pop game fragment if device goes to sleep
+-Assure first question image loads on time
+-Add option to view high scores in each game mode
 -Group duplicated xml code in styles.xml
 -Group common app status statements on MainActivity in one method
 -Change everything to Material Design (view dimensions, colors, fonts, font size, etc)
@@ -16,9 +19,6 @@ https://api.myjson.com/bins/7frmp
 	http://www.tristanwaddington.com/2013/03/styling-the-android-action-bar-with-a-custom-font/
 		Use Typeface class from Base Converter project
 		
-// DO NEXT
--Add option to view high scores in each game mode
--Group common xml attributes in styles
 
 // TESTING
 -Assure layouts are good on Arabic (left/start right/end)
@@ -31,21 +31,3 @@ https://api.myjson.com/bins/7frmp
 -When quiz is over (time expired OR correct answers match amount of questions)
 	-Replace fragment with a game report fragment (don't add game to backstack)
 -If user chooses to see report detail replace game report fragment with report detail (don't add game report to backstack)
-
-
-    <compatible-screens>
-        <!-- all small size screens -->
-        <screen android:screenSize="small" android:screenDensity="ldpi" />
-        <screen android:screenSize="small" android:screenDensity="mdpi" />
-        <screen android:screenSize="small" android:screenDensity="hdpi" />
-        <screen android:screenSize="small" android:screenDensity="xhdpi" />
-        <screen android:screenSize="small" android:screenDensity="xxhdpi" />
-        <screen android:screenSize="small" android:screenDensity="xxxhdpi" />
-        <!-- all normal size screens -->
-        <screen android:screenSize="normal" android:screenDensity="ldpi" />
-        <screen android:screenSize="normal" android:screenDensity="mdpi" />
-        <screen android:screenSize="normal" android:screenDensity="hdpi" />
-        <screen android:screenSize="small" android:screenDensity="xhdpi" />
-        <screen android:screenSize="small" android:screenDensity="xxhdpi" />
-        <screen android:screenSize="small" android:screenDensity="xxxhdpi" />
-    </compatible-screens>

@@ -25,7 +25,6 @@ import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.helpers.ResourceByNameRetriever;
 import com.nicoqueijo.cityskylinequiz.helpers.SystemInfo;
 import com.nicoqueijo.cityskylinequiz.models.City;
-import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -76,9 +75,7 @@ public class MainMenuActivity extends AppCompatActivity {
         mActionBar.setTitle(R.string.actionbar_app_name);
 
         showFirstLaunchDialogs(editor);
-
         parseJsonAndCreateCityObjects();
-        cacheImagesAndLoadToMemory();
 
         mRelativeLayoutPlayGame = (RelativeLayout) findViewById(R.id.container_play_game);
         mRelativeLayoutCityList = (RelativeLayout) findViewById(R.id.container_city_list);
@@ -256,15 +253,6 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         } catch (JSONException e) {
             e.printStackTrace();
-        }
-    }
-
-    /**
-     * Caches the city image from each model object (if not cached already) and loads it to memory.
-     */
-    private void cacheImagesAndLoadToMemory() {
-        for (City city : cities) {
-            Picasso.with(MainMenuActivity.this).load(city.getImageUrl()).fetch();
         }
     }
 

@@ -24,6 +24,7 @@ import com.nicoqueijo.cityskylinequiz.interfaces.Quiz;
 import com.nicoqueijo.cityskylinequiz.models.City;
 import com.nicoqueijo.cityskylinequiz.models.Question;
 import com.nicoqueijo.cityskylinequiz.models.QuestionReport;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -63,7 +64,8 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
     private TextView mCityNameChoice3;
     private TextView mCityNameChoice4;
     private TextView mFeedback;
-    private ProgressBar mProgressBar;
+    private ProgressBar mImageProgressBar;
+    private ProgressBar mGameProgressBar;
 
     /**
      * Required empty public constructor
@@ -82,7 +84,7 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
         super.onCreate(savedInstanceState);
         // Warm up the cache with the image of the first question for fast UI loading
         Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
-                .getImageUrl()).fetch();
+                .getImageUrl()).priority(Picasso.Priority.HIGH).fetch();
         mVibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
         mSharedPreferences = getActivity().getSharedPreferences
                 ("settings", Context.MODE_PRIVATE);
@@ -135,8 +137,9 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
         mCityNameChoice3 = (TextView) view.findViewById(R.id.city_name_choice_three);
         mCityNameChoice4 = (TextView) view.findViewById(R.id.city_name_choice_four);
         mFeedback = (TextView) view.findViewById(R.id.feedback);
-        mProgressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
-        mProgressBar.setMax(mTotalSeconds);
+        mImageProgressBar = (ProgressBar) view.findViewById(R.id.image_progress_bar);
+        mGameProgressBar = (ProgressBar) view.findViewById(R.id.game_progress_bar);
+        mGameProgressBar.setMax(mTotalSeconds);
 
         // Adds a shadow effect to the choice buttons
         if (SystemInfo.isRunningLollipopOrHigher()) {
@@ -165,7 +168,7 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
              */
             @Override
             public void onTick(long millisUntilFinished) {
-                mProgressBar.setProgress(mElapsedSeconds);
+                mGameProgressBar.setProgress(mElapsedSeconds);
                 if (mElapsedSeconds > mTotalSeconds) {
                     getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT)
                             .commitAllowingStateLoss();
@@ -200,7 +203,7 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
 
         // Warm up the cache with the image of the next question for fast UI loading,
         Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
-                .getImageUrl()).fetch();
+                .getImageUrl()).priority(Picasso.Priority.HIGH).fetch();
 
         // Takes note of which choice was selected by the user to mark it correct/incorrect in
         // the next step.
@@ -272,11 +275,24 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
      */
     public void loadNextQuestion() {
         recordAttemptsOfLastQuestion();
-
         if (getActivity() == null) {
             return;
         }
         mCurrentQuestion = QuizGameActivity.questions.remove();
+        mImageProgressBar.setVisibility(View.VISIBLE);
+        Picasso.with(getActivity()).load(mCurrentQuestion.getCorrectChoice().getImageUrl())
+                .priority(Picasso.Priority.HIGH).into(mCityImage, new Callback() {
+            @Override
+            public void onSuccess() {
+                mImageProgressBar.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onError() {
+
+            }
+        });
+
         QuestionReport mCurrentQuestionReport = new QuestionReport(mCurrentQuestion, mQuestionCounter);
         QuizGameActivity.questionReports.add(mCurrentQuestionReport);
         mQuestionCounter++;
@@ -290,9 +306,6 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
         mContainerChoice3.setAlpha(QuizGameActivity.FULLY_OPAQUE);
         mContainerChoice4.setAlpha(QuizGameActivity.FULLY_OPAQUE);
         mFeedback.setText("");
-
-        Picasso.with(getActivity()).load(mCurrentQuestion.getCorrectChoice().getImageUrl())
-                .into(mCityImage);
 
         mCityNameChoice1.setText(ResourceByNameRetriever.getStringResourceByName
                 (mCurrentQuestion.getChoice1().getCityName(), getActivity()));
