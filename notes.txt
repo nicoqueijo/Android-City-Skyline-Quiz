@@ -31,3 +31,21 @@ https://api.myjson.com/bins/7frmp
 -When quiz is over (time expired OR correct answers match amount of questions)
 	-Replace fragment with a game report fragment (don't add game to backstack)
 -If user chooses to see report detail replace game report fragment with report detail (don't add game report to backstack)
+
+
+    <compatible-screens>
+        <!-- all small size screens -->
+        <screen android:screenSize="small" android:screenDensity="ldpi" />
+        <screen android:screenSize="small" android:screenDensity="mdpi" />
+        <screen android:screenSize="small" android:screenDensity="hdpi" />
+        <screen android:screenSize="small" android:screenDensity="xhdpi" />
+        <screen android:screenSize="small" android:screenDensity="xxhdpi" />
+        <screen android:screenSize="small" android:screenDensity="xxxhdpi" />
+        <!-- all normal size screens -->
+        <screen android:screenSize="normal" android:screenDensity="ldpi" />
+        <screen android:screenSize="normal" android:screenDensity="mdpi" />
+        <screen android:screenSize="normal" android:screenDensity="hdpi" />
+        <screen android:screenSize="small" android:screenDensity="xhdpi" />
+        <screen android:screenSize="small" android:screenDensity="xxhdpi" />
+        <screen android:screenSize="small" android:screenDensity="xxxhdpi" />
+    </compatible-screens>

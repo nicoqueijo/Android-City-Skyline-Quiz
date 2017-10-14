@@ -95,10 +95,8 @@ public class QuizGameActivity extends AppCompatActivity {
         Collections.shuffle(mCities);
         questions = new LinkedList<>();
         generateQuestions();
+        cacheAndLoadQuestionImages();
         questionReports = new ArrayList<>();
-
-        Picasso.with(QuizGameActivity.this).load(questions.peek().getCorrectChoice().getImageUrl())
-                .fetch();
 
         Bundle bundle = new Bundle();
         bundle.putInt("child", childPosition);
@@ -184,6 +182,17 @@ public class QuizGameActivity extends AppCompatActivity {
             questions.add(new Question(choices));
             choices.clear();
             exclusionList.add(city);
+        }
+    }
+
+    /**
+     * Caches and loads the city image of each question in order. This is done to minimize the
+     * probability that the user can't see the image of the first question.
+     */
+    private void cacheAndLoadQuestionImages() {
+        for (Question question : questions) {
+            Picasso.with(QuizGameActivity.this).load(question.getCorrectChoice().getImageUrl())
+                    .fetch();
         }
     }
 
