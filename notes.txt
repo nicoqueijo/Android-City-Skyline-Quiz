@@ -7,10 +7,10 @@ https://api.myjson.com/bins/7frmp
 
 // TODO
 -Cancel Picasso fetch requests on fragment destroy (might be impossible)
--Translate image fail toasts
--Move welcome message to game activity
+-Move welcome message to game menu activity
 -Pop game fragment if device goes to sleep
 -Add option to view high scores in each game mode
+-put splash screen on app launch
 -Group duplicated xml code in styles.xml
 -Group common app status statements on MainActivity in one method
 -Change everything to Material Design (view dimensions, colors, fonts, font size, etc)
@@ -25,8 +25,6 @@ https://api.myjson.com/bins/7frmp
 // TESTING
 -Assure layouts are good on Arabic (left/start right/end)
 -Refactor duplicated code
--Assure Rate app button works once app is in Google Play
-
 
 // QUIZ GAME ARCHITECTURE
 -Quiz game will run on a fragment hosted on an activity
