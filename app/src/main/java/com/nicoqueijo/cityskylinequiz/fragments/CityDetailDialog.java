@@ -10,12 +10,15 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.helpers.CornerRounder;
 import com.nicoqueijo.cityskylinequiz.helpers.ResourceByNameRetriever;
 import com.nicoqueijo.cityskylinequiz.models.City;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -30,6 +33,7 @@ public class CityDetailDialog extends DialogFragment {
     private ImageView mImageCity;
     private ImageButton mButtonGoogleMaps;
     private ImageButton mButtonWikipedia;
+    private ProgressBar mImageProgressBar;
 
     /**
      * Empty constructor required for DialogFragment.
@@ -73,13 +77,10 @@ public class CityDetailDialog extends DialogFragment {
         mImageCity = (ImageView) view.findViewById(R.id.city_image);
         mButtonGoogleMaps = (ImageButton) view.findViewById(R.id.button_google_maps);
         mButtonWikipedia = (ImageButton) view.findViewById(R.id.button_wikipedia);
-        CornerRounder.roundImageCorners(mImageFlag, mImageCity);
+        mImageProgressBar = (ProgressBar) view.findViewById(R.id.image_progress_bar);
 
-        mImageFlag.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(mCity.
-                getCountryName(), getActivity()));
-        mTextCity.setText(ResourceByNameRetriever.getStringResourceByName(mCity.getCityName(),
-                getActivity()));
-        Picasso.with(getActivity()).load(mCity.getImageUrl()).into(mImageCity);
+        populateViews();
+        CornerRounder.roundImageCorners(mImageFlag, mImageCity);
 
         mButtonGoogleMaps.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,6 +110,30 @@ public class CityDetailDialog extends DialogFragment {
     public void onStart() {
         super.onStart();
         adjustWindowSize();
+    }
+
+    /**
+     * Fills the views of this Dialog Fragment with the content of the city passed. This includes
+     * the country flag image, the city image, and the city name label.
+     */
+    private void populateViews() {
+        mImageFlag.setImageResource(ResourceByNameRetriever.getDrawableResourceByName(mCity.
+                getCountryName(), getActivity()));
+        mTextCity.setText(ResourceByNameRetriever.getStringResourceByName(mCity.getCityName(),
+                getActivity()));
+        Picasso.with(getActivity()).load(mCity.getImageUrl()).into(mImageCity, new Callback() {
+            @Override
+            public void onSuccess() {
+                mImageProgressBar.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onError() {
+                Toast.makeText(getActivity(), "Error loading image", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Assure you have an internet connection", Toast.LENGTH_SHORT).show();
+                dismiss();
+            }
+        });
     }
 
     /**

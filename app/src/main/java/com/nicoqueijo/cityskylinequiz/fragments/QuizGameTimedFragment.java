@@ -272,6 +272,7 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
      * Refreshes the UI components with the information of the next question.
      */
     public void loadNextQuestion() {
+        toggleChoiceButtonsState(false);
         recordAttemptsOfLastQuestion();
         if (getActivity() == null) {
             return;

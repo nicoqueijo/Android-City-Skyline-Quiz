@@ -200,10 +200,7 @@ public class QuizGameEveryCityFragment extends Fragment implements Quiz, View.On
                     .setCorrectMark(markNumber);
             mAttemptOfLastQuestion = mAttemptNumber;
             mAttemptNumber = 0;
-            mContainerChoice1.setEnabled(false);
-            mContainerChoice2.setEnabled(false);
-            mContainerChoice3.setEnabled(false);
-            mContainerChoice4.setEnabled(false);
+            toggleChoiceButtonsState(false);
             mFeedback.setTextColor(getResources().getColor(R.color.green));
             mFeedback.setText(getResources().getString(R.string.correct));
 
@@ -222,10 +219,7 @@ public class QuizGameEveryCityFragment extends Fragment implements Quiz, View.On
             QuizGameActivity.questionReports.get(mQuestionCounter - QuizGameActivity.OFF_BY_ONE)
                     .setIncorrectMark(markNumber);
             choicePress.setAlpha(QuizGameActivity.HALF_OPAQUE);
-            mContainerChoice1.setEnabled(false);
-            mContainerChoice2.setEnabled(false);
-            mContainerChoice3.setEnabled(false);
-            mContainerChoice4.setEnabled(false);
+            toggleChoiceButtonsState(false);
             mFeedback.setTextColor(getResources().getColor(R.color.red));
             mFeedback.setText(getResources().getString(R.string.incorrect));
 
@@ -236,8 +230,6 @@ public class QuizGameEveryCityFragment extends Fragment implements Quiz, View.On
                             .remove(THIS_FRAGMENT).commit();
                     getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,
                             new QuizScoreFragment(), "quizReportFragment").commit();
-//                    getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,
-//                            new QuizReportFragment(), "quizReportFragment").commit();
                 }
             }, 500);    // 0.5 seconds
         } else {
@@ -272,6 +264,7 @@ public class QuizGameEveryCityFragment extends Fragment implements Quiz, View.On
      */
     @Override
     public void loadNextQuestion() {
+        toggleChoiceButtonsState(false);
         recordAttemptsOfLastQuestion();
         if (QuizGameActivity.questions.isEmpty()) {
             getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT).commit();
