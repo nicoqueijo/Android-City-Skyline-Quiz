@@ -271,8 +271,10 @@ public class QuizGameUntimedFragment extends Fragment implements Quiz, View.OnCl
 
                 @Override
                 public void onError() {
-                    Toast.makeText(getActivity(), "Error loading image", Toast.LENGTH_SHORT).show();
-                    Toast.makeText(getActivity(), "Assure you have an internet connection", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), getResources().getString
+                            (R.string.error_image_load_message), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), getResources().getString
+                            (R.string.internet_connection_message), Toast.LENGTH_LONG).show();
                     getActivity().onBackPressed();
                 }
             });

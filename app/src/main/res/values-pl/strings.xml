@@ -69,6 +69,8 @@
     <string name="ok">OK</string>
     <string name="language_disclaimer_title">Obwieszczenie</string>
     <string name="language_disclaimer_message">Wersje nie-angielskie tej aplikacji zostały przetłumaczone zautomatyzowane. Przepraszam, jeśli tłumaczenia są niedokładne. Aby dokonać korekt, napisz do autora, korzystając z menu w prawym górnym rogu.</string>
+	<string name="error_image_load_message">Wystąpił błąd podczas ładowania obrazu</string>
+    <string name="internet_connection_message">Sprawdź połączenie internetowe i spróbuj ponownie</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Zabi</string>

@@ -69,6 +69,8 @@
     <string name="ok">OK</string>
     <string name="language_disclaimer_title">Avviso</string>
     <string name="language_disclaimer_message">Le versioni non inglese di questa applicazione sono state tradotte da mezzi automatizzati. Si scusa se le traduzioni sono imprecise. Per effettuare qualsiasi correzione, ti invitiamo a inviare una mail allo sviluppatore utilizzando il menu nell\'angolo in alto a destra.</string>
+	<string name="error_image_load_message">Errore durante il caricamento di immagini</string>
+    <string name="internet_connection_message">Controlla la tua connessione internet e prova nuovamente</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>

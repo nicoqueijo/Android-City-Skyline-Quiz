@@ -69,6 +69,8 @@
     <string name="ok">OK</string>
     <string name="language_disclaimer_title">Aandacht</string>
     <string name="language_disclaimer_message">Niet-Engelse versies van deze app werden vertaald door geautomatiseerde middelen. Verontschuldigingen als vertalingen onjuist zijn. Om eventuele correcties te doen, kunt u de ontwikkelaar emailen via het menu in de rechterbovenhoek.</string>
+	<string name="error_image_load_message">Fout bij het laden van de afbeelding</string>
+    <string name="internet_connection_message">Controleer uw internetverbinding en probeer het opnieuw</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>

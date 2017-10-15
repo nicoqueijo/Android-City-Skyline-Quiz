@@ -69,6 +69,8 @@
     <string name="ok">好</string>
     <string name="language_disclaimer_title">须知</string>
     <string name="language_disclaimer_message">非英文版本通过自动化手段翻译，如有误译，敬请谅解。 如有建议与意见，请使用右上角的菜单向开发人员发送电子邮件。</string>
+	<string name="error_image_load_message">加载图像时出错</string>
+    <string name="internet_connection_message">请检查您的互联网连接，然后重试</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">阿布扎比</string>

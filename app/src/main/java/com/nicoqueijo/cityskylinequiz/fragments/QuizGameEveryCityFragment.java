@@ -283,8 +283,10 @@ public class QuizGameEveryCityFragment extends Fragment implements Quiz, View.On
 
                 @Override
                 public void onError() {
-                    Toast.makeText(getActivity(), "Error loading image", Toast.LENGTH_SHORT).show();
-                    Toast.makeText(getActivity(), "Ensure internet connection and try again", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), getResources().getString
+                            (R.string.error_image_load_message), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), getResources().getString
+                            (R.string.internet_connection_message), Toast.LENGTH_LONG).show();
                     getActivity().onBackPressed();
                 }
             });

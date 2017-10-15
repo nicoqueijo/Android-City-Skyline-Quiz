@@ -69,6 +69,8 @@
     <string name="ok">승인</string>
     <string name="language_disclaimer_title">주의</string>
     <string name="language_disclaimer_message">이 앱의 영어 이외의 버전은 자동화 된 방법으로 번역되었습니다. 번역이 부정확하면 사과드립니다. 수정하려면 오른쪽 상단에있는 메뉴를 사용하여 개발자에게 전자 메일을 보내주십시오.</string>
+	<string name="error_image_load_message">이미지로드 오류</string>
+    <string name="internet_connection_message">인터넷 연결을 확인하고 다시 시도하십시오.</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">아부다비</string>

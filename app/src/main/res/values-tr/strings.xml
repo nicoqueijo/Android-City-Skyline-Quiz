@@ -69,6 +69,8 @@
     <string name="ok">Tamam</string>
     <string name="language_disclaimer_title">Ihbar</string>
     <string name="language_disclaimer_message">Bu uygulamanın İngilizce olmayan sürümleri otomatik yöntemlerle tercüme edilmiştir. Çevirilerin hatalı olması özür dilemektedir. Herhangi bir düzeltme yapmak için lütfen sağ üst köşedeki menüyü kullanarak geliştiriciye e-posta ile gönderin.</string>
+	<string name="error_image_load_message">Resim yüklenirken hata oluştu</string>
+    <string name="internet_connection_message">Lütfen internet bağlantınızı kontrol edin ve tekrar deneyin</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dabi</string>

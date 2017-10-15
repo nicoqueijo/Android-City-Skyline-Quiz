@@ -8,6 +8,7 @@ https://api.myjson.com/bins/7frmp
 // TODO
 -Cancel Picasso fetch requests on fragment destroy (might be impossible)
 -Translate image fail toasts
+-Move welcome message to game activity
 -Pop game fragment if device goes to sleep
 -Add option to view high scores in each game mode
 -Group duplicated xml code in styles.xml

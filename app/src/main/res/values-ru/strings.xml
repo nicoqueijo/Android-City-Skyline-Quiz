@@ -69,6 +69,8 @@
     <string name="ok">ОК</string>
     <string name="language_disclaimer_title">уведомление</string>
     <string name="language_disclaimer_message">Неанглийские версии этого приложения были переведены автоматическими средствами. Извините, если переводы неточны. Чтобы внести какие-либо исправления, напишите разработчику, используя меню в правом верхнем углу.</string>
+	<string name="error_image_load_message">Ошибка загрузки изображения</string>
+    <string name="internet_connection_message">Проверьте подключение к Интернету и повторите попытку.</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Абу-Даби</string>

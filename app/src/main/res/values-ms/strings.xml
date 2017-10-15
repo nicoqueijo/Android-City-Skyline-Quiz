@@ -69,6 +69,8 @@
     <string name="ok">Okey</string>
     <string name="language_disclaimer_title">Kenyataan</string>
     <string name="language_disclaimer_message">Versi bahasa Inggeris bukan aplikasi ini diterjemahkan secara automatik. Memohon maaf jika terjemahan tidak tepat. Untuk membuat sebarang pembetulan, sila emel pemaju menggunakan menu di penjuru kanan sebelah atas.</string>
+	<string name="error_image_load_message">Ralat memuatkan imej</string>
+    <string name="internet_connection_message">Sila semak sambungan internet anda dan cuba lagi</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>
