@@ -6,6 +6,13 @@ Multiple choice trivia game where the user guesses the skyline of a city from fo
 <img src="screenshots/google_play.png" a_blank href="https://play.google.com/store/apps/details?id=com.nicoqueijo.cityskylinequiz">
 </a>
 
+## Demo
+<p float="left">
+  <img src="/screenshots/demos/demo_game.gif" hspace="10" width="250" />
+  <img src="/screenshots/demos/demo_list.gif" hspace="10" width="250" /> 
+  <img src="/screenshots/demos/demo_settings.gif" hspace="10" width="250" />
+</p>
+
 ## Screenshots
 https://github.com/nicoqueijo/Android-City-Skyline-Quiz/tree/master/screenshots
 
