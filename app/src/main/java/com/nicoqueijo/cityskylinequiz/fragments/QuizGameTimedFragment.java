@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.activities.QuizGameActivity;
@@ -230,10 +231,7 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
                     .setCorrectMark(markNumber);
             mAttemptOfLastQuestion = mAttemptNumber;
             mAttemptNumber = 0;
-            mContainerChoice1.setEnabled(false);
-            mContainerChoice2.setEnabled(false);
-            mContainerChoice3.setEnabled(false);
-            mContainerChoice4.setEnabled(false);
+            toggleChoiceButtonsState(false);
             mFeedback.setTextColor(getResources().getColor(R.color.green));
             mFeedback.setText(getResources().getString(R.string.correct));
 
@@ -285,11 +283,14 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
             @Override
             public void onSuccess() {
                 mImageProgressBar.setVisibility(View.GONE);
+                toggleChoiceButtonsState(true);
             }
 
             @Override
             public void onError() {
-
+                Toast.makeText(getActivity(), "Error loading image", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Assure you have an internet connection", Toast.LENGTH_SHORT).show();
+                getActivity().onBackPressed();
             }
         });
 
@@ -297,10 +298,6 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
         QuizGameActivity.questionReports.add(mCurrentQuestionReport);
         mQuestionCounter++;
 
-        mContainerChoice1.setEnabled(true);
-        mContainerChoice2.setEnabled(true);
-        mContainerChoice3.setEnabled(true);
-        mContainerChoice4.setEnabled(true);
         mContainerChoice1.setAlpha(QuizGameActivity.FULLY_OPAQUE);
         mContainerChoice2.setAlpha(QuizGameActivity.FULLY_OPAQUE);
         mContainerChoice3.setAlpha(QuizGameActivity.FULLY_OPAQUE);
@@ -324,6 +321,18 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
                 (mCurrentQuestion.getChoice3().getCountryName(), getActivity()));
         mFlagChoice4.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
                 (mCurrentQuestion.getChoice4().getCountryName(), getActivity()));
+    }
+
+    /**
+     * Toggles the enabled state of the four choice buttons.
+     *
+     * @param state true to enable the buttons, false to disable.
+     */
+    private void toggleChoiceButtonsState(boolean state) {
+        mContainerChoice1.setEnabled(state);
+        mContainerChoice2.setEnabled(state);
+        mContainerChoice3.setEnabled(state);
+        mContainerChoice4.setEnabled(state);
     }
 
     /**
@@ -353,7 +362,8 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
      */
     @Override
     public void onDestroy() {
-        mCountDownTimer.cancel();
         super.onDestroy();
+        mCountDownTimer.cancel();
+        Picasso.with(getActivity()).cancelTag(QuizGameActivity.PICASSO_TAG);
     }
 }

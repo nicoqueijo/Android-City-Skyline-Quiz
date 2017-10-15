@@ -34,6 +34,8 @@ import java.util.Queue;
  */
 public class QuizGameActivity extends AppCompatActivity {
 
+    public static final String PICASSO_TAG = "picasso_tag";
+
     public static final long VIBRATION_TIME = 35L;
     public static final float VIEW_ELEVATION = 12.0f;
     public static final float HALF_OPAQUE = 0.5f;
@@ -194,7 +196,7 @@ public class QuizGameActivity extends AppCompatActivity {
     private void cacheImagesAndLoadToMemory() {
         for (Question question : questions) {
             Picasso.with(QuizGameActivity.this).load(question.getCorrectChoice().getImageUrl())
-                    .fetch();
+                    .tag(QuizGameActivity.PICASSO_TAG).fetch();
         }
     }
 

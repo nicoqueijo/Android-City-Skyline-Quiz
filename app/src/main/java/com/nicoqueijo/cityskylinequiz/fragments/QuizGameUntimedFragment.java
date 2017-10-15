@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.activities.QuizGameActivity;
@@ -251,6 +252,7 @@ public class QuizGameUntimedFragment extends Fragment implements Quiz, View.OnCl
      */
     @Override
     public void loadNextQuestion() {
+        toggleChoiceButtonsState(false);
         recordAttemptsOfLastQuestion();
         if (mQuestionCounter >= mQuestionLimit) {
             getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT).commit();
@@ -264,11 +266,14 @@ public class QuizGameUntimedFragment extends Fragment implements Quiz, View.OnCl
                 @Override
                 public void onSuccess() {
                     mImageProgressBar.setVisibility(View.GONE);
+                    toggleChoiceButtonsState(true);
                 }
 
                 @Override
                 public void onError() {
-
+                    Toast.makeText(getActivity(), "Error loading image", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Assure you have an internet connection", Toast.LENGTH_SHORT).show();
+                    getActivity().onBackPressed();
                 }
             });
 
@@ -277,10 +282,6 @@ public class QuizGameUntimedFragment extends Fragment implements Quiz, View.OnCl
             mGameProgressBar.setProgress(mQuestionCounter * mProgressBarMultiplier);
             mQuestionCounter++;
 
-            mContainerChoice1.setEnabled(true);
-            mContainerChoice2.setEnabled(true);
-            mContainerChoice3.setEnabled(true);
-            mContainerChoice4.setEnabled(true);
             mContainerChoice1.setAlpha(QuizGameActivity.FULLY_OPAQUE);
             mContainerChoice2.setAlpha(QuizGameActivity.FULLY_OPAQUE);
             mContainerChoice3.setAlpha(QuizGameActivity.FULLY_OPAQUE);
@@ -308,6 +309,18 @@ public class QuizGameUntimedFragment extends Fragment implements Quiz, View.OnCl
     }
 
     /**
+     * Toggles the enabled state of the four choice buttons.
+     *
+     * @param state true to enable the buttons, false to disable.
+     */
+    private void toggleChoiceButtonsState(boolean state) {
+        mContainerChoice1.setEnabled(state);
+        mContainerChoice2.setEnabled(state);
+        mContainerChoice3.setEnabled(state);
+        mContainerChoice4.setEnabled(state);
+    }
+
+    /**
      * Records how many attempts it took to answer the previous question so we can reflect
      * this information on the score of the game.
      */
@@ -327,5 +340,14 @@ public class QuizGameUntimedFragment extends Fragment implements Quiz, View.OnCl
                 break;
         }
         mAttemptOfLastQuestion = 0;
+    }
+
+    /**
+     * Called when the fragment is no longer in use.
+     */
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Picasso.with(getActivity()).cancelTag(QuizGameActivity.PICASSO_TAG);
     }
 }
