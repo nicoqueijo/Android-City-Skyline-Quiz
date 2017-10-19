@@ -13,14 +13,29 @@ Multiple choice trivia game where the user guesses the skyline of a city from fo
   <img src="/screenshots/demos/demo_settings.gif" hspace="10" width="250" />
 </p>
 
-## Screenshots
-https://github.com/nicoqueijo/Android-City-Skyline-Quiz/tree/master/screenshots
-
 ## Features
+* Game modes:
+  * Timed
+    * 30 seconds (answer as many questions as you can within 30 secs)
+    * 60 seconds (answer as many questions as you can within 60 secs)
+    * 120 seconds (answer as many questions as you can within 120 secs)
+  * Untimed
+    * 10 questions (answer 10 questions)
+    * 20 questions (answer 20 questions)
+    * 50 questions (answer 50 questions)
+  * All cities
+    * No faults (answer every question in game with the game ending upon the first incorrect answer)
+    * faults allowed (answer every question in the game with no restrictions)
+* City list with sorting options by city/country name
+* High scores for each game mode
+* Game report after each game
+* Vibration feedback on incorrect answers
 * Languages:
   Arabic, Chinese, Dutch, English, French, German, Hindi, Italian, Japanese, Korean, Malay, Polish, Portuguese, Russian, Spanish, Turkish
 * Light/dark theme
 
+## Screenshots
+https://github.com/nicoqueijo/Android-City-Skyline-Quiz/tree/master/screenshots
 
 ## Built with
 * <a href="https://github.com/square/picasso" target="_blank">Picasso</a> - A powerful image downloading and caching library for Android.
