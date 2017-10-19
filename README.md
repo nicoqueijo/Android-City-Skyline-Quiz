@@ -16,6 +16,11 @@ Multiple choice trivia game where the user guesses the skyline of a city from fo
 ## Screenshots
 https://github.com/nicoqueijo/Android-City-Skyline-Quiz/tree/master/screenshots
 
+## Features
+* Languages:
+  Arabic, Chinese, Dutch, English, French, German, Hindi, Italian, Japanese, Korean, Malay, Polish, Portuguese, Russian, Spanish, Turkish
+* Light/dark theme
+
 
 ## Built with
 * <a href="https://github.com/square/picasso" target="_blank">Picasso</a> - A powerful image downloading and caching library for Android.
