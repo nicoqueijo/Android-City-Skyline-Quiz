@@ -6,11 +6,11 @@ https://api.myjson.com/bins/7frmp
 
 
 // TODO
--Cancel Picasso fetch requests on fragment destroy (might be impossible)
--Move welcome message to game menu activity
+-Cancel Picasso fetch requests on fragment destroy (check email)
+-put splash screen on app launch
 -Pop game fragment if device goes to sleep
 -Add option to view high scores in each game mode
--put splash screen on app launch
+-Separate cities into three regions
 -Group duplicated xml code in styles.xml
 -Group common app status statements on MainActivity in one method
 -Change everything to Material Design (view dimensions, colors, fonts, font size, etc)
