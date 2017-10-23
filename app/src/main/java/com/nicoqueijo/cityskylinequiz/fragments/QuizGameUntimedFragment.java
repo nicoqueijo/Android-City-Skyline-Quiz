@@ -350,6 +350,5 @@ public class QuizGameUntimedFragment extends Fragment implements Quiz, View.OnCl
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Picasso.with(getActivity()).cancelTag(QuizGameActivity.PICASSO_TAG);
     }
 }

@@ -6,7 +6,6 @@ https://api.myjson.com/bins/7frmp
 
 
 // TODO
--add animation transition from splash screen activity to main activity
 -Cancel Picasso fetch requests on fragment destroy (check email)
 -Pop game fragment if device goes to sleep
 -Add option to view high scores in each game mode

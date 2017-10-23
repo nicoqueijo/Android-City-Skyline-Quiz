@@ -41,8 +41,8 @@ import java.util.Locale;
 // https://api.myjson.com/bins/7frmp
 
 /**
- * This is the main activity that runs when the app is launched. Serves as the entry point holding
- * pathways to the app's features.
+ * This is the main activity that runs immediately after the splash screen activity when the app
+ * is launched. Serves as the entry point holding pathways to the app's features.
  */
 public class MainMenuActivity extends AppCompatActivity {
 

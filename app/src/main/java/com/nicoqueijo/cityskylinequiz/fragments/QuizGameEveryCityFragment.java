@@ -362,6 +362,5 @@ public class QuizGameEveryCityFragment extends Fragment implements Quiz, View.On
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Picasso.with(getActivity()).cancelTag(QuizGameActivity.PICASSO_TAG);
     }
 }

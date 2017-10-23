@@ -367,6 +367,5 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
     public void onDestroy() {
         super.onDestroy();
         mCountDownTimer.cancel();
-        Picasso.with(getActivity()).cancelTag(QuizGameActivity.PICASSO_TAG);
     }
 }
