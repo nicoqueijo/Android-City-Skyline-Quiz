@@ -6,154 +6,90 @@
 
     <LinearLayout
         android:id="@+id/container_settings_theme"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="20dp">
+        style="@style/SettingsItemContainerWithSwitchStyle">
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+        <LinearLayout style="@style/SettingsLabelsContainerWithSwitchStyle">
 
             <TextView
                 android:id="@+id/theme_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="@string/settings_theme_title"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                style="@style/SettingsItemTitleStyle" />
 
             <TextView
                 android:id="@+id/theme_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="@string/settings_theme_description"
-                android:textSize="16sp" />
+                style="@style/SettingsItemDescriptionStyle" />
 
         </LinearLayout>
 
         <Switch
             android:id="@+id/switch_theme"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical" />
+            style="@style/SettingsSwitchStyle" />
 
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@color/gray" />
+    <View style="@style/MenuItemDividerStyle" />
 
     <LinearLayout
         android:id="@+id/container_settings_vibration"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="20dp">
+        style="@style/SettingsItemContainerWithSwitchStyle">
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+        <LinearLayout style="@style/SettingsLabelsContainerWithSwitchStyle">
 
             <TextView
                 android:id="@+id/vibration_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="@string/settings_vibration_title"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                style="@style/SettingsItemTitleStyle" />
 
             <TextView
                 android:id="@+id/vibration_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="@string/settings_vibration_description"
-                android:textSize="16sp" />
+                style="@style/SettingsItemDescriptionStyle" />
 
         </LinearLayout>
 
         <Switch
             android:id="@+id/switch_vibration"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical" />
+            style="@style/SettingsSwitchStyle" />
 
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@color/gray" />
+    <View style="@style/MenuItemDividerStyle" />
 
     <LinearLayout
         android:id="@+id/container_settings_language"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
+        style="@style/SettingsLabelsContainerStyle">
 
         <TextView
             android:id="@+id/language_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="@string/settings_language_title"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            style="@style/SettingsItemTitleStyle" />
 
         <TextView
             android:id="@+id/language_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="@string/settings_language_description"
-            android:textSize="16sp" />
+            style="@style/SettingsItemDescriptionStyle" />
 
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@color/gray" />
+    <View style="@style/MenuItemDividerStyle" />
 
     <LinearLayout
         android:id="@+id/container_settings_scores"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
+        style="@style/SettingsLabelsContainerStyle">
 
         <TextView
             android:id="@+id/scores_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="@string/settings_scores_title"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            style="@style/SettingsItemTitleStyle" />
 
         <TextView
             android:id="@+id/scores_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="@string/settings_scores_description"
-            android:textSize="16sp" />
+            style="@style/SettingsItemDescriptionStyle" />
 
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@color/gray" />
+    <View style="@style/MenuItemDividerStyle" />
 
 </LinearLayout>

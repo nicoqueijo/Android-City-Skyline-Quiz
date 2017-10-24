@@ -23,9 +23,7 @@
 
     </RelativeLayout>
 
-    <View
-        android:id="@+id/divider_play_game"
-        style="@style/MainMenuItemDividerStyle" />
+    <View style="@style/MenuItemDividerStyle" />
 
     <RelativeLayout
         android:id="@+id/container_city_list"
@@ -45,9 +43,7 @@
 
     </RelativeLayout>
 
-    <View
-        android:id="@+id/divider_city_list"
-        style="@style/MainMenuItemDividerStyle" />
+    <View style="@style/MenuItemDividerStyle" />
 
     <RelativeLayout
         android:id="@+id/container_settings"
@@ -67,8 +63,6 @@
 
     </RelativeLayout>
 
-    <View
-        android:id="@+id/divider_settings"
-        style="@style/MainMenuItemDividerStyle" />
+    <View style="@style/MenuItemDividerStyle" />
 
 </LinearLayout>
