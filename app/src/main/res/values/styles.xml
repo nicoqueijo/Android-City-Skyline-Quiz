@@ -151,4 +151,36 @@
         <item name="android:paddingBottom">5dp</item>
         <item name="android:textAllCaps">true</item>
     </style>
+
+    <style name="LanguageItemContainerStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingTop">10dp</item>
+    </style>
+
+    <style name="LanguageItemRadioButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+    </style>
+
+    <style name="LanguageItemFlagStyle">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">29dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:background">@drawable/round_outline</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+
+    <style name="LanguageItemLabelStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:textSize">20sp</item>
+    </style>
 </resources>
