@@ -75,23 +75,11 @@
             android:baselineAligned="false"
             android:orientation="horizontal">
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1">
+            <RelativeLayout style="@style/MoreInfoItemContainerStyle">
 
                 <ImageButton
                     android:id="@+id/button_google_maps"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="40dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/transparent"
-                    android:scaleType="fitCenter"
+                    style="@style/MoreInfoItemStyle"
                     android:src="@drawable/logo_google_maps" />
 
             </RelativeLayout>
@@ -102,23 +90,11 @@
                 android:layout_height="match_parent"
                 android:background="@color/gray" />
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1">
+            <RelativeLayout style="@style/MoreInfoItemContainerStyle">
 
                 <ImageButton
                     android:id="@+id/button_wikipedia"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="40dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/transparent"
-                    android:scaleType="fitCenter"
+                    style="@style/MoreInfoItemStyle"
                     android:src="@drawable/logo_wikipedia" />
 
             </RelativeLayout>
@@ -133,11 +109,8 @@
 
             <View
                 android:id="@+id/horizontal_divider_left"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_centerInParent="true"
-                android:layout_toLeftOf="@+id/more_info_label"
-                android:background="@color/gray" />
+                style="@style/MoreInfoHorizontalDividerStyle"
+                android:layout_toLeftOf="@+id/more_info_label" />
 
             <TextView
                 android:id="@+id/more_info_label"
@@ -150,11 +123,8 @@
 
             <View
                 android:id="@+id/horizontal_divider_right"
-                android:layout_width="wrap_content"
-                android:layout_height="2dp"
-                android:layout_centerInParent="true"
-                android:layout_toRightOf="@+id/more_info_label"
-                android:background="@color/gray" />
+                style="@style/MoreInfoHorizontalDividerStyle"
+                android:layout_toRightOf="@+id/more_info_label" />
 
         </RelativeLayout>
 
