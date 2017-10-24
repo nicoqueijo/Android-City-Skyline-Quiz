@@ -7,7 +7,6 @@ https://api.myjson.com/bins/7frmp
 
 // TODO
 -Separate cities into three regions
--Group duplicated xml code in styles.xml
 -Group common app status statements on MainActivity in one method
 -Change everything to Material Design (view dimensions, colors, fonts, font size, etc)
 -Draw out app architecture and post on github README
