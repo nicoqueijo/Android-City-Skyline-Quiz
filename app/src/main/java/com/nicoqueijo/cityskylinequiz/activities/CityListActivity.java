@@ -151,7 +151,7 @@ public class CityListActivity extends AppCompatActivity {
      */
     private void cacheImagesAndLoadToMemory() {
         for (City city : MainMenuActivity.cities) {
-            Picasso.with(CityListActivity.this).load(city.getImageUrl()).tag("batch_request").fetch();
+            Picasso.with(CityListActivity.this).load(city.getImageUrl()).fetch();
         }
     }
 

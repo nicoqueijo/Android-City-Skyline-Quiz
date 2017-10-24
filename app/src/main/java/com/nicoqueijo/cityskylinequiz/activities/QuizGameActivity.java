@@ -34,8 +34,6 @@ import java.util.Queue;
  */
 public class QuizGameActivity extends AppCompatActivity {
 
-    public static final String PICASSO_TAG = "picasso_tag";
-
     public static final long VIBRATION_TIME = 35L;
     public static final float VIEW_ELEVATION = 12.0f;
     public static final float HALF_OPAQUE = 0.5f;
@@ -98,6 +96,8 @@ public class QuizGameActivity extends AppCompatActivity {
         questions = new LinkedList<>();
         generateQuestions();
         cacheImagesAndLoadToMemory();
+        resetAnswerAttempts();
+
         // Warm up the cache with the image of the first question for fast UI loading
         Picasso.with(QuizGameActivity.this).load(questions.peek().getCorrectChoice().getImageUrl())
                 .priority(Picasso.Priority.HIGH).fetch();
@@ -148,10 +148,14 @@ public class QuizGameActivity extends AppCompatActivity {
         mCountDownTimer.start();
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        // put this in a method
+    /**
+     * Resets the number of correct answers the user achieved on each attempt to reflect on the
+     * new game. This is necessary since these stats are kept in the activity where the fragments
+     * (games) are hosted. Attempt one is set to -1 due to the mAttemptOfLastQuestion variable
+     * being set to 0 in the game fragments and being incremented before the first question is
+     * answered.
+     */
+    private void resetAnswerAttempts() {
         QuizGameActivity.correctAnswersOnAttemptOne = -1;
         QuizGameActivity.correctAnswersOnAttemptTwo = 0;
         QuizGameActivity.correctAnswersOnAttemptThree = 0;
@@ -196,7 +200,7 @@ public class QuizGameActivity extends AppCompatActivity {
     private void cacheImagesAndLoadToMemory() {
         for (Question question : questions) {
             Picasso.with(QuizGameActivity.this).load(question.getCorrectChoice().getImageUrl())
-                    .tag(QuizGameActivity.PICASSO_TAG).fetch();
+                    .fetch();
         }
     }
 

@@ -6,9 +6,6 @@ https://api.myjson.com/bins/7frmp
 
 
 // TODO
--Cancel Picasso fetch requests on fragment destroy (check email)
--Pop game fragment if device goes to sleep
--Add option to view high scores in each game mode
 -Separate cities into three regions
 -Group duplicated xml code in styles.xml
 -Group common app status statements on MainActivity in one method
