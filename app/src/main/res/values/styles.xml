@@ -82,4 +82,39 @@
         <item name="android:orientation">vertical</item>
         <item name="android:padding">20dp</item>
     </style>
+
+    <style name="ReportChoiceContainerStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_marginLeft">2dp</item>
+        <item name="android:layout_marginRight">2dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/round_outline_answer_choice</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="ReportChoiceFlagStyle">
+        <item name="android:layout_width">25dp</item>
+        <item name="android:layout_height">18dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:background">@drawable/round_outline</item>
+    </style>
+
+    <style name="ReportChoiceCityLabelStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="ReportChoiceMarkStyle">
+        <item name="android:layout_width">25dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:paddingRight">4dp</item>
+    </style>
 </resources>

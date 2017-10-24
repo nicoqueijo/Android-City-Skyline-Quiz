@@ -64,163 +64,87 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginBottom="2dp"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginRight="2dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/round_outline_answer_choice"
-                    android:orientation="horizontal">
+                    style="@style/ReportChoiceContainerStyle"
+                    android:layout_marginBottom="2dp">
 
                     <ImageView
                         android:id="@+id/flag_choice_one"
-                        android:layout_width="25dp"
-                        android:layout_height="18dp"
-                        android:layout_gravity="center"
-                        android:layout_margin="4dp"
-                        android:background="@drawable/round_outline"
+                        style="@style/ReportChoiceFlagStyle"
                         tools:src="@drawable/australia" />
 
                     <TextView
                         android:id="@+id/city_name_choice_one"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:textColor="@color/white"
-                        android:textSize="12sp"
+                        style="@style/ReportChoiceCityLabelStyle"
                         tools:text="@string/sydney" />
 
                     <ImageView
                         android:id="@+id/mark_choice_one"
-                        android:layout_width="25dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:paddingRight="4dp"
+                        style="@style/ReportChoiceMarkStyle"
                         tools:src="@drawable/ic_incorrect" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    style="@style/ReportChoiceContainerStyle"
                     android:layout_marginBottom="2dp"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginRight="2dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/round_outline_answer_choice"
-                    android:orientation="horizontal">
+                    android:layout_marginTop="2dp">
 
                     <ImageView
                         android:id="@+id/flag_choice_two"
-                        android:layout_width="25dp"
-                        android:layout_height="18dp"
-                        android:layout_gravity="center"
-                        android:layout_margin="4dp"
-                        android:background="@drawable/round_outline"
+                        style="@style/ReportChoiceFlagStyle"
                         tools:src="@drawable/argentina" />
 
                     <TextView
                         android:id="@+id/city_name_choice_two"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:textColor="@color/white"
-                        android:textSize="12sp"
+                        style="@style/ReportChoiceCityLabelStyle"
                         tools:text="@string/buenos_aires" />
 
                     <ImageView
                         android:id="@+id/mark_choice_two"
-                        android:layout_width="25dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:paddingRight="4dp"
+                        style="@style/ReportChoiceMarkStyle"
                         tools:src="@drawable/ic_incorrect" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    style="@style/ReportChoiceContainerStyle"
                     android:layout_marginBottom="2dp"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginRight="2dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/round_outline_answer_choice"
-                    android:orientation="horizontal">
+                    android:layout_marginTop="2dp">
 
                     <ImageView
                         android:id="@+id/flag_choice_three"
-                        android:layout_width="25dp"
-                        android:layout_height="18dp"
-                        android:layout_gravity="center"
-                        android:layout_margin="4dp"
-                        android:background="@drawable/round_outline"
+                        style="@style/ReportChoiceFlagStyle"
                         tools:src="@drawable/united_states" />
 
                     <TextView
                         android:id="@+id/city_name_choice_three"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:textColor="@color/white"
-                        android:textSize="12sp"
+                        style="@style/ReportChoiceCityLabelStyle"
                         tools:text="@string/los_angeles" />
 
                     <ImageView
                         android:id="@+id/mark_choice_three"
-                        android:layout_width="25dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:paddingRight="4dp"
+                        style="@style/ReportChoiceMarkStyle"
                         tools:src="@drawable/ic_correct" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginRight="2dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/round_outline_answer_choice"
-                    android:orientation="horizontal">
+                    style="@style/ReportChoiceContainerStyle"
+                    android:layout_marginTop="2dp">
 
                     <ImageView
                         android:id="@+id/flag_choice_four"
-                        android:layout_width="25dp"
-                        android:layout_height="18dp"
-                        android:layout_gravity="center"
-                        android:layout_margin="4dp"
-                        android:background="@drawable/round_outline"
+                        style="@style/ReportChoiceFlagStyle"
                         tools:src="@drawable/england" />
 
                     <TextView
                         android:id="@+id/city_name_choice_four"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:textColor="@color/white"
-                        android:textSize="12sp"
+                        style="@style/ReportChoiceCityLabelStyle"
                         tools:text="@string/london" />
 
                     <ImageView
                         android:id="@+id/mark_choice_four"
-                        android:layout_width="25dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:paddingRight="4dp"
+                        style="@style/ReportChoiceMarkStyle"
                         tools:src="@drawable/ic_incorrect" />
 
                 </LinearLayout>
