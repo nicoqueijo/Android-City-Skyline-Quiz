@@ -1,8 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/quiz_container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    style="@style/QuizAnswerChoiceLabelContainerStyle"
     android:keepScreenOn="true"
     android:orientation="vertical"
     android:padding="12dp">
@@ -42,45 +41,23 @@
 
         <LinearLayout
             android:id="@+id/answer_choices_row_one"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginBottom="0dp"
-            android:clipToPadding="false"
-            android:orientation="horizontal"
-            android:padding="4dp">
+            style="@style/QuizAnswerChoicesRowStyle">
 
             <LinearLayout
                 android:id="@+id/answer_choice_one"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginRight="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/round_outline_answer_choice"
-                android:orientation="horizontal">
+                style="@style/QuizAnswerChoiceContainerStyle"
+                android:layout_marginRight="4dp">
 
                 <ImageView
                     android:id="@+id/flag_choice_one"
-                    android:layout_width="40dp"
-                    android:layout_height="29dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/round_outline"
-                    android:scaleType="fitXY"
+                    style="@style/QuizAnswerChoiceFlagStyle"
                     tools:src="@drawable/ukraine" />
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                <RelativeLayout style="@style/QuizAnswerChoiceLabelContainerStyle">
 
                     <TextView
                         android:id="@+id/city_name_choice_one"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white"
-                        android:textSize="16sp"
+                        style="@style/QuizAnswerChoiceLabelStyle"
                         tools:text="@string/kiev" />
 
                 </RelativeLayout>
@@ -89,36 +66,19 @@
 
             <LinearLayout
                 android:id="@+id/answer_choice_two"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/round_outline_answer_choice"
-                android:orientation="horizontal">
+                style="@style/QuizAnswerChoiceContainerStyle"
+                android:layout_marginLeft="4dp">
 
                 <ImageView
                     android:id="@+id/flag_choice_two"
-                    android:layout_width="40dp"
-                    android:layout_height="29dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/round_outline"
-                    android:scaleType="fitXY"
+                    style="@style/QuizAnswerChoiceFlagStyle"
                     tools:src="@drawable/vietnam" />
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                <RelativeLayout style="@style/QuizAnswerChoiceLabelContainerStyle">
 
                     <TextView
                         android:id="@+id/city_name_choice_two"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white"
-                        android:textSize="16sp"
+                        style="@style/QuizAnswerChoiceLabelStyle"
                         tools:text="@string/ho_chi_minh_city" />
 
                 </RelativeLayout>
@@ -129,45 +89,24 @@
 
         <LinearLayout
             android:id="@+id/answer_choices_row_two"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginBottom="16dp"
-            android:clipToPadding="false"
-            android:orientation="horizontal"
-            android:padding="4dp">
+            style="@style/QuizAnswerChoicesRowStyle"
+            android:layout_marginBottom="16dp">
 
             <LinearLayout
                 android:id="@+id/answer_choice_three"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginRight="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/round_outline_answer_choice"
-                android:orientation="horizontal">
+                style="@style/QuizAnswerChoiceContainerStyle"
+                android:layout_marginRight="4dp">
 
                 <ImageView
                     android:id="@+id/flag_choice_three"
-                    android:layout_width="40dp"
-                    android:layout_height="29dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/round_outline"
-                    android:scaleType="fitXY"
+                    style="@style/QuizAnswerChoiceFlagStyle"
                     tools:src="@drawable/united_states" />
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                <RelativeLayout style="@style/QuizAnswerChoiceLabelContainerStyle">
 
                     <TextView
                         android:id="@+id/city_name_choice_three"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white"
-                        android:textSize="16sp"
+                        style="@style/QuizAnswerChoiceLabelStyle"
                         tools:text="@string/los_angeles" />
 
                 </RelativeLayout>
@@ -176,36 +115,19 @@
 
             <LinearLayout
                 android:id="@+id/answer_choice_four"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/round_outline_answer_choice"
-                android:orientation="horizontal">
+                style="@style/QuizAnswerChoiceContainerStyle"
+                android:layout_marginLeft="4dp">
 
                 <ImageView
                     android:id="@+id/flag_choice_four"
-                    android:layout_width="40dp"
-                    android:layout_height="29dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/round_outline"
-                    android:scaleType="fitXY"
+                    style="@style/QuizAnswerChoiceFlagStyle"
                     tools:src="@drawable/colombia" />
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                <RelativeLayout style="@style/QuizAnswerChoiceLabelContainerStyle">
 
                     <TextView
                         android:id="@+id/city_name_choice_four"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white"
-                        android:textSize="16sp"
+                        style="@style/QuizAnswerChoiceLabelStyle"
                         tools:text="@string/cali" />
 
                 </RelativeLayout>
