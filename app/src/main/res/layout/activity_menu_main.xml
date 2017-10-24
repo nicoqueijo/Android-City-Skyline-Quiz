@@ -7,110 +7,68 @@
 
     <RelativeLayout
         android:id="@+id/container_play_game"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="22dp">
+        style="@style/MainMenuItemContainerStyle">
 
         <ImageView
             android:id="@+id/icon_play_game"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
+            style="@style/MainMenuItemIconStyle"
             tools:src="@drawable/ic_dark_game" />
 
         <TextView
             android:id="@+id/label_play_game"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="14dp"
-            android:layout_marginStart="14dp"
+            style="@style/MainMenuItemLabelStyle"
             android:layout_toEndOf="@id/icon_play_game"
             android:layout_toRightOf="@id/icon_play_game"
-            android:text="@string/play_game"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:text="@string/play_game" />
 
     </RelativeLayout>
 
     <View
         android:id="@+id/divider_play_game"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@color/gray" />
+        style="@style/MainMenuItemDividerStyle" />
 
     <RelativeLayout
         android:id="@+id/container_city_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="22dp">
+        style="@style/MainMenuItemContainerStyle">
 
         <ImageView
             android:id="@+id/icon_city_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
+            style="@style/MainMenuItemIconStyle"
             tools:src="@drawable/ic_dark_city" />
 
         <TextView
             android:id="@+id/label_city_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="14dp"
-            android:layout_marginStart="14dp"
+            style="@style/MainMenuItemLabelStyle"
             android:layout_toEndOf="@id/icon_city_list"
             android:layout_toRightOf="@id/icon_city_list"
-            android:text="@string/city_list"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:text="@string/city_list" />
 
     </RelativeLayout>
 
     <View
         android:id="@+id/divider_city_list"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@color/gray" />
+        style="@style/MainMenuItemDividerStyle" />
 
     <RelativeLayout
         android:id="@+id/container_settings"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="22dp">
+        style="@style/MainMenuItemContainerStyle">
 
         <ImageView
             android:id="@+id/icon_settings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
+            style="@style/MainMenuItemIconStyle"
             tools:src="@drawable/ic_dark_settings" />
 
         <TextView
             android:id="@+id/label_settings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="14dp"
-            android:layout_marginStart="14dp"
+            style="@style/MainMenuItemLabelStyle"
             android:layout_toEndOf="@id/icon_settings"
             android:layout_toRightOf="@id/icon_settings"
-            android:text="@string/settings"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:text="@string/settings" />
 
     </RelativeLayout>
 
     <View
         android:id="@+id/divider_settings"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@color/gray" />
+        style="@style/MainMenuItemDividerStyle" />
 
 </LinearLayout>
