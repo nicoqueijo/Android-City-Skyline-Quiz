@@ -3,12 +3,12 @@ package com.nicoqueijo.cityskylinequiz.models;
 import java.io.Serializable;
 
 /**
- * The model class for each city object. Each city has a name, a country, a URl that is used to
- * fetch its image file from the cloud, GPS coordinates to locate it on a mapping application, and
- * a URL to fetch its Wikipedia article. There are two additional fields to store the city and country
- * name in the language the application is running on. This is used to properly sort the objects by
- * city or country name.
- *
+ * The model class for each city object. Each city has a name, a country, a region, a URl that
+ * is used to fetch its image file from the cloud, GPS coordinates to locate it on a mapping
+ * application, and a URL to fetch its Wikipedia article. There are two additional fields to
+ * store the city and country name in the language the application is running on. This is used
+ * to properly sort the objects by city or country name.
+ * <p>
  * Serializable must be implemented in order to pass City objects between intents.
  */
 public class City implements Serializable {
@@ -18,6 +18,7 @@ public class City implements Serializable {
 
     private String cityName;
     private String countryName;
+    private String region;
     private String imageUrl;
     private String coordinates;
     private String wikiUrl;
@@ -31,13 +32,16 @@ public class City implements Serializable {
      *
      * @param cityName    the city name as it appears in the JSON object
      * @param countryName the country name as it appears in the JSON object
+     * @param region      the region as it appears in the JSON object
      * @param imageUrl    the URL of the city image as it appears in the JSON object
      * @param coordinates the coordinates of the city as it appears in the JSON object
      * @param wikiUrl     the URL of the Wikipedia article as it appears in the JSON object
      */
-    public City(String cityName, String countryName, String imageUrl, String coordinates, String wikiUrl) {
+    public City(String cityName, String countryName, String region, String imageUrl,
+                String coordinates, String wikiUrl) {
         this.cityName = cityName;
         this.countryName = countryName;
+        this.region = region;
         this.imageUrl = imageUrl;
         this.coordinates = coordinates;
         this.wikiUrl = wikiUrl;
@@ -59,6 +63,24 @@ public class City implements Serializable {
      */
     public void setCityName(String cityName) {
         this.cityName = cityName;
+    }
+
+    /**
+     * Accessor for the region
+     *
+     * @return the region
+     */
+    public String getRegion() {
+        return region;
+    }
+
+    /**
+     * Mutator for the region
+     *
+     * @param region the new region
+     */
+    public void setRegion(String region) {
+        this.region = region;
     }
 
     /**

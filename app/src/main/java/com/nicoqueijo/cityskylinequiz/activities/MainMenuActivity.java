@@ -248,8 +248,8 @@ public class MainMenuActivity extends AppCompatActivity {
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject cityObject = jsonArray.getJSONObject(i);
                 cities.add(new City(cityObject.getString("city"), cityObject.getString("country"),
-                        cityObject.getString("imageUrl"), cityObject.getString("coordinates"),
-                        cityObject.getString("wikiUrl")));
+                        cityObject.getString("region"), cityObject.getString("imageUrl"),
+                        cityObject.getString("coordinates"), cityObject.getString("wikiUrl")));
             }
         } catch (JSONException e) {
             e.printStackTrace();
