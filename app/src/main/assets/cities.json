@@ -11,7 +11,7 @@
     {
       "city": "albuquerque",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/5wIK9hd.jpg",
       "coordinates": "35.085334,-106.605553",
       "wikiUrl": "https://en.wikipedia.org/wiki/Albuquerque,_New_Mexico"
@@ -27,7 +27,7 @@
     {
       "city": "anchorage",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/E3r08Tm.jpg",
       "coordinates": "61.218056,-149.900278",
       "wikiUrl": "https://en.wikipedia.org/wiki/Anchorage,_Alaska"
@@ -51,7 +51,7 @@
     {
       "city": "asuncion",
       "country": "paraguay",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/pt0YCFP.jpg",
       "coordinates": "-25.263740,-57.575926",
       "wikiUrl": "https://en.wikipedia.org/wiki/Asunción"
@@ -67,7 +67,7 @@
     {
       "city": "atlanta",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/autMh4H.jpg",
       "coordinates": "33.748995,-84.387982",
       "wikiUrl": "https://en.wikipedia.org/wiki/Atlanta"
@@ -83,7 +83,7 @@
     {
       "city": "austin",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/ltpgGxH.jpg",
       "coordinates": "30.267153,-97.743061",
       "wikiUrl": "https://en.wikipedia.org/wiki/Austin,_Texas"
@@ -99,7 +99,7 @@
     {
       "city": "baltimore",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/ygVSVde.jpg",
       "coordinates": "39.290385,-76.612189",
       "wikiUrl": "https://en.wikipedia.org/wiki/Baltimore"
@@ -147,7 +147,7 @@
     {
       "city": "belo_horizonte",
       "country": "brazil",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/v1szI7L.jpg",
       "coordinates": "-19.924502,-43.935238",
       "wikiUrl": "https://en.wikipedia.org/wiki/Belo_Horizonte"
@@ -171,7 +171,7 @@
     {
       "city": "bogota",
       "country": "colombia",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/XqY8qwa.jpg",
       "coordinates": "4.710989,-74.072092",
       "wikiUrl": "https://en.wikipedia.org/wiki/Bogotá"
@@ -179,7 +179,7 @@
     {
       "city": "boston",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/gAY9U50.jpg",
       "coordinates": "42.360082,-71.05888",
       "wikiUrl": "https://en.wikipedia.org/wiki/Boston"
@@ -219,7 +219,7 @@
     {
       "city": "buenos_aires",
       "country": "argentina",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/JTk9Jov.jpg",
       "coordinates": "-34.603684,-58.381559",
       "wikiUrl": "https://en.wikipedia.org/wiki/Buenos_Aires"
@@ -243,7 +243,7 @@
     {
       "city": "calgary",
       "country": "canada",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/bFDZXca.jpg",
       "coordinates": "51.048615,-114.070846",
       "wikiUrl": "https://en.wikipedia.org/wiki/Calgary"
@@ -251,7 +251,7 @@
     {
       "city": "cali",
       "country": "colombia",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/kSR4mQN.jpg",
       "coordinates": "3.451647,-76.531985",
       "wikiUrl": "https://en.wikipedia.org/wiki/Cali"
@@ -259,7 +259,7 @@
     {
       "city": "cancun",
       "country": "mexico",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/78lb0L8.jpg",
       "coordinates": "21.161908,-86.851528",
       "wikiUrl": "https://en.wikipedia.org/wiki/Cancún"
@@ -275,7 +275,7 @@
     {
       "city": "caracas",
       "country": "venezuela",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/5ViOp4L.jpg",
       "coordinates": "10.480594,-66.903606",
       "wikiUrl": "https://en.wikipedia.org/wiki/Caracas"
@@ -299,7 +299,7 @@
     {
       "city": "charlotte",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/UUZGOb1.jpg",
       "coordinates": "35.227087,-80.843127",
       "wikiUrl": "https://en.wikipedia.org/wiki/Charlotte,_North_Carolina"
@@ -315,7 +315,7 @@
     {
       "city": "chicago",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/sRRf6CA.jpg",
       "coordinates": "41.878114,-87.629798",
       "wikiUrl": "https://en.wikipedia.org/wiki/Chicago"
@@ -331,7 +331,7 @@
     {
       "city": "cincinnati",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/TbXzidw.jpg",
       "coordinates": "39.103118,-84.51202",
       "wikiUrl": "https://en.wikipedia.org/wiki/Cincinnati"
@@ -339,7 +339,7 @@
     {
       "city": "cleveland",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/XPMLjV3.jpg",
       "coordinates": "41.499320,-81.694361",
       "wikiUrl": "https://en.wikipedia.org/wiki/Cleveland"
@@ -363,7 +363,7 @@
     {
       "city": "dallas",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/oRv8JVm.jpg",
       "coordinates": "32.776664,-96.796988",
       "wikiUrl": "https://en.wikipedia.org/wiki/Dallas"
@@ -371,7 +371,7 @@
     {
       "city": "denver",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/upwZ7HN.jpg",
       "coordinates": "39.739236,-104.990251",
       "wikiUrl": "https://en.wikipedia.org/wiki/Denver"
@@ -379,7 +379,7 @@
     {
       "city": "detroit",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/M0K1x45.jpg",
       "coordinates": "42.331427,-83.045754",
       "wikiUrl": "https://en.wikipedia.org/wiki/Detroit"
@@ -451,7 +451,7 @@
     {
       "city": "edmonton",
       "country": "canada",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/YTPiNlV.jpg",
       "coordinates": "53.544389,-113.490927",
       "wikiUrl": "https://en.wikipedia.org/wiki/Edmonton"
@@ -475,7 +475,7 @@
     {
       "city": "fort_worth",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/t9pZkH0.jpg",
       "coordinates": "32.755488,-97.330766",
       "wikiUrl": "https://en.wikipedia.org/wiki/Fort_Worth,_Texas"
@@ -483,7 +483,7 @@
     {
       "city": "fortaleza",
       "country": "brazil",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/VL9DBJD.jpg",
       "coordinates": "-3.731903,-38.526739",
       "wikiUrl": "https://en.wikipedia.org/wiki/Fortaleza"
@@ -523,7 +523,7 @@
     {
       "city": "guadalajara",
       "country": "mexico",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/nhFJgmf.jpg",
       "coordinates": "20.659699,-103.349609",
       "wikiUrl": "https://en.wikipedia.org/wiki/Guadalajara"
@@ -563,7 +563,7 @@
     {
       "city": "havana",
       "country": "cuba",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/LdnZi5U.jpg",
       "coordinates": "23.113592,-82.366596",
       "wikiUrl": "https://en.wikipedia.org/wiki/Havana"
@@ -595,7 +595,7 @@
     {
       "city": "honolulu",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/1G20EgS.jpg",
       "coordinates": "21.306944,-157.858333",
       "wikiUrl": "https://en.wikipedia.org/wiki/Honolulu"
@@ -603,7 +603,7 @@
     {
       "city": "houston",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/V0XtvXT.jpg",
       "coordinates": "29.760427,-95.369803",
       "wikiUrl": "https://en.wikipedia.org/wiki/Houston"
@@ -619,7 +619,7 @@
     {
       "city": "indianapolis",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/XKaqy0x.jpg",
       "coordinates": "39.768403,-86.158068",
       "wikiUrl": "https://en.wikipedia.org/wiki/Indianapolis"
@@ -635,7 +635,7 @@
     {
       "city": "jacksonville",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/SyE2JQy.jpg",
       "coordinates": "30.332184,-81.655651",
       "wikiUrl": "https://en.wikipedia.org/wiki/Jacksonville,_Florida"
@@ -651,7 +651,7 @@
     {
       "city": "jersey_city",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/i1t0vzO.jpg",
       "coordinates": "40.728157,-74.077642",
       "wikiUrl": "https://en.wikipedia.org/wiki/Jersey_City,_New_Jersey"
@@ -675,7 +675,7 @@
     {
       "city": "kansas_city",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/RfEJVg4.jpg",
       "coordinates": "39.099727,-94.578567",
       "wikiUrl": "https://en.wikipedia.org/wiki/Kansas_City,_Missouri"
@@ -731,7 +731,7 @@
     {
       "city": "la_paz",
       "country": "bolivia",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/4v5b6T8.jpg",
       "coordinates": "-16.489689,-68.119294",
       "wikiUrl": "https://en.wikipedia.org/wiki/La_Paz"
@@ -747,7 +747,7 @@
     {
       "city": "las_vegas",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/Zqj1E2y.jpg",
       "coordinates": "36.169941,-115.13983",
       "wikiUrl": "https://en.wikipedia.org/wiki/Las_Vegas"
@@ -755,7 +755,7 @@
     {
       "city": "lima",
       "country": "peru",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/4br0NMg.jpg",
       "coordinates": "-12.046373,-77.042754",
       "wikiUrl": "https://en.wikipedia.org/wiki/Lima"
@@ -787,7 +787,7 @@
     {
       "city": "los_angeles",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/hN1Sfvw.jpg",
       "coordinates": "34.052234,-118.243685",
       "wikiUrl": "https://en.wikipedia.org/wiki/Los_Angeles"
@@ -795,7 +795,7 @@
     {
       "city": "louisville",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/9Izu877.jpg",
       "coordinates": "38.252665,-85.758456",
       "wikiUrl": "https://en.wikipedia.org/wiki/Louisville,_Kentucky"
@@ -875,7 +875,7 @@
     {
       "city": "medellin",
       "country": "colombia",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/usfC444.jpg",
       "coordinates": "6.244203,-75.581212",
       "wikiUrl": "https://en.wikipedia.org/wiki/Medellín"
@@ -891,7 +891,7 @@
     {
       "city": "memphis",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/uGsEzn5.jpg",
       "coordinates": "35.149534,-90.04898",
       "wikiUrl": "https://en.wikipedia.org/wiki/Memphis,_Tennessee"
@@ -899,7 +899,7 @@
     {
       "city": "mexico_city",
       "country": "mexico",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/Dnf1ZZq.jpg",
       "coordinates": "19.432608,-99.133208",
       "wikiUrl": "https://en.wikipedia.org/wiki/Mexico_City"
@@ -907,7 +907,7 @@
     {
       "city": "miami",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/Nw0xdda.jpg",
       "coordinates": "25.761680,-80.19179",
       "wikiUrl": "https://en.wikipedia.org/wiki/Miami"
@@ -923,7 +923,7 @@
     {
       "city": "milwaukee",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/p2WMsrA.jpg",
       "coordinates": "43.038902,-87.906474",
       "wikiUrl": "https://en.wikipedia.org/wiki/Milwaukee"
@@ -931,7 +931,7 @@
     {
       "city": "minneapolis",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/5ecvSvt.jpg",
       "coordinates": "44.977753,-93.265011",
       "wikiUrl": "https://en.wikipedia.org/wiki/Minneapolis"
@@ -947,7 +947,7 @@
     {
       "city": "monterrey",
       "country": "mexico",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/lc4T2U3.jpg",
       "coordinates": "25.686614,-100.316113",
       "wikiUrl": "https://en.wikipedia.org/wiki/Monterrey"
@@ -955,7 +955,7 @@
     {
       "city": "montevideo",
       "country": "uruguay",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/LxB0T60.jpg",
       "coordinates": "-34.901113,-56.164531",
       "wikiUrl": "https://en.wikipedia.org/wiki/Montevideo"
@@ -963,7 +963,7 @@
     {
       "city": "montreal",
       "country": "canada",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/mNjgtac.jpg",
       "coordinates": "45.501689,-73.567256",
       "wikiUrl": "https://en.wikipedia.org/wiki/Montreal"
@@ -1027,7 +1027,7 @@
     {
       "city": "nashville",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/GnEBJvn.jpg",
       "coordinates": "36.162664,-86.781602",
       "wikiUrl": "https://en.wikipedia.org/wiki/Nashville,_Tennessee"
@@ -1035,7 +1035,7 @@
     {
       "city": "new_orleans",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/CakkIua.jpg",
       "coordinates": "29.951066,-90.071532",
       "wikiUrl": "https://en.wikipedia.org/wiki/New_Orleans"
@@ -1043,7 +1043,7 @@
     {
       "city": "new_york_city",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/p42rLhu.jpg",
       "coordinates": "40.712784,-74.005941",
       "wikiUrl": "https://en.wikipedia.org/wiki/New_York_City"
@@ -1051,7 +1051,7 @@
     {
       "city": "niagara_falls",
       "country": "canada",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/cy8MIFY.jpg",
       "coordinates": "43.088429,-79.080620",
       "wikiUrl": "https://en.wikipedia.org/wiki/Niagara_Falls"
@@ -1059,7 +1059,7 @@
     {
       "city": "oklahoma_city",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/kqVYLHl.jpg",
       "coordinates": "35.467560,-97.516428",
       "wikiUrl": "https://en.wikipedia.org/wiki/Oklahoma_City"
@@ -1067,7 +1067,7 @@
     {
       "city": "orlando",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/YmCz5CB.jpg",
       "coordinates": "28.538335,-81.379236",
       "wikiUrl": "https://en.wikipedia.org/wiki/Orlando,_Florida"
@@ -1091,7 +1091,7 @@
     {
       "city": "panama_city",
       "country": "panama",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/h2zWAmg.jpg",
       "coordinates": "8.982379,-79.51987",
       "wikiUrl": "https://en.wikipedia.org/wiki/Panama_City"
@@ -1123,7 +1123,7 @@
     {
       "city": "philadelphia",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/0vqvMm8.jpg",
       "coordinates": "39.952584,-75.165222",
       "wikiUrl": "https://en.wikipedia.org/wiki/Philadelphia"
@@ -1139,7 +1139,7 @@
     {
       "city": "phoenix",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/yEtdl97.jpg",
       "coordinates": "33.448377,-112.074037",
       "wikiUrl": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
@@ -1147,7 +1147,7 @@
     {
       "city": "pittsburgh",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/pdBDR6M.jpg",
       "coordinates": "40.440625,-79.995886",
       "wikiUrl": "https://en.wikipedia.org/wiki/Pittsburgh"
@@ -1155,7 +1155,7 @@
     {
       "city": "portland",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/P5kzrnU.jpg",
       "coordinates": "45.523062,-122.676482",
       "wikiUrl": "https://en.wikipedia.org/wiki/Portland,_Oregon"
@@ -1171,7 +1171,7 @@
     {
       "city": "porto_alegre",
       "country": "brazil",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/rY9awU6.jpg",
       "coordinates": "-30.034656,-51.217658",
       "wikiUrl": "https://en.wikipedia.org/wiki/Porto_Alegre"
@@ -1211,7 +1211,7 @@
     {
       "city": "recife",
       "country": "brazil",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/9WA7hCJ.jpg",
       "coordinates": "-8.047562,-34.876964",
       "wikiUrl": "https://en.wikipedia.org/wiki/Recife"
@@ -1227,7 +1227,7 @@
     {
       "city": "rio_de_janeiro",
       "country": "brazil",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/yglVG2r.jpg",
       "coordinates": "-22.906847,-43.172896",
       "wikiUrl": "https://en.wikipedia.org/wiki/Rio_de_Janeiro"
@@ -1251,7 +1251,7 @@
     {
       "city": "rosario",
       "country": "argentina",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/mLIJE0L.jpg",
       "coordinates": "-32.944243,-60.650539",
       "wikiUrl": "https://en.wikipedia.org/wiki/Rosario,_Santa_Fe"
@@ -1267,7 +1267,7 @@
     {
       "city": "salt_lake_city",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/3oJqK0h.jpg",
       "coordinates": "40.760779,-111.891047",
       "wikiUrl": "https://en.wikipedia.org/wiki/Salt_Lake_City"
@@ -1275,7 +1275,7 @@
     {
       "city": "salvador",
       "country": "brazil",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/rlLmNz4.jpg",
       "coordinates": "-12.972218,-38.501414",
       "wikiUrl": "https://en.wikipedia.org/wiki/Salvador,_Bahia"
@@ -1283,7 +1283,7 @@
     {
       "city": "san_antonio",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/YpQOnfh.jpg",
       "coordinates": "29.424122,-98.493628",
       "wikiUrl": "https://en.wikipedia.org/wiki/San_Antonio"
@@ -1291,7 +1291,7 @@
     {
       "city": "san_diego",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/aQ3cRI9.jpg",
       "coordinates": "32.715738,-117.161084",
       "wikiUrl": "https://en.wikipedia.org/wiki/San_Diego"
@@ -1299,7 +1299,7 @@
     {
       "city": "san_francisco",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/OzDTYoL.jpg",
       "coordinates": "37.774929,-122.419416",
       "wikiUrl": "https://en.wikipedia.org/wiki/San_Francisco"
@@ -1307,7 +1307,7 @@
     {
       "city": "san_juan",
       "country": "puerto_rico",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/LmXKlTK.jpg",
       "coordinates": "18.465539,-66.105735",
       "wikiUrl": "https://en.wikipedia.org/wiki/San_Juan,_Puerto_Rico"
@@ -1315,7 +1315,7 @@
     {
       "city": "santiago",
       "country": "chile",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/zb5XWYp.jpg",
       "coordinates": "-33.448890,-70.669265",
       "wikiUrl": "https://en.wikipedia.org/wiki/Santiago"
@@ -1323,7 +1323,7 @@
     {
       "city": "santo_domingo",
       "country": "dominican_republic",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/AIqxjKY.jpg",
       "coordinates": "18.486058,-69.931212",
       "wikiUrl": "https://en.wikipedia.org/wiki/Santo_Domingo"
@@ -1331,7 +1331,7 @@
     {
       "city": "sao_paulo",
       "country": "brazil",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/TXxbYi5.jpg",
       "coordinates": "-23.550520,-46.633309",
       "wikiUrl": "https://en.wikipedia.org/wiki/São_Paulo"
@@ -1347,7 +1347,7 @@
     {
       "city": "seattle",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/4ggZ8sD.jpg",
       "coordinates": "47.606209,-122.332071",
       "wikiUrl": "https://en.wikipedia.org/wiki/Seattle"
@@ -1395,7 +1395,7 @@
     {
       "city": "st_louis",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/iayQEzX.jpg",
       "coordinates": "38.627003,-90.199404",
       "wikiUrl": "https://en.wikipedia.org/wiki/St._Louis"
@@ -1434,7 +1434,7 @@
     },
     {
       "city": "taipei",
-      "country": "taiwan"
+      "country": "taiwan",
       "region": "region",
       "imageUrl": "http://i.imgur.com/UFRPL38.jpg",
       "coordinates": "25.032969,121.565418",
@@ -1443,7 +1443,7 @@
     {
       "city": "tampa",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/wMEso5M.jpg",
       "coordinates": "27.950575,-82.457178",
       "wikiUrl": "https://en.wikipedia.org/wiki/Tampa,_Florida"
@@ -1491,7 +1491,7 @@
     {
       "city": "toronto",
       "country": "canada",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/aC47eSi.jpg",
       "coordinates": "43.653226,-79.383184",
       "wikiUrl": "https://en.wikipedia.org/wiki/Toronto"
@@ -1499,7 +1499,7 @@
     {
       "city": "vancouver",
       "country": "canada",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/eV8YHaI.jpg",
       "coordinates": "49.282729,-123.120738",
       "wikiUrl": "https://en.wikipedia.org/wiki/Vancouver"
@@ -1539,7 +1539,7 @@
     {
       "city": "washington_dc",
       "country": "united_states",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/UqzYObX.jpg",
       "coordinates": "38.907192,-77.036871",
       "wikiUrl": "https://en.wikipedia.org/wiki/Washington,_D.C."
@@ -1555,7 +1555,7 @@
     {
       "city": "winnipeg",
       "country": "canada",
-      "region": "region",
+      "region": "americas",
       "imageUrl": "http://i.imgur.com/hecKGEM.jpg",
       "coordinates": "49.895136,-97.138374",
       "wikiUrl": "https://en.wikipedia.org/wiki/Winnipeg"
