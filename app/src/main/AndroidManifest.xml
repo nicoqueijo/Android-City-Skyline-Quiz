@@ -14,7 +14,7 @@
         <activity
             android:name=".activities.MainMenuActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.CityListActivity"
             android:label="@string/city_list"
@@ -37,8 +37,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".activities.SplashScreen"
-            android:theme="@android:style/Theme.NoTitleBar"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
