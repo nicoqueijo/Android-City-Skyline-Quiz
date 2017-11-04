@@ -12,13 +12,13 @@
 
             <TextView
                 android:id="@+id/theme_title"
-                android:text="@string/settings_theme_title"
-                style="@style/SettingsItemTitleStyle" />
+                style="@style/SettingsItemTitleStyle"
+                android:text="@string/settings_theme_title" />
 
             <TextView
                 android:id="@+id/theme_description"
-                android:text="@string/settings_theme_description"
-                style="@style/SettingsItemDescriptionStyle" />
+                style="@style/SettingsItemDescriptionStyle"
+                android:text="@string/settings_theme_description" />
 
         </LinearLayout>
 
@@ -38,13 +38,13 @@
 
             <TextView
                 android:id="@+id/vibration_title"
-                android:text="@string/settings_vibration_title"
-                style="@style/SettingsItemTitleStyle" />
+                style="@style/SettingsItemTitleStyle"
+                android:text="@string/settings_vibration_title" />
 
             <TextView
                 android:id="@+id/vibration_description"
-                android:text="@string/settings_vibration_description"
-                style="@style/SettingsItemDescriptionStyle" />
+                style="@style/SettingsItemDescriptionStyle"
+                android:text="@string/settings_vibration_description" />
 
         </LinearLayout>
 
@@ -57,18 +57,36 @@
     <View style="@style/MenuItemDividerStyle" />
 
     <LinearLayout
+        android:id="@+id/container_settings_regions"
+        style="@style/SettingsLabelsContainerStyle">
+
+        <TextView
+            android:id="@+id/regions_title"
+            style="@style/SettingsItemTitleStyle"
+            android:text="@string/settings_regions_title" />
+
+        <TextView
+            android:id="@+id/regions_description"
+            style="@style/SettingsItemDescriptionStyle"
+            android:text="@string/settings_regions_description" />
+
+    </LinearLayout>
+
+    <View style="@style/MenuItemDividerStyle" />
+
+    <LinearLayout
         android:id="@+id/container_settings_language"
         style="@style/SettingsLabelsContainerStyle">
 
         <TextView
             android:id="@+id/language_title"
-            android:text="@string/settings_language_title"
-            style="@style/SettingsItemTitleStyle" />
+            style="@style/SettingsItemTitleStyle"
+            android:text="@string/settings_language_title" />
 
         <TextView
             android:id="@+id/language_description"
-            android:text="@string/settings_language_description"
-            style="@style/SettingsItemDescriptionStyle" />
+            style="@style/SettingsItemDescriptionStyle"
+            android:text="@string/settings_language_description" />
 
     </LinearLayout>
 
@@ -80,13 +98,13 @@
 
         <TextView
             android:id="@+id/scores_title"
-            android:text="@string/settings_scores_title"
-            style="@style/SettingsItemTitleStyle" />
+            style="@style/SettingsItemTitleStyle"
+            android:text="@string/settings_scores_title" />
 
         <TextView
             android:id="@+id/scores_description"
-            android:text="@string/settings_scores_description"
-            style="@style/SettingsItemDescriptionStyle" />
+            style="@style/SettingsItemDescriptionStyle"
+            android:text="@string/settings_scores_description" />
 
     </LinearLayout>
 

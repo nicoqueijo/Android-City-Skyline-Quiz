@@ -107,7 +107,6 @@ public class MainMenuActivity extends AppCompatActivity {
                 startActivity(intentSettings);
             }
         });
-
     }
 
     /**

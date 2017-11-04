@@ -19,7 +19,8 @@ import com.nicoqueijo.cityskylinequiz.interfaces.Communicator;
 
 /**
  * This is the settings activity where the user can change the app configurations. This includes
- * changing the theme, toggling the vibration, changing the language, and resetting the scores.
+ * changing the theme, toggling the vibration, changing the regions, changing the language,
+ * and resetting the scores.
  * Implements Communicator to receive a message back from a DialogFragment and act accordingly.
  */
 public class SettingsActivity extends AppCompatActivity implements Communicator {
@@ -31,6 +32,7 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
     private SharedPreferences.Editor mEditor;
     private LinearLayout mThemeView;
     private LinearLayout mVibrationView;
+    private LinearLayout mRegionsView;
     private LinearLayout mLanguageView;
     private LinearLayout mScoresView;
     private Switch mThemeSwitch;
@@ -50,6 +52,7 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
 
         mThemeView = (LinearLayout) findViewById(R.id.container_settings_theme);
         mVibrationView = (LinearLayout) findViewById(R.id.container_settings_vibration);
+        mRegionsView = (LinearLayout) findViewById(R.id.container_regions_list);
         mLanguageView = (LinearLayout) findViewById(R.id.container_settings_language);
         mScoresView = (LinearLayout) findViewById(R.id.container_settings_scores);
         mThemeSwitch = (Switch) findViewById(R.id.switch_theme);
@@ -88,6 +91,13 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
             @Override
             public void onClick(View v) {
                 saveVibration();
+            }
+        });
+
+        mRegionsView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
 

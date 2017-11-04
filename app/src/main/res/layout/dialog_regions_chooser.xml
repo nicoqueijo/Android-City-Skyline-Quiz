@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="30dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingStart="30dp"
+        android:paddingTop="15dp"
+        android:text="@string/settings_regions_title"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/container_regions_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/choice_americas"
+            style="@style/LanguageItemContainerStyle">
+
+            <CheckBox
+                android:id="@+id/check_box_americas"
+                style="@style/LanguageItemRadioButtonStyle" />
+
+            <TextView
+                style="@style/LanguageItemLabelStyle"
+                android:text="@string/region_americas" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/choice_europe"
+            style="@style/LanguageItemContainerStyle">
+
+            <CheckBox
+                android:id="@+id/check_box_europe"
+                style="@style/LanguageItemRadioButtonStyle" />
+
+            <TextView
+                style="@style/LanguageItemLabelStyle"
+                android:text="@string/region_europe" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/choice_asia_africa_oceania"
+            style="@style/LanguageItemContainerStyle">
+
+            <CheckBox
+                android:id="@+id/check_box_asia_africa_oceania"
+                style="@style/LanguageItemRadioButtonStyle" />
+
+            <TextView
+                style="@style/LanguageItemLabelStyle"
+                android:text="@string/region_asia_africa_oceania" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/container_regions_list">
+
+        <Button
+            android:id="@+id/button_delete"
+            style="@style/ClearScoresButtonStyle"
+            android:layout_alignParentRight="true"
+            android:text="@string/delete" />
+
+        <Button
+            android:id="@+id/button_cancel"
+            style="@style/ClearScoresButtonStyle"
+            android:layout_toLeftOf="@id/button_delete"
+            android:text="@string/cancel" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
