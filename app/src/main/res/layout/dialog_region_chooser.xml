@@ -27,42 +27,42 @@
 
         <LinearLayout
             android:id="@+id/choice_americas"
-            style="@style/LanguageItemContainerStyle">
+            style="@style/ChooserItemContainerStyle">
 
             <CheckBox
                 android:id="@+id/check_box_americas"
-                style="@style/LanguageItemRadioButtonStyle" />
+                style="@style/ChooserItemSelectStyle" />
 
             <TextView
-                style="@style/LanguageItemLabelStyle"
+                style="@style/ChooserItemLabelStyle"
                 android:text="@string/region_americas" />
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/choice_europe"
-            style="@style/LanguageItemContainerStyle">
+            style="@style/ChooserItemContainerStyle">
 
             <CheckBox
                 android:id="@+id/check_box_europe"
-                style="@style/LanguageItemRadioButtonStyle" />
+                style="@style/ChooserItemSelectStyle" />
 
             <TextView
-                style="@style/LanguageItemLabelStyle"
+                style="@style/ChooserItemLabelStyle"
                 android:text="@string/region_europe" />
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/choice_asia_africa_oceania"
-            style="@style/LanguageItemContainerStyle">
+            style="@style/ChooserItemContainerStyle">
 
             <CheckBox
                 android:id="@+id/check_box_asia_africa_oceania"
-                style="@style/LanguageItemRadioButtonStyle" />
+                style="@style/ChooserItemSelectStyle" />
 
             <TextView
-                style="@style/LanguageItemLabelStyle"
+                style="@style/ChooserItemLabelStyle"
                 android:text="@string/region_asia_africa_oceania" />
 
         </LinearLayout>
@@ -75,15 +75,15 @@
         android:layout_below="@id/container_regions_list">
 
         <Button
-            android:id="@+id/button_delete"
+            android:id="@+id/button_ok"
             style="@style/ClearScoresButtonStyle"
             android:layout_alignParentRight="true"
-            android:text="@string/delete" />
+            android:text="@string/ok" />
 
         <Button
             android:id="@+id/button_cancel"
             style="@style/ClearScoresButtonStyle"
-            android:layout_toLeftOf="@id/button_delete"
+            android:layout_toLeftOf="@id/button_ok"
             android:text="@string/cancel" />
 
     </RelativeLayout>

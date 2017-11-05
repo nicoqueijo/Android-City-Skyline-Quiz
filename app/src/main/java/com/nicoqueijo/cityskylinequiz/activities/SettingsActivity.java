@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.nicoqueijo.cityskylinequiz.R;
 import com.nicoqueijo.cityskylinequiz.fragments.ClearScoresDialog;
 import com.nicoqueijo.cityskylinequiz.fragments.LanguageChooserDialog;
+import com.nicoqueijo.cityskylinequiz.fragments.RegionChooserDialog;
 import com.nicoqueijo.cityskylinequiz.interfaces.Communicator;
 
 /**
@@ -52,7 +53,7 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
 
         mThemeView = (LinearLayout) findViewById(R.id.container_settings_theme);
         mVibrationView = (LinearLayout) findViewById(R.id.container_settings_vibration);
-        mRegionsView = (LinearLayout) findViewById(R.id.container_regions_list);
+        mRegionsView = (LinearLayout) findViewById(R.id.container_settings_regions);
         mLanguageView = (LinearLayout) findViewById(R.id.container_settings_language);
         mScoresView = (LinearLayout) findViewById(R.id.container_settings_scores);
         mThemeSwitch = (Switch) findViewById(R.id.switch_theme);
@@ -97,7 +98,8 @@ public class SettingsActivity extends AppCompatActivity implements Communicator 
         mRegionsView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                RegionChooserDialog regionChooserDialog = new RegionChooserDialog();
+                regionChooserDialog.show(mFragmentManager, "dialog_region");
             }
         });
 

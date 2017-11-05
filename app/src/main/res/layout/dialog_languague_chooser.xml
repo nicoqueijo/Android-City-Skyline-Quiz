@@ -33,305 +33,305 @@
 
             <LinearLayout
                 android:id="@+id/choice_english"
-                style="@style/LanguageItemContainerStyle">
+                style="@style/ChooserItemContainerStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_english"
-                    style="@style/LanguageItemRadioButtonStyle" />
+                    style="@style/ChooserItemSelectStyle" />
 
                 <ImageView
                     android:id="@+id/flag_united_kingdom"
-                    android:src="@drawable/united_kingdom"
-                    style="@style/LanguageItemFlagStyle" />
+                    style="@style/ChooserItemFlagStyle"
+                    android:src="@drawable/united_kingdom" />
 
                 <TextView
-                    android:text="@string/english"
-                    style="@style/LanguageItemLabelStyle" />
+                    style="@style/ChooserItemLabelStyle"
+                    android:text="@string/english" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_spanish"
-                style="@style/LanguageItemContainerStyle">
+                style="@style/ChooserItemContainerStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_spanish"
-                    style="@style/LanguageItemRadioButtonStyle" />
+                    style="@style/ChooserItemSelectStyle" />
 
                 <ImageView
                     android:id="@+id/flag_spain"
-                    android:src="@drawable/spain"
-                    style="@style/LanguageItemFlagStyle" />
+                    style="@style/ChooserItemFlagStyle"
+                    android:src="@drawable/spain" />
 
                 <TextView
-                    android:text="@string/spanish"
-                    style="@style/LanguageItemLabelStyle" />
+                    style="@style/ChooserItemLabelStyle"
+                    android:text="@string/spanish" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_french"
-                style="@style/LanguageItemContainerStyle">
+                style="@style/ChooserItemContainerStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_french"
-                    style="@style/LanguageItemRadioButtonStyle" />
+                    style="@style/ChooserItemSelectStyle" />
 
                 <ImageView
                     android:id="@+id/flag_france"
-                    android:src="@drawable/france"
-                    style="@style/LanguageItemFlagStyle" />
+                    style="@style/ChooserItemFlagStyle"
+                    android:src="@drawable/france" />
 
                 <TextView
-                    android:text="@string/french"
-                    style="@style/LanguageItemLabelStyle" />
+                    style="@style/ChooserItemLabelStyle"
+                    android:text="@string/french" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_german"
-                style="@style/LanguageItemContainerStyle">
+                style="@style/ChooserItemContainerStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_german"
-                    style="@style/LanguageItemRadioButtonStyle" />
+                    style="@style/ChooserItemSelectStyle" />
 
                 <ImageView
                     android:id="@+id/flag_germany"
-                    android:src="@drawable/germany"
-                    style="@style/LanguageItemFlagStyle" />
+                    style="@style/ChooserItemFlagStyle"
+                    android:src="@drawable/germany" />
 
                 <TextView
-                    android:text="@string/german"
-                    style="@style/LanguageItemLabelStyle" />
+                    style="@style/ChooserItemLabelStyle"
+                    android:text="@string/german" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_italian"
-                style="@style/LanguageItemContainerStyle">
+                style="@style/ChooserItemContainerStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_italian"
-                    style="@style/LanguageItemRadioButtonStyle" />
+                    style="@style/ChooserItemSelectStyle" />
 
                 <ImageView
                     android:id="@+id/flag_italy"
-                    android:src="@drawable/italy"
-                    style="@style/LanguageItemFlagStyle" />
+                    style="@style/ChooserItemFlagStyle"
+                    android:src="@drawable/italy" />
 
                 <TextView
-                    android:text="@string/italian"
-                    style="@style/LanguageItemLabelStyle" />
+                    style="@style/ChooserItemLabelStyle"
+                    android:text="@string/italian" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_dutch"
-                style="@style/LanguageItemContainerStyle">
+                style="@style/ChooserItemContainerStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_dutch"
-                    style="@style/LanguageItemRadioButtonStyle" />
+                    style="@style/ChooserItemSelectStyle" />
 
                 <ImageView
                     android:id="@+id/flag_netherlands"
-                    android:src="@drawable/netherlands"
-                    style="@style/LanguageItemFlagStyle" />
+                    style="@style/ChooserItemFlagStyle"
+                    android:src="@drawable/netherlands" />
 
                 <TextView
-                    android:text="@string/dutch"
-                    style="@style/LanguageItemLabelStyle" />
+                    style="@style/ChooserItemLabelStyle"
+                    android:text="@string/dutch" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_portuguese"
-                style="@style/LanguageItemContainerStyle">
+                style="@style/ChooserItemContainerStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_portuguese"
-                    style="@style/LanguageItemRadioButtonStyle" />
+                    style="@style/ChooserItemSelectStyle" />
 
                 <ImageView
                     android:id="@+id/flag_portugal"
-                    android:src="@drawable/portugal"
-                    style="@style/LanguageItemFlagStyle" />
+                    style="@style/ChooserItemFlagStyle"
+                    android:src="@drawable/portugal" />
 
                 <TextView
-                    android:text="@string/portuguese"
-                    style="@style/LanguageItemLabelStyle" />
+                    style="@style/ChooserItemLabelStyle"
+                    android:text="@string/portuguese" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_polish"
-                style="@style/LanguageItemContainerStyle">
+                style="@style/ChooserItemContainerStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_polish"
-                    style="@style/LanguageItemRadioButtonStyle" />
+                    style="@style/ChooserItemSelectStyle" />
 
                 <ImageView
                     android:id="@+id/flag_poland"
-                    android:src="@drawable/poland"
-                    style="@style/LanguageItemFlagStyle" />
+                    style="@style/ChooserItemFlagStyle"
+                    android:src="@drawable/poland" />
 
                 <TextView
-                    android:text="@string/polish"
-                    style="@style/LanguageItemLabelStyle" />
+                    style="@style/ChooserItemLabelStyle"
+                    android:text="@string/polish" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_russian"
-                style="@style/LanguageItemContainerStyle">
+                style="@style/ChooserItemContainerStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_russian"
-                    style="@style/LanguageItemRadioButtonStyle" />
+                    style="@style/ChooserItemSelectStyle" />
 
                 <ImageView
                     android:id="@+id/flag_russia"
-                    android:src="@drawable/russia"
-                    style="@style/LanguageItemFlagStyle" />
+                    style="@style/ChooserItemFlagStyle"
+                    android:src="@drawable/russia" />
 
                 <TextView
-                    android:text="@string/russian"
-                    style="@style/LanguageItemLabelStyle" />
+                    style="@style/ChooserItemLabelStyle"
+                    android:text="@string/russian" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_turkish"
-                style="@style/LanguageItemContainerStyle">
+                style="@style/ChooserItemContainerStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_turkish"
-                    style="@style/LanguageItemRadioButtonStyle" />
+                    style="@style/ChooserItemSelectStyle" />
 
                 <ImageView
                     android:id="@+id/flag_turkey"
-                    android:src="@drawable/turkey"
-                    style="@style/LanguageItemFlagStyle" />
+                    style="@style/ChooserItemFlagStyle"
+                    android:src="@drawable/turkey" />
 
                 <TextView
-                    android:text="@string/turkish"
-                    style="@style/LanguageItemLabelStyle" />
+                    style="@style/ChooserItemLabelStyle"
+                    android:text="@string/turkish" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_chinese"
-                style="@style/LanguageItemContainerStyle">
+                style="@style/ChooserItemContainerStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_chinese"
-                    style="@style/LanguageItemRadioButtonStyle" />
+                    style="@style/ChooserItemSelectStyle" />
 
                 <ImageView
                     android:id="@+id/flag_china"
-                    android:src="@drawable/china"
-                    style="@style/LanguageItemFlagStyle" />
+                    style="@style/ChooserItemFlagStyle"
+                    android:src="@drawable/china" />
 
                 <TextView
-                    android:text="@string/chinese"
-                    style="@style/LanguageItemLabelStyle" />
+                    style="@style/ChooserItemLabelStyle"
+                    android:text="@string/chinese" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_japanese"
-                style="@style/LanguageItemContainerStyle">
+                style="@style/ChooserItemContainerStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_japanese"
-                    style="@style/LanguageItemRadioButtonStyle" />
+                    style="@style/ChooserItemSelectStyle" />
 
                 <ImageView
                     android:id="@+id/flag_japan"
-                    android:src="@drawable/japan"
-                    style="@style/LanguageItemFlagStyle" />
+                    style="@style/ChooserItemFlagStyle"
+                    android:src="@drawable/japan" />
 
                 <TextView
-                    android:text="@string/japanese"
-                    style="@style/LanguageItemLabelStyle" />
+                    style="@style/ChooserItemLabelStyle"
+                    android:text="@string/japanese" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_korean"
-                style="@style/LanguageItemContainerStyle">
+                style="@style/ChooserItemContainerStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_korean"
-                    style="@style/LanguageItemRadioButtonStyle" />
+                    style="@style/ChooserItemSelectStyle" />
 
                 <ImageView
                     android:id="@+id/flag_south_korea"
-                    android:src="@drawable/south_korea"
-                    style="@style/LanguageItemFlagStyle" />
+                    style="@style/ChooserItemFlagStyle"
+                    android:src="@drawable/south_korea" />
 
                 <TextView
-                    android:text="@string/korean"
-                    style="@style/LanguageItemLabelStyle" />
+                    style="@style/ChooserItemLabelStyle"
+                    android:text="@string/korean" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_arabic"
-                style="@style/LanguageItemContainerStyle">
+                style="@style/ChooserItemContainerStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_arabic"
-                    style="@style/LanguageItemRadioButtonStyle" />
+                    style="@style/ChooserItemSelectStyle" />
 
                 <ImageView
                     android:id="@+id/flag_saudi_arabia"
-                    android:src="@drawable/saudi_arabia"
-                    style="@style/LanguageItemFlagStyle" />
+                    style="@style/ChooserItemFlagStyle"
+                    android:src="@drawable/saudi_arabia" />
 
                 <TextView
-                    android:text="@string/arabic"
-                    style="@style/LanguageItemLabelStyle" />
+                    style="@style/ChooserItemLabelStyle"
+                    android:text="@string/arabic" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_hindi"
-                style="@style/LanguageItemContainerStyle">
+                style="@style/ChooserItemContainerStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_hindi"
-                    style="@style/LanguageItemRadioButtonStyle" />
+                    style="@style/ChooserItemSelectStyle" />
 
                 <ImageView
                     android:id="@+id/flag_india"
-                    android:src="@drawable/india"
-                    style="@style/LanguageItemFlagStyle" />
+                    style="@style/ChooserItemFlagStyle"
+                    android:src="@drawable/india" />
 
                 <TextView
-                    android:text="@string/hindi"
-                    style="@style/LanguageItemLabelStyle" />
+                    style="@style/ChooserItemLabelStyle"
+                    android:text="@string/hindi" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_malay"
-                style="@style/LanguageItemContainerStyle">
+                style="@style/ChooserItemContainerStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_malay"
-                    style="@style/LanguageItemRadioButtonStyle" />
+                    style="@style/ChooserItemSelectStyle" />
 
                 <ImageView
                     android:id="@+id/flag_malaysia"
-                    android:src="@drawable/malaysia"
-                    style="@style/LanguageItemFlagStyle" />
+                    style="@style/ChooserItemFlagStyle"
+                    android:src="@drawable/malaysia" />
 
                 <TextView
-                    android:text="@string/malay"
-                    style="@style/LanguageItemLabelStyle" />
+                    style="@style/ChooserItemLabelStyle"
+                    android:text="@string/malay" />
 
             </LinearLayout>
 
