@@ -2,19 +2,17 @@ City Skyline Quiz App
 
 
 JSON file on the cloud:
-https://api.myjson.com/bins/7frmp
+https://api.myjson.com/bins/65evz
 
 
 // TODO
--Separate cities into three regions
+-Save region choices to shared preferences
+-Restore region choices to checkboxes from shared preferences
+-Generate questions according to region settings
 -Group common app status statements on MainActivity in one method
--Change everything to Material Design (view dimensions, colors, fonts, font size, etc)
 -Draw out app architecture and post on github README
 -change xml attributes (left -> start), (right -> end) to support arabic
 -group common statements in methods for modularity
--Put custom fonts (Material design) in all activity actionbars
-	http://www.tristanwaddington.com/2013/03/styling-the-android-action-bar-with-a-custom-font/
-		Use Typeface class from Base Converter project
 		
 
 // TESTING

@@ -38,7 +38,7 @@ import java.util.List;
 import java.util.Locale;
 
 // JSON file on the cloud:
-// https://api.myjson.com/bins/7frmp
+// https://api.myjson.com/bins/65evz
 
 /**
  * This is the main activity that runs immediately after the splash screen activity when the app
