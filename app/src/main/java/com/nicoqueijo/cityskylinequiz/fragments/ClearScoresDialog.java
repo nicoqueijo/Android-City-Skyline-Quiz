@@ -20,8 +20,8 @@ public class ClearScoresDialog extends DialogFragment {
 
     public final static String CLEAR_SCORES = "true";
     Communicator mCommunicator;
-    private Button cancelButton;
-    private Button deleteButton;
+    private Button mCancelButton;
+    private Button mDeleteButton;
 
     /**
      * Empty constructor required for DialogFragment.
@@ -60,17 +60,17 @@ public class ClearScoresDialog extends DialogFragment {
         super.onViewCreated(view, savedInstanceState);
         removeTitleBar();
 
-        cancelButton = (Button) view.findViewById(R.id.button_cancel);
-        deleteButton = (Button) view.findViewById(R.id.button_delete);
+        mCancelButton = (Button) view.findViewById(R.id.button_cancel);
+        mDeleteButton = (Button) view.findViewById(R.id.button_delete);
 
-        cancelButton.setOnClickListener(new View.OnClickListener() {
+        mCancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dismiss();
             }
         });
 
-        deleteButton.setOnClickListener(new View.OnClickListener() {
+        mDeleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mCommunicator.onDialogMessage(CLEAR_SCORES);
