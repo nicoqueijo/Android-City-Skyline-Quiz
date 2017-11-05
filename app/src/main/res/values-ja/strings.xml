@@ -19,6 +19,11 @@
     <string name="settings_theme_description">明/暗テーマの切り替え</string>
 	<string name="settings_vibration_title">振動</string>
     <string name="settings_vibration_description">振動を無効または有効にする</string>
+	<string name="settings_regions_title">地域</string>
+	<string name="settings_regions_description">クイズに含める地域</string>
+	<string name="region_americas">アメリカ</string>
+    <string name="region_europe">ヨーロッパ</string>
+    <string name="region_asia_africa_oceania">アジア/アフリカ/オセアニア</string>
     <string name="settings_language_title">言語</string>
     <string name="settings_language_description">デバイスの言語を無視し、別の言語を使用する</string>
     <string name="settings_scores_title">スコアをリセットする</string>

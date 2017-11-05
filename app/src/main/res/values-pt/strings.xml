@@ -19,6 +19,11 @@
     <string name="settings_theme_description">Alternar entre o tema claro/escuro</string>
 	<string name="settings_vibration_title">Vibração</string>
     <string name="settings_vibration_description">Desativar ou ativar a vibração</string>
+	<string name="settings_regions_title">Regiões</string>
+	<string name="settings_regions_description">Regiões a incluir no questionário</string>
+	<string name="region_americas">As Americas</string>
+    <string name="region_europe">Europa</string>
+    <string name="region_asia_africa_oceania">Ásia / África / Oceania</string>
     <string name="settings_language_title">Idioma</string>
     <string name="settings_language_description">Ignore o idioma do dispositivo e use outro</string>
     <string name="settings_scores_title">Redefinir os resultados</string>

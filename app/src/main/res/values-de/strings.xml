@@ -19,6 +19,11 @@
     <string name="settings_theme_description">Umschalten zwischen licht/dunkel thema</string>
 	<string name="settings_vibration_title">Vibration</string>
     <string name="settings_vibration_description">Deaktivieren oder aktivieren Sie die Vibration</string>
+	<string name="settings_regions_title">Regionen</string>
+	<string name="settings_regions_description">Regionen, die in das Quiz aufgenommen werden sollen</string>
+	<string name="region_americas">Die Amerikaner</string>
+    <string name="region_europe">Europa</string>
+    <string name="region_asia_africa_oceania">Asien / Afrika / Ozeanien</string>
     <string name="settings_language_title">Sprache</string>
     <string name="settings_language_description">Gerätesprache ignorieren und andere verwenden</string>
     <string name="settings_scores_title">Ergebnisse zurücksetzen</string>

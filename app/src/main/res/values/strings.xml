@@ -20,7 +20,10 @@
     <string name="settings_vibration_title">Vibration</string>
     <string name="settings_vibration_description">Disable or enable the vibration</string>
     <string name="settings_regions_title">Regions</string>
-    <string name="settings_regions_description">Regions to include in the quiz</string>
+	<string name="settings_regions_description">Regions to include in the quiz</string>
+	<string name="region_americas">The Americas</string>
+    <string name="region_europe">Europe</string>
+    <string name="region_asia_africa_oceania">Asia / Africa / Oceania</string>
     <string name="settings_language_title">Language</string>
     <string name="settings_language_description">Ignore device language and use another</string>
     <string name="settings_scores_title">Reset scores</string>
@@ -73,9 +76,6 @@
     <string name="language_disclaimer_message">Non-English versions of this app were translated by automated means. Apologies if translations are inaccurate. To make any corrections please email the developer using the menu in the top-right corner.</string>
     <string name="error_image_load_message">Error loading image</string>
     <string name="internet_connection_message">Please check your internet connection and try again</string>
-    <string name="region_americas">The Americas</string>
-    <string name="region_europe">Europe</string>
-    <string name="region_asia_africa_oceania">Asia/Africa/Oceania</string>
 
     <!--- Cities -->
     <string name="abu_dhabi">Abu Dhabi</string>

@@ -19,6 +19,11 @@
     <string name="settings_theme_description">在明暗之间切换主题</string>
 	<string name="settings_vibration_title">振动</string>
     <string name="settings_vibration_description">禁用或启用振动</string>
+	<string name="settings_regions_title">地区</string>
+	<string name="settings_regions_description">地区在测验包括</string>
+	<string name="region_americas">美洲</string>
+    <string name="region_europe">欧洲</string>
+    <string name="region_asia_africa_oceania">亚洲/非洲/大洋洲</string>
     <string name="settings_language_title">语言</string>
     <string name="settings_language_description">忽略设备语言并使用其他语言</string>
     <string name="settings_scores_title">重置分数</string>

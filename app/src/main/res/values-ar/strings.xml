@@ -19,6 +19,11 @@
     <string name="settings_theme_description">التبديل بين الضوء أو الظلام موضوع</string>
 	<string name="settings_vibration_title">اهتزاز</string>
     <string name="settings_vibration_description">تعطيل أو تمكين الاهتزاز</string>
+	<string name="settings_regions_title">المناطق</string>
+	<string name="settings_regions_description">المناطق لتشمل في هذه المسابقة</string>
+	<string name="region_americas">الأمريكتين</string>
+    <string name="region_europe">أوروبا</string>
+    <string name="region_asia_africa_oceania">آسيا / أفريقيا / أوقيانوسيا</string>
     <string name="settings_language_title">لغة</string>
     <string name="settings_language_description">تجاهل لغة الجهاز واستخدام لغة أخرى</string>
     <string name="settings_scores_title">إعادة تعيين الدرجات</string>

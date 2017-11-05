@@ -19,6 +19,11 @@
     <string name="settings_theme_description">Переключение между темными/темными темами</string>
 	<string name="settings_vibration_title">вибрация</string>
     <string name="settings_vibration_description">Отключить или включить вибрацию</string>
+	<string name="settings_regions_title">районы</string>
+	<string name="settings_regions_description">регионов для включения в викторину</string>
+	<string name="region_americas">Северная и Южная Америка</string>
+    <string name="region_europe">Европа</string>
+    <string name="region_asia_africa_oceania">Азия / Африка / Океания</string>
     <string name="settings_language_title">язык</string>
     <string name="settings_language_description">Игнорируйте язык устройства и используйте другой</string>
     <string name="settings_scores_title">Сбросить баллы</string>

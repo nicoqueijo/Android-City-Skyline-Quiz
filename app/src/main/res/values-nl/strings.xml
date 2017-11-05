@@ -19,6 +19,11 @@
     <string name="settings_theme_description">Wissel tussen licht/donker thema</string>
 	<string name="settings_vibration_title">Trilling</string>
     <string name="settings_vibration_description">Schakel de trilling uit of activeer deze</string>
+	<string name="settings_regions_title">Regio\'s</string>
+	<string name="settings_regions_description">Regio\'s die in de quiz moeten worden opgenomen</string>
+	<string name="region_americas">De Amerikanen</string>
+    <string name="region_europe">Europa</string>
+    <string name="region_asia_africa_oceania">Azië / Afrika / Oceanië</string>
     <string name="settings_language_title">Taal</string>
     <string name="settings_language_description">Ignoreer de apparaattaal en gebruik een andere</string>
     <string name="settings_scores_title">Herstel scores</string>

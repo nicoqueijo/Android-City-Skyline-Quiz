@@ -19,6 +19,11 @@
     <string name="settings_theme_description">Togol antara tema cahaya/gelap</string>
 	<string name="settings_vibration_title">Getaran</string>
     <string name="settings_vibration_description">Lumpuhkan atau dayakan getaran</string>
+	<string name="settings_regions_title">Kawasan</string>
+	<string name="settings_regions_description">Kawasan untuk memasukkan dalam kuiz</string>
+	<string name="region_americas">Amerika</string>
+    <string name="region_europe">Eropah</string>
+    <string name="region_asia_africa_oceania">Asia / Afrika / Oceania</string>
     <string name="settings_language_title">Bahasa</string>
     <string name="settings_language_description">Abaikan bahasa peranti dan gunakan yang lain</string>
     <string name="settings_scores_title">Tetapkan semula skor</string>
