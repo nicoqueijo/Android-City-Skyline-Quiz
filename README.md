@@ -33,6 +33,7 @@ Multiple choice trivia game where the user guesses the skyline of a city from fo
 * Languages:
   Arabic, Chinese, Dutch, English, French, German, Hindi, Italian, Japanese, Korean, Malay, Polish, Portuguese, Russian, Spanish, Turkish
 * Light/dark theme
+* Filter questions by region
 
 ## Screenshots
 https://github.com/nicoqueijo/Android-City-Skyline-Quiz/tree/master/screenshots
