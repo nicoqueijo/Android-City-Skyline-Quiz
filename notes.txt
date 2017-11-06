@@ -6,7 +6,6 @@ https://api.myjson.com/bins/65evz
 
 
 // TODO
--end game if all questions answered
 -Group common app status statements on MainActivity in one method
 -Draw out app architecture and post on github README
 -change xml attributes (left -> start), (right -> end) to support arabic
