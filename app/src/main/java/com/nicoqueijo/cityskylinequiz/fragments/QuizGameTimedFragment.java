@@ -171,10 +171,7 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
             public void onTick(long millisUntilFinished) {
                 mGameProgressBar.setProgress(mElapsedSeconds);
                 if (mElapsedSeconds > mTotalSeconds) {
-                    getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT)
-                            .commitAllowingStateLoss();
-                    getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,
-                            new QuizScoreFragment(), "quizReportFragment").commitAllowingStateLoss();
+                    endGame();
                 }
                 mElapsedSeconds++;
             }
@@ -203,8 +200,10 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
         LinearLayout choicePress = (LinearLayout) v;
 
         // Warm up the cache with the image of the next question for fast UI loading,
-        Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
-                .getImageUrl()).priority(Picasso.Priority.HIGH).fetch();
+        if (!QuizGameActivity.questions.isEmpty()) {
+            Picasso.with(getActivity()).load(QuizGameActivity.questions.peek().getCorrectChoice()
+                    .getImageUrl()).priority(Picasso.Priority.HIGH).fetch();
+        }
 
         // Takes note of which choice was selected by the user to mark it correct/incorrect in
         // the next step.
@@ -237,7 +236,11 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
 
             mHandler.postDelayed(new Runnable() {
                 public void run() {
-                    loadNextQuestion();
+                    if (QuizGameActivity.questions.isEmpty()) {
+                        endGame();
+                    } else {
+                        loadNextQuestion();
+                    }
                 }
             }, 300);   // 0.3 seconds
 
@@ -324,6 +327,16 @@ public class QuizGameTimedFragment extends Fragment implements Quiz, View.OnClic
                 (mCurrentQuestion.getChoice3().getCountryName(), getActivity()));
         mFlagChoice4.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
                 (mCurrentQuestion.getChoice4().getCountryName(), getActivity()));
+    }
+
+    /**
+     * Removes this fragment from the hosting activity and replaces it with the game report fragment.
+     */
+    private void endGame() {
+        getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT)
+                .commitAllowingStateLoss();
+        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,
+                new QuizScoreFragment(), "quizReportFragment").commitAllowingStateLoss();
     }
 
     /**

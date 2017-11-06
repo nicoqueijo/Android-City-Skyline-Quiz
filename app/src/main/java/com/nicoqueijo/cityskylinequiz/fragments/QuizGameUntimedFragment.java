@@ -255,9 +255,7 @@ public class QuizGameUntimedFragment extends Fragment implements Quiz, View.OnCl
         toggleChoiceButtonsState(false);
         recordAttemptsOfLastQuestion();
         if (mQuestionCounter >= mQuestionLimit) {
-            getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT).commit();
-            getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,
-                    new QuizScoreFragment(), "quizReportFragment").commit();
+            endGame();
         } else {
             mCurrentQuestion = QuizGameActivity.questions.remove();
             mImageProgressBar.setVisibility(View.VISIBLE);
@@ -308,6 +306,16 @@ public class QuizGameUntimedFragment extends Fragment implements Quiz, View.OnCl
             mFlagChoice4.setImageResource(ResourceByNameRetriever.getDrawableResourceByName
                     (mCurrentQuestion.getChoice4().getCountryName(), getActivity()));
         }
+    }
+
+    /**
+     * Removes this fragment from the hosting activity and replaces it with the game report fragment.
+     */
+    private void endGame() {
+        getActivity().getSupportFragmentManager().beginTransaction().remove(THIS_FRAGMENT)
+                .commitAllowingStateLoss();
+        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.quiz_fragment_container,
+                new QuizScoreFragment(), "quizReportFragment").commitAllowingStateLoss();
     }
 
     /**
