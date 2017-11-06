@@ -88,6 +88,7 @@ public class RegionChooserDialog extends DialogFragment {
         mAmericasOptionContainer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // cannot be unchecked if others are all unchecked
                 if (!mEuropeCheckBox.isChecked() && !mAsiaAfricaOceaniaCheckBox.isChecked()
                         && mAmericasCheckBox.isChecked()) {
                     return;
@@ -99,6 +100,7 @@ public class RegionChooserDialog extends DialogFragment {
         mEuropeOptionContainer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // cannot be unchecked if others are all unchecked
                 if (!mAmericasCheckBox.isChecked() && !mAsiaAfricaOceaniaCheckBox.isChecked()
                         && mEuropeCheckBox.isChecked()) {
                     return;
@@ -110,6 +112,7 @@ public class RegionChooserDialog extends DialogFragment {
         mAsiaAfricaOceaniaOptionContainer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // cannot be unchecked if others are all unchecked
                 if (!mAmericasCheckBox.isChecked() && !mEuropeCheckBox.isChecked()
                         && mAsiaAfricaOceaniaCheckBox.isChecked()) {
                     return;
@@ -171,10 +174,8 @@ public class RegionChooserDialog extends DialogFragment {
     }
 
     /**
-     * Retrieves the language setting from the SharedPreferences file and sets that language to the
-     * appropriate RadioButton. If this is the first time running the app SharedPreferences won't
-     * have a language value and the default value will be the system language. If the system
-     * language is not a supported language in this app it defaults to English.
+     * Retrieves the regions settings from the SharedPreferences file and sets the each region
+     * CheckBox accordingly.
      */
     private void restoreSelectedRegions() {
         boolean americasSelected = mSharedPreferences.getBoolean("region_americas", true);

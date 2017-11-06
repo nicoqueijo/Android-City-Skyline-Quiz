@@ -91,7 +91,23 @@ public class QuizGameActivity extends AppCompatActivity {
         groupPosition = intentQuizGame.getIntExtra("parentMode", QuizMenuActivity.PARENT_MODE_UNTIMED);
         childPosition = intentQuizGame.getIntExtra("childMode", QuizMenuActivity.CHILD_MODE_QUESTIONS_10);
 
-        mCities = (ArrayList<City>) MainMenuActivity.cities;
+        //mCities = (ArrayList<City>) MainMenuActivity.cities;
+        mCities = new ArrayList<>();
+
+        for (City city : MainMenuActivity.cities) {
+            if (mSharedPreferences.getBoolean("region_americas", true) && city.getRegion().equals("americas")) {
+                mCities.add(city);
+                continue;
+            }
+            if (mSharedPreferences.getBoolean("region_europe", true) && city.getRegion().equals("europe")) {
+                mCities.add(city);
+                continue;
+            }
+            if (mSharedPreferences.getBoolean("region_asia_africa_oceania", true) && city.getRegion().equals("asia_africa_oceania")) {
+                mCities.add(city);
+            }
+        }
+
         Collections.shuffle(mCities);
         questions = new LinkedList<>();
         generateQuestions();
