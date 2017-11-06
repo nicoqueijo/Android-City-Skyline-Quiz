@@ -88,6 +88,10 @@ public class RegionChooserDialog extends DialogFragment {
         mAmericasOptionContainer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!mEuropeCheckBox.isChecked() && !mAsiaAfricaOceaniaCheckBox.isChecked()
+                        && mAmericasCheckBox.isChecked()) {
+                    return;
+                }
                 mAmericasCheckBox.setChecked(!mAmericasCheckBox.isChecked());
             }
         });
@@ -95,6 +99,10 @@ public class RegionChooserDialog extends DialogFragment {
         mEuropeOptionContainer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!mAmericasCheckBox.isChecked() && !mAsiaAfricaOceaniaCheckBox.isChecked()
+                        && mEuropeCheckBox.isChecked()) {
+                    return;
+                }
                 mEuropeCheckBox.setChecked(!mEuropeCheckBox.isChecked());
             }
         });
@@ -102,6 +110,10 @@ public class RegionChooserDialog extends DialogFragment {
         mAsiaAfricaOceaniaOptionContainer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!mAmericasCheckBox.isChecked() && !mEuropeCheckBox.isChecked()
+                        && mAsiaAfricaOceaniaCheckBox.isChecked()) {
+                    return;
+                }
                 mAsiaAfricaOceaniaCheckBox.setChecked(!mAsiaAfricaOceaniaCheckBox.isChecked());
             }
         });
@@ -144,6 +156,8 @@ public class RegionChooserDialog extends DialogFragment {
 
     /**
      * Saves the regions that the user selected to SharedPreferences.
+     *
+     * @param selectedRegions the checked states of the region checkboxes.
      */
     private void saveSelectedRegions(boolean... selectedRegions) {
         final int AMERICAS = 0;

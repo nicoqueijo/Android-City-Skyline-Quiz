@@ -6,8 +6,6 @@ https://api.myjson.com/bins/65evz
 
 
 // TODO
--Save region choices to shared preferences
--Restore region choices to checkboxes from shared preferences
 -Generate questions according to region settings
 -Group common app status statements on MainActivity in one method
 -Draw out app architecture and post on github README
