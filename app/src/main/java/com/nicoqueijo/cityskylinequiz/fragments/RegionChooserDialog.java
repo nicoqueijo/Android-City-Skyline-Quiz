@@ -83,6 +83,7 @@ public class RegionChooserDialog extends DialogFragment {
         mOkButton = (Button) view.findViewById(R.id.button_ok);
 
         disableCheckBoxesClickability();
+        restoreSelectedRegions();
 
         mAmericasOptionContainer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,7 +116,8 @@ public class RegionChooserDialog extends DialogFragment {
         mOkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // SAVE THE REGIONS!!!
+                saveSelectedRegions(mAmericasCheckBox.isChecked(), mEuropeCheckBox.isChecked(),
+                        mAsiaAfricaOceaniaCheckBox.isChecked());
                 dismiss();
             }
         });
@@ -138,6 +140,42 @@ public class RegionChooserDialog extends DialogFragment {
         int width = getResources().getDisplayMetrics().widthPixels;
         int newWidth = (int) (WIDTH_PERCENTAGE * (double) width);
         getDialog().getWindow().setLayout(newWidth, WindowManager.LayoutParams.WRAP_CONTENT);
+    }
+
+    /**
+     * Saves the regions that the user selected to SharedPreferences.
+     */
+    private void saveSelectedRegions(boolean... selectedRegions) {
+        final int AMERICAS = 0;
+        final int EUROPE = 1;
+        final int ASIA_AFRICA_OCEANIA = 2;
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
+        editor.putBoolean("region_americas", selectedRegions[AMERICAS]);
+        editor.putBoolean("region_europe", selectedRegions[EUROPE]);
+        editor.putBoolean("region_asia_africa_oceania", selectedRegions[ASIA_AFRICA_OCEANIA]);
+        editor.commit();
+    }
+
+    /**
+     * Retrieves the language setting from the SharedPreferences file and sets that language to the
+     * appropriate RadioButton. If this is the first time running the app SharedPreferences won't
+     * have a language value and the default value will be the system language. If the system
+     * language is not a supported language in this app it defaults to English.
+     */
+    private void restoreSelectedRegions() {
+        boolean americasSelected = mSharedPreferences.getBoolean("region_americas", true);
+        boolean europeSelected = mSharedPreferences.getBoolean("region_europe", true);
+        boolean asiaAfricaOceaniaSelected = mSharedPreferences
+                .getBoolean("region_asia_africa_oceania", true);
+        if (americasSelected) {
+            mAmericasCheckBox.setChecked(true);
+        }
+        if (europeSelected) {
+            mEuropeCheckBox.setChecked(true);
+        }
+        if (asiaAfricaOceaniaSelected) {
+            mAsiaAfricaOceaniaCheckBox.setChecked(true);
+        }
     }
 
     /**
