@@ -91,22 +91,8 @@ public class QuizGameActivity extends AppCompatActivity {
         groupPosition = intentQuizGame.getIntExtra("parentMode", QuizMenuActivity.PARENT_MODE_UNTIMED);
         childPosition = intentQuizGame.getIntExtra("childMode", QuizMenuActivity.CHILD_MODE_QUESTIONS_10);
 
-        //mCities = (ArrayList<City>) MainMenuActivity.cities;
         mCities = new ArrayList<>();
-
-        for (City city : MainMenuActivity.cities) {
-            if (mSharedPreferences.getBoolean("region_americas", true) && city.getRegion().equals("americas")) {
-                mCities.add(city);
-                continue;
-            }
-            if (mSharedPreferences.getBoolean("region_europe", true) && city.getRegion().equals("europe")) {
-                mCities.add(city);
-                continue;
-            }
-            if (mSharedPreferences.getBoolean("region_asia_africa_oceania", true) && city.getRegion().equals("asia_africa_oceania")) {
-                mCities.add(city);
-            }
-        }
+        filterCities();
 
         Collections.shuffle(mCities);
         questions = new LinkedList<>();
@@ -176,6 +162,31 @@ public class QuizGameActivity extends AppCompatActivity {
         QuizGameActivity.correctAnswersOnAttemptTwo = 0;
         QuizGameActivity.correctAnswersOnAttemptThree = 0;
         QuizGameActivity.correctAnswersOnAttemptFour = 0;
+    }
+
+    /**
+     * Filters which cities are candidates to be choices in the questions according to the regions
+     * setting. Does this by iterating through MainMenuActivity's city list (list of all cities in
+     * the game) and adding only the cities whose region field matches the setting's regions
+     * (set by the user) to the city list in this class that is used to generate the questions.
+     */
+    private void filterCities() {
+        for (City city : MainMenuActivity.cities) {
+            if (mSharedPreferences.getBoolean("region_americas", true)
+                    && city.getRegion().equals("americas")) {
+                mCities.add(city);
+                continue;
+            }
+            if (mSharedPreferences.getBoolean("region_europe", true)
+                    && city.getRegion().equals("europe")) {
+                mCities.add(city);
+                continue;
+            }
+            if (mSharedPreferences.getBoolean("region_asia_africa_oceania", true)
+                    && city.getRegion().equals("asia_africa_oceania")) {
+                mCities.add(city);
+            }
+        }
     }
 
     /**
